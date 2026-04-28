@@ -1,0 +1,115 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceIntro from '../../components/ServiceIntro.astro';
+import ServiceInclusions from '../../components/ServiceInclusions.astro';
+import PricingCards from '../../components/PricingCards.astro';
+import Features from '../../components/Features.astro';
+import Providers from '../../components/Providers.astro';
+import FAQ from '../../components/FAQ.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import AppPromo from '../../components/AppPromo.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { allServices, services, site, faqs } from '../../data/site';
+import { serviceDetails } from '../../data/serviceDetail';
+
+export function getStaticPaths() {
+  return allServices.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const service = allServices.find((s) => s.slug === slug)!;
+const detail = serviceDetails[slug as string];
+const isPriced = services.some((s) => s.slug === slug);
+
+const baseSchema: any = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: service.title,
+  name: service.title,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: site.name,
+    telephone: site.phone,
+    email: site.email,
+    url: site.url,
+  },
+  areaServed: 'Australia',
+  description: service.short,
+};
+if (isPriced && 'priceFrom' in service) {
+  baseSchema.offers = {
+    '@type': 'Offer',
+    price: (service as any).priceFrom,
+    priceCurrency: 'AUD',
+    availability: 'https://schema.org/InStock',
+  };
+}
+
+const schema = [
+  baseSchema,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.url}/services` },
+      { '@type': 'ListItem', position: 3, name: service.title, item: `${site.url}/services/${service.slug}` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title={service.title}
+  description={service.short}
+  schema={schema}
+>
+  <!-- 1. Hero (image + headline) -->
+  <ServiceHero
+    eyebrow={detail.hero.eyebrow}
+    heading={detail.hero.heading}
+    bg={detail.hero.image}
+  />
+
+  <!-- 2. Intro (what is it, why) -->
+  <ServiceIntro
+    kicker={detail.intro.kicker}
+    heading={detail.intro.heading}
+    body={detail.intro.body}
+    stats={detail.intro.stats}
+  />
+
+  <!-- 3. What's included -->
+  <ServiceInclusions groups={detail.whatsIncluded} />
+
+  <!-- 4. Why choose Naturo -->
+  <Features />
+
+  <!-- 5. Social proof -->
+  <Testimonials />
+
+  <!-- 6. Pricing (only for priced services; specialty services are quoted on enquiry) -->
+  {isPriced && <PricingCards />}
+
+  <!-- 7. Trusted-by logos -->
+  <Providers />
+
+  <!-- 8. FAQ -->
+  <FAQ />
+
+  <!-- 9. App promo -->
+  <AppPromo />
+
+  <!-- 10. Final CTA banner -->
+  <FinalCTA />
+</Layout>

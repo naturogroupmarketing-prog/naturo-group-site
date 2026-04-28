@@ -1,0 +1,102 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import { footerLocations } from '../../data/site';
+
+const states = Object.entries(footerLocations) as [string, { label: string; href: string }[]][];
+const totalLocations = states.reduce((acc, [, arr]) => acc + arr.length, 0);
+---
+
+<Section padding="lg" surface="white" ariaLabel="Service areas">
+  <Container width="wide">
+    <header class="locs-head">
+      <Eyebrow>Service areas</Eyebrow>
+      <h2 class="locs-h2">Now serving {totalLocations} areas across Australia.</h2>
+      <p class="locs-sub">
+        Local teams in NSW, QLD and VIC. If your suburb isn't listed, get in touch — we may still cover it.
+      </p>
+    </header>
+
+    <div class="locs-grid">
+      {states.map(([state, items]) => (
+        <div class="locs-col">
+          <h3 class="locs-state">{state}</h3>
+          <ul class="locs-list">
+            {items.slice(0, 8).map((l) => (
+              <li><a href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="locs-cta">
+      <Button href="/locations" variant="ghost" size="md">View all service areas →</Button>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .locs-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--s-12);
+  }
+  .locs-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-3);
+  }
+  .locs-sub {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0;
+  }
+
+  .locs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-8);
+  }
+  @media (max-width: 760px) {
+    .locs-grid { grid-template-columns: 1fr; }
+  }
+
+  .locs-state {
+    font-family: var(--font-sans);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-cyan-700);
+    margin: 0 0 var(--s-4);
+  }
+  .locs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-2);
+  }
+  .locs-list a {
+    display: inline-block;
+    padding: 6px 0;
+    font-size: var(--fs-body);
+    color: var(--c-navy);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .locs-list a:hover { color: var(--c-cyan-700); }
+
+  .locs-cta {
+    margin-top: var(--s-10);
+    text-align: center;
+  }
+</style>

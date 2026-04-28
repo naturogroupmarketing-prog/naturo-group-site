@@ -1,0 +1,164 @@
+---
+// Cookie consent banner.
+//
+// Stores the user's choice in localStorage under naturo:consent (so it
+// persists across sessions, unlike the lead-capture sessionStorage). The
+// QuoteLeadGate's destination installers (Meta Pixel / GA4 / GTM) wait
+// for window.naturoConsent.granted === true OR for the
+// `naturo:consent-granted` window event to fire before injecting any
+// third-party tags. That keeps the site GDPR / OAIC-friendly and avoids
+// dropping advertising cookies on first paint.
+---
+
+<div class="ncc-banner" id="nccBanner" hidden role="region" aria-label="Cookie consent">
+  <div class="ncc-inner">
+    <div class="ncc-text">
+      <p class="ncc-title">We use cookies to improve your experience.</p>
+      <p class="ncc-body">
+        Strictly necessary cookies are always on. With your consent, we also use analytics
+        and marketing cookies (Google Analytics, Meta Pixel) to understand traffic and serve
+        relevant ads.
+        <a href="/cookies-data-policy" class="ncc-link">Read our cookie policy.</a>
+      </p>
+    </div>
+    <div class="ncc-actions">
+      <button type="button" class="ncc-btn ncc-btn--ghost" id="nccDecline">Decline</button>
+      <button type="button" class="ncc-btn ncc-btn--primary" id="nccAccept">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const KEY = 'naturo:consent';
+    const banner = document.getElementById('nccBanner');
+    if (!banner) return;
+
+    function readConsent() {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) { return null; }
+    }
+
+    function writeConsent(state) {
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      window.naturoConsent = state;
+      window.dispatchEvent(new CustomEvent(
+        state.granted ? 'naturo:consent-granted' : 'naturo:consent-denied',
+        { detail: state }
+      ));
+    }
+
+    function show() { banner.removeAttribute('hidden'); }
+    function hide() { banner.setAttribute('hidden', ''); }
+
+    const existing = readConsent();
+    if (existing) {
+      window.naturoConsent = existing;
+      // Fire the granted event on page load too, so downstream installers
+      // that mount on every navigation know the user has previously opted in.
+      if (existing.granted) {
+        window.dispatchEvent(new CustomEvent('naturo:consent-granted', { detail: existing }));
+      }
+    } else {
+      // Slight delay so the banner doesn't compete with the LCP image.
+      setTimeout(show, 600);
+    }
+
+    document.getElementById('nccAccept').addEventListener('click', function () {
+      writeConsent({ granted: true, decided_at: new Date().toISOString() });
+      hide();
+    });
+    document.getElementById('nccDecline').addEventListener('click', function () {
+      writeConsent({ granted: false, decided_at: new Date().toISOString() });
+      hide();
+    });
+  })();
+</script>
+
+<style>
+  .ncc-banner {
+    position: fixed;
+    z-index: 90;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 640px;
+    margin-inline: auto;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+    padding: 16px 18px;
+    animation: ncc-up 220ms ease-out;
+  }
+  .ncc-banner[hidden] { display: none; }
+  @keyframes ncc-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .ncc-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px 18px;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .ncc-inner { grid-template-columns: 1fr; }
+  }
+
+  .ncc-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 4px;
+  }
+  .ncc-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+  .ncc-link { color: #3a5dff; text-decoration: underline; }
+
+  .ncc-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .ncc-actions { justify-content: flex-end; }
+  }
+  .ncc-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: background-color 150ms, border-color 150ms, color 150ms;
+  }
+  .ncc-btn--ghost {
+    background: transparent;
+    color: #324A6D;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+  }
+  .ncc-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04);
+    color: #0f172a;
+  }
+  .ncc-btn--primary {
+    background: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    box-shadow: 0 4px 10px rgba(58, 93, 255, 0.30);
+  }
+  .ncc-btn--primary:hover { background: #2548f0; }
+</style>

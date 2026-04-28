@@ -1,0 +1,28 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  heading?: string;
+  sub?: string;
+}
+
+const {
+  heading = 'Ready for a sparkling clean home?',
+  sub = 'Get an instant quote in under a minute. No obligation, no pushy follow-up.',
+} = Astro.props;
+---
+
+<section class="bg-[var(--color-cyan)]">
+  <div class="container-site text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl text-white font-light leading-tight">{heading}</h2>
+    <p class="mt-4 text-white/90 text-lg">{sub}</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="/quote" class="inline-flex items-center justify-center bg-white text-[var(--color-navy)] font-semibold px-8 py-3.5 rounded-full hover:bg-[var(--color-navy)] hover:text-white transition-colors">
+        Get a quote
+      </a>
+      <a href={site.phoneHref} class="inline-flex items-center justify-center bg-transparent text-white border border-white/60 font-medium px-8 py-3.5 rounded-full hover:bg-white hover:text-[var(--color-navy)] transition-colors">
+        Call {site.phone}
+      </a>
+    </div>
+  </div>
+</section>

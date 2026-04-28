@@ -1,0 +1,305 @@
+{
+  "source": "https://naturogroup.com.au/ (extracted 2026-04-23 at 1440x900)",
+  "totalSections": 30,
+  "sections": {
+    "topBar_0": {
+      "h": 44,
+      "bgColor": "rgb(247, 247, 247)",
+      "visibility": "desktop only (hidden tablet/mobile)",
+      "items": ["login (popup id 3637)", "Facebook https://www.facebook.com/naturogroup", "Instagram https://www.instagram.com/naturogroup/", "Youtube https://www.youtube.com/@NGclean"]
+    },
+    "header_2": {
+      "h": 115,
+      "logo": "https://naturogroup.com.au/wp-content/uploads/2024/12/v2Shopiy-Logo_430x.avif",
+      "logoAlt": "Eco-friendly cleaning service by NATURO GROUP, showcasing natural products for deep, regular, and end-of-lease cleaning.",
+      "nav": [
+        {"label": "Services", "children": [
+          {"label": "House cleaning", "href": "/service-house-cleaning/"},
+          {"label": "End of Lease Cleaning", "href": "/services-end-of-lease/"},
+          {"label": "NDIS Cleaning", "href": "/service-ndis-cleaning/"},
+          {"label": "Insurance", "href": "/service-insurance/"},
+          {"label": "Veterans", "href": "/service-veterans/"},
+          {"label": "Aged Care", "href": "/service-aged-care/"}
+        ]},
+        {"label": "Resource", "href": "/resource/"},
+        {"label": "Career", "href": "/career"}
+      ]
+    },
+    "hero_4": {
+      "h": 832,
+      "bgImage": "https://naturogroup.com.au/wp-content/uploads/2025/04/Bathroom-wiping-logo.png",
+      "h1": "eco-friendly House Cleaning in Australia",
+      "tagline": "Trusted, Trained and Thorough",
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"},
+      "partnersLabel": "Partners & Providers",
+      "partnersStripImg": "https://naturogroup.com.au/wp-content/uploads/2025/03/partners-logos-1-e1742184963841.png"
+    },
+    "chooseYourClean_6_7": {
+      "bgColor": "rgb(240, 240, 239)",
+      "h2": "Choose Your Clean",
+      "h3Sub": "Pick your perfect house cleaning service"
+    },
+    "pricingCards_8": {
+      "h": 762,
+      "bgColor": "rgb(240, 240, 239)",
+      "cards": [
+        {
+          "name": "Deep Clean",
+          "price": "$371",
+          "label": "Starting from",
+          "bullets": [
+            "For homes that have not been professionally cleaned in over 30 days.",
+            "Once off Spring Clean",
+            "Perfect to get you back on top of you house cleaning"
+          ],
+          "cta": "Get an instant Price"
+        },
+        {
+          "name": "Regular Clean",
+          "price": "$131",
+          "label": "Starting from",
+          "bullets": [
+            "Recurring weekly or fortnightly clean for everyday household",
+            "Customised Cleaning checklist",
+            "Choose between job rate or hourly rate cleaning"
+          ],
+          "cta": "Get an instant Price"
+        },
+        {
+          "name": "End of Lease",
+          "price": "$478",
+          "label": "Starting from",
+          "bullets": [
+            "Bond Cleaning Checklist for peace of mind",
+            "Professional experienced cleaners",
+            "Perfect for landlords/ tenants for hand over"
+          ],
+          "cta": "Get an instant Price"
+        }
+      ]
+    },
+    "experienceBanner_9": {
+      "h": 750,
+      "h1": "Experience and Reliable",
+      "subline": "View pricing and book online.",
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"},
+      "note": "bg image not detected at outer container — likely on inline style attribute or column. Will inspect during rebuild."
+    },
+    "features_10": {
+      "h": 422,
+      "bgColor": "rgb(240, 240, 239)",
+      "items": [
+        {"title": "Excellent customer service", "body": "We are committed to delivering outstanding customer service with care and professionalism."},
+        {"title": "Dedicated area co-ordinator", "body": "Our local customer service team is here to provide tailored support. We are here to help."},
+        {"title": "Fast and easy booking", "body": "Book your house cleaning service online in 60 seconds. With our easy to use online booking system."}
+      ]
+    },
+    "trustBadges_11": {
+      "h": 395,
+      "bgColor": "rgb(240, 240, 239)",
+      "items": [
+        {"title": "Police checked", "body": "Friendly and trustworthy, all our cleaners are police-checked for your assurance and safety."},
+        {"title": "Fully Insured", "body": "Public Liability Cover and our cleaners all have accidental coverage for your peace of mind."},
+        {"title": "Satisfaction guaranteed", "body": "We provide a satisfaction guarantee for complete peace of mind. We make things right."}
+      ]
+    },
+    "introCopy_12": {
+      "h": 474,
+      "bgColor": "rgb(240, 240, 239)",
+      "h2": "Best House Cleaning Australia",
+      "body": "At NATURO GROUP, we believe that a clean home should also be a healthy and sustainable one. Our eco-friendly cleaning services take the hassle out of maintaining a fresh and toxin-free home while being kind to the planet. With a commitment to natural, non-toxic products and a meticulous approach, we help families across Australia enjoy a cleaner, greener living space. Choose our reliable weekly or fortnightly cleaning services and reclaim your time for the things that matter most—without compromising on sustainability."
+    },
+    "includesChecklist_13_14": {
+      "bgColor": "rgb(255, 255, 255)",
+      "h2": "What can be Included?",
+      "items": ["Dusting", "Vacuuming", "Mopping", "Tidying up", "Surface", "Kitchen cleaning", "Linen changing", "Fridge cleaning", "Oven cleaning", "Bed making", "Bathroom cleaning", "washing", "Ironing", "Pantry tidying", "And much more"]
+    },
+    "founderBlock_15": {
+      "h": 890,
+      "bgColor": "rgb(240, 240, 239)",
+      "h2": "Transforming standards in the cleaning industry",
+      "image": "https://naturogroup.com.au/wp-content/uploads/2025/01/v4about-Us-naturo-group.png",
+      "imageAlt": "Eco-friendly cleaning service by NATURO GROUP showcasing natural products and police-checked cleaners in Wollongong.",
+      "body": [
+        "At NATURO GROUP, we deliver exceptional cleaning services across Australia, backed by a unique nursing background that drives our compassionate care.",
+        "We take pride in supporting NDIS participants, Veterans Affairs, Workers Compensation, Insurance, and Aged Care recipients with tailored services that prioritise comfort and independence.",
+        "Our commitment to quality, reliability, and personalised care ensures every client feels valued in their own home. At NATURO GROUP, we don't just clean—we create spaces where people feel truly cared for."
+      ],
+      "signature": {"role": "Managing Director", "name": "Anna Biram"},
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"}
+    },
+    "partnersHeading_16": {"h2": "Trusted Cleaning Services in Australia - Partnering with the Best"},
+    "providers_17": {
+      "h": 288,
+      "h2": "We are also providers for NDIS, Aged Care (CHSP), and DVA.",
+      "logos": [
+        {"alt": "CCI", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/5-150x150.png"},
+        {"alt": "NRMA", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/4-150x150.png"},
+        {"alt": "Prudence Rehab", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/3-150x150.png"},
+        {"alt": "ipar", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/2-150x150.png"},
+        {"alt": "Allianz", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/1-150x150.png"},
+        {"alt": "phsa", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/7-150x150.png"},
+        {"alt": "QBE", "src": "https://naturogroup.com.au/wp-content/uploads/2025/03/6-150x150.png"}
+      ]
+    },
+    "faq_18": {
+      "h": 834,
+      "h2Eyebrow": "FAQ",
+      "h2": "Frequently asked Questions",
+      "items": [
+        {"q": "What time are your services available?", "a": "Our services are available 8:00 AM – 5:30 PM, Monday to Friday. For special requests or after-hours service, please contact us in advance."},
+        {"q": "What services are included?", "a": "Our services include residential and commercial cleaning, deep cleaning, end-of-lease cleaning, NDIS Cleaning, Aged Care Cleaning and Department of Veteran Affairs Cleaning. For a full list of services, visit our website or contact us directly."},
+        {"q": "How much does it cost to clean my house?", "a": "The cost of cleaning your house depends on factors such as the size of your home, the type of cleaning service required, and any additional requests. Our pricing typically starts from $131.00 for a standard clean. For a personalised quote, please contact us or click on Get an Instant Price."},
+        {"q": "Are cleaning supplies provided?", "a": "Yes, we provide all necessary cleaning supplies and equipment. If you have specific product preferences or would like us to use your supplies, please let us know in advance."},
+        {"q": "Are your cleaning supplies safe for children and pets?", "a": "Yes, we use eco-friendly and non-toxic cleaning supplies that are safe for children and pets. If you have specific concerns or preferences, please let us know, and we can accommodate your needs."},
+        {"q": "How does a recurring service work?", "a": "Our recurring cleaning service allows you to schedule regular cleanings on a weekly, bi-weekly, or monthly basis. Once set up, our team will arrive at the scheduled time to maintain your home's cleanliness. You can adjust, reschedule, or cancel at any time with advance notice. Contact us to set up a plan that fits your needs!"},
+        {"q": "How easily can I book online?", "a": "Booking online is quick and easy! Simply visit our website, choose your preferred service, select a date and time that works for you, and confirm your booking in just a few clicks. If you need assistance, our team is happy to help."},
+        {"q": "What forms of payment do you accept?", "a": "We accept various payment methods, including credit and debit cards. All online payments are securely processed through Stripe. Please contact us if you have any specific payment preferences."},
+        {"q": "How long does it take to clean my house?", "a": "The time required to clean your house depends on factors such as the size of your home, the level of cleaning needed, and the number of cleaners assigned. On average, a standard cleaning for a 3-bedroom home takes about 2 to 3 hours. Deep cleaning or larger homes may take longer. Contact us for a more accurate estimate based on your specific needs."}
+      ]
+    },
+    "bookCTA_19": {
+      "h": 750,
+      "h1": "Book a House Cleaner in Australia",
+      "subline": "View pricing and book online.",
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"}
+    },
+    "trustedAcrossAU_20_21": {
+      "h2": "Trusted Cleaning Professionals Across Australia & In Your Local Area",
+      "body": "Australia is a vast and diverse country known for its stunning natural landscapes, unique wildlife, and laid-back lifestyle. From bustling cities and sun-soaked beaches to remote outback regions and lush rainforests, every corner of the country offers something special. Whether you're in a major metropolitan area or a quiet regional town, we offer professional cleaning services designed to meet the needs of households and businesses across Australia. Experience the Best in Local Cleaning Services. At NATURO GROUP, we are committed to delivering exceptional customer service and spotless results every time. Whether you need a regular cleaner or a one-time deep clean, we're here to make your life easier. Contact us today to book your professional cleaning service in Australia.",
+      "icons": [
+        "https://naturogroup.com.au/wp-content/uploads/2025/03/maid-150x150.png",
+        "https://naturogroup.com.au/wp-content/uploads/2025/03/time-150x150.png",
+        "https://naturogroup.com.au/wp-content/uploads/2025/03/sponge-150x150.png"
+      ],
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"}
+    },
+    "sixtySecondsAway_22": {
+      "h": 750,
+      "h1": "You are 60 seconds away from a clean home",
+      "bullets": ["Police-checked cleaners", "Friendly customer service", "Tailored service"],
+      "subline": "View pricing and book online.",
+      "ctaPrimary": {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      "ctaSecondary": {"text": "1300 876 472", "href": "tel:1300876472"}
+    },
+    "testimonialsHeading_23_24": {
+      "h2": "What our customers say",
+      "intro": "Finding the right cleaner can be tough—you need someone trustworthy, insured, and reliable. At NATURO GROUP, we deliver spotless results with peace of mind. Want to know more? Read our customer testimonials and see why so many trust us with their homes."
+    },
+    "testimonials_25": {
+      "h": 487,
+      "carousel": {
+        "slidesPerView": 2,
+        "autoplay": true,
+        "loop": true,
+        "speed": 389,
+        "autoplaySpeed": 5500
+      },
+      "items": [
+        {"name": "Simon O", "quote": "Great service, super happy with these folk."},
+        {"name": "Gem K", "quote": "Excellent service, very professional & thorough & the guys did a great job. Highly recommend. Positive: Responsiveness, Punctuality, Quality, Professionalism, Value. Services: Deep clean."},
+        {"name": "Catherine M", "quote": "We have been using NATURO GROUP since 2022 to clean our holiday house. They are fantastic cleaners who consistently do a professional job as well as being reliable. We highly recommend them to anyone looking for excellent cleaners."},
+        {"name": "Jules Y", "quote": "I am so happy with them every time. They never miss the little things that are often overlooked. I get a regular clean and even when the house is in a bit of a state like yesterday it's always so well done. Thank you so much, it is so nice getting home to a beautiful clean house. They also took care of my massive moving out clean from a two story house with a wall of windows backing on to bush. I couldn't even imagine doing it but they sorted it out and at short notice too."},
+        {"name": "Liana S", "quote": "The best ever, their work ethic is awesome. The cleaning on my windows and screens was fantastic. Positive: Responsiveness, Punctuality, Quality, Professionalism, Value. Services: General housekeeping."},
+        {"name": "Kim H", "quote": "Being someone who is not 100 percent comfortable with someone in my home I was cautious! I was wrong! Communication and flexibility with Anna was excellent. Jacqui was so lovely when she arrived and throughout her hours here. Not only was a wonderful job done but was definitely not invasive at all. Obliging, understanding and again a perfect job done (the lasting fragrance was a bonus lol). Would definitely recommend Naturo Group at any level and I look forward to future visits."},
+        {"name": "Marilyn W", "quote": "Thank you very much for a perfect job done — everyone's commenting on the windows, they're so sparkling and shiny. Your team has done a marvelous job for me, thank you."}
+      ],
+      "googleLogo": "https://naturogroup.com.au/wp-content/uploads/2025/01/google-g-logo.webp"
+    },
+    "appPromo_26": {
+      "h": 596,
+      "h2": "Easily manage your cleaning schedule with our user friendly App",
+      "phoneImg": "https://naturogroup.com.au/wp-content/uploads/2025/01/Copy-of-Mobile-phone-naturo-group4-1024x1024.png",
+      "appStore": {"badge": "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg", "href": "https://www.apple.com/app-store/"},
+      "googlePlay": {"badge": "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg", "href": "https://play.google.com/store"}
+    },
+    "footer_28": {
+      "h": 715,
+      "bgColor": "rgb(240, 240, 239)",
+      "columns": {
+        "contact": {
+          "phone": "1300 876 472",
+          "email": "admin@naturogroup.com.au",
+          "hours": "Monday – Fridays 8:30am – 5:00pm",
+          "ctas": [
+            {"text": "Get an Instant Price", "href": "/book"},
+            {"text": "1300 876 472", "href": "tel:1300876472"}
+          ]
+        },
+        "services": [
+          {"text": "House Cleaning", "href": "/service-house-cleaning/"},
+          {"text": "Aged Care Cleaning", "href": "/service-aged-care/"},
+          {"text": "Insurance Cleaning", "href": "/service-insurance/"},
+          {"text": "NDIS Cleaning", "href": "/service-ndis-cleaning/"},
+          {"text": "End of Lease Cleaning", "href": "/services-end-of-lease/"}
+        ],
+        "information": [
+          {"text": "About us", "href": "/"},
+          {"text": "How does it work", "href": "/"},
+          {"text": "Meet the Team", "href": "/"},
+          {"text": "Reviews", "href": "/"},
+          {"text": "Become a Cleaner", "href": "/"},
+          {"text": "Resources", "href": "/resource/"},
+          {"text": "Employee login", "href": "/account/"},
+          {"text": "FAQS", "href": "/"},
+          {"text": "Contact us", "href": "/contact-us/"}
+        ],
+        "locations": {
+          "NSW": [
+            {"text": "Byron Bay", "href": "/cleaners-byron-bay/"},
+            {"text": "Central Coast", "href": "/cleaners-central-coast/"},
+            {"text": "Lismore", "href": "/cleaners-lismore/"},
+            {"text": "Newcastle", "href": "/cleaners-newcastle/"},
+            {"text": "Port Macquarie", "href": "/cleaners-port-macquarie/"},
+            {"text": "Sutherland", "href": "/house-cleaning-sutherland/"},
+            {"text": "Sydney", "href": "/cleaners-sydney/"},
+            {"text": "Tweed Heads", "href": "/house-cleaning-tweed-heads/"},
+            {"text": "Parramatta", "href": "/house-cleaning-parramatta/"},
+            {"text": "Wollongong", "href": "/cleaners-wollongong/"},
+            {"text": "Northern Beaches", "href": "/house-cleaning-in-northern-beaches/"},
+            {"text": "Eastern Beaches", "href": "/house-cleaning-in-eastern-beaches/"},
+            {"text": "Bondi", "href": "/"},
+            {"text": "Manly", "href": "/"},
+            {"text": "Mosman", "href": "/"},
+            {"text": "Hunters Hill", "href": "/"},
+            {"text": "Vaucluse", "href": "/"}
+          ],
+          "QLD": [
+            {"text": "Brisbane", "href": "/cleaners-brisbane/"},
+            {"text": "Cairns", "href": "/cleaners-cairns/"},
+            {"text": "Gold Coast", "href": "/cleaners-gold-coast/"},
+            {"text": "Ipswich", "href": "/house-cleaning-ipswich/"},
+            {"text": "Sunshine Coast", "href": "/cleaners-sunshine-coast/"},
+            {"text": "Toowoomba", "href": "/cleaners-toowoomba/"},
+            {"text": "Townsville", "href": "/cleaners-townsville/"}
+          ],
+          "VIC": [
+            {"text": "Melbourne", "href": "/"},
+            {"text": "Geelong", "href": "/house-cleaning-geelong"},
+            {"text": "Ballarat", "href": "/"},
+            {"text": "Dandenong", "href": "/"},
+            {"text": "Mornington", "href": "/"},
+            {"text": "Narre Warren", "href": "/"},
+            {"text": "Toorak", "href": "/"}
+          ]
+        }
+      }
+    },
+    "subFooter_29": {
+      "h": 120,
+      "bgColor": "rgb(240, 240, 239)",
+      "copy": "© 2025 All Rights Reserved | NATURO GROUP PTY LTD",
+      "links": [
+        {"text": "Privacy Policy", "href": "/privacy-policies/"},
+        {"text": "Terms of service", "href": "/wp-content/uploads/2025/05/Service-agreement-2025update.pdf"},
+        {"text": "Cookies & Data Policy", "href": "/cookies-data-policy/"},
+        {"text": "Collection Notice Statement", "href": "/collection-statementment-notice/"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { ctaPrimary, founder } from '../data/site';
+
+const values = [
+  {
+    title: 'Trusted',
+    body:
+      'Every cleaner is identity-checked, police-checked and trained before they enter a home. We never sub-contract.',
+  },
+  {
+    title: 'Trained',
+    body:
+      'Our induction draws on Anna\u2019s nursing background — infection control, dignity, attention to detail.',
+  },
+  {
+    title: 'Thorough',
+    body:
+      'No shortcuts. No rushed visits. Every job is checked against the inclusions list before we leave.',
+  },
+];
+---
+
+<Layout
+  title="Meet the team"
+  description="Naturo Group is a tight-knit team of trained, police-checked Australian cleaners led by founder Anna Biram. Meet the people who care for your home."
+>
+  <section class="bg-[var(--color-bg-pale)] pt-16">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">Meet the team</p>
+      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
+        Real people who care for your home like it\u2019s their own.
+      </h1>
+      <p class="mt-5 text-lg text-[var(--color-slate)]">
+        Trained, police-checked and led by a registered nurse — every single one of us.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div class="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[var(--color-bg-light)] to-[var(--color-bg-cream)] flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-32 h-32 rounded-full bg-[var(--color-navy)] text-white text-4xl font-light flex items-center justify-center mx-auto">AB</div>
+          <p class="mt-6 text-xl font-semibold text-[var(--color-navy)]">{founder.name}</p>
+          <p class="text-[var(--color-slate)]">{founder.role}</p>
+        </div>
+      </div>
+      <div class="space-y-5 text-[var(--color-slate)] leading-relaxed text-lg">
+        <p class="eyebrow !text-[var(--color-accent-blue)]">Founder</p>
+        <h2 class="text-3xl text-[var(--color-navy)] font-light leading-tight">
+          A nurse with a passion for genuinely clean homes.
+        </h2>
+        {founder.body.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Our values</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
+          Trusted. Trained. Thorough.
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {values.map((v) => (
+          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
+            <h3 class="text-xl font-semibold text-[var(--color-navy)] mb-2">{v.title}</h3>
+            <p class="text-[var(--color-slate)]">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">Join us</p>
+      <h2 class="text-3xl text-[var(--color-navy)] font-light mb-4">
+        We\u2019re always looking for great cleaners.
+      </h2>
+      <p class="text-[var(--color-slate)] mb-7">
+        If you take pride in your work and love seeing the before-and-after, we\u2019d love to meet you.
+        We pay above award rates, schedule you near home, and back you with the support of a real team.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary" href="/career">Become a cleaner</a>
+        <a class="btn-secondary" href={ctaPrimary.href}>{ctaPrimary.text}</a>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+  <CTABanner />
+</Layout>

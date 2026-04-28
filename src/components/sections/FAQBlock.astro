@@ -1,0 +1,121 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import { faqs } from '../../data/site';
+
+const top = faqs.slice(0, 6);
+---
+
+<Section padding="lg" surface="white" ariaLabel="Frequently asked questions">
+  <Container width="default">
+    <div class="faq-layout">
+      <header class="faq-head">
+        <Eyebrow>FAQ</Eyebrow>
+        <h2 class="faq-h2">Frequently asked questions</h2>
+        <p class="faq-sub">
+          Quick answers to the questions we hear most. Can't find what you're looking for?
+          <a href="/faqs">See all FAQs</a>.
+        </p>
+        <div class="faq-cta">
+          <Button href="/faqs" variant="secondary" size="md">View all FAQs</Button>
+        </div>
+      </header>
+
+      <div class="faq-list">
+        {top.map((f) => (
+          <details class="faq-item">
+            <summary class="faq-q">
+              <span>{f.q}</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg class="faq-plus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <svg class="faq-minus" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .faq-layout { grid-template-columns: 1fr; }
+  }
+  .faq-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-4);
+  }
+  .faq-sub {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0;
+  }
+  .faq-sub a { color: var(--c-cyan-700); text-decoration: underline; }
+  .faq-cta { margin-top: var(--s-6); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+  .faq-item {
+    border: 1px solid var(--c-border-soft);
+    border-radius: var(--r-md);
+    background-color: var(--c-bg);
+    transition: border-color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+  }
+  .faq-item[open] {
+    border-color: var(--c-border);
+    background-color: var(--c-cream);
+  }
+  .faq-q {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    padding: var(--s-5) var(--s-5);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--c-navy);
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--c-surface);
+    color: var(--c-navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .faq-minus { display: none; }
+  .faq-item[open] .faq-plus { display: none; }
+  .faq-item[open] .faq-minus { display: inline-block; }
+
+  .faq-a {
+    padding: 0 var(--s-5) var(--s-5);
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+  }
+</style>

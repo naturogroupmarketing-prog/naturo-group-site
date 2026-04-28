@@ -1,0 +1,55 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import { ctaPrimary, site } from '../../data/site';
+---
+
+<Section padding="lg" surface="navy" ariaLabel="Ready to book">
+  <Container width="default">
+    <div class="cta-inner">
+      <Eyebrow color="white">60 seconds. That's it.</Eyebrow>
+      <h2 class="cta-h2">Ready for a sparkling, healthier home?</h2>
+      <p class="cta-sub">
+        Get a tailored quote in under a minute, or talk to a real human on the phone.
+      </p>
+      <div class="cta-actions">
+        <Button href={ctaPrimary.href} variant="primary" size="lg">{ctaPrimary.text}</Button>
+        <Button href={site.phoneHref} variant="outline-light" size="lg">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          {site.phone}
+        </Button>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .cta-inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .cta-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h1);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: var(--s-3) 0 var(--s-4);
+  }
+  .cta-sub {
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-relaxed);
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 var(--s-8);
+  }
+  .cta-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+  }
+</style>

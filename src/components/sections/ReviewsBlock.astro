@@ -1,0 +1,133 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+import { testimonials } from '../../data/site';
+
+// Trim very long testimonials for the homepage; full reviews on /reviews later.
+const featured = testimonials.slice(0, 3).map((t) => ({
+  ...t,
+  text: t.text.length > 240 ? `${t.text.slice(0, 230).trim()}…` : t.text,
+}));
+---
+
+<Section padding="lg" surface="cream" ariaLabel="Customer reviews">
+  <Container width="wide">
+    <header class="reviews-head">
+      <div>
+        <Eyebrow>Reviews</Eyebrow>
+        <h2 class="reviews-h2">Trusted by families across Australia.</h2>
+        <p class="reviews-sub">
+          Real reviews from real Naturo Group customers — homeowners, NDIS participants,
+          property managers and aged-care families.
+        </p>
+      </div>
+      <div class="reviews-meta" aria-label="5 star rating">
+        <div class="reviews-stars" aria-hidden="true">
+          {[1, 2, 3, 4, 5].map(() => (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FEB91C"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          ))}
+        </div>
+        <Badge tone="navy" size="md">5-star rated on Google</Badge>
+      </div>
+    </header>
+
+    <div class="reviews-grid">
+      {featured.map((t) => (
+        <Card variant="bordered" padding="lg" class="review-card">
+          <div class="review-stars" aria-hidden="true">
+            {[1, 2, 3, 4, 5].map(() => (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#FEB91C"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            ))}
+          </div>
+          <p class="review-text">{t.text}</p>
+          <footer class="review-foot">
+            <img src="/images/google-g.webp" alt="" width="22" height="22" loading="lazy" aria-hidden="true" />
+            <div class="review-cite">
+              <span class="review-name">{t.name}</span>
+              <span class="review-source">via Google</span>
+            </div>
+          </footer>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .reviews-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s-6);
+    align-items: end;
+    margin-bottom: var(--s-12);
+  }
+  @media (max-width: 760px) {
+    .reviews-head { grid-template-columns: 1fr; }
+  }
+  .reviews-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-3);
+    max-width: 22ch;
+  }
+  .reviews-sub {
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    max-width: 56ch;
+    margin: 0;
+  }
+  .reviews-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    align-items: flex-start;
+  }
+  .reviews-stars { display: inline-flex; gap: 2px; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+  }
+  @media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: 1fr; max-width: 560px; }
+  }
+  :global(.review-card) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+  }
+  .review-stars { display: inline-flex; gap: 2px; }
+  .review-text {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0;
+    flex: 1;
+  }
+  .review-foot {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding-top: var(--s-4);
+    border-top: 1px solid var(--c-border-soft);
+  }
+  .review-cite { display: flex; flex-direction: column; line-height: 1.2; }
+  .review-name {
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--c-navy);
+  }
+  .review-source {
+    font-size: 0.75rem;
+    color: var(--c-slate-soft);
+  }
+</style>

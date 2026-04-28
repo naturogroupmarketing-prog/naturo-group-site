@@ -1,0 +1,179 @@
+---
+import { ctaPrimary, ctaPhone, site } from '../data/site';
+
+const bullets = [
+  'Police-checked cleaners',
+  'Friendly customer service',
+  'Tailored service',
+];
+---
+
+<section class="experience-banner">
+  <img class="experience-bg-img" src="/images/banner-staff.jpg" alt="Naturo Group cleaning staff" loading="lazy" />
+  <div class="experience-overlay"></div>
+  <div class="container-site relative experience-inner">
+    <div class="experience-content">
+      <h2 class="experience-h1">Experience<br />and Reliable</h2>
+      <ul class="experience-bullets">
+        {bullets.map((b) => (
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="experience-sub">View pricing and book online.</p>
+      <div class="experience-ctas">
+        <a href={ctaPrimary.href} class="experience-btn-primary">{ctaPrimary.text}</a>
+        <a href={site.phoneHref} class="experience-btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          {ctaPhone.text}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-banner {
+    position: relative;
+    min-height: clamp(520px, 70vh, 720px);
+    background-color: rgb(151, 151, 151);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .experience-bg-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 55%;
+    object-fit: cover;
+    object-position: 35% center;
+    z-index: 0;
+  }
+  .experience-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgb(151, 151, 151) 45%, rgba(151, 151, 151, 0) 65%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .experience-inner {
+    z-index: 2;
+    width: 100%;
+    /* IMPORTANT: padding-block only — `padding: ... 0` would reset
+       padding-inline and clobber `.container-site`'s horizontal
+       padding, making the headline hug the viewport edge on mobile. */
+    padding-block: clamp(80px, 9vw, 112px);
+  }
+  /* Mobile/tablet: keep the original horizontal grey gradient and 55%
+     photo treatment from desktop. Only adjust min-height + padding-block
+     for narrower viewports. (The padding-block override is critical:
+     `padding: ... 0` would clobber `.container-site`'s padding-inline.) */
+  @media (max-width: 860px) {
+    .experience-banner {
+      min-height: 520px;
+    }
+    .experience-inner {
+      padding-block: clamp(56px, 9vw, 96px);
+    }
+  }
+  .experience-content {
+    max-width: 605px;
+    color: #fff;
+  }
+  .experience-h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0 0 24px;
+  }
+  .experience-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+  .experience-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21.6px;
+    color: #ffffff;
+  }
+  .experience-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 23.4px;
+    color: #ffffff;
+    margin: 0 0 20px;
+  }
+  .experience-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  /* Match the hero CTA stack: at very narrow viewports, switch to a
+     full-width vertical stack so each button is comfortably tappable. */
+  @media (max-width: 500px) {
+    .experience-ctas { flex-direction: column; align-items: stretch; }
+  }
+  .experience-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .experience-btn-primary:hover {
+    background-color: #2548f0;
+    border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  .experience-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .experience-btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1C244B;
+    border-color: #ffffff;
+  }
+</style>
+

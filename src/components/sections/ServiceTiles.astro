@@ -1,0 +1,150 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+import { pricingCards } from '../../data/site';
+---
+
+<Section padding="lg" surface="white" ariaLabel="Our services">
+  <Container width="wide">
+    <header class="tiles-head">
+      <Eyebrow>Our services</Eyebrow>
+      <h2 class="tiles-h2">Choose your clean</h2>
+      <p class="tiles-sub">
+        Three core services covering everyday upkeep, deep refreshes and end-of-lease handovers.
+        Eco-friendly products, police-checked cleaners, and flexible scheduling on every visit.
+      </p>
+    </header>
+
+    <div class="tiles-grid">
+      {pricingCards.map((card) => (
+        <Card
+          variant={card.featured ? 'elevated' : 'bordered'}
+          padding="lg"
+          hoverable={true}
+          class={card.featured ? 'tile tile-featured' : 'tile'}
+        >
+          {card.featured && (
+            <div class="tile-flag">
+              <Badge tone="cyan" size="sm">Most popular</Badge>
+            </div>
+          )}
+          <h3 class="tile-name">{card.name}</h3>
+          <div class="tile-price">
+            <span class="tile-price-label">{card.label}</span>
+            <span class="tile-price-amount">${card.priceFrom}</span>
+          </div>
+          <ul class="tile-bullets">
+            {card.bullets.map((b) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="tile-cta">
+            <Button href={`/services/${card.slug}`} variant={card.featured ? 'primary' : 'secondary'} size="md" fullWidth={true}>
+              View service
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .tiles-head {
+    max-width: 640px;
+    margin: 0 auto var(--s-12);
+    text-align: center;
+  }
+  .tiles-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-4);
+  }
+  .tiles-sub {
+    font-size: var(--fs-body-lg);
+    color: var(--c-slate);
+    line-height: var(--lh-relaxed);
+    margin: 0;
+  }
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+    align-items: stretch;
+  }
+  @media (max-width: 900px) {
+    .tiles-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  }
+
+  :global(.tile) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  :global(.tile-featured) {
+    border: 1px solid rgba(36, 210, 242, 0.4);
+  }
+  .tile-flag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tile-name {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    color: var(--c-navy);
+    margin: 0 0 var(--s-3);
+  }
+  .tile-price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-2);
+    padding-bottom: var(--s-5);
+    margin-bottom: var(--s-5);
+    border-bottom: 1px solid var(--c-border-soft);
+  }
+  .tile-price-label {
+    font-size: var(--fs-body-sm);
+    color: var(--c-slate-soft);
+  }
+  .tile-price-amount {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--c-navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .tile-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--s-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    flex: 1;
+  }
+  .tile-bullets li {
+    display: flex;
+    gap: var(--s-3);
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+  }
+  .tile-bullets svg { color: var(--c-cyan-700); flex-shrink: 0; margin-top: 4px; }
+
+  .tile-cta { margin-top: auto; }
+</style>

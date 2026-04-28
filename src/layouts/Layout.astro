@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileBar from '../components/layout/StickyMobileBar.astro';
+import QuoteLeadGate from '../components/QuoteLeadGate.astro';
+import ExitIntent from '../components/ExitIntent.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: Record<string, any> | Record<string, any>[];
+}
+
+const {
+  title,
+  description = site.description,
+  ogImage = '/og-default.jpg',
+  noindex = false,
+  schema,
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+const canonical = new URL(Astro.url.pathname, site.url).toString();
+const isHome = Astro.url.pathname === '/';
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    {isHome && (
+      <link rel="preload" as="image" href="/images/hero-bathroom.jpg" fetchpriority="high" />
+    )}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, site.url).toString()} />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:site_name" content={site.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <TopBar />
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <StickyMobileBar />
+    <QuoteLeadGate />
+    <ExitIntent />
+    <CookieConsent />
+
+    <!-- ----------------------------------------------------------------
+         Lightweight phone-click tracker. Listens at the document level
+         for clicks on any <a href="tel:..."> and pushes a `phone_click`
+         event to dataLayer + a Meta Pixel `Contact` event. Fires on
+         every page so the homepage, services pages, suburb pages and
+         sticky mobile bar all attribute correctly. Consent-gated by
+         design — the underlying fbq/gtag/dataLayer only exist once the
+         CookieConsent banner has been accepted.
+         ---------------------------------------------------------------- -->
+    <script is:inline>
+      (function () {
+        document.addEventListener('click', function (ev) {
+          const a = ev.target && ev.target.closest ? ev.target.closest('a[href^="tel:"]') : null;
+          if (!a) return;
+          const href = a.getAttribute('href') || '';
+          const number = href.replace(/^tel:/, '');
+          try {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: 'phone_click',
+              phone_number: number,
+              location: window.location.pathname,
+              link_text: (a.textContent || '').trim().slice(0, 80),
+            });
+            if (typeof window.fbq === 'function') window.fbq('track', 'Contact');
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'phone_click', {
+                event_category: 'engagement',
+                event_label: number,
+              });
+            }
+          } catch (e) { /* best-effort */ }
+        }, true);
+      })();
+    </script>
+  </body>
+</html>

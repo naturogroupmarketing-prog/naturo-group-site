@@ -1,0 +1,154 @@
+---
+import { nav, site, ctaPrimary } from '../data/site';
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--color-border)]/40">
+  <div class="header-inner flex items-center">
+    <a href="/" class="flex items-center" aria-label={`${site.name} home`}>
+      <img src="/images/logo.avif" alt="Naturo Group" class="w-[170px] h-auto" width="170" height="79" />
+    </a>
+
+    <div class="header-right ml-auto flex items-center gap-6">
+      <nav class="hidden lg:flex items-center" aria-label="Primary">
+        {nav.map((item) => (
+          <div class="relative group">
+            <a
+              href={item.href}
+              class="nav-link flex items-center gap-1"
+            >
+              {item.label}
+              {item.children && (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              )}
+            </a>
+            {item.children && (
+              <div class="absolute left-0 top-full pt-3 hidden group-hover:block min-w-[220px] z-50">
+                <ul class="bg-white rounded-xl shadow-lg border border-[var(--color-border)]/40 py-2">
+                  {item.children.map((c) => (
+                    <li>
+                      <a href={c.href} class="block px-4 py-2 text-sm text-[var(--color-slate)] hover:bg-[var(--color-bg-light)] hover:text-[var(--color-navy)]">
+                        {c.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href={site.phoneHref} class="header-phone-btn hidden md:inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          {site.phone}
+        </a>
+        <a href={ctaPrimary.href} class="header-cta-btn">
+          <span class="header-cta-long">{ctaPrimary.text}</span>
+          <span class="header-cta-short">Get Quote</span>
+        </a>
+        <button id="mobile-menu-toggle" class="lg:hidden p-2" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .header-inner {
+      max-width: 1250px;
+      margin-inline: auto;
+      padding-inline: 20px;
+    }
+    .nav-link {
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: rgb(114, 114, 114);
+      padding: 0 16px;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #1C244B; }
+    .header-phone-btn {
+      font-family: "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 15px;
+      color: rgb(153, 153, 153);
+      padding: 12px 24px;
+      border: 0.5px solid rgb(153, 153, 153);
+      border-radius: 5px;
+      background: transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .header-phone-btn:hover { border-color: #3a5dff; color: #3a5dff; }
+    .header-phone-btn svg { width: 15px; height: 15px; }
+    /* Header CTA matches the hero primary button shape (6px radius, 14/26
+       padding) so the button users see at the top is identical to the
+       button they see in the hero photo. Slightly slimmer vertical padding
+       keeps the header compact. */
+    .header-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      font-family: "Poppins", "Helvetica", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      padding: 13px 24px;
+      border: 1px solid #3a5dff;
+      border-radius: 6px;
+      background: #3a5dff;
+      box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .header-cta-btn:hover { background: #2548f0; color: #ffffff; }
+    .header-cta-short { display: none; }
+    /* Tight viewport: header has logo + CTA + hamburger fighting for 375px.
+       Use the shorter label and trim padding so nothing wraps. */
+    @media (max-width: 480px) {
+      .header-cta-btn { padding: 10px 14px; font-size: 13px; }
+      .header-cta-long { display: none; }
+      .header-cta-short { display: inline; }
+    }
+    /* Trim header vertical padding on small screens so the chrome doesn't
+       eat too much above-the-fold space. */
+    .header-inner { padding-top: 28px; padding-bottom: 28px; }
+    @media (max-width: 767px) {
+      .header-inner { padding-top: 14px; padding-bottom: 14px; }
+    }
+  </style>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-border)]/40 bg-white">
+    <nav class="container-site py-4 flex flex-col gap-1" aria-label="Mobile">
+      {nav.map((item) => (
+        <div>
+          <a href={item.href} class="block py-2 text-[var(--color-navy)] font-medium">{item.label}</a>
+          {item.children && (
+            <ul class="pl-4 pb-2 space-y-1">
+              {item.children.map((c) => (
+                <li><a href={c.href} class="block py-1.5 text-sm text-[var(--color-slate)]">{c.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+      <a href={site.phoneHref} class="py-2 text-[var(--color-navy)] font-medium border-t border-[var(--color-border)]/30 mt-2">
+        Call {site.phone}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
+

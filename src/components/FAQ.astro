@@ -1,0 +1,135 @@
+---
+import { faqs as defaultFaqs } from '../data/site';
+
+interface FaqItem { q: string; a: string }
+interface Props {
+  /** Optional override list — eg. per-suburb FAQs from suburbs.ts. */
+  items?: FaqItem[];
+  /** Optional eyebrow override — defaults to "FAQ". */
+  eyebrow?: string;
+  /** Optional sub-heading override — defaults to "Frequently asked Questions". */
+  subheading?: string;
+}
+
+const { items, eyebrow = 'FAQ', subheading = 'Frequently asked Questions' } = Astro.props;
+const faqs = items ?? defaultFaqs;
+---
+
+<section class="faq-section">
+  <div class="container-site faq-inner">
+    <div class="faq-head">
+      <h2 class="faq-eyebrow">{eyebrow}</h2>
+      <h3 class="faq-sub">{subheading}</h3>
+    </div>
+    <div class="faq-list">
+      {faqs.map((item) => (
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-q">{item.q}</span>
+            <span class="faq-icon faq-icon-plus" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="8.39 7.64 8.39 0 7.61 0 7.61 7.64 0 7.64 0 8.4 7.61 8.4 7.61 16 8.39 16 8.39 8.4 16 8.4 16 7.64 8.39 7.64"/></svg>
+            </span>
+            <span class="faq-icon faq-icon-minus" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="7" width="12" height="2" rx="1"/></svg>
+            </span>
+          </summary>
+          <div class="faq-content">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .faq-inner { max-width: 1100px; }
+  .faq-head {
+    margin-bottom: clamp(32px, 4vw, 48px);
+    max-width: 720px;
+  }
+  .faq-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 8px;
+  }
+  .faq-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.4vw, 19px);
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgb(100, 116, 139);
+    margin: 0;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    margin: 0;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .faq-item:hover {
+    border-color: rgba(58, 93, 255, 0.25);
+  }
+  .faq-item[open] {
+    border-color: rgba(58, 93, 255, 0.3);
+    background-color: #fafbff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03), 0 6px 20px rgba(58, 93, 255, 0.06);
+  }
+  .faq-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-q {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }
+  .faq-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background-color: rgba(58, 93, 255, 0.08);
+    color: #3a5dff;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+  }
+  .faq-item[open] .faq-icon {
+    background-color: #3a5dff;
+    color: #ffffff;
+  }
+  .faq-icon-minus { display: none; }
+  .faq-item[open] .faq-icon-plus { display: none; }
+  .faq-item[open] .faq-icon-minus { display: inline-flex; }
+  .faq-content {
+    font-family: "Poppins", sans-serif;
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    padding: 0 20px 20px;
+  }
+</style>

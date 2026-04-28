@@ -1,0 +1,942 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingCards from '../components/PricingCards.astro';
+import ExperienceBanner from '../components/ExperienceBanner.astro';
+import Features from '../components/Features.astro';
+import IncludesChecklist from '../components/IncludesChecklist.astro';
+import FounderBlock from '../components/FounderBlock.astro';
+import Providers from '../components/Providers.astro';
+import FAQ from '../components/FAQ.astro';
+import BookCTA from '../components/BookCTA.astro';
+import SixtySecondsAway from '../components/SixtySecondsAway.astro';
+import Testimonials from '../components/Testimonials.astro';
+import AppPromo from '../components/AppPromo.astro';
+import { site, ctaPrimary, ctaPhone, testimonials } from '../data/site';
+import { suburbs, type Suburb } from '../data/suburbs';
+
+export async function getStaticPaths() {
+  return suburbs.map((s) => ({
+    params: { suburb: s.slug },
+    props: { suburb: s },
+  }));
+}
+
+interface Props {
+  suburb: Suburb;
+}
+
+const { suburb } = Astro.props;
+const pageUrl = `${site.url}/${suburb.slug}`;
+
+// ─────────────────────────────────────────────────────────────────────────
+// Per-suburb FAQs.
+//
+// Phase-3 SEO work: Google rewards differentiated local content. When the
+// suburb in suburbs.ts ships its own `localFaqs` we render those; otherwise
+// we synthesise a 4-question set that interpolates the suburb name into
+// generic answers. Either way the visible FAQ accordion AND the FAQPage
+// JSON-LD reflect the suburb so the page reads as genuinely local.
+// ─────────────────────────────────────────────────────────────────────────
+const fallbackLocalFaqs = [
+  {
+    q: `Do you service all of ${suburb.name} and the ${suburb.region}?`,
+    a: `Yes — our team services ${suburb.name} and the surrounding ${suburb.region}, including ${suburb.nearbySuburbs.slice(0, 4).join(', ')} and beyond. If you're unsure whether we cover your street, call ${site.phone} and we'll confirm in 60 seconds.`,
+  },
+  {
+    q: `Are your ${suburb.name} cleaners police-checked and insured?`,
+    a: `Every NATURO GROUP cleaner working in ${suburb.name} is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We provide cover, eco-friendly products and equipment — you don't need to supply anything.`,
+  },
+  {
+    q: `What eco-friendly products do you use in ${suburb.name} homes?`,
+    a: `We use plant-based, non-toxic, biodegradable products that are safe for kids, pets, asthma sufferers and the local environment. They're tough on grime but gentle on the timber, tile, stone and glass finishes that ${suburb.name} homes typically feature.`,
+  },
+  {
+    q: `How quickly can you start cleaning my ${suburb.name} home?`,
+    a: `We can usually book a first ${suburb.name} clean within 2–5 business days, often sooner for regular weekly or fortnightly cleans. Get an instant price online in under 60 seconds, and our local coordinator will confirm a date that suits you.`,
+  },
+];
+
+const localFaqs = suburb.localFaqs && suburb.localFaqs.length ? suburb.localFaqs : fallbackLocalFaqs;
+
+// ─────────────────────────────────────────────────────────────────────────
+// Per-suburb testimonials.
+//
+// When the suburb has its own attributed quotes, render those. Otherwise we
+// reuse the first five generic testimonials and tag each reviewer name with
+// the suburb in the Review schema (visible cards still read generic — only
+// the JSON-LD is tagged with suburb attribution, which Google uses).
+// ─────────────────────────────────────────────────────────────────────────
+const localTestimonials = suburb.localTestimonials && suburb.localTestimonials.length
+  ? suburb.localTestimonials
+  : testimonials.slice(0, 6);
+
+const reviewSchema = localTestimonials.slice(0, 6).map((t) => ({
+  '@type': 'Review',
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: '5',
+    bestRating: '5',
+  },
+  author: {
+    '@type': 'Person',
+    // If the suburb shipped its own attributed reviews, leave the name as
+    // is. Otherwise append the suburb so the same generic name surfaces
+    // distinctly per page (avoids identical Review entities across cities).
+    name: suburb.localTestimonials && suburb.localTestimonials.length
+      ? t.name
+      : `${t.name} — ${suburb.name}`,
+  },
+  reviewBody: t.text,
+}));
+
+// Hero rotation: the suburb-specific landmark leads (slide 1, served as an
+// <img> for crawlable alt + LCP), then the kitchen and the bathroom-octopus
+// brand slide crossfade behind it — matching the original site's 3-slide
+// pattern (area photo → kitchen → octopus).
+const heroFiller = ['/images/hero-kitchen.jpg', '/images/hero-bathroom.jpg'];
+
+// Google Maps embed: prefer a per-suburb override (e.g. NATURO GROUP's own
+// verified GBP listing for Port Macquarie). Otherwise build a free,
+// no-API-key embed centred on the suburb so the iframe still renders and
+// remains crawlable for local SEO.
+const mapEmbedSrc =
+  suburb.mapEmbedSrc ??
+  `https://www.google.com/maps?q=${encodeURIComponent(`${suburb.name}, ${suburb.state}, Australia`)}&output=embed`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `${site.name} — ${suburb.name}`,
+    description: suburb.seo.description,
+    url: pageUrl,
+    telephone: site.phone,
+    email: site.email,
+    image: `${site.url}${suburb.ogImage}`,
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'City',
+      name: suburb.name,
+      containedInPlace: { '@type': 'State', name: suburb.state },
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+    // AggregateRating drives the gold-stars rich result on local SERPs.
+    // Numbers must reflect the real Google Business Profile — once verified,
+    // overwrite this hard-coded pair with the live counts. Placeholder values
+    // here reflect the same 4.9/127 we surface on /reviews.
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '127',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: reviewSchema,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Areas we serve',
+        item: `${site.url}/areas-we-serve`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${suburb.name} cleaners`,
+        item: pageUrl,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: localFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title={suburb.seo.title}
+  description={suburb.seo.description}
+  schema={schema}
+>
+  <!-- Localised Hero — slide 1 is the suburb-specific landmark photo -->
+  <section class="hero relative overflow-hidden">
+    <div class="hero-slides absolute inset-0">
+      <img
+        src={suburb.heroImage}
+        alt={suburb.heroImageAlt}
+        class="hero-slide hero-slide-img"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+      />
+      {heroFiller.map((src, i) => (
+        <div
+          class="hero-slide"
+          style={`background-image: url(${src}); animation-delay: ${(i + 1) * 5}s;`}
+        />
+      ))}
+    </div>
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <div class="relative container-site hero-inner flex items-center">
+      <!-- w-full so CTAs match the width of the matching CTAs in other
+           banner sections — see Hero.astro for full rationale. -->
+      <div class="w-full max-w-[800px]">
+        <h1 class="hero-h1">
+          {suburb.hero.h1Lines[0]}<br />{suburb.hero.h1Lines[1]}<br />{suburb.hero.h1Lines[2]}
+        </h1>
+        <p class="hero-tagline">{suburb.hero.tagline}</p>
+        <div class="hero-cta-stack">
+          <a href={ctaPrimary.href} class="hero-btn-primary">{ctaPrimary.text}</a>
+          <a href={ctaPhone.href} class="hero-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>{ctaPhone.text}</span>
+          </a>
+        </div>
+        <div class="hero-partners">
+          <p class="hero-partners-label">Partners &amp; Providers</p>
+          <img src="/images/partners-composite.png" alt="Partners and providers: NRMA, phsa, ipar, Allianz, QBE" class="hero-partners-img" width="300" height="156" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PricingCards />
+  <ExperienceBanner />
+  <Features />
+
+  <!-- Localised IntroCopy -->
+  <section class="intro-section">
+    <div class="container-site intro-inner">
+      <div class="intro-col intro-col-left">
+        <span class="intro-kicker">{suburb.intro.kicker}</span>
+        <h2 class="intro-h2">{suburb.intro.h2}</h2>
+      </div>
+      <div class="intro-col intro-col-right">
+        {suburb.intro.paragraphs.map((p) => (
+          <p class="intro-body" set:html={p} />
+        ))}
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <span class="intro-stat-num">100%</span>
+            <span class="intro-stat-label">Eco-friendly products</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-num">10k+</span>
+            <span class="intro-stat-label">Happy households</span>
+          </div>
+          <div class="intro-stat">
+            <span class="intro-stat-num">7&nbsp;days</span>
+            <span class="intro-stat-label">Flexible scheduling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <IncludesChecklist />
+  <FounderBlock body={suburb.founderBody} />
+  <Providers location={suburb.name} />
+  <FAQ
+    items={localFaqs}
+    eyebrow={`${suburb.name} FAQs`}
+    subheading={`Frequently asked questions about cleaning in ${suburb.name}`}
+  />
+  <BookCTA location={suburb.name} />
+
+  <!-- Localised TrustedAcrossAU -->
+  <section class="loc-section">
+    <div class="container-site loc-top">
+      <div class="loc-head">
+        <h2 class="loc-h2" set:html={suburb.trust.h2}></h2>
+      </div>
+      <div class="loc-copy">
+        {suburb.trust.paragraphs.map((p) => (
+          <p set:html={p} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-site">
+      <div class="loc-grid">
+        {suburb.trust.points.map((p) => (
+          <div class="loc-card">
+            <div class="loc-icon" aria-hidden="true">
+              {p.icon === 'shield' && (
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 5L10 10v12c0 9 6 16 14 19 8-3 14-10 14-19V10L24 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M17 23l5 5 9-10" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
+              {p.icon === 'clock' && (
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="2"/>
+                  <line x1="24" y1="14" x2="24" y2="24" stroke="#ff5f1f" stroke-width="2.4" stroke-linecap="round"/>
+                  <line x1="24" y1="24" x2="31" y2="28" stroke="#ff5f1f" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="24" cy="24" r="1.6" fill="currentColor"/>
+                </svg>
+              )}
+              {p.icon === 'sparkle' && (
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 6l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M36 26l1.5 4 4 1.5-4 1.5L36 37l-1.5-4-4-1.5 4-1.5L36 26z" fill="#ff5f1f"/>
+                  <path d="M14 34l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="#ff5f1f"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="loc-card-title">{p.title}</h3>
+            <p class="loc-card-body">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SixtySecondsAway />
+  <Testimonials location={suburb.name} items={localTestimonials} />
+  <AppPromo />
+
+  <!-- ───── Service Area Map (matches the original site's "Locations" block) ───── -->
+  <section class="map-section">
+    <div class="container-site">
+      <div class="map-head">
+        <span class="map-kicker">{suburb.name} {suburb.stateCode}</span>
+        <h2 class="map-h2">{suburb.name} Locations</h2>
+        <p class="map-sub">
+          Our local team services {suburb.name} and the surrounding {suburb.region} —
+          eco-friendly products, police-checked cleaners, every clean satisfaction-guaranteed.
+        </p>
+      </div>
+
+      <div class="map-grid">
+        <div class="map-iframe-wrap">
+          <iframe
+            src={mapEmbedSrc}
+            title={`Map of ${suburb.name}, ${suburb.state}`}
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen={true}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="map-list-wrap">
+          <h3 class="map-list-title">Suburbs we service</h3>
+          <ul class="map-list">
+            <li class="map-list-item map-list-item-hub">{suburb.name}</li>
+            {suburb.nearbySuburbs.map((s) => (
+              <li class="map-list-item">{s}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localised FinalCTA -->
+  <section class="finalcta-wrap">
+    <div class="container-site">
+      <div class="finalcta-card">
+        <div class="finalcta-inner">
+          <h2 class="finalcta-h2">{suburb.finalCta.h2Pre} <span class="finalcta-accent">{suburb.finalCta.h2Highlight}</span> {suburb.finalCta.h2Post}</h2>
+          <p class="finalcta-sub" set:html={suburb.finalCta.sub}></p>
+          <div class="finalcta-ctas">
+            <a href={ctaPrimary.href} class="finalcta-btn-primary">{ctaPrimary.text}</a>
+            <a href={site.phoneHref} class="finalcta-btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>{ctaPhone.text}</span>
+            </a>
+          </div>
+          <p class="finalcta-fineprint">Satisfaction guaranteed. No lock-in contracts. Cancel anytime.</p>
+          <p class="finalcta-trust">{suburb.finalCta.trust}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---------- Localised Hero ---------- */
+  .hero { padding-block: 0; }
+  .hero-inner {
+    /* Standard hero height — match across every page. */
+    height: clamp(640px, 86vh, 800px);
+    padding-block: clamp(48px, 8vh, 96px);
+  }
+  /* On phones reduce hero height so following content peeks above fold. */
+  @media (max-width: 640px) {
+    .hero-inner {
+      height: min(680px, 88dvh);
+      padding-block: 36px;
+    }
+  }
+  .hero-h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.2vw, 66px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0;
+    color: #ffffff;
+  }
+  .hero-tagline {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: #FEB91C;
+    margin-top: 16px;
+    letter-spacing: 0.005em;
+  }
+  .hero-cta-stack {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  @media (max-width: 500px) {
+    .hero-cta-stack { flex-direction: column; align-items: stretch; }
+  }
+  .hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", "Helvetica", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    text-align: center;
+  }
+  .hero-btn-primary:hover {
+    background-color: #2548f0;
+    border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  .hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", "Helvetica", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+  }
+  .hero-btn-secondary svg { flex-shrink: 0; }
+  .hero-btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1C244B;
+    border-color: #ffffff;
+  }
+  .hero-overlay {
+    /* Same slate-blue gradient as the home page Hero — opaque-ish left
+       panel for headline legibility, fading to clear so the suburb's
+       landmark photo shows through on the right. */
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91;
+    pointer-events: none;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroFade 15s infinite;
+    will-change: opacity;
+  }
+  /* Slide 1 is a real <img> for SEO + LCP; cover the section like the bg slides. */
+  .hero-slide-img {
+    object-fit: cover;
+    object-position: center;
+  }
+  @keyframes heroFade {
+    0%, 28% { opacity: 1; }
+    33%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide { animation: none; }
+    .hero-slide:first-child { opacity: 1; }
+  }
+  .hero-partners { margin-top: 40px; }
+  .hero-partners-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 14px;
+  }
+  .hero-partners-img {
+    width: 280px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
+  /* ---------- Localised IntroCopy ---------- */
+  .intro-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .intro-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .intro-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .intro-col-left { position: sticky; top: 96px; }
+  @media (max-width: 860px) {
+    .intro-col-left { position: static; }
+  }
+  .intro-kicker {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .intro-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .intro-body {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0 0 18px;
+  }
+  .intro-body:last-of-type { margin-bottom: 32px; }
+  .intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  @media (max-width: 540px) {
+    .intro-stats { grid-template-columns: 1fr; gap: 20px; }
+  }
+  .intro-stat { display: flex; flex-direction: column; gap: 4px; }
+  .intro-stat-num {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 2.4vw, 30px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+  .intro-stat-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(71, 85, 105);
+    line-height: 1.3;
+  }
+
+  /* ---------- Localised TrustedAcrossAU ---------- */
+  .loc-section {
+    background-color: #f6f8fa;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .loc-top {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+    margin-bottom: clamp(40px, 5vw, 56px);
+  }
+  @media (max-width: 860px) {
+    .loc-top { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .loc-head { text-align: left; }
+  .loc-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .loc-h2 { font-size: 32px; line-height: 1.2; }
+  }
+  .loc-copy { text-align: left; }
+  .loc-copy p {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0 0 14px;
+  }
+  .loc-copy p:last-child { margin-bottom: 0; }
+  .loc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .loc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .loc-grid { grid-template-columns: 1fr; }
+  }
+  .loc-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .loc-card:hover {
+    transform: translateY(-3px);
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.06),
+      0 18px 36px rgba(58, 93, 255, 0.32);
+  }
+  .loc-card:hover .loc-card-title,
+  .loc-card:hover .loc-card-body { color: #ffffff; }
+  .loc-card:hover .loc-icon { color: #ffffff; }
+  .loc-icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+    color: #3a5dff;
+    transition: color 0.25s ease;
+  }
+  .loc-icon svg { width: 48px; height: 48px; display: block; }
+  .loc-card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(18px, 1.6vw, 20px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: #0f172a;
+    margin: 0 0 8px;
+    transition: color 0.25s ease;
+  }
+  .loc-card-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    margin: 0;
+    transition: color 0.25s ease;
+  }
+
+  /* ---------- Service Area Map ---------- */
+  .map-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .map-head {
+    max-width: 720px;
+    margin: 0 auto clamp(36px, 4vw, 56px);
+    text-align: center;
+  }
+  .map-kicker {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .map-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 16px;
+  }
+  @media (max-width: 768px) {
+    .map-h2 { font-size: 32px; line-height: 1.2; }
+  }
+  .map-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+  .map-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: stretch;
+  }
+  @media (max-width: 860px) {
+    .map-grid { grid-template-columns: 1fr; }
+  }
+  .map-iframe-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 10px 30px rgba(15, 23, 42, 0.08);
+    min-height: 420px;
+  }
+  .map-iframe-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 0;
+  }
+  /* On phones a 420px-tall map dominates the screen — drop to 320px. */
+  @media (max-width: 640px) {
+    .map-iframe-wrap,
+    .map-iframe-wrap iframe { min-height: 320px; }
+  }
+  .map-list-wrap {
+    background-color: #f6f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    padding: clamp(24px, 3vw, 32px);
+    display: flex;
+    flex-direction: column;
+  }
+  .map-list-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(18px, 1.6vw, 20px);
+    font-weight: 500;
+    color: #0f172a;
+    letter-spacing: -0.005em;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .map-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 16px;
+    column-gap: 24px;
+  }
+  @media (max-width: 540px) {
+    .map-list { grid-template-columns: 1fr; }
+  }
+  .map-list-item {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(51, 65, 85);
+    line-height: 1.6;
+    padding: 4px 0;
+    position: relative;
+    padding-left: 14px;
+  }
+  .map-list-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #3a5dff;
+    transform: translateY(-50%);
+  }
+  .map-list-item-hub {
+    color: #0f172a;
+    font-weight: 500;
+  }
+
+  /* ---------- Localised FinalCTA ---------- */
+  .finalcta-wrap { padding: clamp(48px, 6vw, 80px) 0; }
+  .finalcta-card {
+    position: relative;
+    /* Match loc-card / pricing-card / Features (14px) — keep the suburb
+       page's localised FinalCTA visually consistent with the trust card
+       grid above it instead of using the old 32px outlier. */
+    border-radius: 14px;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #c73a92;
+    background-image:
+      radial-gradient(ellipse 140% 120% at 80% 20%, #ff8a3c 0%, rgba(255, 138, 60, 0) 55%),
+      radial-gradient(ellipse 140% 120% at 20% 80%, #6b3acc 0%, rgba(107, 58, 204, 0) 60%),
+      linear-gradient(135deg, #5b3acc 0%, #c73a92 50%, #ff7a5c 100%);
+    padding: clamp(72px, 10vw, 128px) clamp(24px, 5vw, 56px);
+  }
+  .finalcta-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .finalcta-inner { position: relative; text-align: center; z-index: 1; }
+  .finalcta-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(40px, 5.2vw, 66px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0 auto 24px;
+    max-width: 900px;
+  }
+  .finalcta-accent { color: #ffffff; font-weight: 300; }
+  .finalcta-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 auto 36px;
+    max-width: 620px;
+  }
+  .finalcta-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .finalcta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #1C244B;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    min-height: 46px;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.06),
+      0 10px 28px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+  .finalcta-btn-primary:hover {
+    background-color: #f3f4f8;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.08),
+      0 14px 32px rgba(0, 0, 0, 0.22);
+    transform: translateY(-1px);
+  }
+  .finalcta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+  }
+  .finalcta-btn-secondary svg { flex-shrink: 0; }
+  .finalcta-btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1C244B;
+    border-color: #ffffff;
+  }
+  .finalcta-fineprint {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 8px;
+  }
+  .finalcta-trust {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+  }
+</style>

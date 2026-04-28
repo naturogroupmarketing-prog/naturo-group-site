@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { site, ctaPrimary, ctaPhone } from '../data/site';
+import { suburbs } from '../data/suburbs';
+
+// Group suburbs by state for the hub directory. We sort within each group
+// by name so the alphabetised list reads naturally.
+const grouped = suburbs.reduce<Record<string, typeof suburbs>>((acc, s) => {
+  (acc[s.state] ||= []).push(s);
+  return acc;
+}, {});
+
+const stateOrder = ['New South Wales', 'Victoria', 'Queensland', 'South Australia', 'Western Australia', 'Tasmania', 'Australian Capital Territory', 'Northern Territory'];
+const orderedStates = Object.keys(grouped).sort((a, b) => {
+  const ai = stateOrder.indexOf(a);
+  const bi = stateOrder.indexOf(b);
+  if (ai === -1 && bi === -1) return a.localeCompare(b);
+  if (ai === -1) return 1;
+  if (bi === -1) return -1;
+  return ai - bi;
+});
+
+for (const state of orderedStates) {
+  grouped[state].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+const totalSuburbs = suburbs.length;
+const totalNearby = suburbs.reduce((acc, s) => acc + s.nearbySuburbs.length, 0);
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Areas We Serve', item: `${site.url}/areas-we-serve` },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Areas We Serve',
+  description: `Eco-friendly house cleaning across ${totalSuburbs} regions and ${totalNearby}+ surrounding suburbs Australia-wide.`,
+  url: `${site.url}/areas-we-serve`,
+  hasPart: suburbs.map((s) => ({
+    '@type': 'WebPage',
+    name: `${s.name} cleaners`,
+    url: `${site.url}/${s.slug}`,
+  })),
+};
+---
+
+<Layout
+  title="Areas We Serve | NATURO GROUP Cleaners Australia-Wide"
+  description={`Eco-friendly house cleaning across ${totalSuburbs} regions and ${totalNearby}+ surrounding suburbs Australia-wide. Find your local NATURO GROUP team.`}
+  schema={[breadcrumb, collectionSchema]}
+>
+  <!-- ───── Hero ───── -->
+  <section class="aws-hero">
+    <div class="container-site aws-hero-inner">
+      <p class="aws-kicker">Find your local team</p>
+      <h1 class="aws-h1">Eco-friendly cleaners — Australia-wide</h1>
+      <p class="aws-sub">
+        Trained, police-checked NATURO GROUP cleaners service {totalSuburbs} regional hubs and {totalNearby}+ surrounding suburbs across NSW, QLD and VIC. Choose your area below.
+      </p>
+      <div class="aws-cta">
+        <a href={ctaPrimary.href} class="aws-btn-primary">{ctaPrimary.text}</a>
+        <a href={ctaPhone.href} class="aws-btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>{ctaPhone.text}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <!-- ───── Directory ───── -->
+  <section class="aws-dir">
+    <div class="container-site">
+      {orderedStates.map((state) => (
+        <div class="aws-state-block">
+          <header class="aws-state-head">
+            <h2 class="aws-state-h2">{state}</h2>
+            <p class="aws-state-count">{grouped[state].length} regions serviced</p>
+          </header>
+          <div class="aws-grid">
+            {grouped[state].map((s) => (
+              <a href={`/${s.slug}`} class="aws-card">
+                <div class="aws-card-img-wrap">
+                  <img
+                    src={s.heroImage}
+                    alt={s.heroImageAlt}
+                    width="320"
+                    height="200"
+                    loading="lazy"
+                    decoding="async"
+                    class="aws-card-img"
+                  />
+                </div>
+                <div class="aws-card-body">
+                  <h3 class="aws-card-name">{s.name}</h3>
+                  <p class="aws-card-region">{s.region} · {s.stateCode}</p>
+                  <p class="aws-card-nearby">
+                    Also serves {s.nearbySuburbs.slice(0, 3).join(', ')}{s.nearbySuburbs.length > 3 ? ` and ${s.nearbySuburbs.length - 3} more` : ''}.
+                  </p>
+                  <span class="aws-card-cta">View {s.name} cleaners →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>
+
+<style>
+  /* ---------- Hero ---------- */
+  .aws-hero {
+    background: linear-gradient(135deg, #1c244b 0%, #3a4d61 100%);
+    color: #ffffff;
+    padding: clamp(72px, 9vw, 120px) 0;
+  }
+  .aws-hero-inner { max-width: 880px; }
+  .aws-kicker {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #FEB91C;
+    margin: 0 0 14px;
+  }
+  .aws-h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(40px, 5.2vw, 66px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0 0 18px;
+  }
+  .aws-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.4vw, 19px);
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 28px;
+    max-width: 680px;
+  }
+  .aws-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .aws-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .aws-btn-primary:hover { background-color: #2548f0; transform: translateY(-1px); }
+  .aws-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .aws-btn-secondary:hover { background-color: #ffffff; color: #1C244B; }
+
+  /* ---------- Directory ---------- */
+  .aws-dir {
+    background-color: #ffffff;
+    padding: clamp(72px, 9vw, 120px) 0;
+  }
+  .aws-state-block { margin-bottom: clamp(56px, 7vw, 88px); }
+  .aws-state-block:last-child { margin-bottom: 0; }
+  .aws-state-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: clamp(24px, 3vw, 36px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  }
+  .aws-state-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .aws-state-count {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(100, 116, 139);
+    margin: 0;
+  }
+  .aws-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 960px) {
+    .aws-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .aws-grid { grid-template-columns: 1fr; }
+  }
+  .aws-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .aws-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(58, 93, 255, 0.4);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+  }
+  .aws-card-img-wrap {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #eef2f7;
+  }
+  .aws-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .aws-card:hover .aws-card-img { transform: scale(1.04); }
+  .aws-card-body { padding: 18px 20px 20px; }
+  .aws-card-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: #0f172a;
+    letter-spacing: -0.005em;
+    margin: 0 0 4px;
+  }
+  .aws-card-region {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 10px;
+  }
+  .aws-card-nearby {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(71, 85, 105);
+    margin: 0 0 14px;
+  }
+  .aws-card-cta {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #3a5dff;
+  }
+</style>

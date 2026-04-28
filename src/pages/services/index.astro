@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import IntroCopy from '../../components/IntroCopy.astro';
+import PricingCards from '../../components/PricingCards.astro';
+import Features from '../../components/Features.astro';
+import IncludesChecklist from '../../components/IncludesChecklist.astro';
+import Providers from '../../components/Providers.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppPromo from '../../components/AppPromo.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { site, services, faqs } from '../../data/site';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Cleaning Services',
+    url: `${site.url}/services`,
+    description:
+      'Compare every Naturo Group cleaning service — regular house cleaning, deep clean, and end-of-lease bond clean. Eco-friendly products, police-checked cleaners, transparent pricing.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.url}/services` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: services.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${site.url}/services/${s.slug}`,
+      name: s.title,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Cleaning Services"
+  description="Compare house cleaning, deep cleans and end-of-lease bond cleans. Eco-friendly, police-checked, fully insured. Book online in 60 seconds."
+  schema={schema}
+>
+  <!-- 1. Hero -->
+  <ServiceHero
+    eyebrow="Our services"
+    heading="Cleaning Services<br />Tailored<br />to your home"
+  />
+
+  <!-- 2. Intro (about Naturo) -->
+  <IntroCopy />
+
+  <!-- 3. Pricing — the main "what we do" view on the index page -->
+  <PricingCards />
+
+  <!-- 4. What can be included -->
+  <IncludesChecklist />
+
+  <!-- 5. Why choose Naturo -->
+  <Features />
+
+  <!-- 6. Trusted-by logos -->
+  <Providers />
+
+  <!-- 7. Social proof -->
+  <Testimonials />
+
+  <!-- 8. FAQ -->
+  <FAQ />
+
+  <!-- 9. App promo -->
+  <AppPromo />
+
+  <!-- 10. Final CTA banner -->
+  <FinalCTA />
+</Layout>

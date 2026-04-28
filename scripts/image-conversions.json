@@ -1,0 +1,18 @@
+[
+  {
+    "from": "book-cta.png",
+    "to": "book-cta.jpg"
+  },
+  {
+    "from": "hero-bathroom-wide.png",
+    "to": "hero-bathroom-wide.jpg"
+  },
+  {
+    "from": "suburbs/cleaners-central-coast.png",
+    "to": "suburbs/cleaners-central-coast.jpg"
+  },
+  {
+    "from": "suburbs/cleaners-toorak.png",
+    "to": "suburbs/cleaners-toorak.jpg"
+  }
+]

@@ -1,0 +1,86 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { site } from '../data/site';
+---
+
+<LegalPage
+  title="Cookies & Data Policy"
+  description="How Naturo Group uses cookies, browser storage and similar technologies on this website."
+  updated="27 April 2026"
+>
+  <p>
+    This policy explains how {site.legalName} ("we", "our", "us") uses cookies, browser
+    storage and similar tracking technologies on the {site.name} website. It should be read
+    alongside our <a href="/privacy-policies">Privacy Policy</a>.
+  </p>
+
+  <h2>1. What is a cookie?</h2>
+  <p>
+    A cookie is a small text file that a website places on your device to store information.
+    Similar technologies include local storage and session storage (browser-based key/value
+    stores), pixels (tiny images used for tracking) and SDKs embedded by analytics or
+    advertising providers.
+  </p>
+
+  <h2>2. Categories we use</h2>
+  <h3>Strictly necessary</h3>
+  <p>
+    These are required for the site to function. We use browser <code>sessionStorage</code>
+    to remember the contact details you have entered in our quote calculator so you do not
+    have to type them twice. This data lives only in your browser tab and is cleared when
+    you close it.
+  </p>
+
+  <h3>Analytics</h3>
+  <p>
+    We may use Google Analytics 4 to understand which pages are visited, how long visitors
+    stay, and where traffic comes from. Analytics cookies are only set if you accept them
+    in our cookie banner.
+  </p>
+
+  <h3>Marketing & retargeting</h3>
+  <p>
+    With your consent, we may use the Meta (Facebook/Instagram) Pixel and Google Ads tags
+    to show you relevant advertising on those platforms. These tags create custom audiences
+    based on actions taken on our site (for example, requesting a quote) so we can market
+    our services to people who are interested in them.
+  </p>
+
+  <h2>3. Managing your preferences</h2>
+  <p>
+    You can decline non-essential cookies in our cookie banner the first time you visit and
+    change your preference at any time. You can also:
+  </p>
+  <ul>
+    <li>Block or delete cookies in your browser settings.</li>
+    <li>Opt out of personalised advertising via <a href="https://www.youronlinechoices.com.au/" rel="noopener" target="_blank">youronlinechoices.com.au</a>.</li>
+    <li>Opt out of Google Analytics with the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">Google Analytics opt-out add-on</a>.</li>
+    <li>Adjust your Meta ad preferences inside Facebook / Instagram.</li>
+  </ul>
+  <p>
+    Disabling cookies may affect how the site functions; for example the quote calculator
+    may not remember your details between page visits.
+  </p>
+
+  <h2>4. Lead capture data</h2>
+  <p>
+    When you submit your name, phone and email to view your instant price, that information
+    is sent to our form intake provider (currently Formspree, formspree.io) and to any
+    analytics or advertising tools you have consented to. The data is used to send your
+    quote, follow up with you and, where you have consented, to market our services.
+  </p>
+
+  <h2>5. Updates</h2>
+  <p>
+    We may update this policy as we add or remove tools. Material changes will be reflected
+    in the "Last updated" date and surfaced through our cookie banner.
+  </p>
+
+  <h2>6. Contact</h2>
+  <p>
+    Questions about cookies or data:<br />
+    {site.legalName}<br />
+    {site.abn}<br />
+    Email: <a href={site.emailHref}>{site.email}</a>
+  </p>
+</LegalPage>

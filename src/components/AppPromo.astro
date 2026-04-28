@@ -1,0 +1,244 @@
+---
+import { ctaPrimary } from '../data/site';
+
+const features = [
+  'Book, reschedule & cancel in seconds',
+  'Track your cleaner in real time',
+  'Secure payments &amp; instant receipts',
+];
+---
+
+<section class="app-section">
+  <div class="container-site app-grid">
+    <div class="app-media">
+      <div class="app-media-glow" aria-hidden="true"></div>
+      <img
+        src="/images/app-phone.jpg"
+        alt="Eco-friendly house cleaning service by NATURO GROUP, showcasing easy mobile booking on a smartphone."
+        width="500"
+        height="500"
+        class="app-image"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="app-content">
+      <span class="app-kicker">The Naturo App</span>
+      <h2 class="app-h2">Your clean, managed from your pocket</h2>
+      <p class="app-sub">Book a clean, manage recurring visits, chat with your cleaner and pay securely &mdash; all from the Naturo Group app.</p>
+
+      <ul class="app-features">
+        {features.map((f) => (
+          <li>
+            <span class="app-tick" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span set:html={f} />
+          </li>
+        ))}
+      </ul>
+
+      <div class="app-ctas">
+        <a href={ctaPrimary.href} aria-label="Launch the Naturo web app" class="app-btn app-btn-web">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="app-btn-text">
+            <span class="app-btn-small">Launch the</span>
+            <span class="app-btn-big">Web App</span>
+          </span>
+        </a>
+        <div class="app-badge" aria-label="Police-checked and fully insured">
+          <span class="app-badge-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 4 5v6c0 5 3.4 9.5 8 11 4.6-1.5 8-6 8-11V5l-8-3z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </span>
+          <span class="app-btn-text">
+            <span class="app-btn-small">Trusted &amp; Verified</span>
+            <span class="app-btn-big">Police-checked · Insured</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .app-section {
+    background-color: #ffffff;
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  @media (max-width: 860px) {
+    .app-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .app-media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px;
+  }
+  @media (max-width: 860px) {
+    .app-media { min-height: 420px; }
+  }
+  .app-media-glow {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 55% at 50% 50%, rgba(58, 93, 255, 0.22) 0%, rgba(58, 93, 255, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .app-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    /* Match the rest of the card system (loc-card / pricing-card /
+       Features / FinalCTA all use 14px) so the phone mockup's corners
+       line up with the surrounding card radii. */
+    border-radius: 14px;
+    filter: drop-shadow(0 30px 50px rgba(15, 23, 42, 0.18));
+  }
+  .app-kicker {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .app-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 16px;
+  }
+  @media (max-width: 768px) {
+    .app-h2 { font-size: 32px; line-height: 1.2; }
+  }
+  .app-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    margin: 0 0 24px;
+  }
+  .app-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .app-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f172a;
+  }
+  .app-tick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: rgba(58, 93, 255, 0.1);
+    color: #3a5dff;
+    flex-shrink: 0;
+  }
+  .app-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .app-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: 1px solid #0f172a;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    min-height: 54px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 8px 20px rgba(15, 23, 42, 0.1);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .app-btn:hover {
+    background-color: #1C244B;
+    border-color: #1C244B;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.08),
+      0 10px 28px rgba(15, 23, 42, 0.14);
+    transform: translateY(-1px);
+  }
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 10px;
+    padding: 10px 18px;
+    min-height: 54px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+  .app-badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: rgba(58, 93, 255, 0.1);
+    color: #3a5dff;
+    flex-shrink: 0;
+  }
+  .app-btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .app-btn-small {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .app-btn-big {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+  }
+</style>

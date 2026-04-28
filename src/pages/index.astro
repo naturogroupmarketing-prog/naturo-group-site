@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Hero from '../components/Hero.astro';
+import PricingCards from '../components/PricingCards.astro';
+import ExperienceBanner from '../components/ExperienceBanner.astro';
+import Features from '../components/Features.astro';
+import IntroCopy from '../components/IntroCopy.astro';
+import IncludesChecklist from '../components/IncludesChecklist.astro';
+import FounderBlock from '../components/FounderBlock.astro';
+import Providers from '../components/Providers.astro';
+import FAQ from '../components/FAQ.astro';
+import BookCTA from '../components/BookCTA.astro';
+import TrustedAcrossAU from '../components/TrustedAcrossAU.astro';
+import SixtySecondsAway from '../components/SixtySecondsAway.astro';
+import Testimonials from '../components/Testimonials.astro';
+import AppPromo from '../components/AppPromo.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site, faqs } from '../data/site';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: site.name,
+    description: site.description,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
+    image: `${site.url}/og-default.jpg`,
+    priceRange: '$$',
+    areaServed: 'Australia',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="House Cleaning Australia | Trusted & Reliable"
+  description="Eco-friendly house cleaning across Australia. NDIS, aged care, DVA and insurance jobs welcome. Police-checked, fully insured cleaners. Get an instant price."
+  schema={schema}
+>
+  <Hero />
+  <PricingCards />
+  <ExperienceBanner />
+  <Features />
+  <IntroCopy />
+  <IncludesChecklist />
+  <FounderBlock />
+  <Providers />
+  <FAQ />
+  <BookCTA />
+  <TrustedAcrossAU />
+  <SixtySecondsAway />
+  <Testimonials />
+  <AppPromo />
+  <FinalCTA />
+</Layout>

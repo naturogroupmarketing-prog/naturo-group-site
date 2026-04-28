@@ -1,0 +1,68 @@
+[
+  {
+    "i": 0,
+    "h": 44,
+    "y": 115,
+    "bgColor": "rgb(247, 247, 247)",
+    "role": "top utility bar (login + socials, hidden on tablet/mobile)",
+    "links": [
+      {"href": "#popup-login", "text": "login"},
+      {"href": "https://www.facebook.com/naturogroup", "text": "Facebook"},
+      {"href": "https://www.instagram.com/naturogroup/", "text": "Instagram"},
+      {"href": "https://www.youtube.com/@NGclean", "text": "Youtube"}
+    ]
+  },
+  {"i": 1, "role": "spacer/empty container"},
+  {
+    "i": 2,
+    "h": 115,
+    "y": 159,
+    "role": "header / nav",
+    "logo": "https://naturogroup.com.au/wp-content/uploads/2024/12/v2Shopiy-Logo_430x.avif",
+    "logoAlt": "Eco-friendly cleaning service by NATURO GROUP, showcasing natural products for deep, regular, and end-of-lease cleaning.",
+    "navLinks": [
+      {"text": "Services", "children": [
+        {"text": "House cleaning", "href": "/service-house-cleaning/"},
+        {"text": "End of Lease Cleaning", "href": "/services-end-of-lease/"},
+        {"text": "NDIS Cleaning", "href": "/service-ndis-cleaning/"},
+        {"text": "Insurance", "href": "/service-insurance/"},
+        {"text": "Veterans", "href": "/service-veterans/"},
+        {"text": "Aged Care", "href": "/service-aged-care/"}
+      ]},
+      {"text": "Resource", "href": "/resource/"},
+      {"text": "Career", "href": "/career"}
+    ]
+  },
+  {"i": 3, "role": "spacer/empty container"},
+  {
+    "i": 4,
+    "h": 832,
+    "y": 274,
+    "role": "Hero section",
+    "h1": "eco-friendly House Cleaning in Australia",
+    "tagline": "Trusted, Trained and Thorough",
+    "ctas": [
+      {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      {"text": "1300 876 472", "href": "tel:1300876472"}
+    ],
+    "partnersLabel": "Partners & Providers",
+    "partnersLogos": "https://naturogroup.com.au/wp-content/uploads/2025/03/partners-logos-1-e1742184963841.png"
+  },
+  {"i": 5, "role": "spacer/empty"},
+  {
+    "i": 6,
+    "h": 183,
+    "y": 1106,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "Section heading",
+    "h2": "Choose Your Clean"
+  },
+  {
+    "i": 7,
+    "h": 98,
+    "y": 1289,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "Section subheading",
+    "h3": "Pick your perfect house cleaning service"
+  }
+]

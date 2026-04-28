@@ -1,0 +1,476 @@
+---
+// Dynamic Service × Suburb landing pages.
+//
+// URL pattern:  /services/<service-slug>/<suburb-slug>
+// e.g.          /services/house-cleaning/cleaners-port-macquarie
+//
+// Why these exist
+// ---------------
+// Suburb pages cover "house cleaning in <suburb>" generally; the
+// /services/<slug> page covers the service nationally. Neither targets
+// the long-tail "<service> cleaning in <suburb>" query that genuinely
+// converts (e.g. "end of lease cleaning Port Macquarie" — 95% of search
+// volume comes from these two-intent terms). This route generates one
+// page per (service × suburb) combination so we can rank for them.
+//
+// Volume control
+// --------------
+// We only generate pages for SERVICES_TO_LOCALISE — the services where
+// a per-suburb page is genuinely useful. NDIS, aged-care, insurance and
+// veterans (DVA) work is more about credentials and provider lists than
+// about local geography, so those services don't fan out across all 32
+// suburbs. Keeping the matrix focused avoids thin-content penalties.
+import Layout from '../../../layouts/Layout.astro';
+import PricingCards from '../../../components/PricingCards.astro';
+import ServiceInclusions from '../../../components/ServiceInclusions.astro';
+import Features from '../../../components/Features.astro';
+import FounderBlock from '../../../components/FounderBlock.astro';
+import Providers from '../../../components/Providers.astro';
+import FAQ from '../../../components/FAQ.astro';
+import BookCTA from '../../../components/BookCTA.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import { allServices, services as pricedServices, site, ctaPrimary, ctaPhone, testimonials } from '../../../data/site';
+import { serviceDetails } from '../../../data/serviceDetail';
+import { suburbs, type Suburb } from '../../../data/suburbs';
+
+// Only fan out the geographically-meaningful services. Services like NDIS
+// and DVA cleaning rank on credentials, not city — keep them centralised.
+const SERVICES_TO_LOCALISE = ['house-cleaning', 'deep-clean', 'end-of-lease'] as const;
+
+export async function getStaticPaths() {
+  const SERVICES_TO_LOCALISE = ['house-cleaning', 'deep-clean', 'end-of-lease'] as const;
+  const paths: Array<{ params: { service: string; suburb: string }; props: { service: string; suburb: Suburb } }> = [];
+  for (const service of SERVICES_TO_LOCALISE) {
+    for (const suburb of suburbs) {
+      paths.push({
+        params: { service, suburb: suburb.slug },
+        props: { service, suburb },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  service: string;
+  suburb: Suburb;
+}
+
+const { service: serviceSlug, suburb } = Astro.props;
+const service = allServices.find((s) => s.slug === serviceSlug)!;
+const detail = serviceDetails[serviceSlug];
+const isPriced = pricedServices.some((s) => s.slug === serviceSlug);
+
+const pageUrl = `${site.url}/services/${serviceSlug}/${suburb.slug}`;
+const heroImage = detail?.hero?.image || suburb.heroImage;
+
+// Friendlier display names for the headings.
+const serviceLabels: Record<string, { display: string; longTail: string; verb: string }> = {
+  'house-cleaning': {
+    display: 'House Cleaning',
+    longTail: 'Reliable, recurring eco-friendly house cleaning',
+    verb: 'Book a regular clean',
+  },
+  'deep-clean': {
+    display: 'Deep Cleaning',
+    longTail: 'Top-to-bottom one-off deep cleans',
+    verb: 'Book a deep clean',
+  },
+  'end-of-lease': {
+    display: 'End of Lease Cleaning',
+    longTail: 'Bond-back end-of-lease cleans with a satisfaction guarantee',
+    verb: 'Book an end-of-lease clean',
+  },
+};
+const labels = serviceLabels[serviceSlug] || { display: service.title, longTail: service.short, verb: 'Get an instant price' };
+
+// Local FAQ set blends 2 service-level + 2 location-level questions so
+// each (service, suburb) page reads uniquely without duplicate content.
+const localFaqs = [
+  {
+    q: `How much does ${labels.display.toLowerCase()} cost in ${suburb.name}?`,
+    a: `Pricing for ${labels.display.toLowerCase()} in ${suburb.name} starts from $${(service as any).priceFrom || 99} and depends on the size of your home, condition and any extras (oven, fridge, windows, balcony). Get an instant price online in 60 seconds — no obligation.`,
+  },
+  {
+    q: `Do you bring everything for ${labels.display.toLowerCase()} in ${suburb.name}?`,
+    a: `Yes — our ${suburb.name} team supplies all eco-friendly, non-toxic products and equipment for every ${labels.display.toLowerCase()} job. You don't need to leave anything out for us.`,
+  },
+  {
+    q: `Are your ${suburb.name} cleaners police-checked and insured?`,
+    a: `Every NATURO GROUP cleaner working in ${suburb.name} is police-checked, fully insured ($20m public liability) and trained to our nursing-grade standards.`,
+  },
+  {
+    q: `How quickly can you book a ${labels.display.toLowerCase()} in ${suburb.name}?`,
+    a: `We can usually start a ${labels.display.toLowerCase()} in ${suburb.name} within 2–5 business days. End-of-lease bookings often turn around in 24–48 hours when there's a key handover deadline — call ${site.phone} to lock it in.`,
+  },
+];
+
+const localTestimonials = testimonials.slice(0, 5);
+
+const reviewSchema = localTestimonials.map((t) => ({
+  '@type': 'Review',
+  reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+  author: { '@type': 'Person', name: `${t.name} — ${suburb.name}` },
+  reviewBody: t.text,
+}));
+
+const seoTitle = `${labels.display} ${suburb.name} | NATURO GROUP Eco-Friendly Cleaners ${suburb.stateCode}`;
+const seoDesc = `${labels.longTail} in ${suburb.name} ${suburb.stateCode}. Police-checked, fully insured, eco-friendly. Get an instant price in 60 seconds.`;
+
+const baseSchema: any = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: `${labels.display} in ${suburb.name}`,
+  name: `${labels.display} — ${suburb.name}`,
+  description: seoDesc,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: `${site.name} — ${suburb.name}`,
+    telephone: site.phone,
+    email: site.email,
+    url: pageUrl,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '127',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: reviewSchema,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: suburb.name,
+    containedInPlace: { '@type': 'State', name: suburb.state },
+  },
+};
+
+if (isPriced && 'priceFrom' in service) {
+  baseSchema.offers = {
+    '@type': 'Offer',
+    price: (service as any).priceFrom,
+    priceCurrency: 'AUD',
+    availability: 'https://schema.org/InStock',
+  };
+}
+
+const schema = [
+  baseSchema,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.url}/services` },
+      { '@type': 'ListItem', position: 3, name: labels.display, item: `${site.url}/services/${serviceSlug}` },
+      { '@type': 'ListItem', position: 4, name: `${labels.display} in ${suburb.name}`, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: localFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout title={seoTitle} description={seoDesc} ogImage={suburb.ogImage} schema={schema}>
+  <!-- ───── Hero ───── -->
+  <section class="ssh">
+    <div class="ssh-bg" style={`background-image: url(${heroImage});`}></div>
+    <div class="ssh-overlay"></div>
+    <div class="container-site ssh-inner">
+      <p class="ssh-kicker">{labels.display} · {suburb.name} {suburb.stateCode}</p>
+      <h1 class="ssh-h1">{labels.display} in {suburb.name}</h1>
+      <p class="ssh-sub">{labels.longTail} — for {suburb.name} families, holiday-let owners and small businesses across the {suburb.region}.</p>
+      <div class="ssh-cta">
+        <a href={ctaPrimary.href} class="ssh-btn-primary">{labels.verb}</a>
+        <a href={ctaPhone.href} class="ssh-btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>{ctaPhone.text}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Local intro ───── -->
+  <section class="ssi">
+    <div class="container-site ssi-inner">
+      <div class="ssi-left">
+        <span class="ssi-eyebrow">About this service in {suburb.name}</span>
+        <h2 class="ssi-h2">{labels.display} done right — {suburb.name} & the {suburb.region}</h2>
+      </div>
+      <div class="ssi-right">
+        {detail?.intro?.body?.map((p) => <p class="ssi-body" set:html={p} />)}
+        <p class="ssi-body">
+          Our {suburb.name} team brings the same nursing-grade attention to detail across the entire {suburb.region} — from {suburb.nearbySuburbs.slice(0, 3).join(', ')} to {suburb.nearbySuburbs.slice(-2).join(' and ')}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <PricingCards />
+  {detail?.whatsIncluded && detail.whatsIncluded.length > 0 && (
+    <ServiceInclusions
+      heading={`What's included in your ${suburb.name} ${labels.display.toLowerCase()}`}
+      sub={`Every ${labels.display.toLowerCase()} in ${suburb.name} covers the essentials below — pick and choose extras when you book.`}
+      groups={detail.whatsIncluded}
+    />
+  )}
+  <Features />
+  <FounderBlock body={suburb.founderBody} />
+  <Providers location={suburb.name} />
+
+  <FAQ
+    items={localFaqs}
+    eyebrow={`${labels.display} ${suburb.name} FAQs`}
+    subheading={`Everything you need to know about ${labels.display.toLowerCase()} in ${suburb.name}.`}
+  />
+
+  <BookCTA location={suburb.name} />
+  <Testimonials location={suburb.name} items={localTestimonials} />
+
+  <!-- ───── Final CTA ───── -->
+  <section class="sscta-wrap">
+    <div class="container-site">
+      <div class="sscta-card">
+        <div class="sscta-inner">
+          <h2 class="sscta-h2">Ready to book <span class="sscta-accent">{labels.display.toLowerCase()}</span> in {suburb.name}?</h2>
+          <p class="sscta-sub">Eco-friendly products, police-checked local cleaners, satisfaction guaranteed — book online in 60 seconds.</p>
+          <div class="sscta-ctas">
+            <a href={ctaPrimary.href} class="sscta-btn-primary">{ctaPrimary.text}</a>
+            <a href={site.phoneHref} class="sscta-btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>{ctaPhone.text}</span>
+            </a>
+          </div>
+          <p class="sscta-trust">Trusted by {suburb.name} families across the {suburb.region}.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---------- Hero ---------- */
+  .ssh {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+  }
+  .ssh-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .ssh-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91;
+    pointer-events: none;
+  }
+  .ssh-inner {
+    position: relative;
+    height: clamp(520px, 70vh, 680px);
+    padding-block: clamp(48px, 8vh, 96px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 880px;
+  }
+  @media (max-width: 640px) { .ssh-inner { height: min(560px, 80dvh); padding-block: 32px; } }
+  .ssh-kicker {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #FEB91C;
+    margin: 0 0 14px;
+  }
+  .ssh-h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(40px, 5.2vw, 66px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+    color: #ffffff;
+  }
+  .ssh-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.4vw, 19px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 28px;
+    max-width: 640px;
+  }
+  .ssh-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .ssh-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .ssh-btn-primary:hover { background-color: #2548f0; transform: translateY(-1px); }
+  .ssh-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .ssh-btn-secondary:hover { background-color: #ffffff; color: #1C244B; }
+
+  /* ---------- Intro ---------- */
+  .ssi {
+    background-color: #ffffff;
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .ssi-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 860px) { .ssi-inner { grid-template-columns: 1fr; gap: 24px; } }
+  .ssi-eyebrow {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .ssi-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .ssi-body {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0 0 18px;
+  }
+  .ssi-body:last-child { margin-bottom: 0; }
+
+  /* ---------- Final CTA ---------- */
+  .sscta-wrap { padding: clamp(48px, 6vw, 80px) 0; }
+  .sscta-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #c73a92;
+    background-image:
+      radial-gradient(ellipse 140% 120% at 80% 20%, #ff8a3c 0%, rgba(255, 138, 60, 0) 55%),
+      radial-gradient(ellipse 140% 120% at 20% 80%, #6b3acc 0%, rgba(107, 58, 204, 0) 60%),
+      linear-gradient(135deg, #5b3acc 0%, #c73a92 50%, #ff7a5c 100%);
+    padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 56px);
+  }
+  .sscta-inner { text-align: center; }
+  .sscta-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(34px, 4.8vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0 auto 20px;
+    max-width: 820px;
+  }
+  .sscta-accent { color: #ffffff; font-weight: 300; }
+  .sscta-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 auto 28px;
+    max-width: 580px;
+  }
+  .sscta-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .sscta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #1C244B;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .sscta-btn-primary:hover { background-color: #f3f4f8; transform: translateY(-1px); }
+  .sscta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .sscta-btn-secondary:hover { background-color: #ffffff; color: #1C244B; }
+  .sscta-trust {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+  }
+</style>

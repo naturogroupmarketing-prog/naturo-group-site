@@ -1,0 +1,115 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { site } from '../data/site';
+---
+
+<LegalPage
+  title="Terms of Service"
+  description="The terms that apply when you request a quote or book a cleaning service with Naturo Group."
+  updated="27 April 2026"
+>
+  <p>
+    These Terms of Service ("Terms") govern your use of the {site.name} website and the
+    cleaning services provided by {site.legalName} ({site.abn}) ("Naturo Group", "we",
+    "our", "us"). By requesting a quote, making a booking or using our website, you agree to
+    these Terms.
+  </p>
+
+  <h2>1. Quotes and pricing</h2>
+  <ul>
+    <li>Online prices shown by our instant calculator are estimates based on the information you provide.</li>
+    <li>Final pricing may vary if the actual property condition, size or scope differs from what was selected.</li>
+    <li>Prices include GST unless otherwise stated and are quoted in Australian Dollars.</li>
+    <li>Quotes are valid for 30 days from the date provided.</li>
+  </ul>
+
+  <h2>2. Bookings</h2>
+  <p>
+    A booking is confirmed when we send you written confirmation (email or SMS) of the
+    appointment date, time and address. You must provide accurate access details and notify
+    us of any pets, alarms, hazards or special requirements before the booking.
+  </p>
+
+  <h2>3. Cancellations and rescheduling</h2>
+  <ul>
+    <li>Cancel or reschedule free of charge with at least 48 hours' notice.</li>
+    <li>Cancellations within 24-48 hours may incur a 50% cancellation fee.</li>
+    <li>Cancellations within 24 hours, or lock-outs on arrival, may be charged in full.</li>
+    <li>We may need to reschedule due to illness, weather or unforeseen events; we will give you as much notice as possible.</li>
+  </ul>
+
+  <h2>4. Satisfaction guarantee</h2>
+  <p>
+    If you are not satisfied with any aspect of our work, contact us within 24 hours of the
+    clean. We will return to address the issue at no additional cost where possible. This
+    guarantee does not displace your rights under the Australian Consumer Law.
+  </p>
+
+  <h2>5. End of lease (bond) cleaning</h2>
+  <p>
+    End of lease cleans include a bond-back re-clean if your agent identifies cleaning issues
+    within 72 hours of the clean. Re-cleans are limited to items on the original scope and
+    require photographic evidence and access to the property. Repairs, restorations,
+    chemical treatments for severe contamination, mould remediation and pest control are not
+    included.
+  </p>
+
+  <h2>6. Funded programs (NDIS, DVA, Aged Care, Insurance)</h2>
+  <p>
+    Where you are funded under the NDIS, DVA, an Aged Care package, an insurance claim or a
+    similar program, you confirm that you are eligible and that you have authority to engage
+    us. We will invoice your nominated plan manager, case manager or insurer where supported.
+    You remain responsible for any amounts that are not approved or paid by the funding body.
+  </p>
+
+  <h2>7. Payment</h2>
+  <p>
+    Payment is due on the terms stated on your invoice. Online payments are securely
+    processed by our payment provider. Overdue accounts may be subject to recovery action
+    and reasonable recovery costs.
+  </p>
+
+  <h2>8. Liability</h2>
+  <p>
+    Our cleaners are fully insured. We are not liable for pre-existing damage, items that
+    are inherently fragile, valuables left in plain sight, or loss caused by inaccurate
+    information you have provided. To the extent permitted by law, our liability for any
+    claim is limited to the value of the service supplied. Nothing in these Terms excludes
+    rights you have under the Australian Consumer Law.
+  </p>
+
+  <h2>9. Site of work</h2>
+  <p>
+    You confirm that you are entitled to authorise cleaning at the address provided, that
+    the premises are safe to work in, and that you will provide running water, electricity
+    and reasonable access. We may decline or stop a job where the site is unsafe, where
+    biohazards are present without prior notice, or where staff feel unsafe.
+  </p>
+
+  <h2>10. Website content</h2>
+  <p>
+    The content on this website is for general information only. We make no warranty that
+    the website will be uninterrupted or error-free. Material on this website is
+    {site.name}'s intellectual property and may not be reproduced without permission.
+  </p>
+
+  <h2>11. Privacy</h2>
+  <p>
+    We handle your personal information in accordance with our
+    <a href="/privacy-policies">Privacy Policy</a>.
+  </p>
+
+  <h2>12. Governing law</h2>
+  <p>
+    These Terms are governed by the laws of New South Wales, Australia. The parties submit
+    to the exclusive jurisdiction of the courts of that State.
+  </p>
+
+  <h2>13. Contact</h2>
+  <p>
+    {site.legalName}<br />
+    {site.abn}<br />
+    Email: <a href={site.emailHref}>{site.email}</a><br />
+    Phone: <a href={site.phoneHref}>{site.phone}</a>
+  </p>
+</LegalPage>

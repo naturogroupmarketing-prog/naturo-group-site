@@ -1,0 +1,26 @@
+---
+type Width = 'narrow' | 'default' | 'wide';
+
+interface Props {
+  width?: Width;
+  class?: string;
+  as?: string;
+}
+
+const { width = 'default', class: className = '', as: Tag = 'div' } = Astro.props;
+---
+
+<Tag class:list={['container-base', `container-${width}`, className]}>
+  <slot />
+</Tag>
+
+<style>
+  .container-base {
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2rem);
+    width: 100%;
+  }
+  .container-narrow { max-width: var(--container-narrow); }
+  .container-default { max-width: var(--container); }
+  .container-wide { max-width: var(--container-wide); }
+</style>

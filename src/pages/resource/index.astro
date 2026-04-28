@@ -1,0 +1,330 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppPromo from '../../components/AppPromo.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
+import { site, faqs } from '../../data/site';
+import { postCards, posts } from '../../data/posts';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'DIY Cleaning Resources & Guides',
+    url: `${site.url}/resource`,
+    description:
+      'Practical, eco-friendly cleaning guides and resources from the NATURO GROUP team — kitchen, bathroom, end-of-lease, NDIS and more.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Resources', item: `${site.url}/resource` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'DIY Cleaning Guides',
+    itemListElement: posts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${site.url}/resource/${p.slug}`,
+      name: p.title,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="DIY Cleaning Resources & Guides"
+  description="Practical, eco-friendly cleaning guides from the NATURO GROUP team. Step-by-step methods for kitchen, bathroom, end-of-lease, NDIS and more."
+  schema={schema}
+>
+  <!-- 1. Hero — slideshow matches the original Resource page -->
+  <ServiceHero
+    eyebrow="Resources"
+    heading="DIY Cleaning<br />Resources<br />&amp; Guides"
+    slides={[
+      '/images/resources/resource-1.webp',
+      '/images/resources/resource-2.webp',
+      '/images/resources/resource-3.webp',
+    ]}
+  />
+
+  <!-- 2. Intro — mirrors homepage IntroCopy 2-col sticky pattern -->
+  <section class="rsc-intro-section">
+    <div class="container-site rsc-intro-inner">
+      <div class="rsc-intro-col rsc-intro-col-left">
+        <span class="rsc-intro-kicker">Resources &amp; Guides</span>
+        <h2 class="rsc-intro-h2">Practical guides, written by people who clean for a living.</h2>
+      </div>
+      <div class="rsc-intro-col rsc-intro-col-right">
+        <p class="rsc-intro-body">
+          We&rsquo;re building out a library of short, honest DIY cleaning guides &mdash; the same
+          non-toxic methods our cleaners use in 10,000+ Australian homes.
+        </p>
+        <p class="rsc-intro-body">
+          Browse the latest guides below. Each one walks through the exact products, tools and
+          techniques our teams use &mdash; safe for kids, pets and the planet.
+        </p>
+        <div class="rsc-intro-stats">
+          <div class="rsc-intro-stat">
+            <span class="rsc-intro-stat-num">100%</span>
+            <span class="rsc-intro-stat-label">Eco-friendly methods</span>
+          </div>
+          <div class="rsc-intro-stat">
+            <span class="rsc-intro-stat-num">10k+</span>
+            <span class="rsc-intro-stat-label">Homes cleaned</span>
+          </div>
+          <div class="rsc-intro-stat">
+            <span class="rsc-intro-stat-num">Free</span>
+            <span class="rsc-intro-stat-label">Always &mdash; no signup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Article grid — matches homepage Features card pattern -->
+  <section class="rsc-grid-section" aria-labelledby="rsc-grid-h2">
+    <div class="container-site rsc-grid-inner">
+      <div class="rsc-grid-head">
+        <p class="rsc-grid-eyebrow">Latest guides</p>
+        <h2 id="rsc-grid-h2" class="rsc-grid-h2">Browse our DIY cleaning guides</h2>
+      </div>
+    </div>
+    <div class="container-site rsc-grid-inner rsc-grid">
+      {postCards.map((item) => (
+        <a class="rsc-card" href={item.href} aria-label={`Read: ${item.title}`}>
+          <span class="rsc-card-cat">{item.category}</span>
+          <h3 class="rsc-card-title">{item.title}</h3>
+          <p class="rsc-card-body">{item.excerpt}</p>
+          <span class="rsc-card-meta">
+            <span class="rsc-card-readtime">{item.readMinutes} min read</span>
+            <span class="rsc-card-arrow" aria-hidden="true">Read article &rarr;</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 4. Lead magnet — gated bond-back checklist PDF -->
+  <LeadMagnet
+    title="Free: 12-page bond-back cleaning checklist"
+    body="The same room-by-room checklist our cleaners follow before handing back keys. Catch the things landlords always flag — drains, oven racks, blinds, skirting — before they cost you bond."
+    downloadUrl="/downloads/naturo-bond-back-checklist.pdf"
+    downloadName="naturo-bond-back-checklist.pdf"
+    filename="bond-back-checklist"
+  />
+
+  <!-- 5. Standard footer sections -->
+  <FAQ />
+  <AppPromo />
+  <FinalCTA />
+</Layout>
+
+<style>
+  /* ---------- Intro: mirrors homepage .intro-section / IntroCopy ---------- */
+  .rsc-intro-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .rsc-intro-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .rsc-intro-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .rsc-intro-col-left { position: sticky; top: 96px; }
+  @media (max-width: 860px) {
+    .rsc-intro-col-left { position: static; }
+  }
+  .rsc-intro-kicker {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .rsc-intro-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .rsc-intro-body {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0 0 18px;
+  }
+  .rsc-intro-body:last-of-type { margin-bottom: 32px; }
+  .rsc-intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  @media (max-width: 540px) {
+    .rsc-intro-stats { grid-template-columns: 1fr; gap: 20px; }
+  }
+  .rsc-intro-stat { display: flex; flex-direction: column; gap: 4px; }
+  .rsc-intro-stat-num {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 2.4vw, 30px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+  .rsc-intro-stat-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(71, 85, 105);
+    line-height: 1.3;
+  }
+
+  /* ---------- Card grid: mirrors homepage .features-section / Features ---------- */
+  .rsc-grid-section {
+    background-color: #F8F8F3;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .rsc-grid-inner { padding-inline: 0; }
+  .rsc-grid-head {
+    max-width: 605px;
+    margin: 0 0 clamp(40px, 5vw, 64px);
+    text-align: left;
+  }
+  .rsc-grid-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .rsc-grid-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 22px;
+  }
+  .rsc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .rsc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .rsc-grid { grid-template-columns: 1fr; }
+  }
+  .rsc-card {
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.05);
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  }
+  .rsc-card:hover {
+    transform: translateY(-3px);
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.06),
+      0 18px 36px rgba(58, 93, 255, 0.32);
+  }
+  .rsc-card:hover .rsc-card-cat,
+  .rsc-card:hover .rsc-card-title,
+  .rsc-card:hover .rsc-card-body,
+  .rsc-card:hover .rsc-card-readtime,
+  .rsc-card:hover .rsc-card-arrow { color: #ffffff; }
+  .rsc-card-cat {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+    transition: color 0.25s ease;
+  }
+  .rsc-card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 1.7vw, 23px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: rgb(28, 36, 75);
+    margin: 0 0 12px;
+    transition: color 0.25s ease;
+  }
+  .rsc-card-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    margin: 0 0 20px;
+    flex: 1;
+    transition: color 0.25s ease;
+  }
+  .rsc-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(100, 116, 139);
+    transition: color 0.25s ease;
+  }
+  .rsc-card-arrow {
+    font-weight: 500;
+    color: #3a5dff;
+    transition: color 0.25s ease;
+  }
+</style>

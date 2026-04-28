@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import FAQ from '../components/FAQ.astro';
+import BookingCalendar from '../components/BookingCalendar.astro';
+import { ctaPrimary, ctaPhone } from '../data/site';
+
+const steps = [
+  {
+    n: '01',
+    title: 'Get your instant price',
+    body:
+      'Tell us a few details about your home and the type of clean you need. Our calculator gives you a transparent price in 60 seconds — no callbacks, no hidden fees.',
+  },
+  {
+    n: '02',
+    title: 'Choose a date that suits you',
+    body:
+      'Pick the day you would like the cleaners to arrive. Same-week and recurring slots are usually available across NSW, Victoria and Queensland.',
+  },
+  {
+    n: '03',
+    title: 'We confirm your booking',
+    body:
+      'You receive an email and SMS confirmation with the cleaning team assigned to you, the start time and the inclusions.',
+  },
+  {
+    n: '04',
+    title: 'Police-checked cleaners arrive',
+    body:
+      'Our trained, fully insured team arrives on time with eco-friendly supplies and equipment. You do not need to be home — secure access can be arranged.',
+  },
+  {
+    n: '05',
+    title: 'You enjoy a spotless home',
+    body:
+      'After the clean we follow up to make sure everything met your expectations. If anything is missed, we make it right — that is our satisfaction guarantee.',
+  },
+];
+
+const promises = [
+  {
+    title: 'Transparent pricing',
+    body: 'See your price before you book. No surprise fees and no callback gauntlet to find out the cost.',
+  },
+  {
+    title: 'Trained, consistent team',
+    body: 'Wherever possible, the same cleaners return each visit. Familiarity builds trust and a better clean.',
+  },
+  {
+    title: 'Eco-friendly products',
+    body: 'Plant-based, non-toxic supplies that are safe for kids, pets, sensitive lungs — and the planet.',
+  },
+  {
+    title: 'Insurance & police checks',
+    body: 'Every cleaner is police-checked. We hold full public liability and workers compensation cover.',
+  },
+];
+---
+
+<Layout
+  title="How it works"
+  description="Booking eco-friendly cleaning with Naturo Group takes about 60 seconds. Get an instant price, pick a date, meet your cleaners, and enjoy a spotless home — backed by our satisfaction guarantee."
+>
+  <section class="bg-[var(--color-bg-pale)] pt-16">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">How it works</p>
+      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
+        From quote to clean in five simple steps.
+      </h1>
+      <p class="mt-5 text-lg text-[var(--color-slate)]">
+        We have made booking a trusted, eco-friendly clean as easy as ordering a meal.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary" href={ctaPrimary.href}>{ctaPrimary.text}</a>
+        <a class="btn-secondary" href={ctaPhone.href}>Call {ctaPhone.text}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site max-w-3xl">
+      <ol class="space-y-8">
+        {steps.map((s) => (
+          <li class="flex gap-5 md:gap-7 items-start">
+            <span
+              class="shrink-0 w-12 h-12 rounded-full border border-[var(--color-cyan)] text-[var(--color-cyan)] flex items-center justify-center font-medium"
+              aria-hidden="true"
+            >{s.n}</span>
+            <div>
+              <h2 class="text-xl text-[var(--color-navy)] font-semibold mb-2">{s.title}</h2>
+              <p class="text-[var(--color-slate)] leading-relaxed">{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Our promise</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
+          What every Naturo clean includes.
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {promises.map((p) => (
+          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
+            <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-2">{p.title}</h3>
+            <p class="text-[var(--color-slate)]">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BookingCalendar />
+  <TrustBadges />
+  <FAQ />
+  <CTABanner />
+</Layout>

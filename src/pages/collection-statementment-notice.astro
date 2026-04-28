@@ -1,0 +1,73 @@
+---
+// NOTE: filename intentionally matches the historical URL slug
+// (`/collection-statementment-notice`) referenced from the footer
+// so existing inbound links continue to resolve.
+import LegalPage from '../components/LegalPage.astro';
+import { site } from '../data/site';
+---
+
+<LegalPage
+  title="Collection Notice Statement"
+  description="Australian Privacy Principle 5 collection notice describing why Naturo Group collects your personal information."
+  updated="27 April 2026"
+>
+  <p>
+    This statement is provided under Australian Privacy Principle (APP) 5 of the
+    <em>Privacy Act 1988</em> (Cth) at or before the time
+    {site.legalName} ("Naturo Group", "we") collects personal information from you.
+  </p>
+
+  <h2>Who is collecting your information</h2>
+  <p>
+    {site.legalName}<br />
+    {site.abn}<br />
+    Email: <a href={site.emailHref}>{site.email}</a><br />
+    Phone: <a href={site.phoneHref}>{site.phone}</a>
+  </p>
+
+  <h2>What we are collecting</h2>
+  <ul>
+    <li>Your name, phone number and email address.</li>
+    <li>Your service address and details about the property to be cleaned.</li>
+    <li>Your scheduling preferences and any special instructions.</li>
+    <li>Where applicable, eligibility information for funded programs (NDIS, DVA, Aged Care, Insurance).</li>
+  </ul>
+
+  <h2>Why we are collecting it</h2>
+  <ul>
+    <li>To prepare your quote and confirm your booking.</li>
+    <li>To deliver the cleaning service you have requested.</li>
+    <li>To contact you about your booking or follow up on your enquiry.</li>
+    <li>To invoice and, where applicable, claim from your plan manager, insurer or case manager.</li>
+    <li>To improve our services and, with your consent, send marketing communications.</li>
+  </ul>
+
+  <h2>Who we may share it with</h2>
+  <ul>
+    <li>The trained, police-checked cleaners assigned to your job.</li>
+    <li>Service providers who help us run our business (form intake, email, SMS, payments, hosting, analytics).</li>
+    <li>Your plan manager, insurer, case manager or referrer where you have asked us to liaise with them.</li>
+    <li>Government agencies where required by law.</li>
+  </ul>
+
+  <h2>Consequences if you do not provide it</h2>
+  <p>
+    You can choose not to provide your personal information, but this may mean we are unable
+    to give you a quote, confirm your booking or deliver the requested service.
+  </p>
+
+  <h2>Overseas disclosure</h2>
+  <p>
+    Some of our service providers store data on servers located outside Australia, including
+    in the United States and the European Union. We take reasonable steps to ensure these
+    providers handle your information in line with the Australian Privacy Principles.
+  </p>
+
+  <h2>Access, correction and complaints</h2>
+  <p>
+    You can ask us to access or correct the personal information we hold about you, or make
+    a privacy complaint, by contacting us at the details above. Full details of how we
+    handle privacy are set out in our
+    <a href="/privacy-policies">Privacy Policy</a>.
+  </p>
+</LegalPage>

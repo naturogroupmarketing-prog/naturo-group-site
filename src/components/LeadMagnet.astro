@@ -1,0 +1,324 @@
+---
+// Lead-magnet section component.
+//
+// Embeds an inline email-gate section that, on submit, ships the lead via
+// the existing leadCapture pipeline AND triggers a download of the named
+// asset. Use this on resource articles, the blog index, and anywhere a
+// content offer makes sense (e.g. /resource/end-of-lease/guide).
+//
+// Usage:
+//   <LeadMagnet
+//     title="Free: 12-page bond-back checklist"
+//     body="Everything we check before handing back keys — the same checklist our cleaners follow."
+//     downloadUrl="/downloads/naturo-bond-back-checklist.pdf"
+//     downloadName="naturo-bond-back-checklist.pdf"
+//     filename="bond-back-checklist"
+//   />
+import { leadCapture } from '../data/site';
+
+interface Props {
+  title?: string;
+  body?: string;
+  downloadUrl?: string;
+  downloadName?: string;
+  /** Short identifier (kebab-case) used in event tracking. */
+  filename?: string;
+}
+
+const {
+  title = 'Free: 12-page bond-back checklist',
+  body = 'Everything we check before handing back keys at the end of a lease — the same checklist our cleaners follow on every job. Drop your email and download instantly.',
+  downloadUrl = '/downloads/naturo-bond-back-checklist.pdf',
+  downloadName = 'naturo-bond-back-checklist.pdf',
+  filename = 'bond-back-checklist',
+} = Astro.props;
+
+const lc = leadCapture;
+const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<section class="lm-section">
+  <div class="container-site">
+    <div class="lm-card" data-form-id={formId}>
+      <div class="lm-grid">
+        <div class="lm-side">
+          <span class="lm-eyebrow">Free download</span>
+          <h2 class="lm-title">{title}</h2>
+          <p class="lm-body">{body}</p>
+          <ul class="lm-checks">
+            <li>Room-by-room checklist</li>
+            <li>Common bond-deduction triggers</li>
+            <li>Photo evidence template</li>
+          </ul>
+        </div>
+
+        <form class="lm-form" novalidate data-form-id={formId} data-download={downloadUrl} data-download-name={downloadName} data-filename={filename}>
+          <label class="lm-field">
+            <span class="lm-label">Full name</span>
+            <input class="lm-input" type="text" name="name" required autocomplete="name" placeholder="Your name" />
+          </label>
+          <label class="lm-field">
+            <span class="lm-label">Email</span>
+            <input class="lm-input" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="lm-consent">
+            <input type="checkbox" name="sms_optin" value="yes" />
+            <span class="lm-consent-text">
+              Yes, send me cleaning tips and special offers (optional, opt out any time).
+            </span>
+          </label>
+          <button type="submit" class="lm-submit">Download checklist</button>
+          <p class="lm-fineprint">
+            We use your email to send the download link and occasional updates.
+            See our <a href="/privacy-policies">Privacy Policy</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ lc }}>
+  (function () {
+    const config = lc || {};
+    const forms = document.querySelectorAll('form.lm-form');
+    forms.forEach((form) => {
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const fd = new FormData(form);
+        const values = {
+          name: String(fd.get('name') || '').trim(),
+          email: String(fd.get('email') || '').trim(),
+          sms_optin: fd.get('sms_optin') === 'yes',
+        };
+        if (!values.name || !values.email) return;
+
+        const submit = form.querySelector('.lm-submit');
+        if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
+
+        const downloadUrl = form.dataset.download;
+        const downloadName = form.dataset.downloadName;
+        const fname = form.dataset.filename || 'lead-magnet';
+
+        const payload = {
+          name: values.name,
+          email: values.email,
+          sms_optin: values.sms_optin ? 'yes' : 'no',
+          source: 'lead_magnet',
+          asset: fname,
+          page: window.location.pathname,
+          ts: new Date().toISOString(),
+        };
+
+        // Ship to webhook (Formspree etc).
+        if (config.webhookUrl) {
+          try {
+            fetch(config.webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload),
+              keepalive: true,
+            }).catch(() => {});
+          } catch (e) {}
+        }
+
+        // Track conversion.
+        try {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'lead_magnet_download',
+            asset: fname,
+            page: window.location.pathname,
+          });
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', { source: 'lead_magnet', asset: fname });
+          }
+        } catch (e) {}
+
+        // Persist the lead so subsequent CTAs can skip the gate.
+        try { sessionStorage.setItem('naturo:lead', JSON.stringify(payload)); } catch (e) {}
+
+        // Trigger the download via a temporary anchor.
+        if (downloadUrl) {
+          const a = document.createElement('a');
+          a.href = downloadUrl;
+          if (downloadName) a.download = downloadName;
+          a.rel = 'noopener';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+
+        // Replace the form with a thank-you message.
+        const card = form.closest('.lm-card');
+        if (card) {
+          const right = card.querySelector('.lm-form');
+          if (right) {
+            const thanks = document.createElement('div');
+            thanks.className = 'lm-form lm-thanks';
+            thanks.innerHTML =
+              '<span class="lm-eyebrow">Done!</span>' +
+              '<h3 class="lm-title">Your download is ready</h3>' +
+              '<p class="lm-body">Check your downloads folder. We\u2019ve also emailed a copy to ' + values.email + '.</p>' +
+              (downloadUrl ? '<a class="lm-submit" href="' + downloadUrl + '" download="' + (downloadName || '') + '">Download again</a>' : '');
+            right.replaceWith(thanks);
+          }
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .lm-section {
+    padding: clamp(64px, 8vw, 96px) 0;
+    background-color: #f6f8fa;
+  }
+  .lm-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    box-shadow:
+      0 1px 3px rgba(15, 23, 42, 0.05),
+      0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+  .lm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 760px) {
+    .lm-grid { grid-template-columns: 1fr; }
+  }
+  .lm-side {
+    background: linear-gradient(135deg, #1c244b 0%, #3a5dff 100%);
+    color: #ffffff;
+    padding: clamp(28px, 4vw, 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lm-form {
+    padding: clamp(28px, 4vw, 44px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lm-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FEB91C;
+    margin: 0 0 12px;
+    display: inline-block;
+  }
+  .lm-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 2.8vw, 30px);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin: 0 0 14px;
+  }
+  .lm-form .lm-eyebrow { color: #3a5dff; }
+  .lm-thanks .lm-title,
+  .lm-form .lm-title { color: #0f172a; }
+  .lm-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+    margin: 0 0 16px;
+  }
+  .lm-form .lm-body,
+  .lm-thanks .lm-body { color: rgb(71, 85, 105); }
+  .lm-checks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lm-checks li {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.92);
+    padding-left: 20px;
+    position: relative;
+  }
+  .lm-checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #FEB91C;
+    font-weight: 600;
+  }
+  .lm-field { display: flex; flex-direction: column; gap: 4px; }
+  .lm-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .lm-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0f172a;
+    width: 100%;
+    transition: border-color 0.15s ease;
+  }
+  .lm-input:focus {
+    outline: none;
+    border-color: #3a5dff;
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18);
+  }
+  .lm-consent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    align-items: start;
+    margin-top: 4px;
+  }
+  .lm-consent input { margin-top: 4px; }
+  .lm-consent-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+    color: rgb(71, 85, 105);
+  }
+  .lm-submit {
+    margin-top: 6px;
+    background: #3a5dff;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.15s ease;
+  }
+  .lm-submit:hover:not([disabled]) { background: #2548f0; }
+  .lm-submit[disabled] { opacity: 0.6; cursor: wait; }
+  .lm-fineprint {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    color: rgb(100, 116, 139);
+    margin: 8px 0 0;
+    line-height: 1.45;
+  }
+  .lm-fineprint a { color: #3a5dff; text-decoration: underline; }
+</style>

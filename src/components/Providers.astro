@@ -1,0 +1,82 @@
+---
+import { providers } from '../data/site';
+interface Props { location?: string }
+const { location = 'Australia' } = Astro.props;
+const loop = [...providers, ...providers];
+---
+
+<section class="providers-section">
+  <div class="container-site providers-head">
+    <h2 class="providers-h2">Trusted Cleaning Services in {location} - Partnering with the Best</h2>
+    <p class="providers-sub">We are also providers for NDIS, Aged Care (CHSP), and DVA.</p>
+  </div>
+  <!-- Marquee lives OUTSIDE the container so the logos can fade out
+       softly at the viewport edges (matching the Testimonials pattern)
+       instead of being abruptly clipped by container-site's padding. -->
+  <div class="providers-marquee">
+    <div class="providers-track">
+      {loop.map((p) => (
+        <img src={p.logo} alt={p.name} width="150" height="150" loading="lazy" />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .providers-section {
+    background-color: #ffffff;
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+  .providers-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #000;
+    margin: 0 0 8px;
+  }
+  @media (max-width: 768px) {
+    .providers-h2 { font-size: 28px; line-height: 1.2; }
+  }
+  .providers-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21.6px;
+    color: #000;
+    margin: 0 0 32px;
+  }
+  .providers-head { margin-bottom: 8px; }
+  .providers-marquee {
+    overflow: hidden;
+    width: 100%;
+    /* Fade the logos in/out at the viewport edges so they never look
+       like they\u2019re being chopped off by the page boundary. */
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  }
+  .providers-track {
+    display: flex;
+    align-items: center;
+    gap: clamp(32px, 6vw, 60px);
+    animation: providers-scroll 30s linear infinite;
+    width: max-content;
+    /* Small inline padding so the first/last logo isn\u2019t glued to the
+       fade-out edge on small screens. */
+    padding-inline: 16px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .providers-track { animation: none; }
+  }
+  .providers-track img {
+    height: clamp(80px, 14vw, 150px);
+    width: clamp(80px, 14vw, 150px);
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  @keyframes providers-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

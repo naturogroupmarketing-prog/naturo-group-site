@@ -1,0 +1,185 @@
+---
+/*
+  Apple-style wrapper for legal pages (Terms, Privacy, Cookies, Collection
+  Notice). Mirrors the visual language of apple.com/legal:
+    - Centred heavy black title + grey subtitle
+    - Hairline divider beneath the header
+    - Wide single-column reading area, left-aligned body
+    - Large near-black h2s with generous spacing
+    - 17px body text, 1.6 line-height, Apple grey link blue (#0066cc)
+*/
+import Layout from '../layouts/Layout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Centred subtitle under the H1. Defaults to "Legal Information & Notices". */
+  subtitle?: string;
+  /** Date string shown below the divider, e.g. "27 April 2026". */
+  updated?: string;
+  /** Override the headline shown on screen if it differs from the SEO title. */
+  headline?: string;
+}
+
+const {
+  title,
+  description,
+  subtitle = 'Legal Information & Notices',
+  updated,
+  headline,
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="legal-page">
+    {/* Use a div (not <header>) for the page heading block — site-level
+        sticky-header hide rules sometimes target every <header>, and we
+        don't want to disappear our own title. */}
+    <div class="legal-head">
+      <h1 class="legal-title">{headline ?? title}</h1>
+      <p class="legal-subtitle">{subtitle}</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    {updated && <p class="legal-updated">Last updated: {updated}</p>}
+
+    <div class="legal-body">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Body content lives outside this component (page slots), so styles
+     for the inner article need to be global. They're scoped by the
+     wrapper class .legal-page so they don't leak elsewhere. */
+  .legal-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 128px) clamp(20px, 4vw, 40px) clamp(80px, 10vw, 160px);
+    font-family: "Poppins", "Helvetica", system-ui, sans-serif;
+    color: #1d1d1f;
+  }
+
+  .legal-head {
+    text-align: center;
+    margin-bottom: clamp(28px, 3vw, 40px);
+  }
+  /* Apple typography reference (apple.com/legal measured):
+       Page title  — 56px / weight 600 / letter-spacing -0.003em
+       Subhead     — 21px / weight 400 / colour #6e6e73
+       Section h2  — 21px / weight 600
+       Body copy   — 17px / line-height 1.47059 / weight 400
+       Small h3    — 17px / weight 600 */
+  .legal-title {
+    font-family: "Poppins", "Helvetica", system-ui, sans-serif;
+    font-size: clamp(32px, 4.4vw, 56px);
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    color: #1d1d1f;
+    line-height: 1.07143;
+    margin: 0 0 14px;
+  }
+  .legal-subtitle {
+    font-family: "Poppins", "Helvetica", system-ui, sans-serif;
+    font-size: 21px;
+    color: #6e6e73;
+    font-weight: 400;
+    line-height: 1.19048;
+    margin: 0;
+  }
+  @media (max-width: 734px) {
+    .legal-title { font-size: clamp(28px, 7vw, 40px); }
+    .legal-subtitle { font-size: 17px; line-height: 1.47059; }
+  }
+
+  .legal-divider {
+    border: 0;
+    border-top: 1px solid #d2d2d7;
+    margin: clamp(32px, 4vw, 56px) 0 clamp(20px, 2vw, 28px);
+  }
+
+  .legal-updated {
+    font-size: 14px;
+    color: #6e6e73;
+    margin: 0 0 clamp(40px, 5vw, 64px);
+    line-height: 1.5;
+  }
+
+  /* --- Body typography ------------------------------------------- */
+  .legal-body {
+    font-size: 17px;
+    line-height: 1.47059;
+    color: #1d1d1f;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+  }
+  .legal-body > * + * { margin-top: 16px; }
+
+  .legal-body h2 {
+    font-family: "Poppins", "Helvetica", system-ui, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.19048;
+    letter-spacing: 0;
+    color: #1d1d1f;
+    margin: clamp(36px, 4vw, 52px) 0 8px;
+  }
+  .legal-body h2:first-child { margin-top: 0; }
+
+  .legal-body h3 {
+    font-family: "Poppins", "Helvetica", system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 24px 0 6px;
+    line-height: 1.47059;
+    letter-spacing: 0;
+  }
+
+  .legal-body p {
+    margin: 0;
+    color: #1d1d1f;
+  }
+
+  /* Apple uses a tight spacing rhythm between consecutive paragraphs */
+  .legal-body p + p { margin-top: 16px; }
+
+  .legal-body ul,
+  .legal-body ol {
+    margin: 0;
+    padding-left: 24px;
+  }
+  .legal-body ul { list-style: disc; }
+  .legal-body ol { list-style: decimal; }
+  .legal-body li {
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+  .legal-body li:first-child { margin-top: 0; }
+
+  /* Apple-style link blue, no underline by default, underline on hover */
+  .legal-body a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .legal-body a:hover { text-decoration: underline; }
+
+  .legal-body strong { font-weight: 600; color: #1d1d1f; }
+  .legal-body em { font-style: italic; }
+  .legal-body code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    background: #f5f5f7;
+    border: 1px solid #e5e5ea;
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #1d1d1f;
+  }
+
+  /* Container divs that group a heading + content keep the same vertical
+     rhythm as a single block — the > * + * rule above handles spacing. */
+  .legal-body div { margin: 0; }
+</style>

@@ -1,0 +1,670 @@
+---
+// Site-wide lead-capture modal that gates every "Get an Instant Price"
+// CTA. The user must enter name + phone + email before they're allowed
+// through to /quote. Once submitted in a session we remember the lead
+// and let subsequent clicks pass straight through.
+//
+// The modal is rendered into Layout.astro so it's available on every
+// page. Capture happens at the click level — we listen for clicks on
+// any in-page link whose pathname resolves to /quote, intercept it,
+// and only navigate after the form is filled in.
+//
+// On submit, the lead is fanned out to whichever destinations are
+// configured in src/data/site.ts → leadCapture: a JSON webhook,
+// Meta Pixel, Google Ads conversion, and dataLayer (for GTM-installed
+// tags). All sends are non-blocking — the user navigates immediately
+// while the lead ships in the background via sendBeacon / keepalive.
+import { leadCapture } from '../data/site';
+const lc = leadCapture;
+---
+
+<div
+  class="qlg-overlay"
+  id="qlgOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="qlgTitle"
+  aria-describedby="qlgSub"
+  hidden
+>
+  <div class="qlg-card" role="document">
+    <button type="button" class="qlg-close" id="qlgClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <p class="qlg-eyebrow">Almost there</p>
+    <h2 class="qlg-title" id="qlgTitle">Quick details before your price</h2>
+    <p class="qlg-sub" id="qlgSub">
+      Just your name, phone and email so we can confirm your area &mdash;
+      then your instant price loads on the next screen.
+    </p>
+
+    <form class="qlg-form" id="qlgForm" novalidate>
+      <label class="qlg-field">
+        <span class="qlg-label">Full name</span>
+        <input
+          class="qlg-input"
+          type="text"
+          name="name"
+          id="qlgName"
+          autocomplete="name"
+          required
+          placeholder="Your name"
+        />
+        <span class="qlg-error" data-error-for="name"></span>
+      </label>
+
+      <label class="qlg-field">
+        <span class="qlg-label">Phone</span>
+        <input
+          class="qlg-input"
+          type="tel"
+          name="phone"
+          id="qlgPhone"
+          autocomplete="tel"
+          required
+          inputmode="tel"
+          placeholder="0400 000 000"
+        />
+        <span class="qlg-error" data-error-for="phone"></span>
+      </label>
+
+      <label class="qlg-field">
+        <span class="qlg-label">Email</span>
+        <input
+          class="qlg-input"
+          type="email"
+          name="email"
+          id="qlgEmail"
+          autocomplete="email"
+          required
+          placeholder="you@example.com"
+        />
+        <span class="qlg-error" data-error-for="email"></span>
+      </label>
+
+      <label class="qlg-consent">
+        <input
+          type="checkbox"
+          name="sms_optin"
+          id="qlgSmsOptIn"
+          value="yes"
+          checked
+        />
+        <span class="qlg-consent-text">
+          I&rsquo;m happy to receive my quote and booking updates by SMS and email.
+          I can opt out at any time.
+        </span>
+      </label>
+
+      <button type="submit" class="qlg-submit" id="qlgSubmit">
+        Continue to my price &rarr;
+      </button>
+
+      <p class="qlg-fineprint">
+        We use these details to confirm we service your area and send your quote.
+        See our <a href="/privacy-policies">Privacy Policy</a> for how we handle your information.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script is:inline define:vars={{ lc }}>
+  (function () {
+    const STORAGE_KEY = 'naturo:lead';
+    const TARGET_PATH = '/quote';
+    const config = lc || {};
+
+    // ---- Destination installers ------------------------------------------
+    // Each runs once on page load if the relevant ID is configured. The
+    // submit-time fan-out below assumes whatever globals these created
+    // (fbq / gtag / dataLayer) are available.
+    function installMetaPixel(id) {
+      if (!id || window.fbq) return;
+      // Standard Meta Pixel base snippet, lifted from FB's docs.
+      /* eslint-disable */
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      /* eslint-enable */
+      window.fbq('init', id);
+      window.fbq('track', 'PageView');
+    }
+
+    function installGtag(id) {
+      if (!id || window.gtag) return;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', id);
+    }
+
+    function installGtm(id) {
+      if (!id) return;
+      window.dataLayer = window.dataLayer || [];
+      if (window.__gtmInstalled) return;
+      window.__gtmInstalled = true;
+      /* eslint-disable */
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',id);
+      /* eslint-enable */
+    }
+
+    // ---- Consent gating -------------------------------------------------
+    // Marketing / analytics tags only mount AFTER the user accepts cookies.
+    // CookieConsent.astro stores the choice in localStorage and dispatches
+    // 'naturo:consent-granted' on page load if previously accepted, and
+    // again the moment the user clicks "Accept all".
+    function installAdvertisingStack() {
+      installMetaPixel(config.metaPixelId);
+      // GA4 and Google Ads both ride on gtag.js — ID order matters: load
+      // GA4 first if both are configured so the GA4 default conversion
+      // schema is set up before Ads conversion calls fire.
+      if (config.ga4Id) installGtag(config.ga4Id);
+      if (config.googleAdsId) installGtag(config.googleAdsId);
+      installGtm(config.gtmId);
+    }
+    function consentGranted() {
+      if (window.naturoConsent && window.naturoConsent.granted) return true;
+      try {
+        const raw = localStorage.getItem('naturo:consent');
+        if (raw) return !!JSON.parse(raw).granted;
+      } catch (e) {}
+      return false;
+    }
+    if (consentGranted()) {
+      installAdvertisingStack();
+    } else {
+      window.addEventListener('naturo:consent-granted', function () {
+        installAdvertisingStack();
+      }, { once: true });
+    }
+
+    // ---- Tracking-context capture ----------------------------------------
+    // Pull UTM params + referrer + landing page once per session. These
+    // are the breadcrumbs you actually need for retargeting attribution.
+    function captureContext() {
+      const KEY = 'naturo:lead-context';
+      try {
+        const existing = sessionStorage.getItem(KEY);
+        if (existing) return JSON.parse(existing);
+      } catch (e) { /* fall through */ }
+      const params = new URLSearchParams(window.location.search);
+      const ctx = {
+        utm_source:   params.get('utm_source') || '',
+        utm_medium:   params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_term:     params.get('utm_term') || '',
+        utm_content:  params.get('utm_content') || '',
+        gclid:        params.get('gclid') || '',
+        fbclid:       params.get('fbclid') || '',
+        referrer:     document.referrer || '',
+        landing_page: window.location.href,
+      };
+      try { sessionStorage.setItem(KEY, JSON.stringify(ctx)); } catch (e) {}
+      return ctx;
+    }
+    const trackingContext = captureContext();
+
+    const overlay = document.getElementById('qlgOverlay');
+    const form = document.getElementById('qlgForm');
+    const closeBtn = document.getElementById('qlgClose');
+    const nameInput = document.getElementById('qlgName');
+    if (!overlay || !form || !nameInput) return;
+
+    let pendingHref = null;
+    let lastFocused = null;
+
+    function hasLead() {
+      try {
+        const raw = sessionStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        const data = JSON.parse(raw);
+        return !!(data && data.name && data.phone && data.email);
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function openModal(href) {
+      pendingHref = href;
+      lastFocused = document.activeElement;
+      overlay.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      // Slight delay so the focus jump doesn't fight the open animation.
+      setTimeout(function () { nameInput.focus(); }, 50);
+    }
+
+    function closeModal() {
+      overlay.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      pendingHref = null;
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    }
+
+    // ---- Focus trap ----
+    // While the modal is open, Tab / Shift+Tab cycle within its focusable
+    // children instead of leaking out to the page underneath. Required
+    // for WCAG 2.1.2.1 (No Keyboard Trap — the inverse: keyboard users
+    // shouldn't be able to step out of a modal dialog into hidden UI).
+    function getFocusable() {
+      const sel = [
+        'a[href]',
+        'button:not([disabled])',
+        'input:not([disabled]):not([type="hidden"])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])',
+      ].join(',');
+      return Array.prototype.slice
+        .call(overlay.querySelectorAll(sel))
+        .filter(function (el) { return el.offsetParent !== null; });
+    }
+    overlay.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Tab') return;
+      const items = getFocusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (ev.shiftKey && active === first) {
+        ev.preventDefault();
+        last.focus();
+      } else if (!ev.shiftKey && active === last) {
+        ev.preventDefault();
+        first.focus();
+      }
+    });
+
+    function setError(name, message) {
+      const el = form.querySelector('[data-error-for="' + name + '"]');
+      if (el) el.textContent = message || '';
+      const input = form.elements[name];
+      if (input) {
+        if (message) input.setAttribute('aria-invalid', 'true');
+        else input.removeAttribute('aria-invalid');
+      }
+    }
+
+    function clearErrors() {
+      ['name', 'phone', 'email'].forEach(function (n) { setError(n, ''); });
+    }
+
+    function validate(values) {
+      let ok = true;
+      if (!values.name || values.name.length < 2) {
+        setError('name', 'Please enter your name.');
+        ok = false;
+      }
+      // Strip everything but digits + leading + to validate phone length.
+      const digits = (values.phone || '').replace(/[^0-9]/g, '');
+      if (digits.length < 8) {
+        setError('phone', 'Please enter a valid phone number.');
+        ok = false;
+      }
+      // Lightweight email check — full RFC validation is overkill for a gate.
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email || '');
+      if (!emailOk) {
+        setError('email', 'Please enter a valid email.');
+        ok = false;
+      }
+      return ok;
+    }
+
+    function isQuoteLink(a) {
+      if (!a || a.tagName !== 'A') return false;
+      // Skip new-tab / modifier-clicked / explicit-target links — let the
+      // browser handle those normally.
+      if (a.target && a.target !== '' && a.target !== '_self') return false;
+      const raw = a.getAttribute('href');
+      if (!raw) return false;
+      // Resolve to a pathname we can compare. Anchors / tel: / mailto:
+      // / external links all bail here.
+      try {
+        const url = new URL(a.href, window.location.href);
+        if (url.origin !== window.location.origin) return false;
+        return url.pathname === TARGET_PATH || url.pathname === TARGET_PATH + '/';
+      } catch (e) {
+        return false;
+      }
+    }
+
+    // Click capture — runs before any per-link handler so we can
+    // preventDefault on quote links cleanly.
+    document.addEventListener('click', function (ev) {
+      // Bail on modifier clicks so cmd/ctrl-click still opens new tab.
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      if (ev.button !== undefined && ev.button !== 0) return;
+      const a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+      if (!isQuoteLink(a)) return;
+      // Already on /quote? No point gating again.
+      if (window.location.pathname === TARGET_PATH ||
+          window.location.pathname === TARGET_PATH + '/') return;
+      // Already captured this session — pass through silently.
+      if (hasLead()) return;
+      ev.preventDefault();
+      openModal(a.href);
+    }, true);
+
+    // Close on backdrop click, X button, or Escape.
+    overlay.addEventListener('click', function (ev) {
+      if (ev.target === overlay) closeModal();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+    });
+
+    // Live-clear an error as the user starts typing in that field.
+    form.addEventListener('input', function (ev) {
+      const t = ev.target;
+      if (t && t.name) setError(t.name, '');
+    });
+
+    // ---- Fan-out: push the lead to every configured destination ---------
+    function shipToWebhook(payload) {
+      if (!config.webhookUrl) return;
+      // Use fetch with keepalive (not sendBeacon) so we can set the
+      // Accept: application/json header — Formspree (and most form
+      // services) need it to return CORS-friendly JSON instead of a
+      // redirect. keepalive guarantees the request still completes
+      // even after we navigate away to /quote.
+      try {
+        fetch(config.webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+          keepalive: true,
+        }).catch(function () { /* swallow — capture is best-effort */ });
+      } catch (e) { /* swallow */ }
+    }
+
+    function shipToMetaPixel(payload) {
+      if (!config.metaPixelId || typeof window.fbq !== 'function') return;
+      try {
+        window.fbq('track', 'Lead', {
+          content_name: 'Instant Price Gate',
+          content_category: 'quote',
+        }, {
+          // eventID lets you de-dupe with server-side Conversions API later.
+          eventID: payload.event_id,
+        });
+      } catch (e) {}
+    }
+
+    function shipToGoogleAds(payload) {
+      if (!config.googleAdsId || typeof window.gtag !== 'function') return;
+      try {
+        const sendTo = config.googleAdsLabel
+          ? config.googleAdsId + '/' + config.googleAdsLabel
+          : config.googleAdsId;
+        window.gtag('event', 'conversion', {
+          send_to: sendTo,
+          transaction_id: payload.event_id,
+        });
+        // Also fire a generate_lead event so GA4 / other gtag listeners
+        // can build remarketing audiences off it.
+        window.gtag('event', 'generate_lead', {
+          currency: 'AUD',
+          value: 0,
+          transaction_id: payload.event_id,
+        });
+      } catch (e) {}
+    }
+
+    function shipToDataLayer(payload) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_captured',
+        lead: {
+          name: payload.name,
+          phone: payload.phone,
+          email: payload.email,
+        },
+        source: payload.source,
+        event_id: payload.event_id,
+      });
+    }
+
+    function shipLead(values) {
+      // Single shared event_id so destinations can be de-duped later.
+      const eventId = (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      const payload = {
+        event: 'lead_captured',
+        event_id: eventId,
+        captured_at: new Date().toISOString(),
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        sms_optin: !!values.sms_optin,
+        source: trackingContext,
+        page: {
+          url: window.location.href,
+          path: window.location.pathname,
+          title: document.title,
+        },
+      };
+      shipToWebhook(payload);
+      shipToMetaPixel(payload);
+      shipToGoogleAds(payload);
+      shipToDataLayer(payload);
+    }
+
+    const submitBtn = document.getElementById('qlgSubmit');
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      clearErrors();
+      const smsCheckbox = form.elements['sms_optin'];
+      const values = {
+        name: (nameInput.value || '').trim(),
+        phone: (form.elements['phone'].value || '').trim(),
+        email: (form.elements['email'].value || '').trim(),
+        sms_optin: !!(smsCheckbox && smsCheckbox.checked),
+      };
+      if (!validate(values)) return;
+      // Disable the button immediately so frantic double-clickers can't
+      // fire the lead twice. Restored only if we end up not navigating
+      // (i.e. shouldn't ever happen post-validate, but defensive).
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.textContent;
+        submitBtn.textContent = 'Sending\u2026';
+      }
+      try {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+      } catch (e) { /* private mode etc — fine, just navigate. */ }
+      // Fire-and-forget the lead to every configured destination. This
+      // is non-blocking — sendBeacon / keepalive ensure the request
+      // completes even after we navigate.
+      shipLead(values);
+      const target = pendingHref || TARGET_PATH;
+      // Tear the modal down before navigating so the back button
+      // doesn't land on a frozen overlay.
+      closeModal();
+      window.location.href = target;
+    });
+  })();
+</script>
+
+<style>
+  /* Backdrop covers the whole viewport. Frosted dark surface so the
+     form card pops with the brand blue submit button. */
+  .qlg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: qlg-fade 180ms ease-out;
+  }
+  .qlg-overlay[hidden] { display: none; }
+  @keyframes qlg-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .qlg-card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 36px 32px 30px;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.32);
+    animation: qlg-rise 220ms ease-out;
+  }
+  @keyframes qlg-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .qlg-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    color: #475569;
+    cursor: pointer;
+    transition: background-color 150ms, color 150ms;
+  }
+  .qlg-close:hover { background: rgba(15, 23, 42, 0.06); color: #0f172a; }
+
+  .qlg-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 8px;
+  }
+  .qlg-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #0f172a;
+    margin: 0 0 8px;
+  }
+  .qlg-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(71, 85, 105);
+    margin: 0 0 20px;
+  }
+
+  .qlg-form { display: flex; flex-direction: column; gap: 14px; }
+  .qlg-field { display: flex; flex-direction: column; gap: 6px; }
+  .qlg-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .qlg-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f172a;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 10px;
+    padding: 12px 14px;
+    transition: border-color 150ms, box-shadow 150ms;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .qlg-input::placeholder { color: rgba(15, 23, 42, 0.36); }
+  .qlg-input:focus {
+    outline: none;
+    border-color: #3a5dff;
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18);
+  }
+  .qlg-input[aria-invalid="true"] {
+    border-color: #d92d20;
+    box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.14);
+  }
+  .qlg-error {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: #d92d20;
+    min-height: 14px;
+  }
+
+  .qlg-submit {
+    margin-top: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #3a5dff;
+    border: 1px solid #3a5dff;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 150ms, box-shadow 150ms, transform 80ms;
+    box-shadow: 0 6px 16px rgba(58, 93, 255, 0.28);
+  }
+  .qlg-submit:hover:not([disabled]) { background: #2548f0; }
+  .qlg-submit:active:not([disabled]) { transform: translateY(1px); }
+  .qlg-submit[disabled] { opacity: 0.7; cursor: progress; }
+
+  .qlg-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+  .qlg-consent input[type="checkbox"] {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #3a5dff;
+    cursor: pointer;
+  }
+  .qlg-consent-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgb(71, 85, 105);
+  }
+
+  .qlg-fineprint {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgb(100, 116, 139);
+    margin: 8px 0 0;
+  }
+
+  @media (max-width: 480px) {
+    .qlg-card { padding: 30px 22px 24px; border-radius: 14px; }
+    .qlg-title { font-size: 20px; }
+  }
+</style>

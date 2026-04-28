@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { faqs, ctaPrimary, ctaPhone } from '../data/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title="Frequently asked questions"
+  description="Answers to the most common questions about Naturo Group cleaning services — pricing, bookings, products, recurring schedules, payment and more."
+  schema={schema}
+>
+  <section class="bg-[var(--color-bg-pale)] pt-16">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">FAQs</p>
+      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
+        Frequently asked questions.
+      </h1>
+      <p class="mt-5 text-lg text-[var(--color-slate)]">
+        Can\u2019t find what you\u2019re looking for? Call us on <a class="underline" href={ctaPhone.href}>{ctaPhone.text}</a> or
+        <a class="underline" href="/contact-us">send us a message</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site max-w-3xl">
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl border border-[var(--color-border)] bg-white open:bg-[var(--color-bg-pale)] open:border-[var(--color-accent-blue)]/40 transition">
+            <summary class="cursor-pointer list-none p-5 flex items-center justify-between gap-4">
+              <span class="font-medium text-[var(--color-navy)]">{f.q}</span>
+              <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] flex items-center justify-center group-open:bg-[var(--color-accent-blue)] group-open:text-white">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" class="group-open:hidden"><polygon points="8.39 7.64 8.39 0 7.61 0 7.61 7.64 0 7.64 0 8.4 7.61 8.4 7.61 16 8.39 16 8.39 8.4 16 8.4 16 7.64 8.39 7.64"/></svg>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" class="hidden group-open:inline-block"><rect x="2" y="7" width="12" height="2" rx="1"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-[var(--color-slate)] leading-relaxed">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site max-w-2xl text-center">
+      <h2 class="text-3xl text-[var(--color-navy)] font-light mb-4">
+        Still have a question?
+      </h2>
+      <p class="text-[var(--color-slate)] mb-7">
+        We respond to most enquiries within an hour during business hours.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary" href={ctaPrimary.href}>{ctaPrimary.text}</a>
+        <a class="btn-secondary" href="/contact-us">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>

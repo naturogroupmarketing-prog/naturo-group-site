@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ctaPrimary, ctaPhone } from '../data/site';
+
+const popularLinks = [
+  { label: 'Get an instant price', href: '/quote' },
+  { label: 'House cleaning', href: '/services/house-cleaning' },
+  { label: 'Deep clean', href: '/services/deep-clean' },
+  { label: 'End of lease', href: '/services/end-of-lease' },
+  { label: 'NDIS cleaning', href: '/services/ndis-cleaning' },
+  { label: 'About us', href: '/about' },
+  { label: 'How it works', href: '/how-it-works' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'FAQs', href: '/faqs' },
+  { label: 'Contact us', href: '/contact-us' },
+];
+---
+
+<Layout
+  title="Page not found"
+  description="We couldn't find the page you were after. Browse our most popular pages or get an instant cleaning price."
+  noindex
+>
+  <section class="bg-[var(--color-bg-pale)] pt-16">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">404 \u2014 page not found</p>
+      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
+        That page seems to have been put away.
+      </h1>
+      <p class="mt-5 text-lg text-[var(--color-slate)]">
+        The page you tried to open doesn\u2019t exist (or it has moved). Try one of the links below
+        \u2014 or get an instant price for your home in 60 seconds.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary" href={ctaPrimary.href}>{ctaPrimary.text}</a>
+        <a class="btn-secondary" href={ctaPhone.href}>Call {ctaPhone.text}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site max-w-3xl">
+      <h2 class="text-2xl text-[var(--color-navy)] font-light text-center mb-8">
+        Popular pages
+      </h2>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        {popularLinks.map((l) => (
+          <li>
+            <a
+              class="block rounded-xl border border-[var(--color-border)] px-5 py-4 text-[var(--color-navy)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition"
+              href={l.href}
+            >
+              {l.label} \u2192
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Layout>

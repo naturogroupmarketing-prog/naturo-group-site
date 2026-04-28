@@ -1,0 +1,107 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const steps = [
+  {
+    n: '01',
+    title: 'Tell us about your home',
+    body: 'Share the basics — bedrooms, bathrooms and any extras. Takes 60 seconds.',
+  },
+  {
+    n: '02',
+    title: 'Pick a date that suits',
+    body: 'Choose a one-off, weekly or fortnightly clean. Reschedule any time.',
+  },
+  {
+    n: '03',
+    title: 'Relax — we handle the rest',
+    body: 'Your police-checked cleaner arrives with eco-friendly products and gets to work.',
+  },
+];
+---
+
+<Section padding="lg" surface="surface" ariaLabel="How it works">
+  <Container width="wide">
+    <header class="how-head">
+      <Eyebrow>How it works</Eyebrow>
+      <h2 class="how-h2">From quote to clean home in three steps.</h2>
+    </header>
+
+    <ol class="how-grid">
+      {steps.map((s) => (
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">{s.n}</span>
+          <h3 class="how-title">{s.title}</h3>
+          <p class="how-body">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </Container>
+</Section>
+
+<style>
+  .how-head {
+    max-width: 640px;
+    margin: 0 0 var(--s-12);
+  }
+  .how-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 0;
+  }
+
+  .how-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6);
+    counter-reset: step;
+  }
+  @media (max-width: 760px) {
+    .how-grid { grid-template-columns: 1fr; }
+  }
+
+  .how-step {
+    background-color: var(--c-bg);
+    border-radius: var(--r-lg);
+    padding: var(--s-6);
+    border: 1px solid var(--c-border-soft);
+    position: relative;
+  }
+  .how-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--r-pill);
+    background-color: var(--c-navy);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--s-4);
+  }
+  .how-title {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--c-navy);
+    margin: 0 0 var(--s-2);
+  }
+  .how-body {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0;
+  }
+</style>

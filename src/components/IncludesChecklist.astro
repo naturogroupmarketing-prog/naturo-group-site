@@ -1,0 +1,137 @@
+---
+import { includesChecklist } from '../data/site';
+---
+
+<!--
+  Marketing-overview version of the per-service "What's included"
+  section. Visually mirrors ServiceInclusions.astro (grouped cards,
+  cream background, blue tick chips) so the homepage / services
+  index / suburb pages and individual service pages feel like one
+  family of templates rather than two unrelated patterns.
+-->
+<section class="inc-section">
+  <div class="container-site inc-inner">
+    <div class="inc-head">
+      <h2 class="inc-h2">What can be included?</h2>
+      <p class="inc-sub">A flexible checklist tailored to your home &mdash; pick and choose what matters most.</p>
+    </div>
+    <div class="inc-grid">
+      {includesChecklist.map((g) => (
+        <div class="inc-card">
+          <h3 class="inc-card-title">{g.group}</h3>
+          <ul class="inc-list">
+            {g.items.map((item) => (
+              <li class="inc-item">
+                <span class="inc-tick" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="inc-label">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .inc-section {
+    background-color: #F8F8F3;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .inc-inner { max-width: 1160px; }
+  .inc-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(40px, 5vw, 64px);
+  }
+  .inc-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 16px;
+  }
+  .inc-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+  .inc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .inc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .inc-grid { grid-template-columns: 1fr; }
+  }
+  .inc-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .inc-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(58, 93, 255, 0.25);
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.06),
+      0 14px 28px rgba(58, 93, 255, 0.10);
+  }
+  .inc-card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin: 0 0 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .inc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .inc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .inc-tick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: rgba(58, 93, 255, 0.1);
+    color: #3a5dff;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .inc-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgb(71, 85, 105);
+  }
+</style>

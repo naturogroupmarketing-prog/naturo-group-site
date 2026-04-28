@@ -1,0 +1,495 @@
+---
+import {
+  site,
+  ctaPrimary,
+  ctaPhone,
+  footerLocations,
+  footerInfoLinks,
+  footerServiceLinks,
+  subFooterLinks,
+} from '../data/site';
+
+const trustBadges = [
+  'Police-checked cleaners',
+  'Fully insured',
+  'NDIS-friendly',
+  'Insurance work welcome',
+];
+---
+
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+
+  <div class="container-site footer-top">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label={`${site.name} home`}>
+        <img src="/images/logo.avif" alt="Naturo Group" width="170" height="79" />
+      </a>
+      <p class="footer-desc">{site.description}</p>
+      <div class="footer-ctas">
+        <a href={ctaPrimary.href} class="footer-btn-primary">{ctaPrimary.text}</a>
+        <a href={ctaPhone.href} class="footer-btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.487 17.14l-4.065-3.696a1 1 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.193-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.292.652c-.024.376-.448 9.279 6.444 16.171c6.013 6.013 13.555 6.452 15.631 6.452c.305 0 .493-.013.541-.015a.999.999 0 0 0 .652-.293l1.861-2.17a1 1 0 0 0-.087-1.391z"/></svg>
+          <span>{ctaPhone.text}</span>
+        </a>
+      </div>
+      {/* Plain 12px text list — Apple's footer uses no all-caps labels;
+          the link / value carries its own meaning. */}
+      <ul class="footer-meta">
+        <li><a href={site.emailHref} class="footer-link">{site.email}</a></li>
+        <li><span class="footer-meta-value">{site.hours}</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-cols">
+      {/* Services and Company share the left column — Company stacks
+          directly under Services to free horizontal room for the
+          two-column "Areas served" list to the right. */}
+      <div class="footer-col footer-col-stack">
+        <div class="footer-subcol">
+          <h2 class="footer-h2">Services</h2>
+          <ul class="footer-list">
+            {footerServiceLinks.map((s) => (
+              <li><a href={s.href} class="footer-link">{s.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer-subcol">
+          <h2 class="footer-h2">Company</h2>
+          <ul class="footer-list">
+            {footerInfoLinks.map((l) => (
+              <li><a href={l.href} class="footer-link">{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-locations">
+        <h2 class="footer-h2">Areas served</h2>
+        <div class="footer-states">
+          {Object.entries(footerLocations).map(([state, locs]) => (
+            <div class="footer-state">
+              <p class="footer-state-name">{state}</p>
+              {/* Stacked one-per-line for readability — the previous
+                  middot-separated inline list was hard to scan at small
+                  sizes and wrapped awkwardly on narrow viewports. */}
+              <ul class="footer-state-cities">
+                {locs.map((l) => (
+                  <li><a href={l.href} class="footer-city-link">{l.label}</a></li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-site footer-trust">
+    <ul class="footer-trust-list">
+      {trustBadges.map((b) => (
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container-site footer-bottom-inner">
+      {/* Apple-style three-section bar: copyright on the left, pipe-
+          separated policy links centred, social on the right. The pipes
+          are produced by per-link borders + first-child reset (cleaner
+          than literal "|" characters in the markup, and easier to align
+          vertically across mixed link heights). */}
+      <p class="footer-copyright">{site.copyright} &middot; {site.abn}</p>
+      <nav class="footer-sublinks" aria-label="Legal">
+        {subFooterLinks.map((l) => (
+          <a href={l.href} class="footer-sublink">{l.label}</a>
+        ))}
+      </nav>
+      <div class="footer-social" aria-label="Social media">
+        <a href={site.social.facebook} aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <a href={site.social.instagram} aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15.32 4.91.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.14.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.14-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.14-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62 19.09.32 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 0 0 5.84 12 6.16 6.16 0 0 0 12 18.16 6.16 6.16 0 0 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        </a>
+        <a href={site.social.youtube} aria-label="YouTube" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Apple-inspired footer: cool light-grey background, compact 12px
+     typography, dark semibold headings (#1d1d1f), muted-grey links
+     (#6e6e73), and #d2d2d7 hairline dividers. */
+  .footer {
+    position: relative;
+    background-color: #f5f5f7;
+    color: #6e6e73;
+    overflow: hidden;
+    isolation: isolate;
+    padding-top: clamp(48px, 6vw, 72px);
+  }
+  /* Glow disabled — Apple footer is flat. Element is kept so removing
+     the markup isn't required (display:none keeps the DOM stable). */
+  .footer-glow {
+    display: none;
+  }
+
+  .footer-top {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) 1fr;
+    gap: clamp(40px, 5vw, 72px);
+    padding-bottom: clamp(36px, 4vw, 56px);
+    z-index: 1;
+  }
+  @media (max-width: 880px) {
+    .footer-top { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-logo img {
+    /* Footer logo sits in a denser link/legal column, so it doesn't need
+       to match the header (170px). 120px reads as a quieter "by the
+       way" mark and frees vertical space above the description.
+       Logo shows in its native colours against the light footer. */
+    width: 120px;
+    height: auto;
+    display: block;
+    opacity: 1;
+  }
+  .footer-desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #424245;
+    margin: 20px 0 24px;
+    max-width: 40ch;
+  }
+  /* Two equal columns via CSS Grid so the buttons render at exactly
+     the same width regardless of label length. (Flex `flex: 1` was off
+     by ~4px because intrinsic content sizes differ between the two
+     buttons.) Width:100% is required because .footer-brand uses
+     `align-items: flex-start`, which would otherwise shrink the stack
+     to its widest child. */
+  .footer-ctas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  .footer-ctas > a { white-space: nowrap; min-width: 0; }
+  /* Mobile: collapse to a single full-width column so both buttons
+     stack at equal width \u2014 matches hero / Experience / BookCTA / Sixty. */
+  @media (max-width: 500px) {
+    .footer-ctas { grid-template-columns: 1fr; }
+  }
+  .footer-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 11px 20px;
+    font-family: "Poppins", "Helvetica", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    min-height: 38px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .footer-btn-primary:hover {
+    background-color: #2548f0;
+    border-color: #2548f0;
+    transform: translateY(-1px);
+  }
+  .footer-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: "Poppins", "Helvetica", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    min-height: 38px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .footer-btn-secondary:hover {
+    background-color: #1d1d1f;
+    color: #ffffff;
+    border-color: #1d1d1f;
+  }
+  .footer-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  .footer-meta li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .footer-meta li {
+    /* Reset the column layout the old EMAIL/HOURS label list used.
+       Now each <li> is a single flat 12px text line. */
+    display: block;
+    line-height: 1.5;
+  }
+  .footer-meta-value {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: #424245;
+  }
+
+  .footer-cols {
+    /* Two top-level columns: stacked Services+Company on the left and
+       the wider Areas-served block on the right (which renders states
+       in their own sub-columns). */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(24px, 3vw, 48px);
+  }
+  .footer-col-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  @media (max-width: 720px) {
+    .footer-cols { grid-template-columns: 1fr; }
+  }
+  .footer-col { min-width: 0; }
+  .footer-subcol { min-width: 0; }
+  .footer-h2 {
+    font-family: "Poppins", sans-serif;
+    /* Apple-style: small bold near-black header, no all-caps. */
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #1d1d1f;
+    margin: 0 0 12px;
+  }
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .footer-link {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #424245;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-link:hover { color: #1d1d1f; text-decoration: underline; text-underline-offset: 2px; }
+
+  /* Two-column layout for the states: NSW spans the full left column
+     (it has the most suburbs), and Queensland + Victoria stack in the
+     right column. Order is driven by the data in footerLocations
+     (NSW → QLD → VIC), which lines up with :nth-child placement below. */
+  .footer-states {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    gap: 24px 40px;
+    max-width: 560px;
+  }
+  .footer-state:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+  .footer-state:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .footer-state:nth-child(3) { grid-column: 2; grid-row: 2; }
+  /* On narrow viewports collapse to a single column so the NSW list
+     doesn't get squashed against QLD/VIC. */
+  @media (max-width: 480px) {
+    .footer-states { grid-template-columns: 1fr; }
+    .footer-state:nth-child(1),
+    .footer-state:nth-child(2),
+    .footer-state:nth-child(3) { grid-column: auto; grid-row: auto; }
+  }
+  .footer-state-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #1d1d1f;
+    margin: 0 0 8px;
+  }
+  .footer-state-cities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Single column inside each state — the parent .footer-states grid
+       already provides the two-column NSW | (QLD/VIC) split, so each
+       state's suburbs stack vertically beneath their state heading. */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+  }
+  .footer-city-link {
+    color: #424245;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .footer-city-link:hover {
+    color: #1d1d1f;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-trust {
+    position: relative;
+    z-index: 1;
+    padding: 18px 0;
+  }
+  .footer-trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    justify-content: flex-start;
+  }
+  .footer-trust-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #424245;
+  }
+  .footer-trust-list svg {
+    color: #1d1d1f;
+    flex-shrink: 0;
+    opacity: 0.55;
+  }
+
+  /* Apple-style three-section bottom bar: copyright (left), pipe-
+     separated legal links (centre), social (right). Same #f5f5f7 bg as
+     the rest — the only separator is the hairline above. */
+  .footer-bottom {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+  }
+  .footer-bottom-inner {
+    /* Border here (not on the outer wrapper) so the hairline is the
+       same inset width as the trust-badges line above it. */
+    border-top: 1px solid #d2d2d7;
+    padding: 16px 0;
+    /* Left-justified row: copyright (with the © glyph) anchors the
+       left, sublinks flow immediately to its right, and the social
+       chips are pushed to the far right by `margin-left: auto`. */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px 24px;
+  }
+  .footer-copyright {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.5;
+    flex: 0 1 auto;
+  }
+  /* Pipe-separated inline link list (Apple pattern). Each link gets a
+     left border that renders as the divider; first child resets it. */
+  .footer-sublinks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+  .footer-sublink {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: #424245;
+    text-decoration: none;
+    padding: 0 12px;
+    border-left: 1px solid #d2d2d7;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .footer-sublink:first-child { border-left: none; padding-left: 0; }
+  .footer-sublink:last-child { padding-right: 0; }
+  .footer-sublink:hover { color: #1d1d1f; text-decoration: underline; text-underline-offset: 2px; }
+  /* Social cluster — same chip treatment as the header TopBar so the
+     two zones feel like a set. `margin-left: auto` pushes them to the
+     far right of the bottom bar. */
+  .footer-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    color: rgb(71, 85, 105);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .footer-social a svg { width: 16px; height: 16px; }
+  .footer-social a:hover {
+    background: #3a5dff;
+    border-color: #3a5dff;
+    color: #ffffff;
+  }
+  /* On narrow viewports stack the three sections vertically so nothing
+     gets squashed. */
+  @media (max-width: 720px) {
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+    .footer-copyright { text-align: center; }
+  }
+</style>

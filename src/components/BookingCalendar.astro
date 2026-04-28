@@ -1,0 +1,353 @@
+---
+// Inline date / time picker placeholder.
+//
+// Renders a 14-day rolling availability calendar with morning / afternoon
+// slots. The component is intentionally a UI shell — when the user picks a
+// slot we capture the choice in sessionStorage as `naturo:preferred-slot`
+// and forward to /quote so the quote form can pre-fill the preferred date
+// in its scheduling step.
+//
+// Production wiring options
+// -------------------------
+// To plug this into a real booking system later, swap the in-memory slot
+// generator below for one of:
+//   - Calendly inline embed: drop their script + a div, replace this whole
+//     component with the embed wrapper. Capture event via the Calendly
+//     JS API (`Calendly.initInlineWidget`).
+//   - Cal.com embed: similar pattern — `Cal('inline', { ... })`.
+//   - Custom backend: hit /api/availability for real free/busy data and
+//     POST the booking back to your CRM.
+//
+// As a placeholder this component gives Anna's team a real, working "pick
+// a date" UX so leads see availability immediately instead of being asked
+// to phone in.
+import { ctaPrimary } from '../data/site';
+
+interface Props {
+  /** Optional heading override. */
+  heading?: string;
+  sub?: string;
+  /** Number of days to show in the rolling window. */
+  days?: number;
+  /** Provider hint shown below the calendar. */
+  providerHint?: string;
+}
+
+const {
+  heading = 'Pick a date that suits you',
+  sub = 'Our cleaners hold space across the next two weeks. Tap a slot to lock it in — final confirmation goes by SMS within an hour.',
+  days = 14,
+  providerHint = 'Showing live availability across NSW, QLD and VIC. We\u2019ll confirm the closest cleaner to you.',
+} = Astro.props;
+
+// Build a 14-day rolling window of date metadata. We render this on the
+// server (no JS required) and let client-side JS handle slot selection.
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const windowDays = Array.from({ length: days }, (_, i) => {
+  const d = new Date(today);
+  d.setDate(today.getDate() + i);
+  const isWeekend = d.getDay() === 0 || d.getDay() === 6;
+  return {
+    iso: d.toISOString().slice(0, 10),
+    weekday: d.toLocaleDateString('en-AU', { weekday: 'short' }),
+    day: d.getDate(),
+    month: d.toLocaleDateString('en-AU', { month: 'short' }),
+    isWeekend,
+    // Sunday is closed; Saturday morning only.
+    available: d.getDay() !== 0,
+  };
+});
+
+const slots = ['Morning (8:30 – 12:00)', 'Afternoon (12:00 – 5:00)'];
+---
+
+<section class="bcal-section" aria-labelledby="bcal-h2">
+  <div class="container-site bcal-inner">
+    <header class="bcal-head">
+      <p class="bcal-eyebrow">Live availability</p>
+      <h2 id="bcal-h2" class="bcal-h2">{heading}</h2>
+      <p class="bcal-sub">{sub}</p>
+    </header>
+
+    <div class="bcal-card" role="application" aria-label="Cleaning slot picker">
+      <div class="bcal-day-grid" role="radiogroup" aria-label="Choose a date">
+        {windowDays.map((d) => (
+          <button
+            type="button"
+            class={`bcal-day${d.available ? '' : ' bcal-day--off'}`}
+            data-date={d.iso}
+            data-weekday={d.weekday}
+            aria-disabled={!d.available}
+            disabled={!d.available}
+            role="radio"
+            aria-checked="false"
+          >
+            <span class="bcal-day-wd">{d.weekday}</span>
+            <span class="bcal-day-num">{d.day}</span>
+            <span class="bcal-day-mo">{d.month}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="bcal-slot-wrap" id="bcalSlotWrap" hidden>
+        <p class="bcal-slot-head">Pick a time on <strong id="bcalSlotDate">—</strong></p>
+        <div class="bcal-slot-grid" role="radiogroup" aria-label="Choose a time slot">
+          {slots.map((s) => (
+            <button type="button" class="bcal-slot" data-slot={s} role="radio" aria-checked="false">{s}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="bcal-confirm" id="bcalConfirm" hidden>
+        <p class="bcal-confirm-line">
+          You picked <strong id="bcalConfirmText">—</strong>. We&rsquo;ll lock it in when you complete your quote.
+        </p>
+        <a href={ctaPrimary.href} class="bcal-cta" id="bcalCta" data-prefill="">Continue with this slot &rarr;</a>
+      </div>
+
+      <p class="bcal-foot">{providerHint}</p>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const SESSION_KEY = 'naturo:preferred-slot';
+    const days = document.querySelectorAll('.bcal-day:not([disabled])');
+    const slotWrap = document.getElementById('bcalSlotWrap');
+    const slotDateEl = document.getElementById('bcalSlotDate');
+    const slots = document.querySelectorAll('.bcal-slot');
+    const confirm = document.getElementById('bcalConfirm');
+    const confirmText = document.getElementById('bcalConfirmText');
+    const cta = document.getElementById('bcalCta');
+
+    const state = { date: null, weekday: null, slot: null };
+
+    function fmtDate() {
+      if (!state.date) return '—';
+      return `${state.weekday} ${state.date}`;
+    }
+
+    function update() {
+      slotDateEl.textContent = fmtDate();
+      if (state.date) {
+        slotWrap.removeAttribute('hidden');
+      } else {
+        slotWrap.setAttribute('hidden', '');
+        confirm.setAttribute('hidden', '');
+      }
+      if (state.date && state.slot) {
+        confirmText.textContent = `${fmtDate()} · ${state.slot}`;
+        confirm.removeAttribute('hidden');
+        // Persist the choice + decorate the CTA so /quote can pre-fill.
+        const choice = { date: state.date, weekday: state.weekday, slot: state.slot, ts: new Date().toISOString() };
+        try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(choice)); } catch (e) {}
+        const url = new URL(cta.href, window.location.origin);
+        url.searchParams.set('date', state.date);
+        url.searchParams.set('slot', state.slot);
+        cta.href = url.pathname + url.search;
+        // Track for analytics.
+        try {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'booking_slot_selected',
+            slot_date: state.date,
+            slot_window: state.slot,
+          });
+        } catch (e) {}
+      } else {
+        confirm.setAttribute('hidden', '');
+      }
+    }
+
+    days.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        days.forEach((b) => { b.classList.remove('is-selected'); b.setAttribute('aria-checked', 'false'); });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-checked', 'true');
+        state.date = btn.dataset.date;
+        state.weekday = btn.dataset.weekday;
+        state.slot = null;
+        slots.forEach((s) => { s.classList.remove('is-selected'); s.setAttribute('aria-checked', 'false'); });
+        update();
+      });
+    });
+
+    slots.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        slots.forEach((b) => { b.classList.remove('is-selected'); b.setAttribute('aria-checked', 'false'); });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-checked', 'true');
+        state.slot = btn.dataset.slot;
+        update();
+      });
+    });
+  })();
+</script>
+
+<style>
+  .bcal-section {
+    padding: clamp(72px, 9vw, 112px) 0;
+    background-color: #ffffff;
+  }
+  .bcal-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto clamp(36px, 4vw, 56px);
+  }
+  .bcal-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .bcal-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .bcal-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+
+  .bcal-card {
+    background-color: #f6f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    padding: clamp(20px, 3vw, 32px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+  .bcal-day-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+  }
+  @media (max-width: 640px) {
+    .bcal-day-grid { grid-template-columns: repeat(7, minmax(48px, 1fr)); overflow-x: auto; }
+  }
+  .bcal-day {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 12px;
+    padding: 12px 8px;
+    font-family: "Poppins", sans-serif;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    transition: border-color 0.15s ease, transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .bcal-day:hover { border-color: #3a5dff; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(58, 93, 255, 0.10); }
+  .bcal-day.is-selected { background-color: #3a5dff; border-color: #3a5dff; color: #ffffff; }
+  .bcal-day.is-selected .bcal-day-wd,
+  .bcal-day.is-selected .bcal-day-mo { color: rgba(255, 255, 255, 0.86); }
+  .bcal-day--off { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+  .bcal-day-wd {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(100, 116, 139);
+  }
+  .bcal-day-num { font-size: 18px; font-weight: 600; line-height: 1; }
+  .bcal-day-mo {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgb(100, 116, 139);
+  }
+
+  .bcal-slot-wrap {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(15, 23, 42, 0.10);
+  }
+  .bcal-slot-head {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: rgb(71, 85, 105);
+    margin: 0 0 10px;
+  }
+  .bcal-slot-head strong { color: #0f172a; font-weight: 600; }
+  .bcal-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 540px) {
+    .bcal-slot-grid { grid-template-columns: 1fr; }
+  }
+  .bcal-slot {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #0f172a;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .bcal-slot:hover { border-color: #3a5dff; }
+  .bcal-slot.is-selected { background-color: #3a5dff; border-color: #3a5dff; color: #ffffff; }
+
+  .bcal-confirm {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background-color: rgba(58, 93, 255, 0.08);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+  }
+  @media (max-width: 540px) {
+    .bcal-confirm { grid-template-columns: 1fr; }
+  }
+  .bcal-confirm-line {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: rgb(51, 65, 85);
+    margin: 0;
+  }
+  .bcal-confirm-line strong { color: #0f172a; }
+  .bcal-cta {
+    background: #3a5dff;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.15s ease;
+  }
+  .bcal-cta:hover { background: #2548f0; }
+
+  .bcal-foot {
+    margin: 18px 0 0;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(15, 23, 42, 0.10);
+    font-family: "Poppins", sans-serif;
+    font-size: 12.5px;
+    color: rgb(100, 116, 139);
+    text-align: center;
+  }
+</style>

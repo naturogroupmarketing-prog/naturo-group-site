@@ -1,0 +1,184 @@
+---
+import { features, trustBadges } from '../data/site';
+
+const cards = [...features, ...trustBadges].map((c) => {
+  const idx = c.title.indexOf(' ');
+  return {
+    ...c,
+    line1: idx === -1 ? c.title : c.title.slice(0, idx),
+    line2: idx === -1 ? '' : c.title.slice(idx + 1),
+  };
+});
+---
+
+<section class="features-section" aria-labelledby="why-naturo-h2">
+  <div class="container-site features-inner">
+    <div class="features-head">
+      <p class="features-eyebrow">Why NATURO GROUP</p>
+      <h2 id="why-naturo-h2" class="features-h2">Why choose NATURO GROUP for your home cleaning</h2>
+    </div>
+  </div>
+  <div class="container-site features-inner features-grid">
+    {cards.map((c, i) => (
+      <div class="feature-item">
+        <div class="feature-icon" aria-hidden="true">
+          {i === 0 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="21" cy="23" r="13" stroke="currentColor" stroke-width="2"/>
+              <path d="M15 25c1.4 2.2 4 3.5 6 3.5s4.6-1.3 6-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="17" cy="20" r="1.6" fill="currentColor"/>
+              <circle cx="25" cy="20" r="1.6" fill="currentColor"/>
+              <path d="M37.5 9.5c-1.6-1.6-4.2 0-4.2 2.1 0 2.5 4.2 4.7 4.2 4.7s4.2-2.2 4.2-4.7c0-2.1-2.6-3.7-4.2-2.1z" fill="#ff5f1f"/>
+            </svg>
+          )}
+          {i === 1 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="19" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 38c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M36 18c-2.2 0-4 1.8-4 4 0 3.2 4 7.5 4 7.5s4-4.3 4-7.5c0-2.2-1.8-4-4-4z" fill="#ff5f1f"/>
+              <circle cx="36" cy="22" r="1.4" fill="#ffffff"/>
+            </svg>
+          )}
+          {i === 2 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+              <line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/>
+              <line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/>
+            </svg>
+          )}
+          {i === 3 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 5L10 10v12c0 9 6 16 14 19 8-3 14-10 14-19V10L24 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M17 23l5 5 9-10" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          )}
+          {i === 4 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M7 22c0-9 7-15 17-15s17 6 17 15H7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <line x1="24" y1="22" x2="24" y2="36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 36c0 2.5 2 4.5 4.5 4.5S33 38.5 33 36" stroke="#ff5f1f" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="16" y1="22" x2="16" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+              <line x1="32" y1="22" x2="32" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+            </svg>
+          )}
+          {i === 5 && (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="19" r="12" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 28l-3 13 7-3.5L24 43l4-5.5 7 3.5-3-13" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M24 12l2.3 4.6 5.1.7-3.7 3.6.9 5.1L24 23.6l-4.6 2.4.9-5.1-3.7-3.6 5.1-.7L24 12z" fill="#ff5f1f"/>
+            </svg>
+          )}
+        </div>
+        <h3 class="feature-title">{c.line1}<br />{c.line2}</h3>
+        <p class="feature-body">{c.body}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features-section {
+    background-color: #F8F8F3;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .features-inner {
+    padding-inline: 0;
+  }
+  .features-head {
+    max-width: 605px;
+    margin: 0 0 clamp(40px, 5vw, 64px);
+    text-align: left;
+  }
+  .features-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .features-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 22px;
+  }
+  .features-intro {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+  .feature-item {
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.05);
+    min-height: 270px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .feature-item:hover {
+    transform: translateY(-3px);
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.06),
+      0 18px 36px rgba(58, 93, 255, 0.32);
+  }
+  .feature-item:hover .feature-title,
+  .feature-item:hover .feature-body {
+    color: #ffffff;
+  }
+  .feature-icon {
+    margin-bottom: 18px;
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #3a5dff;
+    transition: color 0.25s ease;
+  }
+  .feature-item:hover .feature-icon { color: #ffffff; }
+  .feature-icon svg { width: 48px; height: 48px; display: block; }
+  .feature-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(22px, 2vw, 26px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: rgb(28, 36, 75);
+    margin: 0 0 10px;
+  }
+  .feature-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+</style>

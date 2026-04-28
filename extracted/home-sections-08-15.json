@@ -1,0 +1,97 @@
+[
+  {
+    "i": 8,
+    "h": 762,
+    "y": 1372,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "Pricing cards (3-up): Deep Clean / Regular Clean / End of Lease",
+    "cards": [
+      {"name": "Deep Clean", "label": "Starting from", "cta": "Get an instant Price"},
+      {"name": "Regular Clean", "label": "Starting from", "cta": "Get an instant Price"},
+      {"name": "End of Lease", "label": "Starting from", "cta": "Get an instant Price"}
+    ],
+    "ctaAction": "open booking popup id 3562",
+    "note": "Need targeted extraction for prices and per-card feature lists"
+  },
+  {
+    "i": 9,
+    "h": 750,
+    "y": 2134,
+    "role": "Big banner with bg image (staff photo) — Experience and Reliable",
+    "h1Primary": "Experience and Reliable",
+    "h1Secondary": "View pricing and book online.",
+    "ctas": [
+      {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      {"text": "1300 876 472", "href": "tel:1300876472"}
+    ]
+  },
+  {
+    "i": 10,
+    "h": 422,
+    "y": 2884,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "3 features (icon + title + body)",
+    "features": [
+      {"title": "Excellent customer service", "body": "We are committed to delivering outstanding customer service with care and professionalism."},
+      {"title": "Dedicated area co-ordinator", "body": "Our local customer service team is here to provide tailored support. We are here to help."},
+      {"title": "Fast and easy booking", "body": "Book your house cleaning service online in 60 seconds. With our easy to use online booking system."}
+    ]
+  },
+  {
+    "i": 11,
+    "h": 395,
+    "y": 3306,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "3 trust badges (icon + title + body)",
+    "badges": [
+      {"title": "Police checked", "body": "Friendly and trustworthy, all our cleaners are police-checked for your assurance and safety."},
+      {"title": "Fully Insured", "body": "Public Liability Cover and our cleaners all have accidental coverage for your peace of mind."},
+      {"title": "Satisfaction guaranteed", "body": "We provide a satisfaction guarantee for complete peace of mind. We make things right."}
+    ]
+  },
+  {
+    "i": 12,
+    "h": 474,
+    "y": 3701,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "Intro copy block",
+    "h2": "Best House Cleaning Australia",
+    "bodyTruncated": "At NATURO GROUP, we believe that a clean home should also be a healthy and sustainable one. Our eco-friendly cleaning services take the hassle out of maintaining a fresh and toxin-free home while being kind to the planet. With a commitment to natural, non-toxic products and a meticulous approach, we...",
+    "note": "Need full body extraction"
+  },
+  {
+    "i": 13,
+    "h": 162,
+    "y": 4184,
+    "bgColor": "rgb(255, 255, 255)",
+    "role": "Section heading only",
+    "h2": "What can be Included?"
+  },
+  {
+    "i": 14,
+    "h": 300,
+    "y": 4346,
+    "role": "Includes checklist (no headings detected — likely image or icon list)",
+    "note": "Need targeted extraction"
+  },
+  {
+    "i": 15,
+    "h": 890,
+    "y": 4748,
+    "bgColor": "rgb(240, 240, 239)",
+    "role": "About / founder block (image + heading + body + signature)",
+    "h2": "Transforming standards in the cleaning industry",
+    "image": "https://naturogroup.com.au/wp-content/uploads/2025/01/v4about-Us-naturo-group.png",
+    "imageAlt": "Eco-friendly cleaning service by NATURO GROUP showcasing natural products and police-checked cleaners in Wollongong.",
+    "body": [
+      "At NATURO GROUP, we deliver exceptional cleaning services across Australia, backed by a unique nursing background that drives our compassionate care.",
+      "We take pride in supporting NDIS participants, Veterans Affairs, Workers Compensation, Insurance, and Aged Care recipients with tailored services that prioritise comfort and independence.",
+      "Our commitment to quality, reliability, and personalised care ensures every client feels valued in their own home. At NATURO GROUP, we don't just clean—we create spaces where people feel truly cared for."
+    ],
+    "signature": "Managing Director — Anna Biram",
+    "ctas": [
+      {"text": "Get an Instant Price", "action": "open booking popup id 3562"},
+      {"text": "1300 876 472", "href": "tel:1300876472"}
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+---
+type Padding = 'sm' | 'md' | 'lg';
+type Surface = 'white' | 'cream' | 'surface' | 'navy';
+
+interface Props {
+  padding?: Padding;
+  surface?: Surface;
+  ariaLabel?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  padding = 'md',
+  surface = 'white',
+  ariaLabel,
+  id,
+  class: className = '',
+} = Astro.props;
+---
+
+<section
+  id={id}
+  aria-label={ariaLabel}
+  class:list={['section', `section-pad-${padding}`, `section-surface-${surface}`, className]}
+>
+  <slot />
+</section>
+
+<style>
+  .section {
+    width: 100%;
+  }
+  .section-pad-sm { padding-block: var(--section-y-sm); }
+  .section-pad-md { padding-block: var(--section-y-md); }
+  .section-pad-lg { padding-block: var(--section-y-lg); }
+
+  .section-surface-white   { background-color: var(--c-bg); }
+  .section-surface-cream   { background-color: var(--c-cream); }
+  .section-surface-surface { background-color: var(--c-surface); }
+  .section-surface-navy    { background-color: var(--c-navy); color: #ffffff; }
+  .section-surface-navy :global(h1),
+  .section-surface-navy :global(h2),
+  .section-surface-navy :global(h3) { color: #ffffff; }
+</style>

@@ -1,0 +1,93 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Button from '../ui/Button.astro';
+import { founder } from '../../data/site';
+---
+
+<Section padding="lg" surface="white" ariaLabel="Our founder">
+  <Container width="wide">
+    <div class="founder-grid">
+      <div class="founder-image-wrap">
+        <img
+          src={founder.image}
+          alt={founder.imageAlt}
+          width="500"
+          height="600"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="founder-content">
+        <Eyebrow>Our story</Eyebrow>
+        <h2 class="founder-h2">Transforming standards in the cleaning industry.</h2>
+        {founder.body.map((p) => <p class="founder-p">{p}</p>)}
+        <div class="founder-meta">
+          <span class="founder-role">{founder.role}</span>
+          <span class="founder-name">{founder.name}</span>
+        </div>
+        <div class="founder-cta">
+          <Button href="/about" variant="secondary" size="md">Read our story</Button>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .founder-grid { grid-template-columns: 1fr; }
+  }
+  .founder-image-wrap {
+    position: relative;
+  }
+  .founder-image-wrap img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-sm);
+    margin-inline: auto;
+    display: block;
+  }
+  .founder-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-5);
+  }
+  .founder-p {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0 0 var(--s-4);
+  }
+  .founder-meta {
+    margin-top: var(--s-6);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .founder-role {
+    font-size: var(--fs-body-sm);
+    color: var(--c-slate-soft);
+  }
+  .founder-name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--c-navy);
+  }
+  .founder-cta { margin-top: var(--s-6); }
+</style>

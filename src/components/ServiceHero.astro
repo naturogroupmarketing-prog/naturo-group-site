@@ -1,0 +1,204 @@
+---
+import { site, ctaPrimary, ctaPhone } from '../data/site';
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  tagline?: string;
+  bg?: string;
+  /** Optional slideshow — when provided, overrides `bg` and rotates through images. */
+  slides?: string[];
+}
+
+const {
+  eyebrow,
+  heading,
+  tagline = site.tagline,
+  bg = '/images/hero-bathroom.jpg',
+  slides,
+} = Astro.props;
+const useSlideshow = Array.isArray(slides) && slides.length > 1;
+---
+
+<section class="svc-hero relative overflow-hidden">
+  {useSlideshow ? (
+    <div class="svc-hero-slides absolute inset-0">
+      {slides!.map((src, i) => (
+        <div
+          class="svc-hero-slide"
+          style={`background-image: url(${src}); animation-delay: ${i * 5}s;`}
+        />
+      ))}
+    </div>
+  ) : (
+    <div class="svc-hero-bg absolute inset-0" style={`background-image: url(${bg});`}></div>
+  )}
+  <div class="svc-hero-overlay absolute inset-0"></div>
+
+  <div class="relative container-site svc-hero-inner flex items-center">
+    <div class="w-full max-w-[800px]">
+      {eyebrow && <p class="svc-hero-eyebrow">{eyebrow}</p>}
+      <h1 class="svc-hero-h1" set:html={heading} />
+      <p class="svc-hero-tagline">{tagline}</p>
+      <div class="svc-hero-cta-stack">
+        <a href={ctaPrimary.href} class="svc-hero-btn-primary">{ctaPrimary.text}</a>
+        <a href={ctaPhone.href} class="svc-hero-btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>{ctaPhone.text}</span>
+        </a>
+      </div>
+      <div class="svc-hero-partners">
+        <p class="svc-hero-partners-label">Partners &amp; Providers</p>
+        <img src="/images/partners-composite.png" alt="Partners and providers: NRMA, phsa, ipar, Allianz, QBE" class="svc-hero-partners-img" width="300" height="156" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .svc-hero { padding-block: 0; }
+  .svc-hero-inner {
+    /* Standard hero height — match Hero.astro across the site. */
+    height: clamp(640px, 86vh, 800px);
+    padding-block: clamp(48px, 8vh, 96px);
+  }
+  @media (max-width: 640px) {
+    .svc-hero-inner {
+      height: min(680px, 88dvh);
+      padding-block: 36px;
+    }
+  }
+  .svc-hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .svc-hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: svcHeroFade 15s infinite;
+    will-change: opacity;
+  }
+  @keyframes svcHeroFade {
+    0%, 28% { opacity: 1; }
+    33%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .svc-hero-slide { animation: none; }
+    .svc-hero-slide:first-child { opacity: 1; }
+  }
+  .svc-hero-overlay {
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91;
+    pointer-events: none;
+  }
+  .svc-hero-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FEB91C;
+    margin: 0 0 14px;
+  }
+  .svc-hero-h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.2vw, 66px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0;
+  }
+  .svc-hero-tagline {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: #FEB91C;
+    margin-top: 16px;
+    letter-spacing: 0.005em;
+  }
+  .svc-hero-cta-stack {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  @media (max-width: 500px) {
+    .svc-hero-cta-stack { flex-direction: column; align-items: stretch; }
+  }
+  .svc-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+  .svc-hero-btn-primary:hover {
+    background-color: #2548f0;
+    border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  .svc-hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    min-height: 46px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+  .svc-hero-btn-secondary svg { flex-shrink: 0; }
+  .svc-hero-btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1C244B;
+    border-color: #ffffff;
+  }
+  .svc-hero-partners { margin-top: 40px; }
+  .svc-hero-partners-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 14px;
+  }
+  .svc-hero-partners-img {
+    width: 280px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+</style>

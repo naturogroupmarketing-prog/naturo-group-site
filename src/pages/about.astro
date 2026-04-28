@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Specialties from '../components/Specialties.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<Layout
+  title="About Naturo Group"
+  description="Founded by registered nurse Anna Biram, Naturo Group brings clinical-level care and eco-friendly products to every clean — across Australia."
+>
+  <section class="bg-[var(--color-bg-pale)] pt-16">
+    <div class="container-site max-w-3xl text-center">
+      <p class="eyebrow mb-3">Our story</p>
+      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
+        A cleaning company started by a nurse.
+      </h1>
+      <p class="mt-5 text-lg text-[var(--color-slate)]">
+        Care, dignity and detail aren\u2019t buzzwords for us. They\u2019re the reason Naturo exists.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div class="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[var(--color-bg-light)] to-[var(--color-bg-cream)] flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-32 h-32 rounded-full bg-[var(--color-navy)] text-white text-4xl font-light flex items-center justify-center mx-auto">AB</div>
+          <p class="mt-6 text-xl font-semibold text-[var(--color-navy)]">Anna Biram</p>
+          <p class="text-[var(--color-slate)]">Founder & Managing Director</p>
+        </div>
+      </div>
+      <div class="space-y-5 text-[var(--color-slate)] leading-relaxed text-lg">
+        <p>
+          Anna spent years working as a registered nurse before launching Naturo Group. In hospital wards and aged care homes, she saw how a truly clean room changed how people felt — physically and emotionally.
+        </p>
+        <p>
+          She also saw how often that level of care was missing in residential cleaning. Rushed jobs. Different cleaners every visit. Harsh chemicals around kids and pets. People paying premium prices for mediocre results.
+        </p>
+        <p>
+          Naturo was built to be the opposite of that. A team trained like clinical staff. Eco-friendly, plant-based products. A consistent team you can trust. Genuine accountability when something\u2019s missed.
+        </p>
+        <p>
+          Today we operate across NSW, Queensland and Victoria, working alongside NDIS plan managers, support coordinators, aged care clients, the Department of Veterans\u2019 Affairs and several major Australian insurers on cleaning jobs every week.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Specialties />
+
+  <section class="bg-white">
+    <div class="container-site grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <p class="text-5xl font-light text-[var(--color-cyan)]">800+</p>
+        <p class="mt-2 text-[var(--color-slate)]">Australian families served</p>
+      </div>
+      <div>
+        <p class="text-5xl font-light text-[var(--color-cyan)]">4.9★</p>
+        <p class="mt-2 text-[var(--color-slate)]">Average Google rating</p>
+      </div>
+      <div>
+        <p class="text-5xl font-light text-[var(--color-cyan)]">100%</p>
+        <p class="mt-2 text-[var(--color-slate)]">Satisfaction guarantee on every clean</p>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>

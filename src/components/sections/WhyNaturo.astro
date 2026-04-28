@@ -1,0 +1,122 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const reasons = [
+  {
+    title: 'Eco-friendly products',
+    body: 'Non-toxic, plant-based supplies safe for children, pets and asthmatic households.',
+    icon: 'leaf',
+  },
+  {
+    title: 'Nurse-led care',
+    body: 'Founded by a registered nurse — every clean follows hygiene-first standards.',
+    icon: 'shield',
+  },
+  {
+    title: 'NDIS, DVA & Aged Care',
+    body: 'We work with plan managers, case managers and aged-care providers every week across Australia.',
+    icon: 'verified',
+  },
+  {
+    title: 'Local, vetted teams',
+    body: 'Police-checked, fully insured, and trained on our 30-point quality checklist.',
+    icon: 'team',
+  },
+];
+---
+
+<Section padding="lg" surface="cream" ariaLabel="Why Naturo Group">
+  <Container width="wide">
+    <header class="why-head">
+      <Eyebrow>Why Naturo Group</Eyebrow>
+      <h2 class="why-h2">A higher standard of care, in every home.</h2>
+    </header>
+
+    <div class="why-grid">
+      {reasons.map((r) => (
+        <article class="why-item">
+          <div class="why-icon" aria-hidden="true">
+            {r.icon === 'leaf' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+            )}
+            {r.icon === 'shield' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            )}
+            {r.icon === 'verified' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 5c0-1.66 4-3 9-3s9 1.34 9 3-4 3-9 3-9-1.34-9-3Z"/></svg>
+            )}
+            {r.icon === 'team' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            )}
+          </div>
+          <h3 class="why-title">{r.title}</h3>
+          <p class="why-body">{r.body}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .why-head {
+    max-width: 720px;
+    margin: 0 0 var(--s-12);
+  }
+  .why-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-navy);
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 0;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--s-6);
+  }
+  @media (max-width: 1024px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+  .why-item {
+    background-color: var(--c-bg);
+    border: 1px solid var(--c-border-soft);
+    border-radius: var(--r-lg);
+    padding: var(--s-6);
+    transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+  .why-item:hover {
+    border-color: var(--c-border);
+    transform: translateY(-2px);
+  }
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--r-md);
+    background-color: rgba(36, 210, 242, 0.12);
+    color: var(--c-cyan-700);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--s-5);
+  }
+  .why-title {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--c-navy);
+    margin: 0 0 var(--s-2);
+  }
+  .why-body {
+    font-size: var(--fs-body);
+    line-height: var(--lh-relaxed);
+    color: var(--c-slate);
+    margin: 0;
+  }
+</style>

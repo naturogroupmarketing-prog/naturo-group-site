@@ -1,0 +1,874 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, ctaPrimary, ctaPhone } from '../data/site';
+
+const heroSlides = [
+  '/images/phone-woman.jpg',
+  '/images/banner-staff.jpg',
+  '/images/team-staff.jpg',
+];
+
+const services = [
+  'House cleaning (regular or once-off)',
+  'Deep clean / spring clean',
+  'End of lease / bond clean',
+  'NDIS cleaning',
+  'Aged care cleaning',
+  'Veterans (DVA) cleaning',
+  'Insurance cleaning',
+  'General enquiry',
+];
+
+const states = ['NSW', 'QLD', 'VIC', 'Other'];
+
+const contactFaqs = [
+  {
+    q: 'How fast will you reply?',
+    a: 'Phones are answered live during business hours. Emails and form submissions get a personal reply within the hour, Monday to Friday. Out-of-hours messages are answered first thing the next business morning.',
+  },
+  {
+    q: 'Can I get a price without filling out the form?',
+    a: 'Yes — call 1300 876 472 and our coordinator will quote you on the call (about 2 minutes), or use Get an Instant Price for an immediate online estimate based on bedrooms, bathrooms and frequency.',
+  },
+  {
+    q: 'I\u2019m an NDIS or insurance plan manager — who do I talk to?',
+    a: 'Email admin@naturogroup.com.au with the participant or claim reference and we\u2019ll route you to our billing coordinator the same day. We invoice plan managers, self-managed participants, and major Australian insurers directly.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Naturo Group',
+    url: `${site.url}/contact-us`,
+    description:
+      'Get in touch with the Naturo Group team for residential, NDIS, aged-care, veterans (DVA) and insurance cleaning across Australia.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: site.name,
+    url: site.url,
+    logo: `${site.url}/images/logo.png`,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: site.phone,
+        contactType: 'customer service',
+        email: site.email,
+        areaServed: 'AU',
+        availableLanguage: ['en'],
+        hoursAvailable: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '08:30',
+          closes: '17:00',
+        },
+      },
+    ],
+    sameAs: [site.social.facebook, site.social.instagram, site.social.youtube],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Contact us', item: `${site.url}/contact-us` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: contactFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+
+const methodCards = [
+  {
+    label: 'Call',
+    title: site.phone,
+    body: 'Quotes, rebooking and urgent enquiries — answered live during business hours.',
+    href: site.phoneHref,
+    cta: 'Call now',
+  },
+  {
+    label: 'Email',
+    title: site.email,
+    body: 'Send your address, bedrooms and preferred date. We reply within the hour.',
+    href: site.emailHref,
+    cta: 'Send email',
+  },
+  {
+    label: 'Instant price',
+    title: '60-second quote',
+    body: 'Skip the back-and-forth. Get a price based on your home in under a minute.',
+    href: ctaPrimary.href,
+    cta: 'Get a quote',
+  },
+];
+---
+
+<Layout
+  title="Contact Us — Naturo Group"
+  description="Talk to the Naturo Group team. Phone, email, plan-manager billing and online quotes for eco-friendly cleaning across NSW, QLD and VIC. Replies within the hour, business hours."
+  schema={schema}
+>
+  <!-- 1. Hero — same gradient + composition as homepage Hero -->
+  <section class="ct-hero">
+    <div class="ct-hero-slides" aria-hidden="true">
+      {heroSlides.map((src, i) => (
+        <div
+          class="ct-hero-slide"
+          style={`background-image: url(${src}); animation-delay: ${i * 5}s;`}
+        />
+      ))}
+    </div>
+    <div class="ct-hero-overlay" aria-hidden="true"></div>
+    <div class="container-site ct-hero-inner">
+      <div class="ct-hero-content">
+        <p class="ct-hero-eyebrow">Contact us</p>
+        <h1 class="ct-hero-h1">Talk to a real<br />human, fast.</h1>
+        <p class="ct-hero-tagline">Phones answered live. Emails replied within the hour.</p>
+        <div class="ct-hero-ctas">
+          <a href={ctaPhone.href} class="ct-hero-btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>{ctaPhone.text}</span>
+          </a>
+          <a href="#contact-form" class="ct-hero-btn-secondary">Send a message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Intro — 2-col sticky, mirrors homepage IntroCopy -->
+  <section class="ct-intro-section">
+    <div class="container-site ct-intro-inner">
+      <div class="ct-intro-col ct-intro-col-left">
+        <span class="ct-intro-kicker">How we respond</span>
+        <h2 class="ct-intro-h2">A real coordinator on the other end &mdash; not a chatbot.</h2>
+      </div>
+      <div class="ct-intro-col ct-intro-col-right">
+        <p class="ct-intro-body">
+          Whether you&rsquo;re booking a regular clean, sorting NDIS paperwork or chasing an
+          insurance scope, your message lands with a human who can actually answer. No tickets,
+          no automated replies, no &ldquo;please hold while we transfer you.&rdquo;
+        </p>
+        <p class="ct-intro-body">
+          We do plenty of NDIS, aged care, DVA and insurance jobs &mdash; we work directly with
+          plan managers, support coordinators and insurers every day. Tell us what you need and
+          we&rsquo;ll route it to the right person.
+        </p>
+        <div class="ct-intro-stats">
+          <div class="ct-intro-stat">
+            <span class="ct-intro-stat-num">&lt;&nbsp;1&nbsp;hr</span>
+            <span class="ct-intro-stat-label">Email reply, business hours</span>
+          </div>
+          <div class="ct-intro-stat">
+            <span class="ct-intro-stat-num">8:30&ndash;5</span>
+            <span class="ct-intro-stat-label">Phones answered, Mon&ndash;Fri</span>
+          </div>
+          <div class="ct-intro-stat">
+            <span class="ct-intro-stat-num">3&nbsp;states</span>
+            <span class="ct-intro-stat-label">NSW, QLD &amp; VIC coverage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Contact methods — 3 cards mirroring Features pattern -->
+  <section class="ct-methods-section" aria-labelledby="ct-methods-h2">
+    <div class="container-site ct-methods-inner">
+      <div class="ct-methods-head">
+        <p class="ct-methods-eyebrow">Get in touch</p>
+        <h2 id="ct-methods-h2" class="ct-methods-h2">Pick the channel that suits you</h2>
+      </div>
+    </div>
+    <div class="container-site ct-methods-inner ct-methods-grid">
+      {methodCards.map((m) => (
+        <a class="ct-method-card" href={m.href}>
+          <span class="ct-method-label">{m.label}</span>
+          <h3 class="ct-method-title">{m.title}</h3>
+          <p class="ct-method-body">{m.body}</p>
+          <span class="ct-method-cta">{m.cta} &rarr;</span>
+        </a>
+      ))}
+    </div>
+    <div class="container-site ct-methods-inner ct-hours-row">
+      <div class="ct-hours-card">
+        <div class="ct-hours-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <p class="ct-hours-label">Office hours</p>
+          <p class="ct-hours-value">{site.hours}</p>
+        </div>
+      </div>
+      <div class="ct-hours-card">
+        <div class="ct-hours-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="ct-hours-label">Service areas</p>
+          <p class="ct-hours-value">NSW, Queensland &amp; Victoria</p>
+        </div>
+      </div>
+      <div class="ct-hours-card">
+        <div class="ct-hours-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+        </div>
+        <div>
+          <p class="ct-hours-label">Plan managers &amp; insurers</p>
+          <p class="ct-hours-value">Direct billing supported</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Contact form -->
+  <section class="ct-form-section" id="contact-form" aria-labelledby="ct-form-h2">
+    <div class="container-site ct-form-inner">
+      <div class="ct-form-head">
+        <p class="ct-form-eyebrow">Send a message</p>
+        <h2 id="ct-form-h2" class="ct-form-h2">Tell us what you need.</h2>
+        <p class="ct-form-sub">
+          Fill in the form and we&rsquo;ll reply within the hour, business hours. Prefer to talk?
+          Call <a href={ctaPhone.href} class="ct-form-link">{ctaPhone.text}</a>.
+        </p>
+      </div>
+
+      <form
+        class="ct-form"
+        action={`mailto:${site.email}`}
+        method="post"
+        enctype="text/plain"
+        aria-describedby="ct-form-note"
+      >
+        <div class="ct-form-grid">
+          <label class="ct-field">
+            <span class="ct-field-label">Full name<span aria-hidden="true">*</span></span>
+            <input class="ct-input" type="text" name="full_name" autocomplete="name" required />
+          </label>
+
+          <label class="ct-field">
+            <span class="ct-field-label">Email<span aria-hidden="true">*</span></span>
+            <input class="ct-input" type="email" name="email" autocomplete="email" required />
+          </label>
+
+          <label class="ct-field">
+            <span class="ct-field-label">Phone</span>
+            <input class="ct-input" type="tel" name="phone" autocomplete="tel" inputmode="tel" />
+          </label>
+
+          <label class="ct-field">
+            <span class="ct-field-label">Suburb &amp; postcode<span aria-hidden="true">*</span></span>
+            <input class="ct-input" type="text" name="suburb_postcode" placeholder="e.g. Bondi 2026" required />
+          </label>
+
+          <label class="ct-field">
+            <span class="ct-field-label">State<span aria-hidden="true">*</span></span>
+            <select class="ct-input" name="state" required>
+              <option value="" disabled selected>Choose a state</option>
+              {states.map((s) => <option value={s}>{s}</option>)}
+            </select>
+          </label>
+
+          <label class="ct-field">
+            <span class="ct-field-label">Service<span aria-hidden="true">*</span></span>
+            <select class="ct-input" name="service" required>
+              <option value="" disabled selected>Choose a service</option>
+              {services.map((s) => <option value={s}>{s}</option>)}
+            </select>
+          </label>
+        </div>
+
+        <label class="ct-field">
+          <span class="ct-field-label">How can we help?<span aria-hidden="true">*</span></span>
+          <textarea
+            class="ct-input ct-textarea"
+            name="message"
+            rows="5"
+            required
+            placeholder="Bedrooms, bathrooms, preferred date, NDIS reference, anything else we should know…"
+          ></textarea>
+        </label>
+
+        <p id="ct-form-note" class="ct-form-note">
+          Submitting opens your email client with your message ready to send. Or email us directly
+          at <a href={site.emailHref} class="ct-form-link">{site.email}</a>.
+        </p>
+
+        <button type="submit" class="ct-submit">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 5. FAQ -->
+  <section class="ct-faq-section" aria-labelledby="ct-faq-h2">
+    <div class="container-site ct-faq-inner">
+      <div class="ct-faq-head">
+        <p class="ct-faq-eyebrow">Quick answers</p>
+        <h2 id="ct-faq-h2" class="ct-faq-h2">Before you write</h2>
+      </div>
+      <div class="ct-faq-list">
+        {contactFaqs.map((f) => (
+          <details class="ct-faq-item">
+            <summary class="ct-faq-q">{f.q}</summary>
+            <p class="ct-faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---------- Hero — same gradient treatment as homepage Hero ---------- */
+  .ct-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    /* Standard hero height — match across every page. */
+    height: clamp(640px, 86vh, 800px);
+    background-color: rgb(58, 77, 97);
+    display: flex;
+    align-items: center;
+  }
+  .ct-hero-slides { position: absolute; inset: 0; z-index: 0; }
+  .ct-hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: ctHeroFade 15s infinite;
+    will-change: opacity;
+  }
+  @keyframes ctHeroFade {
+    0%, 28% { opacity: 1; }
+    33%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ct-hero-slide { animation: none; }
+    .ct-hero-slide:first-child { opacity: 1; }
+  }
+  .ct-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ct-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-block: clamp(72px, 10vh, 128px);
+  }
+  .ct-hero-content { max-width: 605px; color: #ffffff; }
+  .ct-hero-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FEB91C;
+    margin: 0 0 14px;
+  }
+  .ct-hero-h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(40px, 5.2vw, 66px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0;
+  }
+  .ct-hero-tagline {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: #FEB91C;
+    margin: 16px 0 0;
+    letter-spacing: 0.005em;
+  }
+  .ct-hero-ctas {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  @media (max-width: 500px) {
+    .ct-hero-ctas { flex-direction: column; align-items: stretch; }
+  }
+  .ct-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 26px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    min-height: 46px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .ct-hero-btn-primary:hover {
+    background-color: #2548f0;
+    border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  .ct-hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+    padding: 13px 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    min-height: 46px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ct-hero-btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1C244B;
+    border-color: #ffffff;
+  }
+  @media (max-width: 640px) {
+    .ct-hero { height: min(680px, 88dvh); }
+    .ct-hero-inner { padding-block: 36px; }
+  }
+
+  /* ---------- Intro (mirrors homepage IntroCopy) ---------- */
+  .ct-intro-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .ct-intro-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .ct-intro-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .ct-intro-col-left { position: sticky; top: 96px; }
+  @media (max-width: 860px) {
+    .ct-intro-col-left { position: static; }
+  }
+  .ct-intro-kicker {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .ct-intro-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .ct-intro-body {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgb(71, 85, 105);
+    margin: 0 0 18px;
+  }
+  .ct-intro-body:last-of-type { margin-bottom: 32px; }
+  .ct-intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  @media (max-width: 540px) {
+    .ct-intro-stats { grid-template-columns: 1fr; gap: 20px; }
+  }
+  .ct-intro-stat { display: flex; flex-direction: column; gap: 4px; }
+  .ct-intro-stat-num {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 2.4vw, 30px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+  .ct-intro-stat-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(71, 85, 105);
+    line-height: 1.3;
+  }
+
+  /* ---------- Contact method cards (mirrors Features) ---------- */
+  .ct-methods-section {
+    background-color: #F8F8F3;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .ct-methods-inner { padding-inline: 0; }
+  .ct-methods-head {
+    max-width: 605px;
+    margin: 0 0 clamp(40px, 5vw, 56px);
+  }
+  .ct-methods-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .ct-methods-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .ct-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .ct-methods-grid { grid-template-columns: 1fr; }
+  }
+  .ct-method-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  }
+  .ct-method-card:hover {
+    transform: translateY(-3px);
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 18px 36px rgba(58, 93, 255, 0.32);
+  }
+  .ct-method-card:hover .ct-method-label,
+  .ct-method-card:hover .ct-method-title,
+  .ct-method-card:hover .ct-method-body,
+  .ct-method-card:hover .ct-method-cta { color: #ffffff; }
+  .ct-method-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    transition: color 0.25s ease;
+  }
+  .ct-method-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 1.7vw, 23px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: rgb(28, 36, 75);
+    margin: 0;
+    word-break: break-word;
+    transition: color 0.25s ease;
+  }
+  .ct-method-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    margin: 8px 0 12px;
+    flex: 1;
+    transition: color 0.25s ease;
+  }
+  .ct-method-cta {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #3a5dff;
+    transition: color 0.25s ease;
+  }
+
+  /* Hours / coverage / billing strip below the cards */
+  .ct-hours-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: clamp(24px, 3vw, 36px);
+  }
+  @media (max-width: 900px) {
+    .ct-hours-row { grid-template-columns: 1fr; }
+  }
+  .ct-hours-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 18px 22px;
+  }
+  .ct-hours-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a5dff;
+    background-color: rgba(58, 93, 255, 0.1);
+    border-radius: 10px;
+  }
+  .ct-hours-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 2px;
+  }
+  .ct-hours-value {
+    font-family: "Poppins", sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ---------- Form ---------- */
+  .ct-form-section {
+    background-color: #ffffff;
+    padding: clamp(88px, 10vw, 128px) 0;
+    scroll-margin-top: 100px;
+  }
+  .ct-form-inner { max-width: 880px; }
+  .ct-form-head { margin: 0 0 clamp(32px, 4vw, 48px); }
+  .ct-form-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .ct-form-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 16px;
+  }
+  .ct-form-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+  .ct-form-link {
+    color: #3a5dff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .ct-form-link:hover { text-decoration: underline; }
+  .ct-form {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: clamp(28px, 4vw, 40px);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .ct-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 640px) {
+    .ct-form-grid { grid-template-columns: 1fr; }
+  }
+  .ct-field { display: flex; flex-direction: column; gap: 8px; }
+  .ct-field-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+  }
+  .ct-field-label span[aria-hidden="true"] { color: #3a5dff; margin-left: 2px; }
+  .ct-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 8px;
+    padding: 12px 14px;
+    line-height: 1.4;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .ct-input:focus {
+    outline: none;
+    border-color: #3a5dff;
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.2);
+  }
+  .ct-textarea {
+    resize: vertical;
+    min-height: 130px;
+    font-family: "Poppins", sans-serif;
+  }
+  .ct-form-note {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(100, 116, 139);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .ct-submit {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 6px;
+    padding: 14px 28px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    min-height: 48px;
+    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .ct-submit:hover {
+    background-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- FAQ ---------- */
+  .ct-faq-section {
+    background-color: #F8F8F3;
+    padding: clamp(88px, 10vw, 128px) 0;
+  }
+  .ct-faq-head { max-width: 720px; margin: 0 0 clamp(32px, 4vw, 48px); }
+  .ct-faq-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 14px;
+  }
+  .ct-faq-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .ct-faq-list {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    max-width: 820px;
+  }
+  .ct-faq-item {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 20px 0;
+  }
+  .ct-faq-q {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 500;
+    color: #0f172a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 32px;
+  }
+  .ct-faq-q::-webkit-details-marker { display: none; }
+  .ct-faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3a5dff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  details[open] .ct-faq-q::after { content: '\2212'; }
+  .ct-faq-a {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(15px, 1.15vw, 17px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+    margin: 12px 0 0;
+    max-width: 720px;
+  }
+</style>

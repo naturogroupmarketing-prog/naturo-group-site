@@ -1,0 +1,1709 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site, ctaPhone, leadCapture } from '../data/site';
+
+const faqs = [
+  {
+    q: 'Is this an instant price or a final quote?',
+    a: 'It\u2019s an honest estimate based on what most homes that size need. The price is locked in once we confirm your postcode and any access notes \u2014 usually within the hour during business hours. If something changes the time on the day, we\u2019ll always tell you before we keep going.',
+  },
+  {
+    q: 'How is the price calculated?',
+    a: 'Every clean is priced by the hour at a flat rate of $76.95/hour with a 2-hour minimum (so the smallest job starts at $153.90). The estimated hours are based on your bedrooms, bathrooms and any extras you select. There are no frequency discounts \u2014 the same hourly rate applies whether you book weekly, fortnightly, monthly or one-off.',
+  },
+  {
+    q: 'Do you bring your own products and equipment?',
+    a: 'Yes \u2014 every clean comes with non-toxic, plant-based products and our own equipment, included in the price. If you have a fragrance preference or a product you\u2019d rather we use, just tell us in the notes.',
+  },
+  {
+    q: 'What postcodes do you cover?',
+    a: 'NSW, Queensland and Victoria \u2014 most metro postcodes plus several regional areas. If your postcode isn\u2019t serviceable we\u2019ll let you know within an hour and refer you to a trusted local where we can.',
+  },
+  {
+    q: 'Can I book NDIS, aged care, DVA, insurance or carer\u2019s work through here?',
+    a: 'NDIS, DVA, insurance, aged care and carer\u2019s jobs are always quoted directly so we can match the right paperwork (plan managers, case managers, insurer billing). Please use our contact form at /contact-us \u2014 our billing coordinator will reply within the hour during business hours.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Get an Instant Price',
+    url: `${site.url}/quote`,
+    description:
+      'Get a transparent, instant cleaning price in 60 seconds. Eco-friendly house cleaning across NSW, QLD and VIC \u2014 regular, one-off and end-of-lease.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Get an Instant Price', item: `${site.url}/quote` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Residential cleaning',
+    provider: { '@type': 'Organization', name: site.name, url: site.url },
+    areaServed: ['New South Wales', 'Queensland', 'Victoria'],
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'AUD',
+      lowPrice: '153.90',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '76.95',
+        priceCurrency: 'AUD',
+        unitCode: 'HUR',
+      },
+      offerCount: '3',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Get an Instant Cleaning Price | Eco-Friendly Cleaners"
+  description="Get a transparent, instant cleaning price in 60 seconds. Eco-friendly house cleaning across NSW, QLD and VIC \u2014 regular, one-off and end-of-lease bond cleans."
+  schema={schema}
+>
+  <!-- 1. Calculator -->
+  <section class="qt-calc" aria-labelledby="qt-calc-h1">
+    <div class="container-site">
+      <h1 id="qt-calc-h1" class="qt-page-h1">Get your instant price</h1>
+    </div>
+
+    <div class="container-site qt-calc-inner">
+      <form
+        class="qt-form"
+        id="qtForm"
+        action={leadCapture.webhookUrl || `mailto:${site.email}?subject=Instant%20price%20enquiry`}
+        method="post"
+        data-webhook={leadCapture.webhookUrl || ''}
+        data-fallback-email={site.email}
+      >
+        <!-- Step 1: Location.
+             A single combined field accepting either a 4-digit postcode
+             or a suburb name. Collected first so we can confirm we
+             service the area before showing a price — the rest of the
+             form stays disabled until this is filled. -->
+        <fieldset class="qt-fs" id="qtLocationFs">
+          <legend class="qt-legend"><span class="qt-step">01</span> Where are you located?</legend>
+          <p class="qt-fs-help">Enter your postcode or suburb &mdash; that confirms we service your area and unlocks your live price.</p>
+          <div class="qt-location-search">
+            <input
+              class="qt-input qt-location-input"
+              type="text"
+              name="location"
+              id="qtLocation"
+              placeholder="Enter your postcode or area name"
+              required
+              autocomplete="postal-code"
+              aria-label="Postcode or suburb"
+            />
+          </div>
+          <p class="qt-postcode-status" id="qtPostcodeStatus" hidden></p>
+        </fieldset>
+
+        <!-- Step 2: Service -->
+        <fieldset class="qt-fs" id="qtServiceFs">
+          <legend class="qt-legend"><span class="qt-step">02</span> What do you need?</legend>
+          <div class="qt-radio-grid">
+            <label class="qt-radio-card">
+              <input type="radio" name="service" value="regular" />
+              <span class="qt-radio-title">Regular clean</span>
+              <span class="qt-radio-desc">Weekly, fortnightly or monthly. Our most-booked service.</span>
+              <span class="qt-radio-price">From&nbsp;$153.90 &middot; 2hr min</span>
+            </label>
+            <label class="qt-radio-card">
+              <input type="radio" name="service" value="oneoff" />
+              <span class="qt-radio-title">One-off / spring</span>
+              <span class="qt-radio-desc">A deeper one-time clean. Perfect for catch-ups and pre-event.</span>
+              <span class="qt-radio-price">From&nbsp;$153.90 &middot; 2hr min</span>
+            </label>
+            <label class="qt-radio-card">
+              <input type="radio" name="service" value="endoflease" />
+              <span class="qt-radio-title">End of lease / bond</span>
+              <span class="qt-radio-desc">Hourly rate. Bond-back guarantee.</span>
+              <span class="qt-radio-price">From&nbsp;$153.90 &middot; 2hr min</span>
+            </label>
+            <label class="qt-radio-card">
+              <input type="radio" name="service" value="specialty" />
+              <span class="qt-radio-title">NDIS / DVA / Other</span>
+              <span class="qt-radio-desc">NDIS, DVA, insurance, aged care or carer's jobs &mdash; please contact us.</span>
+              <span class="qt-radio-price">Contact us</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Frequency (only for regular) -->
+        <fieldset class="qt-fs" id="qtFreqFs">
+          <legend class="qt-legend"><span class="qt-step">03</span> How often?</legend>
+          <p class="qt-fs-help">Same hourly rate either way &mdash; pick the rhythm that suits your home.</p>
+          <div class="qt-chip-grid">
+            <label class="qt-chip">
+              <input type="radio" name="frequency" value="weekly" />
+              <span class="qt-chip-label">Weekly</span>
+              <span class="qt-chip-meta">Recurring</span>
+            </label>
+            <label class="qt-chip">
+              <input type="radio" name="frequency" value="fortnightly" />
+              <span class="qt-chip-label">Fortnightly</span>
+              <span class="qt-chip-meta">Recurring</span>
+            </label>
+            <label class="qt-chip">
+              <input type="radio" name="frequency" value="monthly" />
+              <span class="qt-chip-label">Monthly</span>
+              <span class="qt-chip-meta">Recurring</span>
+            </label>
+            <label class="qt-chip">
+              <input type="radio" name="frequency" value="oneoff" />
+              <span class="qt-chip-label">One-off only</span>
+              <span class="qt-chip-meta">One-time</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 4: Hours.
+             User picks how many hours of cleaning they want directly.
+             2-hour minimum is enforced by only offering 2.0 as the floor;
+             the calculator also clamps anything lower defensively. -->
+        <fieldset class="qt-fs" id="qtHoursFs">
+          <legend class="qt-legend"><span class="qt-step">04</span> How many hours?</legend>
+          <p class="qt-fs-help">
+            Pick the duration that suits you &mdash; 2-hour minimum applies.
+            Not sure? Most 2-bedroom homes book 2.5&ndash;3 hours; 4-bedroom homes book 3.5&ndash;4.
+          </p>
+          <div class="qt-pill-row qt-pill-row--hours">
+            {[2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8].map((h) => (
+              <label class="qt-pill">
+                <input type="radio" name="hours" value={h} data-hours={h} />
+                <span>{h % 1 === 0 ? `${h} hr` : `${h} hr`}</span>
+              </label>
+            ))}
+            <label class="qt-pill qt-pill--wide">
+              <input type="radio" name="hours" value="more" data-hours="9" />
+              <span>9+ hr</span>
+            </label>
+          </div>
+          <p class="qt-fs-fineprint">
+            Need more than 8 hours? Pick &ldquo;9+ hr&rdquo; and we&rsquo;ll confirm the exact duration when we lock in your job.
+          </p>
+        </fieldset>
+
+        <!-- Step 5: Extras -->
+        <fieldset class="qt-fs" id="qtExtrasFs">
+          <legend class="qt-legend"><span class="qt-step">05</span> Add extras (optional)</legend>
+          <div class="qt-extra-grid">
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="oven" data-price="35" />
+              <span class="qt-extra-name">Inside oven</span>
+              <span class="qt-extra-price">+$35</span>
+            </label>
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="fridge" data-price="25" />
+              <span class="qt-extra-name">Inside fridge</span>
+              <span class="qt-extra-price">+$25</span>
+            </label>
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="windows" data-price="40" />
+              <span class="qt-extra-name">Inside windows</span>
+              <span class="qt-extra-price">+$40</span>
+            </label>
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="balcony" data-price="25" />
+              <span class="qt-extra-name">Balcony / patio</span>
+              <span class="qt-extra-price">+$25</span>
+            </label>
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="laundry" data-price="30" />
+              <span class="qt-extra-name">Wash &amp; fold</span>
+              <span class="qt-extra-price">+$30</span>
+            </label>
+            <label class="qt-extra">
+              <input type="checkbox" name="extras" value="ironing" data-price="35" />
+              <span class="qt-extra-name">Ironing (1 hr)</span>
+              <span class="qt-extra-price">+$35</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 6: When -->
+        <fieldset class="qt-fs" id="qtWhenFs">
+          <legend class="qt-legend"><span class="qt-step">06</span> When suits you?</legend>
+          <div class="qt-input-grid">
+            <label class="qt-input-label">
+              Preferred start date
+              <input class="qt-input" type="date" name="start_date" />
+            </label>
+            <label class="qt-input-label">
+              Preferred time
+              <select class="qt-input" name="time_window">
+                <option value="">No preference</option>
+                <option>Morning (8am &ndash; 12pm)</option>
+                <option>Midday (10am &ndash; 2pm)</option>
+                <option>Afternoon (12pm &ndash; 4pm)</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 7: Contact -->
+        <fieldset class="qt-fs" id="qtContactFs">
+          <legend class="qt-legend"><span class="qt-step">07</span> Your details</legend>
+          <div class="qt-input-grid">
+            <label class="qt-input-label">
+              Full name <span class="qt-req">*</span>
+              <input class="qt-input" type="text" name="full_name" required />
+            </label>
+            <label class="qt-input-label">
+              Email <span class="qt-req">*</span>
+              <input class="qt-input" type="email" name="email" required />
+            </label>
+            <label class="qt-input-label">
+              Phone
+              <input class="qt-input" type="tel" name="phone" />
+            </label>
+            <label class="qt-input-label qt-input-label--full">
+              Anything else we should know? (pets, parking, access, fragrance preferences)
+              <textarea class="qt-input qt-textarea" name="notes" rows="3"></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <p class="qt-disclaimer" id="qtDisclaimer">
+          By submitting you agree to be contacted about your booking. We never share your details.
+          Final price confirmed by our coordinator within the hour during business hours.
+        </p>
+
+        <button class="qt-submit" type="submit" id="qtSubmit">Send my booking enquiry</button>
+        <p class="qt-fallback" id="qtFallback">
+          Prefer to talk? Call <a href={ctaPhone.href}>{ctaPhone.text}</a> &mdash; quotes given on the spot.
+        </p>
+
+        <!-- Specialty CTA panel: shown when service = NDIS / DVA / Other.
+             Hides every fieldset above and replaces the standard submit
+             with a clear "contact us" handoff so we don't pretend to
+             instant-quote work that always needs paperwork. -->
+        <div class="qt-specialty-panel" id="qtSpecialtyPanel" hidden>
+          <h2 class="qt-specialty-h2">NDIS, DVA, insurance, aged care &amp; carer&rsquo;s work</h2>
+          <p class="qt-specialty-body">
+            These jobs are always quoted directly so we can match the right paperwork &mdash;
+            plan managers, case managers, insurer billing or aged-care provider invoicing.
+            Send us a quick enquiry and our billing coordinator will reply within the hour
+            during business hours.
+          </p>
+          <ul class="qt-specialty-list">
+            <li>NDIS plan-managed &amp; self-managed accepted</li>
+            <li>DVA gold &amp; white card welcome</li>
+            <li>Insurance &amp; aged-care provider billing supported</li>
+            <li>Carer&rsquo;s job? We&rsquo;ll work directly with the carer</li>
+          </ul>
+          <div class="qt-specialty-actions">
+            <a class="qt-specialty-cta" href="/contact-us">Contact our billing team &rarr;</a>
+            <a class="qt-specialty-call" href={ctaPhone.href}>Or call {ctaPhone.text}</a>
+          </div>
+        </div>
+      </form>
+
+      <!-- Sticky price summary -->
+      <aside class="qt-summary" aria-live="polite">
+        <div class="qt-summary-card">
+          <p class="qt-summary-eyebrow">Your estimate</p>
+          <p class="qt-summary-price"><span class="qt-summary-currency">$</span><span id="qtPrice">99</span></p>
+          <p class="qt-summary-meta">
+            <span id="qtMeta">Estimated 2.5&nbsp;hours &middot; fortnightly</span>
+          </p>
+
+          <ul class="qt-summary-breakdown" id="qtBreakdown">
+            <li><span>Base clean</span><span id="qtBase">$112.50</span></li>
+            <li><span>Extras</span><span id="qtExtras">$0</span></li>
+            <li id="qtDiscountRow"><span>Frequency discount</span><span id="qtDiscount">&minus;$13.50</span></li>
+          </ul>
+
+          <p class="qt-summary-note" id="qtNote">
+            Estimate based on your selections. Final price confirmed once we lock in your postcode and access details.
+          </p>
+
+          <div class="qt-summary-trust">
+            <p class="qt-summary-trust-label">What's included</p>
+            <ul class="qt-summary-trust-list">
+              <li>
+                <span class="qt-trust-iconwrap">
+                  <svg class="qt-trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 4c-7 0-12 4-12 11 0 1 0 2 .5 3" />
+                    <path d="M20 4c0 8-4 13-12 13H4" />
+                  </svg>
+                </span>
+                <span>Eco-friendly products</span>
+              </li>
+              <li>
+                <span class="qt-trust-iconwrap">
+                  <svg class="qt-trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 3h6l1 4H8l1-4z" />
+                    <path d="M7 7h10l-1 13H8L7 7z" />
+                    <path d="M12 11v5" />
+                  </svg>
+                </span>
+                <span>All equipment provided</span>
+              </li>
+              <li>
+                <span class="qt-trust-iconwrap">
+                  <svg class="qt-trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+                </span>
+                <span>Police-checked teams</span>
+              </li>
+              <li>
+                <span class="qt-trust-iconwrap">
+                  <svg class="qt-trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
+                    <path d="M12 8v8M9.5 10.5h3.5a1.5 1.5 0 010 3h-2a1.5 1.5 0 000 3H16" />
+                  </svg>
+                </span>
+                <span>$20M public liability</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 2. How pricing works -->
+  <section class="qt-how" aria-labelledby="qt-how-h2">
+    <div class="container-site qt-how-inner">
+      <p class="qt-how-eyebrow">How pricing works</p>
+      <h2 id="qt-how-h2" class="qt-how-h2">Honest pricing &mdash; no surprises on the day.</h2>
+
+      <div class="qt-how-grid">
+        <article class="qt-how-card">
+          <span class="qt-how-num">$76.95/hr</span>
+          <h3 class="qt-how-title">One flat hourly rate</h3>
+          <p class="qt-how-body">
+            Every clean &mdash; regular, one-off and end-of-lease &mdash; is billed at the same
+            $76.95 per hour. No hidden surcharges, no mystery fees, no bait-and-switch packages.
+          </p>
+        </article>
+        <article class="qt-how-card">
+          <span class="qt-how-num">2 hr min</span>
+          <h3 class="qt-how-title">2-hour minimum</h3>
+          <p class="qt-how-body">
+            Every booking starts at a 2-hour minimum, so the smallest job is $153.90. The estimated
+            hours on the right are based on your bedrooms, bathrooms and any extras you select.
+          </p>
+        </article>
+        <article class="qt-how-card">
+          <span class="qt-how-num">No discounts</span>
+          <h3 class="qt-how-title">Same rate, every visit</h3>
+          <p class="qt-how-body">
+            We don&rsquo;t play frequency-discount games. Weekly, fortnightly, monthly or one-off
+            &mdash; you pay the same honest hourly rate. The price you see now is the price you pay.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FAQ -->
+  <section class="qt-faq" aria-labelledby="qt-faq-h2">
+    <div class="container-site qt-faq-inner">
+      <p class="qt-faq-eyebrow">Quick answers</p>
+      <h2 id="qt-faq-h2" class="qt-faq-h2">About the instant price</h2>
+      <div class="qt-faq-list">
+        {faqs.map((f) => (
+          <details class="qt-faq-item">
+            <summary class="qt-faq-q">{f.q}</summary>
+            <p class="qt-faq-a">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>
+
+<script is:inline>
+  (function () {
+    const form = document.getElementById('qtForm');
+    if (!form) return;
+
+    // Pricing model: every job is billed at one flat hourly rate with a
+    // 2-hour minimum. The minimum exists so the displayed "From $153.90"
+    // matches reality on the smallest possible booking. There are no
+    // frequency discounts — weekly/fortnightly/monthly/one-off all pay
+    // the same rate.
+    const HOURLY_RATE = 76.95;
+    const MIN_HOURS = 2;
+    const MIN_TOTAL = HOURLY_RATE * MIN_HOURS; // $153.90
+
+    const priceEl = document.getElementById('qtPrice');
+    const currencyEl = document.querySelector('.qt-summary-currency');
+    const metaEl = document.getElementById('qtMeta');
+    const baseEl = document.getElementById('qtBase');
+    const extrasEl = document.getElementById('qtExtras');
+    const discountRow = document.getElementById('qtDiscountRow');
+    const noteEl = document.getElementById('qtNote');
+    const serviceFs = document.getElementById('qtServiceFs');
+    const freqFs = document.getElementById('qtFreqFs');
+    const hoursFs = document.getElementById('qtHoursFs');
+    const extrasFs = document.getElementById('qtExtrasFs');
+    const whenFs = document.getElementById('qtWhenFs');
+    const contactFs = document.getElementById('qtContactFs');
+    const disclaimerEl = document.getElementById('qtDisclaimer');
+    const submitEl = document.getElementById('qtSubmit');
+    const fallbackEl = document.getElementById('qtFallback');
+    const specialtyPanel = document.getElementById('qtSpecialtyPanel');
+    const postcodeStatus = document.getElementById('qtPostcodeStatus');
+
+    // Progressive disclosure: each step is hidden until the user has
+    // engaged with the previous one. We track which numbered steps
+    // (2 = service, 3 = frequency, 4 = hours, …) the user has actually
+    // changed, then derive the visible set from that + the current
+    // location / service state. Step 1 (location) is always visible;
+    // everything past it is gated by hasLocation() first, then by
+    // progressive engagement.
+    const touchedSteps = new Set();
+    const stepNumByFs = new Map([
+      [serviceFs, 2],
+      [freqFs, 3],
+      [hoursFs, 4],
+      [extrasFs, 5],
+      [whenFs, 6],
+      [contactFs, 7],
+    ]);
+
+    // Money formatter — keep .90 visible (so the advertised "$153.90"
+    // stays honest), but drop ".00" on whole-dollar amounts.
+    function fmt(n) {
+      if (n % 1 === 0) return String(n);
+      return n.toFixed(2).replace(/\.00$/, '');
+    }
+    // Hours formatter — strip trailing zero so "2.50" reads as "2.5".
+    function fmtHours(n) {
+      if (n % 1 === 0) return String(n);
+      return n.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+    }
+
+    // Returns true once the user has entered something that looks like a
+    // serviceable Australian location — either a 4-digit postcode or a
+    // suburb name (≥3 letters). Coordinator confirms the actual coverage.
+    function hasLocation() {
+      const raw = ((form.elements['location'] || {}).value || '').trim();
+      if (!raw) return false;
+      if (/^\d{4}$/.test(raw)) return true;
+      const letters = raw.replace(/[^a-zA-Z]/g, '');
+      return letters.length >= 3;
+    }
+
+    function setHidden(el, hidden) {
+      if (!el) return;
+      if (hidden) el.setAttribute('hidden', '');
+      else el.removeAttribute('hidden');
+    }
+
+    // Decide which fieldsets / submit row should be visible right now,
+    // based on hasLocation() + which steps the user has touched + the
+    // current service selection. Specialty (NDIS) replaces every other
+    // step with a contact-us panel.
+    function applyStepVisibility() {
+      const locationOk = hasLocation();
+      const service = (form.elements['service'] || {}).value || 'regular';
+      const isSpecialty = service === 'specialty';
+
+      // Anything past step 1 stays hidden until we have a location.
+      if (!locationOk) {
+        [serviceFs, freqFs, hoursFs, extrasFs, whenFs, contactFs,
+          disclaimerEl, submitEl, fallbackEl].forEach((el) => setHidden(el, true));
+        if (specialtyPanel) setHidden(specialtyPanel, true);
+        return;
+      }
+
+      // Step 2 always visible once a location is entered.
+      setHidden(serviceFs, false);
+
+      // Specialty (NDIS / DVA / Other) takes over the form — hide every
+      // other step and let the contact-us panel stand alone.
+      if (isSpecialty) {
+        [freqFs, hoursFs, extrasFs, whenFs, contactFs,
+          disclaimerEl, submitEl, fallbackEl].forEach((el) => setHidden(el, true));
+        if (specialtyPanel) setHidden(specialtyPanel, false);
+        return;
+      }
+      if (specialtyPanel) setHidden(specialtyPanel, true);
+
+      // Step 3 (frequency) only applies to regular cleans, and only once
+      // the user has actually picked a service.
+      const showFreq = touchedSteps.has(2) && service === 'regular';
+      setHidden(freqFs, !showFreq);
+
+      // Step 4 (hours) unlocks once the user has picked a service and,
+      // if the frequency step applies, picked a frequency too. Once
+      // they've actually touched hours we keep it visible even if they
+      // jump back and toggle the service / frequency around.
+      const freqDoneOrSkipped = service !== 'regular' || touchedSteps.has(3);
+      const showHours =
+        touchedSteps.has(4) || (touchedSteps.has(2) && freqDoneOrSkipped);
+      setHidden(hoursFs, !showHours);
+
+      // Steps 5 (extras) and 6 (when) unlock together once hours are
+      // picked — extras is optional, so we expose "when" alongside it
+      // and let the user skip extras entirely if they want.
+      const showExtrasAndWhen = touchedSteps.has(4);
+      setHidden(extrasFs, !showExtrasAndWhen);
+      setHidden(whenFs, !showExtrasAndWhen);
+
+      // Step 7 (contact + submit) only reveals once the user has
+      // actually engaged with step 6 (when). That way the scroll
+      // continues forward when they complete "when", regardless of
+      // whether they ticked any extras.
+      const showContact = touchedSteps.has(6);
+      [contactFs, disclaimerEl, submitEl, fallbackEl]
+        .forEach((el) => setHidden(el, !showContact));
+    }
+
+    function showLockedSummary() {
+      // Booking-summary "empty" state — no price until we have a location.
+      priceEl.textContent = '\u2014';
+      if (currencyEl) currencyEl.style.visibility = 'hidden';
+      metaEl.textContent = 'Enter your postcode to see your price';
+      baseEl.textContent = '\u2014';
+      extrasEl.textContent = '\u2014';
+      if (discountRow) discountRow.setAttribute('hidden', '');
+      noteEl.textContent = 'Tell us where you are and we\u2019ll confirm we service your area, then show your live price below.';
+    }
+
+    // Booking-summary "in-progress" state — postcode is entered but the
+    // user hasn't finished picking yet (no service / no frequency / no
+    // hours). We deliberately don't show a placeholder price built from
+    // defaults — nothing is pre-selected, so any number here would be
+    // misleading.
+    function showPendingSummary() {
+      priceEl.textContent = '\u2014';
+      if (currencyEl) currencyEl.style.visibility = 'hidden';
+      metaEl.textContent = 'Make your selections to see your price';
+      baseEl.textContent = '\u2014';
+      extrasEl.textContent = '\u2014';
+      if (discountRow) discountRow.setAttribute('hidden', '');
+      noteEl.textContent = 'Pick a service, then how many hours, and your live price will appear here.';
+    }
+
+    // Auto-scroll to the next step as it reveals. We snapshot which
+    // fieldsets were visible before each calculate() run, then after
+    // recomputing, find the topmost fieldset that flipped from hidden
+    // to visible and smooth-scroll it into view. The first calculate()
+    // (initial page load) leaves lastVisibleSnapshot as null so it
+    // can't scroll — only later user-driven recalculations do.
+    const orderedSteps = [serviceFs, freqFs, hoursFs, extrasFs, whenFs, contactFs];
+    let lastVisibleSnapshot = null;
+
+    function snapshotVisible() {
+      return orderedSteps.map((el) => !!(el && !el.hasAttribute('hidden')));
+    }
+
+    // Honour the user's OS-level "reduce motion" preference so we don't
+    // jolt anyone who has motion-sickness / vestibular sensitivities.
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function maybeScrollToNewlyRevealed() {
+      if (!lastVisibleSnapshot) return;
+      const next = snapshotVisible();
+      for (let i = 0; i < orderedSteps.length; i++) {
+        if (!lastVisibleSnapshot[i] && next[i]) {
+          const el = orderedSteps[i];
+          if (el && typeof el.scrollIntoView === 'function') {
+            el.scrollIntoView({
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              block: 'center',
+            });
+          }
+          break;
+        }
+      }
+    }
+
+    function calculate() {
+      // The try/finally is here so the scroll-and-snapshot at the end
+      // runs no matter which early-return branch we take below.
+      try {
+      // Always re-derive what's visible first — depends on location +
+      // service + which steps the user has touched. Pricing math below
+      // doesn't have to think about hide/show anymore.
+      applyStepVisibility();
+
+      if (!hasLocation()) {
+        showLockedSummary();
+        return;
+      }
+
+      const serviceInput = form.querySelector('input[name="service"]:checked');
+      const hoursInput = form.querySelector('input[name="hours"]:checked');
+      const freqInput = form.querySelector('input[name="frequency"]:checked');
+
+      // Until the user has actually picked a service we have nothing to
+      // price. Same when the regular branch is missing its frequency or
+      // any branch is missing hours. Nothing is pre-selected, so showing
+      // a default-derived number here would just be a fake.
+      if (!serviceInput) {
+        showPendingSummary();
+        return;
+      }
+      const service = serviceInput.value;
+      // Specialty (NDIS) is allowed past this gate — it shows its own
+      // "quoted on enquiry" summary instead of a price. Everything else
+      // needs hours (and, for regular, frequency) before we can quote.
+      if (service !== 'specialty') {
+        if (service === 'regular' && !freqInput) {
+          showPendingSummary();
+          return;
+        }
+        if (!hoursInput) {
+          showPendingSummary();
+          return;
+        }
+      }
+
+      // "more" = the 9+ pill — quote at 9 hr and confirm with the customer.
+      const rawHoursVal = hoursInput ? hoursInput.value : '2';
+      const isMoreHours = rawHoursVal === 'more';
+      const selectedHours = isMoreHours ? 9 : parseFloat(rawHoursVal) || MIN_HOURS;
+      const freqVal = freqInput ? freqInput.value : 'fortnightly';
+
+      const extraInputs = Array.from(form.querySelectorAll('input[name="extras"]:checked'));
+      const extrasTotal = extraInputs.reduce((s, el) => s + parseFloat(el.dataset.price || '0'), 0);
+
+      // Restore the currency symbol now that we have a real price to show.
+      if (currencyEl) currencyEl.style.visibility = '';
+
+      // Discount row is permanently hidden — there are no frequency
+      // discounts in the new pricing model.
+      if (discountRow) discountRow.setAttribute('hidden', '');
+
+      // NDIS / DVA / Other — route to /contact-us instead of instant quote.
+      if (service === 'specialty') {
+        priceEl.textContent = '\u2014';
+        metaEl.textContent = 'Quoted on enquiry';
+        baseEl.textContent = '\u2014';
+        extrasEl.textContent = '\u2014';
+        noteEl.textContent = 'NDIS, DVA, insurance, aged care and carer\u2019s jobs are always priced on enquiry so we can match the right billing paperwork.';
+        return;
+      }
+
+      // Unified hourly model — billed hours come straight from the user's
+      // pick. Defensive 2-hour floor in case the radio markup ever lets
+      // a smaller value slip through.
+      const billedHours = Math.max(MIN_HOURS, selectedHours);
+      const baseCost = billedHours * HOURLY_RATE;
+      let total = baseCost + extrasTotal;
+      if (total < MIN_TOTAL) total = MIN_TOTAL;
+
+      baseEl.textContent = '$' + fmt(baseCost);
+      extrasEl.textContent = '$' + fmt(extrasTotal);
+
+      // Meta line: "Booked 3 hours · $76.95/hr · fortnightly"
+      const hoursLabel = isMoreHours ? '9+\u00a0hours' : fmtHours(billedHours) + '\u00a0hours';
+      let label = 'Booked ' + hoursLabel + ' \u00b7 $76.95/hr';
+      if (service === 'regular') {
+        const freqText = freqVal === 'oneoff' ? 'one-off' : freqVal;
+        label += ' \u00b7 ' + freqText;
+      } else if (service === 'endoflease') {
+        label += ' \u00b7 bond-back guarantee';
+      }
+
+      priceEl.textContent = fmt(total);
+      metaEl.textContent = label;
+      noteEl.textContent = isMoreHours
+        ? 'Estimate based on 9 hours \u2014 we\u2019ll confirm the exact duration with you before we start. 2-hour minimum applies.'
+        : 'Estimate based on your selections. 2-hour minimum applies. Final price confirmed once we lock in your postcode and access details.';
+      } finally {
+        // Compare visibility before/after this run; smooth-scroll to
+        // the topmost step that just unhid. First call has snapshot=null
+        // so it's a no-op; subsequent calls drive the auto-advance feel.
+        maybeScrollToNewlyRevealed();
+        lastVisibleSnapshot = snapshotVisible();
+      }
+    }
+
+    // Wipe every selection past step 1 and reset the touched set so
+    // progressive disclosure starts again from step 2. We use this
+    // whenever the user edits their location after they've already
+    // started picking — a new postcode means the previous selections
+    // may not be valid for the new area, so we make them re-confirm.
+    function resetFormAfterStep1() {
+      ['service', 'frequency', 'hours', 'extras'].forEach(function (name) {
+        form.querySelectorAll('input[name="' + name + '"]').forEach(function (el) {
+          el.checked = false;
+        });
+      });
+      ['start_date', 'time_window', 'full_name', 'email', 'phone', 'notes']
+        .forEach(function (n) {
+          const el = form.elements[n];
+          if (el) el.value = '';
+        });
+      touchedSteps.clear();
+    }
+
+    // Editing the location field after the user has already engaged
+    // with later steps wipes those selections and re-locks the form.
+    // Listener sits on the input element itself so it runs before the
+    // form-level 'input' handler (events bubble target → ancestor),
+    // meaning calculate() below sees the cleared state.
+    const locationInput = document.getElementById('qtLocation');
+    if (locationInput) {
+      locationInput.addEventListener('input', function () {
+        if (touchedSteps.size > 0) resetFormAfterStep1();
+      });
+    }
+
+    // Mark the originating step as "touched" so progressive disclosure
+    // can advance to the next one. Only relevant for change events
+    // (radios / checkboxes / date / select).
+    form.addEventListener('change', function (e) {
+      const fs = e.target && e.target.closest && e.target.closest('fieldset');
+      if (fs && stepNumByFs.has(fs)) {
+        touchedSteps.add(stepNumByFs.get(fs));
+      }
+      calculate();
+    });
+    form.addEventListener('input', calculate);
+
+    // ------------------------------------------------------------------
+    // Submit handler — POST the quote enquiry to the Formspree webhook
+    // (configurable in src/data/site.ts via leadCapture.webhookUrl) and
+    // hand the user off to /thank-you. Falls back to a plain mailto:
+    // submission if no webhook is configured, so the form is never broken.
+    // We also disable the submit button on click to prevent double-posts.
+    // ------------------------------------------------------------------
+    form.addEventListener('submit', async function (e) {
+      const webhook = (form.getAttribute('data-webhook') || '').trim();
+      // No webhook configured → let the form do its native mailto submit.
+      if (!webhook) return;
+
+      e.preventDefault();
+      if (submitEl) {
+        submitEl.disabled = true;
+        submitEl.dataset.originalText = submitEl.dataset.originalText || submitEl.textContent;
+        submitEl.textContent = 'Sending\u2026';
+      }
+
+      // Build a clean JSON payload — easier to parse on the receiving end
+      // than multipart form-data.
+      const data = {};
+      const fd = new FormData(form);
+      const extras = [];
+      fd.forEach(function (val, key) {
+        if (key === 'extras') {
+          extras.push(val);
+          return;
+        }
+        data[key] = val;
+      });
+      if (extras.length) data.extras = extras;
+      data._page = 'quote';
+      data._submitted_at = new Date().toISOString();
+      data._subject = 'Instant price enquiry from ' + (data.full_name || 'website');
+
+      try {
+        const resp = await fetch(webhook, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        if (!resp.ok) throw new Error('Bad response ' + resp.status);
+
+        // Mirror the lead into sessionStorage so /thank-you can show a
+        // tailored confirmation if we ever build one.
+        try {
+          sessionStorage.setItem('naturo:last-quote', JSON.stringify(data));
+        } catch (_) { /* ignore storage errors */ }
+
+        window.location.href = '/thank-you';
+      } catch (err) {
+        // Re-enable the button and let the user retry.
+        if (submitEl) {
+          submitEl.disabled = false;
+          if (submitEl.dataset.originalText) submitEl.textContent = submitEl.dataset.originalText;
+        }
+        alert(
+          'Sorry \u2014 we couldn\u2019t send your enquiry just now. ' +
+          'Please try again, or call us on ' + (form.getAttribute('data-fallback-email') ? '' : '') +
+          '1300 876 472.'
+        );
+      }
+    });
+
+    // ------------------------------------------------------------------
+    // Quote-abandoned event.
+    //
+    // We fire `quote_abandoned` to dataLayer + Meta Pixel (`InitiateCheckout`)
+    // when the user closes the tab / navigates away after engaging with
+    // at least step 2 (service) but without submitting the form. This
+    // gives marketing a retargetable audience of "people who started a
+    // quote but didn't finish" and feeds the abandonment funnel for GA4.
+    // We tag a one-shot flag on submit so the abandon ping doesn't fire
+    // when the user does complete the booking.
+    // ------------------------------------------------------------------
+    let quoteSubmitted = false;
+    form.addEventListener('submit', function () { quoteSubmitted = true; });
+
+    function pingQuoteAbandoned() {
+      if (quoteSubmitted) return;
+      // Need at least one step engagement past Location to count as a
+      // genuine "started but didn't finish" event.
+      if (touchedSteps.size < 1) return;
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'quote_abandoned',
+          steps_touched: Array.from(touchedSteps),
+          location_entered: hasLocation(),
+          page: { path: '/quote' },
+        });
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'InitiateCheckout', { content_category: 'quote' });
+        }
+      } catch (e) { /* swallow */ }
+    }
+    // pagehide is the modern equivalent of unload; visibilitychange is
+    // the iOS-friendly fallback (Safari sometimes skips pagehide on tab
+    // close). Both are safe to fire — analytics dedupe by session.
+    window.addEventListener('pagehide', pingQuoteAbandoned);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') pingQuoteAbandoned();
+    });
+
+    // Prefill the contact step from the lead-gate capture so the user
+    // doesn't have to type their name/phone/email twice.
+    try {
+      const raw = sessionStorage.getItem('naturo:lead');
+      if (raw) {
+        const lead = JSON.parse(raw);
+        if (lead && typeof lead === 'object') {
+          if (form.elements['full_name'] && lead.name) form.elements['full_name'].value = lead.name;
+          if (form.elements['email'] && lead.email) form.elements['email'].value = lead.email;
+          if (form.elements['phone'] && lead.phone) form.elements['phone'].value = lead.phone;
+        }
+      }
+    } catch (e) { /* ignore — prefill is best-effort */ }
+
+    calculate();
+  })();
+</script>
+
+<style>
+  /* ============================================================
+     Quote page — instant price calculator.
+     No hero by design: the calculator is the page. Form heading
+     acts as the page H1, lifting straight into the form for the
+     fastest path from landing to a price.
+     Surface system mirrors the rest of the site:
+       - Cream + white alternation
+       - Poppins, navy text, blue primary, accent yellow
+     ============================================================ */
+
+  /* ---------- Calculator section ---------- */
+  .qt-calc {
+    background-color: #F8F8F3;
+    padding: clamp(64px, 9vw, 112px) 0;
+  }
+  .qt-calc-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+  @media (max-width: 1024px) {
+    .qt-calc-inner { grid-template-columns: 1fr; }
+  }
+
+  /* Single tight page heading — sits above the form/summary grid. */
+  .qt-page-h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.4vw, 38px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 clamp(20px, 3vw, 32px);
+  }
+
+  .qt-form {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    padding: clamp(28px, 4vw, 48px);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 28px rgba(15, 23, 42, 0.06);
+  }
+
+  .qt-fs {
+    border: 0;
+    padding: 28px 0 0;
+    margin: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    margin-top: 28px;
+  }
+  .qt-fs:first-of-type {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .qt-fs[hidden] { display: none; }
+  .qt-legend {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  /* Step number badge — line-art treatment to echo the icon style:
+     thin blue outline on white with a small orange accent dot,
+     mirroring the figure-with-pin illustrations used elsewhere. */
+  .qt-step {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #3a5dff;
+    background: transparent;
+    border: 1.5px solid #3a5dff;
+    border-radius: 999px;
+    padding: 0;
+  }
+  .qt-step::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #ff6b35;
+    border: 1.5px solid #ffffff;
+    border-radius: 999px;
+  }
+  .qt-fs-help {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(71, 85, 105);
+    margin: -6px 0 14px;
+  }
+  .qt-fs-fineprint {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(100, 116, 139);
+    margin: 14px 0 0;
+  }
+  /* Step 04 hour-picker — wider pill row that wraps cleanly on mobile. */
+  .qt-pill-row--hours { gap: 8px; }
+  .qt-pill-row--hours .qt-pill { min-width: 64px; padding: 0 18px; }
+  .qt-pill--wide { padding: 0 22px !important; }
+
+  /* ---------- Step 01 location combo input ----------
+     Single field accepting either a 4-digit postcode or a suburb name. */
+  .qt-location-search {
+    position: relative;
+  }
+  .qt-location-input {
+    width: 100%;
+    padding: 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.12);
+    border-radius: 12px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .qt-location-input:focus {
+    outline: none;
+    border-color: #3a5dff;
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18);
+  }
+  .qt-location-input::placeholder { color: rgb(148, 163, 184); }
+  .qt-postcode-status {
+    margin: 12px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(71, 85, 105);
+  }
+  .qt-postcode-status[hidden] { display: none; }
+
+  /* Service cards */
+  .qt-radio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 540px) {
+    .qt-radio-grid { grid-template-columns: 1fr; }
+  }
+  .qt-radio-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 18px 16px;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.10);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .qt-radio-card:hover { border-color: rgba(58, 93, 255, 0.4); }
+  .qt-radio-card input { position: absolute; opacity: 0; pointer-events: none; }
+  .qt-radio-card:has(input:checked) {
+    border-color: #3a5dff;
+    background-color: #3a5dff;
+    color: #ffffff;
+    box-shadow: 0 8px 22px rgba(58, 93, 255, 0.30);
+  }
+  .qt-radio-card:has(input:checked) .qt-radio-title,
+  .qt-radio-card:has(input:checked) .qt-radio-desc,
+  .qt-radio-card:has(input:checked) .qt-radio-price { color: #ffffff; }
+  .qt-radio-card:has(input:checked) .qt-radio-desc { color: rgba(255, 255, 255, 0.88); }
+  .qt-radio-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .qt-radio-desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgb(71, 85, 105);
+  }
+  .qt-radio-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #3a5dff;
+    margin-top: 4px;
+  }
+
+  /* Frequency chips */
+  .qt-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 640px) {
+    .qt-chip-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .qt-chip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 14px 10px;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.10);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.18s ease, background-color 0.18s ease;
+  }
+  .qt-chip:hover { border-color: rgba(58, 93, 255, 0.4); }
+  .qt-chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .qt-chip:has(input:checked) {
+    border-color: #3a5dff;
+    background-color: #3a5dff;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.28);
+  }
+  .qt-chip:has(input:checked) .qt-chip-label,
+  .qt-chip:has(input:checked) .qt-chip-meta { color: #ffffff; }
+  .qt-chip-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .qt-chip-meta {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #3a5dff;
+    letter-spacing: 0.04em;
+  }
+
+  /* Pill rows (bedrooms / bathrooms / property) */
+  .qt-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 540px) {
+    .qt-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+  .qt-row:last-child { margin-bottom: 0; }
+  .qt-row-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(71, 85, 105);
+  }
+  .qt-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .qt-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    height: 46px;
+    padding: 0 16px;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.10);
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0f172a;
+    transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  }
+  .qt-pill:hover { border-color: rgba(58, 93, 255, 0.4); }
+  .qt-pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .qt-pill:has(input:checked) {
+    border-color: #3a5dff;
+    background-color: #3a5dff;
+    color: #ffffff;
+  }
+
+  /* Extras grid */
+  .qt-extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 720px) {
+    .qt-extra-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .qt-extra-grid { grid-template-columns: 1fr; }
+  }
+  .qt-extra {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 14px 12px;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.10);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.18s ease, background-color 0.18s ease;
+  }
+  .qt-extra:hover { border-color: rgba(58, 93, 255, 0.4); }
+  .qt-extra input { position: absolute; opacity: 0; pointer-events: none; }
+  .qt-extra:has(input:checked) {
+    border-color: #3a5dff;
+    background-color: #3a5dff;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.28);
+  }
+  .qt-extra:has(input:checked) .qt-extra-name,
+  .qt-extra:has(input:checked) .qt-extra-price { color: #ffffff; }
+  .qt-extra-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .qt-extra-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3a5dff;
+  }
+
+  /* Inputs */
+  .qt-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 540px) { .qt-input-grid { grid-template-columns: 1fr; } }
+  .qt-input-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+  }
+  .qt-input-label--full { grid-column: 1 / -1; }
+  .qt-req { color: #ef4444; }
+  .qt-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(15, 23, 42, 0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .qt-input:focus {
+    outline: none;
+    border-color: #3a5dff;
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18);
+  }
+  .qt-textarea { min-height: 96px; resize: vertical; }
+
+  .qt-disclaimer {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgb(100, 116, 139);
+    margin: 28px 0 18px;
+  }
+  .qt-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    padding: 18px 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.30);
+    transition: background-color 0.18s ease, transform 0.18s ease;
+  }
+  .qt-submit:hover { background-color: #2548f0; transform: translateY(-1px); }
+  .qt-fallback {
+    margin: 18px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: rgb(71, 85, 105);
+  }
+  .qt-fallback a { color: #3a5dff; font-weight: 500; text-decoration: none; }
+  .qt-fallback a:hover { text-decoration: underline; }
+  .qt-disclaimer[hidden],
+  .qt-submit[hidden],
+  .qt-fallback[hidden] { display: none; }
+
+  /* ---------- Specialty panel (NDIS / DVA / Other) ----------
+     Replaces the standard form flow when the user selects "NDIS / DVA /
+     Other" — these jobs always need direct contact for billing setup,
+     so we route them to /contact-us instead of pretending to instant-quote. */
+  .qt-specialty-panel {
+    margin-top: 28px;
+    padding: 28px;
+    background-color: rgba(58, 93, 255, 0.06);
+    border: 1px solid rgba(58, 93, 255, 0.22);
+    border-radius: 14px;
+  }
+  .qt-specialty-panel[hidden] { display: none; }
+  .qt-specialty-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: #0f172a;
+    margin: 0 0 12px;
+  }
+  .qt-specialty-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    margin: 0 0 16px;
+  }
+  .qt-specialty-list {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .qt-specialty-list li {
+    position: relative;
+    padding-left: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0f172a;
+  }
+  .qt-specialty-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background-color: #3a5dff;
+    background-image: linear-gradient(135deg, #3a5dff 0%, #2548f0 100%);
+  }
+  .qt-specialty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+  .qt-specialty-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1.5px solid #3a5dff;
+    border-radius: 10px;
+    padding: 14px 22px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.30);
+    transition: background-color 0.18s ease, transform 0.18s ease;
+  }
+  .qt-specialty-cta:hover {
+    background-color: #2548f0;
+    transform: translateY(-1px);
+    color: #ffffff;
+  }
+  .qt-specialty-call {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a5dff;
+    text-decoration: none;
+  }
+  .qt-specialty-call:hover { text-decoration: underline; }
+
+  /* ---------- Sticky price summary ----------
+     The global site header is sticky and ~136px tall on desktop
+     (28px padding + 79px logo + 28px padding + 1px border). The
+     summary's top offset must clear that, otherwise the top of the
+     panel slides under the header when the user scrolls.
+     max-height + overflow-y safety-net so the whole panel stays
+     visible on shorter laptop viewports. */
+  .qt-summary { position: relative; }
+  @media (min-width: 1025px) {
+    .qt-summary {
+      position: sticky;
+      top: 152px;
+      max-height: calc(100vh - 168px);
+      overflow-y: auto;
+    }
+  }
+  /* ---------- "Your estimate" panel ----------
+     Inverted from the homepage cards: solid brand-blue surface
+     (#3a5dff) with white type, white email button. No gold/yellow. */
+  .qt-summary-card {
+    background-color: #3a5dff;
+    color: #ffffff;
+    border: 1px solid #3a5dff;
+    border-radius: 16px;
+    padding: 28px 26px;
+    box-shadow: 0 12px 28px rgba(58, 93, 255, 0.32);
+  }
+  .qt-summary-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 8px;
+  }
+  .qt-summary-price {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(44px, 5vw, 56px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #ffffff;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .qt-summary-currency {
+    font-size: 0.55em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .qt-summary-meta {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 22px;
+  }
+  .qt-summary-breakdown {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 18px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .qt-summary-breakdown li {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .qt-summary-breakdown li[hidden] { display: none; }
+  .qt-summary-breakdown li:last-child {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .qt-summary-note {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 18px;
+  }
+  /* "What's included" list — line-art icons paired with short labels.
+     Sits inside the blue summary card; everything inherits white via
+     currentColor on the icon strokes. */
+  .qt-summary-trust {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+  }
+  .qt-summary-trust-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 12px;
+  }
+  .qt-summary-trust-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .qt-summary-trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .qt-summary-trust-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .qt-summary-trust-list li:first-child { padding-top: 0; }
+  /* Wrapper hosts the orange "pin" accent dot — same vocabulary as
+     the homepage line-art icons (white figure + small orange detail). */
+  .qt-trust-iconwrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .qt-trust-iconwrap::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    background: #ff6b35;
+    border-radius: 999px;
+    box-shadow: 0 0 0 1.5px #3a5dff;
+  }
+  .qt-trust-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    color: #ffffff;
+  }
+
+  /* ---------- How pricing works ---------- */
+  .qt-how {
+    background-color: #ffffff;
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .qt-how-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 12px;
+  }
+  .qt-how-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 40px;
+    max-width: 720px;
+  }
+  .qt-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 900px) { .qt-how-grid { grid-template-columns: 1fr; } }
+  .qt-how-card {
+    background-color: #F8F8F3;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 14px;
+    padding: 28px 26px;
+  }
+  .qt-how-num {
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #3a5dff;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .qt-how-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0 0 8px;
+  }
+  .qt-how-body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    margin: 0;
+  }
+
+  /* ---------- FAQ ---------- */
+  .qt-faq {
+    background-color: #F8F8F3;
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .qt-faq-eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 12px;
+  }
+  .qt-faq-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+    margin: 0 0 32px;
+  }
+  .qt-faq-list { display: flex; flex-direction: column; }
+  .qt-faq-item {
+    border-top: 1px solid rgba(15, 23, 42, 0.10);
+    padding: 18px 0;
+  }
+  .qt-faq-item:last-child { border-bottom: 1px solid rgba(15, 23, 42, 0.10); }
+  .qt-faq-q {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0f172a;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+  }
+  .qt-faq-q::-webkit-details-marker { display: none; }
+  .qt-faq-q::after {
+    content: "+";
+    font-size: 22px;
+    font-weight: 300;
+    color: #3a5dff;
+    line-height: 1;
+  }
+  .qt-faq-item[open] .qt-faq-q::after { content: "\2212"; }
+  .qt-faq-a {
+    margin: 12px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(71, 85, 105);
+    max-width: 760px;
+  }
+</style>

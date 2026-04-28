@@ -1,0 +1,33 @@
+---
+import { valueProps } from '../data/site';
+
+const icons: Record<string, string> = {
+  'Police Checked': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  'Fully Insured': '<path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  '100% Satisfaction': '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  'Eco-Friendly': '<path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12c4-4 8-2 10-2-2 4-2 10-10 10"/>',
+  'Trained Team': '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'Easy Online Booking': '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+};
+---
+
+<section class="bg-[var(--color-bg-light)]">
+  <div class="container-site">
+    <div class="max-w-2xl mb-12">
+      <p class="eyebrow mb-3">Why Naturo</p>
+      <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">Built on trust, not shortcuts.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {valueProps.map((prop) => (
+        <div class="bg-white rounded-2xl p-6 border border-white">
+          <div class="w-10 h-10 rounded-lg bg-[var(--color-navy)] text-white flex items-center justify-center mb-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[prop.title] || icons['100% Satisfaction']} />
+          </div>
+          <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-2">{prop.title}</h3>
+          <p class="text-sm text-[var(--color-slate)] leading-relaxed">{prop.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

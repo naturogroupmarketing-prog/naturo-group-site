@@ -22,16 +22,22 @@ const schema = {
   description="Answers to the most common questions about Naturo Group cleaning services — pricing, bookings, products, recurring schedules, payment and more."
   schema={schema}
 >
-  <section class="bg-[var(--color-bg-pale)] pt-16">
-    <div class="container-site max-w-3xl text-center">
-      <p class="eyebrow mb-3">FAQs</p>
-      <h1 class="text-4xl md:text-5xl text-[var(--color-navy)] font-light leading-tight">
-        Frequently asked questions.
-      </h1>
-      <p class="mt-5 text-lg text-[var(--color-slate)]">
-        Can\u2019t find what you\u2019re looking for? Call us on <a class="underline" href={ctaPhone.href}>{ctaPhone.text}</a> or
-        <a class="underline" href="/contact-us">send us a message</a>.
-      </p>
+  <section class="ph-hero">
+    <div class="ph-bg" style="background-image: url(/images/hero-kitchen.jpg);" aria-hidden="true"></div>
+    <div class="ph-overlay" aria-hidden="true"></div>
+    <div class="container-site ph-inner">
+      <div class="ph-content">
+        <p class="ph-eyebrow">FAQs</p>
+        <h1 class="ph-h1">Frequently asked<br />questions.</h1>
+        <p class="ph-tagline">Everything you need to know about Naturo Group cleaning.</p>
+        <div class="ph-ctas">
+          <a href={ctaPrimary.href} class="ph-btn-primary">{ctaPrimary.text}</a>
+          <a href={ctaPhone.href} class="ph-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>{ctaPhone.text}</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -71,3 +77,67 @@ const schema = {
 
   <CTABanner />
 </Layout>
+
+<style>
+  /* ===== Page Hero — matches homepage Hero.astro exactly ===== */
+  .ph-hero { position: relative; overflow: hidden; padding-block: 0; }
+  .ph-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .ph-overlay {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91; pointer-events: none;
+  }
+  .ph-inner {
+    position: relative; z-index: 1;
+    height: clamp(640px, 86vh, 800px);
+    padding-block: clamp(48px, 8vh, 96px);
+    display: flex; align-items: center;
+  }
+  @media (max-width: 640px) {
+    .ph-inner { height: min(680px, 88dvh); padding-block: 36px; }
+  }
+  .ph-content { width: 100%; max-width: 800px; }
+  .ph-eyebrow {
+    font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: #FEB91C; margin: 0 0 14px;
+  }
+  .ph-h1 {
+    font-family: "Poppins", sans-serif; font-weight: 300;
+    font-size: clamp(30px, 5.2vw, 66px); line-height: 1.08;
+    letter-spacing: -0.015em; color: #ffffff; margin: 0;
+  }
+  .ph-tagline {
+    font-family: "Poppins", sans-serif; font-weight: 400;
+    font-size: clamp(15px, 1.6vw, 22px); line-height: 1.5;
+    color: #FEB91C; margin-top: 16px; letter-spacing: 0.005em;
+  }
+  .ph-ctas {
+    margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  }
+  @media (max-width: 500px) { .ph-ctas { flex-direction: column; align-items: stretch; } }
+  .ph-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: #3a5dff; color: #ffffff; border: 1px solid #3a5dff;
+    border-radius: 6px; padding: 14px 26px; font-size: 14px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; letter-spacing: 0.01em;
+    min-height: 46px; box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    text-decoration: none; transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .ph-btn-primary:hover {
+    background-color: #2548f0; border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4); transform: translateY(-1px);
+  }
+  .ph-btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06); color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75); backdrop-filter: blur(2px);
+    border-radius: 6px; padding: 13px 24px; font-size: 15px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; min-height: 46px;
+    text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ph-btn-secondary svg { flex-shrink: 0; }
+  .ph-btn-secondary:hover { background-color: #ffffff; color: #1C244B; border-color: #ffffff; }
+</style>

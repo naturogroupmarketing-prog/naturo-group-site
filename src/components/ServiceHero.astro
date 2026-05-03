@@ -109,7 +109,7 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
   .svc-hero-h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    font-size: clamp(40px, 5.2vw, 66px);
+    font-size: clamp(30px, 5.2vw, 66px);
     line-height: 1.08;
     letter-spacing: -0.015em;
     color: #ffffff;
@@ -118,7 +118,7 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
   .svc-hero-tagline {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: clamp(18px, 1.6vw, 22px);
+    font-size: clamp(15px, 1.6vw, 22px);
     line-height: 1.5;
     color: #FEB91C;
     margin-top: 16px;
@@ -200,5 +200,10 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
     display: block;
     filter: brightness(0) invert(1);
     opacity: 0.95;
+  }
+  @media (max-width: 640px) {
+    .svc-hero-partners { margin-top: 24px; }
+    .svc-hero-partners-label { font-size: 12px; margin-bottom: 10px; }
+    .svc-hero-partners-img { width: 160px; }
   }
 </style>

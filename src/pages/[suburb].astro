@@ -515,6 +515,11 @@ const schema = [
     filter: brightness(0) invert(1);
     opacity: 0.95;
   }
+  @media (max-width: 640px) {
+    .hero-partners { margin-top: 24px; }
+    .hero-partners-label { font-size: 12px; margin-bottom: 10px; }
+    .hero-partners-img { width: 160px; }
+  }
 
   /* ---------- Localised IntroCopy ---------- */
   .intro-section {
@@ -871,6 +876,9 @@ const schema = [
     gap: 12px;
     justify-content: center;
     margin-bottom: 20px;
+  }
+  @media (max-width: 500px) {
+    .finalcta-ctas { flex-direction: column; align-items: stretch; }
   }
   .finalcta-btn-primary {
     display: inline-flex;

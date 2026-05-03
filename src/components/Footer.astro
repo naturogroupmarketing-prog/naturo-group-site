@@ -497,25 +497,38 @@ const trustBadges = [
   }
 
   /* ─── Footer accordion ─────────────────────────────────────────────────── */
-  /* Desktop: buttons are styled as plain non-interactive headings.           */
+  /* Desktop: button acts as a plain non-interactive heading.
+     padding-bottom replaces the old footer-h2 margin so the gap between
+     the heading and the list below is handled at the button level. */
   .footer-acc-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: none;
     border: none;
-    padding: 0;
+    padding: 0 0 12px;
     width: 100%;
     text-align: left;
     cursor: default;
     pointer-events: none;
   }
+  /* Reset the margin now that the button's padding handles the gap */
+  .footer-acc-btn .footer-h2 { margin: 0; }
   .footer-acc-chevron { display: none; }
+
+  /* Desktop safety: panels always visible regardless of JS / is-open state */
+  @media (min-width: 721px) {
+    .footer-list.footer-acc-panel { display: flex; }
+    .footer-states.footer-acc-panel { display: grid; }
+  }
 
   /* Mobile: Apple-style accordion — separator line, tappable row, panel
      collapses/reveals beneath the heading, chevron rotates when open. */
   @media (max-width: 720px) {
     .footer-col-stack { gap: 0; }
+    /* Kill the footer-cols grid gap on mobile so the three accordion
+       sections stack flush against each other. */
+    .footer-cols { gap: 0; }
     .footer-acc { border-top: 1px solid #d2d2d7; }
     .footer-acc-btn {
       cursor: pointer;

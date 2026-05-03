@@ -158,6 +158,28 @@ export const suburbs: Suburb[] = [
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Port Macquarie?',
+        a: 'House cleaning in Port Macquarie starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Pricing depends on the size of your home and the type of clean — get a transparent instant price online in under 60 seconds with no obligation.',
+      },
+      {
+        q: 'Do you clean holiday rentals and Airbnb properties in Port Macquarie?',
+        a: 'Yes — we regularly clean short-stay and holiday rental properties across Port Macquarie, Lighthouse Beach, Town Beach, Settlement Point and the surrounding Hastings region. We can coordinate same-day turnovers between guests, supply fresh linen and provide condition reports to owners and property managers.',
+      },
+      {
+        q: 'Do you offer NDIS and aged care cleaning in Port Macquarie?',
+        a: 'Yes. NATURO GROUP supports NDIS participants and aged care recipients across Port Macquarie and the Mid North Coast. We work with plan managers, support coordinators and Home Care Package providers to arrange regular in-home cleaning — with detailed invoicing and reports on request. Call 1300 876 472 to discuss your support needs.',
+      },
+      {
+        q: 'Which areas around Port Macquarie do you service?',
+        a: 'We service all of Port Macquarie and the broader Hastings region, including Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Dunbogan, Telegraph Point and Kendall. If you are unsure whether we cover your street, call 1300 876 472 and we will confirm in 60 seconds.',
+      },
+      {
+        q: 'Are your Port Macquarie cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner working in Port Macquarie is police-checked, fully insured for $20m public liability and trained to our nursing-grade cleaning standards. We supply all eco-friendly, non-toxic products and equipment — you do not need to provide anything.',
+      },
+    ],
   },
 
   {
@@ -1464,6 +1486,28 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Geelong, Newtown, Highton, Belmont, Ocean Grove & Torquay. Police-checked, fully insured. Get an instant price.',
     },
     nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Geelong?',
+        a: 'House cleaning in Geelong starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. The final price depends on the size of your home and the service type — get a transparent instant price online in under 60 seconds, no phone call required.',
+      },
+      {
+        q: 'Which Geelong suburbs do you service?',
+        a: 'We service all of Geelong and the surrounding region including Newtown, Highton, Belmont, Geelong West, South Geelong, East Geelong, Manifold Heights, Hamlyn Heights, Lara, Corio, Leopold, Ocean Grove, Barwon Heads, Torquay, Jan Juc and Drysdale. If you are unsure whether we cover your street, call 1300 876 472 and we will confirm straight away.',
+      },
+      {
+        q: 'Do you offer NDIS and aged care cleaning in Geelong?',
+        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. Call 1300 876 472 to discuss your needs.',
+      },
+      {
+        q: 'Can you clean end-of-lease properties in Geelong?',
+        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a bond-back re-clean guarantee if any issue is raised by your property manager.',
+      },
+      {
+        q: 'Are your Geelong cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
+      },
+    ],
   },
 
   {

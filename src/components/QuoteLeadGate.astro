@@ -506,11 +506,15 @@ const lc = leadCapture;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
     background: rgba(15, 23, 42, 0.55);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     animation: qlg-fade 180ms ease-out;
+    /* Allow overlay itself to scroll on very short screens so the card
+       is never clipped — align-items:safe center does the same but
+       browser support is still patchy. */
+    overflow-y: auto;
   }
   .qlg-overlay[hidden] { display: none; }
   @keyframes qlg-fade {
@@ -522,11 +526,19 @@ const lc = leadCapture;
     position: relative;
     width: 100%;
     max-width: 460px;
+    /* Never taller than the visible viewport — the form scrolls inside. */
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    /* Pushes card to vertical centre when there's room; sits at top when
+       the overlay itself needs to scroll. */
+    margin: auto;
     background: #ffffff;
     border-radius: 18px;
     padding: 36px 32px 30px;
     box-shadow: 0 24px 48px rgba(15, 23, 42, 0.32);
     animation: qlg-rise 220ms ease-out;
+    /* Smooth inertia scroll on iOS */
+    -webkit-overflow-scrolling: touch;
   }
   @keyframes qlg-rise {
     from { opacity: 0; transform: translateY(12px); }
@@ -664,7 +676,14 @@ const lc = leadCapture;
   }
 
   @media (max-width: 480px) {
-    .qlg-card { padding: 30px 22px 24px; border-radius: 14px; }
-    .qlg-title { font-size: 20px; }
+    .qlg-overlay { padding: 10px; }
+    .qlg-card { padding: 22px 18px 18px; border-radius: 14px; }
+    .qlg-eyebrow { margin-bottom: 6px; }
+    .qlg-title { font-size: 18px; }
+    .qlg-sub { font-size: 13px; margin-bottom: 14px; }
+    .qlg-form { gap: 10px; }
+    .qlg-input { padding: 10px 12px; font-size: 15px; }
+    .qlg-submit { padding: 12px 18px; font-size: 15px; }
+    .qlg-error { min-height: 12px; }
   }
 </style>

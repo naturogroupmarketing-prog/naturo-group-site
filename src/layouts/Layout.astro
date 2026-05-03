@@ -7,7 +7,6 @@ import '@fontsource/poppins/600.css';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import StickyMobileBar from '../components/layout/StickyMobileBar.astro';
 import QuoteLeadGate from '../components/QuoteLeadGate.astro';
 import ExitIntent from '../components/ExitIntent.astro';
 import CookieConsent from '../components/CookieConsent.astro';
@@ -76,7 +75,6 @@ const isHome = Astro.url.pathname === '/';
       <slot />
     </main>
     <Footer />
-    <StickyMobileBar />
     <QuoteLeadGate />
     <ExitIntent />
     <CookieConsent />

@@ -2568,8 +2568,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Geelong families, students and Bellarine homeowners.',
     },
     seo: {
-      title: 'House Cleaning Geelong | Eco-Friendly Cleaners VIC',
-      description: 'Eco-friendly house cleaning in Geelong, Newtown, Highton, Belmont, Ocean Grove & Torquay. Police-checked, fully insured. Get an instant price.',
+      title: 'Best House Cleaning Geelong | Police-Checked Eco-Friendly Cleaners',
+      description: 'House cleaning in Geelong from $153. Police-checked, fully insured team across Geelong, Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price — no phone call needed.',
     },
     nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
     localFaqs: [
@@ -2592,6 +2592,18 @@ export const suburbs: Suburb[] = [
       {
         q: 'Are your Geelong cleaners police-checked and insured?',
         a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
+      },
+      {
+        q: 'What eco-friendly products do you use in Geelong homes?',
+        a: 'We use plant-based, biodegradable, non-toxic products that are safe for children, pets, asthma sufferers and Corio Bay\'s catchment. Our products are tough on grease and grime but gentle on the period timber, natural stone and bay-area finishes common throughout Geelong and the Bellarine.',
+      },
+      {
+        q: 'Do you offer weekend or same-week cleaning in Geelong?',
+        a: 'We can usually book a first Geelong clean within 2–5 business days, and same-week availability is often possible for smaller jobs. For regular weekly or fortnightly cleans, we work with your schedule — school runs, V/Line commutes and weekend trips down the Surf Coast included.',
+      },
+      {
+        q: 'What is included in a standard house clean in Geelong?',
+        a: 'A standard Geelong clean covers all living areas (dusting, vacuuming, mopping), kitchen (benchtops, stovetop, splashback, sink), bathrooms (toilet, basin, shower, bath), and bedrooms. We bring all products and equipment. Extras like inside-oven cleaning, inside-fridge, window washing and linen changes can be added when you get your instant price online.',
       },
     ],
   },

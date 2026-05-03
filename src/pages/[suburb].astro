@@ -117,11 +117,14 @@ const schema = [
     email: site.email,
     image: `${site.url}${suburb.ogImage}`,
     priceRange: '$$',
-    areaServed: {
-      '@type': 'City',
-      name: suburb.name,
-      containedInPlace: { '@type': 'State', name: suburb.state },
-    },
+    areaServed: [
+      { '@type': 'City', name: suburb.name, containedInPlace: { '@type': 'State', name: suburb.state } },
+      ...suburb.nearbySuburbs.map((s) => ({
+        '@type': 'City',
+        name: s,
+        containedInPlace: { '@type': 'State', name: suburb.state },
+      })),
+    ],
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

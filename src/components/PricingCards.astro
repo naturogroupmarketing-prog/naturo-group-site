@@ -223,6 +223,32 @@ import { pricingCards } from '../data/site';
     transition: color 0.25s ease;
   }
   .pricing-card:hover .pricing-card-icon { color: #ffffff; }
+  @media (max-width: 768px) {
+    .pricing-card.is-active {
+      background-color: #3a5dff;
+      border-color: #3a5dff;
+      box-shadow: 0 2px 4px rgba(15,23,42,0.06), 0 18px 36px rgba(58,93,255,0.32);
+    }
+    .pricing-card.is-active .pricing-card-name,
+    .pricing-card.is-active .pricing-card-desc,
+    .pricing-card.is-active .pricing-currency,
+    .pricing-card.is-active .pricing-integer,
+    .pricing-card.is-active .pricing-unit,
+    .pricing-card.is-active .pricing-features li { color: #ffffff; }
+    .pricing-card.is-active .pricing-tick { color: #ffffff; }
+    .pricing-card.is-active .pricing-card-icon { color: #ffffff; }
+    .pricing-card.is-active .pricing-btn {
+      background-color: #ffffff;
+      border-color: #ffffff;
+      color: #3a5dff;
+      box-shadow: 0 6px 16px rgba(15,23,42,0.18);
+    }
+    .pricing-card.is-active .pricing-badge {
+      background-color: #ffffff;
+      color: #3a5dff;
+      border-color: #ffffff;
+    }
+  }
   .pricing-card-name {
     font-family: "Poppins", sans-serif;
     font-size: 26px;
@@ -385,3 +411,33 @@ import { pricingCards } from '../data/site';
     .pricing-trust { padding: 0 20px; }
   }
 </style>
+
+<script>
+  (function () {
+    const grid = document.querySelector('.pricing-grid');
+    const cards = Array.from(document.querySelectorAll('.pricing-card'));
+    if (!grid || !cards.length) return;
+
+    function updateActive() {
+      if (window.innerWidth > 768) {
+        cards.forEach(c => c.classList.remove('is-active'));
+        return;
+      }
+      const gridLeft = grid.scrollLeft;
+      const gridWidth = grid.clientWidth;
+      let bestIdx = 0;
+      let bestOverlap = -1;
+      cards.forEach((card, i) => {
+        const left = card.offsetLeft - grid.offsetLeft;
+        const right = left + card.offsetWidth;
+        const overlap = Math.min(right, gridLeft + gridWidth) - Math.max(left, gridLeft);
+        if (overlap > bestOverlap) { bestOverlap = overlap; bestIdx = i; }
+      });
+      cards.forEach((c, i) => c.classList.toggle('is-active', i === bestIdx));
+    }
+
+    updateActive();
+    grid.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive, { passive: true });
+  })();
+</script>

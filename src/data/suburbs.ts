@@ -232,6 +232,28 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Byron Bay & the Northern Rivers. Holiday-let turnovers, regular cleans, police-checked and fully insured. Get an instant price.',
     },
     nearbySuburbs: ['Suffolk Park', 'Lennox Head', 'Ballina', 'Mullumbimby', 'Bangalow', 'Brunswick Heads', 'Ocean Shores', 'Tyagarah', 'Newrybar', 'Federal', 'Possum Creek', 'Eureka', 'Coopers Shoot', 'Skennars Head', 'Wategos', 'Tallow Beach', 'Myocum', 'Ewingsdale'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Byron Bay?',
+        a: 'House cleaning in Byron Bay starts from $153 for a regular clean and $371 for a deep clean. Short-stay and Airbnb turnovers are quoted based on property size and turnover requirements. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+      },
+      {
+        q: 'Do you do Airbnb and holiday rental turnovers in Byron Bay?',
+        a: 'Yes — holiday-let and short-stay turnovers are one of our most requested services in Byron Bay. We service properties in Wategos, Suffolk Park, Belongil, Tallow Beach, Ewingsdale and across the Byron Shire. We coordinate check-out and check-in times, can handle linen and provide condition reports to owners and property managers.',
+      },
+      {
+        q: 'Do you use eco-friendly products in Byron Bay homes?',
+        a: 'Always. We use plant-based, biodegradable, non-toxic products on every Byron Bay clean — kind to the ocean, reef-safe and safe for kids, pets and allergy sufferers. We never use harsh chemicals that wash into the Byron Bay catchment or affect sensitive indoor environments.',
+      },
+      {
+        q: 'Which areas around Byron Bay do you service?',
+        a: 'We service all of Byron Bay and the surrounding Northern Rivers region including Suffolk Park, Wategos, Belongil, Lennox Head, Bangalow, Brunswick Heads, Mullumbimby, Ballina, Ocean Shores and Ewingsdale. Call 1300 876 472 if you are unsure whether we cover your area.',
+      },
+      {
+        q: 'Are your Byron Bay cleaners police-checked and insured?',
+        a: 'Yes — every NATURO GROUP cleaner in Byron Bay is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment. You do not need to leave anything out for us.',
+      },
+    ],
   },
 
   {
@@ -1434,6 +1456,28 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across Melbourne \u2014 CBD, South Yarra, Richmond, Brighton, Hawthorn, St Kilda. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Carlton', 'Fitzroy', 'Collingwood', 'Richmond', 'South Yarra', 'Prahran', 'Windsor', 'St Kilda', 'Albert Park', 'Port Melbourne', 'Southbank', 'Docklands', 'North Melbourne', 'West Melbourne', 'Parkville', 'East Melbourne', 'South Melbourne', 'Hawthorn', 'Toorak', 'Brunswick', 'Cremorne', 'Carlton North', 'Fitzroy North'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Melbourne?',
+        a: 'House cleaning in Melbourne starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Pricing depends on the size of your home and the service type \u2014 get a transparent instant price online in under 60 seconds, no phone call required.',
+      },
+      {
+        q: 'Which Melbourne suburbs do you service?',
+        a: 'We service Melbourne CBD and surrounding inner suburbs including South Yarra, Richmond, Hawthorn, Toorak, St Kilda, Albert Park, Port Melbourne, Fitzroy, Collingwood, Brunswick, Carlton, Prahran, Windsor, Southbank and Docklands. Call 1300 876 472 to confirm availability in your suburb.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleaning in Melbourne?',
+        a: 'Yes \u2014 end-of-lease bond cleans are one of our most popular Melbourne services. We cover everything on the standard rental inspection checklist: oven, stovetop, range hood, bathrooms, windows, walls, skirting boards and carpets. We provide a detailed receipt and a bond-back re-clean guarantee if your property manager raises any issue.',
+      },
+      {
+        q: 'Do you offer NDIS and aged care cleaning in Melbourne?',
+        a: 'Yes. NATURO GROUP supports NDIS participants and aged care recipients across Melbourne, working with plan managers, support coordinators and Home Care Package providers. We provide consistent cleaners, detailed invoicing and care reports on request. Call 1300 876 472 to discuss your support plan.',
+      },
+      {
+        q: 'Are your Melbourne cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner working in Melbourne is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly, non-toxic products and equipment \u2014 you do not need to provide anything for the clean.',
+      },
+    ],
   },
 
   {

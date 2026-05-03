@@ -128,6 +128,11 @@ const { body = founder.body } = Astro.props;
   @media (max-width: 860px) {
     .founder-portrait { max-width: 320px; }
   }
+  @media (max-width: 600px) {
+    .founder-section { padding: 48px 0; }
+    .founder-portrait { max-width: 180px; }
+    .founder-h2 { font-size: 26px; }
+  }
   .founder-kicker {
     display: inline-block;
     font-family: "Poppins", sans-serif;

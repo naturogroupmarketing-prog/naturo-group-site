@@ -817,9 +817,24 @@ const schema = [
         data[key] = val;
       });
       if (extras.length) data.extras = extras;
-      data._page = 'quote';
-      data._submitted_at = new Date().toISOString();
-      data._subject = 'Instant price enquiry from ' + (data.full_name || 'website');
+
+      // Build a clean admin-friendly payload — only the fields staff need.
+      var serviceLabels = { regular: 'Regular clean', oneoff: 'One-off clean', endoflease: 'End of lease', specialty: 'Specialty' };
+      var freqLabels    = { weekly: 'Weekly', fortnightly: 'Fortnightly', monthly: 'Monthly', oneoff: 'One-off' };
+      var adminPayload = {
+        _subject:       'Quote enquiry from ' + (data.full_name || 'website'),
+        name:           data.full_name || '—',
+        email:          data.email    || '—',
+        phone:          data.phone    || '—',
+        suburb:         data.location || '—',
+        service:        serviceLabels[data.service] || data.service || '—',
+        frequency:      freqLabels[data.frequency]  || data.frequency || '—',
+        hours:          data.hours ? data.hours + ' hrs' : '—',
+        extras:         extras.length ? extras.join(', ') : 'None',
+        preferred_date: data.start_date   || '—',
+        preferred_time: data.time_window  || '—',
+        notes:          data.notes        || '—',
+      };
 
       try {
         const resp = await fetch(webhook, {
@@ -828,7 +843,7 @@ const schema = [
             'Accept': 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(adminPayload),
         });
         if (!resp.ok) throw new Error('Bad response ' + resp.status);
 

@@ -38,6 +38,8 @@ const isHome = Astro.url.pathname === '/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#05AAE8" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{fullTitle}</title>
@@ -58,10 +60,12 @@ const isHome = Astro.url.pathname === '/';
     <meta property="og:locale" content="en_AU" />
     <meta property="og:site_name" content={site.name} />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, site.url).toString()} />
+    <meta name="twitter:site" content="@naturogroup" />
 
     {schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />

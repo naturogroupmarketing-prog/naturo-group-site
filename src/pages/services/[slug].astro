@@ -70,8 +70,8 @@ const schema = [
 ---
 
 <Layout
-  title={service.title}
-  description={service.short}
+  title={`${service.title} — Eco-Friendly, Police-Checked Cleaners`}
+  description={detail?.hero?.sub?.replace(/&mdash;/g, '—') ?? service.short}
   schema={schema}
 >
   <!-- 1. Hero (image + headline) -->

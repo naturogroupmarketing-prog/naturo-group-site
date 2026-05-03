@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TrustBadges from '../components/TrustBadges.astro';
-import { ctaPrimary, ctaPhone, founder } from '../data/site';
+import { ctaPrimary, ctaPhone, founder, site } from '../data/site';
 
 const values = [
   {
@@ -21,11 +21,43 @@ const values = [
       'No shortcuts. No rushed visits. Every job is checked against the inclusions list before we leave.',
   },
 ];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${site.url}/team#webpage`,
+    url: `${site.url}/team`,
+    name: 'Meet Our Team — Police-Checked Cleaners | Naturo Group',
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+        { '@type': 'ListItem', position: 2, name: 'Meet the Team', item: `${site.url}/team` },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${site.url}/team#anna-biram`,
+    name: founder.name,
+    jobTitle: founder.role,
+    worksFor: {
+      '@type': 'Organization',
+      name: site.name,
+      url: site.url,
+    },
+    description: 'Registered nurse and founder of Naturo Group, bringing clinical-level care and attention to detail to eco-friendly residential cleaning across Australia.',
+    image: `${site.url}${founder.image}`,
+  },
+];
 ---
 
 <Layout
-  title="Meet the team"
+  title="Meet Our Team — Police-Checked Cleaners"
   description="Naturo Group is a tight-knit team of trained, police-checked Australian cleaners led by founder Anna Biram. Meet the people who care for your home."
+  schema={schema}
 >
   <section class="ph-hero">
     <div class="ph-bg" style="background-image: url(/images/team-staff.jpg);" aria-hidden="true"></div>

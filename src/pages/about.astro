@@ -2,12 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 import Specialties from '../components/Specialties.astro';
 import CTABanner from '../components/CTABanner.astro';
-import { ctaPrimary, ctaPhone } from '../data/site';
+import { ctaPrimary, ctaPhone, site } from '../data/site';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${site.url}/about#webpage`,
+    url: `${site.url}/about`,
+    name: 'About Naturo Group — Eco-Friendly Cleaners Australia',
+    description: 'Founded by registered nurse Anna Biram, Naturo Group brings clinical-level care and eco-friendly products to every residential clean across Australia.',
+    isPartOf: { '@id': `${site.url}/#website` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+        { '@type': 'ListItem', position: 2, name: 'About Us', item: `${site.url}/about` },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${site.url}/#organization`,
+    name: site.name,
+    legalName: site.legalName,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
+    description: site.description,
+    foundingDate: '2018',
+    founder: {
+      '@type': 'Person',
+      name: 'Anna Biram',
+      jobTitle: 'Founder & Managing Director',
+      description: 'Registered nurse and founder of Naturo Group, bringing clinical-level care standards to eco-friendly residential cleaning across Australia.',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Australia',
+    },
+    sameAs: [
+      site.social.facebook,
+      site.social.instagram,
+      site.social.youtube,
+    ],
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site.url}/images/logo.avif`,
+    },
+  },
+];
 ---
 
 <Layout
-  title="About Naturo Group"
+  title="About Us — Eco-Friendly Cleaners Australia"
   description="Founded by registered nurse Anna Biram, Naturo Group brings clinical-level care and eco-friendly products to every clean — across Australia."
+  schema={schema}
 >
   <section class="ph-hero">
     <div class="ph-bg" style="background-image: url(/images/banner-staff.jpg);" aria-hidden="true"></div>

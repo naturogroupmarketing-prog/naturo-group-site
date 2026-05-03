@@ -22,19 +22,46 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${site.url}/#organization`,
     name: site.name,
+    legalName: site.legalName,
     description: site.description,
     url: site.url,
     telephone: site.phone,
     email: site.email,
     image: `${site.url}/og-default.jpg`,
+    logo: `${site.url}/images/logo.avif`,
     priceRange: '$$',
-    areaServed: 'Australia',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Australia',
+    },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:30',
       closes: '17:00',
+    },
+    sameAs: [
+      site.social.facebook,
+      site.social.instagram,
+      site.social.youtube,
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site.url}/#website`,
+    url: site.url,
+    name: site.name,
+    description: site.description,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${site.url}/services/{search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
     },
   },
   {

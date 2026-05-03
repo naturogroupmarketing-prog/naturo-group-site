@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TrustBadges from '../components/TrustBadges.astro';
-import { ctaPrimary, testimonials } from '../data/site';
+import { ctaPrimary, testimonials, site } from '../data/site';
 
 // Lightweight aggregate-rating schema for SEO. The count and rating
 // should be reconciled against your real Google Business Profile before
@@ -14,9 +14,17 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Naturo Group',
-    url: 'https://naturogroup.com.au',
-    telephone: '+61 1300 876 472',
+    '@id': `${site.url}/#organization`,
+    name: site.name,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
+    image: `${site.url}/og-default.jpg`,
+    sameAs: [
+      site.social.facebook,
+      site.social.instagram,
+      site.social.youtube,
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: ratingValue,
@@ -52,7 +60,7 @@ const stats = [
 ---
 
 <Layout
-  title="Reviews"
+  title="Client Reviews — Eco-Friendly House Cleaning Australia"
   description="Real reviews from Naturo Group customers across NSW, Queensland and Victoria. Eco-friendly cleaning rated 4.9★ by hundreds of Australian families."
   schema={schema}
 >

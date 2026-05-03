@@ -365,21 +365,29 @@ const lc = leadCapture;
     // ---- Fan-out: push the lead to every configured destination ---------
     function shipToWebhook(payload) {
       if (!config.webhookUrl) return;
-      // Use fetch with keepalive (not sendBeacon) so we can set the
-      // Accept: application/json header — Formspree (and most form
-      // services) need it to return CORS-friendly JSON instead of a
-      // redirect. keepalive guarantees the request still completes
-      // even after we navigate away to /quote.
+      // Derive a readable suburb name from the landing page slug so the
+      // Formspree email only shows the fields admin staff actually need.
+      var landingPath = (payload.source && payload.source.landing_page) || window.location.href;
+      var slug = landingPath
+        .replace(/^https?:\/\/[^/]+/, '')
+        .replace(/\/$/, '')
+        .replace(/^\//, '')
+        .replace(/^(house-cleaning-in-|house-cleaning-|cleaners-)/, '')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      var adminPayload = {
+        name:   payload.name,
+        email:  payload.email,
+        phone:  payload.phone,
+        suburb: slug || payload.page.path,
+      };
       try {
         fetch(config.webhookUrl, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(adminPayload),
           keepalive: true,
-        }).catch(function () { /* swallow — capture is best-effort */ });
+        }).catch(function () { /* best-effort */ });
       } catch (e) { /* swallow */ }
     }
 

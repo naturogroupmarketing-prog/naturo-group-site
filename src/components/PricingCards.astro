@@ -11,11 +11,42 @@ import { pricingCards } from '../data/site';
   </div>
 
   <div class="pricing-grid">
-    {pricingCards.map((card) => (
+    {pricingCards.map((card, i) => (
       <div class={`pricing-card ${card.featured ? 'is-featured' : ''}`}>
         {card.featured && <div class="pricing-badge">MOST POPULAR</div>}
         <div class="pricing-card-body">
-          <h3 class="pricing-card-name">{card.name}</h3>
+          <div class="pricing-card-head">
+            <div class="pricing-card-icon" aria-hidden="true">
+              {i === 0 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 48 48" fill="none">
+                  <rect x="10" y="22" width="28" height="18" rx="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M18 22v-7a6 6 0 0 1 12 0v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="17" y1="29" x2="31" y2="29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="17" y1="34" x2="31" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="38" cy="10" r="3.5" fill="#ff5f1f"/>
+                  <circle cx="43" cy="17" r="2.2" fill="#ff5f1f"/>
+                  <circle cx="40" cy="5" r="1.8" fill="#ff5f1f"/>
+                </svg>
+              )}
+              {i === 1 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 48 48" fill="none">
+                  <rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/>
+                  <line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/>
+                </svg>
+              )}
+              {i === 2 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 48 48" fill="none">
+                  <path d="M8 42V22L24 8l16 14v20H8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="20" y="30" width="8" height="12" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 23l6 6 10-12" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="pricing-card-name">{card.name}</h3>
+          </div>
           <p class="pricing-card-desc">{card.bullets[0]}</p>
           <div class="pricing-card-price">
             <span class="pricing-currency">$</span><span class="pricing-integer">{card.priceFrom}</span><span class="pricing-unit">/from</span>
@@ -178,13 +209,27 @@ import { pricingCards } from '../data/site';
   .pricing-card-body {
     flex: 1;
   }
+  .pricing-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .pricing-card-icon {
+    color: #3a5dff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.25s ease;
+  }
+  .pricing-card:hover .pricing-card-icon { color: #ffffff; }
   .pricing-card-name {
     font-family: "Poppins", sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 1.2;
     color: #000000;
-    margin: 0 0 10px;
+    margin: 0;
   }
   .pricing-card-desc {
     font-family: "Poppins", sans-serif;

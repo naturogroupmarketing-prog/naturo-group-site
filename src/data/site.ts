@@ -423,7 +423,6 @@ export const footerInfoLinks = [
   { label: 'How does it work', href: '/how-it-works' },
   { label: 'Meet the Team', href: '/team' },
   { label: 'Reviews', href: '/reviews' },
-  { label: 'Areas we serve', href: '/areas-we-serve' },
   { label: 'Become a Cleaner', href: '/career' },
   { label: 'Resources', href: '/resource' },
   { label: 'FAQS', href: '/faqs' },

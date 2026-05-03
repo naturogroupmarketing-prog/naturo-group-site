@@ -182,6 +182,1048 @@ export const suburbs: Suburb[] = [
     ],
   },
 
+  // ── Port Macquarie sub-suburbs ──────────────────────────────────────────
+
+  {
+    slug: 'house-cleaning-wauchope',
+    name: 'Wauchope',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Wauchope NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Wauchope'],
+      tagline: 'Trusted, Trained and Thorough — across the Hastings Valley',
+    },
+    intro: {
+      kicker: 'House cleaning in Wauchope',
+      h2: 'Professional house cleaning in Wauchope & the Hastings Valley',
+      paragraphs: [
+        'Wauchope is the gateway to the Hastings Valley — a heritage timber town with a strong community spirit, known for Timbertown and its connection to the region\'s rich pioneering history. Homes here range from classic weatherboard cottages to modern family houses on quiet leafy streets. NATURO GROUP brings eco-friendly, nursing-grade cleaning to every Wauchope home.',
+        'From central Wauchope to Beechwood, Pembrooke and the surrounding rural properties, our police-checked team provides regular, deep clean and end-of-lease services — reliable, insured and ready to work around your schedule.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Wauchope & the Mid North Coast',
+      paragraphs: [
+        'Wauchope sits at the junction of the Pacific and Oxley highways, making it the commercial and community hub for the Upper Hastings. Families, retirees and rural residents rely on its services, and our cleaners are part of that community — trained, vetted and insured.',
+        'We also service Beechwood, Bago, Pembrooke, Rollands Plains, Telegraph Point and the broader Hastings Valley, giving rural and semi-rural households access to the same premium cleaning standard as city clients.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local Wauchope cleaners', body: 'Police-checked, insured and trained to nursing-grade standards — ready for Wauchope homes, rural properties and heritage cottages.' },
+        { icon: 'clock', title: 'Flexible rural scheduling', body: 'We work around farm schedules, school runs and country routines — morning, afternoon or weekend slots available.' },
+        { icon: 'sparkle', title: 'Eco products safe for families', body: 'Plant-based, biodegradable products that are safe for kids, pets and sensitive airways — no harsh chemical fumes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are proud to bring professional cleaning to regional communities like Wauchope that deserve the same quality of service as any city suburb.',
+      'We support NDIS participants, Veterans Affairs recipients, aged care clients and Home Care Package holders across the Hastings Valley with personalised, compassionate in-home cleaning.',
+      'Our team understands the pace and priorities of country life — we show up on time, communicate clearly and leave your home genuinely clean.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Wauchope?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — book your Wauchope clean in under 60 seconds online.',
+      trust: 'Trusted by Wauchope families, retirees and rural homeowners across the Hastings Valley.',
+    },
+    seo: {
+      title: 'House Cleaning Wauchope | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Wauchope & Hastings Valley NSW. Police-checked, fully insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
+  },
+
+  {
+    slug: 'house-cleaning-lake-cathie',
+    name: 'Lake Cathie',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Lake Cathie NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Lake Cathie'],
+      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Lake Cathie',
+      h2: 'Professional house cleaning in Lake Cathie & surrounds',
+      paragraphs: [
+        'Lake Cathie is a peaceful coastal village nestled between the ocean and a pristine coastal lake just south of Port Macquarie. With its beachside lifestyle, mix of holiday homes and permanent residences, and growing community, Lake Cathie is a sought-after address on the Mid North Coast. NATURO GROUP brings eco-friendly cleaning to every home here.',
+        'From lakefront properties and holiday lets to family homes and retirement units, our police-checked team delivers regular, deep clean and end-of-lease services — with eco-friendly products and flexible scheduling around tides, guests and family life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Lake Cathie & the Mid North Coast',
+      paragraphs: [
+        'Lake Cathie\'s coastal lifestyle attracts families, retirees and holidaymakers alike. Many homes double as short-stay rentals during peak season, and our team is experienced in fast, thorough holiday-let turnovers with condition reports for property managers.',
+        'We also service Bonny Hills, Lakewood, Settlement Point, King Creek and Port Macquarie — so you have one trusted team across the whole coastal corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local coastal cleaners', body: 'Police-checked, insured cleaners who understand the sand, salt air and humidity challenges of coastal homes.' },
+        { icon: 'clock', title: 'Holiday-let turnovers', body: 'Same-day and next-day turnovers for short-stay and Airbnb properties — coordinated with check-in/check-out times.' },
+        { icon: 'sparkle', title: 'Eco-friendly & lake-safe products', body: 'Biodegradable, non-toxic products that are safe for the nearby lake ecosystem and gentle on coastal surfaces.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we love the Mid North Coast lifestyle and are proud to support the Lake Cathie community with professional, reliable in-home cleaning.',
+      'We work with holiday rental owners, NDIS participants, aged care recipients and local families — providing a service that is both thorough and gentle on coastal homes and the surrounding environment.',
+      'Our team shows up on time, uses eco-friendly products and guarantees satisfaction on every clean. That\'s the NATURO GROUP promise.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Lake Cathie?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — book your Lake Cathie clean in under 60 seconds online.',
+      trust: 'Trusted by Lake Cathie families, holiday homeowners and retirees on the Mid North Coast.',
+    },
+    seo: {
+      title: 'House Cleaning Lake Cathie | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Lake Cathie & Mid North Coast NSW. Police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
+  },
+
+  {
+    slug: 'house-cleaning-bonny-hills',
+    name: 'Bonny Hills',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Bonny Hills NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Bonny Hills'],
+      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Bonny Hills',
+      h2: 'Professional house cleaning in Bonny Hills & Rainbow Beach',
+      paragraphs: [
+        'Bonny Hills is a relaxed coastal community perched above Rainbow Beach, south of Port Macquarie. Known for its surfing, bushwalking and unpretentious village atmosphere, it attracts families and sea-changers who value the quieter side of the Mid North Coast lifestyle. NATURO GROUP\'s eco-friendly cleaning service fits right in.',
+        'Whether you\'re in a beach cottage, a modern family home or a holiday rental, our police-checked team delivers regular, deep clean and end-of-lease services — using plant-based products that are safe for your family and the coastal environment.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Bonny Hills & the surrounding coast',
+      paragraphs: [
+        'Bonny Hills sits between Lake Cathie and North Haven, giving it a distinct community feel distinct from Port Macquarie\'s busier centre. Many residents here have made a deliberate lifestyle choice — and they expect local services that match that care and attention.',
+        'We service Bonny Hills, Lake Cathie, North Haven, Dunbogan and surrounding coastal communities, giving the whole stretch of the southern Mid North Coast access to the same premium eco-friendly cleaning.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Vetted coastal cleaners', body: 'Police-checked and insured, with training in eco-friendly products suited to coastal timber and fibro homes.' },
+        { icon: 'clock', title: 'Flexible beach-town scheduling', body: 'We work around surf sessions, school runs and guest arrivals — morning slots, weekend cleans and same-day turnovers available.' },
+        { icon: 'sparkle', title: 'Ocean-safe, non-toxic products', body: 'Biodegradable products that protect the coastal environment while delivering a genuinely deep clean.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we understand that communities like Bonny Hills choose their local services carefully — and we\'re proud to meet that standard with thorough, eco-friendly cleaning.',
+      'We support NDIS clients, aged care recipients and holiday homeowners across the southern Mid North Coast with reliable, compassionate service.',
+      'Every clean is backed by our satisfaction guarantee. If something\'s not right, we come back and fix it — no questions asked.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'fresh, clean home',
+      h2Post: 'in Bonny Hills?',
+      sub: 'Police-checked cleaners, eco-friendly products and easy online booking — your Bonny Hills clean is just 60 seconds away.',
+      trust: 'Trusted by Bonny Hills families, holiday homeowners and the Rainbow Beach community.',
+    },
+    seo: {
+      title: 'House Cleaning Bonny Hills | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Bonny Hills & Rainbow Beach NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
+  },
+
+  {
+    slug: 'house-cleaning-laurieton',
+    name: 'Laurieton',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Laurieton NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Laurieton'],
+      tagline: 'Trusted, Trained and Thorough — on Camden Haven',
+    },
+    intro: {
+      kicker: 'House cleaning in Laurieton',
+      h2: 'Professional house cleaning in Laurieton & Camden Haven',
+      paragraphs: [
+        'Laurieton is the heart of the Camden Haven region — a scenic waterfront town at the mouth of Queens Lake, flanked by the Camden Haven Inlet and North Brother Mountain. With its mix of heritage homes, modern residences and holiday properties, it\'s one of the most desirable addresses between Port Macquarie and Taree. NATURO GROUP is proud to service this community.',
+        'From Laurieton\'s historic foreshore to North Haven, Dunbogan and the surrounding Camden Haven villages, our police-checked team offers regular, deep clean and end-of-lease cleaning — with eco-friendly products and scheduling that suits the relaxed waterfront lifestyle.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Laurieton & the Camden Haven area',
+      paragraphs: [
+        'Camden Haven is a patchwork of waterways, beaches and rural land that attracts retirees, young families and sea-changers in roughly equal measure. Our team understands the local mix of weatherboard cottages, brick homes and waterfront holiday lets.',
+        'We service Laurieton, North Haven, Dunbogan, Bonny Hills, Lake Cathie and Port Macquarie — one reliable team across the entire Mid North Coast corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local Camden Haven cleaners', body: 'Police-checked and insured, with deep knowledge of the Laurieton and North Haven communities.' },
+        { icon: 'clock', title: 'Waterfront-lifestyle scheduling', body: 'Flexible booking times that work around boat trips, fishing runs, golf and weekend getaways.' },
+        { icon: 'sparkle', title: 'Products safe for waterways', body: 'Eco-friendly, biodegradable products that protect Camden Haven\'s estuaries and are non-toxic for children and pets.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we love the Camden Haven lifestyle and are committed to supporting Laurieton households with cleaning that is professional, eco-conscious and genuinely caring.',
+      'We work with NDIS participants, aged care recipients and Home Care Package holders across the Camden Haven region with personalised, respectful in-home service.',
+      'Every clean is backed by our satisfaction guarantee — a fresh, healthy home with no harsh chemicals and no surprises.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Laurieton?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Laurieton clean in under 60 seconds.',
+      trust: 'Trusted by Laurieton families, retirees and Camden Haven holiday homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Laurieton | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Laurieton & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
+  },
+
+  {
+    slug: 'house-cleaning-north-haven',
+    name: 'North Haven',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in North Haven NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'North Haven'],
+      tagline: 'Trusted, Trained and Thorough — on the Camden Haven',
+    },
+    intro: {
+      kicker: 'House cleaning in North Haven',
+      h2: 'Professional house cleaning in North Haven & Camden Haven',
+      paragraphs: [
+        'North Haven is a quiet beachside village on the northern shore of Camden Haven, popular with fishing families, retirees and holiday visitors. With its small-town feel, pristine beaches and the natural beauty of Crowdy Bay National Park nearby, it\'s a community that takes pride in its surroundings — including their homes. NATURO GROUP matches that pride with professional eco-friendly cleaning.',
+        'From North Haven\'s beach houses and fishing cottages to holiday rentals and permanent family homes, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic, biodegradable products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across North Haven & the Mid North Coast',
+      paragraphs: [
+        'North Haven\'s community is tight-knit and values trusted local tradespeople. As an eco-conscious cleaning business, we fit naturally into a community that cares about its coastal environment and the health of its families.',
+        'We service North Haven, Dunbogan, Camden Head, Laurieton, Bonny Hills and Port Macquarie — providing consistent, reliable cleaning across the entire Camden Haven corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted local cleaners', body: 'Police-checked and insured, with the professionalism and reliability that North Haven residents expect.' },
+        { icon: 'clock', title: 'Flexible scheduling', body: 'Bookings that fit around fishing, boat maintenance, guests and the relaxed North Haven pace of life.' },
+        { icon: 'sparkle', title: 'Eco products for coastal homes', body: 'Plant-based, non-toxic formulas that protect timber, fibro and fibreglass surfaces common in coastal properties.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are honoured to serve coastal communities like North Haven that take pride in their homes and their environment.',
+      'We support local NDIS participants, aged care recipients and holiday homeowners with professional cleaning that is caring, thorough and eco-friendly.',
+      'Our satisfaction guarantee means every clean meets the high standard North Haven residents expect — or we come back and make it right.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner, healthier home',
+      h2Post: 'in North Haven?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — your North Haven clean is just 60 seconds away.',
+      trust: 'Trusted by North Haven families, retirees and holiday homeowners on the Camden Haven.',
+    },
+    seo: {
+      title: 'House Cleaning North Haven | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in North Haven & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
+  },
+
+  {
+    slug: 'house-cleaning-dunbogan',
+    name: 'Dunbogan',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Dunbogan NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Dunbogan'],
+      tagline: 'Trusted, Trained and Thorough — on the Camden Haven',
+    },
+    intro: {
+      kicker: 'House cleaning in Dunbogan',
+      h2: 'Professional house cleaning in Dunbogan & Camden Haven',
+      paragraphs: [
+        'Dunbogan is a peaceful waterfront village on the Camden Haven Inlet, known for its quiet streets, waterside reserves and strong sense of community. Tucked between Laurieton and North Haven, it\'s a place where residents genuinely know their neighbours and take care of their properties. NATURO GROUP is proud to support Dunbogan homes with eco-friendly, professional cleaning.',
+        'From holiday cabins and waterfront cottages to established family homes, our police-checked team covers regular maintenance cleans, deep cleans and end-of-lease services — all using biodegradable products and flexible scheduling that respects the village lifestyle.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Dunbogan & the Camden Haven',
+      paragraphs: [
+        'Dunbogan may be small, but its residents expect the same quality and reliability as any larger town. Our team serves this community with the same attention to detail we bring to every Mid North Coast job — thorough, timely and fully insured.',
+        'We cover Dunbogan, North Haven, Laurieton, Camden Head and the surrounding Camden Haven villages, ensuring the whole waterfront corridor has access to a premium eco-friendly cleaning service.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Professional & insured', body: 'Every NATURO GROUP cleaner is police-checked and insured for $20m — so you can trust us with your Dunbogan home.' },
+        { icon: 'clock', title: 'Village-friendly scheduling', body: 'Flexible appointment times that work around the quiet rhythms of waterfront village life.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Non-toxic, plant-based formulas safe for children, pets and the adjacent Camden Haven waterways.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we believe every community — large or small — deserves professional, eco-conscious cleaning. Dunbogan is no exception.',
+      'We support NDIS participants, aged care clients and local families across the Camden Haven with compassionate, reliable in-home cleaning.',
+      'Our satisfaction guarantee applies to every job, no matter the size. Your Dunbogan home will be clean, fresh and healthy.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Dunbogan?',
+      sub: 'Eco-friendly products, police-checked cleaners and simple online booking — book your Dunbogan clean in 60 seconds.',
+      trust: 'Trusted by Dunbogan waterfront residents, holiday homeowners and the Camden Haven community.',
+    },
+    seo: {
+      title: 'House Cleaning Dunbogan | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Dunbogan & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
+  },
+
+  {
+    slug: 'house-cleaning-camden-head',
+    name: 'Camden Head',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Camden Head NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Camden Head'],
+      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Camden Head',
+      h2: 'Professional house cleaning in Camden Head & Camden Haven',
+      paragraphs: [
+        'Camden Head is a secluded coastal community at the northern tip of Camden Haven, adjacent to Crowdy Bay National Park. With its remote beaches, fishing culture and close-knit resident base, it\'s a place where people value reliability and trust above all. NATURO GROUP brings that same reliable, eco-friendly cleaning standard to Camden Head homes.',
+        'Whether you\'re in a permanent residence or a holiday property, our police-checked cleaners deliver thorough regular, deep clean and end-of-lease services using plant-based products and scheduling that works around your life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Camden Head & the Mid North Coast',
+      paragraphs: [
+        'Camden Head\'s small permanent population and seasonal influx of holiday visitors means local homeowners need a cleaning service they can count on year-round. Our team is consistent, insured and fully equipped to handle any property type.',
+        'We service Camden Head, Dunbogan, North Haven, Laurieton and the broader Camden Haven — one trusted team for the whole coastal corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Reliable & fully insured', body: 'Police-checked cleaners backed by $20m public liability — your Camden Head home is in safe hands.' },
+        { icon: 'clock', title: 'Flexible for remote living', body: 'We coordinate around your schedule, including holiday-let turnovers and seasonal deep cleans.' },
+        { icon: 'sparkle', title: 'Nature-safe products', body: 'Biodegradable, non-toxic formulas chosen to protect the coastal bushland and National Park environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we respect the trust that residents of places like Camden Head place in service providers who access their homes. Every cleaner we send is thoroughly vetted.',
+      'We support NDIS clients, aged care recipients and holiday homeowners across the Camden Haven with dependable, compassionate cleaning.',
+      'Our satisfaction guarantee means your Camden Head home will be cleaned to the standard you deserve — every time.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'at Camden Head?',
+      sub: 'Police-checked cleaners, eco-friendly products and easy online booking — book your Camden Head clean in under 60 seconds.',
+      trust: 'Trusted by Camden Head residents and holiday homeowners on the Mid North Coast.',
+    },
+    seo: {
+      title: 'House Cleaning Camden Head | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Camden Head & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
+  },
+
+  {
+    slug: 'house-cleaning-telegraph-point',
+    name: 'Telegraph Point',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Telegraph Point NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Telegraph Point'],
+      tagline: 'Trusted, Trained and Thorough — in the Hastings Valley',
+    },
+    intro: {
+      kicker: 'House cleaning in Telegraph Point',
+      h2: 'Professional house cleaning in Telegraph Point & surrounds',
+      paragraphs: [
+        'Telegraph Point is a rural community in the upper Hastings Valley, where cattle properties, hobby farms and timber-clad homes line quiet country roads. It\'s a community built on hard work and trust — and that\'s exactly what NATURO GROUP brings to your home with eco-friendly, professional cleaning.',
+        'From farmhouses and rural cottages to modern homes, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic products and scheduling around farm life, school runs and the rhythms of country living.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Telegraph Point & the Hastings Valley',
+      paragraphs: [
+        'Rural communities like Telegraph Point need cleaning services that understand country homes — dust, mud, timber floors and the demands of large properties. Our trained team is equipped and experienced for exactly these conditions.',
+        'We service Telegraph Point, Wauchope, Sancrox, Beechwood, Bago and Port Macquarie, giving Hastings Valley households access to the same quality cleaning as city residents.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Vetted & insured', body: 'Every cleaner is police-checked and carries $20m public liability — the standard rural homeowners deserve.' },
+        { icon: 'clock', title: 'Country-schedule friendly', body: 'We book around farm operations, school buses, stock moves and everything else that rural life demands.' },
+        { icon: 'sparkle', title: 'Safe for rural properties', body: 'Eco-friendly, non-toxic products that are safe for working dogs, horses and water tanks.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we understand the value of a genuinely trusted local service in rural areas like Telegraph Point. That trust is something we earn with every clean.',
+      'We support NDIS participants, aged care recipients and rural families across the Hastings Valley with compassionate, reliable in-home cleaning.',
+      'Our satisfaction guarantee applies to every job — your Telegraph Point home will be clean, fresh and ready for whatever life brings next.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'fresh, clean home',
+      h2Post: 'in Telegraph Point?',
+      sub: 'Police-checked cleaners, eco-friendly products and flexible scheduling — book your Telegraph Point clean in 60 seconds.',
+      trust: 'Trusted by Telegraph Point farming families and rural homeowners across the Hastings Valley.',
+    },
+    seo: {
+      title: 'House Cleaning Telegraph Point | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Telegraph Point & Hastings Valley NSW. Police-checked, insured. Suitable for rural and hobby-farm homes.',
+    },
+    nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
+  },
+
+  {
+    slug: 'house-cleaning-sancrox',
+    name: 'Sancrox',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Sancrox NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Sancrox'],
+      tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
+    },
+    intro: {
+      kicker: 'House cleaning in Sancrox',
+      h2: 'Professional house cleaning in Sancrox & Port Macquarie',
+      paragraphs: [
+        'Sancrox is a semi-rural suburb on the western outskirts of Port Macquarie, where modern estate homes sit alongside larger rural residential blocks. It\'s a growing community that bridges country living with city convenience — and NATURO GROUP\'s eco-friendly cleaning service fits both lifestyles perfectly.',
+        'From Sancrox\'s newer housing estates to hobby-farm properties, our police-checked team delivers regular, deep clean and end-of-lease services — with plant-based products and flexible scheduling to suit both weekend warriors and work-from-home families.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Sancrox & the Port Macquarie region',
+      paragraphs: [
+        'Sancrox\'s mix of new residential estates and rural holdings means our team needs to handle everything from tiled open-plan homes to older timber properties with weatherboard walls and large back yards — and we do.',
+        'We service Sancrox, Wauchope, King Creek, Telegraph Point, Lakewood and Port Macquarie — one reliable team for the entire Port Macquarie hinterland.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is vetted, trained and insured — ready for Sancrox homes of all sizes and styles.' },
+        { icon: 'clock', title: 'Flexible booking', body: 'Regular fortnightly cleans, one-off deep cleans or end-of-lease — all scheduled around your work and lifestyle.' },
+        { icon: 'sparkle', title: 'Eco-friendly formulas', body: 'Plant-based, non-toxic products safe for children, pets and the semi-rural environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we\'re proud to support the growing Sancrox community with cleaning that is eco-friendly, reliable and thorough.',
+      'We work with NDIS participants, aged care clients and local families to provide personalised in-home cleaning that makes a real difference.',
+      'Our satisfaction guarantee covers every clean in Sancrox — so you can book with confidence.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner, healthier home',
+      h2Post: 'in Sancrox?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — your Sancrox clean is just 60 seconds away.',
+      trust: 'Trusted by Sancrox families and semi-rural homeowners near Port Macquarie.',
+    },
+    seo: {
+      title: 'House Cleaning Sancrox | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Sancrox near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
+  },
+
+  {
+    slug: 'house-cleaning-kendall',
+    name: 'Kendall',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Kendall NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Kendall'],
+      tagline: 'Trusted, Trained and Thorough — in the Manning Valley',
+    },
+    intro: {
+      kicker: 'House cleaning in Kendall',
+      h2: 'Professional house cleaning in Kendall & the Manning Valley',
+      paragraphs: [
+        'Kendall is a charming timber and dairy town in the Manning Valley, known for its arts community, heritage buildings and the annual Kendall Art Show. Surrounded by lush green hills and state forest, it\'s a town that marries rural character with creative community spirit. NATURO GROUP is proud to bring professional, eco-friendly cleaning to Kendall homes.',
+        'From Kendall\'s federation-era homes and character cottages to modern family residences, our police-checked team provides regular, deep clean and end-of-lease services — using biodegradable products and flexible scheduling that suits country town life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Kendall & the Manning Valley',
+      paragraphs: [
+        'Kendall\'s small-town community values reliability and local connections. Our team\'s eco-conscious approach aligns with the environmental values of this green, arts-focused community — we clean thoroughly without harsh chemicals.',
+        'We service Kendall, Comboyne, Wauchope, Telegraph Point and Port Macquarie, giving Manning Valley households access to the same quality cleaning as coastal residents.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted by country communities', body: 'Police-checked, insured cleaners with the reliability and discretion that Kendall residents expect.' },
+        { icon: 'clock', title: 'Country-schedule friendly', body: 'Flexible booking around markets, art shows, farm operations and the Manning Valley way of life.' },
+        { icon: 'sparkle', title: 'Eco-friendly — genuinely', body: 'Plant-based, biodegradable products that match Kendall\'s environmental values and are safe for bush-sensitive properties.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we believe communities like Kendall — with their strong values and sense of place — deserve cleaning services that share those values.',
+      'We support NDIS participants, aged care clients and local families across the Manning Valley with caring, professional in-home cleaning.',
+      'Our satisfaction guarantee means your Kendall home will be cleaned with the thoroughness and respect it deserves.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Kendall?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Kendall clean in 60 seconds.',
+      trust: 'Trusted by Kendall families, artists and the Manning Valley community.',
+    },
+    seo: {
+      title: 'House Cleaning Kendall NSW | Eco-Friendly Cleaners',
+      description: 'Eco-friendly house cleaning in Kendall & Manning Valley NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
+  },
+
+  {
+    slug: 'house-cleaning-comboyne',
+    name: 'Comboyne',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Comboyne NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Comboyne'],
+      tagline: 'Trusted, Trained and Thorough — on the Comboyne Plateau',
+    },
+    intro: {
+      kicker: 'House cleaning in Comboyne',
+      h2: 'Professional house cleaning in Comboyne & surrounds',
+      paragraphs: [
+        'Comboyne sits high on the Comboyne Plateau above the Manning Valley — a cool, green farming community famous for its award-winning cheese, dairy farms and breathtaking mountain scenery. Homes here are often spacious rural properties with timber finishes, verandahs and the kind of dust that comes with country living. NATURO GROUP handles it all with eco-friendly, professional cleaning.',
+        'From Comboyne\'s farmhouses and country cottages to modern homes, our police-checked team provides regular, deep clean and end-of-lease services using biodegradable products safe for farm animals and sensitive rural environments.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners serving Comboyne & the plateau community',
+      paragraphs: [
+        'Comboyne\'s farming community trusts local service providers who understand rural life — the mud, the animals, the wide-open spaces. Our team is trained and equipped for large rural properties and their unique cleaning demands.',
+        'We service Comboyne, Kendall, Wauchope, Telegraph Point and the surrounding plateau communities, bringing city-quality cleaning to the Comboyne highlands.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Rural property specialists', body: 'Police-checked cleaners equipped for farm homes, large rural properties and plateau conditions.' },
+        { icon: 'clock', title: 'Flexible for farm life', body: 'Bookings scheduled around milking, farm operations and the seasonal rhythms of plateau life.' },
+        { icon: 'sparkle', title: 'Safe for animals & water', body: 'Eco-friendly, biodegradable products safe for dairy cattle, horses, water tanks and the plateau environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we understand that rural communities like Comboyne need service providers who respect the land and the lifestyle. That\'s exactly the approach we bring.',
+      'We support NDIS participants, aged care clients and farming families across the plateau with compassionate, professional in-home cleaning.',
+      'Your Comboyne home will be cleaned to the same standard we hold ourselves to in every city suburb — thorough, eco-friendly and guaranteed.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Comboyne?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Comboyne clean in 60 seconds.',
+      trust: 'Trusted by Comboyne farming families and plateau homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Comboyne | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Comboyne & Comboyne Plateau NSW. Police-checked, insured. Regular, deep clean & rural property cleaning.',
+    },
+    nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
+  },
+
+  {
+    slug: 'house-cleaning-beechwood',
+    name: 'Beechwood',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Beechwood NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Beechwood'],
+      tagline: 'Trusted, Trained and Thorough — in the Hastings Valley',
+    },
+    intro: {
+      kicker: 'House cleaning in Beechwood',
+      h2: 'Professional house cleaning in Beechwood & Wauchope',
+      paragraphs: [
+        'Beechwood is a small rural community between Wauchope and Port Macquarie, nestled in the Hastings Valley. Known for its peaceful setting, horse properties and hobby farms, it\'s a community where people value quality and trust in their service providers. NATURO GROUP brings that standard to every Beechwood home.',
+        'From timber homes and hobby-farm residences to newer rural blocks, our police-checked team provides regular, deep clean and end-of-lease services — using biodegradable products and scheduling that suits rural and semi-rural living.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Beechwood & the Hastings Valley',
+      paragraphs: [
+        'Beechwood\'s proximity to both Wauchope and Port Macquarie means residents enjoy the best of both worlds — rural peace with easy access to coastal amenities. Our cleaning service bridges that same gap: professional city standards delivered to your country doorstep.',
+        'We service Beechwood, Wauchope, Sancrox, Telegraph Point, Bago and Port Macquarie — one trusted team for the Hastings Valley.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is thoroughly vetted and insured — the reliability Beechwood residents deserve.' },
+        { icon: 'clock', title: 'Rural-schedule friendly', body: 'Flexible booking times that work around horse care, farming schedules and country routines.' },
+        { icon: 'sparkle', title: 'Eco products for rural homes', body: 'Plant-based, non-toxic formulas safe for horses, pets, children and rural water supplies.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are proud to service communities like Beechwood that might be small in population but deserve the same professional care as any city suburb.',
+      'We support NDIS participants, aged care clients and rural families across the Hastings Valley with reliable, compassionate in-home cleaning.',
+      'Our satisfaction guarantee covers every Beechwood clean — your home will be spotless, or we make it right.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Beechwood?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Beechwood clean in 60 seconds.',
+      trust: 'Trusted by Beechwood families, horse-property owners and Hastings Valley residents.',
+    },
+    seo: {
+      title: 'House Cleaning Beechwood NSW | Eco-Friendly Cleaners',
+      description: 'Eco-friendly house cleaning in Beechwood & Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+    },
+    nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
+  },
+
+  {
+    slug: 'house-cleaning-bago',
+    name: 'Bago',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Bago NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Bago'],
+      tagline: 'Trusted, Trained and Thorough — near Wauchope NSW',
+    },
+    intro: {
+      kicker: 'House cleaning in Bago',
+      h2: 'Professional house cleaning in Bago & Wauchope',
+      paragraphs: [
+        'Bago is a quiet rural community bordering the Bago State Forest near Wauchope, where timber homes and farming properties sit amid tall eucalypts and native bushland. It\'s a serene, community-minded area that values trustworthy local services. NATURO GROUP brings professional, eco-friendly cleaning to Bago homes.',
+        'From farmhouses and bush-block properties to hobby-farm residences, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic products that are safe for the bush environment and your family.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Bago & the Hastings Valley',
+      paragraphs: [
+        'Bago\'s bushland setting means homes face unique cleaning challenges — dust, pollen, leaf litter and the general demands of rural living. Our team is trained and equipped to handle all of these with thoroughness and care.',
+        'We service Bago, Wauchope, Beechwood, Telegraph Point, Pembrooke and Port Macquarie — covering the rural western corridor of the Hastings Valley.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & trusted', body: 'Every NATURO GROUP cleaner is vetted and insured — ideal for remote and rural Bago properties.' },
+        { icon: 'clock', title: 'Flexible rural scheduling', body: 'Bookings that work around farm operations, bush tracks and the quiet Bago pace of life.' },
+        { icon: 'sparkle', title: 'Bush-safe eco products', body: 'Biodegradable, non-toxic formulas that protect native gardens, water tanks and rainforest environments.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we take pride in servicing every corner of the Mid North Coast — including rural communities like Bago that are often overlooked by city-based services.',
+      'We support NDIS participants, aged care clients and farming families with in-home cleaning that is caring, thorough and eco-friendly.',
+      'Our satisfaction guarantee means your Bago home will be cleaned to the standard you deserve, no matter how remote.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'clean, fresh home',
+      h2Post: 'in Bago?',
+      sub: 'Police-checked cleaners, eco-friendly products and easy online booking — book your Bago clean in under 60 seconds.',
+      trust: 'Trusted by Bago farming families and bush-block homeowners near Wauchope.',
+    },
+    seo: {
+      title: 'House Cleaning Bago NSW | Eco-Friendly Cleaners',
+      description: 'Eco-friendly house cleaning in Bago near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+    },
+    nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
+  },
+
+  {
+    slug: 'house-cleaning-rollands-plains',
+    name: 'Rollands Plains',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Rollands Plains NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Rollands Plains'],
+      tagline: 'Trusted, Trained and Thorough — in the Hastings Hinterland',
+    },
+    intro: {
+      kicker: 'House cleaning in Rollands Plains',
+      h2: 'Professional house cleaning in Rollands Plains & surrounds',
+      paragraphs: [
+        'Rollands Plains is a small rural community in the Hastings hinterland north of Wauchope, where cattle properties and hobby farms spread across open rolling country. It\'s a place where community trust matters and quality service is appreciated. NATURO GROUP brings professional, eco-friendly cleaning to Rollands Plains homes.',
+        'From farmhouses and rural cottages to modern country homes, our police-checked team delivers regular, deep clean and end-of-lease services — using non-toxic products and scheduling that accommodates the demands of rural life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Rollands Plains & the Hastings hinterland',
+      paragraphs: [
+        'Rollands Plains sits within the broader Wauchope service area, where our team regularly covers both small rural communities and larger towns. We understand the cleaning needs of country homes — from dust and pollen to muddy boot entries and timber floors.',
+        'We service Rollands Plains, Wauchope, Telegraph Point, Bago, Beechwood and Port Macquarie — one reliable team for the whole Hastings hinterland.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Professional & insured', body: 'Police-checked cleaners with $20m public liability — the standard that rural Rollands Plains homeowners deserve.' },
+        { icon: 'clock', title: 'Rural-schedule flexibility', body: 'We book around mustering, cropping seasons and country routines — no rigid city-hours policy.' },
+        { icon: 'sparkle', title: 'Safe eco products', body: 'Plant-based, biodegradable formulas suitable for farm homes, water tanks and native garden environments.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we believe every rural community like Rollands Plains deserves access to professional, eco-conscious cleaning — not just city suburbs.',
+      'We support NDIS clients, aged care recipients and farming families across the Hastings hinterland with caring, reliable in-home cleaning.',
+      'Our satisfaction guarantee applies to every clean, no matter the location — your Rollands Plains home will be spotless.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Rollands Plains?',
+      sub: 'Police-checked cleaners, eco-friendly products and easy online booking — book your Rollands Plains clean in 60 seconds.',
+      trust: 'Trusted by Rollands Plains farming families and rural homeowners in the Hastings hinterland.',
+    },
+    seo: {
+      title: 'House Cleaning Rollands Plains | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Rollands Plains & Hastings hinterland NSW. Police-checked, insured. Regular, deep clean & rural services.',
+    },
+    nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
+  },
+
+  {
+    slug: 'house-cleaning-pembrooke',
+    name: 'Pembrooke',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Pembrooke NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Pembrooke'],
+      tagline: 'Trusted, Trained and Thorough — near Wauchope NSW',
+    },
+    intro: {
+      kicker: 'House cleaning in Pembrooke',
+      h2: 'Professional house cleaning in Pembrooke & Wauchope',
+      paragraphs: [
+        'Pembrooke is a quiet rural settlement near Wauchope, set among dairy farms, timber forests and native bush in the upper Hastings Valley. With its small permanent population and agricultural character, it\'s a community where trust in service providers is earned and valued. NATURO GROUP delivers that trust with professional, eco-friendly in-home cleaning.',
+        'From rural homes and farmhouses to hobby-farm properties, our police-checked team provides regular, deep clean and end-of-lease services using biodegradable products safe for farm animals, native gardens and water supplies.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Pembrooke & the Hastings Valley',
+      paragraphs: [
+        'Pembrooke\'s agricultural community appreciates service providers who respect the land and the lifestyle. Our eco-friendly approach and fully vetted team align with those values — professional cleaning that leaves no harsh residues.',
+        'We service Pembrooke, Wauchope, Bago, Beechwood, Rollands Plains and Port Macquarie, covering the rural western corridor of the Hastings Valley.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Vetted & fully insured', body: 'Police-checked cleaners with $20m public liability — the professionalism rural Pembrooke homeowners deserve.' },
+        { icon: 'clock', title: 'Farm-schedule friendly', body: 'Bookings around milking, mustering and country routines — no rigid city-hours restrictions.' },
+        { icon: 'sparkle', title: 'Eco-safe for rural living', body: 'Biodegradable products that protect your farm animals, native garden and local waterways.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we extend the same professional care to rural communities like Pembrooke as we do in every city suburb we serve.',
+      'We support NDIS participants, aged care clients and farming families across the Hastings Valley with reliable, compassionate in-home cleaning.',
+      'Your Pembrooke home will be cleaned to the high standard our satisfaction guarantee demands — every single visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Pembrooke?',
+      sub: 'Police-checked cleaners, eco-friendly products and easy online booking — book your Pembrooke clean in 60 seconds.',
+      trust: 'Trusted by Pembrooke farming families and rural homeowners near Wauchope.',
+    },
+    seo: {
+      title: 'House Cleaning Pembrooke NSW | Eco-Friendly Cleaners',
+      description: 'Eco-friendly house cleaning in Pembrooke near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+    },
+    nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
+  },
+
+  {
+    slug: 'house-cleaning-kew-port-macquarie',
+    name: 'Kew',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Kew near Port Macquarie NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Kew'],
+      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Kew NSW',
+      h2: 'Professional house cleaning in Kew & the Mid North Coast',
+      paragraphs: [
+        'Kew is a coastal township between Taree and Port Macquarie, set on the shores of the Manning River estuary. With its relaxed waterfront lifestyle, mix of long-term residents and holiday visitors, and beautiful Manning River scenery, Kew is an underrated gem of the Mid North Coast. NATURO GROUP brings eco-friendly, professional cleaning to Kew homes.',
+        'From Kew\'s waterfront properties and coastal cottages to family homes and rural blocks, our police-checked team delivers regular, deep clean and end-of-lease services — with eco-friendly products and scheduling around the tide and your lifestyle.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Kew & the Manning River area',
+      paragraphs: [
+        'Kew residents enjoy the quieter side of Mid North Coast life, away from the Port Macquarie crowds. Our team respects that lifestyle and brings professional cleaning that matches the quality of the location.',
+        'We service Kew, Laurieton, North Haven, Dunbogan and Port Macquarie — one trusted team across the entire southern Mid North Coast.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Professional & insured', body: 'Police-checked cleaners with $20m public liability — ready for Kew\'s waterfront and family homes.' },
+        { icon: 'clock', title: 'Flexible for coastal living', body: 'Bookings around fishing, boating and the relaxed Mid North Coast lifestyle.' },
+        { icon: 'sparkle', title: 'Eco products for waterways', body: 'Biodegradable, non-toxic formulas that protect the Manning River estuary and coastal environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we appreciate the unique character of communities like Kew — and we\'re proud to service them with the same professional care as our city clients.',
+      'We support NDIS participants, aged care recipients and local families on the Mid North Coast with caring, eco-friendly in-home cleaning.',
+      'Our satisfaction guarantee means your Kew home will be cleaned to the standard you deserve — every time.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Kew?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Kew clean in under 60 seconds.',
+      trust: 'Trusted by Kew waterfront residents and Mid North Coast homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Kew NSW | Eco-Friendly Mid North Coast Cleaners',
+      description: 'Eco-friendly house cleaning in Kew on the Mid North Coast NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
+  },
+
+  {
+    slug: 'house-cleaning-lakewood',
+    name: 'Lakewood',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Lakewood NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Lakewood'],
+      tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
+    },
+    intro: {
+      kicker: 'House cleaning in Lakewood',
+      h2: 'Professional house cleaning in Lakewood & Port Macquarie',
+      paragraphs: [
+        'Lakewood is a developing outer suburb of Port Macquarie, popular with young families and first-home buyers drawn to its newer housing estates, affordable blocks and easy access to both the Port Macquarie centre and the Hastings Valley hinterland. NATURO GROUP is proud to grow with this community, delivering eco-friendly cleaning to every new Lakewood home.',
+        'From Lakewood\'s modern estates and new-build homes to semi-rural properties, our police-checked team provides regular, deep clean and end-of-lease cleaning — with plant-based products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Lakewood & Port Macquarie',
+      paragraphs: [
+        'Lakewood\'s growing community includes many young families, dual-income households and busy professionals who need a reliable, trustworthy cleaning service. Our team fits that brief perfectly.',
+        'We service Lakewood, Sancrox, King Creek, Settlement Point and Port Macquarie — one team for the entire outer-ring Port Macquarie community.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is vetted and insured — ideal for new estates and young families in Lakewood.' },
+        { icon: 'clock', title: 'Flexible for busy families', body: 'Regular fortnightly cleans, one-off deep cleans and end-of-lease services — all scheduled around your family\'s routine.' },
+        { icon: 'sparkle', title: 'Child-safe eco products', body: 'Plant-based, non-toxic formulas safe for babies, toddlers, pets and sensitive skin.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we love being part of growing communities like Lakewood — providing reliable, professional cleaning as the suburb finds its feet.',
+      'We support NDIS participants, aged care recipients and young families across Port Macquarie with caring, thorough in-home cleaning.',
+      'Our satisfaction guarantee covers every Lakewood clean — book with confidence.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Lakewood?',
+      sub: 'Child-safe, eco-friendly products, police-checked cleaners and easy online booking — your Lakewood clean is just 60 seconds away.',
+      trust: 'Trusted by Lakewood families and new-home owners near Port Macquarie.',
+    },
+    seo: {
+      title: 'House Cleaning Lakewood | Eco-Friendly Cleaners Port Macquarie',
+      description: 'Eco-friendly house cleaning in Lakewood near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & new-home services.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
+  },
+
+  {
+    slug: 'house-cleaning-king-creek',
+    name: 'King Creek',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in King Creek NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'King Creek'],
+      tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
+    },
+    intro: {
+      kicker: 'House cleaning in King Creek',
+      h2: 'Professional house cleaning in King Creek & Port Macquarie',
+      paragraphs: [
+        'King Creek is a semi-rural outer suburb of Port Macquarie, known for its larger residential blocks, acreage properties and quieter lifestyle just a short drive from the coast. Residents here often have hobby farms, large gardens and homes that benefit from a professional, thorough clean. NATURO GROUP delivers that eco-friendly clean to King Creek.',
+        'From spacious rural homes and hobby-farm properties to modern family residences, our police-checked team provides regular, deep clean and end-of-lease services — using biodegradable products and flexible scheduling around country-suburban life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across King Creek & the Port Macquarie region',
+      paragraphs: [
+        'King Creek\'s semi-rural lifestyle means homes often face specific cleaning challenges — larger floor areas, more surfaces to treat and the general dust and pollen that comes with acreage. Our team is trained and equipped for exactly these conditions.',
+        'We service King Creek, Sancrox, Lakewood, Settlement Point, Wauchope and Port Macquarie — one reliable team for the whole outer-ring Port Macquarie community.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is vetted and insured — reliable enough for your acreage King Creek home.' },
+        { icon: 'clock', title: 'Acreage-schedule friendly', body: 'Flexible bookings for larger properties and rural residential blocks — thorough cleans without the rush.' },
+        { icon: 'sparkle', title: 'Safe for animals & gardens', body: 'Eco-friendly, non-toxic formulas safe for pets, chickens, orchards and rainwater tanks.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we understand that semi-rural homes like those in King Creek have different cleaning needs — and we bring the expertise and equipment to meet them.',
+      'We support NDIS participants, aged care clients and rural families with professional, caring in-home cleaning across the Port Macquarie region.',
+      'Our satisfaction guarantee means your King Creek home will be cleaned thoroughly and to the standard you expect — every time.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in King Creek?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your King Creek clean in 60 seconds.',
+      trust: 'Trusted by King Creek acreage owners and semi-rural families near Port Macquarie.',
+    },
+    seo: {
+      title: 'House Cleaning King Creek | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in King Creek near Port Macquarie NSW. Police-checked, insured. Acreage and rural property cleaning specialists.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
+  },
+
+  {
+    slug: 'house-cleaning-settlement-point',
+    name: 'Settlement Point',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Settlement Point NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Settlement Point'],
+      tagline: 'Trusted, Trained and Thorough — on the Hastings River',
+    },
+    intro: {
+      kicker: 'House cleaning in Settlement Point',
+      h2: 'Professional house cleaning in Settlement Point & Port Macquarie',
+      paragraphs: [
+        'Settlement Point is a tranquil riverside suburb on the southern bank of the Hastings River, known for its waterfront homes, boat ramps and peaceful natural setting just minutes from Port Macquarie. With its mix of long-term residents, holiday homes and growing permanent population, Settlement Point is one of the area\'s most sought-after addresses. NATURO GROUP is proud to service it.',
+        'From Settlement Point\'s waterfront homes and holiday cottages to family residences, our police-checked team provides regular, deep clean and end-of-lease services — using eco-friendly products that are safe for children, pets and the adjacent river environment.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Settlement Point & Port Macquarie',
+      paragraphs: [
+        'Settlement Point\'s riverside lifestyle attracts retirees, families and holiday homeowners who value quality services and discretion. Our team understands waterfront properties — salt air, humidity, timber decks and all.',
+        'We service Settlement Point, Lake Cathie, King Creek, Sancrox, Lakewood and Port Macquarie — one trusted team for the Hastings River corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Waterfront property specialists', body: 'Police-checked, insured cleaners experienced with waterfront homes and the specific needs of riverside living.' },
+        { icon: 'clock', title: 'Flexible scheduling', body: 'Bookings that work around boat trips, fishing and the relaxed riverside pace of Settlement Point.' },
+        { icon: 'sparkle', title: 'River-safe eco products', body: 'Biodegradable, non-toxic formulas that protect the Hastings River ecosystem and are safe for families and pets.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we\'re proud to service beautiful waterfront communities like Settlement Point with the same professional care we bring to every Port Macquarie suburb.',
+      'We support NDIS participants, aged care clients and holiday homeowners on the Hastings River with caring, thorough and eco-friendly cleaning.',
+      'Our satisfaction guarantee ensures your Settlement Point home is always cleaned to the standard its beautiful location deserves.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless riverside home',
+      h2Post: 'in Settlement Point?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Settlement Point clean in 60 seconds.',
+      trust: 'Trusted by Settlement Point waterfront residents and holiday homeowners on the Hastings River.',
+    },
+    seo: {
+      title: 'House Cleaning Settlement Point | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Settlement Point on the Hastings River NSW. Police-checked, insured. Waterfront, holiday-let & regular cleans.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
+  },
+
+  {
+    slug: 'house-cleaning-lighthouse-beach',
+    name: 'Lighthouse Beach',
+    state: 'New South Wales',
+    stateCode: 'NSW',
+    region: 'Mid North Coast',
+    heroImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Lighthouse Beach NSW',
+    ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Lighthouse Beach'],
+      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Lighthouse Beach',
+      h2: 'Professional house cleaning in Lighthouse Beach & Port Macquarie',
+      paragraphs: [
+        'Lighthouse Beach is one of Port Macquarie\'s most prestigious suburbs — a prime beachside address in the shadow of the historic Tacking Point Lighthouse, with stunning ocean views, premium homes and a vibrant coastal lifestyle. Residents here expect the best, and NATURO GROUP delivers it with eco-friendly, professional cleaning services.',
+        'From Lighthouse Beach\'s luxury homes and holiday lets to established family residences, our police-checked team provides regular, deep clean, end-of-lease and holiday-let turnover services — using plant-based products and scheduling coordinated with check-in and check-out times.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Lighthouse Beach & Port Macquarie',
+      paragraphs: [
+        'Lighthouse Beach\'s premium real estate attracts high standards in every service — and our cleaning is no exception. From ocean-view apartments to architect-designed homes, we bring the thorough, professional clean that this address demands.',
+        'We service Lighthouse Beach, Settlement Point, Lake Cathie, Bonny Hills and all of Port Macquarie, giving the entire Mid North Coast beachside corridor access to the same premium eco-friendly cleaning.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Premium home specialists', body: 'Police-checked, insured cleaners experienced with luxury homes, oceanfront properties and short-stay rentals.' },
+        { icon: 'clock', title: 'Same-day holiday-let turnovers', body: 'Fast, thorough turnovers between guests for Lighthouse Beach holiday homes — coordinated with your check-in times.' },
+        { icon: 'sparkle', title: 'Premium eco-friendly products', body: 'Plant-based, non-toxic formulas that deliver a luxury-level clean while protecting the coastal environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are proud to service Port Macquarie\'s most prestigious beachside suburb with the professional standard that Lighthouse Beach deserves.',
+      'We support NDIS participants, aged care clients and holiday homeowners at Lighthouse Beach with eco-friendly, caring and thorough in-home cleaning.',
+      'Our satisfaction guarantee covers every clean — your Lighthouse Beach property will always meet the standard your guests and family expect.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'premium clean',
+      h2Post: 'at Lighthouse Beach?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — your Lighthouse Beach clean is just 60 seconds away.',
+      trust: 'Trusted by Lighthouse Beach homeowners, holiday-let managers and Port Macquarie residents.',
+    },
+    seo: {
+      title: 'House Cleaning Lighthouse Beach | Eco-Friendly Cleaners NSW',
+      description: 'Eco-friendly house cleaning in Lighthouse Beach Port Macquarie NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],
+  },
+
   {
     slug: 'cleaners-byron-bay',
     name: 'Byron Bay',
@@ -1552,6 +2594,1320 @@ export const suburbs: Suburb[] = [
         a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
       },
     ],
+  },
+
+  {
+    slug: 'house-cleaning-torquay',
+    name: 'Torquay',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Surf Coast',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Torquay VIC — Surf Coast',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Torquay'],
+      tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Torquay',
+      h2: 'Best house cleaning in Torquay & the Surf Coast',
+      paragraphs: [
+        'Torquay is the gateway to the Great Ocean Road — a vibrant surf town of beach houses, holiday lets and permanent family homes that take on salt air, sand and summer crowds. NATURO GROUP\'s local Torquay cleaners use eco-friendly, non-toxic products that protect timber decking, natural stone and the coastal finishes that Surf Coast homes are known for.',
+        'From the Torquay CBD and Zeally Bay to Jan Juc, Bells Beach and the surrounding Surf Coast Shire, our trained, police-checked team services owner-occupied homes, short-stay properties and end-of-lease rentals — with the reliability and discretion that Surf Coast living demands.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Torquay & the Surf Coast',
+      paragraphs: [
+        'Torquay is home to around 20,000 residents and a year-round visitor economy built around Bells Beach, the Rip Curl Pro and the Great Ocean Road. Holiday homes and Airbnb properties need consistent, high-quality turnovers between guests — and permanent residents deserve the same standard.',
+        'Our team also services Jan Juc, Anglesea, Aireys Inlet and Lorne — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every Torquay clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local Torquay cleaners', body: 'Police-checked, trained and familiar with the Surf Coast — from Zeally Bay family homes to Bells Beach holiday lets.' },
+        { icon: 'clock', title: 'Holiday-let turnovers, done right', body: 'Same-day Airbnb and short-stay turnovers, weekly or fortnightly maintenance cleans — book and reschedule online in seconds.' },
+        { icon: 'sparkle', title: 'Ocean-safe, salt-air friendly', body: 'Plant-based, biodegradable products safe for the ocean, kids, pets and the timber and stone finishes in coastal homes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver exceptional cleaning services to Torquay homes and holiday properties, backed by a nursing background that drives our attention to detail and care.',
+      'We support local NDIS participants, Veterans Affairs recipients and aged care clients across the Surf Coast with tailored cleaning that prioritises comfort and independence.',
+      'Our commitment to quality and reliability ensures every Torquay client feels valued in their own home.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Torquay?',
+      sub: 'Eco-friendly products, police-checked local cleaners and flexible scheduling — book your first Torquay clean in under 60 seconds.',
+      trust: 'Trusted by Torquay families, surfers and holiday-let owners.',
+    },
+    seo: {
+      title: 'House Cleaning Torquay | Eco-Friendly Surf Coast Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Torquay & the Surf Coast. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get an instant price.',
+    },
+    nearbySuburbs: ['Jan Juc', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Lorne', 'Ocean Grove', 'Barwon Heads', 'Geelong', 'Belmont', 'Highton'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Torquay?',
+        a: 'House cleaning in Torquay starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+      },
+      {
+        q: 'Do you clean holiday rentals and Airbnb properties in Torquay?',
+        a: 'Yes — short-stay and Airbnb turnovers are one of our most requested services in Torquay. We coordinate check-out and check-in windows, handle linen changeovers and provide condition reports for property managers. We service properties across Torquay, Jan Juc, Bells Beach and the Surf Coast Shire.',
+      },
+      {
+        q: 'Do you service Jan Juc, Anglesea and surrounding Surf Coast towns?',
+        a: 'Yes. Our team services Torquay, Jan Juc, Anglesea, Aireys Inlet and Lorne. For further towns along the Great Ocean Road, call 1300 876 472 and we will confirm coverage and availability.',
+      },
+      {
+        q: 'Can you do end-of-lease cleaning in Torquay?',
+        a: 'Yes — we offer full bond cleans in Torquay that cover everything on the standard rental inspection checklist: oven, bathrooms, windows, walls and skirting boards. We provide a receipt and include a bond-back re-clean guarantee if your property manager raises any issue.',
+      },
+      {
+        q: 'Are your Torquay cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Torquay is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly products and equipment — you do not need to supply anything.',
+      },
+    ],
+  },
+
+  {
+    slug: 'house-cleaning-ocean-grove',
+    name: 'Ocean Grove',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Ocean Grove VIC — Bellarine Peninsula',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Ocean Grove'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Ocean Grove',
+      h2: 'Best house cleaning in Ocean Grove & the Bellarine',
+      paragraphs: [
+        'Ocean Grove is one of the Bellarine Peninsula\'s most popular seaside towns — a relaxed community of beach houses, new family estates and holiday properties that sit between the ocean and the Barwon River. NATURO GROUP\'s local cleaners use eco-friendly products that suit the natural materials and coastal lifestyle of Ocean Grove homes.',
+        'From the Ocean Grove township and The Bluff to Wallington and Collendina, our trained, police-checked team services family homes, short-stay rentals and end-of-lease properties — with the consistency and care that Bellarine living deserves.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Ocean Grove & the Bellarine',
+      paragraphs: [
+        'Ocean Grove is home to around 16,000 residents and a thriving short-stay market driven by its surf beach and proximity to Geelong and Melbourne. Whether you\'re a permanent local, a holiday homeowner or an investor with a rental, we provide cleaning that works around your schedule.',
+        'Our team also services Barwon Heads, Drysdale, Leopold, Queenscliff and the surrounding Bellarine — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local Ocean Grove cleaners', body: 'Police-checked, trained and familiar with the Bellarine — from Bluff Road beach houses to family homes near Ocean Grove Primary.' },
+        { icon: 'clock', title: 'Flexible around Bellarine life', body: 'Weekly, fortnightly or one-off cleans. Short-stay turnovers available. Reschedule online in seconds.' },
+        { icon: 'sparkle', title: 'Eco-friendly, ocean-safe', body: 'Biodegradable, non-toxic products kind to the Barwon River catchment and safe for kids, pets and allergy sufferers.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver exceptional cleaning services to Ocean Grove homes and holiday properties, backed by a nursing background that drives our attention to detail.',
+      'We support NDIS participants, aged care recipients and DVA cardholders across the Bellarine with tailored cleaning that prioritises comfort and independence.',
+      'Our commitment to reliability and quality ensures every Ocean Grove client feels genuinely cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Ocean Grove?',
+      sub: 'Eco-friendly products, police-checked local cleaners and flexible scheduling — book your first Ocean Grove clean in under 60 seconds.',
+      trust: 'Trusted by Ocean Grove families and Bellarine holiday homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Ocean Grove | Eco-Friendly Bellarine Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Ocean Grove & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Barwon Heads', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Collendina', 'Geelong', 'Torquay', 'Jan Juc'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Ocean Grove?',
+        a: 'House cleaning in Ocean Grove starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+      },
+      {
+        q: 'Do you clean holiday rentals and Airbnb properties in Ocean Grove?',
+        a: 'Yes — we offer short-stay and holiday rental turnovers across Ocean Grove, Barwon Heads and the Bellarine Peninsula. We coordinate between check-out and check-in, handle linen changeovers and can provide condition reports for property managers and owners.',
+      },
+      {
+        q: 'Do you service Barwon Heads and Drysdale as well?',
+        a: 'Yes — our team covers Ocean Grove, Barwon Heads, Drysdale, Leopold, Queenscliff and Point Lonsdale. Call 1300 876 472 to confirm availability in your specific area.',
+      },
+      {
+        q: 'Can you do end-of-lease cleaning in Ocean Grove?',
+        a: 'Yes — we provide full bond cleans in Ocean Grove covering everything on the standard rental inspection checklist. We issue a receipt and include a bond-back re-clean guarantee if any issue is raised by your property manager.',
+      },
+      {
+        q: 'Are your Ocean Grove cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Ocean Grove is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+      },
+    ],
+  },
+
+  {
+    slug: 'house-cleaning-barwon-heads',
+    name: 'Barwon Heads',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Barwon Heads VIC — Bellarine Peninsula',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Barwon Heads'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Barwon Heads',
+      h2: 'Best house cleaning in Barwon Heads & surrounds',
+      paragraphs: [
+        'Barwon Heads is one of Victoria\'s most charming coastal villages — a tight-knit community of beach cottages, holiday homes and permanent residences at the mouth of the Barwon River. NATURO GROUP\'s local cleaners bring eco-friendly, non-toxic products that respect the natural environment and the character of Barwon Heads homes.',
+        'From the village centre and Thirteenth Beach to Bridge Road and the surrounding estuary, our trained, police-checked team services family homes, holiday lets and short-stay properties with care and consistency.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Barwon Heads & the Bellarine',
+      paragraphs: [
+        'Barwon Heads has a permanent population of around 3,500 and a significant holiday and short-stay market — made famous by the TV series SeaChange and beloved by Melburnians seeking a quiet coastal escape. Consistency and discretion matter here.',
+        'Our team also services Ocean Grove, Drysdale, Leopold and Queenscliff — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local, discrete cleaners', body: 'Police-checked, trained and respectful of the village lifestyle — whether it\'s a beachside cottage or a riverside holiday home.' },
+        { icon: 'clock', title: 'Holiday-let turnovers available', body: 'Same-day turnovers between guests, weekly maintenance cleans or one-off deep cleans — book and manage online.' },
+        { icon: 'sparkle', title: 'Estuary-safe products', body: 'Plant-based, biodegradable products that protect the Barwon River estuary and are safe for kids, pets and sensitive environments.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver exceptional cleaning to Barwon Heads homes and holiday properties, guided by a nursing background that sets our standard of care.',
+      'We support NDIS participants and aged care clients across the Bellarine with reliable, compassionate in-home cleaning.',
+      'Every Barwon Heads client receives the same quality and reliability we would expect in our own home.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Barwon Heads?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get an instant price in under 60 seconds.',
+      trust: 'Trusted by Barwon Heads locals and Bellarine holiday homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Barwon Heads | Eco-Friendly Bellarine Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Barwon Heads & the Bellarine Peninsula. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
+    },
+    nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Geelong', 'Torquay'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Barwon Heads?',
+        a: 'House cleaning in Barwon Heads starts from $153 for a regular clean and $371 for a deep clean. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+      },
+      {
+        q: 'Do you clean holiday homes and Airbnb properties in Barwon Heads?',
+        a: 'Yes — we provide short-stay turnovers and holiday rental cleans across Barwon Heads, Ocean Grove and the Bellarine Peninsula. We can coordinate check-out/check-in timing and provide condition reports for property managers and remote owners.',
+      },
+      {
+        q: 'Do you service Ocean Grove and Drysdale from Barwon Heads?',
+        a: 'Yes — our team covers Barwon Heads, Ocean Grove, Drysdale, Leopold, Queenscliff and Point Lonsdale. Call 1300 876 472 to confirm availability at your address.',
+      },
+      {
+        q: 'Are your Barwon Heads cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Barwon Heads is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products — nothing is required from you.',
+      },
+    ],
+  },
+
+  {
+    slug: 'house-cleaning-drysdale',
+    name: 'Drysdale',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Drysdale VIC — Bellarine Peninsula',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Drysdale'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Drysdale',
+      h2: 'Best house cleaning in Drysdale & the Bellarine',
+      paragraphs: [
+        'Drysdale is the commercial and community hub of the Bellarine Peninsula — a growing town of established family homes, new estates and properties that attract both long-term residents and retirees relocating from Melbourne and Geelong. NATURO GROUP\'s cleaners use eco-friendly products suited to the mix of older period homes and modern builds across Drysdale and Clifton Springs.',
+        'Our trained, police-checked team services homes across Drysdale, Clifton Springs, Portarlington and surrounding Bellarine townships — with flexible scheduling and a consistent team you can trust.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Drysdale & the Bellarine',
+      paragraphs: [
+        'Drysdale and Clifton Springs together house around 10,000 residents and continue to grow as families and retirees move to the Bellarine for its lifestyle and value. A reliable, trusted cleaning service matters here.',
+        'Our team covers Drysdale, Clifton Springs, Portarlington, Leopold, Ocean Grove and Barwon Heads — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Reliable Bellarine cleaners', body: 'Police-checked, fully trained and consistent — from Drysdale family homes to Clifton Springs retirement properties.' },
+        { icon: 'clock', title: 'Flexible scheduling', body: 'Weekly, fortnightly or one-off cleans. Book and manage your schedule online in seconds.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Non-toxic, plant-based products safe for kids, pets, asthma sufferers and the Bellarine\'s coastal environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Drysdale and Bellarine homes — guided by nursing-grade standards and a genuine commitment to every client.',
+      'We support NDIS participants, aged care recipients and DVA cardholders across the Bellarine with tailored in-home cleaning.',
+      'Every Drysdale client receives the same quality, reliability and care we would bring to our own home.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Drysdale?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get an instant price in under 60 seconds.',
+      trust: 'Trusted by Drysdale families and Bellarine homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Drysdale | Eco-Friendly Bellarine Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Drysdale, Clifton Springs & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+    },
+    nearbySuburbs: ['Clifton Springs', 'Portarlington', 'Leopold', 'Ocean Grove', 'Barwon Heads', 'Queenscliff', 'Point Lonsdale', 'Geelong', 'Lara'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Drysdale?',
+        a: 'House cleaning in Drysdale starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+      },
+      {
+        q: 'Do you also service Clifton Springs and Portarlington?',
+        a: 'Yes — our team covers Drysdale, Clifton Springs, Portarlington, Leopold, Ocean Grove, Barwon Heads and surrounding Bellarine townships. Call 1300 876 472 to confirm coverage at your address.',
+      },
+      {
+        q: 'Do you offer NDIS and aged care cleaning in Drysdale?',
+        a: 'Yes. We support NDIS participants and aged care recipients across the Bellarine Peninsula, working with plan managers, support coordinators and Home Care Package providers. Call 1300 876 472 to discuss your needs.',
+      },
+      {
+        q: 'Are your Drysdale cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Drysdale is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+      },
+    ],
+  },
+
+  {
+    slug: 'house-cleaning-leopold',
+    name: 'Leopold',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Leopold VIC — Bellarine Peninsula',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Leopold'],
+      tagline: 'Trusted, Trained and Thorough — across Leopold & the Bellarine',
+    },
+    intro: {
+      kicker: 'House cleaning in Leopold',
+      h2: 'Best house cleaning in Leopold & surrounds',
+      paragraphs: [
+        'Leopold sits at the gateway to the Bellarine Peninsula — a fast-growing suburb of modern family homes, established streets and new estates that connect Geelong to Ocean Grove, Barwon Heads and Drysdale. NATURO GROUP\'s cleaners use eco-friendly, non-toxic products suited to the modern homes and family lifestyle that Leopold is known for.',
+        'Our trained, police-checked team services homes across Leopold, Wallington and the surrounding Bellarine — with flexible weekly, fortnightly or one-off cleaning schedules that fit around busy family routines.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Leopold & the Bellarine',
+      paragraphs: [
+        'Leopold is one of the Bellarine\'s fastest-growing communities — home to young families, tradies and professionals who commute to Geelong and Melbourne. A reliable, trusted cleaner is one less thing to think about.',
+        'Our team covers Leopold, Wallington, Ocean Grove, Barwon Heads and Geelong — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Reliable Leopold cleaners', body: 'Police-checked, trained and consistent — servicing Leopold\'s modern family homes with care and professionalism.' },
+        { icon: 'clock', title: 'Scheduling that works for families', body: 'Weekly, fortnightly or one-off cleans. Book and reschedule online in seconds around school runs and busy weeks.' },
+        { icon: 'sparkle', title: 'Safe for kids and pets', body: 'Non-toxic, plant-based products safe for children, pets and anyone with asthma or allergies in the home.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Leopold and Bellarine homes — guided by nursing-grade standards and a genuine commitment to every client.',
+      'We support NDIS participants and aged care recipients across the Bellarine with consistent, compassionate in-home cleaning.',
+      'Every Leopold client receives the same quality and care we would bring to our own home.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Leopold?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get an instant price in under 60 seconds.',
+      trust: 'Trusted by Leopold families and Bellarine homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Leopold | Eco-Friendly Bellarine Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Leopold, Wallington & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+    },
+    nearbySuburbs: ['Wallington', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Clifton Springs', 'Geelong', 'Belmont', 'Highton', 'Lara'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Leopold?',
+        a: 'House cleaning in Leopold starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+      },
+      {
+        q: 'Which areas near Leopold do you service?',
+        a: 'We service Leopold, Wallington, Ocean Grove, Barwon Heads, Drysdale, Clifton Springs and Geelong. Call 1300 876 472 to confirm availability at your address.',
+      },
+      {
+        q: 'Do you offer NDIS cleaning in Leopold?',
+        a: 'Yes — we support NDIS participants and aged care recipients across Leopold and the Bellarine, working with local plan managers and Home Care Package providers. Call 1300 876 472 to discuss your support needs.',
+      },
+      {
+        q: 'Are your Leopold cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Leopold is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+      },
+    ],
+  },
+
+  {
+    slug: 'house-cleaning-jan-juc',
+    name: 'Jan Juc',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Surf Coast',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Jan Juc VIC — Surf Coast',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Jan Juc'],
+      tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
+    },
+    intro: {
+      kicker: 'House cleaning in Jan Juc',
+      h2: 'Best house cleaning in Jan Juc & the Surf Coast',
+      paragraphs: [
+        'Jan Juc is a laid-back surf suburb tucked between Torquay and Bells Beach — a relaxed community of beach houses, family homes and holiday properties that attract surfers, families and weekenders from Melbourne. NATURO GROUP\'s local cleaners use eco-friendly products that suit the coastal lifestyle and the natural materials common in Jan Juc homes.',
+        'Our trained, police-checked team services homes across Jan Juc and the broader Surf Coast — with consistent, reliable cleaning that fits the way you live.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Jan Juc & the Surf Coast',
+      paragraphs: [
+        'Jan Juc sits right alongside Torquay at the top of the Great Ocean Road — a small community with a strong surf culture and a mix of permanent residents and holiday homeowners. We provide the same high-quality service whether you\'re booking a weekly clean or a one-off end-of-lease.',
+        'Our team also services Torquay, Anglesea, Bells Beach and surrounds — with eco-friendly products, police-checked cleaners and a satisfaction guarantee on every clean.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Local Surf Coast cleaners', body: 'Police-checked, trained and familiar with Jan Juc — from beachside family homes to Surf Coast holiday lets.' },
+        { icon: 'clock', title: 'Flexible around surf life', body: 'Weekly, fortnightly or one-off cleans. Holiday-let turnovers available. Book and manage online in seconds.' },
+        { icon: 'sparkle', title: 'Ocean-safe products', body: 'Biodegradable, non-toxic products safe for the ocean, kids, pets and sensitive coastal environments.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Jan Juc and Surf Coast homes — guided by nursing-grade standards and a commitment to eco-friendly products.',
+      'We support NDIS participants and aged care clients across the Surf Coast with tailored in-home cleaning.',
+      'Every Jan Juc client receives the same quality, care and reliability we would bring to our own home.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Jan Juc?',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get an instant price in under 60 seconds.',
+      trust: 'Trusted by Jan Juc locals and Surf Coast holiday homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Jan Juc | Eco-Friendly Surf Coast Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Jan Juc & Torquay on the Surf Coast VIC. Police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+    },
+    nearbySuburbs: ['Torquay', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Ocean Grove', 'Barwon Heads', 'Geelong'],
+    localFaqs: [
+      {
+        q: 'How much does house cleaning cost in Jan Juc?',
+        a: 'House cleaning in Jan Juc starts from $153 for a regular clean and $371 for a deep clean. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+      },
+      {
+        q: 'Do you service Jan Juc and Torquay together?',
+        a: 'Yes — our team covers both Jan Juc and Torquay as part of our Surf Coast service area, along with Anglesea and Bells Beach. Call 1300 876 472 to confirm availability at your address.',
+      },
+      {
+        q: 'Do you clean holiday homes in Jan Juc?',
+        a: 'Yes — we offer short-stay and holiday rental turnovers across Jan Juc and the Surf Coast. We coordinate check-out/check-in timing and can provide condition reports for property managers.',
+      },
+      {
+        q: 'Are your Jan Juc cleaners police-checked and insured?',
+        a: 'Every NATURO GROUP cleaner in Jan Juc is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+      },
+    ],
+  },
+
+  // ── Greater Geelong inner & outer suburbs ──────────────────────────────
+
+  {
+    slug: 'house-cleaning-newtown-geelong',
+    name: 'Newtown',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Newtown Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Newtown Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Newtown Geelong',
+      h2: 'Professional house cleaning in Newtown & Greater Geelong',
+      paragraphs: [
+        'Newtown is one of Geelong\'s most prestigious inner suburbs — a leafy enclave of Victorian and Edwardian homes, wide streets and proximity to the Geelong Botanic Gardens and the waterfront. With its heritage architecture, established families and high standards of living, Newtown residents expect cleaning that matches the quality of their homes. NATURO GROUP delivers exactly that.',
+        'From Newtown\'s heritage homes and brick-veneer classics to modern renovations, our police-checked team provides regular, deep clean and end-of-lease cleaning — using eco-friendly, plant-based products that are safe for children, pets and historic joinery.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners in Newtown & across Greater Geelong',
+      paragraphs: [
+        'Newtown\'s mix of Geelong Grammar families, professionals and long-term residents creates a community that values reliability and discretion in home services. Our vetted, insured team meets that expectation — quietly thorough, always on time.',
+        'We service Newtown, Manifold Heights, Geelong West, South Geelong, East Geelong, Highton and the broader Geelong region, giving the inner city its own trusted cleaning team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Heritage-home specialists', body: 'Police-checked cleaners experienced with Edwardian and Victorian properties — gentle on original joinery and heritage surfaces.' },
+        { icon: 'clock', title: 'Reliable, discreet scheduling', body: 'Regular fortnightly or weekly cleans scheduled to fit around school, work and the Newtown lifestyle.' },
+        { icon: 'sparkle', title: 'Eco products for heritage homes', body: 'Plant-based, non-toxic formulas safe for lead-free painted surfaces, polished timber and period finishes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we understand the care that Newtown\'s heritage homes demand — and we bring that same care to every room we clean.',
+      'We support NDIS participants, aged care recipients and local families across inner Geelong with professional, compassionate in-home cleaning.',
+      'Our satisfaction guarantee applies to every Newtown clean — your heritage home is in the best possible hands.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner, healthier home',
+      h2Post: 'in Newtown Geelong?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Newtown clean in under 60 seconds.',
+      trust: 'Trusted by Newtown families, heritage homeowners and Geelong professionals.',
+    },
+    seo: {
+      title: 'House Cleaning Newtown Geelong | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Newtown Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+    },
+    nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
+  },
+
+  {
+    slug: 'house-cleaning-east-geelong',
+    name: 'East Geelong',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in East Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'East Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in East Geelong',
+      h2: 'Professional house cleaning in East Geelong & surrounds',
+      paragraphs: [
+        'East Geelong is a charming inner suburb with direct waterfront access, heritage cottages and a strong sense of community. Situated between Geelong\'s CBD and the Eastern Park and Botanic Gardens, it\'s a suburb that combines heritage character with modern convenience. NATURO GROUP brings eco-friendly, professional cleaning to every East Geelong home.',
+        'From East Geelong\'s character weatherboard homes and Victorian cottages to modern renovated residences, our police-checked team provides regular, deep clean and end-of-lease services — with plant-based products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across East Geelong & Greater Geelong',
+      paragraphs: [
+        'East Geelong\'s proximity to the waterfront and Eastern Beach makes it a lifestyle destination for families and professionals alike. Our team knows the character homes in this area and how to clean them without damaging period finishes or heritage surfaces.',
+        'We service East Geelong, Newtown, South Geelong, Belmont, Highton and the broader Geelong waterfront — one reliable team for the eastern corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Heritage-aware cleaners', body: 'Police-checked, insured cleaners with experience in heritage homes, weatherboard cottages and period residences.' },
+        { icon: 'clock', title: 'Reliable weekly or fortnightly', body: 'Consistent cleaning schedules that keep East Geelong homes looking their best year-round.' },
+        { icon: 'sparkle', title: 'Eco-friendly & pet-safe', body: 'Plant-based, non-toxic products safe for children, dogs and the families who call East Geelong home.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, East Geelong\'s blend of heritage character and community pride aligns perfectly with our eco-friendly, caring approach to cleaning.',
+      'We support NDIS participants, aged care clients and local families across inner Geelong with reliable, compassionate in-home cleaning.',
+      'Our satisfaction guarantee covers every East Geelong clean — your home will be spotless or we make it right.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in East Geelong?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your East Geelong clean in 60 seconds.',
+      trust: 'Trusted by East Geelong families, heritage homeowners and waterfront residents.',
+    },
+    seo: {
+      title: 'House Cleaning East Geelong | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in East Geelong VIC. Heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Geelong', 'Newtown', 'South Geelong', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights'],
+  },
+
+  {
+    slug: 'house-cleaning-south-geelong',
+    name: 'South Geelong',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in South Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'South Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in South Geelong',
+      h2: 'Professional house cleaning in South Geelong & surrounds',
+      paragraphs: [
+        'South Geelong sits at the edge of Geelong\'s CBD, offering convenient access to the waterfront, Corio Bay and the Barwon River. With a mix of heritage workers\' cottages, renovated terrace homes and modern apartment builds, it\'s a suburb undergoing a quiet renaissance. NATURO GROUP supports that renewal with eco-friendly, professional cleaning.',
+        'From South Geelong\'s heritage cottages and renovated terraces to newer apartment buildings, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products and scheduling that suits busy city-edge living.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across South Geelong & Greater Geelong',
+      paragraphs: [
+        'South Geelong\'s gentrification has brought a new wave of younger residents, professionals and families who demand quality services. Our trained, insured team delivers that quality consistently — no matter the property size or style.',
+        'We service South Geelong, East Geelong, Newtown, Geelong West, Manifold Heights and all of inner Geelong — one trusted team for the city\'s southern fringe.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Vetted, fully insured cleaners ready for South Geelong apartments, terraces and heritage cottages.' },
+        { icon: 'clock', title: 'City-edge convenience', body: 'Flexible booking for professionals and young families — morning, afternoon and weekend slots available.' },
+        { icon: 'sparkle', title: 'Eco-friendly for all home types', body: 'Non-toxic, plant-based formulas that work equally well on heritage plaster, modern tiles and timber floors.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we embrace South Geelong\'s evolving character and are proud to serve its diverse community with eco-friendly, professional cleaning.',
+      'We support NDIS participants, aged care clients and inner-city renters and homeowners across South Geelong with caring, thorough in-home cleaning.',
+      'Our satisfaction guarantee covers every clean — book with confidence.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in South Geelong?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your South Geelong clean in 60 seconds.',
+      trust: 'Trusted by South Geelong families, young professionals and heritage homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning South Geelong | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in South Geelong VIC. Police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
+    },
+    nearbySuburbs: ['Geelong', 'East Geelong', 'Newtown', 'Manifold Heights', 'Geelong West', 'Belmont', 'Herne Hill'],
+  },
+
+  {
+    slug: 'house-cleaning-geelong-west',
+    name: 'Geelong West',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Geelong West VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Geelong West'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Geelong West',
+      h2: 'Professional house cleaning in Geelong West & surrounds',
+      paragraphs: [
+        'Geelong West is one of Geelong\'s most vibrant inner suburbs — home to the beloved Pakington Street strip, with its cafes, boutiques, yoga studios and artisan food stores. It\'s a suburb with genuine personality: heritage homes, tree-lined streets and a community that takes as much pride in their homes as their local strip. NATURO GROUP is the eco-friendly cleaning partner this community deserves.',
+        'From Geelong West\'s character cottages and renovated Federation homes to modern townhouses, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products that align with the suburb\'s progressive values.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Geelong West & Greater Geelong',
+      paragraphs: [
+        'Geelong West\'s creative, community-minded residents tend to choose service providers whose values align with their own. Our eco-conscious approach — plant-based products, minimal waste, zero harsh chemicals — resonates with this community perfectly.',
+        'We service Geelong West, Manifold Heights, Herne Hill, Newtown, South Geelong and the rest of inner Geelong — the trusted eco-friendly cleaning team for the Pakington Street precinct.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted by the Pakington community', body: 'Police-checked, insured cleaners recommended by Geelong West\'s discerning residents.' },
+        { icon: 'clock', title: 'Flexible for inner-city living', body: 'Morning, evening and weekend bookings — around café runs, yoga classes and the Geelong West lifestyle.' },
+        { icon: 'sparkle', title: 'Genuinely eco-friendly', body: 'Plant-based, biodegradable, cruelty-free products — for a community that chooses its products carefully.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Geelong West\'s progressive, eco-conscious values feel very much like home. We share them — and we bring that shared ethos to every clean.',
+      'We support NDIS participants, aged care clients and local families across Geelong West with caring, compassionate and eco-friendly in-home cleaning.',
+      'Our satisfaction guarantee is our promise to the Geelong West community — a spotless, healthy home every time.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier, greener home',
+      h2Post: 'in Geelong West?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Geelong West clean in 60 seconds.',
+      trust: 'Trusted by Geelong West families, heritage homeowners and the Pakington Street community.',
+    },
+    seo: {
+      title: 'House Cleaning Geelong West | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Geelong West VIC. Plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
+    },
+    nearbySuburbs: ['Geelong', 'Manifold Heights', 'Herne Hill', 'Newtown', 'South Geelong', 'Hamlyn Heights', 'Bell Park'],
+  },
+
+  {
+    slug: 'house-cleaning-belmont-geelong',
+    name: 'Belmont',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Belmont Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Belmont Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Belmont Geelong',
+      h2: 'Professional house cleaning in Belmont & Greater Geelong',
+      paragraphs: [
+        'Belmont is one of Geelong\'s largest and most popular family suburbs — a sprawling residential area anchored by High Street shopping, good schools and easy access to the Barwon River and Highton. With its wide demographic mix of young families, established homeowners and retirees, Belmont is the heartland of Greater Geelong — and NATURO GROUP is its trusted eco-friendly cleaning partner.',
+        'From Belmont\'s brick-veneer classics and 1970s family homes to modern renovations, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic, biodegradable products and flexible scheduling around school drops, soccer and family life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Belmont & Greater Geelong',
+      paragraphs: [
+        'Belmont\'s size and diversity means our team cleans everything from compact three-bedroom homes to large family residences with multiple living areas. We\'re experienced, efficient and consistently thorough — the qualities that matter most to busy Belmont families.',
+        'We service Belmont, Highton, East Geelong, Wandana Heights, Grovedale, Waurn Ponds and the southern Geelong corridor, giving the whole area one trusted cleaning team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Family-trusted cleaners', body: 'Police-checked, insured cleaners trusted by hundreds of Belmont families for regular home cleaning.' },
+        { icon: 'clock', title: 'Family-schedule friendly', body: 'Flexible fortnightly or weekly cleans scheduled around school drops, after-school activities and weekends.' },
+        { icon: 'sparkle', title: 'Child-safe & pet-safe products', body: 'Non-toxic, plant-based formulas that are completely safe for kids, dogs and the whole family.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Belmont\'s family-focused community is the backbone of our Geelong service area. We are proud to support so many Belmont households with reliable, eco-friendly cleaning.',
+      'We support NDIS participants, aged care clients and local families across Belmont with compassionate, professional in-home cleaning.',
+      'Our satisfaction guarantee means your Belmont home is always cleaned to the standard your family deserves.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner family home',
+      h2Post: 'in Belmont?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Belmont clean in under 60 seconds.',
+      trust: 'Trusted by hundreds of Belmont families, retirees and homeowners across Greater Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Belmont Geelong | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Belmont Geelong VIC. Family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-highton',
+    name: 'Highton',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Highton Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Highton'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Highton',
+      h2: 'Professional house cleaning in Highton & surrounds',
+      paragraphs: [
+        'Highton is Geelong\'s premier upmarket residential suburb — an elevated, leafy enclave bordering Barwon River bushland reserves and home to Geelong Grammar\'s town campus. With its larger homes, manicured gardens and affluent family community, Highton residents expect a cleaning service that matches the standard of their suburb. NATURO GROUP delivers exactly that.',
+        'From Highton\'s large family homes and executive residences to character properties near the Barwon, our police-checked team provides regular, deep clean and end-of-lease services — using eco-friendly products that are safe for children, pets and beautiful timber and stone finishes.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Highton & Greater Geelong',
+      paragraphs: [
+        'Highton\'s professional families and Geelong Grammar community expect discretion, reliability and thoroughness from their service providers. Our vetted, trained team delivers all three — consistently, on time and to the highest standard.',
+        'We service Highton, Belmont, Wandana Heights, East Geelong, Waurn Ponds and the upper Barwon corridor, giving the whole of south Geelong access to the same premium eco-friendly cleaning.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Premium home specialists', body: 'Police-checked cleaners experienced with large family homes, executive residences and Highton\'s quality finishes.' },
+        { icon: 'clock', title: 'Discreet, reliable scheduling', body: 'Regular weekly or fortnightly cleans coordinated around school, work and Highton family life.' },
+        { icon: 'sparkle', title: 'Premium eco-friendly products', body: 'Plant-based, non-toxic formulas that deliver a luxury-level clean — safe for stone benchtops, timber and premium finishes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Highton\'s premium homes deserve premium care — and that\'s exactly what our eco-friendly, nursing-trained cleaning standard delivers.',
+      'We support NDIS participants, aged care clients and affluent families across Highton with professional, caring and thorough in-home cleaning.',
+      'Our satisfaction guarantee is our promise to the Highton community — every clean will meet the standard your home deserves.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'premium clean',
+      h2Post: 'in Highton?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Highton clean in under 60 seconds.',
+      trust: 'Trusted by Highton families, Geelong Grammar professionals and Greater Geelong homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Highton | Eco-Friendly Cleaners Geelong VIC',
+      description: 'Eco-friendly house cleaning in Highton Geelong VIC. Premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+    },
+    nearbySuburbs: ['Geelong', 'Belmont', 'Wandana Heights', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Newtown'],
+  },
+
+  {
+    slug: 'house-cleaning-wandana-heights',
+    name: 'Wandana Heights',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Wandana Heights Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Wandana Heights'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Wandana Heights',
+      h2: 'Professional house cleaning in Wandana Heights & Geelong',
+      paragraphs: [
+        'Wandana Heights is an elevated, established residential suburb in Geelong\'s south-east, known for its sweeping bay views, quiet streets and quality family homes. Neighbouring Highton and Belmont, it offers an upmarket lifestyle with a strong community feel. NATURO GROUP brings eco-friendly, professional cleaning to every Wandana Heights home.',
+        'From Wandana Heights\' elevated family homes and modern renovations to established brick residences, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Wandana Heights & Greater Geelong',
+      paragraphs: [
+        'Wandana Heights\' quiet, family-oriented community values reliability and professionalism in home services. Our team delivers both — consistently thorough, insured and on time for every visit.',
+        'We service Wandana Heights, Highton, Belmont, East Geelong and the southern Geelong corridor — one trusted eco-friendly team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Vetted, fully insured cleaners ready for Wandana Heights family homes and elevated residences.' },
+        { icon: 'clock', title: 'Reliable regular cleans', body: 'Consistent weekly or fortnightly scheduling that keeps your Wandana Heights home at its best.' },
+        { icon: 'sparkle', title: 'View-friendly eco products', body: 'Non-toxic, plant-based formulas that won\'t cloud glass or streak windows — ideal for bay-view homes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are proud to service the elevated streets of Wandana Heights with the professional, eco-friendly cleaning standard this community deserves.',
+      'We support NDIS participants, aged care clients and local families with caring, reliable in-home cleaning.',
+      'Our satisfaction guarantee covers every clean — your Wandana Heights home will be spotless.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner, healthier home',
+      h2Post: 'in Wandana Heights?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Wandana Heights clean in 60 seconds.',
+      trust: 'Trusted by Wandana Heights families and homeowners across Greater Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Wandana Heights | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Wandana Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Highton', 'Belmont', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Geelong', 'Newtown'],
+  },
+
+  {
+    slug: 'house-cleaning-manifold-heights',
+    name: 'Manifold Heights',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Manifold Heights Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Manifold Heights'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Manifold Heights',
+      h2: 'Professional house cleaning in Manifold Heights & inner Geelong',
+      paragraphs: [
+        'Manifold Heights is a characterful inner suburb of Geelong, nestled between Newtown and Geelong West. With its elevated position, heritage streetscapes and proximity to Kardinia Park, it\'s a suburb that blends Geelong\'s historic charm with a vibrant modern community. NATURO GROUP is proud to bring eco-friendly, professional cleaning to Manifold Heights homes.',
+        'From Manifold Heights\' period homes and renovated cottages to modern townhouses, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products gentle on heritage surfaces and safe for the whole family.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Manifold Heights & inner Geelong',
+      paragraphs: [
+        'Manifold Heights\' inner-city position and community feel attract professionals, young families and heritage enthusiasts who appreciate quality in their home services. Our eco-friendly, heritage-aware approach fits perfectly.',
+        'We service Manifold Heights, Newtown, Geelong West, Herne Hill, South Geelong and all of inner Geelong — one trusted team for the western inner-city corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Heritage-aware cleaning', body: 'Police-checked cleaners trained for period homes, original joinery and heritage plasterwork.' },
+        { icon: 'clock', title: 'Inner-city scheduling', body: 'Flexible bookings for professionals, young families and the busy Manifold Heights lifestyle.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Plant-based, non-toxic formulas that protect period surfaces and are safe for children and pets.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Manifold Heights\' heritage character aligns perfectly with our eco-friendly, caring approach to cleaning.',
+      'We support NDIS participants, aged care clients and inner-Geelong families with professional, compassionate in-home cleaning.',
+      'Our satisfaction guarantee means your Manifold Heights home will always be cleaned to the high standard it deserves.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Manifold Heights?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Manifold Heights clean in 60 seconds.',
+      trust: 'Trusted by Manifold Heights families, professionals and heritage homeowners in inner Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Manifold Heights | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Manifold Heights Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
+    },
+    nearbySuburbs: ['Newtown', 'Geelong West', 'Herne Hill', 'South Geelong', 'Geelong', 'Hamlyn Heights', 'Bell Park'],
+  },
+
+  {
+    slug: 'house-cleaning-herne-hill',
+    name: 'Herne Hill',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Herne Hill Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Herne Hill'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Herne Hill',
+      h2: 'Professional house cleaning in Herne Hill & Geelong',
+      paragraphs: [
+        'Herne Hill is a central western suburb of Geelong, positioned between Geelong West and Hamlyn Heights. With its mix of established family homes, 1960s brick residences and newer renovations, it\'s a comfortable, community-oriented suburb where residents value reliable local services. NATURO GROUP is proud to serve Herne Hill households with eco-friendly, professional cleaning.',
+        'From Herne Hill\'s established brick homes and family residences to smaller units and townhouses, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Herne Hill & Greater Geelong',
+      paragraphs: [
+        'Herne Hill\'s community of families, retirees and working professionals need a cleaning service that is reliable, affordable and genuinely thorough. Our team delivers all three — on time, every time.',
+        'We service Herne Hill, Geelong West, Manifold Heights, Hamlyn Heights, Bell Park and the western Geelong corridor, providing one trusted cleaning team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is vetted and insured — reliable and trustworthy for Herne Hill homes.' },
+        { icon: 'clock', title: 'Consistent scheduling', body: 'Regular fortnightly or weekly cleans that keep Herne Hill homes consistently fresh and clean.' },
+        { icon: 'sparkle', title: 'Eco-friendly for all homes', body: 'Plant-based, non-toxic products that work on every surface type found in Herne Hill\'s varied housing stock.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Herne Hill\'s community spirit and family values align well with our approach to cleaning — respectful, thorough and eco-conscious.',
+      'We support NDIS participants, aged care clients and local families across Herne Hill with caring, reliable in-home cleaning.',
+      'Our satisfaction guarantee covers every Herne Hill clean — your home will be spotless.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Herne Hill?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Herne Hill clean in 60 seconds.',
+      trust: 'Trusted by Herne Hill families, retirees and homeowners across Greater Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Herne Hill | Eco-Friendly Cleaners Geelong VIC',
+      description: 'Eco-friendly house cleaning in Herne Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Geelong West', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Geelong', 'Newtown', 'Bell Post Hill'],
+  },
+
+  {
+    slug: 'house-cleaning-hamlyn-heights',
+    name: 'Hamlyn Heights',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Hamlyn Heights Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Hamlyn Heights'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Hamlyn Heights',
+      h2: 'Professional house cleaning in Hamlyn Heights & Geelong',
+      paragraphs: [
+        'Hamlyn Heights is a well-established northern Geelong suburb, known for its quiet streets, affordable family homes and convenient location between the city and the Geelong Ring Road. With a diverse mix of families, retirees and long-term residents, it\'s a community that values practical, reliable services. NATURO GROUP delivers exactly that with eco-friendly, professional cleaning.',
+        'From Hamlyn Heights\' established family homes and brick veneers to units and townhouses, our police-checked team provides regular, deep clean and end-of-lease services — using non-toxic products and scheduling around the demands of family life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Hamlyn Heights & Greater Geelong',
+      paragraphs: [
+        'Hamlyn Heights\' community is working-family Geelong at its most genuine — people who appreciate value, reliability and a job done properly. That\'s exactly the standard we hold ourselves to on every clean.',
+        'We service Hamlyn Heights, Herne Hill, Geelong West, Bell Park, Bell Post Hill, Norlane and the northern Geelong corridor — one reliable team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Reliable & insured', body: 'Police-checked cleaners who show up on time and do a thorough job — every visit to your Hamlyn Heights home.' },
+        { icon: 'clock', title: 'Family-schedule friendly', body: 'Flexible booking for busy families — fortnightly cleans, one-off deep cleans and school-holiday specials available.' },
+        { icon: 'sparkle', title: 'Eco-safe for families', body: 'Plant-based, non-toxic products safe for children, pets and the whole Hamlyn Heights household.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Hamlyn Heights represents the kind of community we love to serve — honest, hardworking families who deserve a reliable, quality cleaning service.',
+      'We support NDIS participants, aged care clients and local families across northern Geelong with caring, professional in-home cleaning.',
+      'Our satisfaction guarantee is our commitment to the Hamlyn Heights community — your home will be clean, fresh and healthy after every visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless family home',
+      h2Post: 'in Hamlyn Heights?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Hamlyn Heights clean in 60 seconds.',
+      trust: 'Trusted by Hamlyn Heights families, retirees and homeowners across northern Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Hamlyn Heights | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Hamlyn Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Herne Hill', 'Geelong West', 'Bell Park', 'Bell Post Hill', 'Norlane', 'Geelong', 'Manifold Heights'],
+  },
+
+  {
+    slug: 'house-cleaning-bell-park',
+    name: 'Bell Park',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Bell Park Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Bell Park'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Bell Park',
+      h2: 'Professional house cleaning in Bell Park & northern Geelong',
+      paragraphs: [
+        'Bell Park is an established northern suburb of Geelong, known for its quiet streets, fibro and weatherboard homes and tight-knit community. Bordered by Hamlyn Heights and Norlane, it\'s a suburb with genuine character and a strong sense of local pride. NATURO GROUP is proud to serve Bell Park homes with eco-friendly, professional cleaning.',
+        'From Bell Park\'s older fibro homes and established family residences to renovated properties, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Bell Park & northern Geelong',
+      paragraphs: [
+        'Bell Park\'s community of established families and long-term residents appreciate service providers who respect their homes and community. Our team brings that respect with every clean — thorough, insured and on time.',
+        'We service Bell Park, Hamlyn Heights, Norlane, Geelong West, Herne Hill, Bell Post Hill and the broader northern Geelong corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Vetted, fully insured cleaners who respect Bell Park homes and take care of every surface.' },
+        { icon: 'clock', title: 'Consistent scheduling', body: 'Regular fortnightly or weekly cleans that keep Bell Park homes fresh and tidy year-round.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Non-toxic, plant-based formulas safe for children, pets and Bell Park households of all ages.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we respect the character and community pride of suburbs like Bell Park, and we bring that same care to every home we clean.',
+      'We support NDIS participants, aged care clients and local families across northern Geelong with reliable, compassionate in-home cleaning.',
+      'Our satisfaction guarantee means your Bell Park home will always be cleaned to the standard you deserve.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Bell Park?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Bell Park clean in under 60 seconds.',
+      trust: 'Trusted by Bell Park families, retirees and homeowners across northern Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Bell Park | Eco-Friendly Cleaners Geelong VIC',
+      description: 'Eco-friendly house cleaning in Bell Park Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Hamlyn Heights', 'Norlane', 'Geelong West', 'Herne Hill', 'Bell Post Hill', 'Corio', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-bell-post-hill',
+    name: 'Bell Post Hill',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Bell Post Hill Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Bell Post Hill'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Bell Post Hill',
+      h2: 'Professional house cleaning in Bell Post Hill & Geelong',
+      paragraphs: [
+        'Bell Post Hill is an outer western suburb of Geelong, popular with families seeking more space and quieter streets without straying too far from the city. With its larger residential blocks, newer estates and established family homes, it\'s a growing community that values quality local services. NATURO GROUP is proud to serve Bell Post Hill with eco-friendly, professional cleaning.',
+        'From Bell Post Hill\'s modern family homes and larger residential blocks to established brick residences, our police-checked team provides regular, deep clean and end-of-lease services — using plant-based products and flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Bell Post Hill & western Geelong',
+      paragraphs: [
+        'Bell Post Hill\'s growing family community needs a cleaning service that is reliable, thorough and understands the demands of larger homes. Our trained, insured team delivers exactly that.',
+        'We service Bell Post Hill, Hamlyn Heights, Herne Hill, Bell Park, North Shore and the western Geelong corridor — one reliable team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every NATURO GROUP cleaner is vetted and insured — ready for Bell Post Hill family homes of all sizes.' },
+        { icon: 'clock', title: 'Flexible for family life', body: 'Regular fortnightly or weekly cleans scheduled around school, sport and the Bell Post Hill family routine.' },
+        { icon: 'sparkle', title: 'Eco-safe for families', body: 'Plant-based, non-toxic formulas safe for children, pets and everyone in the household.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we\'re proud to support Bell Post Hill\'s growing family community with eco-friendly, reliable and professional cleaning.',
+      'We support NDIS participants, aged care clients and families with caring, thorough in-home cleaning.',
+      'Our satisfaction guarantee applies to every Bell Post Hill clean — your home will be spotless.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner family home',
+      h2Post: 'in Bell Post Hill?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Bell Post Hill clean in 60 seconds.',
+      trust: 'Trusted by Bell Post Hill families and homeowners across western Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Bell Post Hill | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in Bell Post Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Hamlyn Heights', 'Herne Hill', 'Bell Park', 'North Shore', 'Corio', 'Geelong West', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-norlane',
+    name: 'Norlane',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Norlane Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Norlane'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Norlane',
+      h2: 'Professional house cleaning in Norlane & northern Geelong',
+      paragraphs: [
+        'Norlane is a large northern Geelong suburb undergoing exciting urban renewal, with community investment transforming its streets, parks and housing stock. Close to Corio Bay and just north of the city, it\'s home to a diverse community of families, workers and long-term residents. NATURO GROUP is proud to be part of Norlane\'s future with eco-friendly, professional cleaning.',
+        'From Norlane\'s diverse housing — from older fibro homes and commission estates to newer renovations — our police-checked team provides regular, deep clean and end-of-lease services using safe, eco-friendly products and affordable pricing.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Norlane & northern Geelong',
+      paragraphs: [
+        'Norlane\'s community is resilient and community-focused — and our team respects that resilience with professional, reliable service that makes a real difference in people\'s homes and daily lives.',
+        'We service Norlane, Corio, North Shore, Bell Park, Hamlyn Heights and the northern Geelong corridor — one trusted cleaning team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Caring, professional cleaners', body: 'Police-checked, insured cleaners who treat every Norlane home with the same care and respect.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Regular and one-off cleans that fit around busy Norlane family schedules and budgets.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Non-toxic, plant-based products that are safe for children and pets — important for family homes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we believe every Geelong suburb deserves access to professional, eco-friendly cleaning — including Norlane\'s diverse, hardworking community.',
+      'We support NDIS participants, aged care clients and local families in Norlane with compassionate, professional in-home cleaning that makes a real difference.',
+      'Our satisfaction guarantee covers every Norlane clean — your home will be fresh, clean and healthy after every visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Norlane?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Norlane clean in under 60 seconds.',
+      trust: 'Trusted by Norlane families and homeowners across northern Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Norlane | Eco-Friendly Cleaners Geelong VIC',
+      description: 'Eco-friendly house cleaning in Norlane Geelong VIC. Police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Corio', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Geelong West', 'Bell Post Hill', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-north-shore-geelong',
+    name: 'North Shore',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in North Shore Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'North Shore Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in North Shore Geelong',
+      h2: 'Professional house cleaning in North Shore & Geelong',
+      paragraphs: [
+        'North Shore is a northern Geelong suburb situated between Norlane and Avalon, near Corio Bay. With its mix of established homes and industrial heritage, it\'s a community with genuine character and a proud working-class history. NATURO GROUP brings eco-friendly, professional cleaning to North Shore homes.',
+        'From North Shore\'s established family homes to newer renovations and units, our police-checked team provides regular, deep clean and end-of-lease services — with eco-friendly products and flexible scheduling that suits the North Shore community.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across North Shore & northern Geelong',
+      paragraphs: [
+        'North Shore\'s community values straightforward, reliable services from people who show up when they say they will and do a thorough job. That\'s exactly what NATURO GROUP delivers — every time.',
+        'We service North Shore, Norlane, Corio, Bell Park, Hamlyn Heights and the northern Geelong corridor — one trusted team for the whole area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Reliable & insured', body: 'Police-checked cleaners who show up on time and clean thoroughly — every visit to your North Shore home.' },
+        { icon: 'clock', title: 'No-fuss scheduling', body: 'Straightforward booking, clear pricing and flexible appointment times for North Shore families.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Plant-based, non-toxic formulas that deliver a genuine deep clean safely for your family and pets.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we respect North Shore\'s hardworking community and are proud to support its households with professional, eco-friendly cleaning.',
+      'We support NDIS participants, aged care clients and local families with reliable, caring in-home cleaning.',
+      'Our satisfaction guarantee covers every North Shore clean — your home will be spotless or we make it right.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in North Shore?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your North Shore Geelong clean in 60 seconds.',
+      trust: 'Trusted by North Shore families and homeowners across northern Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning North Shore Geelong | Eco-Friendly Cleaners VIC',
+      description: 'Eco-friendly house cleaning in North Shore Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-corio',
+    name: 'Corio',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Corio Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Corio'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Corio',
+      h2: 'Professional house cleaning in Corio & northern Geelong',
+      paragraphs: [
+        'Corio is one of northern Geelong\'s largest suburbs — a diverse, community-focused area that has undergone significant renewal since the closure of Ford\'s Australian manufacturing. New estates are emerging alongside established streets, bringing fresh energy to a community with deep local roots. NATURO GROUP is proud to serve Corio\'s evolving households with eco-friendly, professional cleaning.',
+        'From Corio\'s older established homes and commission housing to newer estates and renovated properties, our police-checked team provides regular, deep clean and end-of-lease services — with plant-based products and affordable, flexible scheduling.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Corio & northern Geelong',
+      paragraphs: [
+        'Corio\'s community is one of Geelong\'s most diverse — young families, retirees, NDIS participants and workers who need a reliable cleaning service that respects their home and their budget. NATURO GROUP delivers all of that.',
+        'We service Corio, Norlane, North Shore, Bell Park, Hamlyn Heights, Lara and the entire northern Geelong corridor — one reliable team for the area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & caring', body: 'Vetted, insured cleaners who take care of every Corio home with genuine professionalism and respect.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Regular and one-off cleans at prices and times that work for Corio\'s diverse households.' },
+        { icon: 'sparkle', title: 'Eco-safe for all families', body: 'Non-toxic, plant-based products that are safe for children, elderly residents and pets.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Corio represents the kind of diverse, resilient community we are proud to support with professional, eco-friendly cleaning that makes a real difference.',
+      'We support NDIS participants, aged care clients, DVA recipients and local families across Corio with caring, professional in-home cleaning.',
+      'Our satisfaction guarantee covers every Corio clean — your home will be clean, fresh and healthy every time.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner, healthier home',
+      h2Post: 'in Corio?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Corio clean in under 60 seconds.',
+      trust: 'Trusted by Corio families, NDIS participants and homeowners across northern Geelong.',
+    },
+    seo: {
+      title: 'House Cleaning Corio | Eco-Friendly Cleaners Geelong VIC',
+      description: 'Eco-friendly house cleaning in Corio Geelong VIC. Police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
+    },
+    nearbySuburbs: ['Norlane', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Lara', 'Bell Post Hill', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-lara',
+    name: 'Lara',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Lara VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Lara'],
+      tagline: 'Trusted, Trained and Thorough — between Geelong and Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Lara',
+      h2: 'Professional house cleaning in Lara & Greater Geelong',
+      paragraphs: [
+        'Lara is one of Victoria\'s fastest-growing suburbs — a bustling commuter town between Geelong and Melbourne that has exploded in population over the past decade. With its large modern estates, dual-income families and new-build homes, Lara is the definition of contemporary suburban Victoria. NATURO GROUP is the eco-friendly cleaning partner this dynamic community needs.',
+        'From Lara\'s new housing estates and modern family homes to established properties near the Lara Town Centre, our police-checked team provides regular, deep clean and end-of-lease services — with child-safe, eco-friendly products and flexible scheduling around commuter and school routines.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Lara & the Geelong-Melbourne corridor',
+      paragraphs: [
+        'Lara\'s dual-income families and busy commuters often don\'t have time to clean thoroughly — and that\'s exactly where NATURO GROUP comes in. We provide the reliable, high-quality clean that busy Lara households need, on a schedule that works around the commute.',
+        'We service Lara, Corio, North Shore, Ocean Grove, Geelong and the Geelong-Melbourne freeway corridor, making us the ideal cleaning partner for the whole outer Greater Geelong region.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted by Lara families', body: 'Police-checked, insured cleaners trusted by hundreds of Lara households for regular home cleaning.' },
+        { icon: 'clock', title: 'Commuter-schedule friendly', body: 'Flexible fortnightly or weekly cleans scheduled around Melbourne commutes, school drops and Lara family life.' },
+        { icon: 'sparkle', title: 'Child-safe & eco-friendly', body: 'Plant-based, non-toxic formulas safe for babies, toddlers, pets and new-build home finishes.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, Lara\'s growth and energy inspire us — we are proud to support one of Victoria\'s most dynamic communities with professional, eco-friendly cleaning.',
+      'We support NDIS participants, aged care clients and busy families across Lara with reliable, caring in-home cleaning that makes a real difference.',
+      'Our satisfaction guarantee covers every Lara clean — book with confidence.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner family home',
+      h2Post: 'in Lara?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Lara clean in under 60 seconds.',
+      trust: 'Trusted by Lara families, commuters and homeowners between Geelong and Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Lara VIC | Eco-Friendly Cleaners Geelong',
+      description: 'Eco-friendly house cleaning in Lara VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
+    },
+    nearbySuburbs: ['Geelong', 'Corio', 'North Shore', 'Norlane', 'Ocean Grove', 'Werribee', 'Little River'],
+  },
+
+  {
+    slug: 'house-cleaning-curlewis',
+    name: 'Curlewis',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Curlewis VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Curlewis'],
+      tagline: 'Trusted, Trained and Thorough — on the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Curlewis',
+      h2: 'Professional house cleaning in Curlewis & the Bellarine',
+      paragraphs: [
+        'Curlewis is a fast-growing community on the Bellarine Peninsula, situated between Drysdale and Clifton Springs. With its new housing estates, rural lifestyle blocks and stunning bay views, it\'s attracting young families and sea-changers from Melbourne and Geelong alike. NATURO GROUP brings professional, eco-friendly cleaning to this emerging Bellarine community.',
+        'From Curlewis\'s new estate homes and rural residential blocks to established properties, our police-checked team provides regular, deep clean and end-of-lease services — using eco-friendly products and flexible scheduling that suits the Bellarine lifestyle.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Curlewis & the Bellarine Peninsula',
+      paragraphs: [
+        'Curlewis\'s growing community of new-home owners, young families and Bellarine lifestyle seekers needs a reliable, quality cleaning service they can trust from day one. NATURO GROUP is that service.',
+        'We service Curlewis, Drysdale, Clifton Springs, Ocean Grove, Barwon Heads, Leopold and the whole Bellarine Peninsula — one trusted eco-friendly team for the entire region.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Vetted, fully insured cleaners ready for Curlewis new-builds, estate homes and rural residential properties.' },
+        { icon: 'clock', title: 'Flexible for new-home owners', body: 'Regular fortnightly cleans, post-renovation deep cleans and end-of-lease services — all scheduled around your routine.' },
+        { icon: 'sparkle', title: 'Bay-safe eco products', body: 'Biodegradable, non-toxic formulas that protect Corio Bay and Port Phillip Bay\'s marine environment.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we love being part of Curlewis\'s growth story — bringing eco-friendly, professional cleaning to a community that is building its future on the Bellarine.',
+      'We support NDIS participants, aged care clients and new-home owners across Curlewis with reliable, caring in-home cleaning.',
+      'Our satisfaction guarantee covers every Curlewis clean — your home will be spotless from the very first visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Curlewis?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Curlewis clean in 60 seconds.',
+      trust: 'Trusted by Curlewis families, new-home owners and Bellarine Peninsula residents.',
+    },
+    seo: {
+      title: 'House Cleaning Curlewis | Eco-Friendly Cleaners Bellarine VIC',
+      description: 'Eco-friendly house cleaning in Curlewis on the Bellarine Peninsula VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
   },
 
   {

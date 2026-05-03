@@ -3,18 +3,13 @@ import { testimonials as defaultTestimonials } from '../data/site';
 
 interface TestimonialItem { name: string; text: string }
 interface Props {
-  /** Optional location used in the rating-audience line. */
   location?: string;
-  /** Optional override — render these instead of the generic testimonials. */
   items?: TestimonialItem[];
 }
 
 const { location, items } = Astro.props;
 const ratingAudience = location ? `${location} households` : 'Australian households';
 const source = items && items.length ? items : defaultTestimonials;
-// Always loop at least twice so the marquee scroll never gaps; if a suburb
-// only supplies 2-3 testimonials we triple them so the track is wide enough.
-const loop = source.length < 4 ? [...source, ...source, ...source] : [...source, ...source];
 ---
 
 <section class="testi-section">
@@ -30,19 +25,23 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0c30b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           ))}
         </div>
-        <span class="testi-rating-text">Rated <strong>4.9 / 5</strong> by {ratingAudience}</span>
+        <span class="testi-rating-text">Rated <strong>4.7 / 5</strong> by {ratingAudience}</span>
       </div>
     </div>
   </div>
 
-  <div class="testi-marquee">
-    <div class="testi-track">
-      {loop.map((t) => (
+  <div class="testi-outer">
+    <button class="testi-arrow testi-arrow--prev" aria-label="Previous reviews" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="testi-scroll" id="testi-scroll">
+      {source.map((t) => (
         <article class="testi-card">
           <svg class="testi-quote" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 7h4v4H7c0 2.2 1.8 4 4 4v2c-3.3 0-6-2.7-6-6V7zm8 0h4v4h-4c0 2.2 1.8 4 4 4v2c-3.3 0-6-2.7-6-6V7z"/></svg>
           <p class="testi-text">{t.text}</p>
           <footer class="testi-footer">
-            <img class="testi-logo" src="/images/google-g.webp" alt="" width="32" height="32" loading="lazy" />
+            <img class="testi-logo" src="/images/google-g.webp" alt="Google review" width="32" height="32" loading="lazy" />
             <div class="testi-cite">
               <span class="testi-name">{t.name}</span>
               <div class="testi-stars" aria-label="5 star rating">
@@ -55,13 +54,19 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
         </article>
       ))}
     </div>
+
+    <button class="testi-arrow testi-arrow--next" aria-label="Next reviews" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
+
+  <div class="testi-dots" id="testi-dots" aria-hidden="true"></div>
 </section>
 
 <style>
   .testi-section {
     background-color: #fafbfc;
-    padding: clamp(88px, 10vw, 128px) 0;
+    padding: clamp(88px, 10vw, 128px) 0 clamp(56px, 7vw, 88px);
   }
   .testi-top {
     display: grid;
@@ -81,7 +86,6 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
     letter-spacing: -0.015em;
     color: #0f172a;
     margin: 0;
-    text-align: left;
   }
   .testi-intro {
     font-family: "Poppins", sans-serif;
@@ -97,62 +101,91 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
     gap: 12px;
     flex-wrap: wrap;
   }
-  .testi-rating-stars {
-    display: flex;
-    gap: 2px;
-  }
+  .testi-rating-stars { display: flex; gap: 2px; }
   .testi-rating-text {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: rgb(71, 85, 105);
   }
-  .testi-rating-text strong {
-    color: #0f172a;
-    font-weight: 600;
-  }
-  .testi-marquee {
-    overflow: hidden;
-    width: 100%;
-    mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
-  }
-  .testi-track {
-    display: flex;
-    align-items: stretch;
-    gap: 20px;
-    animation: testi-scroll 60s linear infinite;
-    width: max-content;
-    padding: 8px 24px;
-  }
-  .testi-track:hover { animation-play-state: paused; }
-  @media (prefers-reduced-motion: reduce) {
-    .testi-track { animation: none; }
-  }
-  @keyframes testi-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .testi-card {
+  .testi-rating-text strong { color: #0f172a; font-weight: 600; }
+
+  /* ── scroll wrapper ── */
+  .testi-outer {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .testi-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 8px 24px 20px;
+    cursor: grab;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* fade edges */
+    mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+    flex: 1;
+    min-width: 0;
+  }
+  .testi-scroll::-webkit-scrollbar { display: none; }
+  .testi-scroll.is-dragging { cursor: grabbing; scroll-behavior: auto; }
+
+  /* ── arrow buttons ── */
+  .testi-arrow {
     flex-shrink: 0;
-    width: 380px;
-    height: 320px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(15,23,42,0.12);
+    background: #fff;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, transform 0.18s;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(15,23,42,0.08);
+  }
+  .testi-arrow:hover {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+    transform: scale(1.06);
+  }
+  .testi-arrow:disabled { opacity: 0.3; pointer-events: none; }
+  @media (max-width: 600px) {
+    .testi-arrow { width: 36px; height: 36px; }
+  }
+
+  /* ── cards ── */
+  .testi-card {
+    flex-shrink: 0;
+    width: 360px;
+    min-height: 300px;
     padding: 28px;
-    background-color: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #fff;
+    border: 1px solid rgba(15,23,42,0.08);
     border-radius: 16px;
-    box-shadow:
-      0 1px 2px rgba(15, 23, 42, 0.04),
-      0 6px 20px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 6px 20px rgba(15,23,42,0.05);
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
+    user-select: none;
   }
   @media (max-width: 600px) {
-    .testi-card { width: 320px; height: 300px; padding: 22px; }
+    .testi-card { width: 288px; min-height: 280px; padding: 22px; }
   }
   .testi-quote {
-    color: rgba(58, 93, 255, 0.18);
+    color: rgba(58,93,255,0.18);
     margin-bottom: 12px;
     flex-shrink: 0;
   }
@@ -161,7 +194,7 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
     font-size: 15px;
     font-weight: 300;
     line-height: 1.65;
-    color: rgb(51, 65, 85);
+    color: rgb(51,65,85);
     margin: 0;
     flex: 1;
     overflow: hidden;
@@ -175,20 +208,11 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
     gap: 12px;
     margin-top: 20px;
     padding-top: 18px;
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-top: 1px solid rgba(15,23,42,0.08);
     flex-shrink: 0;
   }
-  .testi-logo {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-  .testi-cite {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
+  .testi-logo { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+  .testi-cite { display: flex; flex-direction: column; gap: 3px; }
   .testi-name {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
@@ -197,8 +221,120 @@ const loop = source.length < 4 ? [...source, ...source, ...source] : [...source,
     line-height: 1.2;
     letter-spacing: -0.005em;
   }
-  .testi-stars {
+  .testi-stars { display: flex; gap: 1px; }
+
+  /* ── dots ── */
+  .testi-dots {
     display: flex;
-    gap: 1px;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 20px;
+  }
+  .testi-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(15,23,42,0.18);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .testi-dot.is-active {
+    background: #3a5dff;
+    transform: scale(1.3);
   }
 </style>
+
+<script>
+  const scroll = document.getElementById('testi-scroll') as HTMLElement;
+  const dotsContainer = document.getElementById('testi-dots') as HTMLElement;
+  if (!scroll) throw new Error();
+
+  const cards = Array.from(scroll.querySelectorAll<HTMLElement>('.testi-card'));
+  const prev = scroll.closest('.testi-outer')!.querySelector<HTMLButtonElement>('.testi-arrow--prev')!;
+  const next = scroll.closest('.testi-outer')!.querySelector<HTMLButtonElement>('.testi-arrow--next')!;
+
+  // ── dots ──────────────────────────────────────────────────────────────
+  const dots: HTMLButtonElement[] = cards.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'testi-dot' + (i === 0 ? ' is-active' : '');
+    d.setAttribute('aria-label', `Go to review ${i + 1}`);
+    d.addEventListener('click', () => scrollTo(i));
+    dotsContainer.appendChild(d);
+    return d;
+  });
+
+  function getActiveIndex() {
+    const scrollLeft = scroll.scrollLeft;
+    const cardW = cards[0].offsetWidth + 20; // card + gap
+    return Math.round(scrollLeft / cardW);
+  }
+
+  function updateDots() {
+    const idx = getActiveIndex();
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+    prev.disabled = idx === 0;
+    next.disabled = idx >= cards.length - 1;
+  }
+
+  function scrollTo(idx: number) {
+    const cardW = cards[0].offsetWidth + 20;
+    scroll.scrollTo({ left: idx * cardW, behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', () => scrollTo(Math.max(0, getActiveIndex() - 1)));
+  next.addEventListener('click', () => scrollTo(Math.min(cards.length - 1, getActiveIndex() + 1)));
+  scroll.addEventListener('scroll', updateDots, { passive: true });
+  updateDots();
+
+  // ── auto-advance ──────────────────────────────────────────────────────
+  let autoTimer: ReturnType<typeof setInterval>;
+  let paused = false;
+
+  function startAuto() {
+    autoTimer = setInterval(() => {
+      if (paused) return;
+      const idx = getActiveIndex();
+      scrollTo(idx >= cards.length - 1 ? 0 : idx + 1);
+    }, 4000);
+  }
+
+  function pause() { paused = true; }
+  function resume() { paused = false; }
+
+  scroll.addEventListener('mouseenter', pause);
+  scroll.addEventListener('mouseleave', resume);
+  scroll.addEventListener('touchstart', pause, { passive: true });
+  scroll.addEventListener('touchend', () => setTimeout(resume, 3000), { passive: true });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) startAuto();
+
+  // ── mouse drag ────────────────────────────────────────────────────────
+  let dragStart = 0;
+  let scrollStart = 0;
+  let isDragging = false;
+
+  scroll.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    dragStart = e.pageX;
+    scrollStart = scroll.scrollLeft;
+    scroll.classList.add('is-dragging');
+    pause();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    scroll.scrollLeft = scrollStart - (e.pageX - dragStart);
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    scroll.classList.remove('is-dragging');
+    // snap to nearest card after drag
+    const cardW = cards[0].offsetWidth + 20;
+    const idx = Math.round(scroll.scrollLeft / cardW);
+    scrollTo(Math.min(Math.max(idx, 0), cards.length - 1));
+    setTimeout(resume, 1000);
+  });
+</script>

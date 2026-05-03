@@ -314,6 +314,9 @@ const schema = [
     max-width: 640px;
   }
   .ssh-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 500px) {
+    .ssh-cta { flex-direction: column; align-items: stretch; }
+  }
   .ssh-btn-primary {
     display: inline-flex;
     align-items: center;

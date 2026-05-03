@@ -47,9 +47,12 @@ import { ctaPrimary, site } from '../../data/site';
     margin: 0 0 var(--s-8);
   }
   .cta-actions {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     gap: var(--s-3);
     justify-content: center;
+  }
+  @media (max-width: 500px) {
+    .cta-actions { flex-direction: column; align-items: stretch; }
   }
 </style>

@@ -420,7 +420,6 @@ export const footerLocations = {
 };
 
 export const footerInfoLinks = [
-  { label: 'About us', href: '/about' },
   { label: 'How does it work', href: '/how-it-works' },
   { label: 'Meet the Team', href: '/team' },
   { label: 'Reviews', href: '/reviews' },

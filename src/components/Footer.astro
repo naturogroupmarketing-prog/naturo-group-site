@@ -42,22 +42,25 @@ const trustBadges = [
     </div>
 
     <div class="footer-cols">
-      {/* Services and Company share the left column — Company stacks
-          directly under Services to free horizontal room for the
-          two-column "Areas served" list to the right. */}
       <div class="footer-col footer-col-stack">
-        <div class="footer-subcol">
-          <h2 class="footer-h2">Services</h2>
-          <ul class="footer-list">
+        <div class="footer-subcol footer-acc">
+          <button class="footer-acc-btn" aria-expanded="false">
+            <span class="footer-h2">Services</span>
+            <svg class="footer-acc-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="footer-list footer-acc-panel">
             {footerServiceLinks.map((s) => (
               <li><a href={s.href} class="footer-link">{s.label}</a></li>
             ))}
           </ul>
         </div>
 
-        <div class="footer-subcol">
-          <h2 class="footer-h2">Company</h2>
-          <ul class="footer-list">
+        <div class="footer-subcol footer-acc">
+          <button class="footer-acc-btn" aria-expanded="false">
+            <span class="footer-h2">Company</span>
+            <svg class="footer-acc-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="footer-list footer-acc-panel">
             {footerInfoLinks.map((l) => (
               <li><a href={l.href} class="footer-link">{l.label}</a></li>
             ))}
@@ -65,15 +68,15 @@ const trustBadges = [
         </div>
       </div>
 
-      <div class="footer-col footer-col-locations">
-        <h2 class="footer-h2">Areas served</h2>
-        <div class="footer-states">
+      <div class="footer-col footer-col-locations footer-acc">
+        <button class="footer-acc-btn" aria-expanded="false">
+          <span class="footer-h2">Areas served</span>
+          <svg class="footer-acc-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="footer-states footer-acc-panel">
           {Object.entries(footerLocations).map(([state, locs]) => (
             <div class="footer-state">
               <p class="footer-state-name">{state}</p>
-              {/* Stacked one-per-line for readability — the previous
-                  middot-separated inline list was hard to scan at small
-                  sizes and wrapped awkwardly on narrow viewports. */}
               <ul class="footer-state-cities">
                 {locs.map((l) => (
                   <li><a href={l.href} class="footer-city-link">{l.label}</a></li>
@@ -492,4 +495,57 @@ const trustBadges = [
     }
     .footer-copyright { text-align: center; }
   }
+
+  /* ─── Footer accordion ─────────────────────────────────────────────────── */
+  /* Desktop: buttons are styled as plain non-interactive headings.           */
+  .footer-acc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    cursor: default;
+    pointer-events: none;
+  }
+  .footer-acc-chevron { display: none; }
+
+  /* Mobile: Apple-style accordion — separator line, tappable row, panel
+     collapses/reveals beneath the heading, chevron rotates when open. */
+  @media (max-width: 720px) {
+    .footer-col-stack { gap: 0; }
+    .footer-acc { border-top: 1px solid #d2d2d7; }
+    .footer-acc-btn {
+      cursor: pointer;
+      pointer-events: auto;
+      padding: 13px 0;
+    }
+    .footer-acc-btn .footer-h2 {
+      margin: 0;
+      font-size: 14px;
+    }
+    .footer-acc-chevron {
+      display: block;
+      flex-shrink: 0;
+      color: #6e6e73;
+      transition: transform 0.25s ease;
+    }
+    /* Hide panel when closed — when open the original display:flex /
+       display:grid rules from .footer-list and .footer-states win. */
+    .footer-acc:not(.is-open) .footer-acc-panel { display: none; }
+    .footer-acc.is-open .footer-acc-panel { padding-bottom: 16px; }
+    .footer-acc.is-open .footer-acc-chevron { transform: rotate(180deg); }
+  }
 </style>
+
+<script>
+  document.querySelectorAll('.footer-acc-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const acc = btn.closest('.footer-acc');
+      const isOpen = acc.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+</script>

@@ -822,7 +822,7 @@ const schema = [
       var serviceLabels = { regular: 'Regular clean', oneoff: 'One-off clean', endoflease: 'End of lease', specialty: 'Specialty' };
       var freqLabels    = { weekly: 'Weekly', fortnightly: 'Fortnightly', monthly: 'Monthly', oneoff: 'One-off' };
       var adminPayload = {
-        _subject:       'Quote enquiry from ' + (data.full_name || 'website'),
+        _subject:       'Quote Estimate — ' + (data.full_name || 'website'),
         name:           data.full_name || '—',
         email:          data.email    || '—',
         phone:          data.phone    || '—',

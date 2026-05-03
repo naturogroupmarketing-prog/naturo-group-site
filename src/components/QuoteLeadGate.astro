@@ -379,6 +379,7 @@ const lc = leadCapture;
         .replace(/-/g, ' ')
         .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
       var adminPayload = {
+        _subject: 'Pre Quote — ' + (payload.name || 'new lead'),
         name:   payload.name,
         email:  payload.email,
         phone:  payload.phone,

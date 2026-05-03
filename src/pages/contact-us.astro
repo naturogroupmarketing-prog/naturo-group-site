@@ -685,7 +685,7 @@ const methodCards = [
 
   /* ---------- Form ---------- */
   .ct-form-section {
-    background-color: #ffffff;
+    background: linear-gradient(150deg, #e8eeff 0%, #f0f4ff 60%, #edf2ff 100%);
     padding: clamp(88px, 10vw, 128px) 0;
     scroll-margin-top: 100px;
   }
@@ -724,11 +724,13 @@ const methodCards = [
   }
   .ct-form-link:hover { text-decoration: underline; }
   .ct-form {
-    background-color: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(242, 242, 247, 0.82);
+    backdrop-filter: saturate(180%) blur(30px);
+    -webkit-backdrop-filter: saturate(180%) blur(30px);
+    border: 1px solid rgba(209, 209, 214, 0.5);
     border-radius: 14px;
     padding: clamp(28px, 4vw, 40px);
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
     gap: 22px;
@@ -740,6 +742,7 @@ const methodCards = [
   }
   @media (max-width: 640px) {
     .ct-form-grid { grid-template-columns: 1fr; }
+    .ct-submit { align-self: stretch; width: 100%; }
   }
   .ct-field { display: flex; flex-direction: column; gap: 8px; }
   .ct-field-label {
@@ -755,8 +758,8 @@ const methodCards = [
     font-size: 15px;
     font-weight: 400;
     color: #0f172a;
-    background-color: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.18);
+    background: rgba(242, 242, 247, 0.7);
+    border: 1px solid rgba(209, 209, 214, 0.8);
     border-radius: 8px;
     padding: 12px 14px;
     line-height: 1.4;

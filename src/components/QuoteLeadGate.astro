@@ -230,8 +230,11 @@ const lc = leadCapture;
       lastFocused = document.activeElement;
       overlay.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
-      // Slight delay so the focus jump doesn't fight the open animation.
-      setTimeout(function () { nameInput.focus(); }, 50);
+      // Auto-focus on desktop only — on touch devices this would immediately
+      // trigger the on-screen keyboard before the user is ready to type.
+      if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        setTimeout(function () { nameInput.focus(); }, 50);
+      }
     }
 
     function closeModal() {

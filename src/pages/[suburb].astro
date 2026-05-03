@@ -28,6 +28,9 @@ interface Props {
 const { suburb } = Astro.props;
 const pageUrl = `${site.url}/${suburb.slug}`;
 
+// Build a name → slug lookup so nearby suburb names that have a page render as links
+const suburbNameToSlug = new Map(suburbs.map(s => [s.name, s.slug]));
+
 // ─────────────────────────────────────────────────────────────────────────
 // Per-suburb FAQs.
 //
@@ -342,9 +345,14 @@ const schema = [
           <h3 class="map-list-title">Suburbs we service</h3>
           <ul class="map-list">
             <li class="map-list-item map-list-item-hub">{suburb.name}</li>
-            {suburb.nearbySuburbs.map((s) => (
-              <li class="map-list-item">{s}</li>
-            ))}
+            {suburb.nearbySuburbs.map((s) => {
+              const slug = suburbNameToSlug.get(s);
+              return (
+                <li class="map-list-item">
+                  {slug ? <a href={`/${slug}`} class="map-list-link">{s}</a> : s}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -820,6 +828,14 @@ const schema = [
   .map-list-item-hub {
     color: #0f172a;
     font-weight: 500;
+  }
+  .map-list-link {
+    color: #3a5dff;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .map-list-link:hover {
+    text-decoration: underline;
   }
 
   /* ---------- Localised FinalCTA ---------- */

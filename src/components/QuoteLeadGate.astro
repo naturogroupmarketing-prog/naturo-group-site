@@ -228,16 +228,26 @@ const lc = leadCapture;
     function openModal(href) {
       pendingHref = href;
       lastFocused = document.activeElement;
-      overlay.removeAttribute('hidden');
-      document.body.style.overflow = 'hidden';
-      if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-        // Desktop: focus first input so the user can type immediately.
-        setTimeout(function () { nameInput.focus(); }, 50);
+      var isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      if (isTouchDevice) {
+        // iOS Safari and Android auto-focus the first input inside role="dialog"
+        // the moment it becomes visible, raising the keyboard before the user
+        // has even seen the form. Temporarily marking every text input as
+        // readonly prevents the keyboard from appearing on focus — the browser
+        // won't open the IME for a readonly field. We restore editability after
+        // the open animation has settled (300 ms).
+        var inputs = overlay.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
+        inputs.forEach(function(inp) { inp.setAttribute('readonly', ''); });
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() {
+          inputs.forEach(function(inp) { inp.removeAttribute('readonly'); });
+        }, 300);
       } else {
-        // Mobile: focus the close button instead. iOS Safari moves focus to
-        // the first input in a dialog automatically (triggering the keyboard)
-        // unless we explicitly focus a non-input element first.
-        setTimeout(function () { closeBtn && closeBtn.focus(); }, 50);
+        // Desktop: show modal then focus first input so the user can type immediately.
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () { nameInput.focus(); }, 50);
       }
     }
 

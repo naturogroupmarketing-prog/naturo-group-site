@@ -230,10 +230,14 @@ const lc = leadCapture;
       lastFocused = document.activeElement;
       overlay.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
-      // Auto-focus on desktop only — on touch devices this would immediately
-      // trigger the on-screen keyboard before the user is ready to type.
       if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        // Desktop: focus first input so the user can type immediately.
         setTimeout(function () { nameInput.focus(); }, 50);
+      } else {
+        // Mobile: focus the close button instead. iOS Safari moves focus to
+        // the first input in a dialog automatically (triggering the keyboard)
+        // unless we explicitly focus a non-input element first.
+        setTimeout(function () { closeBtn && closeBtn.focus(); }, 50);
       }
     }
 

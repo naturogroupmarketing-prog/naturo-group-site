@@ -158,6 +158,9 @@ const slides = [
     animation: heroFade 15s infinite;
     will-change: opacity;
   }
+  /* First slide is immediately visible — prevents the white-page flash
+     on refresh before the animation's first frame kicks in. */
+  .hero-slide:first-child { opacity: 1; }
   @keyframes heroFade {
     0%, 28% { opacity: 1; }
     33%, 95% { opacity: 0; }

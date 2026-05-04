@@ -33,7 +33,14 @@ const schema = [
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
-    image: `${site.url}${post.heroImage}`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${site.url}${post.heroImage}`,
+      creator: { '@type': 'Organization', name: site.name },
+      creditText: site.name,
+      copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
+      acquireLicensePage: `${site.url}/privacy-policies`,
+    },
     author: { '@type': 'Organization', name: site.name, url: site.url },
     publisher: {
       '@type': 'Organization',
@@ -41,6 +48,10 @@ const schema = [
       logo: {
         '@type': 'ImageObject',
         url: `${site.url}/images/logo.png`,
+        creator: { '@type': 'Organization', name: site.name },
+        creditText: site.name,
+        copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
+        acquireLicensePage: `${site.url}/privacy-policies`,
       },
     },
     datePublished: post.publishedDate,

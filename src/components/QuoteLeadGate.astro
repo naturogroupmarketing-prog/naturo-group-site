@@ -230,19 +230,37 @@ const lc = leadCapture;
       lastFocused = document.activeElement;
       var isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
       if (isTouchDevice) {
-        // iOS Safari and Android auto-focus the first input inside role="dialog"
-        // the moment it becomes visible, raising the keyboard before the user
-        // has even seen the form. Temporarily marking every text input as
-        // readonly prevents the keyboard from appearing on focus — the browser
-        // won't open the IME for a readonly field. We restore editability after
-        // the open animation has settled (300 ms).
+        // iOS Safari (and Android Chrome) forcibly focus the first text input
+        // inside role="dialog" the moment it becomes visible — bypassing any
+        // programmatic focus call and ignoring readonly alone.
+        // Triple-lock to suppress the keyboard:
+        //   1. tabindex="-1"   → removes the input from the tab/auto-focus order
+        //   2. readonly        → tells the browser no editing is possible
+        //   3. inputmode="none"→ explicitly instructs the OS to show no keyboard
+        // Then we synchronously focus the close button (a non-input element)
+        // so iOS lands there instead. All three locks are removed 500 ms later
+        // once the open animation has settled.
         var inputs = overlay.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
-        inputs.forEach(function(inp) { inp.setAttribute('readonly', ''); });
+        inputs.forEach(function(inp) {
+          inp.setAttribute('data-ti', inp.getAttribute('tabindex') || '');
+          inp.setAttribute('tabindex', '-1');
+          inp.setAttribute('readonly', '');
+          inp.setAttribute('inputmode', 'none');
+        });
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
+        // Synchronous focus (no setTimeout) — must beat iOS's auto-focus event.
+        if (closeBtn) closeBtn.focus();
         setTimeout(function() {
-          inputs.forEach(function(inp) { inp.removeAttribute('readonly'); });
-        }, 300);
+          inputs.forEach(function(inp) {
+            var ti = inp.getAttribute('data-ti');
+            if (ti) inp.setAttribute('tabindex', ti);
+            else inp.removeAttribute('tabindex');
+            inp.removeAttribute('readonly');
+            inp.removeAttribute('inputmode');
+            inp.removeAttribute('data-ti');
+          });
+        }, 500);
       } else {
         // Desktop: show modal then focus first input so the user can type immediately.
         overlay.removeAttribute('hidden');

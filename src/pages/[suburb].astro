@@ -140,13 +140,13 @@ const schema = [
       closes: '17:00',
     },
     // AggregateRating drives the gold-stars rich result on local SERPs.
-    // Numbers must reflect the real Google Business Profile — once verified,
-    // overwrite this hard-coded pair with the live counts. Placeholder values
-    // here reflect the same 4.7/127 we surface on /reviews.
+    // Per-suburb rating sourced from suburb.aggregateRating when set (real GBP
+    // numbers); falls back to the site-wide placeholder so every page still
+    // emits valid AggregateRating schema until per-suburb data is added.
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.7',
-      reviewCount: '127',
+      ratingValue: suburb.aggregateRating?.ratingValue ?? '4.7',
+      reviewCount: suburb.aggregateRating?.reviewCount ?? '127',
       bestRating: '5',
       worstRating: '1',
     },

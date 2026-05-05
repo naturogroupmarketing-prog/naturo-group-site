@@ -403,6 +403,12 @@ export const footerLocations = {
   Victoria: [
     { label: 'Melbourne', href: '/cleaners-melbourne' },
     { label: 'Geelong', href: '/house-cleaning-geelong' },
+    { label: 'Newtown', href: '/house-cleaning-newtown-geelong' },
+    { label: 'Highton', href: '/house-cleaning-highton' },
+    { label: 'Belmont', href: '/house-cleaning-belmont-geelong' },
+    { label: 'Geelong West', href: '/house-cleaning-geelong-west' },
+    { label: 'Lara', href: '/house-cleaning-lara' },
+    { label: 'Leopold', href: '/house-cleaning-leopold' },
     { label: 'Torquay', href: '/house-cleaning-torquay' },
     { label: 'Ocean Grove', href: '/house-cleaning-ocean-grove' },
     { label: 'Barwon Heads', href: '/house-cleaning-barwon-heads' },

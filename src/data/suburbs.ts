@@ -100,6 +100,18 @@ export interface Suburb {
    * Review schema only (visible cards stay generic).
    */
   localTestimonials?: Array<{ name: string; text: string }>;
+  /**
+   * Optional local phone number override — e.g. a Geelong 03 number.
+   * When set, the suburb page uses this instead of the national 1300 number.
+   * Format: '03 XXXX XXXX' for display, 'tel:03XXXXXXXX' for href.
+   */
+  phone?: string;
+  phoneHref?: string;
+  /**
+   * Optional per-suburb aggregate rating to override the site-wide
+   * hardcoded values. Should reflect real GBP numbers for this location.
+   */
+  aggregateRating?: { ratingValue: string; reviewCount: string };
 }
 
 
@@ -2568,7 +2580,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Geelong families, students and Bellarine homeowners.',
     },
     seo: {
-      title: 'Best House Cleaning Geelong | Police-Checked Eco-Friendly Cleaners',
+      title: 'Eco-Friendly House Cleaning Geelong | Naturo Group',
       description: 'House cleaning in Geelong from $153. Police-checked, fully insured team across Geelong, Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price — no phone call needed.',
     },
     nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
@@ -3920,6 +3932,214 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Curlewis on the Bellarine Peninsula VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-armstrong-creek',
+    name: 'Armstrong Creek',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Geelong & Bellarine',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Armstrong Creek VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Armstrong Creek'],
+      tagline: 'Trusted, Trained and Thorough — Geelong\'s fastest-growing suburb',
+    },
+    intro: {
+      kicker: 'House cleaning in Armstrong Creek',
+      h2: 'Professional house cleaning in Armstrong Creek & surrounds',
+      paragraphs: [
+        'Armstrong Creek is Geelong\'s fastest-growing suburb — a modern urban community of new estates, townhouses and family homes spreading south of the Ring Road. NATURO GROUP\'s eco-friendly cleaners are a natural fit for the community\'s health-conscious, family-first values.',
+        'From the Warralily and OakLeigh estates to Mount Duneed and Grovedale, our police-checked team services regular cleans, deep cleans and end-of-lease cleans — using non-toxic, biodegradable products and flexible scheduling built around Armstrong Creek family life.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Armstrong Creek & south Geelong',
+      paragraphs: [
+        'Armstrong Creek\'s young families, dual-income households and new-home owners need a reliable cleaning service from day one. NATURO GROUP delivers consistent, thorough cleans — same cleaner, same standard, every visit.',
+        'We service Armstrong Creek, Grovedale, Waurn Ponds, Mount Duneed and the wider south Geelong corridor — police-checked cleaners, eco-friendly products, satisfaction guaranteed.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every cleaner is vetted and fully insured — essential for new estates where trust matters from the first visit.' },
+        { icon: 'clock', title: 'Built around family life', body: 'Weekly or fortnightly cleans scheduled around school drop-offs, sports rosters and the Surf Coast commute.' },
+        { icon: 'sparkle', title: 'Safe for new homes', body: 'Non-toxic, biodegradable products safe for children, pets and the pristine finishes in Armstrong Creek\'s new builds.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP, we are proud to serve Armstrong Creek — one of Australia\'s fastest-growing communities and a suburb that perfectly reflects our values of health, family and sustainability.',
+      'We support NDIS participants, aged care clients and working families across Armstrong Creek with reliable, caring in-home cleaning backed by our nursing-standard approach.',
+      'Every Armstrong Creek clean is covered by our satisfaction guarantee — your home will be spotless from the first visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Armstrong Creek?',
+      sub: 'Eco-friendly products, police-checked cleaners and instant online booking — sorted in 60 seconds.',
+      trust: 'Trusted by Armstrong Creek families, new-home owners and the Geelong south corridor.',
+    },
+    seo: {
+      title: 'House Cleaning Armstrong Creek | Eco-Friendly Geelong Cleaners',
+      description: 'Eco-friendly house cleaning in Armstrong Creek VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
+    },
+    nearbySuburbs: ['Grovedale', 'Waurn Ponds', 'Mount Duneed', 'Highton', 'Belmont', 'Ocean Grove', 'Geelong'],
+  },
+
+  {
+    slug: 'house-cleaning-grovedale',
+    name: 'Grovedale',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Geelong & Bellarine',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Grovedale VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Grovedale'],
+      tagline: 'Trusted, Trained and Thorough — south Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Grovedale',
+      h2: 'Professional house cleaning in Grovedale & south Geelong',
+      paragraphs: [
+        'Grovedale is a well-established family suburb in south Geelong, bordering Highton and Waurn Ponds along the Surf Coast corridor. Its mix of 1980s–2000s brick homes, young families and retirees makes it one of the region\'s most consistent markets for regular domestic cleaning.',
+        'NATURO GROUP\'s Grovedale cleaners bring eco-friendly, police-checked service to family homes, units and rental properties across the suburb — with the same thoroughness we apply everywhere in the Geelong region.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners in Grovedale & the south Geelong corridor',
+      paragraphs: [
+        'From Grovedale\'s family streets to the Waurn Ponds shopping corridor, our police-checked team is a reliable, consistent presence — same cleaner, same standard, every fortnight.',
+        'We also service Waurn Ponds, Highton, Belmont, Armstrong Creek and Mount Duneed — one trusted team for the whole south Geelong area.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every cleaner is vetted and covered for $20m public liability — trusted in Grovedale homes for years.' },
+        { icon: 'clock', title: 'Consistent scheduling', body: 'Weekly or fortnightly cleans that fit around Grovedale school timetables, work rosters and the Surf Coast lifestyle.' },
+        { icon: 'sparkle', title: 'Eco-friendly products', body: 'Non-toxic, biodegradable formulas safe for children, pets and Grovedale\'s established gardens.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP has been cleaning Grovedale homes to nursing-grade standards since our founding — thorough, consistent and always eco-friendly.',
+      'We support NDIS participants, aged care recipients and busy Grovedale families with reliable, caring in-home cleaning.',
+      'Our satisfaction guarantee covers every Grovedale clean — no shortcuts, no compromises.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Grovedale?',
+      sub: 'Eco-friendly products, police-checked cleaners and instant online booking — done in 60 seconds.',
+      trust: 'Trusted by Grovedale families, retirees and south Geelong homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Grovedale VIC | Eco-Friendly South Geelong Cleaners',
+      description: 'Eco-friendly house cleaning in Grovedale VIC. Police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
+    },
+    nearbySuburbs: ['Waurn Ponds', 'Highton', 'Belmont', 'Armstrong Creek', 'Mount Duneed', 'Geelong', 'Torquay'],
+  },
+
+  {
+    slug: 'house-cleaning-waurn-ponds',
+    name: 'Waurn Ponds',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Geelong & Bellarine',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Waurn Ponds VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Waurn Ponds'],
+      tagline: 'Trusted, Trained and Thorough — Deakin University corridor',
+    },
+    intro: {
+      kicker: 'House cleaning in Waurn Ponds',
+      h2: 'Professional house cleaning in Waurn Ponds & surrounds',
+      paragraphs: [
+        'Waurn Ponds is home to Deakin University\'s Geelong Waurn Ponds campus, a major shopping centre and a growing mix of student accommodation, family homes and newer estates. NATURO GROUP provides reliable eco-friendly cleaning to this diverse south-west Geelong community.',
+        'From the university precinct and the Ring Road corridor to established family streets, our police-checked team delivers regular, deep clean and end-of-lease services — using non-toxic products and flexible scheduling that suits students, families and professionals alike.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners in Waurn Ponds & south-west Geelong',
+      paragraphs: [
+        'Whether you\'re a Deakin student, a working family or a retiree in Waurn Ponds, NATURO GROUP delivers the same professional, eco-friendly clean every time.',
+        'We cover Waurn Ponds, Grovedale, Highton, Armstrong Creek, Mount Duneed and the surrounding south Geelong suburbs — one trusted team for the whole corridor.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every cleaner is police-checked and fully insured — trusted in Waurn Ponds homes and student rentals.' },
+        { icon: 'clock', title: 'Flexible for uni & family life', body: 'Cleans that work around university semesters, family timetables and the Surf Coast commute.' },
+        { icon: 'sparkle', title: 'Non-toxic products', body: 'Biodegradable, plant-based formulas safe for students, families, pets and Waurn Ponds\' natural surrounds.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP brings the same nursing-standard cleaning to Waurn Ponds that we deliver across the entire Geelong region — thorough, reliable and always eco-friendly.',
+      'We support NDIS participants, aged care clients and busy households across Waurn Ponds with tailored, caring in-home cleaning.',
+      'Every Waurn Ponds clean is backed by our satisfaction guarantee — spotless from the first visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Waurn Ponds?',
+      sub: 'Eco-friendly products, police-checked cleaners and instant online booking — sorted in 60 seconds.',
+      trust: 'Trusted by Waurn Ponds families, students and south Geelong homeowners.',
+    },
+    seo: {
+      title: 'House Cleaning Waurn Ponds VIC | Eco-Friendly Geelong Cleaners',
+      description: 'Eco-friendly house cleaning in Waurn Ponds VIC near Deakin University. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+    },
+    nearbySuburbs: ['Grovedale', 'Highton', 'Armstrong Creek', 'Mount Duneed', 'Belmont', 'Geelong', 'Torquay'],
+  },
+
+  {
+    slug: 'house-cleaning-mount-duneed',
+    name: 'Mount Duneed',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Geelong & Bellarine',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Mount Duneed VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Mount Duneed'],
+      tagline: 'Trusted, Trained and Thorough — Geelong\'s southern growth corridor',
+    },
+    intro: {
+      kicker: 'House cleaning in Mount Duneed',
+      h2: 'Professional house cleaning in Mount Duneed & south Geelong',
+      paragraphs: [
+        'Mount Duneed is a rapidly developing suburb on the southern edge of Geelong, adjacent to the Surf Coast Highway and close to Torquay. Its growing collection of new estates, modern family homes and semi-rural properties makes it one of the most exciting communities in the Geelong region.',
+        'NATURO GROUP\'s eco-friendly cleaners service Mount Duneed\'s new-build homes, acreage properties and estate residences — with police-checked staff, non-toxic products and flexible scheduling built around the southern Geelong lifestyle.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners in Mount Duneed & the Surf Coast gateway',
+      paragraphs: [
+        'Mount Duneed sits at the gateway to the Surf Coast, making it a popular choice for families who want easy access to both Geelong and Torquay. NATURO GROUP serves this growing community with professional, eco-friendly cleaning.',
+        'We cover Mount Duneed, Armstrong Creek, Grovedale, Waurn Ponds and the Surf Coast corridor — one trusted team, consistent results.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked & insured', body: 'Every cleaner is vetted and insured — trusted for new-build estates and rural residential properties in Mount Duneed.' },
+        { icon: 'clock', title: 'Built for the Surf Coast lifestyle', body: 'Flexible cleans scheduled around beach weekends, Torquay commutes and Geelong school timetables.' },
+        { icon: 'sparkle', title: 'Eco-friendly for new homes', body: 'Non-toxic, biodegradable products safe for children, pets and the pristine finishes in Mount Duneed\'s new builds.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is proud to serve Mount Duneed as part of our commitment to the entire Geelong south corridor — from Armstrong Creek to the Surf Coast.',
+      'We support NDIS participants, aged care clients and new-home owners across Mount Duneed with reliable, caring in-home cleaning.',
+      'Our satisfaction guarantee covers every Mount Duneed clean — your home will be spotless from the very first visit.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'spotless home',
+      h2Post: 'in Mount Duneed?',
+      sub: 'Eco-friendly products, police-checked cleaners and instant online booking — sorted in 60 seconds.',
+      trust: 'Trusted by Mount Duneed families, new-home owners and the southern Geelong corridor.',
+    },
+    seo: {
+      title: 'House Cleaning Mount Duneed VIC | Eco-Friendly Geelong Cleaners',
+      description: 'Eco-friendly house cleaning in Mount Duneed VIC near Torquay. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
+    },
+    nearbySuburbs: ['Armstrong Creek', 'Grovedale', 'Waurn Ponds', 'Highton', 'Torquay', 'Jan Juc', 'Geelong'],
   },
 
   {

@@ -20,7 +20,7 @@ const schema = [
     url: site.url,
     telephone: site.phone,
     email: site.email,
-    image: `${site.url}/og-default.jpg`,
+    image: { '@type': 'ImageObject', url: `${site.url}/og-default.jpg`, creator: { '@type': 'Organization', name: site.name }, creditText: site.name, copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`, license: `${site.url}/terms-of-service`, acquireLicensePage: `${site.url}/privacy-policies` },
     sameAs: [
       site.social.facebook,
       site.social.instagram,

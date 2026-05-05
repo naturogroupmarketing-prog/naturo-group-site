@@ -21,8 +21,6 @@ const lc = leadCapture;
 <div
   class="qlg-overlay"
   id="qlgOverlay"
-  role="dialog"
-  aria-modal="true"
   aria-labelledby="qlgTitle"
   aria-describedby="qlgSub"
   hidden
@@ -247,9 +245,11 @@ const lc = leadCapture;
           inp.setAttribute('readonly', '');
           inp.setAttribute('inputmode', 'none');
         });
+        // No role="dialog" on the element — iOS Safari hooks into that attribute
+        // to auto-focus the first input. We show the modal without the role,
+        // then add it back after the keyboard-suppression window has passed.
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
-        // Synchronous focus (no setTimeout) — must beat iOS's auto-focus event.
         if (closeBtn) closeBtn.focus();
         setTimeout(function() {
           inputs.forEach(function(inp) {
@@ -260,9 +260,14 @@ const lc = leadCapture;
             inp.removeAttribute('inputmode');
             inp.removeAttribute('data-ti');
           });
-        }, 500);
+          // Restore dialog role now that focus is stable and keyboard is settled.
+          overlay.setAttribute('role', 'dialog');
+          overlay.setAttribute('aria-modal', 'true');
+        }, 600);
       } else {
         // Desktop: show modal then focus first input so the user can type immediately.
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
         setTimeout(function () { nameInput.focus(); }, 50);
@@ -271,6 +276,8 @@ const lc = leadCapture;
 
     function closeModal() {
       overlay.setAttribute('hidden', '');
+      overlay.removeAttribute('role');
+      overlay.removeAttribute('aria-modal');
       document.body.style.overflow = '';
       pendingHref = null;
       if (lastFocused && typeof lastFocused.focus === 'function') {

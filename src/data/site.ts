@@ -18,7 +18,7 @@ export const site = {
   // Replace with your actual Google Business Profile review link.
   // Get it from: Google Maps → search your business → Share → Copy link,
   // then append &review=1 — or use the direct short link from your GBP dashboard.
-  googleReviewUrl: 'https://www.google.com/maps/search/?api=1&query=Naturo+Group+Cleaning+Australia',
+  googleReviewUrl: 'https://g.page/r/CZxUFyLhnHLbEAE/review',
   social: {
     facebook: 'https://www.facebook.com/naturogroup',
     instagram: 'https://www.instagram.com/naturogroup/',

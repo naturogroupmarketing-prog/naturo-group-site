@@ -371,6 +371,8 @@ export const footerLocations = {
     { label: 'Lismore', href: '/cleaners-lismore' },
     { label: 'Newcastle', href: '/cleaners-newcastle' },
     { label: 'Port Macquarie', href: '/cleaners-port-macquarie' },
+    { label: 'End of Lease Cleaning Port Macquarie', href: '/end-of-lease-cleaning-port-macquarie' },
+    { label: 'NDIS Cleaning Port Macquarie', href: '/ndis-cleaning-port-macquarie' },
     { label: 'Wauchope', href: '/house-cleaning-wauchope' },
     { label: 'Lake Cathie', href: '/house-cleaning-lake-cathie' },
     { label: 'Bonny Hills', href: '/house-cleaning-bonny-hills' },
@@ -403,6 +405,8 @@ export const footerLocations = {
   Victoria: [
     { label: 'Melbourne', href: '/cleaners-melbourne' },
     { label: 'Geelong', href: '/house-cleaning-geelong' },
+    { label: 'End of Lease Cleaning Geelong', href: '/end-of-lease-cleaning-geelong' },
+    { label: 'NDIS Cleaning Geelong', href: '/ndis-cleaning-geelong' },
     { label: 'Newtown', href: '/house-cleaning-newtown-geelong' },
     { label: 'Highton', href: '/house-cleaning-highton' },
     { label: 'Belmont', href: '/house-cleaning-belmont-geelong' },

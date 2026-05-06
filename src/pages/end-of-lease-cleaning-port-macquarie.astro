@@ -1,0 +1,388 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Providers from '../components/Providers.astro';
+import { site, ctaPrimary, ctaPhone } from '../data/site';
+
+const pageUrl = `${site.url}/end-of-lease-cleaning-port-macquarie`;
+
+const faqs = [
+  {
+    q: 'How much does end of lease cleaning cost in Port Macquarie?',
+    a: 'Our Port Macquarie bond cleaning starts from $478 for a standard 1-bedroom property. Prices vary by size, condition and add-ons. Get an instant online price in under 60 seconds — no phone call needed.',
+  },
+  {
+    q: 'Do you offer a bond-back guarantee in Port Macquarie?',
+    a: 'Yes. If your property manager identifies any issue with our clean, we will return and re-clean the affected areas at no extra cost within 72 hours. Every Port Macquarie end-of-lease job is backed by this promise.',
+  },
+  {
+    q: 'What areas around Port Macquarie do you cover for end of lease cleaning?',
+    a: 'We cover Port Macquarie and the broader Hastings region — including Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Lighthouse Beach, Settlement Point, Thrumster and surrounding suburbs.',
+  },
+  {
+    q: 'Does the end of lease clean include the oven and carpets?',
+    a: 'Yes. Our standard bond clean includes a full oven clean (interior, racks and door glass), stovetop, rangehood, all bathrooms, kitchen, bedrooms, living areas, skirting boards, light fittings and window tracks. Carpet steam cleaning is available as an add-on.',
+  },
+  {
+    q: 'Do I need to be present during the clean in Port Macquarie?',
+    a: 'No — most Port Macquarie clients hand us a key or use a lockbox. We complete the clean, photograph every room and send you a summary you can share directly with your property manager.',
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: 'We recommend booking 5&ndash;7 days ahead of your vacate date. For urgent bookings, call 1300 876 472 and we will do our best to fit you in at short notice.',
+  },
+  {
+    q: 'Are your Port Macquarie cleaners police-checked and insured?',
+    a: 'Every cleaner is police-checked, identity-verified and covered by $20M public liability insurance before they step foot in a property. We never subcontract — you always get a trained Naturo Group team member.',
+  },
+  {
+    q: 'What eco-friendly products do you use?',
+    a: 'We use plant-based, non-toxic, biodegradable cleaners that are safe for pets, kids and asthma sufferers — and kind to the Hastings River and coastal environment. Tough on grime, gentle on the planet.',
+  },
+];
+
+const inclusions = [
+  {
+    group: 'Kitchen',
+    items: [
+      'Full oven clean — interior walls, racks, door glass',
+      'Rangehood filters and canopy',
+      'Stovetop and splash-back',
+      'Inside all cupboards and drawers',
+      'Wipe all benchtops and appliance exteriors',
+      'Sink, taps and fixtures scrubbed',
+      'Dishwasher interior and door seals',
+    ],
+  },
+  {
+    group: 'Bathrooms & Laundry',
+    items: [
+      'Shower, bath, toilet and basin — scrubbed and disinfected',
+      'Shower screen — soap scum and water marks removed',
+      'Grout scrubbed and mildew treated',
+      'Taps, rails and fixtures polished',
+      'Mirror cleaned streak-free',
+      'Laundry tub, tiles and machine exteriors wiped',
+    ],
+  },
+  {
+    group: 'Bedrooms & Living Areas',
+    items: [
+      'All floors vacuumed and mopped',
+      'Skirting boards wiped down',
+      'Light switches and power points cleaned',
+      'Window sills, tracks and frames cleaned',
+      'Blinds dusted or wiped (venetians included)',
+      'Ceiling fans and light fittings dusted',
+      'Inside built-in wardrobes',
+    ],
+  },
+  {
+    group: 'Add-ons Available',
+    items: [
+      'Carpet steam cleaning',
+      'External window cleaning',
+      'Garage and outdoor areas',
+      'Wall spot-cleaning',
+      'Fridge interior clean',
+    ],
+  },
+];
+
+const pricing = [
+  { size: '1 Bedroom', price: '$478' },
+  { size: '2 Bedroom', price: '$560' },
+  { size: '3 Bedroom', price: '$680' },
+  { size: '4 Bedroom', price: '$820' },
+  { size: '5 Bedroom', price: '$980' },
+];
+
+const steps = [
+  { step: '01', title: 'Get an instant price', desc: 'Answer 3 quick questions online. No phone call, no wait — you see your price in under 60 seconds.' },
+  { step: '02', title: 'We confirm your date', desc: 'Our Port Macquarie coordinator books you in and sends a reminder the day before.' },
+  { step: '03', title: 'We clean & photograph', desc: 'Our team arrives fully equipped, cleans to inspection standard and photos every room.' },
+  { step: '04', title: 'Bond back — guaranteed', desc: 'If your property manager is not satisfied, we return within 72 hours free of charge.' },
+];
+
+const suburbLinks = [
+  { name: 'Port Macquarie', slug: 'cleaners-port-macquarie' },
+  { name: 'Wauchope', slug: 'house-cleaning-wauchope' },
+  { name: 'Lake Cathie', slug: 'house-cleaning-lake-cathie' },
+  { name: 'Bonny Hills', slug: 'house-cleaning-bonny-hills' },
+  { name: 'Laurieton', slug: 'house-cleaning-laurieton' },
+  { name: 'North Haven', slug: 'house-cleaning-north-haven' },
+  { name: 'Lighthouse Beach', slug: 'house-cleaning-lighthouse-beach' },
+  { name: 'Settlement Point', slug: 'house-cleaning-settlement-point' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${pageUrl}#localbusiness`,
+    name: 'Naturo Group End of Lease Cleaning Port Macquarie',
+    description:
+      'Professional end of lease cleaning in Port Macquarie with a 72-hour bond-back guarantee. Police-checked, eco-friendly team covering Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
+    url: pageUrl,
+    telephone: site.phone,
+    email: site.email,
+    image: {
+      '@type': 'ImageObject',
+      url: `${site.url}/images/suburbs/cleaners-port-macquarie.jpg`,
+      creator: { '@type': 'Organization', name: site.name },
+      creditText: site.name,
+      copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
+      license: `${site.url}/terms-of-service`,
+      acquireLicensePage: `${site.url}/privacy-policies`,
+    },
+    priceRange: '$$$',
+    areaServed: [
+      { '@type': 'City', name: 'Port Macquarie', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+      { '@type': 'City', name: 'Wauchope', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+      { '@type': 'City', name: 'Lake Cathie', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+      { '@type': 'City', name: 'Bonny Hills', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+      { '@type': 'City', name: 'Laurieton', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+      { '@type': 'City', name: 'North Haven', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
+    ],
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '94',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '478',
+      priceCurrency: 'AUD',
+      availability: 'https://schema.org/InStock',
+      description: 'End of lease cleaning Port Macquarie from $478',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Port Macquarie Cleaning', item: `${site.url}/cleaners-port-macquarie` },
+      { '@type': 'ListItem', position: 3, name: 'End of Lease Cleaning Port Macquarie', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="End of Lease Cleaning Port Macquarie | Bond Back Guarantee | Naturo Group"
+  description="End of lease cleaning in Port Macquarie from $478. Police-checked team, 72-hr bond-back guarantee. Serving Wauchope, Lake Cathie, Bonny Hills & all of the Hastings region."
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="ph-hero">
+    <div class="ph-bg" style="background-image: url(/images/suburbs/cleaners-port-macquarie.jpg);" aria-hidden="true"></div>
+    <div class="ph-overlay" aria-hidden="true"></div>
+    <div class="container-site ph-inner">
+      <div class="ph-content">
+        <p class="ph-eyebrow">Bond cleaning &middot; Port Macquarie</p>
+        <h1 class="ph-h1">End of Lease Cleaning<br />in Port Macquarie</h1>
+        <p class="ph-tagline">72-hour bond-back guarantee. Police-checked team. Eco-friendly products.</p>
+        <div class="ph-ctas">
+          <a href={ctaPrimary.href} class="ph-btn-primary">Get an Instant Price</a>
+          <a href={ctaPhone.href} class="ph-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>{ctaPhone.text}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee banner -->
+  <section class="bg-[var(--color-navy)]">
+    <div class="container-site">
+      <div class="grid sm:grid-cols-3 gap-px bg-white/10">
+        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
+          <p class="text-3xl font-light text-white">$478</p>
+          <p class="text-sm text-[var(--color-accent-yellow)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
+        </div>
+        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
+          <p class="text-3xl font-light text-white">72hr</p>
+          <p class="text-sm text-[var(--color-accent-yellow)] mt-1 uppercase tracking-widest font-semibold">Bond-back guarantee</p>
+        </div>
+        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
+          <p class="text-3xl font-light text-white">100%</p>
+          <p class="text-sm text-[var(--color-accent-yellow)] mt-1 uppercase tracking-widest font-semibold">Eco-friendly products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro copy -->
+  <section class="bg-white">
+    <div class="container-site grid lg:grid-cols-2 gap-16 items-start">
+      <div class="space-y-5">
+        <p class="eyebrow">About this service</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light leading-snug">
+          Get your bond back &mdash; or we come back for free.
+        </h2>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          Moving out of a Port Macquarie rental is stressful enough without worrying about the clean. Our local end-of-lease team arrives with all equipment and eco-friendly products, cleans to the exact standard your property manager will inspect against, and documents every room with photos you can use in any dispute.
+        </p>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          Naturo Group is led by a registered nurse, which means our standard is clinical-grade thorough. Every cleaner is police-checked, identity-verified and trained on our detailed inclusions checklist before they work in a Port Macquarie home.
+        </p>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          And if your property manager raises any issue? We return within 72 hours at no extra cost. No disputes, no chasing. Just your bond, back.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6">
+          <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-4">Pricing guide</h3>
+          <div class="divide-y divide-[var(--color-border)]">
+            <div class="flex justify-between py-2 text-xs font-medium text-[var(--color-slate)] border-b border-[var(--color-border)]">
+              <span>Property size</span><span>From</span>
+            </div>
+            {pricing.map((r) => (
+              <div class="flex justify-between py-3">
+                <span class="text-sm text-[var(--color-slate)]">{r.size}</span>
+                <span class="text-sm font-semibold text-[var(--color-navy)]">{r.price}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-xs text-[var(--color-slate)] mt-3">Prices vary by condition, add-ons and access. Get an exact price instantly online.</p>
+          <a href={ctaPrimary.href} class="mt-4 w-full btn-primary block text-center">Get an Instant Price</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Full inclusions</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
+          Every room. Every detail. Every time.
+        </h2>
+        <p class="mt-4 text-[var(--color-slate)]">
+          Our Port Macquarie bond clean covers every area a property manager will inspect. Nothing is skipped.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {inclusions.map((group) => (
+          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
+            <h3 class="font-semibold text-[var(--color-navy)] mb-3">{group.group}</h3>
+            <ul class="space-y-2">
+              {group.items.map((item) => (
+                <li class="flex gap-2 text-sm text-[var(--color-slate)]">
+                  <svg class="w-4 h-4 text-[var(--color-accent-blue)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-white">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">How it works</p>
+        <h2 class="text-3xl text-[var(--color-navy)] font-light">Simple from start to finish</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div class="text-center space-y-3">
+            <p class="text-4xl font-light text-[var(--color-accent-blue)]">{s.step}</p>
+            <h3 class="font-semibold text-[var(--color-navy)]">{s.title}</h3>
+            <p class="text-sm text-[var(--color-slate)] leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href={ctaPrimary.href} class="btn-primary">Get an Instant Price</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Providers -->
+  <Providers />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQs -->
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site max-w-3xl">
+      <div class="text-center mb-10">
+        <p class="eyebrow mb-3">FAQs</p>
+        <h2 class="text-3xl text-[var(--color-navy)] font-light">
+          End of lease cleaning Port Macquarie &mdash; common questions
+        </h2>
+      </div>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="bg-white rounded-2xl border border-[var(--color-border)] group">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none font-medium text-[var(--color-navy)]">
+              {f.q}
+              <svg class="w-5 h-5 shrink-0 text-[var(--color-slate)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-[var(--color-slate)] leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Suburb links -->
+  <section class="bg-white">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <p class="eyebrow mb-3">Service area</p>
+        <h2 class="text-2xl text-[var(--color-navy)] font-light">
+          End of lease cleaning across the Hastings region
+        </h2>
+      </div>
+      <div class="flex flex-wrap gap-2 justify-center">
+        {suburbLinks.map((s) => (
+          <a
+            href={`/${s.slug}`}
+            class="px-4 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
+          >
+            {s.name}
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <p class="text-sm text-[var(--color-slate)] mb-4">
+          Also need NDIS or aged care cleaning in Port Macquarie?
+        </p>
+        <a href="/ndis-cleaning-port-macquarie" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline">
+          NDIS Cleaning Port Macquarie &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner />
+</Layout>

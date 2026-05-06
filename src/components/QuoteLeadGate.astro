@@ -228,42 +228,22 @@ const lc = leadCapture;
       lastFocused = document.activeElement;
       var isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
       if (isTouchDevice) {
-        // iOS Safari (and Android Chrome) forcibly focus the first text input
-        // inside role="dialog" the moment it becomes visible — bypassing any
-        // programmatic focus call and ignoring readonly alone.
-        // Triple-lock to suppress the keyboard:
-        //   1. tabindex="-1"   → removes the input from the tab/auto-focus order
-        //   2. readonly        → tells the browser no editing is possible
-        //   3. inputmode="none"→ explicitly instructs the OS to show no keyboard
-        // Then we synchronously focus the close button (a non-input element)
-        // so iOS lands there instead. All three locks are removed 500 ms later
-        // once the open animation has settled.
-        var inputs = overlay.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
-        inputs.forEach(function(inp) {
-          inp.setAttribute('data-ti', inp.getAttribute('tabindex') || '');
-          inp.setAttribute('tabindex', '-1');
-          inp.setAttribute('readonly', '');
-          inp.setAttribute('inputmode', 'none');
-        });
-        // No role="dialog" on the element — iOS Safari hooks into that attribute
-        // to auto-focus the first input. We show the modal without the role,
-        // then add it back after the keyboard-suppression window has passed.
+        // iOS Safari auto-focuses the first input inside role="dialog" the
+        // moment it becomes visible — ignoring tabindex, readonly, and
+        // inputmode individually. The only reliable fix is the HTML `inert`
+        // attribute, which removes the entire form subtree from the browser's
+        // focus-management tree. An inert element is completely unfocusable,
+        // so the virtual keyboard never appears on open. We lift `inert` after
+        // 500 ms once the animation has settled and the user is ready to type.
+        form.setAttribute('inert', '');
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
         if (closeBtn) closeBtn.focus();
         setTimeout(function() {
-          inputs.forEach(function(inp) {
-            var ti = inp.getAttribute('data-ti');
-            if (ti) inp.setAttribute('tabindex', ti);
-            else inp.removeAttribute('tabindex');
-            inp.removeAttribute('readonly');
-            inp.removeAttribute('inputmode');
-            inp.removeAttribute('data-ti');
-          });
-          // Restore dialog role now that focus is stable and keyboard is settled.
-          overlay.setAttribute('role', 'dialog');
-          overlay.setAttribute('aria-modal', 'true');
-        }, 600);
+          form.removeAttribute('inert');
+        }, 500);
       } else {
         // Desktop: show modal then focus first input so the user can type immediately.
         overlay.setAttribute('role', 'dialog');

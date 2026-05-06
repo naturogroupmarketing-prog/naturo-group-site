@@ -2581,7 +2581,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'Eco-Friendly House Cleaning Geelong | Naturo Group',
-      description: 'House cleaning in Geelong from $153. Police-checked, fully insured team across Geelong, Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price — no phone call needed.',
+      description: 'House cleaning in Geelong from $153. Police-checked, eco-friendly team across Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price.',
     },
     nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
     localFaqs: [

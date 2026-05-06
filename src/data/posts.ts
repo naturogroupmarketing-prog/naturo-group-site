@@ -823,6 +823,516 @@ export const posts: BlogPost[] = [
     ],
     related: ['non-toxic-cleaning-products-australia', 'ndis-cleaning-routine-supports-independence'],
   },
+
+  // 7. Geelong — end of lease checklist
+  {
+    slug: 'end-of-lease-cleaning-geelong-checklist',
+    category: 'End of Lease',
+    title: 'End of Lease Cleaning Geelong: The Complete Checklist [2026]',
+    excerpt:
+      'Everything Geelong property managers check at final inspection — room by room, with tips to get your full bond back.',
+    metaTitle: 'End of Lease Cleaning Geelong Checklist 2026 | Naturo Group',
+    metaDescription:
+      'The exact room-by-room checklist Geelong property managers use at final inspection. Avoid bond deductions — and find out what a professional bond clean costs in Geelong.',
+    keywords: [
+      'end of lease cleaning geelong',
+      'bond cleaning geelong checklist',
+      'bond cleaning geelong',
+      'vacate cleaning geelong',
+      'end of tenancy cleaning geelong',
+      'geelong bond back guarantee',
+    ],
+    publishedDate: '2026-05-06',
+    readMinutes: 9,
+    heroImage: '/images/hero-bathroom.jpg',
+    intro:
+      'Losing part of your bond over a missed oven clean or a dusty skirting board is one of the most frustrating things about moving out — especially when the fix would have taken 20 minutes. This checklist covers every area Geelong property managers inspect at final handover, so you can either clean it yourself or hand it to a professional with exactly the right brief.',
+    toc: [
+      { id: 'why-geelong-bond-cleans-fail', label: 'Why bond cleans fail in Geelong' },
+      { id: 'kitchen-checklist', label: 'Kitchen checklist' },
+      { id: 'bathroom-checklist', label: 'Bathrooms & laundry' },
+      { id: 'bedrooms-living', label: 'Bedrooms & living areas' },
+      { id: 'outdoor-garage', label: 'Outdoor areas & garage' },
+      { id: 'geelong-bond-clean-cost', label: 'How much does it cost in Geelong?' },
+      { id: 'diy-vs-professional', label: 'DIY vs professional' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'Why bond cleans fail in Geelong' },
+      {
+        type: 'p',
+        text: 'Geelong property managers consistently flag the same issues at final inspection: baked-on grease in the oven and rangehood, soap scum on shower glass, grout discolouration, dusty skirting boards and dirty window tracks. These are the spots tenants clean last — or skip entirely. They\'re also the spots most likely to result in a bond deduction.',
+      },
+      {
+        type: 'callout',
+        title: 'Geelong bond clean tip',
+        body: 'Don\'t clean in the order rooms are used — clean in the order a property manager inspects. They typically start at the front door and work room-by-room, finishing with the oven. If you clean the oven first and then dust the kitchen cupboards, you\'ll cover it in crumbs again.',
+      },
+      { type: 'h2', text: 'Kitchen checklist' },
+      {
+        type: 'ul',
+        items: [
+          'Oven interior — walls, base, racks and door glass (inside and out)',
+          'Rangehood — filters removed, degreased and replaced; canopy wiped',
+          'Stovetop — burners or induction surface, drip trays if applicable',
+          'Splashback — grease film removed, grout scrubbed',
+          'All benchtops — cleared and wiped including back edge against wall',
+          'Inside all cupboards and drawers — wiped, no crumbs or staining',
+          'Dishwasher — door seals, filter basket and interior wipe-down',
+          'Sink and taps — limescale removed, chrome polished',
+          'Microwave — interior and exterior',
+          'Refrigerator interior if left in property',
+          'Floors — swept, mopped and dry',
+        ],
+      },
+      { type: 'h2', text: 'Bathrooms & laundry checklist' },
+      {
+        type: 'ul',
+        items: [
+          'Shower screen — soap scum and water marks fully removed',
+          'Shower recess — tiles, grout and floor drain',
+          'Bath — if present, ring marks and taps',
+          'Toilet — bowl, seat, hinge area, cistern and behind base',
+          'Basin and taps — limescale and toothpaste residue',
+          'Mirrors — streak-free',
+          'Exhaust fan — cover removed and dusted',
+          'Towel rails and toilet roll holders',
+          'Floor — grout lines scrubbed, floor mopped',
+          'Laundry tub and taps',
+          'Washing machine lint filter and drum wipe-down',
+          'Laundry floor and behind appliances',
+        ],
+      },
+      { type: 'h2', text: 'Bedrooms & living areas checklist' },
+      {
+        type: 'ul',
+        items: [
+          'All floors — vacuumed and mopped (including under furniture if accessible)',
+          'Skirting boards — wiped, not just dusted',
+          'Light switches and power points — fingerprint marks removed',
+          'Ceiling fans — blades and motor housing dusted',
+          'Light fittings — dead insects removed, glass cleaned',
+          'Window sills, tracks and frames — inside faces',
+          'Blinds — venetians wiped slat-by-slat, roller blinds wiped down',
+          'Built-in wardrobes — shelves, hanging rod and floor',
+          'Walls — mark and scuff removal (not a full repaint — just obvious marks)',
+          'Doors, handles and door frames',
+        ],
+      },
+      { type: 'h2', text: 'Outdoor areas & garage' },
+      {
+        type: 'p',
+        text: 'Outdoor areas are often forgotten but increasingly included in Geelong tenancy agreements. Check your lease before assuming you\'re off the hook.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Garage floor — sweep and hose (oil stains may require degreaser)',
+          'Garage walls — cobwebs removed',
+          'Outdoor entertaining area — swept and hosed',
+          'BBQ — if included in inventory',
+          'Bins — emptied and hosed out',
+          'Garden — mowing and edging may be required depending on your lease',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'How much does end of lease cleaning cost in Geelong?',
+      },
+      {
+        type: 'p',
+        text: 'Geelong bond clean prices vary by property size, condition and whether add-ons like carpet steam cleaning are included. As a rough guide for 2026:',
+      },
+      {
+        type: 'ul',
+        items: [
+          '1-bedroom unit: $478–$560',
+          '2-bedroom unit: $560–$640',
+          '3-bedroom house: $680–$800',
+          '4-bedroom house: $820–$980',
+          'Carpet steam cleaning (per room): $60–$90 add-on',
+          'External windows: $80–$160 add-on depending on storey access',
+        ],
+      },
+      {
+        type: 'callout',
+        title: 'What affects the price?',
+        body: 'Condition is the main driver. A property that has been regularly cleaned throughout the tenancy will take 30–40% less time than one that hasn\'t been touched in a year. Other factors: number of bathrooms, whether the oven is heavily soiled, and access for carpet cleaners.',
+      },
+      { type: 'h2', text: 'DIY vs professional — which is right for you?' },
+      {
+        type: 'p',
+        text: 'A DIY bond clean is achievable for a small, well-maintained property where you have 2–3 days to dedicate to the job. For most Geelong tenants, a professional clean is faster, less stressful and more likely to satisfy a property manager\'s inspection — particularly for ovens, shower screens and carpets.',
+      },
+      {
+        type: 'p',
+        text: 'The key question: does the professional clean cost less than the bond deduction risk? In most cases, yes — especially when you factor in your time and the cost of re-cleaning if the first attempt fails inspection.',
+      },
+      {
+        type: 'cta',
+        heading: 'Get a Geelong bond clean quote in 60 seconds',
+        body: 'Police-checked team, 72-hour bond-back guarantee, eco-friendly products. Serving Greater Geelong and the Bellarine Peninsula.',
+        href: '/end-of-lease-cleaning-geelong',
+        label: 'See end of lease cleaning prices',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'Do Geelong property managers require a professional receipt?',
+            a: 'Most don\'t legally require a professional receipt for a general bond clean, but many Real Estate Institute of Victoria (REIV) leases do require professional carpet cleaning if the property had carpets when you moved in. Check your entry condition report.',
+          },
+          {
+            q: 'How long does a bond clean take in Geelong?',
+            a: 'A 2-bedroom unit takes 6–8 hours for a professional team. A 4-bedroom house can take 10–14 hours. DIY will typically take 1.5–2× longer without specialist products and equipment.',
+          },
+          {
+            q: 'Do I need to be present for the bond clean?',
+            a: 'No. Most Geelong clients provide a key or lockbox code. We photograph every room before and after and send you a summary you can share with your property manager.',
+          },
+          {
+            q: 'What if the property manager isn\'t satisfied?',
+            a: 'Naturo Group offers a 72-hour bond-back guarantee — if your property manager identifies an issue with our clean, we return and re-clean the affected area at no extra cost.',
+          },
+        ],
+      },
+    ],
+    related: ['end-of-lease-cleaning-checklist-australia', 'house-cleaning-cost-geelong'],
+  },
+
+  // 8. Geelong — pricing guide
+  {
+    slug: 'house-cleaning-cost-geelong',
+    category: 'Pricing',
+    title: 'How Much Does House Cleaning Cost in Geelong? [2026 Pricing Guide]',
+    excerpt:
+      'Honest 2026 pricing for regular, deep and end-of-lease cleaning across Geelong — what\'s included, what affects the price and how to compare quotes.',
+    metaTitle: 'House Cleaning Cost Geelong 2026 | Prices & Guide | Naturo Group',
+    metaDescription:
+      'How much does house cleaning cost in Geelong in 2026? Honest prices for regular, deep and bond cleans — what\'s included, what affects cost, and how to compare quotes.',
+    keywords: [
+      'house cleaning cost geelong',
+      'how much does house cleaning cost geelong',
+      'cleaning prices geelong',
+      'bond cleaning price geelong',
+      'deep clean cost geelong',
+      'geelong house cleaner price',
+    ],
+    publishedDate: '2026-05-06',
+    readMinutes: 7,
+    heroImage: '/images/hero-kitchen.jpg',
+    intro:
+      'Geelong house cleaning prices vary widely — from $38/hr for a basic regular clean to $1,200+ for a full bond clean on a large family home. This guide breaks down what you\'ll actually pay in 2026, what\'s included at each price point, and the factors that push costs up or down.',
+    toc: [
+      { id: 'regular-clean-prices', label: 'Regular clean prices' },
+      { id: 'deep-clean-prices', label: 'Deep clean prices' },
+      { id: 'end-of-lease-prices', label: 'End of lease prices' },
+      { id: 'what-affects-price', label: 'What affects the price?' },
+      { id: 'hourly-vs-flat-rate', label: 'Hourly vs flat rate' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'Regular house cleaning prices in Geelong (2026)' },
+      {
+        type: 'p',
+        text: 'A regular weekly or fortnightly clean is the most common service in Geelong. Prices depend on whether you choose hourly or flat-rate billing, and the size of your home.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Hourly rate: $38–$75/hr depending on provider and level of service',
+          '2-bedroom apartment (hourly): $114–$150 per visit',
+          '3-bedroom house (flat rate): $153–$220 per visit',
+          '4-bedroom house (flat rate): $220–$310 per visit',
+          'Fortnightly cleans: typically 10–15% more per visit than weekly',
+        ],
+      },
+      {
+        type: 'callout',
+        title: 'Weekly vs fortnightly cost in Geelong',
+        body: 'A weekly clean at $153 costs $7,956/yr. A fortnightly clean at $175 (typical uplift) costs $4,550/yr. Weekly cleaning is better value per visit and keeps your home in consistently better condition — fortnightly is the most common choice for busy Geelong families.',
+      },
+      { type: 'h2', text: 'Deep clean prices in Geelong (2026)' },
+      {
+        type: 'p',
+        text: 'A deep clean is a once-off thorough clean for homes that haven\'t been professionally cleaned recently, seasonal spring cleans, or pre-sale preparation. It covers everything in a regular clean plus inside cupboards, windows, ovens and behind appliances.',
+      },
+      {
+        type: 'ul',
+        items: [
+          '2-bedroom unit: $371–$460',
+          '3-bedroom house: $460–$580',
+          '4-bedroom house: $580–$720',
+          'Add oven clean: $60–$90',
+          'Add carpet steam cleaning per room: $60–$90',
+        ],
+      },
+      { type: 'h2', text: 'End of lease (bond) cleaning prices in Geelong (2026)' },
+      {
+        type: 'p',
+        text: 'Bond cleaning is the most thorough — and most expensive — type of residential clean. It\'s priced for condition as much as size, and includes everything a property manager will check at final inspection.',
+      },
+      {
+        type: 'ul',
+        items: [
+          '1-bedroom unit: $478–$560',
+          '2-bedroom unit: $560–$640',
+          '3-bedroom house: $680–$800',
+          '4-bedroom house: $820–$980',
+          '5-bedroom house: $980–$1,280',
+          'Carpet steam cleaning add-on: $60–$90 per room',
+        ],
+      },
+      { type: 'h2', text: 'What affects house cleaning prices in Geelong?' },
+      {
+        type: 'p',
+        text: 'The five biggest factors that affect what you\'ll pay:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Home size — more rooms and bathrooms = more time',
+          'Condition — a home not cleaned in 6+ months takes significantly longer',
+          'Service type — regular < deep clean < bond clean in terms of scope',
+          'Add-ons — oven, fridge, carpets, windows and outdoor areas all add cost',
+          'Frequency — weekly cleans cost less per visit than one-off cleans',
+        ],
+      },
+      { type: 'h2', text: 'Hourly vs flat rate — which is better for Geelong homes?' },
+      {
+        type: 'p',
+        text: 'Hourly billing means you pay for the exact time spent. It\'s better for small or well-maintained homes where the scope is limited. Flat-rate billing gives you a fixed price regardless of time — better for larger homes or when you need certainty for budgeting or rental purposes. Most Geelong families prefer flat-rate for regular cleans.',
+      },
+      {
+        type: 'cta',
+        heading: 'Get an instant price for your Geelong home',
+        body: 'Answer 3 questions and see your price in 60 seconds. No phone call, no waiting. Police-checked, eco-friendly Geelong team.',
+        href: '/house-cleaning-geelong',
+        label: 'Get an instant Geelong price',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'Are Geelong house cleaning prices higher than Melbourne?',
+            a: 'Generally slightly lower — Geelong has a lower cost of living and less travel time between jobs for cleaners. You can expect to pay 5–15% less than Melbourne inner-suburb rates for equivalent service.',
+          },
+          {
+            q: 'Should I tip my Geelong cleaner?',
+            a: 'Tipping is not expected in Australia, but it is always appreciated for exceptional work. A kind note or a Google review is equally valued by small cleaning businesses.',
+          },
+          {
+            q: 'How do I compare quotes from different Geelong cleaners?',
+            a: 'Compare the scope, not just the price. Ask: is GST included? Are products and equipment supplied? Is there a satisfaction guarantee? Is the team police-checked and insured? A $100 clean with no insurance and borrowed equipment is not the same service as a $153 clean from a fully insured, police-checked team.',
+          },
+          {
+            q: 'Does Naturo Group include cleaning products in the price?',
+            a: 'Yes. We supply all eco-friendly, non-toxic cleaning products and all equipment for every job. You don\'t need to provide anything.',
+          },
+        ],
+      },
+    ],
+    related: ['end-of-lease-cleaning-geelong-checklist', 'how-to-clean-oven-grease-naturally'],
+  },
+
+  // 9. Geelong — NDIS cleaning guide
+  {
+    slug: 'ndis-cleaning-geelong-guide',
+    category: 'NDIS & Aged Care',
+    title: 'NDIS Cleaning in Geelong: What Support Participants Need to Know',
+    excerpt:
+      'How NDIS cleaning funding works in Geelong, what\'s covered, how to claim it and what to look for in a provider.',
+    metaTitle: 'NDIS Cleaning Geelong Guide 2026 | Naturo Group',
+    metaDescription:
+      'How NDIS cleaning works in Geelong — funding types, what\'s covered, line item codes and how to choose a provider. Guide for Geelong NDIS participants and support coordinators.',
+    keywords: [
+      'ndis cleaning geelong',
+      'ndis cleaners geelong',
+      'ndis home cleaning geelong',
+      'ndis support coordinator geelong cleaning',
+      'ndis daily living cleaning geelong',
+    ],
+    publishedDate: '2026-05-06',
+    readMinutes: 8,
+    heroImage: '/images/hero-bathroom.jpg',
+    intro:
+      'NDIS cleaning is one of the most misunderstood supports in the scheme. Many Geelong participants don\'t realise they can use their Core budget to pay for professional home cleaning — or they\'re unsure which line item to use, how to claim it, or what to look for in a provider. This guide covers all of it.',
+    toc: [
+      { id: 'is-cleaning-covered', label: 'Is cleaning covered by NDIS?' },
+      { id: 'funding-types', label: 'Plan-managed, self-managed & agency-managed' },
+      { id: 'what-to-expect', label: 'What a Geelong NDIS clean looks like' },
+      { id: 'choosing-provider', label: 'Choosing a provider in Geelong' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'Is home cleaning covered by the NDIS?' },
+      {
+        type: 'p',
+        text: 'Yes — in most cases. Home cleaning falls under Core Supports, specifically Assistance with Daily Life. The relevant line item is 01_011_0120_1_1 (Assistance with Daily Life — standard). The key eligibility requirement is that the disability or condition makes it difficult or impossible for the participant to perform household tasks independently.',
+      },
+      {
+        type: 'callout',
+        title: 'Important',
+        body: 'NDIS funding for cleaning must be included in your plan. If it\'s not currently funded, speak with your Local Area Coordinator (LAC) or Support Coordinator about including household tasks in your next plan review.',
+      },
+      { type: 'h2', text: 'How funding works for Geelong participants' },
+      {
+        type: 'p',
+        text: 'There are three plan management types, and each works slightly differently for paying for cleaning:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Plan-managed: Your plan manager pays the provider directly from your NDIS funds. You engage the cleaner, they invoice your plan manager — you don\'t handle the money.',
+          'Self-managed: You pay the cleaner directly (e.g. by bank transfer) and claim the cost back from the NDIS portal using your myplace account. Keep all receipts.',
+          'Agency-managed (NDIA-managed): The NDIA pays registered providers directly. You must use a registered NDIS provider. Check your provider\'s registration status.',
+        ],
+      },
+      { type: 'h2', text: 'What a Geelong NDIS home clean looks like' },
+      {
+        type: 'p',
+        text: 'A good NDIS clean in Geelong is tailored to the participant\'s specific needs — not a one-size-fits-all service. The cleaner will typically:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Complete an initial consultation to understand the participant\'s priorities and sensitivities',
+          'Follow a personalised task list agreed with the participant or their support coordinator',
+          'Use fragrance-conscious, non-toxic products appropriate for participants with sensory sensitivities, respiratory conditions or compromised immune systems',
+          'Arrive at a consistent time to support routine and predictability',
+          'Provide invoices and reports in the format required by the plan manager',
+        ],
+      },
+      { type: 'h2', text: 'How to choose an NDIS cleaning provider in Geelong' },
+      {
+        type: 'p',
+        text: 'Not all cleaning companies in Geelong are equipped to work with NDIS participants. Here\'s what to check before engaging a provider:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Police checks — all staff should be police-checked and identity-verified',
+          'Training in disability and dignity of care — not just general cleaning',
+          'Experience with NDIS invoicing and plan manager communication',
+          'Non-toxic, fragrance-conscious products — critical for participants with health sensitivities',
+          'Consistent cleaners — not rotating casual staff from a roster',
+          'Public liability insurance — minimum $10M, ideally $20M',
+        ],
+      },
+      {
+        type: 'cta',
+        heading: 'Naturo Group — NDIS cleaning across Greater Geelong',
+        body: 'Nurse-led, police-checked team. Plan manager invoicing. Eco-friendly, fragrance-conscious products. Serving Geelong, Newtown, Highton, Belmont, Lara, Leopold and the Bellarine Peninsula.',
+        href: '/ndis-cleaning-geelong',
+        label: 'Learn about our NDIS cleaning service',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'What NDIS line item is used for home cleaning in Geelong?',
+            a: 'Home cleaning is typically funded under Core Supports — Assistance with Daily Life, line item 01_011_0120_1_1. Your support coordinator or plan manager can confirm the correct line item for your specific plan.',
+          },
+          {
+            q: 'Does Naturo Group need to be a registered NDIS provider?',
+            a: 'For plan-managed and self-managed participants, you can use any provider — registration is not required. For agency-managed (NDIA-managed) participants, you must use a registered provider. Contact us to discuss your funding type.',
+          },
+          {
+            q: 'How often can I use NDIS funding for cleaning in Geelong?',
+            a: 'The frequency depends on what is funded in your plan. Most participants receive weekly or fortnightly cleaning. Your plan sets the support budget — your plan manager or LAC can advise on what frequency your current funding supports.',
+          },
+          {
+            q: 'Can my support coordinator organise NDIS cleaning for me in Geelong?',
+            a: 'Yes. Many Geelong support coordinators refer participants to us directly. We provide a service agreement, invoicing details and any reports your support coordinator needs to manage the funding.',
+          },
+        ],
+      },
+    ],
+    related: ['ndis-cleaning-routine-supports-independence', 'house-cleaning-cost-geelong'],
+  },
+
+  // 10. Geelong — eco-friendly cleaning
+  {
+    slug: 'eco-friendly-cleaning-geelong',
+    category: 'Eco-Friendly',
+    title: 'Eco-Friendly House Cleaning in Geelong: Why It Matters Near Corio Bay',
+    excerpt:
+      'Why eco-friendly cleaning products matter in Geelong homes — for your family, your pets and the Corio Bay and Bellarine waterways.',
+    metaTitle: 'Eco-Friendly Cleaning Geelong | Safe for Corio Bay | Naturo Group',
+    metaDescription:
+      'Why eco-friendly house cleaning matters in Geelong — for families, pets and the Corio Bay catchment. What to look for in a green cleaning service and why we choose non-toxic products.',
+    keywords: [
+      'eco friendly cleaning geelong',
+      'green cleaning service geelong',
+      'non toxic cleaning geelong',
+      'natural cleaning products geelong',
+      'eco house cleaning geelong',
+      'corio bay safe cleaning',
+    ],
+    publishedDate: '2026-05-06',
+    readMinutes: 6,
+    heroImage: '/images/hero-bathroom.jpg',
+    intro:
+      'Geelong sits on the shores of Corio Bay — a waterway that connects directly to Port Phillip Bay and Bass Strait. What goes down Geelong drains eventually reaches those waters. For families with young children, pets or anyone sensitive to chemical exposure, the products used inside your home matter far more than most cleaning companies will tell you.',
+    sections: [
+      { type: 'h2', text: 'The problem with conventional cleaning products' },
+      {
+        type: 'p',
+        text: 'Most conventional cleaning products contain petrochemicals, synthetic fragrances, phosphates and bleach derivatives. When washed down Geelong drains, these compounds enter the stormwater and sewage systems that feed into Corio Bay. The environmental impact is real — phosphates in particular cause algal blooms that deplete oxygen and harm aquatic life.',
+      },
+      {
+        type: 'p',
+        text: 'Inside the home, the story is equally concerning. Conventional multi-surface sprays, bathroom cleaners and floor products off-gas volatile organic compounds (VOCs) that linger in the air for hours. For children, pets, asthma sufferers and people with compromised immune systems — which includes many NDIS participants and aged care recipients — this is a genuine health consideration.',
+      },
+      { type: 'h2', text: 'What makes a cleaning product genuinely eco-friendly?' },
+      {
+        type: 'ul',
+        items: [
+          'Plant-based surfactants (not petroleum-derived)',
+          'Readily biodegradable — breaks down in water within 28 days',
+          'Phosphate-free — no contribution to waterway eutrophication',
+          'Fragrance-free or naturally fragranced (not synthetic parfum)',
+          'Not tested on animals',
+          'Concentrated formula — less packaging waste per clean',
+          'No chlorine bleach, ammonia or formaldehyde',
+        ],
+      },
+      {
+        type: 'callout',
+        title: 'What to check on the label',
+        body: 'Look for GECA (Good Environmental Choice Australia) certification, Australian-made plant-based formulas, or the EU Ecolabel for imported products. Avoid anything listing "parfum", "sodium hypochlorite" (bleach) or "alkylphenol ethoxylates" as ingredients.',
+      },
+      { type: 'h2', text: 'Eco-friendly cleaning in practice: what Naturo Group uses' },
+      {
+        type: 'p',
+        text: 'Every Naturo Group clean in Geelong uses plant-based, non-toxic, biodegradable cleaning products. Our formulas are free of phosphates, chlorine bleach, synthetic fragrances and petrochemicals. We use concentrated products to minimise packaging, and microfibre cloths that clean effectively with less product overall.',
+      },
+      {
+        type: 'p',
+        text: 'For NDIS participants, aged care recipients and families with sensory sensitivities or respiratory conditions, we use fragrance-free formulas by default. We never substitute conventional products — not to cut costs, not to clean faster, not for any reason.',
+      },
+      { type: 'h2', text: 'Is eco-friendly cleaning as effective as conventional cleaning?' },
+      {
+        type: 'p',
+        text: 'Yes — with the right products and technique. Plant-based surfactants break down grease and grime just as effectively as petroleum-based ones; they just work through chemistry rather than brute chemical force. The difference is what happens afterwards: biodegradable products break down harmlessly in water; conventional chemicals persist.',
+      },
+      {
+        type: 'p',
+        text: 'For heavily soiled surfaces — baked-on oven grease, mildewed grout, hard-water scale — we use targeted application, dwell time and mechanical action rather than stronger chemicals. It takes more skill, but produces the same result without the environmental and health trade-offs.',
+      },
+      {
+        type: 'cta',
+        heading: 'Book an eco-friendly clean for your Geelong home',
+        body: 'Plant-based products, police-checked team, 100% satisfaction guaranteed. Serving Greater Geelong and the Bellarine Peninsula.',
+        href: '/house-cleaning-geelong',
+        label: 'Book a Geelong house clean',
+      },
+    ],
+    related: ['non-toxic-cleaning-products-australia', 'house-cleaning-cost-geelong'],
+  },
 ];
 
 export const postsBySlug: Record<string, BlogPost> = Object.fromEntries(

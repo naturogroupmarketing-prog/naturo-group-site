@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Providers from '../components/Providers.astro';
+import { site, ctaPrimary, ctaPhone } from '../data/site';
+
+const pageUrl = `${site.url}/ndis-cleaning-geelong`;
+
+const faqs = [
+  {
+    q: 'Does Naturo Group work with NDIS plan managers in Geelong?',
+    a: 'Yes. We work with plan-managed, self-managed and agency-managed NDIS participants across Greater Geelong and the Bellarine Peninsula. We provide detailed invoices and reports in the format your plan manager requires.',
+  },
+  {
+    q: 'How do I fund NDIS cleaning in Geelong through my plan?',
+    a: 'NDIS cleaning falls under Core Supports — Assistance with Daily Life (line item 01). If you are self-managed, you pay us directly and we provide a receipt for your records. If you are plan-managed, we invoice your plan manager directly. NDIA-managed participants should check with their Local Area Coordinator.',
+  },
+  {
+    q: 'What areas of Geelong do you cover for NDIS cleaning?',
+    a: 'We service all of Greater Geelong and the Bellarine — including Geelong CBD, Newtown, Highton, Belmont, Geelong West, Lara, Leopold, Ocean Grove, Torquay, Barwon Heads, Armstrong Creek, Grovedale, Waurn Ponds and Mount Duneed.',
+  },
+  {
+    q: 'Will I have the same cleaner each visit?',
+    a: 'We match you with a regular Geelong team member wherever possible. Consistency matters enormously for participants who benefit from familiar routines and faces. If your regular cleaner is unavailable, we always notify you in advance.',
+  },
+  {
+    q: 'Are your cleaners trained to work with people with disability?',
+    a: 'Yes. Our approach is shaped by founder Anna Biram\'s registered nursing background — our team is trained in dignity of care, patient communication, infection control and adapting to the specific needs of each participant.',
+  },
+  {
+    q: 'What eco-friendly products do you use in NDIS participants\' homes?',
+    a: 'All our products are plant-based, non-toxic and fragrance-conscious — safe for participants with sensory sensitivities, respiratory conditions, allergies or compromised immune systems. We never use harsh chemical cleaners.',
+  },
+  {
+    q: 'Can you also help with aged care cleaning in Geelong?',
+    a: 'Yes. We work with My Aged Care providers and Home Care Package recipients across Geelong. Aged care and NDIS cleaning can be combined under a single service agreement if needed.',
+  },
+  {
+    q: 'How do I get started with NDIS cleaning in Geelong?',
+    a: 'Call 1300 876 472 or complete our online enquiry. We\'ll confirm your funding type, agree on a cleaning schedule and frequency that suits your plan, and send a service agreement for you or your plan manager to sign.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${pageUrl}#localbusiness`,
+    name: 'Naturo Group — NDIS Cleaning Geelong',
+    description:
+      'NDIS cleaning services in Geelong for plan-managed, self-managed and agency-managed participants. Police-checked, nurse-led team using eco-friendly products. Serving Greater Geelong and the Bellarine Peninsula.',
+    url: pageUrl,
+    telephone: site.phone,
+    email: site.email,
+    image: {
+      '@type': 'ImageObject',
+      url: `${site.url}/images/suburbs/house-cleaning-geelong.jpg`,
+      creator: { '@type': 'Organization', name: site.name },
+      creditText: site.name,
+      copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
+      license: `${site.url}/terms-of-service`,
+      acquireLicensePage: `${site.url}/privacy-policies`,
+    },
+    priceRange: '$$',
+    areaServed: [
+      { '@type': 'City', name: 'Geelong', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Newtown', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Highton', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Belmont', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Geelong West', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Lara', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Leopold', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Armstrong Creek', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+    ],
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.7',
+      reviewCount: '127',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Geelong Cleaning', item: `${site.url}/house-cleaning-geelong` },
+      { '@type': 'ListItem', position: 3, name: 'NDIS Cleaning Geelong', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="NDIS Cleaning Geelong | Plan-Managed & Self-Managed | Naturo Group"
+  description="NDIS cleaning in Geelong for plan-managed and self-managed participants. Nurse-led, police-checked team. Eco-friendly products. Serving Greater Geelong & the Bellarine."
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="ph-hero">
+    <div class="ph-bg" style="background-image: url(/images/suburbs/house-cleaning-geelong.jpg);" aria-hidden="true"></div>
+    <div class="ph-overlay" aria-hidden="true"></div>
+    <div class="container-site ph-inner">
+      <div class="ph-content">
+        <p class="ph-eyebrow">NDIS cleaning · Geelong</p>
+        <h1 class="ph-h1">NDIS Cleaning Services<br />in Geelong</h1>
+        <p class="ph-tagline">Plan-managed and self-managed welcome. Nurse-led. Police-checked. Eco-friendly.</p>
+        <div class="ph-ctas">
+          <a href={ctaPrimary.href} class="ph-btn-primary">Make an Enquiry</a>
+          <a href={ctaPhone.href} class="ph-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>{ctaPhone.text}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="bg-[var(--color-navy)]">
+    <div class="container-site">
+      <div class="grid sm:grid-cols-4 gap-px bg-white/10">
+        {[
+          { label: 'Nurse-led team' },
+          { label: 'Plan manager invoicing' },
+          { label: 'Eco-friendly products' },
+          { label: 'Police-checked' },
+        ].map((s) => (
+          <div class="bg-[var(--color-navy)] px-6 py-5 text-center">
+            <p class="text-sm text-[#FEB91C] uppercase tracking-widest font-semibold">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="bg-white">
+    <div class="container-site grid lg:grid-cols-2 gap-16 items-start">
+      <div class="space-y-5">
+        <p class="eyebrow">About this service</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light leading-snug">
+          NDIS cleaning in Geelong, led by a registered nurse.
+        </h2>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          Naturo Group was founded by Anna Biram, a registered nurse who understands that a clean home isn't just about appearances — it's about health, independence and dignity. For NDIS participants across Geelong and the Bellarine, we bring that clinical perspective into every clean.
+        </p>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          We work with plan-managed, self-managed and agency-managed participants. Our team is trained in dignity of care, communication with participants who have complex needs, infection control and fragrance-conscious cleaning — because we know that what goes into a home matters as much as what comes out of it.
+        </p>
+        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
+          We handle all paperwork — detailed invoices formatted for your plan manager, care notes on request and any reports your support coordinator needs. You just focus on living in a clean, comfortable home.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6 space-y-4">
+          <h3 class="text-lg font-semibold text-[var(--color-navy)]">What's included</h3>
+          <ul class="space-y-2">
+            {[
+              'Kitchen — benches, appliances, sink and floors',
+              'Bathrooms — toilet, shower, basin and mirrors',
+              'Vacuuming and mopping all floors',
+              'Dusting surfaces and light fittings',
+              'Emptying bins and replacing liners',
+              'Customised task list for your specific needs',
+              'Non-toxic, fragrance-conscious products throughout',
+              'Consistent regular cleaner where possible',
+              'Plan manager invoicing and receipts',
+              'Care notes and reports on request',
+            ].map((item) => (
+              <li class="flex gap-2 text-sm text-[var(--color-slate)]">
+                <svg class="w-4 h-4 text-[var(--color-accent-blue)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href={ctaPrimary.href} class="w-full btn-primary block text-center mt-2">Make an Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How funding works -->
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Funding</p>
+        <h2 class="text-3xl text-[var(--color-navy)] font-light">How NDIS funding works for cleaning</h2>
+        <p class="mt-4 text-[var(--color-slate)]">
+          NDIS cleaning is funded under <strong>Core Supports — Assistance with Daily Life</strong>. Here's how it works for each plan type.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          {
+            type: 'Plan-managed',
+            desc: 'We invoice your plan manager directly. You don\'t handle the money — just let us know who your plan manager is and we take care of the rest.',
+          },
+          {
+            type: 'Self-managed',
+            desc: 'You pay us directly and we provide a detailed receipt and tax invoice for your NDIS records. Simple and flexible.',
+          },
+          {
+            type: 'Agency-managed',
+            desc: 'Check with your Local Area Coordinator or Support Coordinator. We can provide a quote and service agreement for NDIA approval.',
+          },
+        ].map((f) => (
+          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
+            <h3 class="font-semibold text-[var(--color-navy)] mb-2">{f.type}</h3>
+            <p class="text-sm text-[var(--color-slate)] leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Providers -->
+  <Providers />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- FAQs -->
+  <section class="bg-[var(--color-bg-pale)]">
+    <div class="container-site max-w-3xl">
+      <div class="text-center mb-10">
+        <p class="eyebrow mb-3">FAQs</p>
+        <h2 class="text-3xl text-[var(--color-navy)] font-light">
+          NDIS cleaning Geelong — common questions
+        </h2>
+      </div>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="bg-white rounded-2xl border border-[var(--color-border)] group">
+            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none font-medium text-[var(--color-navy)]">
+              {f.q}
+              <svg class="w-5 h-5 shrink-0 text-[var(--color-slate)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-[var(--color-slate)] leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Suburb links -->
+  <section class="bg-white">
+    <div class="container-site">
+      <div class="text-center mb-8">
+        <p class="eyebrow mb-3">Service area</p>
+        <h2 class="text-2xl text-[var(--color-navy)] font-light">
+          NDIS cleaning across Greater Geelong
+        </h2>
+      </div>
+      <div class="flex flex-wrap gap-2 justify-center">
+        {[
+          { name: 'Geelong CBD', slug: 'house-cleaning-geelong' },
+          { name: 'Newtown', slug: 'house-cleaning-newtown-geelong' },
+          { name: 'Highton', slug: 'house-cleaning-highton' },
+          { name: 'Belmont', slug: 'house-cleaning-belmont-geelong' },
+          { name: 'Geelong West', slug: 'house-cleaning-geelong-west' },
+          { name: 'Lara', slug: 'house-cleaning-lara' },
+          { name: 'Leopold', slug: 'house-cleaning-leopold' },
+          { name: 'Ocean Grove', slug: 'house-cleaning-ocean-grove' },
+          { name: 'Torquay', slug: 'house-cleaning-torquay' },
+          { name: 'Barwon Heads', slug: 'house-cleaning-barwon-heads' },
+          { name: 'Armstrong Creek', slug: 'house-cleaning-armstrong-creek' },
+          { name: 'Grovedale', slug: 'house-cleaning-grovedale' },
+        ].map((s) => (
+          <a
+            href={`/${s.slug}`}
+            class="px-4 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
+          >
+            {s.name}
+          </a>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-sm text-[var(--color-slate)] mb-3">Also see our other specialist services in Geelong:</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="/end-of-lease-cleaning-geelong" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline">End of Lease Cleaning Geelong</a>
+          <span class="text-[var(--color-border)]">·</span>
+          <a href="/services/aged-care-cleaning" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline">Aged Care Cleaning</a>
+          <span class="text-[var(--color-border)]">·</span>
+          <a href="/services/veterans-cleaning" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline">Veterans (DVA) Cleaning</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+  <CTABanner />
+</Layout>
+
+<style>
+  .ph-hero { position: relative; overflow: hidden; padding-block: 0; }
+  .ph-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .ph-overlay {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(5, 170, 232, 0) 81%);
+    opacity: 0.91; pointer-events: none;
+  }
+  .ph-inner {
+    position: relative; z-index: 1;
+    height: clamp(560px, 76vh, 720px);
+    padding-block: clamp(48px, 8vh, 96px);
+    display: flex; align-items: center;
+  }
+  @media (max-width: 640px) {
+    .ph-inner { height: min(600px, 84dvh); padding-block: 36px; }
+  }
+  .ph-content { width: 100%; max-width: 800px; }
+  .ph-eyebrow {
+    font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: #FEB91C; margin: 0 0 14px;
+  }
+  .ph-h1 {
+    font-family: "Poppins", sans-serif; font-weight: 300;
+    font-size: clamp(28px, 4.8vw, 60px); line-height: 1.08;
+    letter-spacing: -0.015em; color: #ffffff; margin: 0;
+  }
+  .ph-tagline {
+    font-family: "Poppins", sans-serif; font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 20px); line-height: 1.5;
+    color: #FEB91C; margin-top: 16px; letter-spacing: 0.005em;
+  }
+  .ph-ctas {
+    margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  }
+  @media (max-width: 500px) { .ph-ctas { flex-direction: column; align-items: stretch; } }
+  .ph-btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: #3a5dff; color: #ffffff; border: 1px solid #3a5dff;
+    border-radius: 6px; padding: 14px 26px; font-size: 14px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; letter-spacing: 0.01em;
+    min-height: 46px; box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    text-decoration: none; transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .ph-btn-primary:hover {
+    background-color: #2548f0; border-color: #2548f0;
+    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4); transform: translateY(-1px);
+  }
+  .ph-btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06); color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75); backdrop-filter: blur(2px);
+    border-radius: 6px; padding: 13px 24px; font-size: 15px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; min-height: 46px;
+    text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .ph-btn-secondary svg { flex-shrink: 0; }
+  .ph-btn-secondary:hover { background-color: #ffffff; color: #1C244B; border-color: #ffffff; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

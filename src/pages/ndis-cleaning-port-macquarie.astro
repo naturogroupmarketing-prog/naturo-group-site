@@ -1,22 +1,68 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ServiceHero from '../components/ServiceHero.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import CTABanner from '../components/CTABanner.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import ServiceInclusions from '../components/ServiceInclusions.astro';
+import Features from '../components/Features.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Providers from '../components/Providers.astro';
-import { site, ctaPrimary, ctaPhone } from '../data/site';
+import FAQ from '../components/FAQ.astro';
+import AppPromo from '../components/AppPromo.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site, ctaPrimary } from '../data/site';
 
 const pageUrl = `${site.url}/ndis-cleaning-port-macquarie`;
 
-const faqs = [
+const introBody = [
+  'NATURO GROUP supports NDIS participants across Port Macquarie and the wider Hastings region with everyday cleaning so home stays comfortable, safe and easy to live in. We work with plan-managed and self-managed participants every week, with a trained team that aims for consistency — because familiar faces matter.',
+  'We handle invoicing and reporting direct to your plan manager or support coordinator so you don\'t have the paperwork. Note: we are not currently a registered NDIS provider, so agency-managed (NDIA-managed) funding cannot be used.',
+  'Our plant-based, fragrance-conscious products are chosen specifically for participants with sensory sensitivities, respiratory conditions, allergies or compromised immune systems. We never use harsh chemical cleaners in our participants\' homes.',
+];
+
+const introStats = [
+  { num: 'NDIS', label: 'Plan & self-managed welcome' },
+  { num: '100%', label: 'Non-toxic products' },
+  { num: '100%', label: 'Police-checked team' },
+];
+
+const inclusions = [
+  {
+    group: 'Kitchen & living',
+    items: [
+      'Wipe benches, splashbacks and cabinet fronts',
+      'Clean stovetop, microwave and sink',
+      'Vacuum and mop floors',
+      'Empty bins and replace liners',
+    ],
+  },
+  {
+    group: 'Bathrooms & bedrooms',
+    items: [
+      'Disinfect basins, showers and toilets',
+      'Wipe mirrors, tiles and fittings',
+      'Change linen on request',
+      'Dust surfaces and tidy rooms',
+    ],
+  },
+  {
+    group: 'Plan support',
+    items: [
+      'Direct invoicing to plan managers',
+      'Detailed service notes on request',
+      'Flexible scheduling around appointments',
+      'Police-checked, fully insured cleaners',
+    ],
+  },
+];
+
+const portMacFaqs = [
   {
     q: 'Does Naturo Group work with NDIS plan managers in Port Macquarie?',
-    a: 'Yes. We work with plan-managed, self-managed and agency-managed NDIS participants across Port Macquarie and the Hastings region. We provide detailed invoices and reports in the format your plan manager requires.',
+    a: 'Yes. We work with plan-managed and self-managed NDIS participants across Port Macquarie and the Hastings region. We provide detailed invoices and reports in the format your plan manager requires.',
   },
   {
     q: 'How do I fund NDIS cleaning in Port Macquarie through my plan?',
-    a: 'NDIS cleaning falls under Core Supports — Assistance with Daily Life (line item 01). If you are self-managed, you pay us directly and we provide a receipt for your records. If you are plan-managed, we invoice your plan manager directly. NDIA-managed participants should check with their Local Area Coordinator.',
+    a: 'NDIS cleaning falls under Core Supports — Assistance with Daily Life (line item 01). If you are self-managed, you pay us directly and we provide a receipt for your records. If you are plan-managed, we invoice your plan manager directly. Note: we are not a registered NDIS provider, so agency-managed (NDIA-managed) funding cannot currently be used.',
   },
   {
     q: 'What areas around Port Macquarie do you cover for NDIS cleaning?',
@@ -51,7 +97,7 @@ const schema = [
     '@id': `${pageUrl}#localbusiness`,
     name: 'Naturo Group — NDIS Cleaning Port Macquarie',
     description:
-      'NDIS cleaning services in Port Macquarie for plan-managed, self-managed and agency-managed participants. Police-checked, trained team using eco-conscious products. Serving Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
+      'NDIS cleaning services in Port Macquarie for plan-managed and self-managed participants. Police-checked, trained team using eco-conscious products. Serving Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
     url: pageUrl,
     telephone: site.phone,
     email: site.email,
@@ -99,7 +145,7 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
+    mainEntity: portMacFaqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -113,7 +159,7 @@ const schema = [
   description="NDIS cleaning in Port Macquarie for plan-managed and self-managed participants. Police-checked, trained team. Eco-conscious products. Serving Port Macquarie & the Hastings region."
   schema={schema}
 >
-  <!-- Hero -->
+  <!-- 1. Hero -->
   <ServiceHero
     eyebrow="NDIS cleaning · Port Macquarie"
     heading="NDIS Cleaning Services<br />in Port Macquarie"
@@ -121,138 +167,89 @@ const schema = [
     bg="/images/suburbs/cleaners-port-macquarie.jpg"
   />
 
-  <!-- Trust bar -->
-  <section class="bg-[var(--color-navy)]">
-    <div class="container-site">
-      <div class="grid sm:grid-cols-4 gap-px bg-white/10">
-        <div class="bg-[var(--color-navy)] px-6 py-5 text-center">
-          <p class="text-sm text-[#FEB91C] uppercase tracking-widest font-semibold">Fully insured</p>
-        </div>
-        <div class="bg-[var(--color-navy)] px-6 py-5 text-center">
-          <p class="text-sm text-[#FEB91C] uppercase tracking-widest font-semibold">Plan manager invoicing</p>
-        </div>
-        <div class="bg-[var(--color-navy)] px-6 py-5 text-center">
-          <p class="text-sm text-[#FEB91C] uppercase tracking-widest font-semibold">Eco-friendly products</p>
-        </div>
-        <div class="bg-[var(--color-navy)] px-6 py-5 text-center">
-          <p class="text-sm text-[#FEB91C] uppercase tracking-widest font-semibold">Police-checked</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 2. Intro -->
+  <ServiceIntro
+    kicker="About this service"
+    heading="Cleaning that supports your independence in Port Macquarie."
+    body={introBody}
+    stats={introStats}
+  />
 
-  <!-- Intro -->
-  <section class="bg-white">
-    <div class="container-site grid lg:grid-cols-2 gap-16 items-start">
-      <div class="space-y-5">
-        <p class="eyebrow">About this service</p>
-        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light leading-snug">
-          NDIS cleaning in Port Macquarie, delivered with care.
+  <!-- 3. What's included -->
+  <ServiceInclusions
+    heading="Everything your home needs, every visit."
+    sub="Our Port Macquarie NDIS cleaning covers all the essentials — tailored to your plan goals and your home."
+    groups={inclusions}
+  />
+
+  <!-- 4. Funding types -->
+  <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
+        <p class="eyebrow" style="margin-bottom: 12px;">Funding</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 16px;">
+          How NDIS funding works for cleaning
         </h2>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          Naturo Group was founded by Anna Biram, a registered nurse who understands that a clean home is about more than appearances &mdash; it is about health, independence and dignity. For NDIS participants across Port Macquarie and the Hastings region, we bring that clinical perspective into every clean.
-        </p>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          We work with plan-managed, self-managed and agency-managed participants. Our team is trained in dignity of care, communication with participants who have complex needs, infection control and fragrance-conscious cleaning &mdash; because we know that what goes into a home matters as much as what comes out of it.
-        </p>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          We handle all paperwork &mdash; detailed invoices formatted for your plan manager, care notes on request and any reports your support coordinator needs. You just focus on living in a clean, comfortable home.
+        <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
+          NDIS cleaning is funded under <strong>Core Supports — Assistance with Daily Life</strong>. Here's how each plan type works.
         </p>
       </div>
-      <div class="space-y-4">
-        <div class="rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6 space-y-4">
-          <h3 class="text-lg font-semibold text-[var(--color-navy)]">What's included</h3>
-          <ul class="space-y-2">
-            {[
-              'Kitchen — benches, appliances, sink and floors',
-              'Bathrooms — toilet, shower, basin and mirrors',
-              'Vacuuming and mopping all floors',
-              'Dusting surfaces and light fittings',
-              'Emptying bins and replacing liners',
-              'Customised task list for your specific needs',
-              'Non-toxic, fragrance-conscious products throughout',
-              'Consistent regular cleaner where possible',
-              'Plan manager invoicing and receipts',
-              'Care notes and reports on request',
-            ].map((item) => (
-              <li class="flex gap-2 text-sm text-[var(--color-slate)]">
-                <svg class="w-4 h-4 text-[var(--color-accent-blue)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a href={ctaPrimary.href} class="w-full btn-primary block text-center mt-2">Make an Enquiry</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How funding works -->
-  <section class="bg-[var(--color-bg-pale)]">
-    <div class="container-site">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <p class="eyebrow mb-3">Funding</p>
-        <h2 class="text-3xl text-[var(--color-navy)] font-light">How NDIS funding works for cleaning</h2>
-        <p class="mt-4 text-[var(--color-slate)]">
-          NDIS cleaning is funded under <strong>Core Supports &mdash; Assistance with Daily Life</strong>. Here's how it works for each plan type.
-        </p>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
-          <h3 class="font-semibold text-[var(--color-navy)] mb-2">Plan-managed</h3>
-          <p class="text-sm text-[var(--color-slate)] leading-relaxed">We invoice your plan manager directly. You don't handle the money &mdash; just let us know who your plan manager is and we take care of the rest.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
-          <h3 class="font-semibold text-[var(--color-navy)] mb-2">Self-managed</h3>
-          <p class="text-sm text-[var(--color-slate)] leading-relaxed">You pay us directly and we provide a detailed receipt and tax invoice for your NDIS records. Simple and flexible.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
-          <h3 class="font-semibold text-[var(--color-navy)] mb-2">Agency-managed</h3>
-          <p class="text-sm text-[var(--color-slate)] leading-relaxed">Check with your Local Area Coordinator or Support Coordinator. We can provide a quote and service agreement for NDIA approval.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Providers -->
-  <Providers />
-
-  <!-- Testimonials -->
-  <Testimonials />
-
-  <!-- FAQs -->
-  <section class="bg-[var(--color-bg-pale)]">
-    <div class="container-site max-w-3xl">
-      <div class="text-center mb-10">
-        <p class="eyebrow mb-3">FAQs</p>
-        <h2 class="text-3xl text-[var(--color-navy)] font-light">
-          NDIS cleaning Port Macquarie &mdash; common questions
-        </h2>
-      </div>
-      <div class="space-y-3">
-        {faqs.map((f) => (
-          <details class="bg-white rounded-2xl border border-[var(--color-border)] group">
-            <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none font-medium text-[var(--color-navy)]">
-              {f.q}
-              <svg class="w-5 h-5 shrink-0 text-[var(--color-slate)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <p class="px-6 pb-5 text-[var(--color-slate)] leading-relaxed">{f.a}</p>
-          </details>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        {[
+          {
+            type: 'Plan-managed',
+            desc: "We invoice your plan manager directly. You don't handle the money — just let us know who your plan manager is and we take care of the rest.",
+          },
+          {
+            type: 'Self-managed',
+            desc: 'You pay us directly and we provide a detailed receipt and tax invoice for your NDIS records. Simple and flexible.',
+          },
+          {
+            type: 'Agency-managed',
+            desc: 'We are not currently a registered NDIS provider, so NDIA-managed funding cannot be used. Plan-managed and self-managed participants are very welcome.',
+          },
+        ].map((f) => (
+          <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.2; color: #0f172a; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(15,23,42,0.08);">{f.type}</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">{f.desc}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Suburb links -->
-  <section class="bg-white">
-    <div class="container-site">
-      <div class="text-center mb-8">
-        <p class="eyebrow mb-3">Service area</p>
-        <h2 class="text-2xl text-[var(--color-navy)] font-light">
+  <!-- 5. Why choose Naturo -->
+  <Features />
+
+  <!-- 6. Social proof -->
+  <Testimonials />
+
+  <!-- 7. Trusted-by logos -->
+  <Providers />
+
+  <!-- 8. FAQ (Port Macquarie-specific) -->
+  <FAQ
+    items={portMacFaqs}
+    eyebrow="NDIS cleaning Port Macquarie — common questions"
+    subheading="Everything you need to know about NDIS cleaning in Port Macquarie and the Hastings region."
+  />
+
+  <!-- 9. App promo -->
+  <AppPromo />
+
+  <!-- 10. Final CTA -->
+  <FinalCTA />
+
+  <!-- 11. Suburb links (local SEO) -->
+  <section style="background: #ffffff; padding: clamp(64px, 8vw, 96px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <p class="eyebrow" style="margin-bottom: 10px;">Service area</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; color: #0f172a; margin: 0;">
           NDIS cleaning across Port Macquarie and the Hastings
         </h2>
       </div>
-      <div class="flex flex-wrap gap-2 justify-center">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px;">
         {[
           { name: 'Port Macquarie', slug: 'cleaners-port-macquarie' },
           { name: 'Wauchope', slug: 'house-cleaning-wauchope' },
@@ -265,27 +262,20 @@ const schema = [
         ].map((s) => (
           <a
             href={`/${s.slug}`}
-            class="px-4 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
+            style="display: inline-block; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(15,23,42,0.12); font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71, 85, 105); text-decoration: none; transition: border-color 0.2s, color 0.2s;"
           >
             {s.name}
           </a>
         ))}
       </div>
-      <div class="text-center mt-8">
-        <p class="text-sm text-[var(--color-slate)] mb-4">
+      <div style="text-align: center;">
+        <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(100, 116, 139); margin: 0 0 12px;">
           Moving out of your rental in Port Macquarie? We also offer bond cleaning.
         </p>
-        <a href="/end-of-lease-cleaning-port-macquarie" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline">
+        <a href="/end-of-lease-cleaning-port-macquarie" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
           End of Lease Cleaning Port Macquarie &rarr;
         </a>
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
-  <CTABanner />
 </Layout>
-
-<style>
-  details > summary::-webkit-details-marker { display: none; }
-</style>

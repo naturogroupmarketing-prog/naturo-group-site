@@ -46,50 +46,60 @@ const faqs = [
 
 const inclusions = [
   {
+    group: 'All areas',
+    items: [
+      'Vacuum carpets & sweep all floors',
+      'Mop all hard floors',
+      'Wipe down skirting boards',
+      'Dust cornices & remove cobwebs',
+      'Wipe window frames, ledges & tracks',
+      'Clean window interiors & tracks',
+      'Wipe doors, frames & handles',
+      'Clean accessible light fittings',
+      'Ceiling fans dusted',
+      'Wipe inside & outside wardrobes',
+    ],
+  },
+  {
     group: 'Kitchen',
     items: [
-      'Full oven clean — interior walls, racks, door glass',
-      'Rangehood filters and canopy',
-      'Stovetop and splash-back',
-      'Inside all cupboards and drawers',
-      'Wipe all benchtops and appliance exteriors',
-      'Sink, taps and fixtures scrubbed',
-      'Dishwasher interior and door seals',
+      'Clean all surfaces & sanitise benchtops',
+      'Sanitise splashback',
+      'Clean stovetop & oven exterior',
+      'Clean rangehood & filters',
+      'Wipe outside cabinets & appliance exteriors',
+      'Clean inside cupboards, shelves & drawers',
+      'Polish sink & taps',
     ],
   },
   {
-    group: 'Bathrooms & Laundry',
+    group: 'Bathrooms',
     items: [
-      'Shower, bath, toilet and basin — scrubbed and disinfected',
-      'Shower screen — soap scum and water marks removed',
-      'Grout scrubbed and mildew treated',
-      'Taps, rails and fixtures polished',
-      'Mirror cleaned streak-free',
-      'Laundry tub, tiles and machine exteriors wiped',
+      'Scrub & sanitise toilet',
+      'Scrub clean bathtub & shower',
+      'Clean mirrors streak-free',
+      'Polish sink & taps',
+      'Wipe down benchtops',
+      'Wipe outside cabinets',
+      'Clean inside cabinets, shelves & drawers',
+      'Dust accessible exterior fan vents',
     ],
   },
-  {
-    group: 'Bedrooms & Living Areas',
-    items: [
-      'All floors vacuumed and mopped',
-      'Skirting boards wiped down',
-      'Light switches and power points cleaned',
-      'Window sills, tracks and frames cleaned',
-      'Blinds dusted or wiped (venetians included)',
-      'Ceiling fans and light fittings dusted',
-      'Inside built-in wardrobes',
-    ],
-  },
-  {
-    group: 'Add-ons Available',
-    items: [
-      'Carpet steam cleaning',
-      'External window cleaning',
-      'Garage and outdoor areas',
-      'Wall spot-cleaning',
-      'Fridge interior clean',
-    ],
-  },
+];
+
+const excluded = [
+  'Chandeliers',
+  'Light bulbs',
+  'Fireplaces',
+  'Fly screens',
+  'Moving furniture or appliances',
+  'Putting away dishes, pans or A/C filters',
+  'Grout & silicon remediations',
+  'Biohazards (excessive mould, faeces, blood)',
+  'Odour removal & remediation',
+  'Pet hair embedded in carpet fibres',
+  'Certain mineral deposits (e.g. toilet stains)',
+  'High-reach areas (above two-step ladder)',
 ];
 
 const pricing = [
@@ -202,21 +212,21 @@ const schema = [
     bg="/images/suburbs/cleaners-port-macquarie.jpg"
   />
 
-  <!-- Guarantee banner -->
-  <section class="bg-[var(--color-navy)]">
+  <!-- Stats bar -->
+  <section class="bg-[#F8F8F3] border-b border-[var(--color-border)]">
     <div class="container-site">
-      <div class="grid sm:grid-cols-3 gap-px bg-white/10">
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">$560</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
+      <div class="grid sm:grid-cols-3">
+        <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
+          <p class="text-3xl font-light text-[var(--color-navy)]">$560</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
         </div>
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">72hr</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Bond-back guarantee</p>
+        <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
+          <p class="text-3xl font-light text-[var(--color-navy)]">72hr</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Bond-back guarantee</p>
         </div>
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">Plant-based</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Eco-conscious products</p>
+        <div class="px-6 py-8 text-center">
+          <p class="text-3xl font-light text-[var(--color-navy)]">Plant-based</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Eco-conscious products</p>
         </div>
       </div>
     </div>
@@ -234,14 +244,14 @@ const schema = [
           Moving out of a Port Macquarie rental is stressful enough without worrying about the clean. Our local end-of-lease team arrives with all equipment and eco-friendly products, cleans to the exact standard your property manager will inspect against, and documents every room with photos you can use in any dispute.
         </p>
         <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          Naturo Group is led by a registered nurse, which means our standard is clinical-grade thorough. Every cleaner is police-checked, identity-verified and trained on our detailed inclusions checklist before they work in a Port Macquarie home.
+          Every cleaner is police-checked, identity-verified and trained on our detailed inclusions checklist before they work in a Port Macquarie home. We never subcontract — you always get a Naturo Group team member.
         </p>
         <p class="text-[var(--color-slate)] leading-relaxed text-lg">
           And if your property manager raises any issue? We return within 72 hours at no extra cost. No disputes, no chasing. Just your bond, back.
         </p>
       </div>
       <div class="space-y-4">
-        <div class="rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6">
+        <div class="rounded-2xl bg-white border border-[var(--color-border)] p-6">
           <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-4">Pricing guide</h3>
           <div class="divide-y divide-[var(--color-border)]">
             <div class="flex justify-between py-2 text-xs font-medium text-[var(--color-slate)] border-b border-[var(--color-border)]">
@@ -262,7 +272,7 @@ const schema = [
   </section>
 
   <!-- What's included -->
-  <section class="bg-[var(--color-bg-pale)]">
+  <section class="bg-[#F8F8F3]">
     <div class="container-site">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <p class="eyebrow mb-3">Full inclusions</p>
@@ -273,20 +283,50 @@ const schema = [
           Our Port Macquarie bond clean covers every area a property manager will inspect. Nothing is skipped.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-3 gap-6">
         {inclusions.map((group) => (
-          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
-            <h3 class="font-semibold text-[var(--color-navy)] mb-3">{group.group}</h3>
-            <ul class="space-y-2">
+          <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; color: #0f172a; margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(15,23,42,0.08);">{group.group}</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
               {group.items.map((item) => (
-                <li class="flex gap-2 text-sm text-[var(--color-slate)]">
-                  <svg class="w-4 h-4 text-[var(--color-accent-blue)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
+                <li style="display: flex; align-items: flex-start; gap: 10px;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 999px; background: rgba(58,93,255,0.1); color: #3a5dff; flex-shrink: 0; margin-top: 1px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.5; color: rgb(71, 85, 105);">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Excluded services -->
+  <section style="background: #ffffff; padding: clamp(64px, 7vw, 88px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 36px;">
+        <p class="eyebrow" style="margin-bottom: 12px;">Excluded services</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; color: #0f172a; margin: 0 0 12px;">
+          Not included as standard
+        </h2>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; color: rgb(71, 85, 105); line-height: 1.65; margin: 0;">
+          The following fall outside our standard bond clean. Contact us and we can quote these separately.
+        </p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 880px; margin: 0 auto 28px;">
+        {excluded.map((item) => (
+          <span style="display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 999px; background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08);">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="flex-shrink: 0; color: rgb(148, 163, 184);" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 1l8 8M9 1L1 9"/></svg>
+            <span style="font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgb(100, 116, 139);">{item}</span>
+          </span>
+        ))}
+      </div>
+      <div style="text-align: center;">
+        <a href={ctaPrimary.href} style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
+          Enquire about excluded services &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -320,7 +360,7 @@ const schema = [
   <Testimonials />
 
   <!-- FAQs -->
-  <section class="bg-[var(--color-bg-pale)]">
+  <section class="bg-[#F8F8F3]">
     <div class="container-site max-w-3xl">
       <div class="text-center mb-10">
         <p class="eyebrow mb-3">FAQs</p>

@@ -1,14 +1,18 @@
 ---
 // Geelong EOL suburb sub-pages
 // URL: /end-of-lease-cleaning/geelong/[suburb]
-// Generates one bond-cleaning page per top Geelong suburb.
 
 import Layout from '../../../layouts/Layout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
-import Testimonials from '../../../components/Testimonials.astro';
+import ServiceIntro from '../../../components/ServiceIntro.astro';
+import ServiceInclusions from '../../../components/ServiceInclusions.astro';
+import Features from '../../../components/Features.astro';
+import PricingCards from '../../../components/PricingCards.astro';
 import Providers from '../../../components/Providers.astro';
-import CTABanner from '../../../components/CTABanner.astro';
-import { site, ctaPrimary, ctaPhone } from '../../../data/site';
+import Testimonials from '../../../components/Testimonials.astro';
+import AppPromo from '../../../components/AppPromo.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+import { site, ctaPrimary } from '../../../data/site';
 
 interface SuburbData {
   slug: string;
@@ -81,7 +85,7 @@ export async function getStaticPaths() {
       name: 'Highton',
       stateCode: 'VIC',
       postcode: '3216',
-      blurb: "Highton is a premium Geelong suburb with a strong owner-occupier and high-quality rental market. Properties here — many of them architect-designed or extensively renovated — command high bonds and attract thorough final inspections. Our nursing-grade clean standard means we match what high-end property managers look for.",
+      blurb: "Highton is a premium Geelong suburb with a strong owner-occupier and high-quality rental market. Properties here — many of them architect-designed or extensively renovated — command high bonds and attract thorough final inspections. Our cleaning standard means we match what high-end property managers look for.",
       propertyTypes: 'architect-designed homes, large family residences and quality townhouses',
       nearbyText: 'Belmont, Wandana Heights and the Barwon River corridor',
     },
@@ -125,19 +129,68 @@ const { suburb, allSuburbs } = Astro.props;
 
 const pageUrl = `${site.url}/end-of-lease-cleaning/geelong/${suburb.slug}`;
 
-const pricing = [
-  { size: '1 Bedroom', price: '$560' },
-  { size: '2 Bedroom', price: '$640' },
-  { size: '3 Bedroom', price: '$800' },
-  { size: '4 Bedroom', price: '$960' },
-  { size: '5 Bedroom', price: '$1,280' },
+const introStats = [
+  { num: '100%', label: 'Bond-back guarantee' },
+  { num: '72&nbsp;hr', label: 'Free re-clean window' },
+  { num: '24/7', label: 'Booking online' },
 ];
 
 const inclusions = [
-  { group: 'Kitchen', items: ['Full oven clean — interior walls, racks, door glass', 'Rangehood filters and canopy', 'Stovetop and splash-back', 'Inside all cupboards and drawers', 'Benchtops and appliance exteriors', 'Sink, taps and fixtures scrubbed', 'Dishwasher interior and door seals'] },
-  { group: 'Bathrooms & Laundry', items: ['Shower, bath, toilet and basin — scrubbed and disinfected', 'Shower screen — soap scum removed', 'Grout scrubbed and mildew treated', 'Taps, rails and fixtures polished', 'Mirror cleaned streak-free', 'Laundry tub, tiles and machine exteriors'] },
-  { group: 'Bedrooms & Living', items: ['All floors vacuumed and mopped', 'Skirting boards wiped down', 'Light switches and power points cleaned', 'Window sills, tracks and frames cleaned', 'Blinds dusted or wiped', 'Ceiling fans and light fittings dusted', 'Inside built-in wardrobes'] },
-  { group: 'Add-ons Available', items: ['Carpet steam cleaning', 'External window cleaning', 'Garage and outdoor areas', 'Wall spot-cleaning', 'Fridge interior clean'] },
+  {
+    group: 'All areas',
+    items: [
+      'Vacuum carpets & sweep all floors',
+      'Mop all hard floors',
+      'Wipe down skirting boards',
+      'Dust cornices & remove cobwebs',
+      'Wipe window frames, ledges & tracks',
+      'Clean window interiors & tracks',
+      'Wipe doors, frames & handles',
+      'Clean accessible light fittings',
+      'Ceiling fans dusted',
+      'Wipe inside & outside wardrobes',
+    ],
+  },
+  {
+    group: 'Kitchen',
+    items: [
+      'Clean all surfaces & sanitise benchtops',
+      'Sanitise splashback',
+      'Clean stovetop & oven exterior',
+      'Clean rangehood & filters',
+      'Wipe outside cabinets & appliance exteriors',
+      'Clean inside cupboards, shelves & drawers',
+      'Polish sink & taps',
+    ],
+  },
+  {
+    group: 'Bathrooms',
+    items: [
+      'Scrub & sanitise toilet',
+      'Scrub clean bathtub & shower',
+      'Clean mirrors streak-free',
+      'Polish sink & taps',
+      'Wipe down benchtops',
+      'Wipe outside cabinets',
+      'Clean inside cabinets, shelves & drawers',
+      'Dust accessible exterior fan vents',
+    ],
+  },
+];
+
+const excluded = [
+  'Chandeliers',
+  'Light bulbs',
+  'Fireplaces',
+  'Fly screens',
+  'Moving furniture or appliances',
+  'Putting away dishes, pans or A/C filters',
+  'Grout & silicon remediations',
+  'Biohazards (excessive mould, faeces, blood)',
+  'Odour removal & remediation',
+  'Pet hair embedded in carpet fibres',
+  'Certain mineral deposits (e.g. toilet stains)',
+  'High-reach areas (above two-step ladder)',
 ];
 
 const faqs = [
@@ -173,7 +226,7 @@ const schema = [
     '@type': 'LocalBusiness',
     '@id': `${pageUrl}#localbusiness`,
     name: `Naturo Group — End of Lease Cleaning ${suburb.name}`,
-    description: `Professional end of lease cleaning in ${suburb.name} ${suburb.stateCode} with a 72-hour bond-back guarantee. Police-checked, eco-friendly team. Part of Naturo Group's Greater Geelong service area.`,
+    description: `Professional end of lease cleaning in ${suburb.name} ${suburb.stateCode} with a 72-hour bond-back guarantee. Police-checked, eco-conscious team. Part of Naturo Group's Greater Geelong service area.`,
     url: pageUrl,
     telephone: site.phone,
     email: site.email,
@@ -222,121 +275,105 @@ const schema = [
   description={`End of lease cleaning in ${suburb.name} from $560. Police-checked team, 72-hr bond-back guarantee. Part of Naturo Group's Greater Geelong service area.`}
   schema={schema}
 >
-  <!-- Hero -->
+  <!-- 1. Hero -->
   <ServiceHero
     eyebrow={`Bond cleaning · ${suburb.name}`}
     heading={`End of Lease Cleaning<br />in ${suburb.name}`}
-    tagline="72-hour bond-back guarantee. Police-checked team. Eco-friendly products."
+    tagline="72-hour bond-back guarantee. Police-checked team. Eco-conscious products."
     bg="/images/suburbs/house-cleaning-geelong.jpg"
   />
 
-  <!-- Stats banner -->
-  <section class="bg-[var(--color-navy)]">
+  <!-- 2. Stats bar -->
+  <section class="bg-[#F8F8F3] border-b border-[var(--color-border)]">
     <div class="container-site">
-      <div class="grid sm:grid-cols-3 gap-px bg-white/10">
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">$560</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
+      <div class="grid sm:grid-cols-3">
+        <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
+          <p class="text-3xl font-light text-[var(--color-navy)]">$560</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
         </div>
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">72hr</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Bond-back guarantee</p>
+        <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
+          <p class="text-3xl font-light text-[var(--color-navy)]">72hr</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Bond-back guarantee</p>
         </div>
-        <div class="bg-[var(--color-navy)] px-6 py-8 text-center">
-          <p class="text-3xl font-light text-white">Plant-based</p>
-          <p class="text-sm text-[var(--color-yellow)] mt-1 uppercase tracking-widest font-semibold">Eco-conscious products</p>
+        <div class="px-6 py-8 text-center">
+          <p class="text-3xl font-light text-[var(--color-navy)]">Plant-based</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Eco-conscious products</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro + pricing -->
-  <section class="bg-white">
-    <div class="container-site grid lg:grid-cols-2 gap-16 items-start">
-      <div class="space-y-5">
-        <p class="eyebrow">About this service</p>
-        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light leading-snug">
-          Get your bond back in {suburb.name} &mdash; or we come back for free.
-        </h2>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          {suburb.blurb}
-        </p>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          Our {suburb.name} bond cleans are led by a registered nurse and carried out by police-checked, fully insured cleaners who arrive with all equipment and eco-friendly products. We clean to the exact REIV inspection standard &mdash; then photograph every room so you have documented proof if anything is ever disputed.
-        </p>
-        <p class="text-[var(--color-slate)] leading-relaxed text-lg">
-          If your property manager raises any issue, we return within 72 hours at no extra charge. No questions, no arguments &mdash; just your bond, back.
-        </p>
-      </div>
-      <div>
-        <div class="rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6">
-          <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-4">Pricing guide &mdash; {suburb.name}</h3>
-          <div class="divide-y divide-[var(--color-border)]">
-            <div class="flex justify-between py-2 text-xs font-medium text-[var(--color-slate)]">
-              <span>Property size</span><span>From</span>
-            </div>
-            {pricing.map((r) => (
-              <div class="flex justify-between py-3">
-                <span class="text-sm text-[var(--color-slate)]">{r.size}</span>
-                <span class="text-sm font-semibold text-[var(--color-navy)]">{r.price}</span>
-              </div>
-            ))}
-          </div>
-          <p class="text-xs text-[var(--color-slate)] mt-3">Prices vary by condition and add-ons. Exact price in 60 seconds online.</p>
-          <a href={ctaPrimary.href} class="mt-4 w-full btn-primary block text-center">Get an Instant Price</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 3. Intro -->
+  <ServiceIntro
+    kicker="About this service"
+    heading={`Get your bond back in ${suburb.name} — or we come back for free.`}
+    body={[
+      suburb.blurb,
+      `Our ${suburb.name} bond cleans are carried out by police-checked, fully insured cleaners who arrive with all equipment and eco-conscious products. We clean to the exact REIV inspection standard — then photograph every room so you have documented proof if anything is ever disputed.`,
+      'If your property manager raises any issue, we return within 72 hours at no extra charge. No questions, no arguments — just your bond, back.',
+    ]}
+    stats={introStats}
+  />
 
-  <!-- Inclusions -->
-  <section class="bg-[var(--color-bg-pale)]">
-    <div class="container-site">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <p class="eyebrow mb-3">Full inclusions</p>
-        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
-          Every room. Every detail. Every time.
+  <!-- 4. What's included -->
+  <ServiceInclusions
+    heading="Every room. Every detail. Every time."
+    sub={`Our ${suburb.name} bond clean covers every area your property manager will inspect — nothing skipped, nothing missed.`}
+    groups={inclusions}
+  />
+
+  <!-- 5. Excluded services -->
+  <section style="background: #ffffff; padding: clamp(64px, 7vw, 88px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 36px;">
+        <p class="eyebrow" style="margin-bottom: 12px;">Excluded services</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; color: #0f172a; margin: 0 0 12px;">
+          Not included as standard
         </h2>
-        <p class="mt-4 text-[var(--color-slate)]">
-          Our {suburb.name} bond clean covers every area your property manager will inspect.
+        <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; color: rgb(71, 85, 105); line-height: 1.65; margin: 0;">
+          The following fall outside our standard bond clean. Contact us and we can quote these separately.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {inclusions.map((group) => (
-          <div class="bg-white rounded-2xl p-6 border border-[var(--color-border)]">
-            <h3 class="font-semibold text-[var(--color-navy)] mb-3">{group.group}</h3>
-            <ul class="space-y-2">
-              {group.items.map((item) => (
-                <li class="flex gap-2 text-sm text-[var(--color-slate)]">
-                  <svg class="w-4 h-4 text-[var(--color-accent-blue)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 880px; margin: 0 auto 28px;">
+        {excluded.map((item) => (
+          <span style="display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 999px; background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08);">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="flex-shrink: 0; color: rgb(148, 163, 184);" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 1l8 8M9 1L1 9"/></svg>
+            <span style="font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgb(100, 116, 139);">{item}</span>
+          </span>
         ))}
       </div>
+      <div style="text-align: center;">
+        <a href={ctaPrimary.href} style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
+          Enquire about excluded services &rarr;
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Providers -->
-  <Providers />
+  <!-- 6. Why Naturo Group -->
+  <Features />
 
-  <!-- Testimonials -->
+  <!-- 6. Social proof -->
   <Testimonials />
 
-  <!-- FAQs -->
-  <section class="bg-[var(--color-bg-pale)]">
-    <div class="container-site max-w-3xl">
-      <div class="text-center mb-10">
-        <p class="eyebrow mb-3">FAQs</p>
-        <h2 class="text-3xl text-[var(--color-navy)] font-light">
+  <!-- 7. Pricing -->
+  <PricingCards />
+
+  <!-- 8. Providers -->
+  <Providers />
+
+  <!-- 9. FAQs -->
+  <section class="bg-[#F8F8F3]" style="padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 768px;">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <p class="eyebrow" style="margin-bottom: 0.75rem;">FAQs</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0;">
           End of lease cleaning {suburb.name} &mdash; common questions
         </h2>
       </div>
       <div class="space-y-3">
         {faqs.map((f) => (
-          <details class="bg-white rounded-2xl border border-[var(--color-border)] group">
+          <details class="bg-white rounded-[14px] border border-[rgba(15,23,42,0.08)] shadow-sm group">
             <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none font-medium text-[var(--color-navy)]">
               {f.q}
               <svg class="w-5 h-5 shrink-0 text-[var(--color-slate)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
@@ -348,26 +385,32 @@ const schema = [
     </div>
   </section>
 
-  <!-- Cross-links to other suburbs + parent page -->
-  <section class="bg-white">
+  <!-- 10. App promo -->
+  <AppPromo />
+
+  <!-- 11. Final CTA -->
+  <FinalCTA />
+
+  <!-- 12. Cross-links -->
+  <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
     <div class="container-site">
-      <div class="text-center mb-8">
-        <p class="eyebrow mb-3">Also serving</p>
-        <h2 class="text-2xl text-[var(--color-navy)] font-light">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <p class="eyebrow" style="margin-bottom: 0.75rem;">Also serving</p>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(22px, 2.5vw, 32px); font-weight: 300; line-height: 1.1; color: #0f172a; margin: 0;">
           End of lease cleaning across Greater Geelong
         </h2>
       </div>
-      <div class="flex flex-wrap gap-2 justify-center">
+      <div class="flex flex-wrap gap-2 justify-center" style="margin-bottom: 2rem;">
         {allSuburbs.filter((s) => s.slug !== suburb.slug).map((s) => (
           <a
             href={`/end-of-lease-cleaning/geelong/${s.slug}`}
-            class="px-4 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
+            class="px-4 py-2 rounded-full border border-[rgba(15,23,42,0.08)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
           >
             {s.name}
           </a>
         ))}
       </div>
-      <div class="text-center mt-8 space-y-2">
+      <div class="text-center space-y-2">
         <a href="/end-of-lease-cleaning-geelong" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline block">
           &larr; Back to End of Lease Cleaning Geelong (all areas)
         </a>
@@ -377,8 +420,6 @@ const schema = [
       </div>
     </div>
   </section>
-
-  <CTABanner />
 </Layout>
 
 <style>

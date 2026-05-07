@@ -118,7 +118,7 @@ export const pricingCards = [
   {
     name: 'End of Lease',
     slug: 'end-of-lease',
-    priceFrom: 478,
+    priceFrom: 560,
     label: 'Starting from',
     bullets: [
       'Full bond clean for landlords and tenants at handover.',

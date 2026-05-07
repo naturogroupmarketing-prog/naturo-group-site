@@ -173,7 +173,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Port Macquarie?',
-        a: 'House cleaning in Port Macquarie starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Pricing depends on the size of your home and the type of clean — get a transparent instant price online in under 60 seconds with no obligation.',
+        a: 'House cleaning in Port Macquarie starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Pricing depends on the size of your home and the type of clean — get a transparent instant price online in under 60 seconds with no obligation.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Port Macquarie?',
@@ -2513,7 +2513,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Melbourne?',
-        a: 'House cleaning in Melbourne starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Pricing depends on the size of your home and the service type \u2014 get a transparent instant price online in under 60 seconds, no phone call required.',
+        a: 'House cleaning in Melbourne starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Pricing depends on the size of your home and the service type \u2014 get a transparent instant price online in under 60 seconds, no phone call required.',
       },
       {
         q: 'Which Melbourne suburbs do you service?',
@@ -2587,7 +2587,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Geelong?',
-        a: 'House cleaning in Geelong starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. The final price depends on the size of your home and the service type — get a transparent instant price online in under 60 seconds, no phone call required.',
+        a: 'House cleaning in Geelong starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. The final price depends on the size of your home and the service type — get a transparent instant price online in under 60 seconds, no phone call required.',
       },
       {
         q: 'Which Geelong suburbs do you service?',
@@ -2673,7 +2673,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Torquay?',
-        a: 'House cleaning in Torquay starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+        a: 'House cleaning in Torquay starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds — no phone call needed.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Torquay?',
@@ -2747,7 +2747,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Ocean Grove?',
-        a: 'House cleaning in Ocean Grove starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+        a: 'House cleaning in Ocean Grove starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Ocean Grove?',
@@ -2891,7 +2891,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Drysdale?',
-        a: 'House cleaning in Drysdale starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+        a: 'House cleaning in Drysdale starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
       },
       {
         q: 'Do you also service Clifton Springs and Portarlington?',
@@ -2961,7 +2961,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Leopold?',
-        a: 'House cleaning in Leopold starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $478. Get a transparent instant price online in under 60 seconds.',
+        a: 'House cleaning in Leopold starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
       },
       {
         q: 'Which areas near Leopold do you service?',

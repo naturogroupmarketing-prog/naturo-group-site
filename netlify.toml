@@ -22,7 +22,78 @@
   status = 301
   force  = true
 
-# Common WordPress URL patterns → new equivalents
+# ── Removed suburb pages (previously indexed, now deleted) ──────────────────
+# Redirect to the nearest live hub so Google can pass the crawl equity along
+# rather than hitting a 404 and discarding any accumulated authority.
+[[redirects]]
+  from = "/cleaners-noosa-heads"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-terranora"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-woolloongabba"
+  to   = "/cleaners-brisbane"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-carlton"
+  to   = "/cleaners-melbourne"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-ballina"
+  to   = "/cleaners-lismore"
+  status = 301
+
+# ── Old service URL patterns ─────────────────────────────────────────────────
+[[redirects]]
+  from = "/service-veterans"
+  to   = "/services/veterans-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/service-veterans/"
+  to   = "/services/veterans-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/services-end-of-lease"
+  to   = "/services/end-of-lease"
+  status = 301
+
+[[redirects]]
+  from = "/services-end-of-lease/"
+  to   = "/services/end-of-lease"
+  status = 301
+
+# ── /locations — internal link exists but page was never built ───────────────
+[[redirects]]
+  from = "/locations"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/"
+  to   = "/"
+  status = 301
+
+# ── /account — login link in TopBar; sends users to the booking app ──────────
+[[redirects]]
+  from = "/account"
+  to   = "/quote"
+  status = 301
+
+[[redirects]]
+  from = "/account/"
+  to   = "/quote"
+  status = 301
+
+# ── Common WordPress URL patterns → new equivalents ──────────────────────────
 [[redirects]]
   from = "/home"
   to   = "/"

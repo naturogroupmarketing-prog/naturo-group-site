@@ -86,20 +86,25 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-cyan);
+  background: rgba(36, 210, 242, 0.75);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   color: #FFFFFF;
   font-weight: 500;
   padding: 0.875rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid var(--color-cyan);
-  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(36, 210, 242, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s;
   font-size: 0.95rem;
   white-space: nowrap;
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--color-cyan);
+  background: rgba(36, 210, 242, 0.55);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 28px rgba(36, 210, 242, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
 }
 
 .btn-secondary {
@@ -107,20 +112,25 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   color: var(--color-navy);
   font-weight: 500;
   padding: 0.875rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid var(--color-navy);
-  transition: all 0.2s;
+  border: 1px solid rgba(28, 36, 75, 0.22);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.25s;
   font-size: 0.95rem;
   white-space: nowrap;
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-navy);
-  color: #FFFFFF;
+  background: rgba(28, 36, 75, 0.08);
+  border-color: rgba(28, 36, 75, 0.38);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  color: var(--color-navy);
 }
 
 .btn-yellow {
@@ -128,17 +138,22 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-yellow);
+  background: rgba(254, 185, 28, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   color: var(--color-navy);
   font-weight: 600;
   padding: 0.875rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid var(--color-yellow);
-  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(254, 185, 28, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s;
 }
 
 .btn-yellow:hover {
-  background-color: transparent;
+  background: rgba(254, 185, 28, 0.6);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 28px rgba(254, 185, 28, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   color: var(--color-navy);
 }
 

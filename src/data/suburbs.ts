@@ -2595,11 +2595,11 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you offer NDIS and aged care cleaning in Geelong?',
-        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. Call 1300 876 472 to discuss your needs.',
+        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong">NDIS Cleaning Geelong</a> page or call 1300 876 472 to discuss your needs.',
       },
       {
         q: 'Can you clean end-of-lease properties in Geelong?',
-        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a bond-back re-clean guarantee if any issue is raised by your property manager.',
+        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
       },
       {
         q: 'Are your Geelong cleaners police-checked and insured?',

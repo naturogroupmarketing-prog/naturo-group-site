@@ -1224,7 +1224,7 @@ export const posts: BlogPost[] = [
       {
         type: 'cta',
         heading: 'Naturo Group — NDIS cleaning across Greater Geelong',
-        body: 'Nurse-led, police-checked team. Plan manager invoicing. Eco-friendly, fragrance-conscious products. Serving Geelong, Newtown, Highton, Belmont, Lara, Leopold and the Bellarine Peninsula.',
+        body: 'Police-checked, trained team. Plan manager invoicing. Eco-conscious, fragrance-conscious products. Serving Geelong, Newtown, Highton, Belmont, Lara, Leopold and the Bellarine Peninsula.',
         href: '/ndis-cleaning-geelong',
         label: 'Learn about our NDIS cleaning service',
       },

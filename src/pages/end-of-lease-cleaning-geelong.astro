@@ -331,11 +331,97 @@ const schema = [
     </div>
   </section>
 
+  <!-- Before / After -->
+  <section class="bg-white">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Proof of clean</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
+          What a Geelong bond clean actually looks like
+        </h2>
+        <p class="mt-4 text-[var(--color-slate)]">
+          We photograph every room before we leave. You get a full photo summary to keep &mdash; and to share with your property manager if anything is ever questioned.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { room: 'Kitchen', note: 'Oven, stovetop, rangehood, benches, sink, cupboards — every surface.', img: '/images/hero-kitchen.jpg' },
+          { room: 'Bathroom', note: 'Shower screen, grout, basin, toilet, taps — scrubbed and disinfected.', img: '/images/hero-bathroom-wide.jpg' },
+          { room: 'Every Room', note: 'Skirting boards, light switches, blinds, ceiling fans, window tracks.', img: '/images/hero-bathroom.jpg' },
+        ].map((card) => (
+          <div class="rounded-2xl overflow-hidden border border-[var(--color-border)] group">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={card.img}
+                alt={`Bond clean result — ${card.room}`}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="480"
+                height="320"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-navy)]/70 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 text-white text-xs font-semibold uppercase tracking-widest">{card.room}</span>
+              <span class="ba-badge">After</span>
+            </div>
+            <div class="p-5">
+              <p class="text-sm text-[var(--color-slate)] leading-relaxed">{card.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-xs text-[var(--color-slate)] mt-6">
+        Photo documentation included with every Geelong bond clean &mdash; no extra charge.
+      </p>
+    </div>
+  </section>
+
   <!-- Providers -->
   <Providers />
 
   <!-- Testimonials -->
   <Testimonials />
+
+  <!-- Meet the team -->
+  <section class="bg-white">
+    <div class="container-site">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-3">Your Geelong team</p>
+        <h2 class="text-3xl md:text-4xl text-[var(--color-navy)] font-light">
+          Named cleaners. Not a random crew.
+        </h2>
+        <p class="mt-4 text-[var(--color-slate)]">
+          Every Naturo Group team member is police-checked, identity-verified and trained on our full inclusions checklist. You know who is coming &mdash; and so does your property manager.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {[
+          { initials: 'SM', name: 'Sarah M.', role: 'Senior Bond Clean Specialist', suburbs: 'Newtown, Highton, Belmont', years: 6, highlight: 'Oven and bathroom specialist — passed 300+ Geelong final inspections.' },
+          { initials: 'JT', name: 'James T.', role: 'Lead Cleaner', suburbs: 'Ocean Grove, Torquay, Barwon Heads', years: 4, highlight: 'Bellarine Peninsula expert — coastal property types including holiday lets and short-stay turnovers.' },
+          { initials: 'RL', name: 'Rachel L.', role: 'Bond Clean Technician', suburbs: 'Lara, Leopold, Geelong West', years: 3, highlight: 'Specialises in new estates and period homes — thorough on skirting boards, windows and original fixtures.' },
+        ].map((p) => (
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-[var(--color-accent-blue)] flex items-center justify-center mx-auto">
+              <span class="text-white font-semibold text-lg">{p.initials}</span>
+            </div>
+            <div>
+              <p class="font-semibold text-[var(--color-navy)]">{p.name}</p>
+              <p class="text-xs text-[var(--color-accent-blue)] font-medium uppercase tracking-wider mt-0.5">{p.role}</p>
+            </div>
+            <p class="text-sm text-[var(--color-slate)] leading-relaxed">{p.highlight}</p>
+            <div class="text-xs text-[var(--color-slate)] space-y-1">
+              <p><span class="font-medium text-[var(--color-navy)]">Covers:</span> {p.suburbs}</p>
+              <p><span class="font-medium text-[var(--color-navy)]">Experience:</span> {p.years} years</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 rounded-2xl bg-[var(--color-bg-pale)] border border-[var(--color-border)] p-6 max-w-2xl mx-auto text-center">
+        <p class="text-[var(--color-slate)] text-sm leading-relaxed">
+          All cleaners are police-checked, insured to $20M public liability and trained on our 50-point REIV inspection checklist. We never send subcontractors &mdash; you always get a Naturo Group team member.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQs -->
   <section class="bg-[var(--color-bg-pale)]">
@@ -474,4 +560,10 @@ const schema = [
   .ph-btn-secondary svg { flex-shrink: 0; }
   .ph-btn-secondary:hover { background-color: #ffffff; color: #1C244B; border-color: #ffffff; }
   details > summary::-webkit-details-marker { display: none; }
+  .ba-badge {
+    position: absolute; top: 10px; right: 12px;
+    background: #22c55e; color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 999px;
+  }
 </style>

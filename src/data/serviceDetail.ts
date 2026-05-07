@@ -36,7 +36,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       stats: [
         { num: '100%', label: 'Non-toxic products' },
         { num: '10k+', label: 'Happy households' },
-        { num: '7&nbsp;days', label: 'Flexible scheduling' },
+        { num: 'Mon–Fri', label: '5-day service' },
       ],
     },
     whatsIncluded: [
@@ -258,9 +258,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         'Fragrance-conscious, non-toxic products. Flexible visits around medical appointments and care routines. Reports available for family or care coordinators.',
       ],
       stats: [
-        { num: '7&nbsp;days', label: 'Flexible scheduling' },
+        { num: 'Mon–Fri', label: '5-day service' },
         { num: '100%', label: 'Police-checked team' },
-        { num: '100%', label: 'Police-checked team' },
+        { num: 'Fragrance', label: 'Conscious products' },
       ],
     },
     whatsIncluded: [
@@ -315,7 +315,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       ],
       stats: [
         { num: '$20M', label: 'Public liability cover' },
-        { num: '24/7', label: 'Urgent response' },
+        { num: 'Fast', label: 'Urgent response' },
         { num: 'Direct', label: 'Billing where supported' },
       ],
     },

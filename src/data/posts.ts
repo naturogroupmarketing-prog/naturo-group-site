@@ -1605,7 +1605,7 @@ export const posts: BlogPost[] = [
       {
         type: 'cta',
         heading: 'Book a house clean in Port Macquarie',
-        body: 'Police-checked team, all products and equipment supplied, 100% eco-friendly. Get an instant price in 60 seconds.',
+        body: 'Police-checked team, all products and equipment supplied, eco-conscious plant-based products. Get an instant price in 60 seconds.',
         href: '/cleaners-port-macquarie',
         label: 'Get an instant price',
       },

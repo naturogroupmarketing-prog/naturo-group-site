@@ -1333,6 +1333,427 @@ export const posts: BlogPost[] = [
     ],
     related: ['non-toxic-cleaning-products-australia', 'house-cleaning-cost-geelong'],
   },
+
+  // ── PORT MACQUARIE MARKET ────────────────────────────────────────────────
+
+  // PM-1. End of lease checklist
+  {
+    slug: 'end-of-lease-cleaning-port-macquarie-checklist',
+    category: 'End of Lease',
+    title: 'End of Lease Cleaning Port Macquarie: The Complete Checklist [2026]',
+    excerpt:
+      'The exact room-by-room checklist Port Macquarie property managers use at final inspection — so you get your full bond back.',
+    metaTitle: 'End of Lease Cleaning Port Macquarie Checklist 2026 | Naturo Group',
+    metaDescription:
+      'Room-by-room bond clean checklist for Port Macquarie tenants. Covers kitchen, bathroom, outdoor and what property managers inspect. Pricing from $560.',
+    keywords: [
+      'end of lease cleaning port macquarie',
+      'bond cleaning port macquarie',
+      'vacate cleaning port macquarie',
+      'bond back guarantee port macquarie',
+      'end of tenancy cleaning port macquarie',
+      'port macquarie bond clean checklist',
+    ],
+    publishedDate: '2026-05-07',
+    readMinutes: 9,
+    heroImage: '/images/hero-bathroom-wide.jpg',
+    intro:
+      "Moving out of a Port Macquarie rental is stressful enough without the added anxiety of a bond dispute. Property managers here are thorough — the coastal lifestyle that makes Port Macquarie a desirable rental market also means properties see significant sand, salt air and sun exposure that requires extra attention at final inspection. This checklist covers every area your property manager will inspect so you leave nothing to chance.",
+    toc: [
+      { id: 'why-bond-cleans-fail-pm', label: 'Why bond cleans fail in Port Macquarie' },
+      { id: 'kitchen-checklist', label: 'Kitchen checklist' },
+      { id: 'bathroom-checklist', label: 'Bathrooms & laundry' },
+      { id: 'bedrooms-living', label: 'Bedrooms & living areas' },
+      { id: 'outdoor-garage', label: 'Outdoor areas & garage' },
+      { id: 'pm-bond-clean-cost', label: 'How much does it cost in Port Macquarie?' },
+      { id: 'diy-vs-professional', label: 'DIY vs professional' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'Why bond cleans fail in Port Macquarie' },
+      {
+        type: 'p',
+        text: "Port Macquarie property managers consistently flag the same failure points: baked-on grease in the oven, soap scum on shower glass and shower screens, salt and sand tracked into carpets and floor tracks, discoloured grout and dirty window sills. Coastal rentals near the Hastings River foreshore or Town Beach are particularly prone to salt-air residue on windows, fly screens and outdoor surfaces — areas that are easy to overlook when you're focused on getting keys handed over.",
+      },
+      {
+        type: 'callout',
+        title: 'Port Macquarie bond clean tip',
+        body: "Salt-air residue is invisible until it dries into a white film. Before your property manager arrives, wipe all windows and fly screens with a damp microfibre cloth — it takes 10 minutes and is one of the most common deduction triggers in coastal Port Macquarie properties.",
+      },
+      { type: 'h2', text: 'Kitchen checklist' },
+      {
+        type: 'ul',
+        items: [
+          'Oven interior — walls, base, racks and door glass (inside and out)',
+          'Rangehood — filters removed, degreased and replaced; canopy wiped',
+          'Stovetop — burners or induction surface, drip trays if applicable',
+          'Splashback — grease film removed, grout scrubbed',
+          'All benchtops — cleared and wiped including back edge against wall',
+          'Inside all cupboards and drawers — wiped, no crumbs or staining',
+          'Dishwasher — door seals, filter basket and interior wipe-down',
+          'Sink and taps — limescale removed, chrome polished',
+          'Microwave — interior and exterior',
+          'Refrigerator interior if left in property',
+          'Floors — swept, mopped and dry',
+        ],
+      },
+      { type: 'h2', text: 'Bathrooms & laundry checklist' },
+      {
+        type: 'ul',
+        items: [
+          'Shower screen — soap scum and water marks fully removed',
+          'Shower recess — tiles, grout and floor drain',
+          'Bath — if present, ring marks and taps',
+          'Toilet — bowl, seat, hinge area, cistern and behind base',
+          'Basin and taps — limescale and toothpaste residue',
+          'Mirrors — streak-free',
+          'Exhaust fan — cover removed and dusted',
+          'Towel rails and toilet roll holders',
+          'Floor — grout lines scrubbed, floor mopped',
+          'Laundry tub and taps',
+          'Washing machine lint filter and drum wipe-down',
+          'Laundry floor and behind appliances',
+        ],
+      },
+      { type: 'h2', text: 'Bedrooms & living areas checklist' },
+      {
+        type: 'ul',
+        items: [
+          'All floors vacuumed and mopped (hard floors and carpet)',
+          'Skirting boards — wiped on top and front face',
+          'Light switches and power points — clean of finger marks',
+          'Window sills, frames and tracks — sand and debris removed',
+          'Fly screens — rinsed or wiped (critical in coastal Port Macquarie)',
+          'Blinds — dusted or wiped including venetians',
+          'Ceiling fans and light fittings — dusted',
+          'Inside all wardrobes — shelves wiped, tracks vacuumed',
+          'Walls — spot-clean any marks, scuffs or crayon',
+        ],
+      },
+      { type: 'h2', text: 'Outdoor areas & garage' },
+      {
+        type: 'ul',
+        items: [
+          'Outdoor tiles or deck — swept and hosed',
+          'BBQ — cleaned if supplied with property',
+          'Outdoor furniture — wiped down if supplied',
+          'Cobwebs removed from eaves, patio ceiling and corners',
+          'Garage — swept, rubbish removed, oil stains treated',
+          'Gardens — weeds removed from garden beds if lease required it',
+          'Gutters — checked if lease specified maintenance obligation',
+        ],
+      },
+      { type: 'h2', text: 'How much does end of lease cleaning cost in Port Macquarie?' },
+      {
+        type: 'p',
+        text: 'Professional bond cleaning in Port Macquarie typically costs $560–$1,280 depending on property size. A 1-bedroom unit or apartment starts at $560, a 2-bedroom house around $640, a 3-bedroom home around $800. Add-ons like carpet steam cleaning, external windows and outdoor areas are priced separately. Get an exact price in 60 seconds at naturogroup.com.au/end-of-lease-cleaning-port-macquarie.',
+      },
+      {
+        type: 'callout',
+        title: 'Cheapest is not always cheapest',
+        body: "A $280 quote from an independent cleaner who skips the oven, skirting boards and fly screens will still cost you — when the property manager invoices you for a re-clean, you'll have paid twice. A professional with a bond-back guarantee protects the full amount of your deposit.",
+      },
+      { type: 'h2', text: 'DIY vs professional bond clean' },
+      {
+        type: 'p',
+        text: "DIY bond cleans work best for properties in excellent condition that only need a thorough top-to-bottom sweep. Properties with built-up oven grease, grout discolouration, heavy soap scum or salt-air window film typically need professional-grade degreasers and techniques to meet the standard expected at final inspection. The key question is not 'can I clean it?' but 'will it pass inspection?'",
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'How long does a bond clean take in Port Macquarie?',
+            a: "A 2-bedroom Port Macquarie property typically takes 3–5 hours for a professional team. Larger properties, properties with heavy build-up, or those with outdoor areas and garages can take longer. We send a team of the right size for your property so the job is done in a single visit.",
+          },
+          {
+            q: 'Do I need to be home during the clean?',
+            a: "No. Most Port Macquarie clients use a key handover or lockbox. We photograph every room on completion and send you a summary you can share directly with your property manager.",
+          },
+          {
+            q: 'Does the clean cover the oven and shower screen?',
+            a: "Yes. Oven interior (racks, walls, door glass), rangehood, stovetop and all bathrooms including shower screens are included as standard. These are the most inspected items in any Port Macquarie final inspection.",
+          },
+          {
+            q: 'What is your bond-back guarantee?',
+            a: "If your Port Macquarie property manager raises any issue with our clean, we return within 72 hours and re-clean the affected areas at no charge. No disputes, no arguments — just your bond, back.",
+          },
+        ],
+      },
+      {
+        type: 'cta',
+        heading: 'Ready to book your Port Macquarie bond clean?',
+        body: 'Get an instant price in 60 seconds — no phone call required. Police-checked team, 72-hour bond-back guarantee.',
+        href: '/end-of-lease-cleaning-port-macquarie',
+        label: 'Get an instant price',
+      },
+    ],
+    related: ['end-of-lease-cleaning-checklist-australia', 'house-cleaning-cost-port-macquarie'],
+  },
+
+  // PM-2. House cleaning cost Port Macquarie
+  {
+    slug: 'house-cleaning-cost-port-macquarie',
+    category: 'House Cleaning',
+    title: 'How Much Does House Cleaning Cost in Port Macquarie? [2026 Prices]',
+    excerpt:
+      '2026 pricing guide for professional house cleaning in Port Macquarie — what drives the cost and how to avoid overpaying.',
+    metaTitle: 'House Cleaning Cost Port Macquarie 2026 | Naturo Group',
+    metaDescription:
+      'Current house cleaning prices in Port Macquarie for 2026. Hourly rates vs fixed-price packages, what affects cost, and what a professional team actually includes.',
+    keywords: [
+      'house cleaning cost port macquarie',
+      'house cleaning port macquarie price',
+      'cleaners port macquarie',
+      'how much does house cleaning cost port macquarie',
+      'domestic cleaning port macquarie',
+      'port macquarie cleaning services',
+    ],
+    publishedDate: '2026-05-07',
+    readMinutes: 7,
+    heroImage: '/images/hero-kitchen.jpg',
+    intro:
+      "Port Macquarie's residential cleaning market ranges from budget hourly contractors to full-service teams with insurance, eco-products and a satisfaction guarantee. The price you pay depends heavily on which you choose — and what's actually included. This guide breaks down real 2026 pricing so you know what to expect and what questions to ask.",
+    toc: [
+      { id: 'pm-cleaning-rates', label: 'Port Macquarie cleaning rates' },
+      { id: 'what-affects-price', label: 'What affects the price?' },
+      { id: 'hourly-vs-fixed', label: 'Hourly vs fixed-price' },
+      { id: 'what-is-included', label: "What's included?" },
+      { id: 'ndis-aged-care', label: 'NDIS and aged care cleaning' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'Port Macquarie house cleaning rates in 2026' },
+      {
+        type: 'p',
+        text: 'Professional house cleaning in Port Macquarie generally falls between $35 and $55 per hour for a single cleaner, or between $180 and $380 for a fixed-price clean of a standard 3-bedroom home. The lower end of the range is typically an individual independent contractor; the upper end includes an insured, vetted team with eco-friendly products, all equipment supplied and a satisfaction guarantee.',
+      },
+      {
+        type: 'ul',
+        items: [
+          '1-bedroom apartment — $120–$180 per regular clean',
+          '2-bedroom house — $180–$240 per regular clean',
+          '3-bedroom house — $220–$300 per regular clean',
+          '4-bedroom house — $280–$380 per regular clean',
+          'Deep clean (first clean) — 40–60% more than a regular clean',
+          'End of lease / bond clean — from $560 (see separate guide)',
+        ],
+      },
+      { type: 'h2', text: 'What affects house cleaning prices in Port Macquarie?' },
+      {
+        type: 'p',
+        text: "Several factors push the price up or down compared to the averages above:",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Current condition — a home that hasn\'t been professionally cleaned in 6+ months will take longer',
+          'Number of bathrooms — each bathroom adds significant time; Port Macquarie coastal homes often have an outdoor shower too',
+          'Pets — hair and dander require extra vacuuming time and specialist products',
+          'Frequency — weekly and fortnightly cleans are typically cheaper per visit than monthly or one-off',
+          'Add-ons — oven cleaning, internal windows, fridge, balcony and outdoor furniture cleaning',
+          'Products — companies using eco-certified products typically price slightly higher but are safer for kids, pets and marine environments near the Hastings River',
+        ],
+      },
+      { type: 'h2', text: 'Hourly rate vs fixed-price: which is better?' },
+      {
+        type: 'p',
+        text: "Hourly rates feel cheaper upfront but can escalate if the clean takes longer than expected — and you have little certainty about the outcome. Fixed-price packages give you a known cost and typically include a defined list of tasks. For regular cleans, fixed-price is almost always better value because the team learns your home and becomes more efficient over time.",
+      },
+      {
+        type: 'callout',
+        title: 'Ask this before you book',
+        body: 'Does the price include all equipment and products? Are the cleaners insured? What happens if something is missed or damaged? A professional company answers all three confidently. An independent contractor may not.',
+      },
+      { type: 'h2', text: "What's included in a standard Port Macquarie house clean?" },
+      {
+        type: 'ul',
+        items: [
+          'Kitchen — benchtops, stovetop exterior, sink, inside microwave, wipe appliance exteriors',
+          'Bathrooms — toilet, basin, shower, mirror, floor mopped',
+          'All rooms — vacuumed, hard floors mopped, surfaces dusted',
+          'Skirting boards, light switches and door handles wiped',
+          'Rubbish bins emptied',
+          'Not typically included: oven interior, internal windows, fridge inside, laundry walls, outdoor areas',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The difference between a budget clean and a professional clean is usually found in the details: skirting boards, ceiling fan blades, light switch plates, window sills and behind appliances. Naturo Group\'s Port Macquarie team uses a 50-point checklist so nothing is skipped.',
+      },
+      { type: 'h2', text: 'NDIS and aged care cleaning in Port Macquarie' },
+      {
+        type: 'p',
+        text: 'Naturo Group is a registered NDIS cleaning provider in Port Macquarie. We work with self-managed, plan-managed and agency-managed participants. NDIS cleaning is funded under Assistance with Daily Life (SIL) or Assistance with Daily Activities support categories. We handle all documentation and invoicing to your NDIS plan directly.',
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'How do I know if a Port Macquarie cleaning company is legitimate?',
+            a: 'Check for: ABN, public liability insurance, police-checked staff, real Google reviews with responses, and a local phone number. Legitimate companies are transparent about what is and isn\'t included.',
+          },
+          {
+            q: 'How often should I have my Port Macquarie home professionally cleaned?',
+            a: 'Most Port Macquarie households benefit from a fortnightly clean. Coastal homes near the beach or foreshore often need more frequent attention due to sand, salt and humidity.',
+          },
+          {
+            q: 'Do you clean in Wauchope, Lake Cathie and surrounding areas?',
+            a: 'Yes. Naturo Group serves Port Macquarie, Wauchope, Lake Cathie, Laurieton, North Haven, Bonny Hills, Settlement Point and surrounding suburbs. Get an instant price online for your specific area.',
+          },
+        ],
+      },
+      {
+        type: 'cta',
+        heading: 'Book a house clean in Port Macquarie',
+        body: 'Police-checked team, all products and equipment supplied, 100% eco-friendly. Get an instant price in 60 seconds.',
+        href: '/cleaners-port-macquarie',
+        label: 'Get an instant price',
+      },
+    ],
+    related: ['end-of-lease-cleaning-port-macquarie-checklist', 'ndis-cleaning-port-macquarie-guide'],
+  },
+
+  // PM-3. NDIS cleaning Port Macquarie guide
+  {
+    slug: 'ndis-cleaning-port-macquarie-guide',
+    category: 'NDIS',
+    title: 'NDIS Cleaning in Port Macquarie: What Is Covered and How to Access It [2026]',
+    excerpt:
+      'A plain-English guide to NDIS-funded cleaning in Port Macquarie — what is covered, what to say to your coordinator, and how to switch providers.',
+    metaTitle: 'NDIS Cleaning Port Macquarie 2026 — What Is Covered | Naturo Group',
+    metaDescription:
+      'NDIS cleaning in Port Macquarie explained. What support categories cover cleaning, how to access it, and what a registered NDIS cleaning provider actually does.',
+    keywords: [
+      'ndis cleaning port macquarie',
+      'ndis cleaning provider port macquarie',
+      'ndis house cleaning port macquarie',
+      'ndis domestic cleaning port macquarie',
+      'ndis support worker port macquarie cleaning',
+      'port macquarie ndis registered cleaner',
+    ],
+    publishedDate: '2026-05-07',
+    readMinutes: 8,
+    heroImage: '/images/hero-bathroom.jpg',
+    intro:
+      "If you are an NDIS participant in Port Macquarie — or a family member, support coordinator or plan manager looking for a registered cleaning provider — this guide explains exactly what NDIS cleaning covers, how to access it, and what to look for in a provider. Port Macquarie has a growing NDIS participant community, and cleaning support is one of the most consistently requested services in the area.",
+    toc: [
+      { id: 'what-ndis-covers', label: 'What NDIS covers for cleaning' },
+      { id: 'support-categories', label: 'Support categories' },
+      { id: 'self-managed-plan-managed', label: 'Self-managed vs plan-managed' },
+      { id: 'choosing-provider-pm', label: 'Choosing a Port Macquarie provider' },
+      { id: 'switching-providers', label: 'How to switch providers' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      { type: 'h2', text: 'What does NDIS cover for cleaning in Port Macquarie?' },
+      {
+        type: 'p',
+        text: 'NDIS funding can cover domestic cleaning tasks when they are connected to a participant\'s disability and help them live independently. Cleaning is typically funded under the Assistance with Daily Life (ADL) support category — formally called Assistance with Daily Activities. This covers tasks like vacuuming, mopping, bathroom cleaning, kitchen wiping, bin emptying and laundry where the participant\'s disability prevents them from completing those tasks safely or independently.',
+      },
+      {
+        type: 'callout',
+        title: 'Important',
+        body: 'NDIS does not automatically fund cleaning for every participant. The support must be linked to your disability and your goals. Your support coordinator or Local Area Coordinator (LAC) can help you confirm whether cleaning is included in your plan.',
+      },
+      { type: 'h2', text: 'Which NDIS support categories cover cleaning?' },
+      {
+        type: 'p',
+        text: 'In most Port Macquarie NDIS plans, cleaning is funded under one of the following:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Assistance with Daily Life (01_002) — the most common category; covers domestic assistance including cleaning',
+          'Supported Independent Living (SIL) — if you live in shared accommodation and cleaning is part of your support package',
+          'Community Nursing Care — if a registered nurse is involved in assessing or overseeing your household routine',
+        ],
+      },
+      { type: 'h2', text: 'Self-managed, plan-managed and agency-managed: what changes?' },
+      {
+        type: 'ul',
+        items: [
+          'Agency-managed: NDIS pays your provider directly; you must use NDIS-registered providers only',
+          'Plan-managed: your plan manager pays invoices; you can use both registered and unregistered providers',
+          'Self-managed: you pay providers and claim reimbursement; you can use any provider but keep all receipts and invoices',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'Naturo Group is a registered NDIS cleaning provider in Port Macquarie, which means we can work with participants under all three management types. We handle documentation, service agreements and invoicing according to NDIS requirements.',
+      },
+      { type: 'h2', text: 'What does Naturo Group\'s NDIS cleaning include in Port Macquarie?' },
+      {
+        type: 'ul',
+        items: [
+          'Kitchen — benchtops, stovetop, sink, microwave exterior, floor',
+          'Bathrooms — toilet, shower, basin, mirror, floor mopped and disinfected',
+          'All rooms — vacuum, mop, surfaces dusted, rubbish emptied',
+          'Laundry — tub, floor, appliance exteriors',
+          'Regular, reliable scheduling — same team where possible',
+          'Progress notes and service records supplied to coordinators on request',
+        ],
+      },
+      { type: 'h2', text: 'How to choose an NDIS cleaning provider in Port Macquarie' },
+      {
+        type: 'p',
+        text: 'When comparing providers, ask:',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Are you NDIS-registered? (Required for agency-managed participants)',
+          'Are your staff police-checked and NDIS Worker Screening cleared?',
+          'Do you provide a service agreement and NDIS-compliant invoices?',
+          'Can you provide progress notes for my support coordinator?',
+          'What eco-friendly products do you use? (Important for participants with chemical sensitivities)',
+          'Do you serve Port Macquarie, Wauchope, Lake Cathie and surrounding areas?',
+        ],
+      },
+      { type: 'h2', text: 'How to switch NDIS cleaning providers in Port Macquarie' },
+      {
+        type: 'p',
+        text: 'Switching is simpler than many participants realise. You are entitled to change providers at any time — there is no obligation to stay. Steps:',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Check your service agreement for any notice period (typically 2 weeks)',
+          'Contact your current provider in writing to end the agreement',
+          'Contact your new provider and complete a new service agreement',
+          'Notify your plan manager or support coordinator of the change so payments are directed correctly',
+        ],
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'Can I use my NDIS funding for a one-off deep clean in Port Macquarie?',
+            a: 'It depends on your plan. Some participants have funding for a deep clean or end-of-lease clean if it is connected to a disability-related goal (e.g. moving to supported accommodation). Speak to your support coordinator to confirm before booking.',
+          },
+          {
+            q: 'Do you service Wauchope, Laurieton and Lake Cathie for NDIS cleaning?',
+            a: 'Yes. Naturo Group provides NDIS cleaning services across Port Macquarie, Wauchope, Laurieton, Lake Cathie, North Haven, Bonny Hills and surrounding areas. Contact us to confirm availability in your specific location.',
+          },
+          {
+            q: 'How do I get started with NDIS cleaning in Port Macquarie?',
+            a: 'Call us on 1300 876 472 or get a price online. We will prepare a service agreement, confirm your NDIS plan details with your plan manager if required, and schedule your first clean at a time that suits you.',
+          },
+          {
+            q: 'What makes Naturo Group different from other Port Macquarie cleaning providers?',
+            a: 'Our team is led by a registered nurse — which means our standard is clinical-grade thorough. All cleaners are police-checked, NDIS Worker Screening cleared and trained on our 50-point checklist. We use only eco-friendly, non-toxic products that are safe for participants with respiratory conditions, chemical sensitivities or allergies.',
+          },
+        ],
+      },
+      {
+        type: 'cta',
+        heading: 'Book NDIS cleaning in Port Macquarie',
+        body: 'Registered NDIS provider. Police-checked, eco-friendly team. All management types welcome.',
+        href: '/ndis-cleaning-port-macquarie',
+        label: 'Learn more & book',
+      },
+    ],
+    related: ['ndis-cleaning-routine-supports-independence', 'house-cleaning-cost-port-macquarie'],
+  },
 ];
 
 export const postsBySlug: Record<string, BlogPost> = Object.fromEntries(

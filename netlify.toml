@@ -82,6 +82,49 @@
   to   = "/"
   status = 301
 
+# ── Geelong URL renames — old slugs that Google may have indexed ─────────────
+[[redirects]]
+  from = "/cleaners-ocean-grove"
+  to   = "/house-cleaning-ocean-grove"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-ocean-grove/"
+  to   = "/house-cleaning-ocean-grove"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-in-ocean-grove-copy"
+  to   = "/house-cleaning-ocean-grove"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-in-ocean-grove-copy/"
+  to   = "/house-cleaning-ocean-grove"
+  status = 301
+
+# ── Old Shopify / legacy service URLs ────────────────────────────────────────
+[[redirects]]
+  from = "/pages/commercial-cleaning"
+  to   = "/commercial-cleaning-geelong"
+  status = 301
+
+[[redirects]]
+  from = "/pages/commercial-cleaning/"
+  to   = "/commercial-cleaning-geelong"
+  status = 301
+
+[[redirects]]
+  from = "/pages/*"
+  to   = "/"
+  status = 301
+
+# ── Legacy blog routes (blogs/ vs blog/) ─────────────────────────────────────
+[[redirects]]
+  from = "/blogs/*"
+  to   = "/resource"
+  status = 301
+
 # ── /account — login link in TopBar; sends users to the booking app ──────────
 [[redirects]]
   from = "/account"

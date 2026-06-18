@@ -48,6 +48,13 @@ const slides = [
 <style>
   .hero {
     padding-block: 0;
+    /* Inset the hero from the viewport edges and round all four corners so
+       it reads as a contained, floating panel rather than a full-bleed band.
+       overflow:hidden (set via the class list) clips the slides + overlay
+       to the rounded shape. */
+    margin: 16px clamp(16px, 2.5vw, 28px) 0;
+    border-radius: clamp(20px, 2vw, 32px);
+    box-shadow: 0 20px 50px rgba(28, 36, 75, 0.16);
   }
   .hero-inner {
     /* Standard hero height — match across every page (career, contact, services, post, suburb). */
@@ -58,6 +65,10 @@ const slides = [
      of viewport, so a 560px hero pushes the next section well below the
      fold. Cap to ~88dvh so the partner row peeks above the fold. */
   @media (max-width: 640px) {
+    .hero {
+      margin: 10px 12px 0;
+      border-radius: 18px;
+    }
     .hero-inner {
       height: min(680px, 88dvh);
       padding-block: 36px;

@@ -92,11 +92,11 @@ const reviewSchema = localTestimonials.slice(0, 6).map((t) => ({
   reviewBody: t.text,
 }));
 
-// Hero rotation: the suburb-specific landmark leads (slide 1, served as an
-// <img> for crawlable alt + LCP), then the kitchen and the bathroom-octopus
-// brand slide crossfade behind it — matching the original site's 3-slide
+// Hero rotation: the staff photo leads (slide 1, served as an
+// <img> for crawlable alt + LCP), then the kitchen and ocean
+// brand slides crossfade behind it — matching the original site's 3-slide
 // pattern (area photo → kitchen → octopus).
-const heroFiller = ['/images/hero-staff-bathroom.jpg'];
+const heroFiller = ['/images/hero-kitchen.jpg', '/images/hero-ocean.jpg'];
 
 // Google Maps embed: prefer a per-suburb override (e.g. NATURO GROUP's own
 // verified GBP listing for Port Macquarie). Otherwise build a free,

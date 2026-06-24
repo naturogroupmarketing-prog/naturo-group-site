@@ -132,6 +132,31 @@ export const pricingCards = [
   },
 ];
 
+// Display cards for the "Choose your clean" section (homepage, services
+// index, suburb + service pages). Decoupled from `pricingCards` — which
+// still drives the /services routing and nav — so this section can run a
+// lead-gen layout (no prices, prompt the user for their details) and swap
+// the third card to a specialist card (NDIS / DVA / aged care / insurance)
+// without affecting the End of Lease service page or its links.
+export const chooseYourClean = [
+  pricingCards[0], // Deep Clean
+  pricingCards[1], // Regular Clean (featured)
+  {
+    name: 'Specialist Cleaning',
+    slug: 'specialist-cleaning',
+    priceFrom: 0,
+    label: '',
+    bullets: [
+      'NDIS, DVA, aged care and insurance cleaning — tailored to your plan.',
+      'NDIS — plan-managed & self-managed participants',
+      'DVA — Gold & White card holders',
+      'Aged Care — Home Care Packages & CHSP',
+      'Insurance — claim scopes, photos & reports',
+    ],
+    cta: { text: 'Get a free quote', href: '/quote' },
+  },
+];
+
 // For service-detail page generation
 export const services = pricingCards.map((c) => ({
   slug: c.slug,

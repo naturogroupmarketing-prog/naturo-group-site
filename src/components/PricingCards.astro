@@ -1,17 +1,17 @@
 ---
-import { pricingCards } from '../data/site';
+import { chooseYourClean } from '../data/site';
 ---
 
 <section class="pricing-section">
   <div class="pricing-head">
     <h2 class="pricing-h2">Choose your clean</h2>
     <p class="pricing-sub">
-      Pick your perfect house cleaning service. Eco-friendly products, police-checked cleaners, and flexible scheduling on every visit.
+      Choose the service that fits, then get a fast, obligation-free price. Eco-friendly products, police-checked cleaners, flexible scheduling.
     </p>
   </div>
 
   <div class="pricing-grid">
-    {pricingCards.map((card, i) => (
+    {chooseYourClean.map((card, i) => (
       <div class={`pricing-card ${card.featured ? 'is-featured' : ''}`}>
         {card.featured && <div class="pricing-badge">MOST POPULAR</div>}
         <div class="pricing-card-body">
@@ -39,17 +39,17 @@ import { pricingCards } from '../data/site';
               )}
               {i === 2 && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M8 42V22L24 8l16 14v20H8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="20" y="30" width="8" height="12" rx="1" stroke="currentColor" stroke-width="2"/>
-                  <path d="M16 23l6 6 10-12" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M24 41C24 41 6 31 6 18.5C6 12.7 10.5 9 15 9c3.4 0 6.6 1.8 9 5 2.4-3.2 5.6-5 9-5 4.5 0 9 3.7 9 9.5C42 31 24 41 24 41z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M18 23l4.5 4.5L31 18" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               )}
             </div>
             <h3 class="pricing-card-name">{card.name}</h3>
           </div>
           <p class="pricing-card-desc">{card.bullets[0]}</p>
-          <div class="pricing-card-price">
-            <span class="pricing-currency">$</span><span class="pricing-integer">{card.priceFrom}</span><span class="pricing-unit">/from</span>
+          <div class="pricing-prompt-block">
+            <p class="pricing-prompt">Get your personalised price</p>
+            <p class="pricing-prompt-sub">Fast, free &amp; no obligation</p>
           </div>
           <ul class="pricing-features">
             {card.bullets.slice(1).map((b) => (
@@ -151,9 +151,8 @@ import { pricingCards } from '../data/site';
   }
   .pricing-card:hover .pricing-card-name,
   .pricing-card:hover .pricing-card-desc,
-  .pricing-card:hover .pricing-currency,
-  .pricing-card:hover .pricing-integer,
-  .pricing-card:hover .pricing-unit,
+  .pricing-card:hover .pricing-prompt,
+  .pricing-card:hover .pricing-prompt-sub,
   .pricing-card:hover .pricing-features li {
     color: #ffffff;
   }
@@ -240,34 +239,26 @@ import { pricingCards } from '../data/site';
     margin: 0 0 28px;
     min-height: 70px;
   }
-  .pricing-card-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 2px;
+  .pricing-prompt-block {
     margin: 0 0 28px;
     text-align: center;
   }
-  .pricing-currency {
+  .pricing-prompt {
     font-family: "Poppins", sans-serif;
-    font-size: 54px;
-    font-weight: 300;
-    color: #000000;
-    line-height: 1;
+    font-size: 21px;
+    font-weight: 600;
+    color: #3a5dff;
+    line-height: 1.25;
+    margin: 0 0 5px;
+    transition: color 0.25s ease;
   }
-  .pricing-integer {
+  .pricing-prompt-sub {
     font-family: "Poppins", sans-serif;
-    font-size: 54px;
-    font-weight: 300;
-    color: #000000;
-    line-height: 1;
-  }
-  .pricing-unit {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 300;
     color: rgb(100, 116, 139);
-    margin-left: 4px;
+    margin: 0;
+    transition: color 0.25s ease;
   }
   .pricing-features {
     list-style: none;

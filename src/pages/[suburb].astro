@@ -93,10 +93,10 @@ const reviewSchema = localTestimonials.slice(0, 6).map((t) => ({
 }));
 
 // Hero rotation: the staff photo leads (slide 1, served as an
-// <img> for crawlable alt + LCP), then the kitchen and ocean
-// brand slides crossfade behind it — matching the original site's 3-slide
-// pattern (area photo → kitchen → octopus).
-const heroFiller = ['/images/hero-kitchen.jpg', '/images/hero-ocean.jpg'];
+// <img> for crawlable alt + LCP), then the suburb photo, kitchen and ocean
+// brand slides crossfade behind it — matching the homepage hero's 4-slide
+// pattern (staff → suburb → kitchen → ocean).
+const heroFiller = [suburb.heroImage, '/images/hero-kitchen.jpg', '/images/hero-ocean.jpg'];
 
 // Google Maps embed: prefer a per-suburb override (e.g. NATURO GROUP's own
 // verified GBP listing for Port Macquarie). Otherwise build a free,
@@ -496,7 +496,7 @@ const schema = [
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    animation: heroFade 15s infinite;
+    animation: heroFade 20s infinite;
     will-change: opacity;
   }
   /* Slide 1 is a real <img> for SEO + LCP; cover the section like the bg slides. */
@@ -505,8 +505,8 @@ const schema = [
     object-position: center;
   }
   @keyframes heroFade {
-    0%, 28% { opacity: 1; }
-    33%, 95% { opacity: 0; }
+    0%, 21% { opacity: 1; }
+    25%, 96% { opacity: 0; }
     100% { opacity: 1; }
   }
   @media (prefers-reduced-motion: reduce) {

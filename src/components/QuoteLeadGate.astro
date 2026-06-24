@@ -535,8 +535,6 @@ const lc = leadCapture;
     justify-content: center;
     padding: 16px;
     background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     animation: qlg-fade 180ms ease-out;
     /* Allow overlay itself to scroll on very short screens so the card
        is never clipped — align-items:safe center does the same but
@@ -559,10 +557,8 @@ const lc = leadCapture;
     /* Pushes card to vertical centre when there's room; sits at top when
        the overlay itself needs to scroll. */
     margin: auto;
-    background: rgba(242, 242, 247, 0.85);
-    backdrop-filter: saturate(180%) blur(30px);
-    -webkit-backdrop-filter: saturate(180%) blur(30px);
-    border: 1px solid rgba(209, 209, 214, 0.5);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 18px;
     padding: 36px 32px 30px;
     box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
@@ -632,8 +628,8 @@ const lc = leadCapture;
     font-size: 16px;
     font-weight: 400;
     color: #0f172a;
-    background: rgba(242, 242, 247, 0.7);
-    border: 1px solid rgba(209, 209, 214, 0.8);
+    background: #ffffff;
+    border: 1px solid #d1d5db;
     border-radius: 10px;
     padding: 12px 14px;
     transition: border-color 150ms, box-shadow 150ms;

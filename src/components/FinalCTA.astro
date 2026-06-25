@@ -9,10 +9,11 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
         <h2 class="finalcta-h2">Ready for a <span class="finalcta-accent">healthier home</span> this week?</h2>
         <p class="finalcta-sub">Eco-friendly products, police-checked cleaners and flexible scheduling &mdash; book your first clean in under 60 seconds.</p>
         <div class="finalcta-ctas">
-          <a href={ctaPrimary.href} class="finalcta-btn-primary">{ctaPrimary.text}</a>
+          <a href={ctaPrimary.href} class="finalcta-btn-primary"><span>{ctaPrimary.text}</span><span class="finalcta-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <a href={site.phoneHref} class="finalcta-btn-secondary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span>{ctaPhone.text}</span>
+            <span class="finalcta-btn-sec-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
         </div>
         <p class="finalcta-fineprint">Satisfaction guaranteed. No lock-in contracts. Cancel anytime.</p>
@@ -91,53 +92,87 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
   .finalcta-btn-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    color: #1C244B;
-    border: 1px solid #ffffff;
-    border-radius: 6px;
-    padding: 14px 26px;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-size: 14px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
-    letter-spacing: 0.01em;
     line-height: 1;
-    min-height: 46px;
-    box-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.06),
-      0 10px 28px rgba(0, 0, 0, 0.18);
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    text-align: center;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
     text-decoration: none;
   }
   .finalcta-btn-primary:hover {
-    background-color: #f3f4f8;
-    box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.08),
-      0 14px 32px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
+  }
+  .finalcta-btn-primary .finalcta-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #1C244B;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .finalcta-btn-primary .finalcta-btn-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+  .finalcta-btn-primary:hover .finalcta-btn-icon {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
   .finalcta-btn-secondary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 10px;
     background-color: rgba(255, 255, 255, 0.06);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(2px);
-    border-radius: 6px;
-    padding: 13px 24px;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-size: 15px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
     line-height: 1;
-    min-height: 46px;
+    min-height: 44px;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    text-align: center;
     text-decoration: none;
   }
-  .finalcta-btn-secondary svg { flex-shrink: 0; }
+  .finalcta-btn-secondary > svg { flex-shrink: 0; }
+  .finalcta-btn-secondary .finalcta-btn-sec-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: currentColor;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .finalcta-btn-secondary .finalcta-btn-sec-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
   .finalcta-btn-secondary:hover {
     background-color: #ffffff;
     color: #1C244B;

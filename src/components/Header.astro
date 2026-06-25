@@ -39,13 +39,20 @@ import { nav, site, ctaPrimary } from '../data/site';
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href={site.phoneHref} class="header-phone-btn hidden md:inline-flex items-center gap-2">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          {site.phone}
+        <a href={site.phoneHref} class="header-phone-btn hidden md:inline-flex">
+          <span>{site.phone}</span>
+          <span class="header-btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
         </a>
         <a href={ctaPrimary.href} class="header-cta-btn">
-          <span class="header-cta-long">{ctaPrimary.text}</span>
-          <span class="header-cta-short">Get Quote</span>
+          <span class="header-cta-text">
+            <span class="header-cta-long">{ctaPrimary.text}</span>
+            <span class="header-cta-short">Get Quote</span>
+          </span>
+          <span class="header-btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
         </a>
         <button id="mobile-menu-toggle" class="lg:hidden p-2" aria-label="Open menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -133,28 +140,35 @@ import { nav, site, ctaPrimary } from '../data/site';
       transition: color 0.2s;
     }
     .nav-link:hover { color: #1C244B; }
+    /* Header buttons mirror the hero buttons: gradient CTA with a white
+       circle (fills white on hover) and a white phone pill with a blue
+       circle (fills blue on hover), scaled for the compact header. */
     .header-phone-btn {
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       font-family: "Helvetica", sans-serif;
       font-weight: 500;
       font-size: 15px;
-      line-height: 15px;
+      line-height: 1;
       color: #1C244B;
-      padding: 12px 24px;
-      border: 0.5px solid #1C244B;
-      border-radius: 5px;
-      background: transparent;
-      transition: border-color 0.2s, color 0.2s;
+      padding: 6px 6px 6px 20px;
+      min-height: 44px;
+      border: 1px solid rgba(28, 36, 75, 0.15);
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .header-phone-btn:hover { border-color: #3a5dff; color: #3a5dff; }
-    .header-phone-btn svg { width: 15px; height: 15px; }
-    /* Header CTA matches the hero primary button shape (6px radius, 14/26
-       padding) so the button users see at the top is identical to the
-       button they see in the hero photo. Slightly slimmer vertical padding
-       keeps the header compact. */
+    .header-phone-btn:hover {
+      border-color: rgba(28, 36, 75, 0.25);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    }
     .header-cta-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      gap: 10px;
       white-space: nowrap;
       font-family: "Poppins", "Helvetica", sans-serif;
       font-weight: 500;
@@ -162,14 +176,50 @@ import { nav, site, ctaPrimary } from '../data/site';
       line-height: 1;
       letter-spacing: 0.01em;
       color: #ffffff;
-      padding: 13px 24px;
-      border: 1px solid #3a5dff;
-      border-radius: 6px;
-      background: #3a5dff;
-      box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
-      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      padding: 6px 6px 6px 20px;
+      min-height: 44px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: #1e2130;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+      transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
     }
-    .header-cta-btn:hover { background: #2548f0; color: #ffffff; }
+    .header-cta-btn:hover {
+      background: #262a3d;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.32);
+      transform: translateY(-1px);
+    }
+    /* Shared circular icon at the right of each header button */
+    .header-btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .header-btn-icon svg { display: block; }
+    .header-cta-btn .header-btn-icon {
+      border: 1.5px solid #3a5dff;
+      color: #3a5dff;
+    }
+    .header-cta-btn:hover .header-btn-icon {
+      background-color: #3a5dff;
+      border-color: #3a5dff;
+      color: #ffffff;
+    }
+    .header-phone-btn .header-btn-icon {
+      border-color: rgba(58, 93, 255, 0.5);
+      color: #3a5dff;
+    }
+    .header-phone-btn:hover .header-btn-icon {
+      background-color: #3a5dff;
+      border-color: #3a5dff;
+      color: #ffffff;
+    }
     .header-cta-short { display: none; }
     /* Tight viewport: header has logo + CTA + hamburger fighting for 375px.
        Use the shorter label and trim padding so nothing wraps. */
@@ -288,7 +338,7 @@ import { nav, site, ctaPrimary } from '../data/site';
     font-weight: 500;
     color: #0f172a;
     border: 1px solid rgba(15,23,42,0.18);
-    border-radius: 8px;
+    border-radius: 999px;
     text-decoration: none;
     transition: border-color 0.15s, color 0.15s;
   }
@@ -303,7 +353,7 @@ import { nav, site, ctaPrimary } from '../data/site';
     color: #ffffff;
     background: #3a5dff;
     border: 1px solid #3a5dff;
-    border-radius: 8px;
+    border-radius: 999px;
     text-decoration: none;
     transition: background 0.15s;
   }

@@ -27,10 +27,13 @@ const trustBadges = [
       </a>
       <p class="footer-desc">{site.description}</p>
       <div class="footer-ctas">
-        <a href={ctaPrimary.href} class="footer-btn-primary">{ctaPrimary.text}</a>
+        <a href={ctaPrimary.href} class="footer-btn-primary">
+          <span>{ctaPrimary.text}</span>
+          <span class="footer-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
         <a href={ctaPhone.href} class="footer-btn-secondary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.487 17.14l-4.065-3.696a1 1 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.193-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.292.652c-.024.376-.448 9.279 6.444 16.171c6.013 6.013 13.555 6.452 15.631 6.452c.305 0 .493-.013.541-.015a.999.999 0 0 0 .652-.293l1.861-2.17a1 1 0 0 0-.087-1.391z"/></svg>
           <span>{ctaPhone.text}</span>
+          <span class="footer-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         </a>
       </div>
       {/* Plain 12px text list — Apple's footer uses no all-caps labels;
@@ -188,65 +191,84 @@ const trustBadges = [
      `align-items: flex-start`, which would otherwise shrink the stack
      to its widest child. */
   .footer-ctas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
     margin-bottom: 32px;
     width: 100%;
   }
   .footer-ctas > a { white-space: nowrap; min-width: 0; }
-  /* Mobile: collapse to a single full-width column so both buttons
-     stack at equal width \u2014 matches hero / Experience / BookCTA / Sixty. */
+  /* Mobile: let both stacked buttons span the full column width so they
+     match hero / Experience / BookCTA / Sixty on phones. */
   @media (max-width: 500px) {
-    .footer-ctas { grid-template-columns: 1fr; }
+    .footer-ctas { align-items: stretch; }
   }
   .footer-btn-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background-color: #3a5dff;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
     color: #ffffff;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
-    padding: 11px 20px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", "Helvetica", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.01em;
     line-height: 1;
-    min-height: 38px;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .footer-btn-primary:hover {
-    background-color: #2548f0;
-    border-color: #2548f0;
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
   }
   .footer-btn-secondary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background-color: #ffffff;
-    color: #1d1d1f;
-    border: 1px solid #d2d2d7;
-    border-radius: 6px;
-    padding: 10px 18px;
+    justify-content: space-between;
+    gap: 10px;
+    background: #ffffff;
+    color: #1C244B;
+    border: 1px solid rgba(28, 36, 75, 0.18);
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", "Helvetica", sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1;
-    min-height: 38px;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
     text-decoration: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .footer-btn-secondary:hover {
-    background-color: #1d1d1f;
-    color: #ffffff;
-    border-color: #1d1d1f;
+    background: #ffffff;
+    color: #1C244B;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
   }
+  /* Shared circular icon (right of each footer button) */
+  .footer-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .footer-btn-icon svg { display: block; width: 14px; height: 14px; }
+  .footer-btn-primary .footer-btn-icon { background-color: #ffffff; border-color: #ffffff; color: #1C244B; }
+  .footer-btn-primary:hover .footer-btn-icon { background-color: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
+  .footer-btn-secondary .footer-btn-icon { border-color: rgba(58, 93, 255, 0.5); color: #3a5dff; }
+  .footer-btn-secondary:hover .footer-btn-icon { background-color: #3a5dff; border-color: #3a5dff; color: #ffffff; }
   .footer-meta {
     list-style: none;
     padding: 0;

@@ -224,10 +224,17 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
         <h1 class="cr-hero-h1">Cleaning, on<br />better terms.<br />Join the team.</h1>
         <p class="cr-hero-tagline">Above-award pay, flexible hours and clients who know your name.</p>
         <div class="cr-hero-ctas">
-          <a href="#apply" class="cr-hero-btn-primary">Apply now</a>
+          <a href="#apply" class="cr-hero-btn-primary">
+            <span>Apply now</span>
+            <span class="cr-hero-btn-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
           <a href={ctaPhone.href} class="cr-hero-btn-secondary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span>{ctaPhone.text}</span>
+            <span class="cr-hero-btn-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
           </a>
         </div>
       </div>
@@ -487,7 +494,7 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
           and reply within 48 hours.
         </p>
 
-        <button type="submit" class="cr-submit">Send my application</button>
+        <button type="submit" class="cr-submit"><span>Send my application</span><span class="cr-submit-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
       </form>
     </div>
   </section>
@@ -561,11 +568,11 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
     margin: 0 0 14px;
   }
   .cr-hero-h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(30px, 5.2vw, 66px);
-    font-weight: 300;
-    line-height: 1.08;
-    letter-spacing: -0.015em;
+    font-family: "Montserrat", "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: clamp(34px, 5.2vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -0.023em;
     color: #ffffff;
     margin: 0;
   }
@@ -591,52 +598,82 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   .cr-hero-btn-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background-color: #3a5dff;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
     color: #ffffff;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
-    padding: 14px 26px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0.01em;
-    min-height: 46px;
-    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
     text-decoration: none;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .cr-hero-btn-primary:hover {
-    background-color: #2548f0;
-    border-color: #2548f0;
-    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
+  }
+  .cr-hero-btn-primary .cr-hero-btn-icon {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #1C244B;
+  }
+  .cr-hero-btn-primary:hover .cr-hero-btn-icon {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
   .cr-hero-btn-secondary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: rgba(255, 255, 255, 0.06);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(2px);
-    border-radius: 6px;
-    padding: 13px 24px;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #1C244B;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
     line-height: 1;
-    min-height: 46px;
+    min-height: 44px;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .cr-hero-btn-secondary svg { flex-shrink: 0; }
   .cr-hero-btn-secondary:hover {
     background-color: #ffffff;
     color: #1C244B;
-    border-color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+  }
+  .cr-hero-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .cr-hero-btn-icon svg { display: block; width: 14px; height: 14px; }
+  .cr-hero-btn-secondary .cr-hero-btn-icon {
+    border-color: rgba(58, 93, 255, 0.5);
+    color: #3a5dff;
+  }
+  .cr-hero-btn-secondary:hover .cr-hero-btn-icon {
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    color: #ffffff;
   }
   /* Phone fallback — match homepage Hero. */
   @media (max-width: 640px) {
@@ -1233,28 +1270,49 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
     line-height: 1.55;
   }
   .cr-submit {
-    align-self: flex-start;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background-color: #3a5dff;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
     color: #ffffff;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
-    padding: 14px 28px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.01em;
-    min-height: 48px;
-    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
     cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .cr-submit:hover {
-    background-color: #2548f0;
-    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
+  }
+  .cr-submit .cr-submit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #1C244B;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .cr-submit .cr-submit-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+  .cr-submit:hover .cr-submit-icon {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
 </style>

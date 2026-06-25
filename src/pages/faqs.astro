@@ -31,10 +31,13 @@ const schema = {
         <h1 class="ph-h1">Frequently asked<br />questions.</h1>
         <p class="ph-tagline">Everything you need to know about Naturo Group cleaning.</p>
         <div class="ph-ctas">
-          <a href={ctaPrimary.href} class="ph-btn-primary">{ctaPrimary.text}</a>
+          <a href={ctaPrimary.href} class="ph-btn-primary">
+            <span>{ctaPrimary.text}</span>
+            <span class="ph-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
           <a href={ctaPhone.href} class="ph-btn-secondary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span>{ctaPhone.text}</span>
+            <span class="ph-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
           </a>
         </div>
       </div>
@@ -119,25 +122,33 @@ const schema = {
   }
   @media (max-width: 500px) { .ph-ctas { flex-direction: column; align-items: stretch; } }
   .ph-btn-primary {
-    display: inline-flex; align-items: center; justify-content: center;
-    background-color: #3a5dff; color: #ffffff; border: 1px solid #3a5dff;
-    border-radius: 6px; padding: 14px 26px; font-size: 14px; font-weight: 500;
-    font-family: "Poppins", sans-serif; line-height: 1; letter-spacing: 0.01em;
-    min-height: 46px; box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
-    text-decoration: none; transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%); color: #ffffff; border: 1px solid transparent;
+    border-radius: 999px; padding: 6px 6px 6px 20px; font-size: 14px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    text-decoration: none; transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .ph-btn-primary:hover {
-    background-color: #2548f0; border-color: #2548f0;
-    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4); transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px);
   }
   .ph-btn-secondary {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    background-color: rgba(255, 255, 255, 0.06); color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.75); backdrop-filter: blur(2px);
-    border-radius: 6px; padding: 13px 24px; font-size: 15px; font-weight: 500;
-    font-family: "Poppins", sans-serif; line-height: 1; min-height: 46px;
-    text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: #ffffff; color: #1C244B; border: 1px solid transparent;
+    border-radius: 999px; padding: 6px 6px 6px 20px; font-size: 15px; font-weight: 500;
+    font-family: "Poppins", sans-serif; line-height: 1; min-height: 44px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    text-decoration: none; transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
-  .ph-btn-secondary svg { flex-shrink: 0; }
-  .ph-btn-secondary:hover { background-color: #ffffff; color: #1C244B; border-color: #ffffff; }
+  .ph-btn-secondary:hover { background: #ffffff; color: #1C244B; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22); }
+  .ph-btn-icon {
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .ph-btn-icon svg { display: block; width: 14px; height: 14px; }
+  .ph-btn-primary .ph-btn-icon { background-color: #ffffff; border-color: #ffffff; color: #1C244B; }
+  .ph-btn-primary:hover .ph-btn-icon { background-color: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
+  .ph-btn-secondary .ph-btn-icon { border-color: rgba(58, 93, 255, 0.5); color: #3a5dff; }
+  .ph-btn-secondary:hover .ph-btn-icon { background-color: #3a5dff; border-color: #3a5dff; color: #ffffff; }
 </style>

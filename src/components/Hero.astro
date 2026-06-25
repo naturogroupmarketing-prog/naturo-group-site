@@ -31,10 +31,17 @@ const slides = [
       </h1>
       <p class="hero-tagline">{site.tagline}</p>
       <div class="hero-cta-stack">
-        <a href={ctaPrimary.href} class="hero-btn-primary">{ctaPrimary.text}</a>
+        <a href={ctaPrimary.href} class="hero-btn-primary">
+          <span>{ctaPrimary.text}</span>
+          <span class="hero-btn-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
         <a href={ctaPhone.href} class="hero-btn-secondary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>{ctaPhone.text}</span>
+          <span class="hero-btn-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
         </a>
       </div>
       <div class="hero-partners">
@@ -50,8 +57,8 @@ const slides = [
     padding-block: 0;
   }
   .hero-inner {
-    /* Standard hero height — match across every page (career, contact, services, post, suburb). */
-    height: clamp(640px, 86vh, 800px);
+    /* Compact hero — between the too-short 72vh and full-screen. */
+    height: clamp(600px, 84vh, 760px);
     padding-block: clamp(48px, 8vh, 96px);
   }
   /* On phones the sidebar header + sticky bottom bar already eat ~120px
@@ -64,11 +71,17 @@ const slides = [
     }
   }
   .hero-h1 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-size: clamp(30px, 5.2vw, 66px);
-    line-height: 1.08;
-    letter-spacing: -0.015em;
+    /* Matched to NiCE's hero H1 (NiCE Gotham, 64px, medium, lh1.1, -1.5px).
+       Gotham is a paid font; Montserrat is the closest free equivalent.
+       NiCE's heading is medium weight (not bold) — Montserrat also renders
+       a touch heavier than Gotham, so 500 best matches the visual. */
+    font-family: "Montserrat", "Poppins", sans-serif;
+    font-weight: 500;
+    /* NiCE renders Gotham at 64px; Montserrat is visually larger at the
+       same px, so 58px matches the apparent size. */
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -0.023em;
     margin: 0;
   }
   .hero-tagline {
@@ -94,52 +107,84 @@ const slides = [
   .hero-btn-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background-color: #3a5dff;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
     color: #ffffff;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
-    padding: 14px 26px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-size: 14px;
     font-weight: 500;
     font-family: "Poppins", "Helvetica", sans-serif;
     line-height: 1;
     letter-spacing: 0.01em;
-    min-height: 46px;
-    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    text-align: center;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .hero-btn-primary:hover {
-    background-color: #2548f0;
-    border-color: #2548f0;
-    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
+  }
+  /* Primary (gradient) — circle is solid white (dark arrow) by default and
+     becomes a white outline (white arrow) on hover. */
+  .hero-btn-primary .hero-btn-icon {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #1C244B;
+  }
+  .hero-btn-primary:hover .hero-btn-icon {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
   .hero-btn-secondary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: rgba(255, 255, 255, 0.06);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(2px);
-    border-radius: 6px;
-    padding: 13px 24px;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #1C244B;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-size: 15px;
     font-weight: 500;
     font-family: "Poppins", "Helvetica", sans-serif;
     line-height: 1;
-    min-height: 46px;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    text-align: center;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .hero-btn-secondary svg { flex-shrink: 0; }
+  /* NiCE-style circular icon at the right of each hero button */
+  .hero-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .hero-btn-icon svg { display: block; width: 14px; height: 14px; }
+  /* Phone button (white) — blue outline circle that fills solid blue on hover */
+  .hero-btn-secondary .hero-btn-icon {
+    border-color: rgba(58, 93, 255, 0.5);
+    color: #3a5dff;
+  }
   .hero-btn-secondary:hover {
     background-color: #ffffff;
     color: #1C244B;
-    border-color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+  }
+  .hero-btn-secondary:hover .hero-btn-icon {
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    color: #ffffff;
   }
 
   .hero-overlay {

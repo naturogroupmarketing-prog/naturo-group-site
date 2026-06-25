@@ -63,7 +63,10 @@ import { chooseYourClean } from '../data/site';
           </ul>
         </div>
         <div class="pricing-footer">
-          <a href={card.cta.href} class={`pricing-btn ${card.featured ? 'is-primary' : ''}`}>{card.cta.text}</a>
+          <a href={card.cta.href} class={`pricing-btn ${card.featured ? 'is-primary' : ''}`}>
+            <span>{card.cta.text}</span>
+            <span class="pricing-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
         </div>
       </div>
     ))}
@@ -100,11 +103,15 @@ import { chooseYourClean } from '../data/site';
     text-align: center;
   }
   .pricing-h2 {
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(32px, 4.5vw, 52px);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.015em;
+    /* Matched to NiCE's section heading ("The enterprise AI platform…"):
+       NiCE font 36px/700/-0.5px. Gotham/NiCE are paid fonts; Montserrat is
+       the free stand-in and renders a touch larger, so ~34px matches the
+       apparent size. */
+    font-family: "Montserrat", "Poppins", sans-serif;
+    font-size: clamp(29px, 3.8vw, 38px);
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: -0.014em;
     color: #0f172a;
     margin: 0 0 16px;
   }
@@ -127,6 +134,7 @@ import { chooseYourClean } from '../data/site';
   }
   .pricing-card {
     position: relative;
+    cursor: pointer;
     width: 353px;
     max-width: 100%;
     min-height: 550px;
@@ -160,17 +168,61 @@ import { chooseYourClean } from '../data/site';
     color: #ffffff;
   }
   .pricing-card:hover .pricing-btn {
-    background-color: #ffffff;
+    background: #ffffff;
     border-color: #ffffff;
     color: #3a5dff;
     box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
   }
   .pricing-card:hover .pricing-btn:hover {
-    background-color: #f1f4ff;
+    background: #f1f4ff;
     border-color: #f1f4ff;
     color: #2548f0;
   }
+  /* On card-hover the card turns blue and the gradient button turns white,
+     so its circle icon becomes a blue outline + blue arrow to stay visible. */
+  .pricing-card:hover .pricing-btn .pricing-btn-icon {
+    background-color: transparent;
+    border-color: rgba(58, 93, 255, 0.5);
+    color: #3a5dff;
+  }
   .pricing-card:hover .pricing-badge {
+    background-color: #ffffff;
+    color: #3a5dff;
+    border-color: #ffffff;
+  }
+
+  /* "Selected" state — Regular Clean (the featured card) shows selected
+     (blue) by default, but ONLY while no other card is hovered. Hovering
+     any other card selects it and deselects Regular Clean (no JS). */
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured {
+    transform: translateY(-3px);
+    background-color: #3a5dff;
+    border-color: #3a5dff;
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.06),
+      0 18px 36px rgba(58, 93, 255, 0.32);
+  }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-name,
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-desc,
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-prompt,
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-prompt-sub,
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-features li {
+    color: #ffffff;
+  }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-tick { color: #ffffff; }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-icon { color: #ffffff; }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-btn {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #3a5dff;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-btn .pricing-btn-icon {
+    background-color: transparent;
+    border-color: rgba(58, 93, 255, 0.5);
+    color: #3a5dff;
+  }
+  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-badge {
     background-color: #ffffff;
     color: #3a5dff;
     border-color: #ffffff;
@@ -295,28 +347,54 @@ import { chooseYourClean } from '../data/site';
   .pricing-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: "Poppins", "Helvetica", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.01em;
-    color: #ffffff;
-    background-color: #3a5dff;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
-    padding: 14px 26px;
-    min-height: 46px;
     line-height: 1;
-    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.28);
-    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  /* Stretched link — makes the whole pricing card clickable (to /quote). */
+  .pricing-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
   .pricing-btn:hover {
-    background-color: #2548f0;
-    border-color: #2548f0;
-    color: #ffffff;
-    box-shadow: 0 6px 18px rgba(58, 93, 255, 0.4);
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45);
     transform: translateY(-1px);
+  }
+  .pricing-btn .pricing-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #1C244B;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .pricing-btn .pricing-btn-icon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+  .pricing-btn:hover .pricing-btn-icon {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
   /* .is-primary kept for backward compat — same look as base. */
   .pricing-btn.is-primary {

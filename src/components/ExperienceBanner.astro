@@ -1,11 +1,5 @@
 ---
 import { ctaPrimary, ctaPhone, site } from '../data/site';
-
-const bullets = [
-  'Police-checked cleaners',
-  'Friendly customer service',
-  'Tailored service',
-];
 ---
 
 <section class="experience-banner">
@@ -14,14 +8,6 @@ const bullets = [
   <div class="container-site relative experience-inner">
     <div class="experience-content">
       <h2 class="experience-h1">Experience<br />and Reliable</h2>
-      <ul class="experience-bullets">
-        {bullets.map((b) => (
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
       <p class="experience-sub">View pricing and book online.</p>
       <div class="experience-ctas">
         <a href={ctaPrimary.href} class="experience-btn-primary">

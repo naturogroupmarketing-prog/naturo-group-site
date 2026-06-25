@@ -237,8 +237,7 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
     opacity: 0.6;
   }
   @media (max-width: 640px) {
-    .svc-hero-partners { margin-top: 24px; }
-    .svc-hero-partners-label { font-size: 12px; margin-bottom: 10px; }
-    .svc-hero-partners-img { width: 190px; }
+    /* Hide the Partners & Providers logo strip on mobile */
+    .svc-hero-partners { display: none; }
   }
 </style>

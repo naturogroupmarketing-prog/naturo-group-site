@@ -19,6 +19,15 @@ import { chooseYourClean } from '../data/site';
             <div class="pricing-card-icon" aria-hidden="true">
               {i === 0 && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/>
+                  <line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/>
+                </svg>
+              )}
+              {i === 1 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <rect x="10" y="22" width="28" height="18" rx="4" stroke="currentColor" stroke-width="2"/>
                   <path d="M18 22v-7a6 6 0 0 1 12 0v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                   <line x1="17" y1="29" x2="31" y2="29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -26,15 +35,6 @@ import { chooseYourClean } from '../data/site';
                   <circle cx="38" cy="10" r="3.5" fill="#ff5f1f"/>
                   <circle cx="43" cy="17" r="2.2" fill="#ff5f1f"/>
                   <circle cx="40" cy="5" r="1.8" fill="#ff5f1f"/>
-                </svg>
-              )}
-              {i === 1 && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
-                  <line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/>
-                  <line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/>
                 </svg>
               )}
               {i === 2 && (
@@ -48,7 +48,6 @@ import { chooseYourClean } from '../data/site';
           </div>
           <p class="pricing-card-desc">{card.bullets[0]}</p>
           <div class="pricing-prompt-block">
-            <p class="pricing-prompt">Get your personalised price</p>
             <p class="pricing-prompt-sub">Fast, free &amp; no obligation</p>
           </div>
           <ul class="pricing-features">
@@ -140,7 +139,7 @@ import { chooseYourClean } from '../data/site';
     min-height: 550px;
     background-color: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 14px;
+    border-radius: 24px;
     padding: 40px 32px 32px;
     display: flex;
     flex-direction: column;
@@ -191,42 +190,8 @@ import { chooseYourClean } from '../data/site';
     border-color: #ffffff;
   }
 
-  /* "Selected" state — Regular Clean (the featured card) shows selected
-     (blue) by default, but ONLY while no other card is hovered. Hovering
-     any other card selects it and deselects Regular Clean (no JS). */
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured {
-    transform: translateY(-3px);
-    background-color: #3a5dff;
-    border-color: #3a5dff;
-    box-shadow:
-      0 2px 4px rgba(15, 23, 42, 0.06),
-      0 18px 36px rgba(58, 93, 255, 0.32);
-  }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-name,
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-desc,
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-prompt,
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-prompt-sub,
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-features li {
-    color: #ffffff;
-  }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-tick { color: #ffffff; }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-card-icon { color: #ffffff; }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-btn {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #3a5dff;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
-  }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-btn .pricing-btn-icon {
-    background-color: transparent;
-    border-color: rgba(58, 93, 255, 0.5);
-    color: #3a5dff;
-  }
-  .pricing-grid:not(:has(.pricing-card:hover)) .pricing-card.is-featured .pricing-badge {
-    background-color: #ffffff;
-    color: #3a5dff;
-    border-color: #ffffff;
-  }
+  /* All panels start deselected (no blue "selected" panel by default).
+     Selection happens only on hover — see `.pricing-card:hover` above. */
   .pricing-card.is-featured {
     border: 1.5px solid rgba(58, 93, 255, 0.5);
     box-shadow:

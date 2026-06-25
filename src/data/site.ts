@@ -139,8 +139,8 @@ export const pricingCards = [
 // the third card to a specialist card (NDIS / DVA / aged care / insurance)
 // without affecting the End of Lease service page or its links.
 export const chooseYourClean = [
-  pricingCards[0], // Deep Clean
   pricingCards[1], // Regular Clean (featured)
+  pricingCards[0], // Deep Clean
   {
     name: 'Specialist Cleaning',
     slug: 'specialist-cleaning',

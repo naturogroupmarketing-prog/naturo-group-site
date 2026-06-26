@@ -28,7 +28,7 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     position: relative;
     min-height: clamp(520px, 70vh, 720px);
     margin-inline: clamp(12px, 2.5vw, 32px);
-    background-color: rgb(151, 151, 151);
+    background-color: rgb(58, 77, 97);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -37,18 +37,17 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
   }
   .experience-bg-img {
     position: absolute;
-    right: 0;
-    top: 0;
+    inset: 0;
     height: 100%;
-    width: 55%;
+    width: 100%;
     object-fit: cover;
-    object-position: 35% center;
+    object-position: 70% center;
     z-index: 0;
   }
   .experience-overlay {
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(90deg, rgb(151, 151, 151) 45%, rgba(151, 151, 151, 0) 65%);
+    background-image: linear-gradient(90deg, rgb(58, 77, 97) 20%, rgba(58, 77, 97, 0) 81%);
     opacity: 0.91;
     pointer-events: none;
     z-index: 1;

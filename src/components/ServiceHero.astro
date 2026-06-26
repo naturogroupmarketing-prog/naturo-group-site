@@ -37,7 +37,6 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
 
   <div class="relative container-site svc-hero-inner flex items-center">
     <div class="w-full max-w-[800px]">
-      {eyebrow && <p class="svc-hero-eyebrow">{eyebrow}</p>}
       <h1 class="svc-hero-h1" set:html={heading} />
       <p class="svc-hero-tagline">{tagline}</p>
       <div class="svc-hero-cta-stack">

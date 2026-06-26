@@ -42,7 +42,6 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
     <div class="lm-card" data-form-id={formId}>
       <div class="lm-grid">
         <div class="lm-side">
-          <span class="lm-eyebrow">Free download</span>
           <h2 class="lm-title">{title}</h2>
           <p class="lm-body">{body}</p>
           <ul class="lm-checks">
@@ -157,7 +156,6 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
             const thanks = document.createElement('div');
             thanks.className = 'lm-form lm-thanks';
             thanks.innerHTML =
-              '<span class="lm-eyebrow">Done!</span>' +
               '<h3 class="lm-title">Your download is ready</h3>' +
               '<p class="lm-body">Check your downloads folder. We\u2019ve also emailed a copy to ' + values.email + '.</p>' +
               (downloadUrl ? '<a class="lm-submit" href="' + downloadUrl + '" download="' + (downloadName || '') + '">Download again</a>' : '');

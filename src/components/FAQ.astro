@@ -18,8 +18,7 @@ const faqs = items ?? defaultFaqs;
 <section class="faq-section">
   <div class="container-site faq-inner">
     <div class="faq-head">
-      <h2 class="faq-eyebrow">{eyebrow}</h2>
-      <h3 class="faq-sub">{subheading}</h3>
+      <h2 class="faq-sub">{subheading}</h2>
     </div>
     <div class="faq-list">
       {faqs.map((item) => (
@@ -50,21 +49,10 @@ const faqs = items ?? defaultFaqs;
     margin-bottom: clamp(32px, 4vw, 48px);
     max-width: 720px;
   }
-  .faq-eyebrow {
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(32px, 4.5vw, 52px);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.015em;
-    color: #0f172a;
-    margin: 0 0 8px;
-  }
+  /* "Frequently asked Questions" — a standard section <h2>; the global h2
+     rule supplies the uniform heading typography, so only colour/margin here. */
   .faq-sub {
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(16px, 1.4vw, 19px);
-    font-weight: 300;
-    line-height: 1.5;
-    color: rgb(100, 116, 139);
+    color: #0f172a;
     margin: 0;
   }
   .faq-list {

@@ -112,7 +112,6 @@ const schema = [
         <span aria-hidden="true">/</span>
         <span class="post-breadcrumb-current">{post.category}</span>
       </nav>
-      <p class="post-hero-eyebrow">{post.category}</p>
       <h1 class="post-hero-h1">{post.title}</h1>
       <div class="post-hero-meta">
         <span>By {site.name}</span>
@@ -136,7 +135,6 @@ const schema = [
   {related.length > 0 && (
     <section class="post-related" aria-labelledby="post-related-h2">
       <div class="container-site post-related-inner">
-        <p class="post-related-eyebrow">Keep reading</p>
         <h2 id="post-related-h2" class="post-related-h2">Related guides</h2>
         <div class="post-related-grid">
           {related.map((r) => (

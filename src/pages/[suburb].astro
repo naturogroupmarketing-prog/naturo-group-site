@@ -207,7 +207,7 @@ const schema = [
            banner sections — see Hero.astro for full rationale. -->
       <div class="w-full max-w-[800px]">
         <h1 class="hero-h1">
-          {suburb.hero.h1Lines[0]}<br />{suburb.hero.h1Lines[1]}<br />{suburb.hero.h1Lines[2]}
+          <span class="hero-h1-kicker">{suburb.hero.h1Lines[0]}</span>{suburb.hero.h1Lines[1]}<br />{suburb.hero.h1Lines[2]}
         </h1>
         <p class="hero-tagline">{suburb.hero.tagline}</p>
         <div class="hero-cta-stack">
@@ -419,6 +419,16 @@ const schema = [
     letter-spacing: -0.023em;
     margin: 0;
     color: #ffffff;
+  }
+  /* "Eco-friendly" is a small kicker above the headline so "House Cleaning
+     in {suburb}" carries the visual weight (matches Hero.astro). */
+  .hero-h1-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .hero-tagline {
     font-family: "Poppins", sans-serif;

@@ -27,7 +27,7 @@ const slides = [
          still caps the column on desktop. -->
     <div class="w-full max-w-[800px]">
       <h1 class="hero-h1" style="color:#ffffff;">
-        Eco-friendly<br />House Cleaning<br />in Australia
+        <span class="hero-h1-kicker">Eco-friendly</span>House Cleaning<br />in Australia
       </h1>
       <p class="hero-tagline">{site.tagline}</p>
       <div class="hero-cta-stack">
@@ -83,6 +83,16 @@ const slides = [
     line-height: 1.1;
     letter-spacing: -0.023em;
     margin: 0;
+  }
+  /* "Eco-friendly" is a small kicker above the headline so "House Cleaning
+     in Australia" carries the visual weight. */
+  .hero-h1-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .hero-tagline {
     font-family: "Poppins", sans-serif;

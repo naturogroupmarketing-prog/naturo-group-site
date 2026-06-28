@@ -58,8 +58,8 @@ export const ctaPhone = { text: site.phone, href: site.phoneHref };
 export const leadCapture = {
   webhookUrl: 'https://formspree.io/f/xyklabez',
   metaPixelId: '',         // e.g. '1234567890'
-  googleAdsId: '',         // e.g. 'AW-1234567890'
-  googleAdsLabel: '',      // e.g. 'AbCdEfGhIjK'
+  googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
+  googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label
   ga4Id: 'G-G8R9DWS9CV',
   gtmId: 'GTM-MKXP59G9',
 };

@@ -11,14 +11,14 @@ interface Props {
   subheading?: string;
 }
 
-const { items, eyebrow = 'FAQ', subheading = 'Frequently asked Questions' } = Astro.props;
+const { items, eyebrow = 'FAQ', subheading = 'Frequently&nbsp;Asked<br />Questions' } = Astro.props;
 const faqs = items ?? defaultFaqs;
 ---
 
 <section class="faq-section">
   <div class="container-site faq-inner">
     <div class="faq-head">
-      <h2 class="faq-sub">{subheading}</h2>
+      <h2 class="faq-sub" set:html={subheading} />
     </div>
     <div class="faq-list">
       {faqs.map((item) => (
@@ -41,13 +41,25 @@ const faqs = items ?? defaultFaqs;
 
 <style>
   .faq-section {
-    background-color: #ffffff;
+    /* Full-bleed cream section, standard padding (consistent with Intro/
+       Founder) + a bottom margin so the cream doesn't touch the next section. */
+    background-color: #F8F8F3;
     padding: clamp(88px, 10vw, 128px) 0;
+    margin-bottom: clamp(48px, 6vw, 80px);
   }
-  .faq-inner { max-width: 1100px; }
+  .faq-inner {
+    max-width: 1100px;
+    /* Two-column like nice.com: heading on the left, accordion on the right. */
+    display: grid;
+    grid-template-columns: minmax(360px, 0.8fr) 1.5fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .faq-inner { grid-template-columns: 1fr; gap: 28px; }
+  }
   .faq-head {
-    margin-bottom: clamp(32px, 4vw, 48px);
-    max-width: 720px;
+    margin: 0;
   }
   /* "Frequently asked Questions" — a standard section <h2>; the global h2
      rule supplies the uniform heading typography, so only colour/margin here. */
@@ -70,6 +82,9 @@ const faqs = items ?? defaultFaqs;
     border-radius: 0;
     margin: 0;
   }
+  /* Hide the left accent rail on the expanded item (keep the 2px width
+     transparent so the content doesn't shift). */
+  .faq-item[open] { border-left-color: transparent; }
   .faq-summary {
     display: flex;
     align-items: center;

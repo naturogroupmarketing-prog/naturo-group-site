@@ -87,16 +87,14 @@ import {
 
   <div class="footer-bottom">
     <div class="container-site footer-bottom-inner">
-      {/* Apple-style three-section bar: copyright (left), pipe-separated
-          policy links (centre), region (right). The pipes are produced by
-          per-link borders + first-child reset. */}
-      <p class="footer-copyright">{site.copyright} &middot; {site.abn}</p>
+      {/* Clean left-aligned stack: pipe-separated legal links on top,
+          copyright beneath. Pipes are per-link left borders + first-child reset. */}
       <nav class="footer-sublinks" aria-label="Legal">
         {subFooterLinks.map((l) => (
           <a href={l.href} class="footer-sublink">{l.label}</a>
         ))}
       </nav>
-      <p class="footer-region">Australia</p>
+      <p class="footer-copyright">{site.copyright} &middot; {site.abn}</p>
     </div>
   </div>
 </footer>
@@ -379,14 +377,14 @@ import {
   }
   .footer-bottom-inner {
     border-top: 1px solid #d2d2d7;
-    padding-block: 16px;
-    /* Three-section row like Apple's footer: copyright (left), legal
-       links (centre), region (right), spread apart. */
+    padding-block: 18px;
+    /* Clean left-aligned stack: legal links on top, copyright beneath —
+       the long copyright + ABN won't fit one row, so stacking reads as
+       intentional rather than an awkward wrap. */
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
   .footer-copyright {
     font-family: "Poppins", sans-serif;

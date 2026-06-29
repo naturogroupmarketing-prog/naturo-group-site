@@ -187,7 +187,9 @@ import { chooseYourClean } from '../data/site';
   .pricing-card:hover .pricing-badge {
     background-color: #ffffff;
     color: #3a5dff;
-    border-color: #ffffff;
+  }
+  .pricing-card:hover .pricing-badge::after {
+    background-color: #ffffff;
   }
 
   /* All panels start deselected (no blue "selected" panel by default).
@@ -204,23 +206,35 @@ import { chooseYourClean } from '../data/site';
       0 2px 4px rgba(15, 23, 42, 0.06),
       0 18px 36px rgba(58, 93, 255, 0.32);
   }
+  /* Speech-bubble badge (EOFY-style): pale-blue bubble pinned to the
+     top-right corner with a small tail pointing down. */
   .pricing-badge {
     position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #3a5dff;
-    color: #ffffff;
+    top: -16px;
+    right: 18px;
+    background-color: #cfe8fc;
+    color: #1C244B;
     font-family: "Poppins", sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    padding: 9px 18px;
-    border: 1px solid #3a5dff;
-    border-radius: 6px;
+    letter-spacing: 0.01em;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 14px;
     line-height: 1;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(58, 93, 255, 0.35);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+  }
+  /* Down-pointing tail at the bottom-right of the bubble. */
+  .pricing-badge::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: 20px;
+    width: 16px;
+    height: 9px;
+    background-color: #cfe8fc;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
   .pricing-card-body {
     flex: 1;

@@ -22,7 +22,7 @@ const faqs = items ?? defaultFaqs;
     </div>
     <div class="faq-list">
       {faqs.map((item) => (
-        <details class="faq-item">
+        <details class="faq-item" name="naturo-faq">
           <summary class="faq-summary">
             <span class="faq-q">{item.q}</span>
             <span class="faq-icon faq-icon-plus" aria-hidden="true">
@@ -58,55 +58,59 @@ const faqs = items ?? defaultFaqs;
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
   }
+  /* NiCE-style accordion: no cards — a thin left accent rail per item, a
+     grey question that turns bold-black when open, and a circular +/-
+     toggle (pale-grey "+" → solid-black "−"). */
   .faq-item {
-    background-color: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 12px;
+    background: none;
+    border: none;
+    border-left: 2px solid #e5e7eb;
+    border-radius: 0;
     margin: 0;
-    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .faq-item:hover {
-    border-color: rgba(58, 93, 255, 0.25);
-  }
-  .faq-item[open] {
-    border-color: rgba(58, 93, 255, 0.3);
-    background-color: #fafbff;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03), 0 6px 20px rgba(58, 93, 255, 0.06);
   }
   .faq-summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 18px 20px;
+    gap: 20px;
+    padding: 17px 4px 17px 22px;
     cursor: pointer;
     list-style: none;
   }
   .faq-summary::-webkit-details-marker { display: none; }
   .faq-q {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.35;
-    color: #0f172a;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: #9ca3af;
     flex: 1;
+    transition: color 0.2s ease;
+  }
+  .faq-item:hover .faq-q { color: #6b7280; }
+  .faq-item[open] .faq-q {
+    color: #0f172a;
+    font-weight: 700;
   }
   .faq-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     border-radius: 999px;
-    background-color: rgba(58, 93, 255, 0.08);
-    color: #3a5dff;
+    background-color: #f0f0f2;
+    color: #9ca3af;
     flex-shrink: 0;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
+  .faq-icon svg { width: 13px; height: 13px; }
+  .faq-item:hover .faq-icon { background-color: #e6e6ea; color: #6b7280; }
   .faq-item[open] .faq-icon {
-    background-color: #3a5dff;
+    background-color: #1d1d1f;
     color: #ffffff;
   }
   .faq-icon-minus { display: none; }
@@ -114,10 +118,11 @@ const faqs = items ?? defaultFaqs;
   .faq-item[open] .faq-icon-minus { display: inline-flex; }
   .faq-content {
     font-family: "Poppins", sans-serif;
-    font-size: 15.5px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgb(71, 85, 105);
-    padding: 0 20px 20px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgb(91, 94, 102);
+    padding: 2px 22px 20px 22px;
+    max-width: 660px;
   }
 </style>

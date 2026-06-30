@@ -404,7 +404,11 @@ import { chooseYourClean } from '../data/site';
     color: rgb(148, 163, 184);
   }
 
-  @media (max-width: 768px) {
+  /* Below ~1139px the three 353px panels no longer fit on one row. Instead
+     of wrapping (one panel dropping below), keep them on a single line and
+     let the row overflow with horizontal scroll — through tablet down to
+     phone (where the card narrows to a one-at-a-time peek). */
+  @media (max-width: 1139px) {
     .pricing-section { padding: clamp(40px, 8vw, 88px) 0; }
     .pricing-head { padding: 0 20px; }
     .pricing-grid {

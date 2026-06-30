@@ -92,7 +92,7 @@ const { location = 'Australia' } = Astro.props;
     gap: 12px;
   }
   @media (max-width: 500px) {
-    .bookcta-ctas { flex-direction: column; align-items: stretch; }
+    .bookcta-ctas { flex-wrap: nowrap; gap: 8px; }
   }
   .bookcta-btn-primary {
     display: inline-flex;
@@ -169,5 +169,14 @@ const { location = 'Australia' } = Astro.props;
     background-color: #3a5dff;
     border-color: #3a5dff;
     color: #ffffff;
+  }
+  /* Phones: keep both CTAs side by side (shrink + nowrap so each label fits one line). */
+  @media (max-width: 500px) {
+    .bookcta-btn-primary, .bookcta-btn-secondary {
+      padding-left: 12px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .bookcta-btn-icon { width: 28px; height: 28px; }
   }
 </style>

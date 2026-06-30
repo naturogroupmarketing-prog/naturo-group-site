@@ -71,6 +71,10 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     .experience-inner {
       padding-block: clamp(56px, 9vw, 96px);
     }
+    /* On the narrow mobile crop, centre the staff (she sits mid-image) so she
+       lands in the clear right of the banner instead of being pushed left,
+       behind the text, with the bright window filling the visible strip. */
+    .experience-bg-img { object-position: 50% center; }
   }
   .experience-content {
     max-width: 605px;
@@ -118,7 +122,7 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
   /* Match the hero CTA stack: at very narrow viewports, switch to a
      full-width vertical stack so each button is comfortably tappable. */
   @media (max-width: 500px) {
-    .experience-ctas { flex-direction: column; align-items: stretch; }
+    .experience-ctas { flex-wrap: nowrap; gap: 8px; }
   }
   .experience-btn-primary {
     display: inline-flex;
@@ -199,6 +203,15 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     background-color: #3a5dff;
     border-color: #3a5dff;
     color: #ffffff;
+  }
+  /* Phones: keep both CTAs side by side (shrink + nowrap so each label fits one line). */
+  @media (max-width: 500px) {
+    .experience-btn-primary, .experience-btn-secondary {
+      padding-left: 12px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .experience-btn-icon { width: 28px; height: 28px; }
   }
 </style>
 

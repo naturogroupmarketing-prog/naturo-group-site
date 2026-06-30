@@ -109,7 +109,7 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     gap: 12px;
   }
   @media (max-width: 500px) {
-    .sixty-ctas { flex-wrap: nowrap; gap: 8px; }
+    .sixty-ctas { flex-direction: column; align-items: stretch; }
   }
   .sixty-btn-primary {
     display: inline-flex;
@@ -190,15 +190,6 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     background-color: #3a5dff;
     border-color: #3a5dff;
     color: #ffffff;
-  }
-  /* Phones: keep both CTAs side by side (shrink + nowrap so each label fits one line). */
-  @media (max-width: 500px) {
-    .sixty-btn-primary, .sixty-btn-secondary {
-      padding-left: 12px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .sixty-btn-icon { width: 28px; height: 28px; }
   }
 </style>
 

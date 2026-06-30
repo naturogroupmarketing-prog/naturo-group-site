@@ -170,9 +170,9 @@ import {
     max-width: 100%;
   }
   .footer-ctas > a { white-space: nowrap; min-width: 0; }
-  /* Mobile: place both CTAs side by side on one row (shrunk to fit). */
+  /* Mobile: let both stacked buttons span the full column width. */
   @media (max-width: 500px) {
-    .footer-ctas { flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 8px; width: 100%; }
+    .footer-ctas { width: 100%; }
   }
   .footer-btn-primary {
     display: inline-flex;
@@ -491,14 +491,6 @@ import {
     .footer-acc:not(.is-open) .footer-acc-panel { display: none; }
     .footer-acc.is-open .footer-acc-panel { padding-bottom: 16px; }
     .footer-acc.is-open .footer-acc-chevron { transform: rotate(180deg); }
-  }
-  /* Phones: shrink the footer CTAs so both fit side by side on one row. */
-  @media (max-width: 500px) {
-    .footer-btn-primary, .footer-btn-secondary {
-      padding-left: 12px;
-      font-size: 12px;
-    }
-    .footer-btn-icon { width: 28px; height: 28px; }
   }
 </style>
 

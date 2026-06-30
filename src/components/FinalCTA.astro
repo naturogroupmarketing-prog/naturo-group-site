@@ -87,7 +87,7 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     margin-bottom: 20px;
   }
   @media (max-width: 500px) {
-    .finalcta-ctas { flex-wrap: nowrap; gap: 8px; }
+    .finalcta-ctas { flex-direction: column; align-items: stretch; }
   }
   .finalcta-btn-primary {
     display: inline-flex;
@@ -191,20 +191,5 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
     font-weight: 500;
     color: #ffffff;
     margin: 0;
-  }
-  /* Phones: keep both CTAs side by side (shrink + nowrap so each label fits one line). */
-  @media (max-width: 500px) {
-    /* Tighten the card's side padding so the side-by-side row has room. */
-    .finalcta-card { padding-left: 12px; padding-right: 12px; }
-    .finalcta-btn-primary, .finalcta-btn-secondary {
-      padding-left: 12px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    /* The phone button carries a redundant leading icon the other banners
-       don't have — drop it on mobile to save width. */
-    .finalcta-btn-secondary > svg { display: none; }
-    /* Shrink both icons (the secondary's trailing circle uses its own class). */
-    .finalcta-btn-icon, .finalcta-btn-secondary .finalcta-btn-sec-icon { width: 28px; height: 28px; }
   }
 </style>

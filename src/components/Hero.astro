@@ -112,7 +112,7 @@ const slides = [
     gap: 12px;
   }
   @media (max-width: 500px) {
-    .hero-cta-stack { flex-wrap: nowrap; gap: 8px; }
+    .hero-cta-stack { flex-direction: column; align-items: stretch; }
   }
   .hero-btn-primary {
     display: inline-flex;
@@ -246,14 +246,5 @@ const slides = [
   @media (max-width: 640px) {
     /* Hide the Partners & Providers logo strip on mobile */
     .hero-partners { display: none; }
-  }
-  /* Phones: keep both CTAs side by side (shrink + nowrap so each label fits one line). */
-  @media (max-width: 500px) {
-    .hero-btn-primary, .hero-btn-secondary {
-      padding-left: 12px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .hero-btn-icon { width: 28px; height: 28px; }
   }
 </style>

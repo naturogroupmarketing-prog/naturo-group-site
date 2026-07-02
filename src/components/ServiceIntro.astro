@@ -32,7 +32,10 @@ const { kicker = 'About this service', heading, body, stats } = Astro.props;
 
 <style>
   .svc-intro-section {
-    background-color: #ffffff;
+    /* Cream — matches IntroCopy/FounderBlock so the intro band is
+       consistent on every page (was white, leaving service/location
+       pages without the cream the homepage has). */
+    background-color: #F8F8F3;
     padding: clamp(88px, 10vw, 128px) 0;
   }
   .svc-intro-inner {

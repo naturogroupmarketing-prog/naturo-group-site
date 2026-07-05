@@ -32,76 +32,121 @@ const lc = leadCapture;
       </svg>
     </button>
 
-    <h2 class="qlg-title" id="qlgTitle">Quick details before your price</h2>
+    <h2 class="qlg-title" id="qlgTitle">Get your instant price</h2>
+    <p class="qlg-sub" id="qlgSub">Tell us about your clean and we&rsquo;ll call you with a tailored price &mdash; usually within the hour during business hours.</p>
 
     <form class="qlg-form" id="qlgForm" novalidate>
+      <fieldset class="qlg-service">
+        <legend class="qlg-service-legend">Which clean do you need?</legend>
+        <div class="qlg-service-grid">
+          <label class="qlg-service-card">
+            <input type="radio" name="service" value="regular" />
+            <span class="qlg-service-text">
+              <span class="qlg-service-title">Regular Clean</span>
+              <span class="qlg-service-desc">Weekly, fortnightly or monthly</span>
+            </span>
+            <span class="qlg-service-check" aria-hidden="true"></span>
+          </label>
+          <label class="qlg-service-card">
+            <input type="radio" name="service" value="oneoff" />
+            <span class="qlg-service-text">
+              <span class="qlg-service-title">Deep Clean</span>
+              <span class="qlg-service-desc">One-off spring or end-of-lease clean</span>
+            </span>
+            <span class="qlg-service-check" aria-hidden="true"></span>
+          </label>
+          <label class="qlg-service-card">
+            <input type="radio" name="service" value="specialty" />
+            <span class="qlg-service-text">
+              <span class="qlg-service-title">NDIS, DVA, Agedcare &amp; Insurance</span>
+              <span class="qlg-service-desc">Choose services aligned with your care plan, funding or support needs.</span>
+            </span>
+            <span class="qlg-service-check" aria-hidden="true"></span>
+          </label>
+        </div>
+        <div class="qlg-subservice">
+          <span class="qlg-subservice-label">Which type of funding or claim?</span>
+          <div class="qlg-subservice-grid">
+            <label class="qlg-chip"><input type="radio" name="specialty_type" value="ndis" /><span>NDIS</span></label>
+            <label class="qlg-chip"><input type="radio" name="specialty_type" value="dva" /><span>DVA</span></label>
+            <label class="qlg-chip"><input type="radio" name="specialty_type" value="aged-care" /><span>Aged Care</span></label>
+            <label class="qlg-chip"><input type="radio" name="specialty_type" value="insurance" /><span>Insurance Claim</span></label>
+          </div>
+          <span class="qlg-error" data-error-for="specialty_type"></span>
+        </div>
+        <span class="qlg-error" data-error-for="service"></span>
+      </fieldset>
+
+      <div class="qlg-field qlg-pcsearch" id="qlgPcSearch">
+        <span class="qlg-label">Enter your postcode</span>
+        <div class="qlg-pcsearch-box">
+          <svg class="qlg-pcsearch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            class="qlg-pcsearch-input"
+            type="text"
+            id="qlgSearch"
+            inputmode="numeric"
+            autocomplete="off"
+            role="combobox"
+            aria-expanded="false"
+            aria-controls="qlgSuburbList"
+            aria-autocomplete="list"
+            placeholder="Enter your postcode"
+          />
+          <button type="button" class="qlg-pcsearch-clear" id="qlgSearchClear" aria-label="Clear" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+          </button>
+        </div>
+        <p class="qlg-postcode-status" id="qlgPostcodeStatus" hidden></p>
+        <ul class="qlg-pcsearch-list" id="qlgSuburbList" role="listbox" hidden></ul>
+        <input type="hidden" name="postcode" id="qlgPostcode" />
+        <input type="hidden" name="suburb" id="qlgSuburb" />
+        <span class="qlg-error" data-error-for="postcode"></span>
+        <span class="qlg-error" data-error-for="suburb"></span>
+      </div>
+
       <label class="qlg-field">
         <span class="qlg-label">Full name</span>
-        <input
-          class="qlg-input"
-          type="text"
-          name="name"
-          id="qlgName"
-          autocomplete="name"
-          required
-          placeholder="Your name"
-        />
+        <input class="qlg-input" type="text" name="name" id="qlgName" autocomplete="name" placeholder="Your name" />
         <span class="qlg-error" data-error-for="name"></span>
       </label>
 
       <label class="qlg-field">
         <span class="qlg-label">Phone</span>
-        <input
-          class="qlg-input"
-          type="tel"
-          name="phone"
-          id="qlgPhone"
-          autocomplete="tel"
-          required
-          inputmode="tel"
-          placeholder="0400 000 000"
-        />
+        <input class="qlg-input" type="tel" name="phone" id="qlgPhone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" />
         <span class="qlg-error" data-error-for="phone"></span>
       </label>
 
       <label class="qlg-field">
         <span class="qlg-label">Email</span>
-        <input
-          class="qlg-input"
-          type="email"
-          name="email"
-          id="qlgEmail"
-          autocomplete="email"
-          required
-          placeholder="you@example.com"
-        />
+        <input class="qlg-input" type="email" name="email" id="qlgEmail" autocomplete="email" placeholder="you@example.com" />
         <span class="qlg-error" data-error-for="email"></span>
       </label>
 
-      <label class="qlg-consent">
-        <input
-          type="checkbox"
-          name="sms_optin"
-          id="qlgSmsOptIn"
-          value="yes"
-          checked
-        />
-        <span class="qlg-consent-text">
-          I&rsquo;m happy to receive my quote and booking updates by SMS and email.
-          I can opt out at any time.
-        </span>
+      <label class="qlg-field">
+        <span class="qlg-label">Notes <span class="qlg-optional">(optional)</span></span>
+        <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="2" placeholder="Anything we should know? Pets, parking, preferred day&hellip;"></textarea>
       </label>
 
       <button type="submit" class="qlg-submit" id="qlgSubmit">
-        <span>Continue to my price</span>
+        <span>Get my instant price</span>
         <span class="qlg-submit-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </button>
 
       <p class="qlg-fineprint">
-        We use these details to confirm we service your area and send your quote.
-        See our <a href="/privacy-policies">Privacy Policy</a> for how we handle your information.
+        We use your details to prepare your quote and get in touch &mdash; no payment now.
+        See our <a href="/privacy-policies">Privacy Policy</a>.
       </p>
     </form>
+
+    <div class="qlg-success" id="qlgSuccess" hidden>
+      <div class="qlg-success-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="qlg-title">Thanks &mdash; you&rsquo;re all set!</h2>
+      <p class="qlg-success-msg" id="qlgSuccessMsg">Our team will call you shortly to confirm your tailored price.</p>
+      <button type="button" class="qlg-submit qlg-success-done" id="qlgSuccessDone"><span>Done</span></button>
+    </div>
   </div>
 </div>
 
@@ -206,8 +251,25 @@ const lc = leadCapture;
     const overlay = document.getElementById('qlgOverlay');
     const form = document.getElementById('qlgForm');
     const closeBtn = document.getElementById('qlgClose');
-    const nameInput = document.getElementById('qlgName');
-    if (!overlay || !form || !nameInput) return;
+    if (!overlay || !form) return;
+    const firstRadio = form.querySelector('input[name="service"]');
+    const submitBtn = document.getElementById('qlgSubmit');
+    const titleEl = document.getElementById('qlgTitle');
+    const subEl = document.getElementById('qlgSub');
+    const successPanel = document.getElementById('qlgSuccess');
+    const successMsg = document.getElementById('qlgSuccessMsg');
+    const successDone = document.getElementById('qlgSuccessDone');
+    if (successDone) successDone.addEventListener('click', function () { closeModal(); });
+
+    // Reset the modal back to the form view (used before each open, in case a
+    // previous submission left the thank-you panel showing).
+    function resetToForm() {
+      if (successPanel) successPanel.setAttribute('hidden', '');
+      form.removeAttribute('hidden');
+      if (titleEl) titleEl.removeAttribute('hidden');
+      if (subEl) subEl.removeAttribute('hidden');
+      if (submitBtn) submitBtn.disabled = false;
+    }
 
     let pendingHref = null;
     let lastFocused = null;
@@ -217,7 +279,7 @@ const lc = leadCapture;
         const raw = sessionStorage.getItem(STORAGE_KEY);
         if (!raw) return false;
         const data = JSON.parse(raw);
-        return !!(data && data.name && data.phone && data.email);
+        return !!(data && data.service && data.postcode);
       } catch (e) {
         return false;
       }
@@ -225,6 +287,7 @@ const lc = leadCapture;
 
     function openModal(href) {
       pendingHref = href;
+      resetToForm();
       lastFocused = document.activeElement;
       var isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
       if (isTouchDevice) {
@@ -250,7 +313,7 @@ const lc = leadCapture;
         overlay.setAttribute('aria-modal', 'true');
         overlay.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
-        setTimeout(function () { nameInput.focus(); }, 50);
+        setTimeout(function () { if (firstRadio) firstRadio.focus(); }, 50);
       }
     }
 
@@ -303,31 +366,45 @@ const lc = leadCapture;
       const el = form.querySelector('[data-error-for="' + name + '"]');
       if (el) el.textContent = message || '';
       const input = form.elements[name];
-      if (input) {
+      // `service` resolves to a RadioNodeList (no setAttribute) — guard for it.
+      if (input && typeof input.setAttribute === 'function') {
         if (message) input.setAttribute('aria-invalid', 'true');
         else input.removeAttribute('aria-invalid');
       }
     }
 
     function clearErrors() {
-      ['name', 'phone', 'email'].forEach(function (n) { setError(n, ''); });
+      ['service', 'specialty_type', 'postcode', 'suburb', 'name', 'phone', 'email'].forEach(function (n) { setError(n, ''); });
     }
 
     function validate(values) {
       let ok = true;
+      if (!values.service) {
+        setError('service', 'Please choose which clean you need.');
+        ok = false;
+      }
+      if (values.service === 'specialty' && !values.specialtyType) {
+        setError('specialty_type', 'Please choose NDIS, DVA, Aged Care or Insurance Claim.');
+        ok = false;
+      }
+      if (!/^\d{4}$/.test((values.postcode || '').replace(/\s/g, ''))) {
+        setError('postcode', 'Please enter your 4-digit postcode.');
+        ok = false;
+      } else if (!values.suburb && !suburbOptional) {
+        // A valid postcode must resolve to a selected suburb — unless the
+        // lookup genuinely returned nothing or the API was unreachable.
+        setError('suburb', 'Please select your suburb from the list.');
+        ok = false;
+      }
       if (!values.name || values.name.length < 2) {
         setError('name', 'Please enter your name.');
         ok = false;
       }
-      // Strip everything but digits + leading + to validate phone length.
-      const digits = (values.phone || '').replace(/[^0-9]/g, '');
-      if (digits.length < 8) {
+      if ((values.phone || '').replace(/[^0-9]/g, '').length < 8) {
         setError('phone', 'Please enter a valid phone number.');
         ok = false;
       }
-      // Lightweight email check — full RFC validation is overkill for a gate.
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email || '');
-      if (!emailOk) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email || '')) {
         setError('email', 'Please enter a valid email.');
         ok = false;
       }
@@ -360,11 +437,8 @@ const lc = leadCapture;
       if (ev.button !== undefined && ev.button !== 0) return;
       const a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
       if (!isQuoteLink(a)) return;
-      // Already on /quote? No point gating again.
-      if (window.location.pathname === TARGET_PATH ||
-          window.location.pathname === TARGET_PATH + '/') return;
-      // Already captured this session — pass through silently.
-      if (hasLead()) return;
+      // The popup IS the lead form now — always open it instead of
+      // navigating to the /quote page.
       ev.preventDefault();
       openModal(a.href);
     }, true);
@@ -384,6 +458,115 @@ const lc = leadCapture;
       if (t && t.name) setError(t.name, '');
     });
 
+    // ---- Postcode search → suburb combobox (Zippopotam.us: free/keyless) ----
+    // The user types a postcode; matching suburbs drop down below the search
+    // box and they pick one. Best-effort: no match / API down → a note shows
+    // and they can continue with the postcode alone. The 4-digit postcode and
+    // chosen suburb are mirrored into hidden inputs for the rest of the form.
+    var searchInput = document.getElementById('qlgSearch');
+    var clearBtn = document.getElementById('qlgSearchClear');
+    var suburbList = document.getElementById('qlgSuburbList');
+    var pcHidden = document.getElementById('qlgPostcode');
+    var suburbHidden = document.getElementById('qlgSuburb');
+    var pcStatus = document.getElementById('qlgPostcodeStatus');
+    var pcSearchWrap = document.getElementById('qlgPcSearch');
+    var pcToken = 0, pcDebounce = null, listedSuburbs = false;
+    // suburbOptional = true only when the API genuinely returned no suburbs
+    // or was unreachable — otherwise a valid postcode requires a picked suburb.
+    var suburbOptional = false;
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function setStatus(msg) {
+      if (!pcStatus) return;
+      pcStatus.textContent = msg || '';
+      if (msg) pcStatus.removeAttribute('hidden');
+      else pcStatus.setAttribute('hidden', '');
+    }
+    function closeList() {
+      if (suburbList) { suburbList.innerHTML = ''; suburbList.setAttribute('hidden', ''); }
+      if (searchInput) searchInput.setAttribute('aria-expanded', 'false');
+    }
+    function selectSuburb(name, stateAbbr, pc) {
+      suburbHidden.value = name;
+      pcHidden.value = pc;
+      searchInput.value = name + ', ' + stateAbbr + ' ' + pc;
+      clearBtn.removeAttribute('hidden');
+      setError('suburb', '');
+      closeList();
+    }
+    function lookupSuburbs(pc) {
+      var token = ++pcToken;
+      listedSuburbs = false;
+      suburbOptional = false;
+      setStatus('Finding suburbs…');
+      closeList();
+      fetch('https://api.zippopotam.us/au/' + encodeURIComponent(pc))
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (token !== pcToken) return; // a newer lookup superseded this one
+          var places = (data && data.places) || [];
+          var seen = {}, items = [];
+          places.forEach(function (p) {
+            var name = (p['place name'] || '').trim();
+            var st = (p['state abbreviation'] || '').trim();
+            var key = (name + '|' + st).toLowerCase();
+            if (name && !seen[key]) { seen[key] = 1; items.push({ name: name, state: st }); }
+          });
+          if (!items.length) {
+            suburbOptional = true;
+            setStatus('No suburbs found for that postcode — you can still continue.');
+            return;
+          }
+          listedSuburbs = true;
+          suburbOptional = false;
+          suburbList.innerHTML = items.map(function (it) {
+            return '<li class="qlg-pcsearch-item" role="option" data-name="' + esc(it.name) + '" data-state="' + esc(it.state) + '">'
+              + '<span class="qlg-pcsearch-item-name">' + esc(it.name) + '</span> '
+              + '<span class="qlg-pcsearch-item-meta">(' + esc(it.state) + ' ' + esc(pc) + ')</span></li>';
+          }).join('');
+          suburbList.removeAttribute('hidden');
+          searchInput.setAttribute('aria-expanded', 'true');
+          setStatus('');
+        })
+        .catch(function () {
+          if (token !== pcToken) return;
+          suburbOptional = true;
+          setStatus('Couldn’t look up suburbs right now — you can still continue.');
+        });
+    }
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        var raw = searchInput.value;
+        clearBtn.toggleAttribute('hidden', !raw);
+        suburbHidden.value = ''; // typing invalidates any prior suburb pick
+        var digits = raw.replace(/\D/g, '').slice(0, 4);
+        pcHidden.value = digits;
+        setError('postcode', '');
+        if (pcDebounce) clearTimeout(pcDebounce);
+        if (/^\d{4}$/.test(digits)) {
+          pcDebounce = setTimeout(function () { lookupSuburbs(digits); }, 250);
+        } else {
+          pcToken++; listedSuburbs = false; suburbOptional = false; closeList(); setStatus('');
+        }
+      });
+      clearBtn.addEventListener('click', function () {
+        searchInput.value = ''; pcHidden.value = ''; suburbHidden.value = '';
+        clearBtn.setAttribute('hidden', ''); listedSuburbs = false; suburbOptional = false;
+        pcToken++; closeList(); setStatus(''); searchInput.focus();
+      });
+      suburbList.addEventListener('click', function (ev) {
+        var li = ev.target.closest('.qlg-pcsearch-item');
+        if (!li) return;
+        selectSuburb(li.getAttribute('data-name'), li.getAttribute('data-state'), pcHidden.value);
+      });
+      // Close the dropdown when clicking outside the search field.
+      document.addEventListener('click', function (ev) {
+        if (pcSearchWrap && !pcSearchWrap.contains(ev.target)) closeList();
+      });
+    }
+
     // ---- Fan-out: push the lead to every configured destination ---------
     function shipToWebhook(payload) {
       if (!config.webhookUrl) return;
@@ -397,12 +580,25 @@ const lc = leadCapture;
         .replace(/^(house-cleaning-in-|house-cleaning-|cleaners-)/, '')
         .replace(/-/g, ' ')
         .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      var serviceLabels = {
+        regular: 'Regular Clean',
+        oneoff: 'Deep Clean',
+        specialty: 'NDIS, DVA, Agedcare & Insurance',
+      };
+      var specialtyLabels = { ndis: 'NDIS', dva: 'DVA', 'aged-care': 'Aged Care', insurance: 'Insurance Claim' };
+      var cleanType = serviceLabels[payload.service] || payload.service || '';
+      if (payload.service === 'specialty' && payload.specialty_type) {
+        cleanType = 'Specialist — ' + (specialtyLabels[payload.specialty_type] || payload.specialty_type);
+      }
       var adminPayload = {
-        _subject: 'Pre Quote — ' + (payload.name || 'new lead'),
-        name:   payload.name,
-        email:  payload.email,
-        phone:  payload.phone,
-        suburb: slug || payload.page.path,
+        _subject: 'New lead — ' + (payload.name || 'website') + ' — ' + cleanType + ' in ' + (payload.suburb || payload.postcode || 'unknown'),
+        name: payload.name || '',
+        phone: payload.phone || '',
+        email: payload.email || '',
+        clean_type: cleanType,
+        postcode: payload.postcode || '',
+        suburb: payload.suburb || slug || payload.page.path,
+        notes: payload.notes || '',
       };
       try {
         fetch(config.webhookUrl, {
@@ -452,6 +648,10 @@ const lc = leadCapture;
       window.dataLayer.push({
         event: 'lead_captured',
         lead: {
+          service: payload.service,
+          specialty_type: payload.specialty_type,
+          postcode: payload.postcode,
+          suburb: payload.suburb,
           name: payload.name,
           phone: payload.phone,
           email: payload.email,
@@ -470,10 +670,14 @@ const lc = leadCapture;
         event: 'lead_captured',
         event_id: eventId,
         captured_at: new Date().toISOString(),
+        service: values.service,
+        specialty_type: values.specialtyType,
+        postcode: values.postcode,
+        suburb: values.suburb,
         name: values.name,
         phone: values.phone,
         email: values.email,
-        sms_optin: !!values.sms_optin,
+        notes: values.notes,
         source: trackingContext,
         page: {
           url: window.location.href,
@@ -487,26 +691,25 @@ const lc = leadCapture;
       shipToDataLayer(payload);
     }
 
-    const submitBtn = document.getElementById('qlgSubmit');
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       clearErrors();
-      const smsCheckbox = form.elements['sms_optin'];
+      const serviceField = form.elements['service'];
+      const specialtyField = form.elements['specialty_type'];
+      const suburbEl = form.elements['suburb'];
+      const service = (serviceField && serviceField.value) || '';
       const values = {
-        name: (nameInput.value || '').trim(),
+        service: service,
+        specialtyType: (service === 'specialty' && specialtyField) ? (specialtyField.value || '') : '',
+        postcode: (form.elements['postcode'].value || '').trim(),
+        suburb: (suburbEl && suburbEl.value) || '',
+        name: (form.elements['name'].value || '').trim(),
         phone: (form.elements['phone'].value || '').trim(),
         email: (form.elements['email'].value || '').trim(),
-        sms_optin: !!(smsCheckbox && smsCheckbox.checked),
+        notes: (form.elements['notes'].value || '').trim(),
       };
       if (!validate(values)) return;
-      // Disable the button immediately so frantic double-clickers can't
-      // fire the lead twice. Restored only if we end up not navigating
-      // (i.e. shouldn't ever happen post-validate, but defensive).
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.textContent;
-        submitBtn.textContent = 'Sending\u2026';
-      }
+      if (submitBtn) submitBtn.disabled = true; // guard against double-submits
       try {
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(values));
       } catch (e) { /* private mode etc — fine, just navigate. */ }
@@ -514,11 +717,15 @@ const lc = leadCapture;
       // is non-blocking — sendBeacon / keepalive ensure the request
       // completes even after we navigate.
       shipLead(values);
-      const target = pendingHref || TARGET_PATH;
-      // Tear the modal down before navigating so the back button
-      // doesn't land on a frozen overlay.
-      closeModal();
-      window.location.href = target;
+      // Show the in-popup thank-you instead of navigating anywhere.
+      if (successMsg) {
+        var first = (values.name || '').split(' ')[0];
+        successMsg.textContent = (first ? first + ', our' : 'Our') + ' team will call you shortly to confirm your tailored price.';
+      }
+      form.setAttribute('hidden', '');
+      if (titleEl) titleEl.setAttribute('hidden', '');
+      if (subEl) subEl.setAttribute('hidden', '');
+      if (successPanel) successPanel.removeAttribute('hidden');
     });
   })();
 </script>
@@ -557,8 +764,9 @@ const lc = leadCapture;
     /* Pushes card to vertical centre when there's room; sits at top when
        the overlay itself needs to scroll. */
     margin: auto;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    /* Apple-style light grey card with white inputs. */
+    background: #f5f5f7;
+    border: 1px solid #e3e3e8;
     border-radius: 18px;
     padding: 36px 32px 30px;
     box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
@@ -615,11 +823,11 @@ const lc = leadCapture;
     margin: 0 0 20px;
   }
 
-  .qlg-form { display: flex; flex-direction: column; gap: 14px; }
-  .qlg-field { display: flex; flex-direction: column; gap: 6px; }
+  .qlg-form { display: flex; flex-direction: column; gap: 24px; }
+  .qlg-field { display: flex; flex-direction: column; gap: 10px; }
   .qlg-label {
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #0f172a;
   }
@@ -650,8 +858,10 @@ const lc = leadCapture;
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     color: #d92d20;
-    min-height: 14px;
+    margin-top: -2px;
   }
+  /* Don't reserve space when there's no error — keeps section spacing even. */
+  .qlg-error:empty { display: none; }
 
   .qlg-submit {
     display: inline-flex;
@@ -721,13 +931,203 @@ const lc = leadCapture;
     margin: 8px 0 0;
   }
 
+  /* Clean-type picker — compact selectable cards, no prices. */
+  .qlg-service { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+  .qlg-service-legend {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    padding: 0;
+    margin: 0;
+  }
+  .qlg-service-grid { display: flex; flex-direction: column; gap: 14px; }
+  .qlg-service-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 18px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 150ms, box-shadow 150ms, background-color 150ms;
+  }
+  .qlg-service-card:hover { border-color: #9db0ff; }
+  .qlg-service-card input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .qlg-service-text { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+  .qlg-service-title { font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 600; color: #0f172a; line-height: 1.2; }
+  .qlg-service-desc { font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 400; color: rgb(100, 116, 139); line-height: 1.3; }
+  .qlg-service-check {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid #cbd5e1;
+    transition: border-color 150ms, background-color 150ms;
+    position: relative;
+  }
+  .qlg-service-card:has(input:checked) {
+    border-color: #3a5dff;
+    background-color: rgba(58, 93, 255, 0.06);
+    box-shadow: 0 0 0 1px #3a5dff inset;
+  }
+  .qlg-service-card:has(input:checked) .qlg-service-check { border-color: #3a5dff; background-color: #3a5dff; }
+  .qlg-service-card:has(input:checked) .qlg-service-check::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #ffffff;
+  }
+  .qlg-service-card:has(input:focus-visible) { box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.25); }
+  /* Sub-selection revealed only when the NDIS/DVA/Agedcare/Insurance card is
+     chosen — a compact row of chips (NDIS / DVA / Aged Care / Insurance). */
+  .qlg-subservice { display: none; flex-direction: column; gap: 8px; padding: 12px 2px 2px; }
+  .qlg-service:has(input[value="specialty"]:checked) .qlg-subservice { display: flex; }
+  .qlg-subservice-label { font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #0f172a; }
+  /* 2 x 2 grid of cards (NDIS / DVA / Aged Care / Insurance Claim). */
+  .qlg-subservice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .qlg-chip { position: relative; display: flex; }
+  .qlg-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .qlg-chip span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 150ms, background-color 150ms, color 150ms;
+  }
+  .qlg-chip:hover span { border-color: #9db0ff; }
+  .qlg-chip input:checked + span { border-color: #3a5dff; background: #3a5dff; color: #ffffff; }
+  .qlg-chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.25); }
+
+  /* Postcode search combobox — search box + live suburb dropdown. */
+  .qlg-postcode-status {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgb(100, 116, 139);
+    margin: 6px 0 0;
+  }
+  .qlg-postcode-status[hidden] { display: none; }
+  .qlg-pcsearch { position: relative; }
+  .qlg-pcsearch-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px 0 14px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+  .qlg-pcsearch-box:focus-within { border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18); }
+  .qlg-pcsearch-icon { flex: 0 0 auto; width: 20px; height: 20px; color: #64748b; }
+  .qlg-pcsearch-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #0f172a;
+    padding: 13px 0;
+  }
+  .qlg-pcsearch-input::placeholder { color: rgba(15, 23, 42, 0.36); }
+  .qlg-pcsearch-clear {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #3a5dff;
+    cursor: pointer;
+    transition: background-color 150ms;
+  }
+  .qlg-pcsearch-clear[hidden] { display: none; }
+  .qlg-pcsearch-clear:hover { background: rgba(58, 93, 255, 0.10); }
+  .qlg-pcsearch-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 6px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+    max-height: 240px;
+    overflow-y: auto;
+  }
+  .qlg-pcsearch-list[hidden] { display: none; }
+  /* The suburb <li> rows are injected via JS innerHTML, so they don't carry
+     Astro's scoped-style attribute — these rules must be :global to match. */
+  :global(.qlg-pcsearch-item) {
+    padding: 12px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.3;
+  }
+  :global(.qlg-pcsearch-item:hover),
+  :global(.qlg-pcsearch-item.is-active) { background: #eef1ff; }
+  :global(.qlg-pcsearch-item-name) { font-size: 15px; font-weight: 700; color: #1e293b; }
+  :global(.qlg-pcsearch-item-meta) { font-size: 14px; color: #64748b; }
+  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-name),
+  :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-name) { color: #2748f2; }
+  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-meta),
+  :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-meta) { color: #8189e6; }
+
+  .qlg-form[hidden] { display: none; }
+  .qlg-textarea { resize: vertical; min-height: 58px; line-height: 1.45; }
+  .qlg-optional { font-weight: 400; color: rgb(100, 116, 139); }
+  /* In-popup thank-you shown after the lead is submitted. */
+  .qlg-success { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 8px 4px 4px; }
+  .qlg-success[hidden] { display: none; }
+  .qlg-success-check {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(58, 93, 255, 0.12);
+    color: #2748f2;
+  }
+  .qlg-success-msg {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgb(71, 85, 105);
+    margin: 0;
+    max-width: 340px;
+  }
+  .qlg-success-done { width: 100%; justify-content: center; margin-top: 4px; }
+
   @media (max-width: 480px) {
     .qlg-overlay { padding: 10px; }
     .qlg-card { padding: 22px 18px 18px; border-radius: 14px; }
     .qlg-eyebrow { margin-bottom: 6px; }
     .qlg-title { font-size: 18px; }
     .qlg-sub { font-size: 13px; margin-bottom: 14px; }
-    .qlg-form { gap: 10px; }
+    .qlg-form { gap: 14px; }
     .qlg-input { padding: 10px 12px; font-size: 15px; }
     .qlg-submit { padding: 12px 18px; font-size: 15px; }
     .qlg-error { min-height: 12px; }

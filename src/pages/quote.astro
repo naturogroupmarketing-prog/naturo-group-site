@@ -299,6 +299,7 @@ const schema = [
              instant-quote work that always needs paperwork. -->
         <div class="qt-specialty-panel" id="qtSpecialtyPanel" hidden>
           <h2 class="qt-specialty-h2">NDIS, DVA, insurance, aged care &amp; carer&rsquo;s work</h2>
+          <p class="qt-specialty-chosen" id="qtSpecialtyChosen" hidden></p>
           <p class="qt-specialty-body">
             These jobs are always quoted directly so we can match the right paperwork &mdash;
             plan managers, case managers, insurer billing or aged-care provider invoicing.
@@ -915,6 +916,34 @@ const schema = [
           if (form.elements['full_name'] && lead.name) form.elements['full_name'].value = lead.name;
           if (form.elements['email'] && lead.email) form.elements['email'].value = lead.email;
           if (form.elements['phone'] && lead.phone) form.elements['phone'].value = lead.phone;
+          // Location + clean type chosen in the lead-gate modal. Set the
+          // values, then fire the events the form listens for (input on the
+          // location field, change on the service radios) so the calculator
+          // unlocks and advances exactly as if they'd been filled here.
+          const locEl = document.getElementById('qtLocation');
+          if (locEl && (lead.suburb || lead.postcode) && !locEl.value) {
+            locEl.value = lead.suburb
+              ? (lead.suburb + (lead.postcode ? ', ' + lead.postcode : ''))
+              : lead.postcode;
+            locEl.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+          if (lead.service) {
+            const svc = form.querySelector('input[name="service"][value="' + lead.service + '"]');
+            if (svc && !svc.checked) {
+              svc.checked = true;
+              svc.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          }
+          // Carry the specialist sub-type (NDIS / DVA / Aged Care / Insurance)
+          // chosen in the modal into the specialty panel.
+          if (lead.service === 'specialty' && lead.specialtyType) {
+            const specLabels = { ndis: 'NDIS', dva: 'DVA', 'aged-care': 'Aged Care', insurance: 'Insurance Claim' };
+            const chosenEl = document.getElementById('qtSpecialtyChosen');
+            if (chosenEl) {
+              chosenEl.textContent = 'You selected: ' + (specLabels[lead.specialtyType] || lead.specialtyType);
+              chosenEl.removeAttribute('hidden');
+            }
+          }
         }
       }
     } catch (e) { /* ignore — prefill is best-effort */ }
@@ -936,7 +965,7 @@ const schema = [
 
   /* ---------- Calculator section ---------- */
   .qt-calc {
-    background-color: #F8F8F3;
+    background-color: #EFEEE9;
     padding: clamp(64px, 9vw, 112px) 0;
   }
   .qt-calc-inner {
@@ -1368,6 +1397,18 @@ const schema = [
     color: #0f172a;
     margin: 0 0 12px;
   }
+  .qt-specialty-chosen {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2748f2;
+    background: rgba(58, 93, 255, 0.08);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin: 0 0 16px;
+  }
+  .qt-specialty-chosen[hidden] { display: none; }
   .qt-specialty-body {
     font-family: "Poppins", sans-serif;
     font-size: 14.5px;
@@ -1630,7 +1671,7 @@ const schema = [
   }
   @media (max-width: 900px) { .qt-how-grid { grid-template-columns: 1fr; } }
   .qt-how-card {
-    background-color: #F8F8F3;
+    background-color: #EFEEE9;
     border: 1px solid rgba(15, 23, 42, 0.06);
     border-radius: 14px;
     padding: 28px 26px;
@@ -1661,7 +1702,7 @@ const schema = [
 
   /* ---------- FAQ ---------- */
   .qt-faq {
-    background-color: #F8F8F3;
+    background-color: #EFEEE9;
     padding: clamp(72px, 9vw, 112px) 0;
   }
   .qt-faq-eyebrow {

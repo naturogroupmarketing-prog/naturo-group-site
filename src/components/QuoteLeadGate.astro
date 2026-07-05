@@ -1,30 +1,14 @@
 ---
-// Site-wide lead-capture modal that gates every "Get an Instant Price"
-// CTA. The user must enter name + phone + email before they're allowed
-// through to /quote. Once submitted in a session we remember the lead
-// and let subsequent clicks pass straight through.
-//
-// The modal is rendered into Layout.astro so it's available on every
-// page. Capture happens at the click level — we listen for clicks on
-// any in-page link whose pathname resolves to /quote, intercept it,
-// and only navigate after the form is filled in.
-//
-// On submit, the lead is fanned out to whichever destinations are
-// configured in src/data/site.ts → leadCapture: a JSON webhook,
-// Meta Pixel, Google Ads conversion, and dataLayer (for GTM-installed
-// tags). All sends are non-blocking — the user navigates immediately
-// while the lead ships in the background via sendBeacon / keepalive.
+// Conversational, one-question-at-a-time lead capture — a premium "chat with
+// an assistant" experience that gates every "Get an Instant Price" CTA. It
+// collects clean type → location → contact → notes across animated steps and
+// ships the lead to the SAME backend as before (Formspree webhook + Sophiie
+// CRM + Meta/Google/GTM analytics). No prices are shown — it's lead capture.
 import { leadCapture } from '../data/site';
 const lc = leadCapture;
 ---
 
-<div
-  class="qlg-overlay"
-  id="qlgOverlay"
-  aria-labelledby="qlgTitle"
-  aria-describedby="qlgSub"
-  hidden
->
+<div class="qlg-overlay" id="qlgOverlay" aria-labelledby="qlgHeading" hidden>
   <div class="qlg-card" role="document">
     <button type="button" class="qlg-close" id="qlgClose" aria-label="Close">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -32,121 +16,150 @@ const lc = leadCapture;
       </svg>
     </button>
 
-    <h2 class="qlg-title" id="qlgTitle">Get your instant price</h2>
-    <p class="qlg-sub" id="qlgSub">Tell us about your clean and we&rsquo;ll call you with a tailored price &mdash; usually within the hour during business hours.</p>
+    <!-- Chrome: back + progress (shown on the 4 question steps) -->
+    <div class="qlg-chrome" id="qlgChrome" hidden>
+      <button type="button" class="qlg-back" id="qlgBack" aria-label="Go back">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Back</span>
+      </button>
+      <div class="qlg-progress">
+        <span class="qlg-progress-label" id="qlgProgressLabel" aria-live="polite">Question 1 of 4</span>
+        <div class="qlg-progress-track"><div class="qlg-progress-fill" id="qlgProgressFill"></div></div>
+      </div>
+    </div>
 
-    <form class="qlg-form" id="qlgForm" novalidate>
-      <fieldset class="qlg-service">
-        <legend class="qlg-service-legend">Which clean do you need?</legend>
-        <div class="qlg-service-grid">
-          <label class="qlg-service-card">
-            <input type="radio" name="service" value="regular" />
-            <span class="qlg-service-text">
-              <span class="qlg-service-title">Regular Clean</span>
-              <span class="qlg-service-desc">Weekly, fortnightly or monthly</span>
-            </span>
-            <span class="qlg-service-check" aria-hidden="true"></span>
-          </label>
-          <label class="qlg-service-card">
-            <input type="radio" name="service" value="oneoff" />
-            <span class="qlg-service-text">
-              <span class="qlg-service-title">Deep Clean</span>
-              <span class="qlg-service-desc">One-off spring or end-of-lease clean</span>
-            </span>
-            <span class="qlg-service-check" aria-hidden="true"></span>
-          </label>
-          <label class="qlg-service-card">
-            <input type="radio" name="service" value="specialty" />
-            <span class="qlg-service-text">
-              <span class="qlg-service-title">NDIS, DVA, Agedcare &amp; Insurance</span>
-              <span class="qlg-service-desc">Choose services aligned with your care plan, funding or support needs.</span>
-            </span>
-            <span class="qlg-service-check" aria-hidden="true"></span>
-          </label>
-        </div>
-        <div class="qlg-subservice">
-          <span class="qlg-subservice-label">Which type of funding or claim?</span>
-          <div class="qlg-subservice-grid">
-            <label class="qlg-chip"><input type="radio" name="specialty_type" value="ndis" /><span>NDIS</span></label>
-            <label class="qlg-chip"><input type="radio" name="specialty_type" value="dva" /><span>DVA</span></label>
-            <label class="qlg-chip"><input type="radio" name="specialty_type" value="aged-care" /><span>Aged Care</span></label>
-            <label class="qlg-chip"><input type="radio" name="specialty_type" value="insurance" /><span>Insurance Claim</span></label>
-          </div>
-          <span class="qlg-error" data-error-for="specialty_type"></span>
-        </div>
-        <span class="qlg-error" data-error-for="service"></span>
-      </fieldset>
-
-      <div class="qlg-field qlg-pcsearch" id="qlgPcSearch">
-        <span class="qlg-label">Enter your postcode</span>
-        <div class="qlg-pcsearch-box">
-          <svg class="qlg-pcsearch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input
-            class="qlg-pcsearch-input"
-            type="text"
-            id="qlgSearch"
-            inputmode="numeric"
-            autocomplete="off"
-            role="combobox"
-            aria-expanded="false"
-            aria-controls="qlgSuburbList"
-            aria-autocomplete="list"
-            placeholder="Enter your postcode"
-          />
-          <button type="button" class="qlg-pcsearch-clear" id="qlgSearchClear" aria-label="Clear" hidden>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    <form class="qlg-stage" id="qlgForm" novalidate>
+      <!-- STEP 0 · intro -->
+      <section class="qlg-screen" data-step="intro">
+        <div class="qlg-intro">
+          <h2 class="qlg-heading" id="qlgHeading"><span class="qlg-wave" aria-hidden="true">👋</span> Hi, I'm Naturo.</h2>
+          <p class="qlg-lede">I'll help you organise the right clean in under 30&nbsp;seconds. Let's start with one quick question.</p>
+          <button type="button" class="qlg-btn qlg-btn-primary" id="qlgStart">
+            <span>Start My Free Quote</span>
+            <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </button>
         </div>
-        <p class="qlg-postcode-status" id="qlgPostcodeStatus" hidden></p>
-        <ul class="qlg-pcsearch-list" id="qlgSuburbList" role="listbox" hidden></ul>
-        <input type="hidden" name="postcode" id="qlgPostcode" />
-        <input type="hidden" name="suburb" id="qlgSuburb" />
-        <span class="qlg-error" data-error-for="postcode"></span>
-        <span class="qlg-error" data-error-for="suburb"></span>
-      </div>
+      </section>
 
-      <label class="qlg-field">
-        <span class="qlg-label">Full name</span>
-        <input class="qlg-input" type="text" name="name" id="qlgName" autocomplete="name" placeholder="Your name" />
-        <span class="qlg-error" data-error-for="name"></span>
-      </label>
+      <!-- STEP 1 · service -->
+      <section class="qlg-screen" data-step="service" hidden>
+        <h2 class="qlg-q">What type of clean are you looking for?</h2>
+        <div class="qlg-options" id="qlgServiceOptions">
+          <button type="button" class="qlg-option" data-service="regular" data-label="Regular Home Cleaning">
+            <span class="qlg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/><line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/><line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/></svg></span>
+            <span class="qlg-option-text">
+              <span class="qlg-option-title">Regular Home Cleaning</span>
+              <span class="qlg-option-desc">Weekly, fortnightly or monthly</span>
+            </span>
+            <span class="qlg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="qlg-option" data-service="oneoff" data-label="Deep Clean">
+            <span class="qlg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="10" y="22" width="28" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M18 22v-7a6 6 0 0 1 12 0v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="29" x2="31" y2="29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="34" x2="31" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="38" cy="10" r="3.5" fill="#ff5f1f"/><circle cx="43" cy="17" r="2.2" fill="#ff5f1f"/><circle cx="40" cy="5" r="1.8" fill="#ff5f1f"/></svg></span>
+            <span class="qlg-option-text">
+              <span class="qlg-option-title">Deep Clean</span>
+              <span class="qlg-option-desc">One-off detailed clean</span>
+            </span>
+            <span class="qlg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="qlg-option" data-service="specialty" data-specialty="ndis-dva-agedcare" data-label="NDIS, DVA & Aged Care">
+            <span class="qlg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><path d="M24 41C24 41 6 31 6 18.5C6 12.7 10.5 9 15 9c3.4 0 6.6 1.8 9 5 2.4-3.2 5.6-5 9-5 4.5 0 9 3.7 9 9.5C42 31 24 41 24 41z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 23l4.5 4.5L31 18" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="qlg-option-text">
+              <span class="qlg-option-title">NDIS, DVA &amp; Aged Care</span>
+              <span class="qlg-option-desc">Government funded services</span>
+            </span>
+            <span class="qlg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="qlg-option" data-service="specialty" data-specialty="insurance" data-label="Insurance Claim">
+            <span class="qlg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><path d="M24 7l14 4.8v8.7C38 30 32 36.5 24 40c-8-3.5-14-10-14-19.5v-8.7L24 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 23.5l4.5 4.5L31 19" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="qlg-option-text">
+              <span class="qlg-option-title">Insurance Claim</span>
+              <span class="qlg-option-desc">Claim-related cleaning</span>
+            </span>
+            <span class="qlg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+        </div>
+      </section>
 
-      <label class="qlg-field">
-        <span class="qlg-label">Phone</span>
-        <input class="qlg-input" type="tel" name="phone" id="qlgPhone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" />
-        <span class="qlg-error" data-error-for="phone"></span>
-      </label>
+      <!-- STEP 2 · location -->
+      <section class="qlg-screen" data-step="location" hidden>
+        <h2 class="qlg-q">Where do you need the clean?</h2>
+        <div class="qlg-field qlg-pcsearch" id="qlgPcSearch">
+          <div class="qlg-pcsearch-box">
+            <svg class="qlg-pcsearch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input class="qlg-pcsearch-input" type="text" id="qlgSearch" inputmode="numeric" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="qlgSuburbList" aria-autocomplete="list" aria-label="Suburb or postcode" placeholder="Enter your postcode" />
+            <button type="button" class="qlg-pcsearch-clear" id="qlgSearchClear" aria-label="Clear" hidden>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+            </button>
+          </div>
+          <p class="qlg-postcode-status" id="qlgPostcodeStatus" hidden></p>
+          <ul class="qlg-pcsearch-list" id="qlgSuburbList" role="listbox" hidden></ul>
+          <input type="hidden" name="postcode" id="qlgPostcode" />
+          <input type="hidden" name="suburb" id="qlgSuburb" />
+          <input type="hidden" id="qlgSuburbState" />
+          <span class="qlg-error" data-error-for="suburb"></span>
+        </div>
 
-      <label class="qlg-field">
-        <span class="qlg-label">Email</span>
-        <input class="qlg-input" type="email" name="email" id="qlgEmail" autocomplete="email" placeholder="you@example.com" />
-        <span class="qlg-error" data-error-for="email"></span>
-      </label>
+        <div class="qlg-serviced" id="qlgServiced" hidden>
+          <span class="qlg-serviced-check" aria-hidden="true">✅</span>
+          <span><strong>Great news!</strong> We service your area.</span>
+        </div>
+        <div class="qlg-notserviced" id="qlgNotServiced" hidden>
+          <p>We don't currently cover that area — but leave your details and we'll point you to a trusted local where we can.</p>
+        </div>
 
-      <label class="qlg-field">
-        <span class="qlg-label">Notes <span class="qlg-optional">(optional)</span></span>
-        <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="2" placeholder="Anything we should know? Pets, parking, preferred day&hellip;"></textarea>
-      </label>
+        <button type="button" class="qlg-btn qlg-btn-primary" id="qlgLocationNext" disabled>
+          <span>Continue</span>
+          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
 
-      <button type="submit" class="qlg-submit" id="qlgSubmit">
-        <span>Get my instant price</span>
-        <span class="qlg-submit-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </button>
+      <!-- STEP 3 · contact -->
+      <section class="qlg-screen" data-step="contact" hidden>
+        <h2 class="qlg-q">Where should we send your personalised quote?</h2>
+        <label class="qlg-field">
+          <span class="qlg-label">Full name</span>
+          <input class="qlg-input" type="text" name="name" id="qlgName" autocomplete="name" placeholder="Your name" />
+          <span class="qlg-error" data-error-for="name"></span>
+        </label>
+        <label class="qlg-field">
+          <span class="qlg-label">Phone number</span>
+          <input class="qlg-input" type="tel" name="phone" id="qlgPhone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" />
+          <span class="qlg-help">We'll only contact you regarding your quote.</span>
+          <span class="qlg-error" data-error-for="phone"></span>
+        </label>
+        <label class="qlg-field">
+          <span class="qlg-label">Email address</span>
+          <input class="qlg-input" type="email" name="email" id="qlgEmail" autocomplete="email" placeholder="you@example.com" />
+          <span class="qlg-error" data-error-for="email"></span>
+        </label>
+        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgContactNext">
+          <span>Continue</span>
+          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
 
-      <p class="qlg-fineprint">
-        We use your details to prepare your quote and get in touch &mdash; no payment now.
-        See our <a href="/privacy-policies">Privacy Policy</a>.
-      </p>
+      <!-- STEP 4 · notes -->
+      <section class="qlg-screen" data-step="notes" hidden>
+        <h2 class="qlg-q">Anything you'd like us to know?</h2>
+        <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="3" placeholder="Pets · Parking · Preferred day · Access instructions · Special requests"></textarea>
+        <button type="submit" class="qlg-btn qlg-btn-primary qlg-btn-final" id="qlgSubmit">
+          <span>Get My Free Personalised Quote</span>
+          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+        <button type="button" class="qlg-skip" id="qlgSkip">Skip</button>
+        <p class="qlg-reassure">🔒 No obligation. Your details stay private. We'll usually contact you within 30–60&nbsp;minutes during business hours.</p>
+      </section>
+
+      <!-- STEP 5 · done -->
+      <section class="qlg-screen" data-step="done" hidden>
+        <div class="qlg-done">
+          <span class="qlg-done-check" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <h2 class="qlg-heading">You're all set!</h2>
+          <p class="qlg-lede">Thanks for contacting Naturo Group. We're preparing your personalised quote now. A member of our team will usually contact you within the hour during business hours.</p>
+          <button type="button" class="qlg-btn qlg-btn-primary" id="qlgDone"><span>Done</span></button>
+        </div>
+      </section>
     </form>
-
-    <div class="qlg-success" id="qlgSuccess" hidden>
-      <div class="qlg-success-check" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h2 class="qlg-title">Thanks &mdash; you&rsquo;re all set!</h2>
-      <p class="qlg-success-msg" id="qlgSuccessMsg">Our team will call you shortly to confirm your tailored price.</p>
-      <button type="button" class="qlg-submit qlg-success-done" id="qlgSuccessDone"><span>Done</span></button>
-    </div>
   </div>
 </div>
 
@@ -155,21 +168,18 @@ const lc = leadCapture;
     const STORAGE_KEY = 'naturo:lead';
     const TARGET_PATH = '/quote';
     const config = lc || {};
+    // States we service — a suburb outside these shows the "not covered" note.
+    const SERVICED_STATES = ['NSW', 'QLD', 'VIC', 'ACT'];
 
     // ---- Destination installers ------------------------------------------
-    // Each runs once on page load if the relevant ID is configured. The
-    // submit-time fan-out below assumes whatever globals these created
-    // (fbq / gtag / dataLayer) are available.
     function installMetaPixel(id) {
       if (!id || window.fbq) return;
-      // Standard Meta Pixel base snippet, lifted from FB's docs.
       /* eslint-disable */
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
       /* eslint-enable */
       window.fbq('init', id);
       window.fbq('track', 'PageView');
     }
-
     function installGtag(id) {
       if (!id || window.gtag) return;
       const s = document.createElement('script');
@@ -181,7 +191,6 @@ const lc = leadCapture;
       window.gtag('js', new Date());
       window.gtag('config', id);
     }
-
     function installGtm(id) {
       if (!id) return;
       window.dataLayer = window.dataLayer || [];
@@ -191,17 +200,8 @@ const lc = leadCapture;
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',id);
       /* eslint-enable */
     }
-
-    // ---- Consent gating -------------------------------------------------
-    // Marketing / analytics tags only mount AFTER the user accepts cookies.
-    // CookieConsent.astro stores the choice in localStorage and dispatches
-    // 'naturo:consent-granted' on page load if previously accepted, and
-    // again the moment the user clicks "Accept all".
     function installAdvertisingStack() {
       installMetaPixel(config.metaPixelId);
-      // GA4 and Google Ads both ride on gtag.js — ID order matters: load
-      // GA4 first if both are configured so the GA4 default conversion
-      // schema is set up before Ads conversion calls fire.
       if (config.ga4Id) installGtag(config.ga4Id);
       if (config.googleAdsId) installGtag(config.googleAdsId);
       installGtm(config.gtmId);
@@ -222,9 +222,7 @@ const lc = leadCapture;
       }, { once: true });
     }
 
-    // ---- Tracking-context capture ----------------------------------------
-    // Pull UTM params + referrer + landing page once per session. These
-    // are the breadcrumbs you actually need for retargeting attribution.
+    // ---- Tracking-context capture ---------------------------------------
     function captureContext() {
       const KEY = 'naturo:lead-context';
       try {
@@ -250,230 +248,213 @@ const lc = leadCapture;
 
     const overlay = document.getElementById('qlgOverlay');
     const form = document.getElementById('qlgForm');
+    const card = overlay ? overlay.querySelector('.qlg-card') : null;
     const closeBtn = document.getElementById('qlgClose');
     if (!overlay || !form) return;
-    const firstRadio = form.querySelector('input[name="service"]');
-    const submitBtn = document.getElementById('qlgSubmit');
-    const titleEl = document.getElementById('qlgTitle');
-    const subEl = document.getElementById('qlgSub');
-    const successPanel = document.getElementById('qlgSuccess');
-    const successMsg = document.getElementById('qlgSuccessMsg');
-    const successDone = document.getElementById('qlgSuccessDone');
-    if (successDone) successDone.addEventListener('click', function () { closeModal(); });
 
-    // Reset the modal back to the form view (used before each open, in case a
-    // previous submission left the thank-you panel showing).
-    function resetToForm() {
-      if (successPanel) successPanel.setAttribute('hidden', '');
-      form.removeAttribute('hidden');
-      if (titleEl) titleEl.removeAttribute('hidden');
-      if (subEl) subEl.removeAttribute('hidden');
-      if (submitBtn) submitBtn.disabled = false;
-    }
+    const chrome = document.getElementById('qlgChrome');
+    const backBtn = document.getElementById('qlgBack');
+    const progressLabel = document.getElementById('qlgProgressLabel');
+    const progressFill = document.getElementById('qlgProgressFill');
+    const screens = {};
+    Array.prototype.forEach.call(form.querySelectorAll('.qlg-screen'), function (s) { screens[s.getAttribute('data-step')] = s; });
 
-    let pendingHref = null;
-    let lastFocused = null;
-
-    function hasLead() {
-      try {
-        const raw = sessionStorage.getItem(STORAGE_KEY);
-        if (!raw) return false;
-        const data = JSON.parse(raw);
-        return !!(data && data.service && data.postcode);
-      } catch (e) {
-        return false;
-      }
-    }
-
-    function openModal(href) {
-      pendingHref = href;
-      resetToForm();
-      lastFocused = document.activeElement;
-      var isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-      if (isTouchDevice) {
-        // iOS Safari auto-focuses the first input inside role="dialog" the
-        // moment it becomes visible — ignoring tabindex, readonly, and
-        // inputmode individually. The only reliable fix is the HTML `inert`
-        // attribute, which removes the entire form subtree from the browser's
-        // focus-management tree. An inert element is completely unfocusable,
-        // so the virtual keyboard never appears on open. We lift `inert` after
-        // 500 ms once the animation has settled and the user is ready to type.
-        form.setAttribute('inert', '');
-        overlay.setAttribute('role', 'dialog');
-        overlay.setAttribute('aria-modal', 'true');
-        overlay.removeAttribute('hidden');
-        document.body.style.overflow = 'hidden';
-        if (closeBtn) closeBtn.focus();
-        setTimeout(function() {
-          form.removeAttribute('inert');
-        }, 500);
-      } else {
-        // Desktop: show modal then focus first input so the user can type immediately.
-        overlay.setAttribute('role', 'dialog');
-        overlay.setAttribute('aria-modal', 'true');
-        overlay.removeAttribute('hidden');
-        document.body.style.overflow = 'hidden';
-        setTimeout(function () { if (firstRadio) firstRadio.focus(); }, 50);
-      }
-    }
-
-    function closeModal() {
-      overlay.setAttribute('hidden', '');
-      overlay.removeAttribute('role');
-      overlay.removeAttribute('aria-modal');
-      document.body.style.overflow = '';
-      pendingHref = null;
-      if (lastFocused && typeof lastFocused.focus === 'function') {
-        lastFocused.focus();
-      }
-    }
-
-    // ---- Focus trap ----
-    // While the modal is open, Tab / Shift+Tab cycle within its focusable
-    // children instead of leaking out to the page underneath. Required
-    // for WCAG 2.1.2.1 (No Keyboard Trap — the inverse: keyboard users
-    // shouldn't be able to step out of a modal dialog into hidden UI).
-    function getFocusable() {
-      const sel = [
-        'a[href]',
-        'button:not([disabled])',
-        'input:not([disabled]):not([type="hidden"])',
-        'select:not([disabled])',
-        'textarea:not([disabled])',
-        '[tabindex]:not([tabindex="-1"])',
-      ].join(',');
-      return Array.prototype.slice
-        .call(overlay.querySelectorAll(sel))
-        .filter(function (el) { return el.offsetParent !== null; });
-    }
-    overlay.addEventListener('keydown', function (ev) {
-      if (ev.key !== 'Tab') return;
-      const items = getFocusable();
-      if (!items.length) return;
-      const first = items[0];
-      const last = items[items.length - 1];
-      const active = document.activeElement;
-      if (ev.shiftKey && active === first) {
-        ev.preventDefault();
-        last.focus();
-      } else if (!ev.shiftKey && active === last) {
-        ev.preventDefault();
-        first.focus();
-      }
-    });
+    // ---- State (persists across Back/Forward within the session) --------
+    const STEPS = ['intro', 'service', 'location', 'contact', 'notes', 'done'];
+    const QNUM = { service: 1, location: 2, contact: 3, notes: 4 };
+    const state = { service: '', serviceLabel: '', specialtyType: '', postcode: '', suburb: '', suburbState: '', name: '', phone: '', email: '', notes: '' };
+    let stepIndex = 0;
+    let pendingHref = null, lastFocused = null;
 
     function setError(name, message) {
       const el = form.querySelector('[data-error-for="' + name + '"]');
       if (el) el.textContent = message || '';
       const input = form.elements[name];
-      // `service` resolves to a RadioNodeList (no setAttribute) — guard for it.
       if (input && typeof input.setAttribute === 'function') {
         if (message) input.setAttribute('aria-invalid', 'true');
         else input.removeAttribute('aria-invalid');
       }
     }
-
     function clearErrors() {
-      ['service', 'specialty_type', 'postcode', 'suburb', 'name', 'phone', 'email'].forEach(function (n) { setError(n, ''); });
+      ['name', 'phone', 'email', 'suburb'].forEach(function (n) { setError(n, ''); });
     }
 
-    function validate(values) {
+    function focusStep(name) {
+      const el = screens[name];
+      if (!el) return;
+      let target = null;
+      if (name === 'intro') target = document.getElementById('qlgStart');
+      else if (name === 'service') target = el.querySelector('.qlg-option');
+      else if (name === 'location') target = document.getElementById('qlgSearch');
+      else if (name === 'contact') target = document.getElementById('qlgName');
+      else if (name === 'notes') target = document.getElementById('qlgNotes');
+      else if (name === 'done') target = document.getElementById('qlgDone');
+      if (target) setTimeout(function () { try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); } }, 60);
+    }
+
+    function showStep(name, dir) {
+      stepIndex = STEPS.indexOf(name);
+      Object.keys(screens).forEach(function (k) {
+        const s = screens[k];
+        s.hidden = (k !== name);
+        s.classList.remove('qlg-in-right', 'qlg-in-left');
+      });
+      const el = screens[name];
+      // force reflow so the animation restarts each time
+      void el.offsetWidth;
+      el.classList.add(dir === 'back' ? 'qlg-in-left' : 'qlg-in-right');
+      if (card) card.scrollTop = 0;
+      // chrome: progress + back on the 4 question steps only
+      const q = QNUM[name];
+      if (q) {
+        chrome.hidden = false;
+        progressLabel.textContent = 'Question ' + q + ' of 4';
+        progressFill.style.width = (q / 4 * 100) + '%';
+      } else {
+        chrome.hidden = true;
+      }
+      focusStep(name);
+    }
+
+    function goBack() {
+      const name = STEPS[stepIndex];
+      if (name === 'service') showStep('intro', 'back');
+      else if (name === 'location') showStep('service', 'back');
+      else if (name === 'contact') showStep('location', 'back');
+      else if (name === 'notes') showStep('contact', 'back');
+    }
+
+    // ---- Step 1: service cards (select → animate → auto-advance) ---------
+    Array.prototype.forEach.call(document.querySelectorAll('#qlgServiceOptions .qlg-option'), function (opt) {
+      opt.addEventListener('click', function () {
+        Array.prototype.forEach.call(document.querySelectorAll('#qlgServiceOptions .qlg-option'), function (o) {
+          o.classList.remove('is-selected'); o.removeAttribute('aria-pressed');
+        });
+        opt.classList.add('is-selected');
+        opt.setAttribute('aria-pressed', 'true');
+        state.service = opt.getAttribute('data-service') || '';
+        state.serviceLabel = opt.getAttribute('data-label') || '';
+        state.specialtyType = opt.getAttribute('data-specialty') || '';
+        setTimeout(function () { if (STEPS[stepIndex] === 'service') showStep('location', 'next'); }, 420);
+      });
+    });
+
+    // ---- Step 3: contact validation (friendly) --------------------------
+    function validateContact() {
       let ok = true;
-      if (!values.service) {
-        setError('service', 'Please choose which clean you need.');
-        ok = false;
-      }
-      if (values.service === 'specialty' && !values.specialtyType) {
-        setError('specialty_type', 'Please choose NDIS, DVA, Aged Care or Insurance Claim.');
-        ok = false;
-      }
-      if (!/^\d{4}$/.test((values.postcode || '').replace(/\s/g, ''))) {
-        setError('postcode', 'Please enter your 4-digit postcode.');
-        ok = false;
-      } else if (!values.suburb && !suburbOptional) {
-        // A valid postcode must resolve to a selected suburb — unless the
-        // lookup genuinely returned nothing or the API was unreachable.
-        setError('suburb', 'Please select your suburb from the list.');
-        ok = false;
-      }
-      if (!values.name || values.name.length < 2) {
-        setError('name', 'Please enter your name.');
-        ok = false;
-      }
-      if ((values.phone || '').replace(/[^0-9]/g, '').length < 8) {
-        setError('phone', 'Please enter a valid phone number.');
-        ok = false;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email || '')) {
-        setError('email', 'Please enter a valid email.');
-        ok = false;
-      }
+      const name = (form.elements['name'].value || '').trim();
+      const phone = (form.elements['phone'].value || '').trim();
+      const email = (form.elements['email'].value || '').trim();
+      if (!name || name.length < 2) { setError('name', 'What should we call you?'); ok = false; }
+      if (phone.replace(/[^0-9]/g, '').length < 8) { setError('phone', 'A valid phone number, please.'); ok = false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('email', 'Double-check your email?'); ok = false; }
+      if (ok) { state.name = name; state.phone = phone; state.email = email; }
       return ok;
     }
 
-    function isQuoteLink(a) {
-      if (!a || a.tagName !== 'A') return false;
-      // Skip new-tab / modifier-clicked / explicit-target links — let the
-      // browser handle those normally.
-      if (a.target && a.target !== '' && a.target !== '_self') return false;
-      const raw = a.getAttribute('href');
-      if (!raw) return false;
-      // Resolve to a pathname we can compare. Anchors / tel: / mailto:
-      // / external links all bail here.
-      try {
-        const url = new URL(a.href, window.location.href);
-        if (url.origin !== window.location.origin) return false;
-        return url.pathname === TARGET_PATH || url.pathname === TARGET_PATH + '/';
-      } catch (e) {
-        return false;
-      }
+    // ---- Submit → ship the lead → thank-you -----------------------------
+    let submitted = false;
+    function submitLead() {
+      if (submitted) return;
+      submitted = true;
+      state.notes = (form.elements['notes'].value || '').trim();
+      try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+      shipLead(state);
+      showStep('done', 'next');
     }
 
-    // Click capture — runs before any per-link handler so we can
-    // preventDefault on quote links cleanly.
-    document.addEventListener('click', function (ev) {
-      // Bail on modifier clicks so cmd/ctrl-click still opens new tab.
-      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
-      if (ev.button !== undefined && ev.button !== 0) return;
-      const a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
-      if (!isQuoteLink(a)) return;
-      // The popup IS the lead form now — always open it instead of
-      // navigating to the /quote page.
-      ev.preventDefault();
-      openModal(a.href);
-    }, true);
+    // ---- Ship the lead to every destination (unchanged backend) ---------
+    function shipToWebhook(payload) {
+      if (!config.webhookUrl && !config.crmUrl) return;
+      var serviceLabels = { regular: 'Regular Home Cleaning', oneoff: 'Deep Clean', specialty: 'NDIS, DVA, Aged Care & Insurance' };
+      var serviceLabel = payload.serviceLabel || serviceLabels[payload.service] || payload.service || '';
+      // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold the
+      // full enquiry into the message so nothing is lost.
+      var lines = [];
+      if (serviceLabel) lines.push('Service: ' + serviceLabel);
+      var loc = ((payload.suburb || '') + ' ' + (payload.postcode || '')).trim();
+      if (loc) lines.push('Location: ' + loc);
+      if (payload.notes) lines.push('Notes: ' + payload.notes);
+      lines.push('Submitted via naturogroup.com.au');
+      var crmPayload = {
+        name: payload.name || '',
+        email: payload.email || '',
+        phone: payload.phone || '',
+        message: lines.join('\n'),
+      };
+      if (config.webhookUrl) {
+        try {
+          fetch(config.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crmPayload), keepalive: true }).catch(function () {});
+        } catch (e) {}
+      }
+      if (config.crmUrl) {
+        try {
+          fetch(config.crmUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crmPayload), keepalive: true }).catch(function () {});
+        } catch (e) {}
+      }
+    }
+    function shipToMetaPixel(payload) {
+      if (!config.metaPixelId || typeof window.fbq !== 'function') return;
+      try {
+        window.fbq('track', 'Lead', { content_name: 'Instant Price Gate', content_category: 'quote' }, { eventID: payload.event_id });
+      } catch (e) {}
+    }
+    function shipToGoogleAds(payload) {
+      if (!config.googleAdsId || typeof window.gtag !== 'function') return;
+      try {
+        const sendTo = config.googleAdsLabel ? config.googleAdsId + '/' + config.googleAdsLabel : config.googleAdsId;
+        window.gtag('event', 'conversion', { send_to: sendTo, transaction_id: payload.event_id });
+        window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.event_id });
+      } catch (e) {}
+    }
+    function shipToDataLayer(payload) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_captured',
+        lead: { service: payload.service, specialty_type: payload.specialty_type, postcode: payload.postcode, suburb: payload.suburb, name: payload.name, phone: payload.phone, email: payload.email },
+        source: payload.source,
+        event_id: payload.event_id,
+      });
+    }
+    function shipLead(values) {
+      const eventId = (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      const payload = {
+        event: 'lead_captured',
+        event_id: eventId,
+        captured_at: new Date().toISOString(),
+        service: values.service,
+        serviceLabel: values.serviceLabel,
+        specialty_type: values.specialtyType,
+        postcode: values.postcode,
+        suburb: values.suburb,
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        notes: values.notes,
+        source: trackingContext,
+        page: { url: window.location.href, path: window.location.pathname, title: document.title },
+      };
+      shipToWebhook(payload);
+      shipToMetaPixel(payload);
+      shipToGoogleAds(payload);
+      shipToDataLayer(payload);
+    }
 
-    // Close on backdrop click, X button, or Escape.
-    overlay.addEventListener('click', function (ev) {
-      if (ev.target === overlay) closeModal();
-    });
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    document.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
-    });
-
-    // Live-clear an error as the user starts typing in that field.
-    form.addEventListener('input', function (ev) {
-      const t = ev.target;
-      if (t && t.name) setError(t.name, '');
-    });
-
-    // ---- Postcode search → suburb combobox (Zippopotam.us: free/keyless) ----
-    // The user types a postcode; matching suburbs drop down below the search
-    // box and they pick one. Best-effort: no match / API down → a note shows
-    // and they can continue with the postcode alone. The 4-digit postcode and
-    // chosen suburb are mirrored into hidden inputs for the rest of the form.
+    // ---- Step 2: postcode → suburb combobox + serviced check ------------
     var searchInput = document.getElementById('qlgSearch');
     var clearBtn = document.getElementById('qlgSearchClear');
     var suburbList = document.getElementById('qlgSuburbList');
     var pcHidden = document.getElementById('qlgPostcode');
     var suburbHidden = document.getElementById('qlgSuburb');
+    var suburbStateHidden = document.getElementById('qlgSuburbState');
     var pcStatus = document.getElementById('qlgPostcodeStatus');
     var pcSearchWrap = document.getElementById('qlgPcSearch');
-    var pcToken = 0, pcDebounce = null, listedSuburbs = false;
-    // suburbOptional = true only when the API genuinely returned no suburbs
-    // or was unreachable — otherwise a valid postcode requires a picked suburb.
-    var suburbOptional = false;
+    var servicedPanel = document.getElementById('qlgServiced');
+    var notServicedPanel = document.getElementById('qlgNotServiced');
+    var locationNext = document.getElementById('qlgLocationNext');
+    var pcToken = 0, pcDebounce = null, listedSuburbs = false, suburbOptional = false;
 
     function esc(s) {
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -481,20 +462,41 @@ const lc = leadCapture;
     function setStatus(msg) {
       if (!pcStatus) return;
       pcStatus.textContent = msg || '';
-      if (msg) pcStatus.removeAttribute('hidden');
-      else pcStatus.setAttribute('hidden', '');
+      if (msg) pcStatus.removeAttribute('hidden'); else pcStatus.setAttribute('hidden', '');
     }
     function closeList() {
       if (suburbList) { suburbList.innerHTML = ''; suburbList.setAttribute('hidden', ''); }
       if (searchInput) searchInput.setAttribute('aria-expanded', 'false');
     }
+    function resetLocationPanels() {
+      servicedPanel.hidden = true;
+      notServicedPanel.hidden = true;
+    }
+    function updateLocationNext() {
+      const ready = /^\d{4}$/.test(pcHidden.value) && (!!suburbHidden.value || suburbOptional);
+      locationNext.disabled = !ready;
+    }
+    function onSuburbChosen(stateAbbr) {
+      state.postcode = pcHidden.value;
+      state.suburb = suburbHidden.value;
+      state.suburbState = stateAbbr || '';
+      const serviced = SERVICED_STATES.indexOf((stateAbbr || '').toUpperCase()) !== -1;
+      servicedPanel.hidden = !serviced;
+      notServicedPanel.hidden = serviced;
+      updateLocationNext();
+      if (serviced) {
+        setTimeout(function () { if (STEPS[stepIndex] === 'location' && suburbHidden.value) showStep('contact', 'next'); }, 1300);
+      }
+    }
     function selectSuburb(name, stateAbbr, pc) {
       suburbHidden.value = name;
+      suburbStateHidden.value = stateAbbr || '';
       pcHidden.value = pc;
       searchInput.value = name + ', ' + stateAbbr + ' ' + pc;
       clearBtn.removeAttribute('hidden');
       setError('suburb', '');
       closeList();
+      onSuburbChosen(stateAbbr);
     }
     function lookupSuburbs(pc) {
       var token = ++pcToken;
@@ -505,7 +507,7 @@ const lc = leadCapture;
       fetch('https://api.zippopotam.us/au/' + encodeURIComponent(pc))
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) {
-          if (token !== pcToken) return; // a newer lookup superseded this one
+          if (token !== pcToken) return;
           var places = (data && data.places) || [];
           var seen = {}, items = [];
           places.forEach(function (p) {
@@ -517,6 +519,7 @@ const lc = leadCapture;
           if (!items.length) {
             suburbOptional = true;
             setStatus('No suburbs found for that postcode — you can still continue.');
+            updateLocationNext();
             return;
           }
           listedSuburbs = true;
@@ -534,16 +537,20 @@ const lc = leadCapture;
           if (token !== pcToken) return;
           suburbOptional = true;
           setStatus('Couldn’t look up suburbs right now — you can still continue.');
+          updateLocationNext();
         });
     }
     if (searchInput) {
       searchInput.addEventListener('input', function () {
         var raw = searchInput.value;
         clearBtn.toggleAttribute('hidden', !raw);
-        suburbHidden.value = ''; // typing invalidates any prior suburb pick
+        suburbHidden.value = '';
+        suburbStateHidden.value = '';
+        resetLocationPanels();
         var digits = raw.replace(/\D/g, '').slice(0, 4);
         pcHidden.value = digits;
-        setError('postcode', '');
+        setError('suburb', '');
+        updateLocationNext();
         if (pcDebounce) clearTimeout(pcDebounce);
         if (/^\d{4}$/.test(digits)) {
           pcDebounce = setTimeout(function () { lookupSuburbs(digits); }, 250);
@@ -552,195 +559,105 @@ const lc = leadCapture;
         }
       });
       clearBtn.addEventListener('click', function () {
-        searchInput.value = ''; pcHidden.value = ''; suburbHidden.value = '';
+        searchInput.value = ''; pcHidden.value = ''; suburbHidden.value = ''; suburbStateHidden.value = '';
         clearBtn.setAttribute('hidden', ''); listedSuburbs = false; suburbOptional = false;
-        pcToken++; closeList(); setStatus(''); searchInput.focus();
+        pcToken++; closeList(); setStatus(''); resetLocationPanels(); updateLocationNext(); searchInput.focus();
       });
       suburbList.addEventListener('click', function (ev) {
         var li = ev.target.closest('.qlg-pcsearch-item');
         if (!li) return;
         selectSuburb(li.getAttribute('data-name'), li.getAttribute('data-state'), pcHidden.value);
       });
-      // Close the dropdown when clicking outside the search field.
       document.addEventListener('click', function (ev) {
         if (pcSearchWrap && !pcSearchWrap.contains(ev.target)) closeList();
       });
     }
+    locationNext.addEventListener('click', function () {
+      if (locationNext.disabled) return;
+      if (!state.postcode) state.postcode = pcHidden.value;
+      if (!state.suburb) state.suburb = suburbHidden.value;
+      showStep('contact', 'next');
+    });
 
-    // ---- Fan-out: push the lead to every configured destination ---------
-    function shipToWebhook(payload) {
-      if (!config.webhookUrl && !config.crmUrl) return;
-      var serviceLabels = {
-        regular: 'Regular Clean',
-        oneoff: 'Deep Clean',
-        specialty: 'NDIS, DVA, Agedcare & Insurance',
-      };
-      var specialtyLabels = { ndis: 'NDIS', dva: 'DVA', 'aged-care': 'Aged Care', insurance: 'Insurance Claim' };
-      var serviceLabel = serviceLabels[payload.service] || payload.service || '';
-      var fundingLabel = (payload.service === 'specialty' && payload.specialty_type)
-        ? (specialtyLabels[payload.specialty_type] || payload.specialty_type)
-        : '';
-      // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold the
-      // full enquiry into the message so nothing is lost (the CRM adds the
-      // name/phone/email from the contact fields below).
-      var lines = [];
-      if (serviceLabel) lines.push('Service: ' + serviceLabel);
-      if (fundingLabel) lines.push('Funding / claim type: ' + fundingLabel);
-      var loc = ((payload.suburb || '') + ' ' + (payload.postcode || '')).trim();
-      if (loc) lines.push('Location: ' + loc);
-      if (payload.notes) lines.push('Notes: ' + payload.notes);
-      var crmPayload = {
-        name: payload.name || '',
-        email: payload.email || '',
-        phone: payload.phone || '',
-        message: lines.join('\n'),
-      };
-      if (config.webhookUrl) {
-        try {
-          fetch(config.webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(crmPayload),
-            keepalive: true,
-          }).catch(function () { /* best-effort */ });
-        } catch (e) { /* swallow */ }
-      }
-      // Also post to the Sophiie CRM (Inbox + auto-capture), non-blocking.
-      if (config.crmUrl) {
-        try {
-          fetch(config.crmUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(crmPayload),
-            keepalive: true,
-          }).catch(function () {});
-        } catch (e) {}
-      }
-    }
-
-    function shipToMetaPixel(payload) {
-      if (!config.metaPixelId || typeof window.fbq !== 'function') return;
-      try {
-        window.fbq('track', 'Lead', {
-          content_name: 'Instant Price Gate',
-          content_category: 'quote',
-        }, {
-          // eventID lets you de-dupe with server-side Conversions API later.
-          eventID: payload.event_id,
-        });
-      } catch (e) {}
-    }
-
-    function shipToGoogleAds(payload) {
-      if (!config.googleAdsId || typeof window.gtag !== 'function') return;
-      try {
-        const sendTo = config.googleAdsLabel
-          ? config.googleAdsId + '/' + config.googleAdsLabel
-          : config.googleAdsId;
-        window.gtag('event', 'conversion', {
-          send_to: sendTo,
-          transaction_id: payload.event_id,
-        });
-        // Also fire a generate_lead event so GA4 / other gtag listeners
-        // can build remarketing audiences off it.
-        window.gtag('event', 'generate_lead', {
-          currency: 'AUD',
-          value: 0,
-          transaction_id: payload.event_id,
-        });
-      } catch (e) {}
-    }
-
-    function shipToDataLayer(payload) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'lead_captured',
-        lead: {
-          service: payload.service,
-          specialty_type: payload.specialty_type,
-          postcode: payload.postcode,
-          suburb: payload.suburb,
-          name: payload.name,
-          phone: payload.phone,
-          email: payload.email,
-        },
-        source: payload.source,
-        event_id: payload.event_id,
-      });
-    }
-
-    function shipLead(values) {
-      // Single shared event_id so destinations can be de-duped later.
-      const eventId = (window.crypto && window.crypto.randomUUID)
-        ? window.crypto.randomUUID()
-        : 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-      const payload = {
-        event: 'lead_captured',
-        event_id: eventId,
-        captured_at: new Date().toISOString(),
-        service: values.service,
-        specialty_type: values.specialtyType,
-        postcode: values.postcode,
-        suburb: values.suburb,
-        name: values.name,
-        phone: values.phone,
-        email: values.email,
-        notes: values.notes,
-        source: trackingContext,
-        page: {
-          url: window.location.href,
-          path: window.location.pathname,
-          title: document.title,
-        },
-      };
-      shipToWebhook(payload);
-      shipToMetaPixel(payload);
-      shipToGoogleAds(payload);
-      shipToDataLayer(payload);
-    }
+    // ---- Buttons / navigation -------------------------------------------
+    document.getElementById('qlgStart').addEventListener('click', function () { showStep('service', 'next'); });
+    backBtn.addEventListener('click', goBack);
+    document.getElementById('qlgSkip').addEventListener('click', function () { submitLead(); });
+    document.getElementById('qlgDone').addEventListener('click', function () { closeModal(); });
 
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      clearErrors();
-      const serviceField = form.elements['service'];
-      const specialtyField = form.elements['specialty_type'];
-      const suburbEl = form.elements['suburb'];
-      const service = (serviceField && serviceField.value) || '';
-      const values = {
-        service: service,
-        specialtyType: (service === 'specialty' && specialtyField) ? (specialtyField.value || '') : '',
-        postcode: (form.elements['postcode'].value || '').trim(),
-        suburb: (suburbEl && suburbEl.value) || '',
-        name: (form.elements['name'].value || '').trim(),
-        phone: (form.elements['phone'].value || '').trim(),
-        email: (form.elements['email'].value || '').trim(),
-        notes: (form.elements['notes'].value || '').trim(),
-      };
-      if (!validate(values)) return;
-      if (submitBtn) submitBtn.disabled = true; // guard against double-submits
-      try {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(values));
-      } catch (e) { /* private mode etc — fine, just navigate. */ }
-      // Fire-and-forget the lead to every configured destination. This
-      // is non-blocking — sendBeacon / keepalive ensure the request
-      // completes even after we navigate.
-      shipLead(values);
-      // Show the in-popup thank-you instead of navigating anywhere.
-      if (successMsg) {
-        var first = (values.name || '').split(' ')[0];
-        successMsg.textContent = (first ? first + ', our' : 'Our') + ' team will call you shortly to confirm your tailored price.';
-      }
-      form.setAttribute('hidden', '');
-      if (titleEl) titleEl.setAttribute('hidden', '');
-      if (subEl) subEl.setAttribute('hidden', '');
-      if (successPanel) successPanel.removeAttribute('hidden');
+      const name = STEPS[stepIndex];
+      if (name === 'location') { if (!locationNext.disabled) locationNext.click(); }
+      else if (name === 'contact') { clearErrors(); if (validateContact()) showStep('notes', 'next'); }
+      else if (name === 'notes') { submitLead(); }
     });
+
+    // ---- Open / close ----------------------------------------------------
+    function openModal(href) {
+      pendingHref = href;
+      submitted = false;
+      lastFocused = document.activeElement;
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      showStep('intro', 'next');
+    }
+    function closeModal() {
+      overlay.setAttribute('hidden', '');
+      overlay.removeAttribute('role');
+      overlay.removeAttribute('aria-modal');
+      document.body.style.overflow = '';
+      pendingHref = null;
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    // Focus trap (WCAG 2.1.2.1)
+    function getFocusable() {
+      const sel = ['a[href]', 'button:not([disabled])', 'input:not([disabled]):not([type="hidden"])', 'select:not([disabled])', 'textarea:not([disabled])', '[tabindex]:not([tabindex="-1"])'].join(',');
+      return Array.prototype.slice.call(overlay.querySelectorAll(sel)).filter(function (el) { return el.offsetParent !== null; });
+    }
+    overlay.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Tab') return;
+      const items = getFocusable();
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1], active = document.activeElement;
+      if (ev.shiftKey && active === first) { ev.preventDefault(); last.focus(); }
+      else if (!ev.shiftKey && active === last) { ev.preventDefault(); first.focus(); }
+    });
+    overlay.addEventListener('click', function (ev) { if (ev.target === overlay) closeModal(); });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+    });
+
+    // ---- Intercept every "Get an Instant Price" (/quote) link -----------
+    function isQuoteLink(a) {
+      if (!a || a.tagName !== 'A') return false;
+      if (a.target && a.target !== '' && a.target !== '_self') return false;
+      const raw = a.getAttribute('href');
+      if (!raw) return false;
+      try {
+        const url = new URL(a.href, window.location.href);
+        if (url.origin !== window.location.origin) return false;
+        return url.pathname === TARGET_PATH || url.pathname === TARGET_PATH + '/';
+      } catch (e) { return false; }
+    }
+    document.addEventListener('click', function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      if (ev.button !== undefined && ev.button !== 0) return;
+      const a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+      if (!isQuoteLink(a)) return;
+      if (window.location.pathname === TARGET_PATH || window.location.pathname === TARGET_PATH + '/') return;
+      ev.preventDefault();
+      openModal(a.href);
+    }, true);
   })();
 </script>
 
 <style>
-  /* Backdrop covers the whole viewport. Frosted dark surface so the
-     form card pops with the brand blue submit button. */
+  /* ============================ Overlay + card ======================== */
   .qlg-overlay {
     position: fixed;
     inset: 0;
@@ -750,42 +667,28 @@ const lc = leadCapture;
     justify-content: center;
     padding: 16px;
     background: rgba(15, 23, 42, 0.55);
-    animation: qlg-fade 180ms ease-out;
-    /* Allow overlay itself to scroll on very short screens so the card
-       is never clipped — align-items:safe center does the same but
-       browser support is still patchy. */
+    animation: qlg-fade 200ms ease-out;
     overflow-y: auto;
   }
   .qlg-overlay[hidden] { display: none; }
-  @keyframes qlg-fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+  @keyframes qlg-fade { from { opacity: 0; } to { opacity: 1; } }
 
   .qlg-card {
     position: relative;
     width: 100%;
     max-width: 460px;
-    /* Never taller than the visible viewport — the form scrolls inside. */
     max-height: calc(100dvh - 32px);
     overflow-y: auto;
-    /* Pushes card to vertical centre when there's room; sits at top when
-       the overlay itself needs to scroll. */
     margin: auto;
-    /* Apple-style light grey card with white inputs. */
-    background: #f5f5f7;
-    border: 1px solid #e3e3e8;
-    border-radius: 18px;
-    padding: 36px 32px 30px;
-    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
-    animation: qlg-rise 220ms ease-out;
-    /* Smooth inertia scroll on iOS */
+    background: #ffffff;
+    border: 1px solid #ececf1;
+    border-radius: 22px;
+    padding: 30px 28px 28px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+    animation: qlg-rise 260ms cubic-bezier(0.16, 1, 0.3, 1);
     -webkit-overflow-scrolling: touch;
   }
-  @keyframes qlg-rise {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes qlg-rise { from { opacity: 0; transform: translateY(16px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
   .qlg-close {
     position: absolute;
@@ -799,345 +702,235 @@ const lc = leadCapture;
     background: transparent;
     border: 0;
     border-radius: 999px;
-    color: #475569;
+    color: #94a3b8;
     cursor: pointer;
+    z-index: 3;
     transition: background-color 150ms, color 150ms;
   }
   .qlg-close:hover { background: rgba(15, 23, 42, 0.06); color: #0f172a; }
 
-  .qlg-eyebrow {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #3a5dff;
-    margin: 0 0 8px;
+  /* ============================ Chrome ================================ */
+  .qlg-chrome { display: flex; align-items: center; gap: 14px; margin: 4px 40px 22px 0; }
+  .qlg-back {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: transparent; border: 0; padding: 6px 8px 6px 4px; margin-left: -4px;
+    font-family: "Poppins", sans-serif; font-size: 13px; font-weight: 500; color: #64748b;
+    border-radius: 8px; cursor: pointer; flex: 0 0 auto;
+    transition: color 150ms, background-color 150ms;
   }
-  .qlg-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #0f172a;
-    margin: 0 0 8px;
-  }
-  .qlg-sub {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.55;
-    color: rgb(71, 85, 105);
-    margin: 0 0 20px;
+  .qlg-back:hover { color: #0f172a; background: rgba(15, 23, 42, 0.05); }
+  .qlg-progress { flex: 1; min-width: 0; }
+  .qlg-progress-label { display: block; font-family: "Poppins", sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: 0.03em; color: #94a3b8; margin: 0 0 6px; }
+  .qlg-progress-track { height: 5px; border-radius: 999px; background: #eceef3; overflow: hidden; }
+  .qlg-progress-fill { height: 100%; width: 25%; border-radius: 999px; background: linear-gradient(90deg, #4a6bff, #2748f2); transition: width 350ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+  /* ============================ Stage / screens ====================== */
+  .qlg-stage { position: relative; }
+  .qlg-screen { display: flex; flex-direction: column; gap: 18px; }
+  .qlg-screen[hidden] { display: none; }
+  .qlg-in-right { animation: qlg-slide-right 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .qlg-in-left { animation: qlg-slide-left 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes qlg-slide-right { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes qlg-slide-left { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .qlg-overlay, .qlg-card, .qlg-in-right, .qlg-in-left { animation: none; }
+    .qlg-progress-fill { transition: none; }
   }
 
-  .qlg-form { display: flex; flex-direction: column; gap: 24px; }
-  .qlg-field { display: flex; flex-direction: column; gap: 10px; }
-  .qlg-label {
+  /* ============================ Typography ============================ */
+  .qlg-heading {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: clamp(24px, 6vw, 28px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     color: #0f172a;
+    margin: 0;
   }
+  .qlg-wave { display: inline-block; animation: qlg-wave 1.6s ease-in-out 2; transform-origin: 70% 70%; }
+  @keyframes qlg-wave { 0%,60%,100% { transform: rotate(0); } 15% { transform: rotate(16deg); } 30% { transform: rotate(-8deg); } 45% { transform: rotate(12deg); } }
+  .qlg-lede { font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 300; line-height: 1.6; color: #475569; margin: 0; }
+  .qlg-q {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 5vw, 23px);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .qlg-intro, .qlg-done { display: flex; flex-direction: column; gap: 18px; text-align: center; align-items: center; padding: 12px 4px; }
+
+  /* ============================ Buttons ============================== */
+  .qlg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 6px 22px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 200ms ease, opacity 150ms ease;
+  }
+  /* Match the site CTA layout: label on the left, circle icon pinned right. */
+  .qlg-btn:has(.qlg-btn-icon) { justify-content: space-between; padding: 6px 8px 6px 24px; }
+  .qlg-btn-primary {
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.34);
+  }
+  .qlg-btn-primary:hover { box-shadow: 0 12px 30px rgba(37, 72, 240, 0.44); transform: translateY(-1px); }
+  .qlg-btn-primary:active { transform: translateY(0) scale(0.985); }
+  .qlg-btn-primary[disabled] { opacity: 0.45; box-shadow: none; cursor: not-allowed; transform: none; }
+  .qlg-btn-icon {
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #ffffff; color: #1C244B; border: 1px solid #ffffff;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+  .qlg-btn-icon svg { display: block; width: 14px; height: 14px; }
+  .qlg-btn-primary:not([disabled]):hover .qlg-btn-icon { background: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
+  .qlg-btn-final { min-height: 46px; }
+  .qlg-skip {
+    align-self: center;
+    background: transparent; border: 0;
+    font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #94a3b8;
+    padding: 6px 16px; border-radius: 8px; cursor: pointer;
+    transition: color 150ms, background-color 150ms;
+  }
+  .qlg-skip:hover { color: #475569; background: rgba(15, 23, 42, 0.04); }
+
+  /* ============================ Option cards ========================= */
+  .qlg-options { display: flex; flex-direction: column; gap: 12px; }
+  .qlg-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    text-align: left;
+    padding: 18px 18px;
+    background: #ffffff;
+    border: 1.5px solid #e6e6ec;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms, box-shadow 160ms, background-color 160ms;
+  }
+  .qlg-option:hover { border-color: #b9c3ff; box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06); }
+  .qlg-option:active { transform: scale(0.99); }
+  .qlg-option-icon { flex: 0 0 auto; width: 34px; height: 34px; color: #3a5dff; display: inline-flex; align-items: center; justify-content: center; }
+  .qlg-option-icon svg { display: block; }
+  .qlg-option-text { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+  .qlg-option-title { font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600; color: #0f172a; line-height: 1.25; }
+  .qlg-option-desc { font-family: "Poppins", sans-serif; font-size: 13px; font-weight: 400; color: #64748b; line-height: 1.3; }
+  .qlg-option-tick {
+    flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #4a6bff; color: #ffffff;
+    transform: scale(0); opacity: 0;
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 160ms;
+  }
+  .qlg-option.is-selected {
+    border-color: #3a5dff;
+    background: rgba(58, 93, 255, 0.06);
+    box-shadow: 0 0 0 1px #3a5dff, 0 10px 24px rgba(37, 72, 240, 0.14);
+    transform: scale(1.02);
+  }
+  .qlg-option.is-selected .qlg-option-tick { transform: scale(1); opacity: 1; }
+
+  /* ============================ Fields =============================== */
+  .qlg-field { display: flex; flex-direction: column; gap: 8px; }
+  .qlg-label { font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #0f172a; }
   .qlg-input {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #0f172a;
     background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    padding: 12px 14px;
-    transition: border-color 150ms, box-shadow 150ms;
+    border: 1.5px solid #d8dae1;
+    border-radius: 14px;
+    padding: 14px 16px;
     width: 100%;
     box-sizing: border-box;
-  }
-  .qlg-input::placeholder { color: rgba(15, 23, 42, 0.36); }
-  .qlg-input:focus {
-    outline: none;
-    border-color: #3a5dff;
-    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18);
-  }
-  .qlg-input[aria-invalid="true"] {
-    border-color: #d92d20;
-    box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.14);
-  }
-  .qlg-error {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    color: #d92d20;
-    margin-top: -2px;
-  }
-  /* Don't reserve space when there's no error — keeps section spacing even. */
-  .qlg-error:empty { display: none; }
-
-  .qlg-submit {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
-    color: #ffffff;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 6px 6px 6px 20px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-    min-height: 44px;
-    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-    cursor: pointer;
-  }
-  .qlg-submit:hover { box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px); }
-  .qlg-submit .qlg-submit-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    color: #1C244B;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  }
-  .qlg-submit .qlg-submit-icon svg { display: block; width: 14px; height: 14px; }
-  .qlg-submit:hover .qlg-submit-icon { background-color: transparent; border-color: rgba(255,255,255,0.6); color: #ffffff; }
-  .qlg-submit:active:not([disabled]) { transform: translateY(1px); }
-  .qlg-submit[disabled] { opacity: 0.7; cursor: progress; }
-
-  .qlg-consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 4px 2px;
-    cursor: pointer;
-  }
-  .qlg-consent input[type="checkbox"] {
-    flex: 0 0 18px;
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-    accent-color: #3a5dff;
-    cursor: pointer;
-  }
-  .qlg-consent-text {
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    line-height: 1.5;
-    color: rgb(71, 85, 105);
-  }
-
-  .qlg-fineprint {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgb(100, 116, 139);
-    margin: 8px 0 0;
-  }
-
-  /* Clean-type picker — compact selectable cards, no prices. */
-  .qlg-service { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
-  .qlg-service-legend {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f172a;
-    padding: 0;
-    margin: 0;
-  }
-  .qlg-service-grid { display: flex; flex-direction: column; gap: 14px; }
-  .qlg-service-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 20px 18px;
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: border-color 150ms, box-shadow 150ms, background-color 150ms;
-  }
-  .qlg-service-card:hover { border-color: #9db0ff; }
-  .qlg-service-card input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-  .qlg-service-text { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
-  .qlg-service-title { font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 600; color: #0f172a; line-height: 1.2; }
-  .qlg-service-desc { font-family: "Poppins", sans-serif; font-size: 12px; font-weight: 400; color: rgb(100, 116, 139); line-height: 1.3; }
-  .qlg-service-check {
-    flex: 0 0 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 999px;
-    border: 2px solid #cbd5e1;
-    transition: border-color 150ms, background-color 150ms;
-    position: relative;
-  }
-  .qlg-service-card:has(input:checked) {
-    border-color: #3a5dff;
-    background-color: rgba(58, 93, 255, 0.06);
-    box-shadow: 0 0 0 1px #3a5dff inset;
-  }
-  .qlg-service-card:has(input:checked) .qlg-service-check { border-color: #3a5dff; background-color: #3a5dff; }
-  .qlg-service-card:has(input:checked) .qlg-service-check::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: #ffffff;
-  }
-  .qlg-service-card:has(input:focus-visible) { box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.25); }
-  /* Sub-selection revealed only when the NDIS/DVA/Agedcare/Insurance card is
-     chosen — a compact row of chips (NDIS / DVA / Aged Care / Insurance). */
-  .qlg-subservice { display: none; flex-direction: column; gap: 8px; padding: 12px 2px 2px; }
-  .qlg-service:has(input[value="specialty"]:checked) .qlg-subservice { display: flex; }
-  .qlg-subservice-label { font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #0f172a; }
-  /* 2 x 2 grid of cards (NDIS / DVA / Aged Care / Insurance Claim). */
-  .qlg-subservice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .qlg-chip { position: relative; display: flex; }
-  .qlg-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-  .qlg-chip span {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 16px 12px;
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #1e293b;
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: border-color 150ms, background-color 150ms, color 150ms;
-  }
-  .qlg-chip:hover span { border-color: #9db0ff; }
-  .qlg-chip input:checked + span { border-color: #3a5dff; background: #3a5dff; color: #ffffff; }
-  .qlg-chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.25); }
-
-  /* Postcode search combobox — search box + live suburb dropdown. */
-  .qlg-postcode-status {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    line-height: 1.4;
-    color: rgb(100, 116, 139);
-    margin: 6px 0 0;
-  }
-  .qlg-postcode-status[hidden] { display: none; }
-  .qlg-pcsearch { position: relative; }
-  .qlg-pcsearch-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0 10px 0 14px;
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
     transition: border-color 150ms, box-shadow 150ms;
   }
-  .qlg-pcsearch-box:focus-within { border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.18); }
-  .qlg-pcsearch-icon { flex: 0 0 auto; width: 20px; height: 20px; color: #64748b; }
-  .qlg-pcsearch-input {
-    flex: 1;
-    min-width: 0;
-    border: 0;
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    color: #0f172a;
-    padding: 13px 0;
+  .qlg-input::placeholder { color: rgba(15, 23, 42, 0.34); }
+  .qlg-input:focus { outline: none; border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16); }
+  .qlg-input[aria-invalid="true"] { border-color: #f0913a; box-shadow: 0 0 0 3px rgba(240, 145, 58, 0.14); }
+  .qlg-textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+  .qlg-help { font-family: "Poppins", sans-serif; font-size: 12.5px; font-weight: 400; color: #94a3b8; }
+  .qlg-error { font-family: "Poppins", sans-serif; font-size: 12.5px; font-weight: 500; color: #e2712a; }
+  .qlg-error:empty { display: none; }
+  .qlg-reassure { font-family: "Poppins", sans-serif; font-size: 12.5px; line-height: 1.55; color: #94a3b8; text-align: center; margin: 2px 0 0; }
+
+  /* ============================ Postcode combobox =================== */
+  .qlg-pcsearch { position: relative; }
+  .qlg-pcsearch-box {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 10px 0 14px;
+    background: #ffffff; border: 1.5px solid #d8dae1; border-radius: 14px;
+    transition: border-color 150ms, box-shadow 150ms;
   }
-  .qlg-pcsearch-input::placeholder { color: rgba(15, 23, 42, 0.36); }
-  .qlg-pcsearch-clear {
-    flex: 0 0 auto;
-    width: 30px;
-    height: 30px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: #3a5dff;
-    cursor: pointer;
-    transition: background-color 150ms;
-  }
+  .qlg-pcsearch-box:focus-within { border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16); }
+  .qlg-pcsearch-icon { flex: 0 0 auto; width: 20px; height: 20px; color: #94a3b8; }
+  .qlg-pcsearch-input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-family: "Poppins", sans-serif; font-size: 16px; color: #0f172a; padding: 15px 0; }
+  .qlg-pcsearch-input::placeholder { color: rgba(15, 23, 42, 0.34); }
+  .qlg-pcsearch-clear { flex: 0 0 auto; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; background: transparent; color: #3a5dff; cursor: pointer; }
   .qlg-pcsearch-clear[hidden] { display: none; }
-  .qlg-pcsearch-clear:hover { background: rgba(58, 93, 255, 0.10); }
-  .qlg-pcsearch-list {
-    list-style: none;
-    margin: 8px 0 0;
-    padding: 6px;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
-    max-height: 240px;
-    overflow-y: auto;
-  }
+  .qlg-pcsearch-clear:hover { background: rgba(58, 93, 255, 0.1); }
+  .qlg-pcsearch-list { list-style: none; margin: 8px 0 0; padding: 6px; border: 1px solid #ececf1; border-radius: 14px; background: #ffffff; box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12); max-height: 240px; overflow-y: auto; }
   .qlg-pcsearch-list[hidden] { display: none; }
-  /* The suburb <li> rows are injected via JS innerHTML, so they don't carry
-     Astro's scoped-style attribute — these rules must be :global to match. */
-  :global(.qlg-pcsearch-item) {
-    padding: 12px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    line-height: 1.3;
-  }
-  :global(.qlg-pcsearch-item:hover),
-  :global(.qlg-pcsearch-item.is-active) { background: #eef1ff; }
+  .qlg-postcode-status { font-family: "Poppins", sans-serif; font-size: 12.5px; color: #94a3b8; margin: 8px 0 0; }
+  .qlg-postcode-status[hidden] { display: none; }
+  :global(.qlg-pcsearch-item) { padding: 13px 14px; border-radius: 10px; cursor: pointer; font-family: "Poppins", sans-serif; line-height: 1.3; }
+  :global(.qlg-pcsearch-item:hover), :global(.qlg-pcsearch-item.is-active) { background: #eef1ff; }
   :global(.qlg-pcsearch-item-name) { font-size: 15px; font-weight: 700; color: #1e293b; }
   :global(.qlg-pcsearch-item-meta) { font-size: 14px; color: #64748b; }
-  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-name),
-  :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-name) { color: #2748f2; }
-  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-meta),
-  :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-meta) { color: #8189e6; }
+  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-name), :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-name) { color: #2748f2; }
+  :global(.qlg-pcsearch-item:hover .qlg-pcsearch-item-meta), :global(.qlg-pcsearch-item.is-active .qlg-pcsearch-item-meta) { color: #8189e6; }
 
-  .qlg-form[hidden] { display: none; }
-  .qlg-textarea { resize: vertical; min-height: 58px; line-height: 1.45; }
-  .qlg-optional { font-weight: 400; color: rgb(100, 116, 139); }
-  /* In-popup thank-you shown after the lead is submitted. */
-  .qlg-success { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 8px 4px 4px; }
-  .qlg-success[hidden] { display: none; }
-  .qlg-success-check {
-    width: 56px;
-    height: 56px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(58, 93, 255, 0.12);
-    color: #2748f2;
+  /* ============================ Serviced states ===================== */
+  .qlg-serviced {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "Poppins", sans-serif; font-size: 14.5px; color: #0f7a3d;
+    background: rgba(22, 163, 74, 0.09); border: 1px solid rgba(22, 163, 74, 0.22);
+    border-radius: 14px; padding: 14px 16px;
+    animation: qlg-pop-in 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .qlg-success-msg {
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgb(71, 85, 105);
-    margin: 0;
-    max-width: 340px;
+  .qlg-serviced[hidden], .qlg-notserviced[hidden] { display: none; }
+  .qlg-serviced strong { font-weight: 600; }
+  .qlg-serviced-check { font-size: 18px; }
+  @keyframes qlg-pop-in { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+  .qlg-notserviced {
+    font-family: "Poppins", sans-serif; font-size: 14px; line-height: 1.5; color: #92510f;
+    background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.24);
+    border-radius: 14px; padding: 14px 16px;
+    animation: qlg-pop-in 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .qlg-success-done { width: 100%; justify-content: center; margin-top: 4px; }
+  .qlg-notserviced p { margin: 0; }
 
+  /* ============================ Thank-you check ===================== */
+  .qlg-done-check {
+    width: 72px; height: 72px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(22, 163, 74, 0.12); color: #16a34a;
+    animation: qlg-check-pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes qlg-check-pop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.12); opacity: 1; } 100% { transform: scale(1); } }
+
+  /* ============================ Mobile ============================== */
   @media (max-width: 480px) {
-    .qlg-overlay { padding: 10px; }
-    .qlg-card { padding: 22px 18px 18px; border-radius: 14px; }
-    .qlg-eyebrow { margin-bottom: 6px; }
-    .qlg-title { font-size: 18px; }
-    .qlg-sub { font-size: 13px; margin-bottom: 14px; }
-    .qlg-form { gap: 14px; }
-    .qlg-input { padding: 10px 12px; font-size: 15px; }
-    .qlg-submit { padding: 12px 18px; font-size: 15px; }
-    .qlg-error { min-height: 12px; }
+    .qlg-overlay { padding: 0; align-items: flex-end; }
+    .qlg-card { max-width: 100%; max-height: 94dvh; border-radius: 22px 22px 0 0; padding: 24px 20px 22px; animation: qlg-sheet 300ms cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes qlg-sheet { from { transform: translateY(24px); opacity: 0.6; } to { transform: translateY(0); opacity: 1; } }
+    .qlg-chrome { margin-right: 40px; }
+    .qlg-option { padding: 16px; }
+    .qlg-btn { min-height: 46px; font-size: 15px; }
   }
 </style>

@@ -92,6 +92,7 @@ const schema = [
         action={leadCapture.webhookUrl || `mailto:${site.email}?subject=Instant%20price%20enquiry`}
         method="post"
         data-webhook={leadCapture.webhookUrl || ''}
+        data-crm={leadCapture.crmUrl || ''}
         data-fallback-email={site.email}
       >
         <!-- Step 1: Location.
@@ -833,6 +834,20 @@ const schema = [
         preferred_time: data.time_window  || '—',
         notes:          data.notes        || '—',
       };
+
+      // Also post to the Sophiie CRM (Inbox + AI auto-capture), non-blocking —
+      // the awaited Formspree post below still drives the /thank-you redirect.
+      var crm = (form.getAttribute('data-crm') || '').trim();
+      if (crm) {
+        try {
+          fetch(crm, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(adminPayload),
+            keepalive: true,
+          }).catch(function () {});
+        } catch (e) {}
+      }
 
       try {
         const resp = await fetch(webhook, {

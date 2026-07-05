@@ -120,6 +120,17 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
             }).catch(() => {});
           } catch (e) {}
         }
+        // Also post to the Sophiie CRM (Inbox + auto-capture), non-blocking.
+        if (config.crmUrl) {
+          try {
+            fetch(config.crmUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              keepalive: true,
+            }).catch(() => {});
+          } catch (e) {}
+        }
 
         // Track conversion.
         try {

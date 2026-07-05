@@ -56,7 +56,13 @@ export const ctaPhone = { text: site.phone, href: site.phoneHref };
 //                    can fire on it.
 // ---------------------------------------------------------------------------
 export const leadCapture = {
+  // Email notification via Formspree — kept as an instant email alert / backup.
   webhookUrl: 'https://formspree.io/f/xyklabez',
+  // Sophiie AI-reception CRM lead-intake (public, CORS-open). Every form posts
+  // here IN ADDITION to webhookUrl, so leads land in the CRM Inbox AND email.
+  // Creates a Customer (status LEAD, source "Web form") + an Inbox message and
+  // runs the CRM's AI auto-capture. Requires the webform widget enabled in Sophiie.
+  crmUrl: 'https://sophiie-web.onrender.com/api/widget/lead',
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label

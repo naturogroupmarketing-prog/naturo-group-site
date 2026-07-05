@@ -569,17 +569,7 @@ const lc = leadCapture;
 
     // ---- Fan-out: push the lead to every configured destination ---------
     function shipToWebhook(payload) {
-      if (!config.webhookUrl) return;
-      // Derive a readable suburb name from the landing page slug so the
-      // Formspree email only shows the fields admin staff actually need.
-      var landingPath = (payload.source && payload.source.landing_page) || window.location.href;
-      var slug = landingPath
-        .replace(/^https?:\/\/[^/]+/, '')
-        .replace(/\/$/, '')
-        .replace(/^\//, '')
-        .replace(/^(house-cleaning-in-|house-cleaning-|cleaners-)/, '')
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      if (!config.webhookUrl && !config.crmUrl) return;
       var serviceLabels = {
         regular: 'Regular Clean',
         oneoff: 'Deep Clean',
@@ -590,24 +580,41 @@ const lc = leadCapture;
       if (payload.service === 'specialty' && payload.specialty_type) {
         cleanType = 'Specialist — ' + (specialtyLabels[payload.specialty_type] || payload.specialty_type);
       }
-      var adminPayload = {
-        _subject: 'New lead — ' + (payload.name || 'website') + ' — ' + cleanType + ' in ' + (payload.suburb || payload.postcode || 'unknown'),
+      // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold
+      // the clean type, location and notes into the message so nothing is lost.
+      var lines = [];
+      if (cleanType) lines.push('Service: ' + cleanType);
+      var loc = ((payload.suburb || '') + ' ' + (payload.postcode || '')).trim();
+      if (loc) lines.push('Location: ' + loc);
+      if (payload.notes) lines.push('Notes: ' + payload.notes);
+      lines.push('Submitted via naturogroup.com.au');
+      var crmPayload = {
         name: payload.name || '',
-        phone: payload.phone || '',
         email: payload.email || '',
-        clean_type: cleanType,
-        postcode: payload.postcode || '',
-        suburb: payload.suburb || slug || payload.page.path,
-        notes: payload.notes || '',
+        phone: payload.phone || '',
+        message: lines.join('\n'),
       };
-      try {
-        fetch(config.webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(adminPayload),
-          keepalive: true,
-        }).catch(function () { /* best-effort */ });
-      } catch (e) { /* swallow */ }
+      if (config.webhookUrl) {
+        try {
+          fetch(config.webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(crmPayload),
+            keepalive: true,
+          }).catch(function () { /* best-effort */ });
+        } catch (e) { /* swallow */ }
+      }
+      // Also post to the Sophiie CRM (Inbox + auto-capture), non-blocking.
+      if (config.crmUrl) {
+        try {
+          fetch(config.crmUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(crmPayload),
+            keepalive: true,
+          }).catch(function () {});
+        } catch (e) {}
+      }
     }
 
     function shipToMetaPixel(payload) {

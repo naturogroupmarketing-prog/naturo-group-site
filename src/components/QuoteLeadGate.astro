@@ -576,18 +576,19 @@ const lc = leadCapture;
         specialty: 'NDIS, DVA, Agedcare & Insurance',
       };
       var specialtyLabels = { ndis: 'NDIS', dva: 'DVA', 'aged-care': 'Aged Care', insurance: 'Insurance Claim' };
-      var cleanType = serviceLabels[payload.service] || payload.service || '';
-      if (payload.service === 'specialty' && payload.specialty_type) {
-        cleanType = 'Specialist — ' + (specialtyLabels[payload.specialty_type] || payload.specialty_type);
-      }
-      // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold
-      // the clean type, location and notes into the message so nothing is lost.
+      var serviceLabel = serviceLabels[payload.service] || payload.service || '';
+      var fundingLabel = (payload.service === 'specialty' && payload.specialty_type)
+        ? (specialtyLabels[payload.specialty_type] || payload.specialty_type)
+        : '';
+      // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold the
+      // full enquiry into the message so nothing is lost (the CRM adds the
+      // name/phone/email from the contact fields below).
       var lines = [];
-      if (cleanType) lines.push('Service: ' + cleanType);
+      if (serviceLabel) lines.push('Service: ' + serviceLabel);
+      if (fundingLabel) lines.push('Funding / claim type: ' + fundingLabel);
       var loc = ((payload.suburb || '') + ' ' + (payload.postcode || '')).trim();
       if (loc) lines.push('Location: ' + loc);
       if (payload.notes) lines.push('Notes: ' + payload.notes);
-      lines.push('Submitted via naturogroup.com.au');
       var crmPayload = {
         name: payload.name || '',
         email: payload.email || '',

@@ -43,7 +43,7 @@ const lc = leadCapture;
 
       <!-- STEP 1 · service -->
       <section class="qlg-screen" data-step="service" hidden>
-        <h2 class="qlg-q">What type of clean are you looking for?</h2>
+        <h2 class="qlg-q" tabindex="-1">What type of clean are you looking for?</h2>
         <div class="qlg-options" id="qlgServiceOptions">
           <button type="button" class="qlg-option" data-service="regular" data-label="Regular Home Cleaning">
             <span class="qlg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="30" height="28" rx="3" stroke="currentColor" stroke-width="2"/><line x1="7" y1="18" x2="37" y2="18" stroke="currentColor" stroke-width="2"/><line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="6" x2="30" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 22l-5 8h4l-2 7 6-9h-4l1-6z" fill="#ff5f1f"/></svg></span>
@@ -82,7 +82,7 @@ const lc = leadCapture;
 
       <!-- STEP 2 · location -->
       <section class="qlg-screen" data-step="location" hidden>
-        <h2 class="qlg-q">Where do you need the clean?</h2>
+        <h2 class="qlg-q" tabindex="-1">Where do you need the clean?</h2>
         <div class="qlg-field qlg-pcsearch" id="qlgPcSearch">
           <div class="qlg-pcsearch-box">
             <svg class="qlg-pcsearch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -115,7 +115,7 @@ const lc = leadCapture;
 
       <!-- STEP 3 · contact -->
       <section class="qlg-screen" data-step="contact" hidden>
-        <h2 class="qlg-q">Where should we send your personalised quote?</h2>
+        <h2 class="qlg-q" tabindex="-1">Where should we send your personalised quote?</h2>
         <label class="qlg-field">
           <span class="qlg-label">Full name</span>
           <input class="qlg-input" type="text" name="name" id="qlgName" autocomplete="name" placeholder="Your name" />
@@ -140,7 +140,7 @@ const lc = leadCapture;
 
       <!-- STEP 4 · notes -->
       <section class="qlg-screen" data-step="notes" hidden>
-        <h2 class="qlg-q">Anything you'd like us to know?</h2>
+        <h2 class="qlg-q" tabindex="-1">Anything you'd like us to know?</h2>
         <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="3" placeholder="Pets · Parking · Preferred day · Access instructions · Special requests"></textarea>
         <button type="submit" class="qlg-btn qlg-btn-primary qlg-btn-final" id="qlgSubmit">
           <span>Get My Free Personalised Quote</span>
@@ -279,16 +279,26 @@ const lc = leadCapture;
       ['name', 'phone', 'email', 'suburb'].forEach(function (n) { setError(n, ''); });
     }
 
+    var isTouch = window.matchMedia('(pointer: coarse)').matches
+      || (navigator.maxTouchPoints || 0) > 0
+      || ('ontouchstart' in window);
     function focusStep(name) {
       const el = screens[name];
       if (!el) return;
       let target = null;
       if (name === 'intro') target = document.getElementById('qlgStart');
       else if (name === 'service') target = el.querySelector('.qlg-option');
-      else if (name === 'location') target = document.getElementById('qlgSearch');
-      else if (name === 'contact') target = document.getElementById('qlgName');
-      else if (name === 'notes') target = document.getElementById('qlgNotes');
       else if (name === 'done') target = document.getElementById('qlgDone');
+      else {
+        // location / contact / notes lead with a text field. Focusing it on a
+        // touch device pops the on-screen keyboard, which covers the form — so
+        // on touch we move focus to the question heading (no keyboard) and let
+        // the visitor tap the field themselves when they're ready.
+        const field = name === 'location' ? document.getElementById('qlgSearch')
+          : name === 'contact' ? document.getElementById('qlgName')
+          : document.getElementById('qlgNotes');
+        target = isTouch ? el.querySelector('.qlg-q') : field;
+      }
       if (target) setTimeout(function () { try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); } }, 60);
     }
 
@@ -759,6 +769,8 @@ const lc = leadCapture;
     color: #0f172a;
     margin: 0;
   }
+  /* Heading is focused programmatically (a11y) on touch — no stray outline. */
+  .qlg-q:focus { outline: none; }
   .qlg-intro, .qlg-done { display: flex; flex-direction: column; gap: 18px; text-align: center; align-items: center; padding: 12px 4px; }
 
   /* ============================ Buttons ============================== */

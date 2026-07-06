@@ -465,13 +465,16 @@ const lc = leadCapture;
     var notServicedPanel = document.getElementById('qlgNotServiced');
     var locationNext = document.getElementById('qlgLocationNext');
     var pcToken = 0, pcDebounce = null, listedSuburbs = false, suburbOptional = false;
+    // pcInvalid = true when the entered value isn't a real 4-digit AU postcode.
+    var pcInvalid = false;
 
     function esc(s) {
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
-    function setStatus(msg) {
+    function setStatus(msg, warn) {
       if (!pcStatus) return;
       pcStatus.textContent = msg || '';
+      pcStatus.classList.toggle('is-warn', !!warn);
       if (msg) pcStatus.removeAttribute('hidden'); else pcStatus.setAttribute('hidden', '');
     }
     function closeList() {
@@ -483,7 +486,7 @@ const lc = leadCapture;
       notServicedPanel.hidden = true;
     }
     function updateLocationNext() {
-      const ready = /^\d{4}$/.test(pcHidden.value) && (!!suburbHidden.value || suburbOptional);
+      const ready = /^\d{4}$/.test(pcHidden.value) && !pcInvalid && (!!suburbHidden.value || suburbOptional);
       locationNext.disabled = !ready;
     }
     function onSuburbChosen(stateAbbr) {
@@ -512,12 +515,29 @@ const lc = leadCapture;
       var token = ++pcToken;
       listedSuburbs = false;
       suburbOptional = false;
-      setStatus('Finding suburbs…');
+      pcInvalid = false;
+      setStatus('Checking postcode…');
       closeList();
       fetch('https://api.zippopotam.us/au/' + encodeURIComponent(pc))
-        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (r) {
+          if (r.status === 404) return { __notReal: true };  // no such AU postcode
+          if (!r.ok) return { __error: true };                // server hiccup
+          return r.json();
+        })
         .then(function (data) {
           if (token !== pcToken) return;
+          if (data && data.__notReal) {
+            pcInvalid = true;
+            setStatus('Hmm, that postcode doesn’t look right — mind checking it?', true);
+            updateLocationNext();
+            return;
+          }
+          if (data && data.__error) {
+            suburbOptional = true;
+            setStatus('We couldn’t check that just now — you can still continue.');
+            updateLocationNext();
+            return;
+          }
           var places = (data && data.places) || [];
           var seen = {}, items = [];
           places.forEach(function (p) {
@@ -527,13 +547,14 @@ const lc = leadCapture;
             if (name && !seen[key]) { seen[key] = 1; items.push({ name: name, state: st }); }
           });
           if (!items.length) {
-            suburbOptional = true;
-            setStatus('No suburbs found for that postcode — you can still continue.');
+            pcInvalid = true;
+            setStatus('Hmm, that postcode doesn’t look right — mind checking it?', true);
             updateLocationNext();
             return;
           }
           listedSuburbs = true;
           suburbOptional = false;
+          pcInvalid = false;
           suburbList.innerHTML = items.map(function (it) {
             return '<li class="qlg-pcsearch-item" role="option" data-name="' + esc(it.name) + '" data-state="' + esc(it.state) + '">'
               + '<span class="qlg-pcsearch-item-name">' + esc(it.name) + '</span> '
@@ -542,6 +563,7 @@ const lc = leadCapture;
           suburbList.removeAttribute('hidden');
           searchInput.setAttribute('aria-expanded', 'true');
           setStatus('');
+          updateLocationNext();
         })
         .catch(function () {
           if (token !== pcToken) return;
@@ -557,20 +579,33 @@ const lc = leadCapture;
         suburbHidden.value = '';
         suburbStateHidden.value = '';
         resetLocationPanels();
-        var digits = raw.replace(/\D/g, '').slice(0, 4);
-        pcHidden.value = digits;
-        setError('suburb', '');
-        updateLocationNext();
         if (pcDebounce) clearTimeout(pcDebounce);
-        if (/^\d{4}$/.test(digits)) {
-          pcDebounce = setTimeout(function () { lookupSuburbs(digits); }, 250);
+        pcToken++;                 // cancel any in-flight lookup
+        listedSuburbs = false;
+        suburbOptional = false;
+        pcInvalid = false;
+        closeList();
+        // Australian postcodes are exactly 4 digits — don't silently truncate
+        // a longer number (e.g. 4353636); flag it so the user can't move on.
+        var digits = raw.replace(/\D/g, '');
+        if (digits.length === 4) {
+          pcHidden.value = digits;
+          setStatus('');
+          pcDebounce = setTimeout(function () { lookupSuburbs(digits); }, 300);
         } else {
-          pcToken++; listedSuburbs = false; suburbOptional = false; closeList(); setStatus('');
+          pcHidden.value = '';
+          if (digits.length > 4) {
+            pcInvalid = true;
+            setStatus('An Australian postcode is 4 digits — mind checking that?', true);
+          } else {
+            setStatus('');
+          }
         }
+        updateLocationNext();
       });
       clearBtn.addEventListener('click', function () {
         searchInput.value = ''; pcHidden.value = ''; suburbHidden.value = ''; suburbStateHidden.value = '';
-        clearBtn.setAttribute('hidden', ''); listedSuburbs = false; suburbOptional = false;
+        clearBtn.setAttribute('hidden', ''); listedSuburbs = false; suburbOptional = false; pcInvalid = false;
         pcToken++; closeList(); setStatus(''); resetLocationPanels(); updateLocationNext(); searchInput.focus();
       });
       suburbList.addEventListener('click', function (ev) {
@@ -900,6 +935,7 @@ const lc = leadCapture;
   .qlg-pcsearch-list[hidden] { display: none; }
   .qlg-postcode-status { font-family: "Poppins", sans-serif; font-size: 12.5px; color: #94a3b8; margin: 8px 0 0; }
   .qlg-postcode-status[hidden] { display: none; }
+  .qlg-postcode-status.is-warn { color: #b45309; font-weight: 500; }
   :global(.qlg-pcsearch-item) { padding: 13px 14px; border-radius: 10px; cursor: pointer; font-family: "Poppins", sans-serif; line-height: 1.3; }
   :global(.qlg-pcsearch-item:hover), :global(.qlg-pcsearch-item.is-active) { background: #eef1ff; }
   :global(.qlg-pcsearch-item-name) { font-size: 15px; font-weight: 700; color: #1e293b; }

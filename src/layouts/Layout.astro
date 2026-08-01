@@ -122,9 +122,9 @@ const isHome = Astro.url.pathname === '/';
       })();
     </script>
 
-    {/* Sophiie AI chat widget removed for now. To bring back the chat bubble +
-        lead form, re-add the receptionist embed loader script before </body>
-        (see git history / commit "Add the Sophiie AI chat widget"), then manage
-        it from the Sophiie dashboard → Settings → Website widgets. */}
+    {/* Sophiie AI chat widget (chat bubble + lead form) — loaded async from the
+        receptionist app; manage it in the Sophiie dashboard → Settings →
+        Website widgets. */}
+    <script src="https://receptionist.naturogroup.com.au/api/widget/embed" async is:inline></script>
   </body>
 </html>

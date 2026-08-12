@@ -66,7 +66,14 @@ export const leadCapture = {
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label
-  ga4Id: 'G-G8R9DWS9CV',
+  // GA4 measurement IDs. Every ID listed here gets its own gtag config call,
+  // so the site can report to more than one property at once — which is how
+  // you move between properties without a gap in reporting. To stop sending
+  // to a property, delete its line.
+  ga4Ids: [
+    'G-XHSW654XGS', // Naturo Group — property 451557724, stream naturogroup.com.au
+    'G-G8R9DWS9CV', // previous property, kept so its reporting stays unbroken
+  ],
   gtmId: 'GTM-MKXP59G9',
 };
 

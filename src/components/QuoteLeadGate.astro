@@ -180,15 +180,26 @@ const lc = leadCapture;
       window.fbq('init', id);
       window.fbq('track', 'PageView');
     }
+    // gtag.js is loaded once, but every destination — each GA4 property, plus
+    // the Google Ads conversion ID — needs its own config call.
+    //
+    // The previous guard bailed out as soon as window.gtag existed, so only
+    // the FIRST id was ever configured and the Google Ads ID on the next line
+    // was silently never set up. Track configured ids individually instead.
     function installGtag(id) {
-      if (!id || window.gtag) return;
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
-      document.head.appendChild(s);
+      if (!id) return;
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
+      if (!window.gtag) {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+        document.head.appendChild(s);
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+      }
+      window.__gtagIds = window.__gtagIds || {};
+      if (window.__gtagIds[id]) return;
+      window.__gtagIds[id] = true;
       window.gtag('config', id);
     }
     function installGtm(id) {
@@ -202,7 +213,7 @@ const lc = leadCapture;
     }
     function installAdvertisingStack() {
       installMetaPixel(config.metaPixelId);
-      if (config.ga4Id) installGtag(config.ga4Id);
+      (config.ga4Ids || []).forEach(function (gaId) { installGtag(gaId); });
       if (config.googleAdsId) installGtag(config.googleAdsId);
       installGtm(config.gtmId);
     }

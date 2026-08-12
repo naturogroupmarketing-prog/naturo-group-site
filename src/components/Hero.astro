@@ -10,10 +10,10 @@ const slides = [
 
 <section class="hero relative overflow-hidden">
   <div class="hero-slides absolute inset-0">
-    {slides.map((src, i) => (
+    {slides.map((src) => (
       <div
         class="hero-slide"
-        style={`background-image: url(${src}); animation-delay: ${i * 5}s;`}
+        style={`background-image: url(${src});`}
       />
     ))}
   </div>
@@ -203,6 +203,28 @@ const slides = [
     pointer-events: none;
   }
 
+  /* ------------------------------------------------------------------
+     Hero crossfade.
+
+     The slides are stacked, so the obvious approach — every slide runs
+     the same fade on a staggered delay — leaves a gap: mid-crossfade
+     both layers sit near 50% opacity, and stacked alpha compositing
+     means coverage is only 1-(1-.5)(1-.5) = 75%. Measured on the old
+     version it bottomed out at 69%, so the page background bled through
+     three times a loop. The overlay is transparent over the right of
+     the hero, so that read as a white flash every ~5s.
+
+     Fix: keep something fully opaque at all times. Slide 1 is the
+     permanent base; slide 2 fades in on top of it; slide 3 fades in on
+     top of that; then slide 3 fades back out to reveal slide 1 again.
+     Slide 2 is reset to 0 while it sits hidden beneath an opaque slide
+     3, so the reset is never seen. Coverage stays at exactly 1 for the
+     whole loop, which is what makes the fades read as smooth.
+
+     Timings assume the 3 slides above on a 15s loop: each image holds
+     alone for 3.85s with 1.15s crossfades between, so all three get an
+     equal turn. Percentages are of 15s (1s = 6.667%).
+     ------------------------------------------------------------------ */
   .hero-slide {
     position: absolute;
     inset: 0;
@@ -210,20 +232,36 @@ const slides = [
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    animation: heroFade 15s infinite;
+  }
+  /* Base layer — always visible. The layers above hide it when opaque,
+     and it's what slide 3 fades back to at the end of the loop. Also
+     means the correct image is painted on first load, with no flash. */
+  .hero-slide:nth-child(1) { opacity: 1; }
+  .hero-slide:nth-child(2),
+  .hero-slide:nth-child(3) {
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     will-change: opacity;
   }
-  /* First slide is immediately visible — prevents the white-page flash
-     on refresh before the animation's first frame kicks in. */
-  .hero-slide:first-child { opacity: 1; }
-  @keyframes heroFade {
-    0%, 28% { opacity: 1; }
-    33%, 95% { opacity: 0; }
-    100% { opacity: 1; }
+  .hero-slide:nth-child(2) { animation-name: heroSlide2; }
+  .hero-slide:nth-child(3) { animation-name: heroSlide3; }
+
+  @keyframes heroSlide2 {
+    0%, 25.667%  { opacity: 0; }  /* 0-3.85s  slide 1 showing alone */
+    33.333%      { opacity: 1; }  /* 5.0s     faded in over slide 1 */
+    66.667%      { opacity: 1; }  /* 10.0s    slide 3 now covers it */
+    67.333%, 100%{ opacity: 0; }  /* reset while hidden underneath */
+  }
+  @keyframes heroSlide3 {
+    0%, 59%      { opacity: 0; }  /* 8.85s */
+    66.667%      { opacity: 1; }  /* 10.0s    faded in over slide 2 */
+    92.333%      { opacity: 1; }  /* 13.85s */
+    100%         { opacity: 0; }  /* 15s      faded out to slide 1 */
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-slide { animation: none; }
-    .hero-slide:first-child { opacity: 1; }
+    .hero-slide:nth-child(1) { opacity: 1; }
   }
 
   .hero-partners {

@@ -99,6 +99,8 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
         const downloadName = form.dataset.downloadName;
         const fname = form.dataset.filename || 'lead-magnet';
 
+        const naLm = window.naturoAnalytics;
+        const lmCtx = naLm ? naLm.pageContext() : {};
         const payload = {
           name: values.name,
           email: values.email,
@@ -107,6 +109,12 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
           asset: fname,
           page: window.location.pathname,
           ts: new Date().toISOString(),
+          // Attribution so a resource download is traceable like any other lead.
+          lead_id: naLm ? naLm.newLeadId() : '',
+          service: lmCtx.service || '',
+          service_location: lmCtx.service_location || '',
+          form_location: 'lead_magnet',
+          attribution: naLm ? naLm.attributionFields() : {},
         };
 
         // Ship to webhook (Formspree etc).

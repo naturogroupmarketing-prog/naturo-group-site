@@ -1,0 +1,336 @@
+---
+/**
+ * Measurement core.
+ *
+ * One shared layer that every lead path calls, instead of each component
+ * re-implementing attribution and firing its own ad-hoc dataLayer shape.
+ *
+ * It does four things:
+ *
+ *  1. Derives a machine-readable page context (page_type / service /
+ *     service_location / region) at BUILD time, so no suburb or service
+ *     table is shipped to the browser and the values can't drift from the
+ *     routes that generated them.
+ *  2. Persists marketing attribution — first-touch AND last-touch — in
+ *     localStorage so a visitor who arrives from Google Ads in March and
+ *     converts in May is still credited to that campaign.
+ *  3. Exposes `window.naturoAnalytics.track()`, which scrubs PII before
+ *     anything reaches the dataLayer.
+ *  4. Mints privacy-safe lead ids so the same lead can be joined across
+ *     GA4, Google Ads and the CRM without ever sending a name or email.
+ *
+ * Loaded from Layout.astro on every page, ahead of QuoteLeadGate.
+ * See docs/analytics/MEASUREMENT_PLAN.md for the full taxonomy.
+ */
+import { suburbs } from '../data/suburbs';
+
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const seg = path.split('/').filter(Boolean);
+
+// --- Service taxonomy ------------------------------------------------------
+// Route slug -> stable analytics key. Keys are deliberately snake_case and
+// decoupled from URLs so a slug can be renamed for SEO without breaking
+// historical reporting.
+const SERVICE_BY_SLUG: Record<string, string> = {
+  'house-cleaning': 'residential_cleaning',
+  'deep-clean': 'deep_cleaning',
+  'end-of-lease': 'end_of_lease_cleaning',
+  'ndis-cleaning': 'ndis_cleaning',
+  'aged-care-cleaning': 'aged_care_cleaning',
+  'insurance-cleaning': 'insurance_cleaning',
+  'veterans-cleaning': 'veterans_cleaning',
+  'specialist-cleaning': 'specialist_cleaning',
+};
+
+// One-off landing pages that sit outside the /services/<service>/<suburb>
+// matrix but still represent a service + location combination.
+const STANDALONE: Record<string, { service: string; location: string }> = {
+  'end-of-lease-cleaning-geelong': { service: 'end_of_lease_cleaning', location: 'geelong' },
+  'end-of-lease-cleaning-port-macquarie': { service: 'end_of_lease_cleaning', location: 'port_macquarie' },
+  'ndis-cleaning-geelong': { service: 'ndis_cleaning', location: 'geelong' },
+  'ndis-cleaning-port-macquarie': { service: 'ndis_cleaning', location: 'port_macquarie' },
+};
+
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+
+// Suburb slugs are prefixed for SEO ("cleaners-port-macquarie"); the analytics
+// key is the bare place name so it stays readable in reports.
+const suburbIndex = new Map(
+  suburbs.map((s: any) => [
+    s.slug,
+    { location: norm(String(s.name)), region: norm(String(s.region || '')), state: String(s.stateCode || '') },
+  ]),
+);
+
+let pageType = 'other';
+let service = '';
+let location = '';
+let region = '';
+let state = '';
+
+const applySuburb = (slug: string) => {
+  const hit = suburbIndex.get(slug);
+  if (!hit) return false;
+  location = hit.location;
+  region = hit.region;
+  state = hit.state;
+  return true;
+};
+
+if (path === '/') {
+  pageType = 'home';
+} else if (seg[0] === 'services' && seg.length === 1) {
+  pageType = 'service_index';
+} else if (seg[0] === 'services' && seg.length === 2) {
+  pageType = 'service';
+  service = SERVICE_BY_SLUG[seg[1]] || norm(seg[1]);
+} else if (seg[0] === 'services' && seg.length === 3) {
+  pageType = 'service_location';
+  service = SERVICE_BY_SLUG[seg[1]] || norm(seg[1]);
+  applySuburb(seg[2]);
+} else if (seg[0] === 'quote') {
+  pageType = 'quote';
+} else if (seg[0] === 'thank-you') {
+  pageType = 'thank_you';
+} else if (STANDALONE[seg[0]] && seg.length === 1) {
+  pageType = 'service_location';
+  service = STANDALONE[seg[0]].service;
+  location = STANDALONE[seg[0]].location;
+} else if (seg[0] === 'end-of-lease-cleaning' && seg.length === 3) {
+  // /end-of-lease-cleaning/geelong/<suburb>
+  pageType = 'service_location';
+  service = 'end_of_lease_cleaning';
+  if (!applySuburb(seg[2])) location = norm(seg[2]);
+} else if (seg.length === 1 && suburbIndex.has(seg[0])) {
+  pageType = 'location';
+  applySuburb(seg[0]);
+} else if (['resource', 'career', 'contact-us', 'reviews'].includes(seg[0])) {
+  pageType = seg[0].replace(/-/g, '_');
+} else if (seg[0] === 'blog' || seg[0] === 'resource') {
+  pageType = 'article';
+}
+
+const pageContext = {
+  page_type: pageType,
+  service,
+  service_location: location,
+  region,
+  state,
+};
+---
+
+<script type="application/json" id="naturo-page-context" set:html={JSON.stringify(pageContext)}></script>
+
+<script is:inline>
+  (function () {
+    if (window.naturoAnalytics) return;
+
+    var ATTR_KEY = 'naturo:attribution';
+    var LEAD_KEY = 'naturo:lead-id';
+    var ATTR_TTL_DAYS = 365;
+
+    // Never let these reach the dataLayer, GA4 or any ad platform. GA4's terms
+    // prohibit PII, and GTM tags read the dataLayer indiscriminately.
+    var PII_KEYS = [
+      'name', 'full_name', 'fullname', 'first_name', 'last_name', 'email',
+      'phone', 'mobile', 'tel', 'address', 'street', 'postal_address',
+      'notes', 'message', 'comments',
+    ];
+
+    function isPii(key) {
+      var k = String(key).toLowerCase();
+      for (var i = 0; i < PII_KEYS.length; i++) if (k === PII_KEYS[i]) return true;
+      return false;
+    }
+
+    /** Deep-copy an object with any PII-named field removed. */
+    function scrub(value, depth) {
+      depth = depth || 0;
+      if (depth > 6 || value === null || typeof value !== 'object') return value;
+      if (Array.isArray(value)) return value.map(function (v) { return scrub(v, depth + 1); });
+      var out = {};
+      Object.keys(value).forEach(function (k) {
+        if (isPii(k)) return;
+        out[k] = scrub(value[k], depth + 1);
+      });
+      return out;
+    }
+
+    function pageContext() {
+      try {
+        var el = document.getElementById('naturo-page-context');
+        return el ? JSON.parse(el.textContent || '{}') : {};
+      } catch (e) { return {}; }
+    }
+
+    function readParams() {
+      var p = new URLSearchParams(window.location.search);
+      return {
+        utm_source: p.get('utm_source') || '',
+        utm_medium: p.get('utm_medium') || '',
+        utm_campaign: p.get('utm_campaign') || '',
+        utm_term: p.get('utm_term') || '',
+        utm_content: p.get('utm_content') || '',
+        gclid: p.get('gclid') || '',
+        gbraid: p.get('gbraid') || '',
+        wbraid: p.get('wbraid') || '',
+        fbclid: p.get('fbclid') || '',
+        msclkid: p.get('msclkid') || '',
+      };
+    }
+
+    /** True when this hit carries real campaign information worth recording. */
+    function hasCampaign(p) {
+      return !!(p.utm_source || p.utm_medium || p.utm_campaign || p.gclid ||
+                p.gbraid || p.wbraid || p.fbclid || p.msclkid);
+    }
+
+    /** Classify a referrer when no UTMs are present, so organic/referral
+     *  traffic still gets a usable source rather than being lost to "direct". */
+    function fromReferrer(ref) {
+      if (!ref) return { utm_source: '', utm_medium: '' };
+      var host = '';
+      try { host = new URL(ref).hostname.replace(/^www\./, ''); } catch (e) { return { utm_source: '', utm_medium: '' }; }
+      if (host === window.location.hostname) return { utm_source: '', utm_medium: '' };
+      if (/(^|\.)google\./.test(host)) return { utm_source: 'google', utm_medium: 'organic' };
+      if (/(^|\.)bing\./.test(host)) return { utm_source: 'bing', utm_medium: 'organic' };
+      if (/duckduckgo|ecosia|yahoo/.test(host)) return { utm_source: host, utm_medium: 'organic' };
+      if (/facebook|instagram|linkedin|tiktok|pinterest|reddit/.test(host)) return { utm_source: host, utm_medium: 'social' };
+      return { utm_source: host, utm_medium: 'referral' };
+    }
+
+    function load() {
+      try {
+        var raw = localStorage.getItem(ATTR_KEY);
+        if (!raw) return null;
+        var parsed = JSON.parse(raw);
+        var age = Date.now() - (parsed.first_touch_at ? Date.parse(parsed.first_touch_at) : 0);
+        if (age > ATTR_TTL_DAYS * 864e5) return null;
+        return parsed;
+      } catch (e) { return null; }
+    }
+
+    /**
+     * First-touch is written once and never overwritten — a visitor who found
+     * us through an Ads campaign keeps that credit even if they later return
+     * via a bookmark. Last-touch updates whenever a new campaign appears.
+     */
+    function resolveAttribution() {
+      var params = readParams();
+      var ref = fromReferrer(document.referrer);
+      var now = new Date().toISOString();
+      var landing = window.location.origin + window.location.pathname; // no query string: avoids leaking PII in params
+
+      var touch = {
+        utm_source: params.utm_source || ref.utm_source,
+        utm_medium: params.utm_medium || ref.utm_medium,
+        utm_campaign: params.utm_campaign,
+        utm_term: params.utm_term,
+        utm_content: params.utm_content,
+        gclid: params.gclid,
+        gbraid: params.gbraid,
+        wbraid: params.wbraid,
+        fbclid: params.fbclid,
+        msclkid: params.msclkid,
+        landing_page: landing,
+        referrer_host: (function () {
+          try { return document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { return ''; }
+        })(),
+        touched_at: now,
+      };
+
+      var stored = load();
+      if (!stored) {
+        stored = { first: touch, last: touch, first_touch_at: now, session_started_at: now };
+      } else if (hasCampaign(params) || (touch.utm_medium && touch.utm_medium !== 'referral' && !stored.last.utm_source)) {
+        // Only displace last-touch on a genuine new campaign entry, so internal
+        // navigation never rewrites attribution.
+        stored.last = touch;
+      }
+      try { localStorage.setItem(ATTR_KEY, JSON.stringify(stored)); } catch (e) {}
+      return stored;
+    }
+
+    var attribution = resolveAttribution();
+
+    /** Flat, CRM-friendly attribution payload. Contains no PII. */
+    function attributionFields() {
+      var f = attribution.first || {};
+      var l = attribution.last || {};
+      return {
+        first_source: f.utm_source || '', first_medium: f.utm_medium || '',
+        first_campaign: f.utm_campaign || '', first_landing_page: f.landing_page || '',
+        first_touch_at: attribution.first_touch_at || '',
+        last_source: l.utm_source || '', last_medium: l.utm_medium || '',
+        last_campaign: l.utm_campaign || '', last_term: l.utm_term || '',
+        last_content: l.utm_content || '', last_landing_page: l.landing_page || '',
+        referrer_host: l.referrer_host || '',
+        gclid: l.gclid || f.gclid || '', gbraid: l.gbraid || f.gbraid || '',
+        wbraid: l.wbraid || f.wbraid || '', fbclid: l.fbclid || f.fbclid || '',
+        msclkid: l.msclkid || f.msclkid || '',
+      };
+    }
+
+    function uuid() {
+      if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (Math.random() * 16) | 0;
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      });
+    }
+
+    /** A stable, privacy-safe id for one lead, reused across GA4/Ads/CRM. */
+    function leadId(fresh) {
+      if (fresh) {
+        var id = 'lead_' + uuid();
+        try { sessionStorage.setItem(LEAD_KEY, id); } catch (e) {}
+        return id;
+      }
+      try {
+        var existing = sessionStorage.getItem(LEAD_KEY);
+        if (existing) return existing;
+      } catch (e) {}
+      return leadId(true);
+    }
+
+    function consentGranted() {
+      if (window.naturoConsent && window.naturoConsent.granted) return true;
+      try {
+        var raw = localStorage.getItem('naturo:consent');
+        return raw ? !!JSON.parse(raw).granted : false;
+      } catch (e) { return false; }
+    }
+
+    /**
+     * Single entry point for every analytics event.
+     * Always merges page context, always scrubs PII, and mirrors to gtag so
+     * events land in GA4 whether or not the GTM container has a matching tag.
+     */
+    function track(eventName, params) {
+      var payload = Object.assign({}, pageContext(), scrub(params || {}));
+      payload.event = eventName;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+      if (typeof window.gtag === 'function') {
+        var gaParams = Object.assign({}, payload);
+        delete gaParams.event;
+        try { window.gtag('event', eventName, gaParams); } catch (e) {}
+      }
+    }
+
+    window.naturoAnalytics = {
+      track: track,
+      scrub: scrub,
+      pageContext: pageContext,
+      attribution: function () { return attribution; },
+      attributionFields: attributionFields,
+      leadId: leadId,
+      newLeadId: function () { return leadId(true); },
+      consentGranted: consentGranted,
+    };
+
+    // Baseline page context for GA4/GTM — no PII, no campaign params.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: 'page_context_ready' }, pageContext()));
+  })();
+</script>

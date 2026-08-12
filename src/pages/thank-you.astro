@@ -80,10 +80,23 @@ const reviewUrl = site.googleReviewUrl;
   <script is:inline>
     (function () {
       try {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'quote_submitted', page: { url: window.location.href, title: document.title } });
+        // This fired on every load, so refreshing or re-visiting /thank-you
+        // counted another conversion. Key it to the lead so it fires once.
+        var na = window.naturoAnalytics;
+        var leadId = na ? na.leadId() : '';
+        var KEY = 'naturo:quote-submitted';
+        var already = false;
+        try { already = sessionStorage.getItem(KEY) === leadId && !!leadId; } catch (e) {}
+        if (already) return;
+        try { if (leadId) sessionStorage.setItem(KEY, leadId); } catch (e) {}
+
+        if (na) {
+          na.track('quote_submitted', { lead_id: leadId, currency: 'AUD', value: 0 });
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'quote_submitted' });
+        }
         if (typeof window.fbq === 'function') window.fbq('track', 'SubmitApplication');
-        if (typeof window.gtag === 'function') window.gtag('event', 'quote_submitted', { event_category: 'lead', event_label: 'quote_form' });
       } catch (e) {}
     })();
   </script>

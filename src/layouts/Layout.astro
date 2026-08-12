@@ -13,6 +13,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import QuoteLeadGate from '../components/QuoteLeadGate.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import Analytics from '../components/Analytics.astro';
 import { site } from '../data/site';
 
 interface Props {
@@ -77,6 +78,9 @@ const isHome = Astro.url.pathname === '/';
     )}
   </head>
   <body class="min-h-screen flex flex-col">
+    {/* Measurement core — must load before QuoteLeadGate so every lead path
+        can call window.naturoAnalytics. See docs/analytics/MEASUREMENT_PLAN.md */}
+    <Analytics />
     <TopBar />
     <Header />
     <main class="flex-1">
@@ -87,38 +91,38 @@ const isHome = Astro.url.pathname === '/';
     <CookieConsent />
 
     <!-- ----------------------------------------------------------------
-         Lightweight phone-click tracker. Listens at the document level
-         for clicks on any <a href="tel:..."> and pushes a `phone_click`
-         event to dataLayer + a Meta Pixel `Contact` event. Fires on
-         every page so the homepage, services pages, suburb pages and
-         sticky mobile bar all attribute correctly. Consent-gated by
-         design — the underlying fbq/gtag/dataLayer only exist once the
-         CookieConsent banner has been accepted.
+         Contact-intent tracker. Delegated at document level so every
+         tel:/mailto: link on the site attributes the same way — hero,
+         header, sticky mobile bar, suburb pages, footer.
+
+         Two corrections vs the previous version:
+          * It now genuinely checks consent. The old comment claimed it was
+            "consent-gated by design" but it only depended on fbq/gtag
+            existing, so a returning visitor still pushed to dataLayer
+            before any consent check ran.
+          * The phone number is no longer sent. A phone number is personal
+            information; the CTA's page context is what's actually useful
+            for reporting, and GA4 forbids PII.
          ---------------------------------------------------------------- -->
     <script is:inline>
       (function () {
-        document.addEventListener('click', function (ev) {
-          const a = ev.target && ev.target.closest ? ev.target.closest('a[href^="tel:"]') : null;
+        function handle(ev) {
+          var t = ev.target;
+          var a = t && t.closest ? t.closest('a[href^="tel:"], a[href^="mailto:"]') : null;
           if (!a) return;
-          const href = a.getAttribute('href') || '';
-          const number = href.replace(/^tel:/, '');
+          var na = window.naturoAnalytics;
+          if (!na || !na.consentGranted()) return;
+          var href = a.getAttribute('href') || '';
+          var isPhone = href.indexOf('tel:') === 0;
           try {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: 'phone_click',
-              phone_number: number,
-              location: window.location.pathname,
-              link_text: (a.textContent || '').trim().slice(0, 80),
+            na.track(isPhone ? 'phone_click' : 'email_click', {
+              cta_text: (a.textContent || '').trim().slice(0, 80),
+              page_path: window.location.pathname,
             });
             if (typeof window.fbq === 'function') window.fbq('track', 'Contact');
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'phone_click', {
-                event_category: 'engagement',
-                event_label: number,
-              });
-            }
           } catch (e) { /* best-effort */ }
-        }, true);
+        }
+        document.addEventListener('click', handle, true);
       })();
     </script>
 

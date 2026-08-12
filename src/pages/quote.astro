@@ -835,6 +835,31 @@ const schema = [
         notes:          data.notes        || '—',
       };
 
+      // Marketing attribution + business dimensions. This form previously sent
+      // none, so its leads reached the CRM with no campaign, service or
+      // location — despite being the main quote path.
+      var naq = window.naturoAnalytics;
+      if (naq) {
+        var serviceKeys = {
+          regular: 'residential_cleaning', oneoff: 'deep_cleaning',
+          endoflease: 'end_of_lease_cleaning', specialty: 'specialist_cleaning',
+        };
+        adminPayload.lead_id = naq.newLeadId();
+        adminPayload.service_key = serviceKeys[data.service] || '';
+        adminPayload.service_location = (data.location || '')
+          .toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+        adminPayload.form_location = 'quote_page';
+        adminPayload.attribution = naq.attributionFields();
+        naq.track('generate_lead', {
+          lead_id: adminPayload.lead_id,
+          service: adminPayload.service_key,
+          service_location: adminPayload.service_location,
+          form_location: 'quote_page',
+          currency: 'AUD',
+          value: 0,
+        });
+      }
+
       // Also post to the Sophiie CRM (Inbox + AI auto-capture), non-blocking —
       // the awaited Formspree post below still drives the /thank-you redirect.
       var crm = (form.getAttribute('data-crm') || '').trim();

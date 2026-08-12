@@ -188,6 +188,8 @@ const lc = leadCapture;
     const config = lc || {};
 
     function shipLead(values) {
+      const na = window.naturoAnalytics;
+      const ctx = na ? na.pageContext() : {};
       const payload = {
         name: values.name,
         phone: values.phone,
@@ -196,6 +198,14 @@ const lc = leadCapture;
         source: 'exit_intent',
         page: window.location.pathname,
         ts: new Date().toISOString(),
+        // Attribution + business dimensions, so an exit-intent lead is as
+        // traceable as one from the main quote gate. Previously this form
+        // sent no campaign data at all.
+        lead_id: na ? na.newLeadId() : '',
+        service: ctx.service || '',
+        service_location: ctx.service_location || '',
+        form_location: 'exit_intent',
+        attribution: na ? na.attributionFields() : {},
       };
       if (config.webhookUrl) {
         try {
@@ -219,8 +229,23 @@ const lc = leadCapture;
         } catch (e) {}
       }
       try {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'exit_intent_lead', ...payload });
+        // Spreading `payload` here previously pushed name/phone/email into the
+        // dataLayer in plaintext. Send only non-identifying dimensions; the
+        // lead_id joins back to the CRM record that holds the contact details.
+        const evt = {
+          lead_id: payload.lead_id,
+          service: payload.service,
+          service_location: payload.service_location,
+          form_location: 'exit_intent',
+          currency: 'AUD',
+          value: 0,
+        };
+        if (na) {
+          na.track('generate_lead', evt);
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push(Object.assign({ event: 'generate_lead' }, evt));
+        }
         if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { source: 'exit_intent' });
       } catch (e) {}
       try { sessionStorage.setItem(SESSION_LEAD, JSON.stringify(payload)); } catch (e) {}

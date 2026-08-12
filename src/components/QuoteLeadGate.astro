@@ -402,6 +402,15 @@ const lc = leadCapture;
         email: payload.email || '',
         phone: payload.phone || '',
         message: lines.join('\n'),
+        // Marketing attribution. Without this the CRM can only ever record
+        // "Web form" as the source, so no lead can be traced back to the
+        // campaign, keyword or landing page that produced it.
+        lead_id: payload.lead_id || '',
+        service: payload.service_key || '',
+        service_location: payload.service_location || '',
+        lead_type: payload.specialty_type || 'standard',
+        form_location: 'quote_lead_gate',
+        attribution: payload.attribution || {},
       };
       if (config.webhookUrl) {
         try {
@@ -428,24 +437,59 @@ const lc = leadCapture;
         window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.event_id });
       } catch (e) {}
     }
+    // The modal's internal service values map onto the shared analytics
+    // taxonomy so reporting is consistent with the service pages.
+    function serviceKey(values) {
+      if (values.service === 'regular') return 'residential_cleaning';
+      if (values.service === 'oneoff') return 'deep_cleaning';
+      if (values.service === 'specialty') {
+        return values.specialtyType === 'insurance' ? 'insurance_cleaning' : 'ndis_cleaning';
+      }
+      return '';
+    }
+
+    /**
+     * Lead event for GA4/GTM.
+     *
+     * This previously pushed the customer's name, phone and email straight
+     * into window.dataLayer. Any GTM tag reads the dataLayer, so that put raw
+     * personal information one misconfigured tag away from Google and Meta —
+     * against GA4's terms and Australian privacy obligations. Only
+     * non-identifying business dimensions are sent now; the lead_id is the
+     * join key back to the CRM, which is where the contact details live.
+     */
     function shipToDataLayer(payload) {
+      var na = window.naturoAnalytics;
+      var params = {
+        lead_id: payload.lead_id,
+        service: payload.service_key,
+        service_location: payload.service_location,
+        lead_type: payload.specialty_type || 'standard',
+        form_location: 'quote_lead_gate',
+        currency: 'AUD',
+        value: 0,
+      };
+      if (na) { na.track('generate_lead', params); return; }
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'lead_captured',
-        lead: { service: payload.service, specialty_type: payload.specialty_type, postcode: payload.postcode, suburb: payload.suburb, name: payload.name, phone: payload.phone, email: payload.email },
-        source: payload.source,
-        event_id: payload.event_id,
-      });
+      window.dataLayer.push(Object.assign({ event: 'generate_lead' }, params));
     }
     function shipLead(values) {
+      const na = window.naturoAnalytics;
       const eventId = (window.crypto && window.crypto.randomUUID)
         ? window.crypto.randomUUID()
         : 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      // One id per lead, shared by GA4, Google Ads and the CRM so the same
+      // enquiry can be followed end to end without sending any PII to Google.
+      const leadId = na ? na.newLeadId() : eventId;
+      const ctx = na ? na.pageContext() : {};
       const payload = {
         event: 'lead_captured',
         event_id: eventId,
+        lead_id: leadId,
         captured_at: new Date().toISOString(),
         service: values.service,
+        service_key: serviceKey(values),
+        service_location: values.suburb ? String(values.suburb).toLowerCase().replace(/[^a-z0-9]+/g, '_') : (ctx.service_location || ''),
         serviceLabel: values.serviceLabel,
         specialty_type: values.specialtyType,
         postcode: values.postcode,
@@ -455,6 +499,7 @@ const lc = leadCapture;
         email: values.email,
         notes: values.notes,
         source: trackingContext,
+        attribution: na ? na.attributionFields() : {},
         page: { url: window.location.href, path: window.location.pathname, title: document.title },
       };
       shipToWebhook(payload);

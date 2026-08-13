@@ -2610,8 +2610,24 @@ export const suburbs: Suburb[] = [
         a: 'We use plant-based, biodegradable, non-toxic products that are safe for children, pets, asthma sufferers and Corio Bay\'s catchment. Our products are tough on grease and grime but gentle on the period timber, natural stone and bay-area finishes common throughout Geelong and the Bellarine.',
       },
       {
-        q: 'Do you offer weekend or same-week cleaning in Geelong?',
-        a: 'We can usually book a first Geelong clean within 2–5 business days, and same-week availability is often possible for smaller jobs. For regular weekly or fortnightly cleans, we work with your schedule — school runs, V/Line commutes and weekend trips down the Surf Coast included.',
+        // Rewritten: the previous version asked about weekend cleaning and
+        // never answered it, while the surrounding copy implied availability.
+        // The business trades Monday to Friday only, so the answer now says so
+        // plainly and redirects to what we can actually do about a deadline.
+        q: 'Do you clean on weekends in Geelong?',
+        a: 'No — we work Monday to Friday, 8:30am to 5:00pm. We can usually book a first Geelong clean within 2–5 business days, and same-week availability is often possible for smaller jobs. If you are working to a weekend deadline, such as a rental handover or family arriving, tell us when you book and we will schedule it earlier in the week.',
+      },
+      {
+        q: 'Do I get the same cleaner every time?',
+        a: 'That is what we aim for, and it is what we manage most of the time — someone who already knows your home does a better job than someone seeing it for the first time. It will not be every single visit, because people take leave and get sick. When that happens we send someone briefed from your file rather than a stranger with no context.',
+      },
+      {
+        q: 'Do I need to be home while you clean?',
+        a: 'No, and most of our regular Geelong clients are not. We agree access with you when you book — either you let us in, or we arrange a key or entry code. You are welcome to be there for the first clean if you would rather meet the team first.',
+      },
+      {
+        q: 'What happens if I am not happy with the clean?',
+        a: 'Contact us within 24 hours of the clean and we will return to address the issue at no additional cost where possible. We would far rather hear it from you than read about it later. This sits alongside your rights under the Australian Consumer Law — it does not replace them.',
       },
       {
         q: 'What is included in a standard house clean in Geelong?',

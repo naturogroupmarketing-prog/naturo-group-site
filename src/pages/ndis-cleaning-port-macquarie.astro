@@ -9,7 +9,7 @@ import Providers from '../components/Providers.astro';
 import FAQ from '../components/FAQ.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import { site, ctaPrimary } from '../data/site';
+import { site, ctaPrimary , aggregateRatingSchema} from '../data/site';
 
 const pageUrl = `${site.url}/ndis-cleaning-port-macquarie`;
 
@@ -125,13 +125,7 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '94',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    ...aggregateRatingSchema('portMacquarie'),
   },
   {
     '@context': 'https://schema.org',

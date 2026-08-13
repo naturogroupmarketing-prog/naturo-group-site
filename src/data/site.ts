@@ -31,6 +31,60 @@ export const ctaPrimary = { text: 'Get a Free Quote', href: site.bookingUrl };
 export const ctaPhone = { text: site.phone, href: site.phoneHref };
 
 // ---------------------------------------------------------------------------
+// Verified aggregate review data — the ONLY source for AggregateRating markup.
+//
+// Populate a key strictly from the figures shown in the Google Business Profile
+// dashboard for that location, and refresh them when they move. Leave a key as
+// `null` to emit no AggregateRating at all for those pages.
+//
+// `null` is the correct default, not a gap to fill with something plausible.
+// Publishing a rating that is not backed by real reviews puts gold stars on the
+// search result that no customer earned. That is review spam under Google's
+// structured-data policies — enforced with a manual action against the whole
+// domain, not the single page — and a false representation about testimonials
+// under Australian Consumer Law (CCA 2010 Sch 2, s29).
+//
+// History: every template previously hardcoded 4.7/127 (Geelong) or 4.8/94
+// (Port Macquarie) as acknowledged placeholders — reviews.astro carried the
+// comment "Replace the placeholder values below with verified figures", which
+// never happened. Those values shipped on 239 pages. Hence one gated source.
+// ---------------------------------------------------------------------------
+export type VerifiedRating = { ratingValue: string; reviewCount: string };
+
+// Verified against the live Google Business Profiles on 13 August 2026.
+// Re-check quarterly — these numbers move, and a stale figure is the same
+// misrepresentation as an invented one.
+export const verifiedRatings: Record<string, VerifiedRating | null> = {
+  // NATURO GROUP Geelong — genuinely 5.0, but from a single review. Google
+  // generally won't render a star rating off one review, and publishing
+  // "5.0" without context would oversell a one-review sample. Left null
+  // deliberately; populate once the review base is meaningful.
+  geelong: null,
+
+  // NATURO GROUP Port Macquarie — real and substantial. This is where the
+  // site's long-standing "4.7" figure actually comes from.
+  portMacquarie: { ratingValue: '4.7', reviewCount: '48' },
+
+  // Across both verified profiles: (4.7 x 48 + 5.0 x 1) / 49 = 4.71 -> 4.7.
+  siteWide: { ratingValue: '4.7', reviewCount: '49' },
+};
+
+/** Returns an AggregateRating fragment to spread, or `{}` when unverified. */
+export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
+  const r = verifiedRatings[key];
+  if (!r) return {};
+  return {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: r.ratingValue,
+      reviewCount: r.reviewCount,
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Lead capture / retargeting destinations
 //
 // The "Get a free quote" modal collects {name, phone, email} and pushes
@@ -321,7 +375,11 @@ export const providers = [
 export const faqs = [
   {
     q: 'What time are your services available?',
-    a: 'Our services are available 8:00 AM – 5:30 PM, Monday to Friday. For special requests or after-hours service, please contact us in advance.',
+    // Derived from `site.hours` so there is one source of truth. This answer
+    // previously hardcoded "8:00 AM – 5:30 PM", contradicting site.hours on the
+    // same page. Opening hours are a field customers and search engines both
+    // check for consistency, so they must never be stated twice by hand.
+    a: `Our office is open ${site.hours.replace('Monday – Fridays', 'Monday to Friday,').replace(/\s+/g, ' ').trim()}. For special requests or after-hours service, please contact us in advance.`,
   },
   {
     q: 'What services are included?',

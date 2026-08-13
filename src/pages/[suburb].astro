@@ -73,24 +73,26 @@ const localTestimonials = suburb.localTestimonials && suburb.localTestimonials.l
   ? suburb.localTestimonials
   : testimonials.slice(0, 6);
 
-const reviewSchema = localTestimonials.slice(0, 6).map((t) => ({
-  '@type': 'Review',
-  reviewRating: {
-    '@type': 'Rating',
-    ratingValue: '5',
-    bestRating: '5',
-  },
-  author: {
-    '@type': 'Person',
-    // If the suburb shipped its own attributed reviews, leave the name as
-    // is. Otherwise append the suburb so the same generic name surfaces
-    // distinctly per page (avoids identical Review entities across cities).
-    name: suburb.localTestimonials && suburb.localTestimonials.length
-      ? t.name
-      : `${t.name} — ${suburb.name}`,
-  },
-  reviewBody: t.text,
-}));
+// Review markup is emitted ONLY for suburbs that ship their own genuine,
+// locally attributed reviews. Site-wide testimonials still render on the page
+// for visitors, but they are not marked up per-suburb: doing so would present
+// the same reviews as distinct local reviews on every city page, which is
+// review spam under Google's structured-data policies and a false testimonial
+// representation under Australian Consumer Law (CCA 2010 Sch 2, s29).
+// Author names are never modified — a review's author is a fact, not a field
+// to localise.
+const reviewSchema =
+  suburb.localTestimonials && suburb.localTestimonials.length
+    ? suburb.localTestimonials.slice(0, 6).map((t) => ({
+        '@type': 'Review',
+        // Only emit a rating we actually hold. Never assume five stars.
+        ...(t.rating
+          ? { reviewRating: { '@type': 'Rating', ratingValue: String(t.rating), bestRating: '5' } }
+          : {}),
+        author: { '@type': 'Person', name: t.name },
+        reviewBody: t.text,
+      }))
+    : [];
 
 // Hero rotation: the staff photo leads (slide 1, served as an
 // <img> for crawlable alt + LCP), then the suburb photo, kitchen and ocean
@@ -139,18 +141,27 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    // AggregateRating drives the gold-stars rich result on local SERPs.
-    // Per-suburb rating sourced from suburb.aggregateRating when set (real GBP
-    // numbers); falls back to the site-wide placeholder so every page still
-    // emits valid AggregateRating schema until per-suburb data is added.
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: suburb.aggregateRating?.ratingValue ?? '4.7',
-      reviewCount: suburb.aggregateRating?.reviewCount ?? '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: reviewSchema,
+    // AggregateRating is emitted ONLY where genuine, verifiable per-suburb
+    // review data exists. There is deliberately NO placeholder fallback: a
+    // default rating would publish an unverifiable rating on every page that
+    // has no reviews, producing gold stars in search results that are not
+    // backed by real reviews. That is review spam under Google's
+    // structured-data policies (risking a manual action against the whole
+    // domain) and a false representation about testimonials under Australian
+    // Consumer Law. Populate suburb.aggregateRating from the real Google
+    // Business Profile figures to switch stars on for a given location.
+    ...(suburb.aggregateRating
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: suburb.aggregateRating.ratingValue,
+            reviewCount: suburb.aggregateRating.reviewCount,
+            bestRating: '5',
+            worstRating: '1',
+          },
+        }
+      : {}),
+    ...(reviewSchema.length ? { review: reviewSchema } : {}),
   },
   {
     '@context': 'https://schema.org',

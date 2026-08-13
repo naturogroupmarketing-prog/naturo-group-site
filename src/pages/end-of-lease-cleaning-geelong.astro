@@ -9,7 +9,7 @@ import Providers from '../components/Providers.astro';
 import Testimonials from '../components/Testimonials.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import { site, ctaPrimary } from '../data/site';
+import { site, ctaPrimary , aggregateRatingSchema} from '../data/site';
 
 const pageUrl = `${site.url}/end-of-lease-cleaning-geelong`;
 
@@ -172,13 +172,7 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.7',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    ...aggregateRatingSchema('geelong'),
   },
   {
     '@context': 'https://schema.org',

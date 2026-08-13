@@ -55,8 +55,11 @@ const windowDays = Array.from({ length: days }, (_, i) => {
     day: d.getDate(),
     month: d.toLocaleDateString('en-AU', { month: 'short' }),
     isWeekend,
-    // Sunday is closed; Saturday morning only.
-    available: d.getDay() !== 0,
+    // Monday to Friday only, matching the published operating hours
+    // (site.hours). The calendar previously offered Saturdays, which let a
+    // customer select a day the business does not trade — an unfulfillable
+    // booking, and a fourth hours variant on a site that already had several.
+    available: d.getDay() >= 1 && d.getDay() <= 5,
   };
 });
 

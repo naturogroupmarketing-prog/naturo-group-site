@@ -5,7 +5,7 @@ import TrustBadges from '../components/TrustBadges.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Providers from '../components/Providers.astro';
-import { site, ctaPrimary, ctaPhone } from '../data/site';
+import { site, ctaPrimary, ctaPhone , aggregateRatingSchema} from '../data/site';
 
 const pageUrl = `${site.url}/end-of-lease-cleaning-port-macquarie`;
 
@@ -155,13 +155,7 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '94',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    ...aggregateRatingSchema('portMacquarie'),
   },
   {
     '@context': 'https://schema.org',

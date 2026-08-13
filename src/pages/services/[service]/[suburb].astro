@@ -29,7 +29,7 @@ import Providers from '../../../components/Providers.astro';
 import FAQ from '../../../components/FAQ.astro';
 import BookCTA from '../../../components/BookCTA.astro';
 import Testimonials from '../../../components/Testimonials.astro';
-import { allServices, services as pricedServices, site, ctaPrimary, ctaPhone, testimonials } from '../../../data/site';
+import {allServices, services as pricedServices, site, ctaPrimary, ctaPhone, testimonials, aggregateRatingSchema} from '../../../data/site';
 import { serviceDetails } from '../../../data/serviceDetail';
 import { suburbs, type Suburb } from '../../../data/suburbs';
 
@@ -107,12 +107,18 @@ const localFaqs = [
 
 const localTestimonials = testimonials.slice(0, 5);
 
-const reviewSchema = localTestimonials.map((t) => ({
-  '@type': 'Review',
-  reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-  author: { '@type': 'Person', name: `${t.name} — ${suburb.name}` },
-  reviewBody: t.text,
-}));
+// No Review markup is emitted on generated service × suburb pages. The
+// testimonials available here are site-wide, not local to this suburb, and
+// marking them up per page would present the same handful of reviews as
+// distinct local reviews across hundreds of URLs. That is review spam under
+// Google's structured-data policies and a false testimonial representation
+// under Australian Consumer Law (CCA 2010 Sch 2, s29).
+//
+// The previous implementation appended the suburb to each reviewer's name
+// (`Simon O — Torquay`) specifically so the duplicates would look distinct.
+// A review author is a fact, never a field to localise. The testimonials still
+// render on the page for visitors; they are simply not claimed as local.
+const reviewSchema: any[] = [];
 
 const seoTitle = `${labels.display} ${suburb.name} | NATURO GROUP Eco-Friendly Cleaners ${suburb.stateCode}`;
 const seoDesc = `${labels.longTail} in ${suburb.name} ${suburb.stateCode}. Police-checked, fully insured, eco-friendly. Get a free quote in 60 seconds.`;
@@ -129,14 +135,8 @@ const baseSchema: any = {
     telephone: site.phone,
     email: site.email,
     url: pageUrl,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.7',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: reviewSchema,
+    ...aggregateRatingSchema('geelong'),
+    ...(reviewSchema.length ? { review: reviewSchema } : {}),
   },
   areaServed: {
     '@type': 'City',

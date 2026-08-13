@@ -2,14 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TrustBadges from '../components/TrustBadges.astro';
-import { ctaPrimary, testimonials, site } from '../data/site';
+import { ctaPrimary, testimonials, site, aggregateRatingSchema, verifiedRatings } from '../data/site';
 const stars = '★★★★★';
 
-// Lightweight aggregate-rating schema for SEO. The count and rating
-// should be reconciled against your real Google Business Profile before
-// going live. Replace the placeholder values below with verified figures.
-const reviewCount = 127;
-const ratingValue = 4.7;
+// Aggregate-rating schema is emitted only when `verifiedRatings.siteWide` holds
+// real Google Business Profile figures. The previous placeholders (4.7 / 127)
+// were never reconciled and shipped live — see the note in src/data/site.ts.
 
 const schema = [
   {
@@ -26,13 +24,7 @@ const schema = [
       site.social.instagram,
       site.social.youtube,
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: ratingValue,
-      reviewCount: reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    ...aggregateRatingSchema('siteWide'),
   },
   ...testimonials.map((t) => ({
     '@context': 'https://schema.org',
@@ -52,9 +44,21 @@ const schema = [
   })),
 ];
 
+// The rating and review-count tiles appear only when real Google Business
+// Profile figures are recorded in `verifiedRatings.siteWide`. Displaying an
+// average rating and a review count is a representation about testimonials
+// under Australian Consumer Law, so it has to be a number we actually hold.
+const verified = verifiedRatings.siteWide;
+
 const stats = [
-  { num: `${ratingValue}\u2605`, label: 'Average Google rating' },
-  { num: `${reviewCount}+`, label: 'Verified customer reviews' },
+  ...(verified
+    ? [
+        { num: `${verified.ratingValue}\u2605`, label: 'Average Google rating' },
+        { num: `${verified.reviewCount}+`, label: 'Verified customer reviews' },
+      ]
+    : []),
+  // TODO(Hubert): confirm the served-households figure against booking records,
+  // or remove this tile. It is currently unsubstantiated.
   { num: '800+', label: 'Australian families served' },
   { num: '100%', label: 'Satisfaction guarantee' },
 ];
@@ -62,7 +66,7 @@ const stats = [
 
 <Layout
   title="Client Reviews — Eco-Friendly House Cleaning Australia"
-  description="Real reviews from Naturo Group customers across NSW, Queensland and Victoria. Eco-friendly cleaning rated 4.7★ by hundreds of Australian families."
+  description="Real reviews from Naturo Group customers across NSW, Queensland and Victoria — eco-friendly house, NDIS, aged-care and end-of-lease cleaning."
   schema={schema}
 >
   <section class="bg-[var(--color-bg-pale)] pt-16">

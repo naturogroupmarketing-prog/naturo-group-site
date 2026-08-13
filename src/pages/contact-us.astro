@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { site, ctaPrimary, ctaPhone } from '../data/site';
+import { site, ctaPrimary, ctaPhone, leadCapture } from '../data/site';
 
 const heroSlides = [
   '/images/hero-staff-bathroom.webp',
@@ -240,11 +240,20 @@ const methodCards = [
         </p>
       </div>
 
+      <!--
+        Submits to the same lead pipeline as the quote gate (Formspree + CRM),
+        so every enquiry is captured server-side and is measurable in GA4.
+        Previously this posted to a `mailto:` URL, which handed the user off to
+        their email client mid-enquiry, captured nothing server-side, and made
+        conversion tracking impossible. The plain `action`/`method` below are
+        the no-JavaScript fallback — the handler at the foot of this file
+        upgrades it to a background POST plus analytics plus /thank-you.
+      -->
       <form
         class="ct-form"
-        action={`mailto:${site.email}`}
+        id="ct-contact-form"
+        action={leadCapture.webhookUrl}
         method="post"
-        enctype="text/plain"
         aria-describedby="ct-form-note"
       >
         <div class="ct-form-grid">
@@ -297,11 +306,15 @@ const methodCards = [
         </label>
 
         <p id="ct-form-note" class="ct-form-note">
-          Submitting opens your email client with your message ready to send. Or email us directly
-          at <a href={site.emailHref} class="ct-form-link">{site.email}</a>.
+          We&rsquo;ll reply within the hour during business hours. Prefer email? Write to us at
+          <a href={site.emailHref} class="ct-form-link">{site.email}</a>. We use your details only to
+          respond to this enquiry &mdash; see our
+          <a href="/privacy-policies" class="ct-form-link">privacy policy</a>.
         </p>
 
-        <button type="submit" class="ct-submit">Send message</button>
+        <p class="ct-form-status" id="ct-form-status" role="status" aria-live="polite" hidden></p>
+
+        <button type="submit" class="ct-submit" id="ct-submit">Send message</button>
       </form>
     </div>
   </section>
@@ -884,5 +897,135 @@ const methodCards = [
     color: rgb(71, 85, 105);
     margin: 12px 0 0;
     max-width: 720px;
+  }
+</style>
+
+<script
+  is:inline
+  define:vars={{
+    webhookUrl: leadCapture.webhookUrl,
+    crmUrl: leadCapture.crmUrl,
+    googleAdsId: leadCapture.googleAdsId,
+    googleAdsLabel: leadCapture.googleAdsLabel,
+  }}
+>
+  // Progressive enhancement for the contact form.
+  // Without JS the form still posts straight to the webhook (see `action`).
+  // With JS we post in the background, record the conversion, and land the
+  // user on /thank-you instead of a third-party confirmation page.
+  (function () {
+    var form = document.getElementById('ct-contact-form');
+    if (!form) return;
+
+    var statusEl = document.getElementById('ct-form-status');
+    var button = document.getElementById('ct-submit');
+
+    function setStatus(message, isError) {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.hidden = !message;
+      statusEl.classList.toggle('is-error', !!isError);
+    }
+
+    function post(url, payload) {
+      if (!url) return Promise.resolve();
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(function () {
+        /* Never block the user on a reporting failure. */
+      });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var data = new FormData(form);
+      var name = (data.get('full_name') || '').toString().trim();
+      var email = (data.get('email') || '').toString().trim();
+      var phone = (data.get('phone') || '').toString().trim();
+      var suburb = (data.get('suburb_postcode') || '').toString().trim();
+      var state = (data.get('state') || '').toString().trim();
+      var service = (data.get('service') || '').toString().trim();
+      var message = (data.get('message') || '').toString().trim();
+
+      if (!form.reportValidity()) return;
+
+      // Correlates the CRM record, GA4 event and Ads conversion so the same
+      // lead is never counted twice across systems.
+      var eventId =
+        'contact-' +
+        Date.now().toString(36) +
+        '-' +
+        Math.random().toString(36).slice(2, 8);
+
+      var params = new URLSearchParams(window.location.search);
+      var payload = {
+        name: name,
+        email: email,
+        phone: phone,
+        location: suburb + (state ? ', ' + state : ''),
+        service: service,
+        message: message,
+        source: 'Web form — contact page',
+        lead_id: eventId,
+        lead_type: 'contact',
+        page: window.location.pathname,
+        attribution: {
+          utm_source: params.get('utm_source') || '',
+          utm_medium: params.get('utm_medium') || '',
+          utm_campaign: params.get('utm_campaign') || '',
+          utm_content: params.get('utm_content') || '',
+          referrer: document.referrer || '',
+        },
+      };
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Sending…';
+      }
+      setStatus('Sending your message…', false);
+
+      // GA4 — the conversion the local-SEO program is measured on.
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'quote_submit', {
+          form_location: 'contact_page',
+          service_type: service,
+          suburb: suburb,
+          page_path: window.location.pathname,
+          transaction_id: eventId,
+        });
+        if (googleAdsId && googleAdsLabel) {
+          window.gtag('event', 'conversion', {
+            send_to: googleAdsId + '/' + googleAdsLabel,
+            transaction_id: eventId,
+          });
+        }
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_captured', lead_source: 'contact_form', lead_id: eventId });
+
+      Promise.all([post(webhookUrl, payload), post(crmUrl, payload)]).then(function () {
+        window.location.href = '/thank-you';
+      });
+
+      // Never strand the user if a network call hangs.
+      setTimeout(function () {
+        if (document.visibilityState !== 'hidden') window.location.href = '/thank-you';
+      }, 4000);
+    });
+  })();
+</script>
+
+<style>
+  .ct-form-status {
+    margin: 12px 0 0;
+    font-size: 0.95rem;
+    color: rgb(71, 85, 105);
+  }
+  .ct-form-status.is-error {
+    color: rgb(185, 28, 28);
   }
 </style>

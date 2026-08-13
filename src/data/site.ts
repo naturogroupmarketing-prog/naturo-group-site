@@ -298,7 +298,7 @@ export const includesChecklist: Array<{ group: string; items: string[] }> = [
 export const founder = {
   name: 'Anna Biram',
   role: 'Managing Director',
-  image: '/images/founder.png',
+  image: '/images/founder.webp',
   imageAlt:
     'Eco-friendly cleaning service by NATURO GROUP showcasing natural products and police-checked cleaners.',
   body: [
@@ -385,19 +385,19 @@ export const testimonials = [
   },
 ];
 
-export const heroBg = '/images/hero-bathroom.jpg'; // user to supply
+export const heroBg = '/images/hero-bathroom.webp'; // user to supply
 
 export const sectionBgs = {
-  experience: '/images/experience-staff.jpg', // user to supply
-  bookCTA: '/images/book-cta.jpg', // user to supply
+  experience: '/images/experience-staff.webp', // user to supply
+  bookCTA: '/images/book-cta.webp', // user to supply
   sixtySeconds: '/images/sixty-seconds.jpg', // user to supply
 };
 
-export const aboutImage = '/images/founder.png'; // user to supply
+export const aboutImage = '/images/founder.webp'; // user to supply
 
 export const appPromo = {
   heading: 'Easily manage your cleaning schedule with our user friendly App',
-  phoneImg: '/images/app-phone.jpg', // user to supply
+  phoneImg: '/images/app-phone.webp', // user to supply
   appStore: 'https://www.apple.com/app-store/',
   googlePlay: 'https://play.google.com/store',
 };

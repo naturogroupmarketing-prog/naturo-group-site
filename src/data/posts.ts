@@ -49,7 +49,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-04-27',
     readMinutes: 6,
-    heroImage: '/images/hero-kitchen.jpg',
+    heroImage: '/images/hero-kitchen.webp',
     intro:
       'Commercial oven cleaners work, but they’re harsh — fume-heavy, toxic to skin, and absolutely not the kind of thing you want lingering on the surfaces your food touches. The good news: a $5 trio of bicarb soda, white vinegar and a lemon will lift months of baked-on grease just as effectively, and it’s safe to use with kids, pets and food-prep surfaces nearby.',
     sections: [
@@ -169,7 +169,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-04-27',
     readMinutes: 5,
-    heroImage: '/images/hero-bathroom.jpg',
+    heroImage: '/images/hero-bathroom.webp',
     intro:
       'Soap scum is what happens when soap residue meets the minerals in tap water. It clings to glass, etches over time, and once it’s built up it shrugs off most spray-on cleaners. The fix is a two-stage approach: a one-off deep restoration to lift years of build-up, then a 2-minute weekly habit that keeps the glass clear with almost no effort.',
     sections: [
@@ -411,7 +411,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-04-27',
     readMinutes: 8,
-    heroImage: '/images/phone-woman.jpg',
+    heroImage: '/images/phone-woman.webp',
     intro:
       'A clean, ordered home is one of the strongest predictors of someone staying independent — yet for many NDIS participants and older Australians, household tasks become a barrier long before any other support need does. The right cleaning routine, funded through your plan and delivered by a trained provider, doesn’t just keep the place tidy. It frees up energy for the parts of life that matter, lowers fall risk, and makes the home feel like home again. Here’s how to set one up.',
     sections: [
@@ -538,7 +538,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-04-27',
     readMinutes: 9,
-    heroImage: '/images/banner-staff.jpg',
+    heroImage: '/images/banner-staff.webp',
     intro:
       'The single biggest reason tenants lose part of their bond is missing the small things — the dust on the air-conditioner vents, the grease behind the stove, the scuff on the skirting board next to the front door. Property managers inspect against a fixed list. If you know what’s on it, you can clean to it. This is the checklist our end-of-lease teams work from across NSW, Queensland and Victoria — the same one your real-estate agent likely uses.',
     sections: [
@@ -844,7 +844,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-06',
     readMinutes: 9,
-    heroImage: '/images/hero-bathroom.jpg',
+    heroImage: '/images/hero-bathroom.webp',
     intro:
       'Losing part of your bond over a missed oven clean or a dusty skirting board is one of the most frustrating things about moving out — especially when the fix would have taken 20 minutes. This checklist covers every area Geelong property managers inspect at final handover, so you can either clean it yourself or hand it to a professional with exactly the right brief.',
     toc: [
@@ -1021,7 +1021,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-06',
     readMinutes: 7,
-    heroImage: '/images/hero-kitchen.jpg',
+    heroImage: '/images/hero-kitchen.webp',
     intro:
       'Geelong house cleaning prices vary widely — from $38/hr for a basic regular clean to $1,200+ for a full bond clean on a large family home. This guide breaks down what you\'ll actually pay in 2026, what\'s included at each price point, and the factors that push costs up or down.',
     toc: [
@@ -1156,7 +1156,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-06',
     readMinutes: 8,
-    heroImage: '/images/hero-bathroom.jpg',
+    heroImage: '/images/hero-bathroom.webp',
     intro:
       'NDIS cleaning is one of the most misunderstood supports in the scheme. Many Geelong participants don\'t realise they can use their Core budget to pay for professional home cleaning — or they\'re unsure which line item to use, how to claim it, or what to look for in a provider. This guide covers all of it.',
     toc: [
@@ -1274,7 +1274,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-06',
     readMinutes: 6,
-    heroImage: '/images/hero-bathroom.jpg',
+    heroImage: '/images/hero-bathroom.webp',
     intro:
       'Geelong sits on the shores of Corio Bay — a waterway that connects directly to Port Phillip Bay and Bass Strait. What goes down Geelong drains eventually reaches those waters. For families with young children, pets or anyone sensitive to chemical exposure, the products used inside your home matter far more than most cleaning companies will tell you.',
     sections: [
@@ -1356,7 +1356,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-07',
     readMinutes: 9,
-    heroImage: '/images/hero-bathroom-wide.jpg',
+    heroImage: '/images/hero-bathroom-wide.webp',
     intro:
       "Moving out of a Port Macquarie rental is stressful enough without the added anxiety of a bond dispute. Property managers here are thorough — the coastal lifestyle that makes Port Macquarie a desirable rental market also means properties see significant sand, salt air and sun exposure that requires extra attention at final inspection. This checklist covers every area your property manager will inspect so you leave nothing to chance.",
     toc: [
@@ -1510,7 +1510,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-07',
     readMinutes: 7,
-    heroImage: '/images/hero-kitchen.jpg',
+    heroImage: '/images/hero-kitchen.webp',
     intro:
       "Port Macquarie's residential cleaning market ranges from budget hourly contractors to full-service teams with insurance, eco-products and a satisfaction guarantee. The price you pay depends heavily on which you choose — and what's actually included. This guide breaks down real 2026 pricing so you know what to expect and what questions to ask.",
     toc: [
@@ -1633,7 +1633,7 @@ export const posts: BlogPost[] = [
     ],
     publishedDate: '2026-05-07',
     readMinutes: 8,
-    heroImage: '/images/hero-bathroom.jpg',
+    heroImage: '/images/hero-bathroom.webp',
     intro:
       "If you are an NDIS participant in Port Macquarie — or a family member, support coordinator or plan manager looking for a registered cleaning provider — this guide explains exactly what NDIS cleaning covers, how to access it, and what to look for in a provider. Port Macquarie has a growing NDIS participant community, and cleaning support is one of the most consistently requested services in the area.",
     toc: [

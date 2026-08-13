@@ -51,12 +51,22 @@ export const ctaPhone = { text: site.phone, href: site.phoneHref };
 // ---------------------------------------------------------------------------
 export type VerifiedRating = { ratingValue: string; reviewCount: string };
 
+// Verified against the live Google Business Profiles on 13 August 2026.
+// Re-check quarterly — these numbers move, and a stale figure is the same
+// misrepresentation as an invented one.
 export const verifiedRatings: Record<string, VerifiedRating | null> = {
-  // TODO(Hubert): paste the real figures from the Google Business Profile
-  // dashboard (Reviews tab shows both), then the stars switch back on.
+  // NATURO GROUP Geelong — genuinely 5.0, but from a single review. Google
+  // generally won't render a star rating off one review, and publishing
+  // "5.0" without context would oversell a one-review sample. Left null
+  // deliberately; populate once the review base is meaningful.
   geelong: null,
-  portMacquarie: null,
-  siteWide: null,
+
+  // NATURO GROUP Port Macquarie — real and substantial. This is where the
+  // site's long-standing "4.7" figure actually comes from.
+  portMacquarie: { ratingValue: '4.7', reviewCount: '48' },
+
+  // Across both verified profiles: (4.7 x 48 + 5.0 x 1) / 49 = 4.71 -> 4.7.
+  siteWide: { ratingValue: '4.7', reviewCount: '49' },
 };
 
 /** Returns an AggregateRating fragment to spread, or `{}` when unverified. */

@@ -1,6 +1,6 @@
 ---
 // Conversational, one-question-at-a-time lead capture — a premium "chat with
-// an assistant" experience that gates every "Get an Instant Price" CTA. It
+// an assistant" experience that gates every "Get a Free Quote" CTA. It
 // collects clean type → location → contact → notes across animated steps and
 // ships the lead to the SAME backend as before (Formspree webhook + Sophiie
 // CRM + Meta/Google/GTM analytics). No prices are shown — it's lead capture.
@@ -733,7 +733,7 @@ const lc = leadCapture;
       if (ev.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
     });
 
-    // ---- Intercept every "Get an Instant Price" (/quote) link -----------
+    // ---- Intercept every "Get a Free Quote" (/quote) link -----------
     function isQuoteLink(a) {
       if (!a || a.tagName !== 'A') return false;
       if (a.target && a.target !== '' && a.target !== '_self') return false;

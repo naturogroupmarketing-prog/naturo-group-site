@@ -32,10 +32,6 @@ import { pricingCards } from '../../data/site';
             </div>
           )}
           <h3 class="tile-name">{card.name}</h3>
-          <div class="tile-price">
-            <span class="tile-price-label">{card.label}</span>
-            <span class="tile-price-amount">${card.priceFrom}</span>
-          </div>
           <ul class="tile-bullets">
             {card.bullets.map((b) => (
               <li>

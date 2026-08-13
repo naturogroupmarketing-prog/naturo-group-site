@@ -27,13 +27,13 @@ export const site = {
   copyright: '© 2026 NATURO GROUP PTY LTD ATF Hanelg Trust. All rights reserved.',
 };
 
-export const ctaPrimary = { text: 'Get an Instant Price', href: site.bookingUrl };
+export const ctaPrimary = { text: 'Get a Free Quote', href: site.bookingUrl };
 export const ctaPhone = { text: site.phone, href: site.phoneHref };
 
 // ---------------------------------------------------------------------------
 // Lead capture / retargeting destinations
 //
-// The "Get an instant price" modal collects {name, phone, email} and pushes
+// The "Get a free quote" modal collects {name, phone, email} and pushes
 // the lead to whichever destinations are configured below. Leave a value
 // empty to skip that destination — everything is opt-in.
 //
@@ -110,7 +110,7 @@ export const pricingCards = [
       'Eco-friendly, non-toxic products',
       'Experienced, police-checked cleaners',
     ],
-    cta: { text: 'Get an Instant Price', href: '/quote' },
+    cta: { text: 'Get a Free Quote', href: '/quote' },
   },
   {
     name: 'Regular Clean',
@@ -125,7 +125,7 @@ export const pricingCards = [
       'A trusted, regular cleaning team',
       'Skip, pause or reschedule anytime',
     ],
-    cta: { text: 'Get an Instant Price', href: '/quote' },
+    cta: { text: 'Get a Free Quote', href: '/quote' },
     featured: true,
   },
   {
@@ -141,7 +141,7 @@ export const pricingCards = [
       'Bond-back re-clean included if issues arise',
       'Professional, experienced cleaners',
     ],
-    cta: { text: 'Get an Instant Price', href: '/quote' },
+    cta: { text: 'Get a Free Quote', href: '/quote' },
   },
 ];
 
@@ -329,7 +329,7 @@ export const faqs = [
   },
   {
     q: 'How much does it cost to clean my house?',
-    a: 'The cost of cleaning your house depends on factors such as the size of your home, the type of cleaning service required, and any additional requests. Our pricing typically starts from $131.00 for a standard clean. For a personalised quote, please contact us or click on Get an Instant Price.',
+    a: 'The cost of cleaning your house depends on factors such as the size of your home, the type of cleaning service required, and any additional requests. For a personalised quote, please contact us or click on Get a Free Quote.',
   },
   {
     q: 'Are cleaning supplies provided?',

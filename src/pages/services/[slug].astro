@@ -37,14 +37,8 @@ const baseSchema: any = {
   areaServed: 'Australia',
   description: service.short,
 };
-if (isPriced && 'priceFrom' in service) {
-  baseSchema.offers = {
-    '@type': 'Offer',
-    price: (service as any).priceFrom,
-    priceCurrency: 'AUD',
-    availability: 'https://schema.org/InStock',
-  };
-}
+// No Offer is emitted: prices are no longer published, and a price left in
+// structured data would still be surfaced directly in Google's results.
 
 const schema = [
   baseSchema,

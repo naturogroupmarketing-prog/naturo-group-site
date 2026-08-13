@@ -82,14 +82,14 @@ const serviceLabels: Record<string, { display: string; longTail: string; verb: s
     verb: 'Book an end-of-lease clean',
   },
 };
-const labels = serviceLabels[serviceSlug] || { display: service.title, longTail: service.short, verb: 'Get an instant price' };
+const labels = serviceLabels[serviceSlug] || { display: service.title, longTail: service.short, verb: 'Get a free quote' };
 
 // Local FAQ set blends 2 service-level + 2 location-level questions so
 // each (service, suburb) page reads uniquely without duplicate content.
 const localFaqs = [
   {
     q: `How much does ${labels.display.toLowerCase()} cost in ${suburb.name}?`,
-    a: `Pricing for ${labels.display.toLowerCase()} in ${suburb.name} starts from $${(service as any).priceFrom || 99} and depends on the size of your home, condition and any extras (oven, fridge, windows, balcony). Get an instant price online in 60 seconds — no obligation.`,
+    a: `The cost of ${labels.display.toLowerCase()} in ${suburb.name} depends on the size of your home, its condition and any extras (oven, fridge, windows, balcony). Tell us what you need and we'll come back with a free, no-obligation quote.`,
   },
   {
     q: `Do you bring everything for ${labels.display.toLowerCase()} in ${suburb.name}?`,
@@ -115,7 +115,7 @@ const reviewSchema = localTestimonials.map((t) => ({
 }));
 
 const seoTitle = `${labels.display} ${suburb.name} | NATURO GROUP Eco-Friendly Cleaners ${suburb.stateCode}`;
-const seoDesc = `${labels.longTail} in ${suburb.name} ${suburb.stateCode}. Police-checked, fully insured, eco-friendly. Get an instant price in 60 seconds.`;
+const seoDesc = `${labels.longTail} in ${suburb.name} ${suburb.stateCode}. Police-checked, fully insured, eco-friendly. Get a free quote in 60 seconds.`;
 
 const baseSchema: any = {
   '@context': 'https://schema.org',
@@ -145,14 +145,8 @@ const baseSchema: any = {
   },
 };
 
-if (isPriced && 'priceFrom' in service) {
-  baseSchema.offers = {
-    '@type': 'Offer',
-    price: (service as any).priceFrom,
-    priceCurrency: 'AUD',
-    availability: 'https://schema.org/InStock',
-  };
-}
+// No Offer is emitted: prices are no longer published, and a price left in
+// structured data would still be surfaced directly in Google's results.
 
 const schema = [
   baseSchema,

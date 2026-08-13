@@ -13,6 +13,17 @@
   to     = "/sitemap-index.xml"
   status = 200
 
+# ── /quote retired ─────────────────────────────────────────────────────────
+# The quote page is gone; lead capture is the "Get a Free Quote" modal, which
+# intercepts these links client-side. CTAs still point at /quote so that
+# interception is untouched — this redirect only matters for the cases JS never
+# runs: crawlers, no-JS visitors, and anyone with an old bookmark or inbound
+# link. 301 so whatever equity the page holds passes to the contact page.
+[[redirects]]
+  from   = "/quote"
+  to     = "/contact-us"
+  status = 301
+
 # Force HTTPS
 [[redirects]]
   from = "http://naturogroup.com.au/*"
@@ -139,12 +150,12 @@
 # ── /account — login link in TopBar; sends users to the booking app ──────────
 [[redirects]]
   from = "/account"
-  to   = "/quote"
+  to   = "/contact-us"
   status = 301
 
 [[redirects]]
   from = "/account/"
-  to   = "/quote"
+  to   = "/contact-us"
   status = 301
 
 # ── Common WordPress URL patterns → new equivalents ──────────────────────────

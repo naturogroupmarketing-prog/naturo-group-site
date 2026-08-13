@@ -196,7 +196,7 @@ const excluded = [
 const faqs = [
   {
     q: `How much does end of lease cleaning cost in ${suburb.name}?`,
-    a: `End of lease cleaning in ${suburb.name} starts from $560 for a 1-bedroom property. Pricing scales with bedrooms — 2BR $640, 3BR $800, 4BR $960, 5BR $1,280. Get an exact price in 60 seconds online — no phone call required.`,
+    a: `End of lease cleaning in ${suburb.name} is priced on the size and condition of the property. Pricing scales with bedrooms — 2BR $640, 3BR $800, 4BR $960, 5BR $1,280. Get an exact price in 60 seconds online — no phone call required.`,
   },
   {
     q: `Do you offer a bond-back guarantee for ${suburb.name} properties?`,
@@ -241,13 +241,6 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    offers: {
-      '@type': 'Offer',
-      price: '560',
-      priceCurrency: 'AUD',
-      availability: 'https://schema.org/InStock',
-      description: `End of lease cleaning ${suburb.name} from $560`,
-    },
   },
   {
     '@context': 'https://schema.org',
@@ -272,7 +265,7 @@ const schema = [
 
 <Layout
   title={`End of Lease Cleaning ${suburb.name} | Bond Back Guarantee | Naturo Group`}
-  description={`End of lease cleaning in ${suburb.name} from $560. Police-checked team, 72-hr bond-back guarantee. Part of Naturo Group's Greater Geelong service area.`}
+  description={`End of lease cleaning in ${suburb.name}. Police-checked team, 72-hr bond-back guarantee. Part of Naturo Group's Greater Geelong service area.`}
   schema={schema}
 >
   <!-- 1. Hero -->
@@ -288,8 +281,8 @@ const schema = [
     <div class="container-site">
       <div class="grid sm:grid-cols-3">
         <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
-          <p class="text-3xl font-light text-[var(--color-navy)]">$560</p>
-          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
+          <p class="text-3xl font-light text-[var(--color-navy)]">Police-checked</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Every cleaner</p>
         </div>
         <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
           <p class="text-3xl font-light text-[var(--color-navy)]">72hr</p>

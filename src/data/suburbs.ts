@@ -173,7 +173,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Port Macquarie?',
-        a: 'House cleaning in Port Macquarie starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Pricing depends on the size of your home and the type of clean — get a transparent instant price online in under 60 seconds with no obligation.',
+        a: 'The cost of house cleaning in Port Macquarie depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Pricing depends on the size of your home and the type of clean — Get a free quote with no obligation.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Port Macquarie?',
@@ -1283,13 +1283,13 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Byron Bay | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning in Byron Bay & the Northern Rivers. Holiday-let turnovers, regular cleans, police-checked and fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Byron Bay & the Northern Rivers. Holiday-let turnovers, regular cleans, police-checked and fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Suffolk Park', 'Lennox Head', 'Ballina', 'Mullumbimby', 'Bangalow', 'Brunswick Heads', 'Ocean Shores', 'Tyagarah', 'Newrybar', 'Federal', 'Possum Creek', 'Eureka', 'Coopers Shoot', 'Skennars Head', 'Wategos', 'Tallow Beach', 'Myocum', 'Ewingsdale'],
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Byron Bay?',
-        a: 'House cleaning in Byron Bay starts from $153 for a regular clean and $371 for a deep clean. Short-stay and Airbnb turnovers are quoted based on property size and turnover requirements. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+        a: 'The cost of house cleaning in Byron Bay depends on the size and condition of your home and how often you want it cleaned. Short-stay and Airbnb turnovers are quoted based on property size and turnover requirements. Get a free quote — no phone call needed.',
       },
       {
         q: 'Do you do Airbnb and holiday rental turnovers in Byron Bay?',
@@ -1357,7 +1357,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Central Coast | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Gosford', 'Terrigal', 'Avoca Beach', 'Erina', 'Wyong', 'Tuggerah', 'The Entrance', 'Long Jetty', 'Woy Woy', 'Ettalong Beach', 'Umina Beach', 'Killarney Vale', 'Bateau Bay', 'Forresters Beach', 'Kincumber', 'Saratoga', 'Davistown', 'Berkeley Vale', 'Lake Munmorah', 'Toukley'],
   },
@@ -1409,7 +1409,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lismore | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning in Lismore & the Northern Rivers. Insurance, post-flood and regular cleans. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Lismore & the Northern Rivers. Insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Goonellabah', 'Wollongbar', 'Alstonville', 'Casino', 'Nimbin', 'Clunes', 'Dunoon', 'Bexhill', 'Modanville', 'Ruthven', 'Caniaba', 'Tregeagle', 'Wyrallah', 'North Lismore', 'East Lismore', 'South Lismore', 'Girards Hill', 'Loftville', 'Eltham'],
   },
@@ -1461,7 +1461,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newcastle | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Hamilton', 'Merewether', 'The Junction', 'Cooks Hill', 'New Lambton', 'Adamstown', 'Bar Beach', 'Stockton', 'Mayfield', 'Wickham', 'Islington', 'Hamilton East', 'Tighes Hill', 'Carrington', 'Waratah', 'Lambton', 'Charlestown', 'Kahibah', 'Newcastle East', 'Newcastle West'],
   },
@@ -1513,7 +1513,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sutherland Shire | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Cronulla', 'Caringbah', 'Miranda', 'Gymea', 'Engadine', 'Heathcote', 'Sylvania', 'Kirrawee', 'Jannali', 'Como', 'Oyster Bay', 'Bonnet Bay', 'Sylvania Waters', 'Yowie Bay', 'Grays Point', 'Loftus', 'Woronora', 'Menai', 'Illawong', 'Bangor'],
   },
@@ -1565,7 +1565,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sydney | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
   },
@@ -1617,7 +1617,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Tweed Heads | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Banora Point', 'Tweed Heads South', 'Tweed Heads West', 'Bilambil', 'Terranora', 'Cobaki Lakes', 'Kingscliff', 'Casuarina', 'Pottsville', 'Cabarita Beach', 'Hastings Point', 'Bogangar', 'Murwillumbah', 'Chinderah', 'Fingal Head', 'Bilambil Heights', 'Piggabeen'],
   },
@@ -1721,7 +1721,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wollongong | Eco-Friendly Cleaners NSW',
-      description: 'Eco-friendly house cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Fairy Meadow', 'North Wollongong', 'Coniston', 'Mangerton', 'Mount Pleasant', 'Mount Ousley', 'Keiraville', 'Gwynneville', 'Figtree', 'West Wollongong', 'Mount Saint Thomas', 'Cordeaux Heights', 'Unanderra', 'Berkeley', 'Corrimal', 'Bellambi', 'Thirroul', 'Bulli', 'Woonona', 'Austinmer'],
   },
@@ -1773,7 +1773,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Northern Beaches | Eco-Friendly Cleaners Sydney',
-      description: 'Eco-friendly house cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Manly', 'Dee Why', 'Brookvale', 'Collaroy', 'Narrabeen', 'Mona Vale', 'Avalon Beach', 'Newport', 'Palm Beach', 'Whale Beach', 'Freshwater', 'Curl Curl', 'Queenscliff', 'Balgowlah', 'Seaforth', 'Forestville', 'Frenchs Forest', 'Beacon Hill', 'Cromer', 'Warriewood', 'Bayview', 'Church Point'],
   },
@@ -1825,7 +1825,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Eastern Beaches | Eco-Friendly Cleaners Sydney',
-      description: 'Eco-friendly house cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Bondi', 'Bondi Beach', 'Bronte', 'Coogee', 'Tamarama', 'Clovelly', 'Maroubra', 'Randwick', 'Waverley', 'Bondi Junction', 'Queens Park', 'Kensington', 'Kingsford', 'North Bondi', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Little Bay', 'Malabar'],
   },
@@ -2033,7 +2033,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hunters Hill | Eco-Friendly Cleaners Sydney',
-      description: 'Eco-friendly house cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Heritage-home friendly. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Heritage-home friendly. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Woolwich', 'Henley', 'Gladesville', 'Boronia Park', 'Putney', 'Tennyson Point', 'Mortlake', 'Concord', 'Drummoyne', 'Russell Lea', 'Five Dock', 'Abbotsford', 'Chiswick', 'Wareemba', 'Lane Cove', 'Riverview', 'Linley Point', 'Longueville', 'Northwood'],
   },
@@ -2140,7 +2140,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Brisbane | Eco-Friendly Cleaners QLD',
-      description: 'Eco-friendly house cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['New Farm', 'Fortitude Valley', 'Newstead', 'Teneriffe', 'West End', 'South Brisbane', 'Highgate Hill', 'Paddington', 'Milton', 'Toowong', 'Auchenflower', 'Spring Hill', 'Kelvin Grove', 'Red Hill', 'Bardon', 'Ascot', 'Hamilton', 'Bulimba', 'Hawthorne', 'Norman Park', 'Camp Hill', 'Coorparoo', 'Greenslopes'],
   },
@@ -2296,7 +2296,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ipswich | Eco-Friendly Cleaners QLD',
-      description: 'Eco-friendly house cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Brassall', 'Booval', 'Bundamba', 'Eastern Heights', 'Newtown', 'Raceview', 'Silkstone', 'Sadliers Crossing', 'North Ipswich', 'Wulkuraka', 'One Mile', 'Goodna', 'Redbank', 'Springfield', 'Springfield Lakes', 'Augustine Heights', 'Karalee', 'Karana Downs', 'Rosewood', 'Walloon', 'Marburg', 'Yamanto'],
   },
@@ -2348,7 +2348,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sunshine Coast | Eco-Friendly Cleaners QLD',
-      description: 'Eco-friendly house cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
   },
@@ -2452,7 +2452,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Townsville | Eco-Friendly Cleaners QLD',
-      description: 'Eco-friendly house cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['North Ward', 'Belgian Gardens', 'Castle Hill', 'South Townsville', 'Railway Estate', 'Hyde Park', 'Mundingburra', 'Hermit Park', 'Aitkenvale', 'Currajong', 'Gulliver', 'Pimlico', 'Rosslea', 'Cranbrook', 'Vincent', 'Heatley', 'Kirwan', 'Thuringowa Central', 'Annandale', 'Douglas', 'Idalia', 'Pallarenda'],
   },
@@ -2513,7 +2513,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Melbourne?',
-        a: 'House cleaning in Melbourne starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Pricing depends on the size of your home and the service type \u2014 get a transparent instant price online in under 60 seconds, no phone call required.',
+        a: 'The cost of house cleaning in Melbourne depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Pricing depends on the size of your home and the service type \u2014 Get a free quote, no phone call required.',
       },
       {
         q: 'Which Melbourne suburbs do you service?',
@@ -2581,13 +2581,13 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'Eco-Friendly House Cleaning Geelong | Naturo Group',
-      description: 'House cleaning in Geelong from $153. Police-checked, eco-friendly team across Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price.',
+      description: 'House cleaning in Geelong. Police-checked, eco-friendly team across Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price.',
     },
     nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Geelong?',
-        a: 'House cleaning in Geelong starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. The final price depends on the size of your home and the service type — get a transparent instant price online in under 60 seconds, no phone call required.',
+        a: 'The cost of house cleaning in Geelong depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. The final price depends on the size of your home and the service type — Get a free quote, no phone call required.',
       },
       {
         q: 'Which Geelong suburbs do you service?',
@@ -2667,13 +2667,13 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Torquay | Eco-Friendly Surf Coast Cleaners VIC',
-      description: 'Eco-friendly house cleaning in Torquay & the Surf Coast. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Torquay & the Surf Coast. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Jan Juc', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Lorne', 'Ocean Grove', 'Barwon Heads', 'Geelong', 'Belmont', 'Highton'],
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Torquay?',
-        a: 'House cleaning in Torquay starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+        a: 'The cost of house cleaning in Torquay depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Get a free quote — no phone call needed.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Torquay?',
@@ -2747,7 +2747,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Ocean Grove?',
-        a: 'House cleaning in Ocean Grove starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
+        a: 'The cost of house cleaning in Ocean Grove depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Get a free quote.',
       },
       {
         q: 'Do you clean holiday rentals and Airbnb properties in Ocean Grove?',
@@ -2810,7 +2810,7 @@ export const suburbs: Suburb[] = [
       h2Pre: 'Ready for a',
       h2Highlight: 'spotless home',
       h2Post: 'in Barwon Heads?',
-      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get an instant price in under 60 seconds.',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get a free quote in under 60 seconds.',
       trust: 'Trusted by Barwon Heads locals and Bellarine holiday homeowners.',
     },
     seo: {
@@ -2821,7 +2821,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Barwon Heads?',
-        a: 'House cleaning in Barwon Heads starts from $153 for a regular clean and $371 for a deep clean. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+        a: 'The cost of house cleaning in Barwon Heads depends on the size and condition of your home and how often you want it cleaned. Get a free quote — no phone call needed.',
       },
       {
         q: 'Do you clean holiday homes and Airbnb properties in Barwon Heads?',
@@ -2880,7 +2880,7 @@ export const suburbs: Suburb[] = [
       h2Pre: 'Ready for a',
       h2Highlight: 'cleaner home',
       h2Post: 'in Drysdale?',
-      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get an instant price in under 60 seconds.',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get a free quote in under 60 seconds.',
       trust: 'Trusted by Drysdale families and Bellarine homeowners.',
     },
     seo: {
@@ -2891,7 +2891,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Drysdale?',
-        a: 'House cleaning in Drysdale starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
+        a: 'The cost of house cleaning in Drysdale depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Get a free quote.',
       },
       {
         q: 'Do you also service Clifton Springs and Portarlington?',
@@ -2950,7 +2950,7 @@ export const suburbs: Suburb[] = [
       h2Pre: 'Ready for a',
       h2Highlight: 'cleaner home',
       h2Post: 'in Leopold?',
-      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get an instant price in under 60 seconds.',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible scheduling — get a free quote in under 60 seconds.',
       trust: 'Trusted by Leopold families and Bellarine homeowners.',
     },
     seo: {
@@ -2961,7 +2961,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Leopold?',
-        a: 'House cleaning in Leopold starts from $153 for a regular clean and $371 for a deep clean. End-of-lease bond cleans start from $560. Get a transparent instant price online in under 60 seconds.',
+        a: 'The cost of house cleaning in Leopold depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Get a free quote.',
       },
       {
         q: 'Which areas near Leopold do you service?',
@@ -3020,7 +3020,7 @@ export const suburbs: Suburb[] = [
       h2Pre: 'Ready for a',
       h2Highlight: 'spotless home',
       h2Post: 'in Jan Juc?',
-      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get an instant price in under 60 seconds.',
+      sub: 'Eco-friendly products, police-checked cleaners and flexible bookings — get a free quote in under 60 seconds.',
       trust: 'Trusted by Jan Juc locals and Surf Coast holiday homeowners.',
     },
     seo: {
@@ -3031,7 +3031,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Jan Juc?',
-        a: 'House cleaning in Jan Juc starts from $153 for a regular clean and $371 for a deep clean. Get a transparent instant price online in under 60 seconds — no phone call needed.',
+        a: 'The cost of house cleaning in Jan Juc depends on the size and condition of your home and how often you want it cleaned. Get a free quote — no phone call needed.',
       },
       {
         q: 'Do you service Jan Juc and Torquay together?',
@@ -4241,7 +4241,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Dandenong | Eco-Friendly Cleaners VIC',
-      description: 'Eco-friendly house cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Dandenong North', 'Dandenong South', 'Springvale', 'Springvale South', 'Noble Park', 'Noble Park North', 'Keysborough', 'Bangholme', 'Endeavour Hills', 'Hallam', 'Lyndhurst', 'Doveton', 'Lynbrook', 'Eumemmerring', 'Berwick', 'Narre Warren', 'Hampton Park', 'Cranbourne'],
   },
@@ -4293,7 +4293,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mornington | Eco-Friendly Cleaners VIC',
-      description: 'Eco-friendly house cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Mount Eliza', 'Mount Martha', 'Moorooduc', 'Tuerong', 'Somerville', 'Tyabb', 'Hastings', 'Bittern', 'Crib Point', 'Balnarring', 'Merricks', 'Red Hill', 'Red Hill South', 'Main Ridge', 'Arthurs Seat', 'Dromana', 'Safety Beach', 'Rosebud', 'McCrae', 'Capel Sound', 'Rye', 'Sorrento', 'Portsea', 'Blairgowrie'],
   },
@@ -4345,7 +4345,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Narre Warren | Eco-Friendly Cleaners VIC',
-      description: 'Eco-friendly house cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Police-checked, fully insured. Get an instant price.',
+      description: 'Eco-friendly house cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Narre Warren North', 'Narre Warren South', 'Berwick', 'Beaconsfield', 'Beaconsfield Upper', 'Officer', 'Cranbourne', 'Cranbourne North', 'Cranbourne West', 'Cranbourne East', 'Hampton Park', 'Lynbrook', 'Lyndhurst', 'Lysterfield', 'Lysterfield South', 'Hallam', 'Endeavour Hills', 'Doveton', 'Pakenham'],
   },

@@ -12,7 +12,7 @@ const pageUrl = `${site.url}/end-of-lease-cleaning-port-macquarie`;
 const faqs = [
   {
     q: 'How much does end of lease cleaning cost in Port Macquarie?',
-    a: 'Our Port Macquarie bond cleaning starts from $560 for a 1-bedroom property. Prices vary by size, condition and add-ons. Get an instant online price in under 60 seconds — no phone call needed.',
+    a: 'Our Port Macquarie bond cleaning is priced on the size and condition of the property. Prices vary by size, condition and add-ons. Get an instant online price in under 60 seconds — no phone call needed.',
   },
   {
     q: 'Do you offer a bond-back guarantee in Port Macquarie?',
@@ -102,16 +102,8 @@ const excluded = [
   'High-reach areas (above two-step ladder)',
 ];
 
-const pricing = [
-  { size: '1 Bedroom', price: '$560' },
-  { size: '2 Bedroom', price: '$640' },
-  { size: '3 Bedroom', price: '$800' },
-  { size: '4 Bedroom', price: '$960' },
-  { size: '5 Bedroom', price: '$1,280' },
-];
-
 const steps = [
-  { step: '01', title: 'Get an instant price', desc: 'Answer 3 quick questions online. No phone call, no wait — you see your price in under 60 seconds.' },
+  { step: '01', title: 'Get a free quote', desc: 'Answer 3 quick questions online. No phone call, no wait — you see your price in under 60 seconds.' },
   { step: '02', title: 'We confirm your date', desc: 'Our Port Macquarie coordinator books you in and sends a reminder the day before.' },
   { step: '03', title: 'We clean & photograph', desc: 'Our team arrives fully equipped, cleans to inspection standard and photos every room.' },
   { step: '04', title: 'Bond back — guaranteed', desc: 'If your property manager is not satisfied, we return within 72 hours free of charge.' },
@@ -170,13 +162,6 @@ const schema = [
       bestRating: '5',
       worstRating: '1',
     },
-    offers: {
-      '@type': 'Offer',
-      price: '560',
-      priceCurrency: 'AUD',
-      availability: 'https://schema.org/InStock',
-      description: 'End of lease cleaning Port Macquarie from $560',
-    },
   },
   {
     '@context': 'https://schema.org',
@@ -201,7 +186,7 @@ const schema = [
 
 <Layout
   title="End of Lease Cleaning Port Macquarie | Bond Back Guarantee | Naturo Group"
-  description="End of lease cleaning in Port Macquarie from $560. Police-checked team, 72-hr bond-back guarantee. Serving Wauchope, Lake Cathie, Bonny Hills & all of the Hastings region."
+  description="End of lease cleaning in Port Macquarie. Police-checked team, 72-hr bond-back guarantee. Serving Wauchope, Lake Cathie, Bonny Hills & all of the Hastings region."
   schema={schema}
 >
   <!-- Hero -->
@@ -217,8 +202,8 @@ const schema = [
     <div class="container-site">
       <div class="grid sm:grid-cols-3">
         <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
-          <p class="text-3xl font-light text-[var(--color-navy)]">$560</p>
-          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Starting from</p>
+          <p class="text-3xl font-light text-[var(--color-navy)]">Police-checked</p>
+          <p class="text-sm text-[var(--color-slate)] mt-1 uppercase tracking-widest font-semibold">Every cleaner</p>
         </div>
         <div class="px-6 py-8 text-center sm:border-r border-[var(--color-border)]">
           <p class="text-3xl font-light text-[var(--color-navy)]">72hr</p>
@@ -251,20 +236,15 @@ const schema = [
       </div>
       <div class="space-y-4">
         <div class="rounded-2xl bg-white border border-[var(--color-border)] p-6">
-          <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-4">Pricing guide</h3>
-          <div class="divide-y divide-[var(--color-border)]">
-            <div class="flex justify-between py-2 text-xs font-medium text-[var(--color-slate)] border-b border-[var(--color-border)]">
-              <span>Property size</span><span>From</span>
-            </div>
-            {pricing.map((r) => (
-              <div class="flex justify-between py-3">
-                <span class="text-sm text-[var(--color-slate)]">{r.size}</span>
-                <span class="text-sm font-semibold text-[var(--color-navy)]">{r.price}</span>
-              </div>
-            ))}
-          </div>
-          <p class="text-xs text-[var(--color-slate)] mt-3">Prices vary by condition, add-ons and access. Get an exact price instantly online.</p>
-          <a href={ctaPrimary.href} class="mt-4 w-full btn-primary block text-center">Get an Instant Price</a>
+          <h3 class="text-lg font-semibold text-[var(--color-navy)] mb-4">What your quote covers</h3>
+          <ul class="space-y-2 text-sm text-[var(--color-slate)]">
+            <li>Every room cleaned to inspection standard</li>
+            <li>All equipment and eco-friendly products supplied</li>
+            <li>Photo documentation of every room</li>
+            <li>72-hour bond-back guarantee</li>
+          </ul>
+          <p class="text-xs text-[var(--color-slate)] mt-3">Every home is different, so we quote on size, condition and access. Tell us what you need and we'll come back with a free, no-obligation quote.</p>
+          <a href={ctaPrimary.href} class="mt-4 w-full btn-primary block text-center">Get a Free Quote</a>
         </div>
       </div>
     </div>
@@ -344,7 +324,7 @@ const schema = [
         ))}
       </div>
       <div class="text-center mt-10">
-        <a href={ctaPrimary.href} class="btn-primary">Get an Instant Price</a>
+        <a href={ctaPrimary.href} class="btn-primary">Get a Free Quote</a>
       </div>
     </div>
   </section>

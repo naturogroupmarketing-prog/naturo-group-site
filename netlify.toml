@@ -2,6 +2,17 @@
   command = "npm run build"
   publish = "dist"
 
+# ── /sitemap.xml → the real sitemap index ──────────────────────────────────
+# @astrojs/sitemap emits sitemap-index.xml, and robots.txt points at it, so
+# Google finds it correctly. But most SEO auditors (Semrush, Ahrefs, Screaming
+# Frog) probe the conventional /sitemap.xml first and report "missing sitemap"
+# when it 404s. Serving the alias costs nothing and stops the false alarm.
+# 200 rather than 301 so tools that don't follow redirects still see the XML.
+[[redirects]]
+  from   = "/sitemap.xml"
+  to     = "/sitemap-index.xml"
+  status = 200
+
 # Force HTTPS
 [[redirects]]
   from = "http://naturogroup.com.au/*"

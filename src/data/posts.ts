@@ -542,6 +542,12 @@ export const posts: BlogPost[] = [
     intro:
       'The single biggest reason tenants lose part of their bond is missing the small things — the dust on the air-conditioner vents, the grease behind the stove, the scuff on the skirting board next to the front door. Property managers inspect against a fixed list. If you know what’s on it, you can clean to it. This is the checklist our end-of-lease teams work from across NSW, Queensland and Victoria — the same one your real-estate agent likely uses.',
     sections: [
+      {
+        type: 'callout',
+        title: 'About the prices in this guide',
+        body:
+          'The figures below are indicative ranges to help you budget \u2014 they are not a quote. Every home is priced individually on its size, condition, access and any extras you need. Tell us what you\u2019re after and we\u2019ll come back with a free, no-obligation quote.',
+      },
       { type: 'h2', text: 'Before you start' },
       {
         type: 'ul',
@@ -858,6 +864,12 @@ export const posts: BlogPost[] = [
       { id: 'faq', label: 'FAQs' },
     ],
     sections: [
+      {
+        type: 'callout',
+        title: 'About the prices in this guide',
+        body:
+          'The figures below are indicative ranges to help you budget \u2014 they are not a quote. Every home is priced individually on its size, condition, access and any extras you need. Tell us what you\u2019re after and we\u2019ll come back with a free, no-obligation quote.',
+      },
       { type: 'h2', text: 'Why bond cleans fail in Geelong' },
       {
         type: 'p',
@@ -1033,6 +1045,12 @@ export const posts: BlogPost[] = [
       { id: 'faq', label: 'FAQs' },
     ],
     sections: [
+      {
+        type: 'callout',
+        title: 'About the prices in this guide',
+        body:
+          'The figures below are indicative ranges to help you budget \u2014 they are not a quote. Every home is priced individually on its size, condition, access and any extras you need. Tell us what you\u2019re after and we\u2019ll come back with a free, no-obligation quote.',
+      },
       { type: 'h2', text: 'Regular house cleaning prices in Geelong (2026)' },
       {
         type: 'p',
@@ -1370,6 +1388,12 @@ export const posts: BlogPost[] = [
       { id: 'faq', label: 'FAQs' },
     ],
     sections: [
+      {
+        type: 'callout',
+        title: 'About the prices in this guide',
+        body:
+          'The figures below are indicative ranges to help you budget \u2014 they are not a quote. Every home is priced individually on its size, condition, access and any extras you need. Tell us what you\u2019re after and we\u2019ll come back with a free, no-obligation quote.',
+      },
       { type: 'h2', text: 'Why bond cleans fail in Port Macquarie' },
       {
         type: 'p',
@@ -1522,6 +1546,12 @@ export const posts: BlogPost[] = [
       { id: 'faq', label: 'FAQs' },
     ],
     sections: [
+      {
+        type: 'callout',
+        title: 'About the prices in this guide',
+        body:
+          'The figures below are indicative ranges to help you budget \u2014 they are not a quote. Every home is priced individually on its size, condition, access and any extras you need. Tell us what you\u2019re after and we\u2019ll come back with a free, no-obligation quote.',
+      },
       { type: 'h2', text: 'Port Macquarie house cleaning rates in 2026' },
       {
         type: 'p',

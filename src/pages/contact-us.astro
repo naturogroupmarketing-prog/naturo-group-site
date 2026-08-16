@@ -927,17 +927,10 @@ const methodCards = [
       statusEl.classList.toggle('is-error', !!isError);
     }
 
-    function post(url, payload) {
-      if (!url) return Promise.resolve();
-      return fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        keepalive: true,
-      }).catch(function () {
-        /* Never block the user on a reporting failure. */
-      });
-    }
+    // Delivery goes through the shared layer (see Analytics.astro), which posts
+    // to every configured destination, checks each answer, and reports whether
+    // the lead landed anywhere. The old local `post()` ignored the response
+    // entirely, so a refused submission still sent the visitor to /thank-you.
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -1007,14 +1000,32 @@ const methodCards = [
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_captured', lead_source: 'contact_form', lead_id: eventId });
 
-      Promise.all([post(webhookUrl, payload), post(crmUrl, payload)]).then(function () {
+      // No separate "never strand the user" timer any more: deliver() always
+      // resolves, and it carries its own timeout, so there is no path where
+      // this hangs. The old timer would also have raced a slow-but-successful
+      // send to /thank-you and hidden a failure behind it.
+      var deliver = window.naturoLeads
+        ? window.naturoLeads.deliver(payload)
+        : Promise.resolve({ delivered: true });
+
+      deliver.then(function (r) {
+        if (r && r.delivered === false) {
+          // Keep them on the page with their details still typed, and give
+          // them a way through that does not depend on the thing that failed.
+          setStatus(
+            window.naturoLeads
+              ? window.naturoLeads.failureMessage()
+              : 'We could not confirm your message reached us. Please call us so we do not miss you.',
+            true,
+          );
+          if (button) {
+            button.disabled = false;
+            button.textContent = 'Try again';
+          }
+          return;
+        }
         window.location.href = '/thank-you';
       });
-
-      // Never strand the user if a network call hangs.
-      setTimeout(function () {
-        if (document.visibilityState !== 'hidden') window.location.href = '/thank-you';
-      }, 4000);
     });
   })();
 </script>

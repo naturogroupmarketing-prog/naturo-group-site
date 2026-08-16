@@ -117,28 +117,12 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
           attribution: naLm ? naLm.attributionFields() : {},
         };
 
-        // Optional second destination; empty unless one is configured.
-        if (config.webhookUrl) {
-          try {
-            fetch(config.webhookUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-              body: JSON.stringify(payload),
-              keepalive: true,
-            }).catch(() => {});
-          } catch (e) {}
-        }
-        // Also post to the Sophiie CRM (Inbox + auto-capture), non-blocking.
-        if (config.crmUrl) {
-          try {
-            fetch(config.crmUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-              keepalive: true,
-            }).catch(() => {});
-          } catch (e) {}
-        }
+        // Shared delivery layer: every configured destination, each answer
+        // checked. The download below never waits on it — the visitor has
+        // earned the file whether or not our CRM was reachable.
+        const delivery = window.naturoLeads
+          ? window.naturoLeads.deliver(payload)
+          : Promise.resolve({ delivered: true });
 
         // Track conversion.
         try {
@@ -179,6 +163,21 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
               '<p class="lm-body">Check your downloads folder. We\u2019ve also emailed a copy to ' + values.email + '.</p>' +
               (downloadUrl ? '<a class="lm-submit" href="' + downloadUrl + '" download="' + (downloadName || '') + '">Download again</a>' : '');
             right.replaceWith(thanks);
+            // The emailed-copy line is a promise made on the CRM's behalf. If
+            // the CRM never got the lead, no email is coming \u2014 so drop the
+            // claim rather than leave someone waiting on it. The download
+            // itself already happened and is untouched.
+            if (delivery && delivery.then) {
+              delivery.then(function (r) {
+                if (!r || r.delivered !== false) return;
+                const body = thanks.querySelector('.lm-body');
+                if (body) {
+                  body.textContent =
+                    'Check your downloads folder. We could not confirm your details reached us, so if you were expecting a copy by email, please call ' +
+                    ((window.naturoLeads && window.naturoLeads.phone) || 'us') + '.';
+                }
+              });
+            }
           }
         }
       });

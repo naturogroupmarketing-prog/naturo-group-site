@@ -117,9 +117,22 @@ const pageContext = {
   region,
   state,
 };
+
+// Lead delivery config, read by the shared deliverer below. Kept here rather
+// than in each form so all four paths agree on where a lead goes and on what
+// the visitor is told when it does not get there.
+import { leadCapture, site } from '../data/site';
+const leadDelivery = {
+  crmUrl: leadCapture.crmUrl,
+  webhookUrl: leadCapture.webhookUrl,
+  phone: site.phone,
+  phoneHref: site.phoneHref,
+  email: site.email,
+};
 ---
 
 <script type="application/json" id="naturo-page-context" set:html={JSON.stringify(pageContext)}></script>
+<script type="application/json" id="naturo-lead-delivery" set:html={JSON.stringify(leadDelivery)}></script>
 
 <script is:inline>
   (function () {
@@ -327,6 +340,90 @@ const pageContext = {
       leadId: leadId,
       newLeadId: function () { return leadId(true); },
       consentGranted: consentGranted,
+    };
+
+    // ---- Lead delivery -----------------------------------------------------
+    // Every form ships its lead through here rather than firing its own
+    // fetch and ignoring the answer.
+    //
+    // Two things this fixes. First, `fetch` only rejects on a network
+    // failure, so the old code read an HTTP 403 or 500 as success — a lead
+    // the CRM refused looked identical to one it filed. Second, there was
+    // nowhere to notice that: the visitor was thanked either way. At ~350
+    // enquiries a month a quiet afternoon of failures is a dozen customers
+    // who think they contacted us and did not.
+    //
+    // So: both destinations are posted independently, both are checked, and
+    // the caller is told whether the lead landed ANYWHERE. It only reports
+    // failure when every destination failed.
+    var lead = {};
+    try {
+      var lel = document.getElementById('naturo-lead-delivery');
+      if (lel) lead = JSON.parse(lel.textContent || '{}');
+    } catch (e) {}
+
+    // Long enough to cover a cold start on the CRM host, short enough that a
+    // visitor is not left staring at a spinner.
+    var DELIVER_TIMEOUT_MS = 12000;
+
+    function postLead(url, body, contentType) {
+      if (!url) return Promise.resolve(null); // destination not configured
+      var ctl = typeof AbortController === 'function' ? new AbortController() : null;
+      var timer = ctl ? setTimeout(function () { ctl.abort(); }, DELIVER_TIMEOUT_MS) : null;
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': contentType },
+        body: body,
+        keepalive: true,
+        signal: ctl ? ctl.signal : undefined,
+      })
+        .then(function (res) { return !!res && res.ok; })
+        .catch(function () { return false; })
+        .then(function (ok) { if (timer) clearTimeout(timer); return ok; });
+    }
+
+    /**
+     * Deliver one lead to every configured destination.
+     *
+     * Resolves { crm, backup, delivered } — never rejects, so a caller can
+     * always render an outcome. `delivered` is false only when nothing
+     * accepted the lead; that is the case worth interrupting someone for.
+     */
+    function deliverLead(payload) {
+      var json = JSON.stringify(payload);
+      return Promise.all([
+        postLead(lead.crmUrl, json, 'application/json'),
+        // text/plain is CORS-safelisted, so the browser sends no preflight.
+        // Google Apps Script web apps do not answer preflight requests, which
+        // is what makes them usable as a free backup at all; doPost reads the
+        // body with JSON.parse either way.
+        postLead(lead.webhookUrl, json, 'text/plain;charset=utf-8'),
+      ]).then(function (r) {
+        var configured = [lead.crmUrl, lead.webhookUrl].filter(Boolean).length;
+        return {
+          crm: r[0] === true,
+          backup: r[1] === true,
+          // Nothing configured means nothing to fail — treat as delivered so
+          // a misconfiguration can never scare a visitor off the site.
+          delivered: configured === 0 || r[0] === true || r[1] === true,
+        };
+      });
+    }
+
+    /** What to tell someone whose enquiry did not get through. */
+    function failureMessage() {
+      var phone = lead.phone || '';
+      return phone
+        ? 'We could not confirm your enquiry reached us. Please call ' + phone + ' so we do not miss you.'
+        : 'We could not confirm your enquiry reached us. Please call us so we do not miss you.';
+    }
+
+    window.naturoLeads = {
+      deliver: deliverLead,
+      failureMessage: failureMessage,
+      phone: lead.phone || '',
+      phoneHref: lead.phoneHref || '',
+      email: lead.email || '',
     };
 
     // Baseline page context for GA4/GTM — no PII, no campaign params.

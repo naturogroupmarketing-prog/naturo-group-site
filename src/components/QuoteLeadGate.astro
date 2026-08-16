@@ -380,13 +380,35 @@ const lc = leadCapture;
       submitted = true;
       state.notes = (form.elements['notes'].value || '').trim();
       try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
-      shipLead(state);
+      var delivery = shipLead(state);
+      // Show the confirmation immediately — waiting on the network before
+      // acknowledging a submit is its own kind of bad — then correct it if the
+      // lead turns out not to have reached anywhere. Telling someone they are
+      // "all set" when nothing received their details is the worse failure.
       showStep('done', 'next');
+      if (delivery && delivery.then) {
+        delivery.then(function (r) {
+          if (!r || r.delivered) return;
+          var done = form.querySelector('[data-step="done"]');
+          if (!done) return;
+          done.classList.add('is-undelivered');
+          var heading = done.querySelector('.qlg-heading');
+          var lede = done.querySelector('.qlg-lede');
+          if (heading) heading.textContent = 'Please give us a call';
+          if (lede) {
+            lede.textContent = window.naturoLeads
+              ? window.naturoLeads.failureMessage()
+              : 'We could not confirm your enquiry reached us. Please call us so we do not miss you.';
+          }
+        });
+      }
     }
 
     // ---- Ship the lead to every destination (unchanged backend) ---------
     function shipToWebhook(payload) {
-      if (!config.webhookUrl && !config.crmUrl) return;
+      // No early return on "nothing configured" — the caller now depends on a
+      // promise coming back, and the shared layer already reports an
+      // unconfigured setup as delivered rather than as a failure.
       var serviceLabels = { regular: 'Regular Home Cleaning', oneoff: 'Deep Clean', specialty: 'NDIS, DVA, Aged Care & Insurance' };
       var serviceLabel = payload.serviceLabel || serviceLabels[payload.service] || payload.service || '';
       // Sophiie CRM lead-intake accepts { name, email, phone, message }; fold the
@@ -412,16 +434,11 @@ const lc = leadCapture;
         form_location: 'quote_lead_gate',
         attribution: payload.attribution || {},
       };
-      if (config.webhookUrl) {
-        try {
-          fetch(config.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crmPayload), keepalive: true }).catch(function () {});
-        } catch (e) {}
-      }
-      if (config.crmUrl) {
-        try {
-          fetch(config.crmUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crmPayload), keepalive: true }).catch(function () {});
-        } catch (e) {}
-      }
+      // Delivery (and the checking of it) lives in the shared layer so all
+      // four lead paths behave the same way. Returns a promise the caller
+      // uses to correct the confirmation screen if nothing accepted the lead.
+      if (window.naturoLeads) return window.naturoLeads.deliver(crmPayload);
+      return Promise.resolve({ delivered: true });
     }
     function shipToMetaPixel(payload) {
       if (!config.metaPixelId || typeof window.fbq !== 'function') return;
@@ -502,10 +519,11 @@ const lc = leadCapture;
         attribution: na ? na.attributionFields() : {},
         page: { url: window.location.href, path: window.location.pathname, title: document.title },
       };
-      shipToWebhook(payload);
+      var delivery = shipToWebhook(payload);
       shipToMetaPixel(payload);
       shipToGoogleAds(payload);
       shipToDataLayer(payload);
+      return delivery;
     }
 
     // ---- Step 2: postcode → suburb combobox + serviced check ------------
@@ -1027,6 +1045,10 @@ const lc = leadCapture;
     animation: qlg-check-pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   @keyframes qlg-check-pop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.12); opacity: 1; } 100% { transform: scale(1); } }
+
+  /* The confirmation stops reading as a success when nothing received the
+     lead — a green tick over "please call us" would undo the message. */
+  .is-undelivered .qlg-done-check { background: rgba(217, 119, 6, 0.12); color: #d97706; }
 
   /* ============================ Mobile ============================== */
   @media (max-width: 480px) {

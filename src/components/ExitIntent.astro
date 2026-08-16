@@ -207,27 +207,11 @@ const lc = leadCapture;
         form_location: 'exit_intent',
         attribution: na ? na.attributionFields() : {},
       };
-      if (config.webhookUrl) {
-        try {
-          fetch(config.webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(payload),
-            keepalive: true,
-          }).catch(() => {});
-        } catch (e) {}
-      }
-      // Also post to the Sophiie CRM (Inbox + auto-capture), non-blocking.
-      if (config.crmUrl) {
-        try {
-          fetch(config.crmUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-            keepalive: true,
-          }).catch(() => {});
-        } catch (e) {}
-      }
+      // Shared delivery layer: posts every configured destination, checks each
+      // answer, and reports whether the lead landed anywhere at all.
+      const delivery = window.naturoLeads
+        ? window.naturoLeads.deliver(payload)
+        : Promise.resolve({ delivered: true });
       try {
         // Spreading `payload` here previously pushed name/phone/email into the
         // dataLayer in plaintext. Send only non-identifying dimensions; the
@@ -249,6 +233,7 @@ const lc = leadCapture;
         if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { source: 'exit_intent' });
       } catch (e) {}
       try { sessionStorage.setItem(SESSION_LEAD, JSON.stringify(payload)); } catch (e) {}
+      return delivery;
     }
 
     form.addEventListener('submit', function (ev) {
@@ -263,7 +248,7 @@ const lc = leadCapture;
       if (!values.name || !values.phone || !values.email) return;
       submit.disabled = true;
       submit.textContent = 'Sending…';
-      shipLead(values);
+      const delivery = shipLead(values);
       // Show a short thank-you state in place of the form.
       const card = overlay.querySelector('.exi-card');
       if (card) {
@@ -273,6 +258,21 @@ const lc = leadCapture;
             '<p class="exi-sub">Your $30 first-clean code is on its way. Browse our services or grab an instant price whenever you\u2019re ready.</p>' +
             '<a href="/quote" class="exi-submit" style="display:inline-block;text-align:center;text-decoration:none;">Get my instant price</a>' +
           '</div>';
+      }
+      // Promising a code that is never coming is worse here than anywhere else
+      // on the site, so correct the panel if nothing received the lead.
+      if (delivery && delivery.then) {
+        delivery.then(function (r) {
+          if (!r || r.delivered !== false || !card) return;
+          const title = card.querySelector('.exi-title');
+          const sub = card.querySelector('.exi-sub');
+          if (title) title.textContent = 'Please give us a call';
+          if (sub) {
+            sub.textContent = window.naturoLeads
+              ? window.naturoLeads.failureMessage()
+              : 'We could not confirm your details reached us. Please call us so we do not miss you.';
+          }
+        });
       }
     });
   })();

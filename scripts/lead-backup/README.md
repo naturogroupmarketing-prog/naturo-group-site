@@ -26,25 +26,46 @@ Basin 100, Netlify Forms 100, Web3Forms 250 — so the choice was pay again or
 self-host. Apps Script is free and 350/month is far below any quota that
 matters.
 
-## Setup
+## Live setup
 
-See the deployment steps at the top of `Code.gs`. In short: make a Sheet, paste
-the script, deploy as a web app with access set to **Anyone**, and put the
-`/exec` URL into `webhookUrl` in `src/data/site.ts`.
+Deployed 16 August 2026 under `naturogroupmarketing@gmail.com`:
+
+| | |
+|---|---|
+| Spreadsheet | **NATURO — Website leads (backup)**, tab `Leads` |
+| Apps Script project | **NATURO lead backup** (bound to that sheet) |
+| Deployment | Web app · Execute as **Me** · Access **Anyone** |
+| Wired into | `leadCapture.webhookUrl` in `src/data/site.ts` |
 
 Re-deploy a **new version** after any edit — Apps Script serves the deployed
-version, not the saved one.
+version, not the saved one, so editing `Code.gs` alone changes nothing. The
+`/exec` URL survives a re-deploy, so the site needs no change when you do.
+
+To rebuild it from scratch, follow the steps at the top of `Code.gs`.
 
 ## Checking it works
 
 ```bash
-curl -s "<YOUR_EXEC_URL>"
+curl -sL "$(grep -o "https://script.google.com[^']*" ../../src/data/site.ts | head -1)"
 # → {"ok":true,"service":"naturo-lead-backup"}
 ```
 
-To test the real path, submit a form on the site and confirm a row appears.
-Note that the `/exec` URL 302-redirects to `googleusercontent.com`; that is
-normal, and `curl -L` follows it.
+That only proves the deployment answers. To test the real path, submit a form on
+the site and confirm a row appears in the Sheet AND a conversation appears in
+the CRM Inbox — the two are independent, and the whole point is that either can
+fail without the other.
+
+`selfTest()` in the editor writes one row directly, which isolates a
+spreadsheet-permission problem from a request-delivery one.
+
+Two things that will waste your time otherwise:
+
+- The `/exec` URL 302-redirects to `googleusercontent.com`. `curl -L` follows it
+  but downgrades POST to GET and drops the body, so a curl POST can look like a
+  silent failure. Use the browser, or `curl -L --post302`.
+- Google Sheets does not always repaint a newly appended row in an idle tab.
+  Press <kbd>Cmd</kbd>+<kbd>↓</kbd> from A1 before concluding nothing was
+  written — this cost an hour once.
 
 ## The CORS constraint
 

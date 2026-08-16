@@ -16,8 +16,7 @@
  *  1. Create a Google Sheet. Name the first tab "Leads". Note its ID from the
  *     URL: docs.google.com/spreadsheets/d/<THIS PART>/edit
  *  2. Extensions → Apps Script. Paste this file over Code.gs.
- *  3. Put the ID in SHEET_ID below. Set ALERT_EMAIL if you want an email per
- *     lead ('' disables it).
+ *  3. Put the ID in SHEET_ID below.
  *  4. Deploy → New deployment → type "Web app".
  *       Execute as:        Me
  *       Who has access:    Anyone            ← required; the website is not
@@ -42,8 +41,20 @@ var SHEET_ID = 'PASTE_SHEET_ID_HERE';
 /** Tab within that spreadsheet. Created automatically if missing. */
 var SHEET_NAME = 'Leads';
 
-/** Email a copy of each lead here. Set to '' to turn the emails off. */
-var ALERT_EMAIL = '';
+/**
+ * Deliberately no email alerting.
+ *
+ * Apps Script derives its OAuth scopes from the code rather than from what
+ * actually runs, so any reference to Google's mail service — even one that is
+ * switched off and never called — makes this script request permission to send
+ * email as the account owner. That is a wide permission to hand an unverified
+ * script for no benefit: the Sheet is the record, and the CRM Inbox is already
+ * the notification. The reference is left out entirely, including in prose,
+ * because the scope scanner is not always careful about the difference.
+ *
+ * To add alerts later, send mail from doPost and re-deploy. Google will ask for
+ * the extra scope then — which is the right moment to weigh it.
+ */
 
 /** Column order. Changing this only affects rows written from here on. */
 var HEADERS = [
@@ -79,7 +90,6 @@ function doPost(e) {
   try {
     var payload = parseBody(e);
     appendLead(payload);
-    if (ALERT_EMAIL) sendAlert(payload);
     return isNativeFormPost ? redirectOut(THANK_YOU_URL) : jsonOut({ ok: true });
   } catch (err) {
     // Logged rather than swallowed: a failure here is invisible to the site
@@ -114,8 +124,39 @@ function parseBody(e) {
   throw new Error('empty request body');
 }
 
+/**
+ * The spreadsheet to write to.
+ *
+ * A container-bound script (one created from Extensions → Apps Script inside a
+ * Sheet) is often granted the narrow "current spreadsheet only" scope, under
+ * which openById throws even for the very sheet the script is attached to.
+ * getActive() is the correct call in that case and needs no wider permission,
+ * so it is tried first; openById remains the fallback for a standalone copy.
+ */
+function targetSpreadsheet() {
+  try {
+    var active = SpreadsheetApp.getActiveSpreadsheet();
+    if (active) return active;
+  } catch (err) {
+    // Not bound to a spreadsheet — fall through to the id.
+  }
+  return SpreadsheetApp.openById(SHEET_ID);
+}
+
+/** Run this from the editor to check the sheet write in isolation. */
+function selfTest() {
+  appendLead({
+    name: 'Self test — please delete',
+    phone: '0400 000 000',
+    email: 'selftest@example.com',
+    message: 'Written by selfTest() from the Apps Script editor.',
+    form_location: 'self_test',
+  });
+  return 'appended OK';
+}
+
 function appendLead(p) {
-  var ss = SpreadsheetApp.openById(SHEET_ID);
+  var ss = targetSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
@@ -146,25 +187,6 @@ function appendLead(p) {
     str(attr.referrer),
     JSON.stringify(p).slice(0, 45000), // cell limit is 50k characters
   ]);
-}
-
-function sendAlert(p) {
-  var name = str(p.name) || 'Someone';
-  var lines = [
-    'Name:     ' + str(p.name),
-    'Phone:    ' + str(p.phone),
-    'Email:    ' + str(p.email),
-    'Service:  ' + str(p.service || p.serviceLabel),
-    'Location: ' + str(p.location || p.service_location || p.suburb),
-    'Form:     ' + str(p.form_location || p.source),
-    '',
-    str(p.message || p.notes),
-  ];
-  MailApp.sendEmail({
-    to: ALERT_EMAIL,
-    subject: 'Website enquiry — ' + name,
-    body: lines.join('\n'),
-  });
 }
 
 function str(v) {

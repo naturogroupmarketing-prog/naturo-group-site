@@ -110,12 +110,18 @@ export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
 //                    can fire on it.
 // ---------------------------------------------------------------------------
 export const leadCapture = {
-  // Email notification via Formspree — kept as an instant email alert / backup.
-  webhookUrl: 'https://formspree.io/f/xyklabez',
-  // Sophiie AI-reception CRM lead-intake (public, CORS-open). Every form posts
-  // here IN ADDITION to webhookUrl, so leads land in the CRM Inbox AND email.
+  // Empty: leads used to be double-posted to Formspree as an email alert, which
+  // was retired once the CRM below became the system of record. Set this to any
+  // JSON-accepting endpoint to bring a second destination back — every form
+  // posts to webhookUrl and crmUrl independently, so neither depends on the
+  // other and either can be left empty.
+  webhookUrl: '',
+  // Sophiie AI-reception CRM lead-intake (public, CORS-open). This is now the
+  // ONLY destination a lead is delivered to, so a failure here loses it.
   // Creates a Customer (status LEAD, source "Web form") + an Inbox message and
-  // runs the CRM's AI auto-capture. Requires the webform widget enabled in Sophiie.
+  // runs the CRM's AI auto-capture. Requires the webform widget enabled in
+  // Sophiie (Settings → widgets); if it is switched off this endpoint answers
+  // 403 and the lead is dropped.
   crmUrl: 'https://sophiie-web.onrender.com/api/widget/lead',
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)

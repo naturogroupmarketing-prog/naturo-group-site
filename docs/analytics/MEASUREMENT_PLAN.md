@@ -143,8 +143,10 @@ Also fixed: the phone-click tracker claimed in its comment to be consent-gated
 but never actually checked consent. It now does. The phone number itself is no
 longer sent as an event parameter.
 
-Contact details still flow to Formspree and the Sophiie CRM in the POST body —
-that's the intended lead-delivery path, not an analytics surface.
+Contact details still flow to the Sophiie CRM in the POST body — that's the
+intended lead-delivery path, not an analytics surface. (Formspree was a second
+destination alongside it until August 2026, when it was retired; `webhookUrl`
+in `src/data/site.ts` is the slot it occupied.)
 
 Landing-page URLs are recorded **without query strings**, so a stray `?email=`
 can never enter attribution.

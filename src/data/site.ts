@@ -110,16 +110,26 @@ export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
 //                    can fire on it.
 // ---------------------------------------------------------------------------
 export const leadCapture = {
-  // Second destination: a Google Apps Script web app that appends every lead to
-  // the "NATURO — Website leads (backup)" spreadsheet. It replaced Formspree,
-  // which was retired in August 2026 — at ~350 enquiries a month every hosted
-  // free tier was too small, and this costs nothing. Source and deployment
-  // notes live in scripts/lead-backup/.
+  // Destinations posted ALONGSIDE crmUrl, each independently: one failing does
+  // not affect the others, and the visitor is only warned if every one of them
+  // fails. Order matters only in that the first is also the no-JS form target
+  // on the contact page, so it has to be something that can answer a plain
+  // browser form post.
   //
-  // Posted as text/plain, NOT application/json: Apps Script does not answer
-  // CORS preflight, so a JSON content type fails before the request is sent.
-  // The shared deliverer in Analytics.astro handles that; do not "fix" it.
-  webhookUrl: 'https://script.google.com/macros/s/AKfycbx3d4tNS99N9ZQQBLmz476_rfZGEfncX9ubNp3TV2dWdGf9b3vuat1ap1vyds_Zt7Y/exec',
+  // Content type is chosen per host by the deliverer in Analytics.astro:
+  // Apps Script gets text/plain because it does not answer CORS preflight and
+  // would reject application/json before the request was even sent; everything
+  // else gets JSON. Do not "simplify" that to one content type.
+  webhookUrls: [
+    // Appends every lead to the "NATURO — Website leads (backup)" sheet.
+    // Source and deployment notes in scripts/lead-backup/.
+    'https://script.google.com/macros/s/AKfycbx3d4tNS99N9ZQQBLmz476_rfZGEfncX9ubNp3TV2dWdGf9b3vuat1ap1vyds_Zt7Y/exec',
+    // Formspree — the original email alert. Kept connected while the new
+    // pipeline is being trialled; remove this line (and the third-party
+    // paragraph in cookies-data-policy.astro) once the trial is over and the
+    // subscription is cancelled.
+    'https://formspree.io/f/xyklabez',
+  ],
   // Sophiie AI-reception CRM lead-intake (public, CORS-open). This is now the
   // ONLY destination a lead is delivered to, so a failure here loses it.
   // Creates a Customer (status LEAD, source "Web form") + an Inbox message and

@@ -124,7 +124,7 @@ const pageContext = {
 import { leadCapture, site } from '../data/site';
 const leadDelivery = {
   crmUrl: leadCapture.crmUrl,
-  webhookUrl: leadCapture.webhookUrl,
+  webhookUrls: leadCapture.webhookUrls,
   phone: site.phone,
   phoneHref: site.phoneHref,
   email: site.email,
@@ -383,29 +383,49 @@ const leadDelivery = {
     }
 
     /**
+     * Content type for a backup destination.
+     *
+     * text/plain is CORS-safelisted, so the browser sends no preflight. Google
+     * Apps Script web apps do not answer preflight requests, which is the only
+     * reason they are usable as a free backup at all; doPost parses the body as
+     * JSON either way. Everything else takes ordinary JSON.
+     */
+    function contentTypeFor(url) {
+      return String(url).indexOf('script.google.com') !== -1
+        ? 'text/plain;charset=utf-8'
+        : 'application/json';
+    }
+
+    /**
      * Deliver one lead to every configured destination.
      *
-     * Resolves { crm, backup, delivered } — never rejects, so a caller can
-     * always render an outcome. `delivered` is false only when nothing
-     * accepted the lead; that is the case worth interrupting someone for.
+     * Resolves { crm, backups, delivered } — never rejects, so a caller can
+     * always render an outcome. `delivered` is false only when NOTHING accepted
+     * the lead; that is the case worth interrupting someone for. One
+     * destination being down is not the visitor's problem, which is the whole
+     * reason for having more than one.
      */
     function deliverLead(payload) {
       var json = JSON.stringify(payload);
-      return Promise.all([
-        postLead(lead.crmUrl, json, 'application/json'),
-        // text/plain is CORS-safelisted, so the browser sends no preflight.
-        // Google Apps Script web apps do not answer preflight requests, which
-        // is what makes them usable as a free backup at all; doPost reads the
-        // body with JSON.parse either way.
-        postLead(lead.webhookUrl, json, 'text/plain;charset=utf-8'),
-      ]).then(function (r) {
-        var configured = [lead.crmUrl, lead.webhookUrl].filter(Boolean).length;
+      var backups = (lead.webhookUrls || []).filter(Boolean);
+      return Promise.all(
+        [postLead(lead.crmUrl, json, 'application/json')].concat(
+          backups.map(function (url) {
+            return postLead(url, json, contentTypeFor(url));
+          }),
+        ),
+      ).then(function (r) {
+        var configured = (lead.crmUrl ? 1 : 0) + backups.length;
         return {
           crm: r[0] === true,
-          backup: r[1] === true,
+          backups: r.slice(1),
           // Nothing configured means nothing to fail — treat as delivered so
           // a misconfiguration can never scare a visitor off the site.
-          delivered: configured === 0 || r[0] === true || r[1] === true,
+          delivered:
+            configured === 0 ||
+            r.some(function (ok) {
+              return ok === true;
+            }),
         };
       });
     }

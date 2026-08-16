@@ -252,7 +252,7 @@ const methodCards = [
       <form
         class="ct-form"
         id="ct-contact-form"
-        action={leadCapture.webhookUrl}
+        action={leadCapture.webhookUrls[0]}
         method="post"
         aria-describedby="ct-form-note"
       >
@@ -903,8 +903,8 @@ const methodCards = [
 <script
   is:inline
   define:vars={{
-    webhookUrl: leadCapture.webhookUrl,
-    crmUrl: leadCapture.crmUrl,
+    // Lead destinations are not listed here any more: delivery goes through
+    // window.naturoLeads (Analytics.astro), which owns the whole list.
     googleAdsId: leadCapture.googleAdsId,
     googleAdsLabel: leadCapture.googleAdsLabel,
   }}

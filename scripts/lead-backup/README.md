@@ -83,6 +83,48 @@ as JSON. **Do not change the site to send `application/json` to this URL** — i
 will silently stop working, which is precisely the failure mode this whole
 exercise was about.
 
+## What it refuses
+
+The `/exec` URL has to be public — the website is not signed in as anyone — and
+it is printed in the page source, so anything on the internet can post to it.
+Three bot submissions did, on 17 August 2026: US phone numbers, throwaway
+addresses, gibberish message bodies. They reached this Sheet. They did not reach
+the CRM, because `captureLead` requires a name plus a contact — luck rather than
+design, and the new enquiry alert raises the cost of being wrong, since anything
+that gets through is now emailed to staff.
+
+`spamReason()` in `Code.gs` refuses a submission that:
+
+| Rule | What it catches |
+|---|---|
+| the spam trap has a value | a bot that walks the DOM and fills every field |
+| no `name` and no `full_name` | the three that arrived — same bar the CRM applies |
+| no `form_location` and no `lead_id` | posted straight at the URL, not through a form |
+
+The rules read the *shape*, never the message text. Judging text would
+eventually throw away a real enquiry written in a hurry, and losing one customer
+costs more than filing a hundred bot posts.
+
+Refusals are answered exactly like successes — a bot that can see which rule
+caught it can tune around it — and are parked on the **Rejected** tab with the
+reason, rather than dropped. A gate that silently discards is a gate nobody can
+audit: if a rule is ever wrong, the enquiries it ate would be gone with no trace
+they had arrived. Check that tab if someone says their enquiry vanished.
+
+The trap itself is an unlabelled input placed off-screen (`.nl-hp` in
+`src/styles/global.css`), hidden from assistive technology and skipped by the
+keyboard. Off-screen rather than `display:none`, because a bot that skips hidden
+inputs would walk straight past it. `deliverLead()` reads it in the one place
+every form's delivery already passes through, so a new form cannot forget to
+wire it up.
+
+```bash
+node scripts/lead-backup/spam-gate.test.mjs
+```
+
+That runs the rules against the real rows — four genuine enquiries and the three
+bot posts — without touching the deployment.
+
 ## What it does not do
 
 It is a record, not a workflow. Nothing reads the Sheet, nothing assigns or

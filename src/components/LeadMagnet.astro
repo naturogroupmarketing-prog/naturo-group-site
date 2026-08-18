@@ -52,6 +52,10 @@ const formId = `lm-${filename}-${Math.random().toString(36).slice(2, 8)}`;
         </div>
 
         <form class="lm-form" novalidate data-form-id={formId} data-download={downloadUrl} data-download-name={downloadName} data-filename={filename}>
+      <!-- Spam trap; see .nl-hp in global.css. -->
+      <div class="nl-hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+      </div>
           <label class="lm-field">
             <span class="lm-label">Full name</span>
             <input class="lm-input" type="text" name="name" required autocomplete="name" placeholder="Your name" />

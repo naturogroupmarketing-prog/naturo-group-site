@@ -397,6 +397,23 @@ const leadDelivery = {
     }
 
     /**
+     * Whatever a bot typed into the spam trap, or '' if nothing did.
+     *
+     * Read here, in the one place every form's delivery passes through, rather
+     * than in four separate payload builders — a trap that a new form forgets
+     * to wire up is worse than no trap, because it looks like it is working.
+     * The value is only carried; the receivers decide what it means.
+     */
+    function honeypotValue() {
+      var fields = document.querySelectorAll('input[name="_gotcha"]');
+      for (var i = 0; i < fields.length; i++) {
+        var v = String(fields[i].value || '').trim();
+        if (v) return v;
+      }
+      return '';
+    }
+
+    /**
      * Deliver one lead to every configured destination.
      *
      * Resolves { crm, backups, delivered } — never rejects, so a caller can
@@ -406,7 +423,8 @@ const leadDelivery = {
      * reason for having more than one.
      */
     function deliverLead(payload) {
-      var json = JSON.stringify(payload);
+      var trap = honeypotValue();
+      var json = JSON.stringify(trap ? Object.assign({}, payload, { _gotcha: trap }) : payload);
       var backups = (lead.webhookUrls || []).filter(Boolean);
       return Promise.all(
         [postLead(lead.crmUrl, json, 'application/json')].concat(

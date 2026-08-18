@@ -257,6 +257,21 @@ const methodCards = [
         aria-describedby="ct-form-note"
       >
         <div class="ct-form-grid">
+          <!--
+            Spam trap. Hidden from sight and from assistive technology, skipped
+            by the keyboard, and excluded from autofill, so no person can fill
+            it in — but a bot that walks the DOM and completes every field will.
+            The receivers reject any submission that carries a value here.
+            Paired with the hidden form_location below, which is what the
+            JavaScript-off fallback uses to prove it came from this page.
+          -->
+          <div class="nl-hp" aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+          <input type="hidden" name="form_location" value="contact_page" />
           <label class="ct-field">
             <span class="ct-field-label">Full name<span aria-hidden="true">*</span></span>
             <input class="ct-input" type="text" name="full_name" autocomplete="name" required />

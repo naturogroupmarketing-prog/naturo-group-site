@@ -42,6 +42,16 @@ var SHEET_ID = 'PASTE_SHEET_ID_HERE';
 var SHEET_NAME = 'Leads';
 
 /**
+ * Tab rejected submissions are parked in. Created automatically if missing.
+ *
+ * Spam is quarantined rather than dropped. A gate that silently discards is a
+ * gate nobody can audit: if a rule ever turns out to be wrong, the enquiries it
+ * ate would be gone with no trace that they had ever arrived. Here they are one
+ * tab away, with the reason recorded beside them.
+ */
+var SPAM_SHEET_NAME = 'Rejected';
+
+/**
  * Deliberately no email alerting.
  *
  * Apps Script derives its OAuth scopes from the code rather than from what
@@ -78,6 +88,37 @@ var HEADERS = [
 /** Where a browser that posted the form natively should end up. */
 var THANK_YOU_URL = 'https://naturogroup.com.au/thank-you';
 
+/**
+ * Why this submission is not a lead, or null if it is one.
+ *
+ * Three bot submissions reached this Sheet on 17 August 2026 — US phone
+ * numbers, throwaway addresses, gibberish bodies. What gave them away was not
+ * the content but the shape: no name, and none of the markers the website's own
+ * forms always attach. They had been posted straight at this URL, which is
+ * public by necessity (the site is not signed in as anyone) and printed in the
+ * page source. So the endpoint has to decide for itself what a lead looks like.
+ *
+ * The rules are shape-only and deliberately dull. Judging the message text
+ * would eventually throw away a real enquiry written in a hurry, and losing one
+ * customer costs more than filing a hundred bot posts.
+ */
+function spamReason(p) {
+  // Filled by a bot that reads the form and completes every field. Invisible
+  // and unlabelled for people, so any value at all is a machine.
+  if (str(p._gotcha).trim() || str(p.honeypot).trim()) return 'honeypot';
+
+  // The CRM requires a name too, which is why these three never reached it.
+  if (!str(p.name).trim() && !str(p.full_name).trim()) return 'no name';
+
+  // Every path from the website carries one of these: the JavaScript one sets
+  // both, and the no-JavaScript fallback posts a hidden form_location. Neither
+  // is guessable from the outside without reading the site, so their absence
+  // means the post did not come through a form on the site.
+  if (!str(p.form_location).trim() && !str(p.lead_id).trim()) return 'no form marker';
+
+  return null;
+}
+
 function doPost(e) {
   // A native form post (no JavaScript) arrives form-encoded and the browser
   // NAVIGATES to whatever comes back, so it gets a page rather than JSON. The
@@ -89,6 +130,13 @@ function doPost(e) {
   );
   try {
     var payload = parseBody(e);
+    var rejected = spamReason(payload);
+    if (rejected) {
+      appendRejected(payload, rejected);
+      // Answered exactly like a success. A bot that can see which rule caught
+      // it can tune around it, and the site's own forms never reach here.
+      return isNativeFormPost ? redirectOut(THANK_YOU_URL) : jsonOut({ ok: true });
+    }
     appendLead(payload);
     return isNativeFormPost ? redirectOut(THANK_YOU_URL) : jsonOut({ ok: true });
   } catch (err) {
@@ -156,16 +204,10 @@ function selfTest() {
 }
 
 function appendLead(p) {
-  var ss = targetSpreadsheet();
-  var sheet = ss.getSheetByName(SHEET_NAME);
-  if (!sheet) {
-    sheet = ss.insertSheet(SHEET_NAME);
-  }
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(HEADERS);
-    sheet.setFrozenRows(1);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
-  }
+  // Writes straight to the sheet: the spam gate lives in doPost, so selfTest()
+  // still isolates a permission problem from a delivery one without having to
+  // satisfy rules that only apply to something arriving off the internet.
+  var sheet = sheetNamed(SHEET_NAME, HEADERS);
 
   var attr = p.attribution && typeof p.attribution === 'object' ? p.attribution : {};
   sheet.appendRow([
@@ -187,6 +229,32 @@ function appendLead(p) {
     str(attr.referrer),
     JSON.stringify(p).slice(0, 45000), // cell limit is 50k characters
   ]);
+}
+
+/** Park a rejected submission on the quarantine tab, with the reason. */
+function appendRejected(p, reason) {
+  var sheet = sheetNamed(SPAM_SHEET_NAME, ['Received', 'Reason', 'Name', 'Phone', 'Email', 'Raw JSON']);
+  sheet.appendRow([
+    new Date(),
+    reason,
+    str(p.name || p.full_name),
+    p.phone ? "'" + str(p.phone) : '',
+    str(p.email),
+    JSON.stringify(p).slice(0, 45000),
+  ]);
+}
+
+/** A tab by name, created with the given header row if it does not exist. */
+function sheetNamed(name, headers) {
+  var ss = targetSpreadsheet();
+  var sheet = ss.getSheetByName(name);
+  if (!sheet) sheet = ss.insertSheet(name);
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
+    sheet.setFrozenRows(1);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  }
+  return sheet;
 }
 
 function str(v) {

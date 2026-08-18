@@ -176,3 +176,22 @@ section {
   padding-block: clamp(2rem, 8vw, 6rem);
 }
 
+
+/*
+ * Spam trap.
+ *
+ * Every lead form carries one of these: an unlabelled text input placed
+ * off-screen, hidden from assistive technology and skipped by the keyboard, so
+ * no person can reach it. A bot that walks the DOM and fills every field will,
+ * and the receivers reject any submission that arrives with a value in it.
+ *
+ * Off-screen rather than display:none or hidden — a bot that skips hidden
+ * inputs would walk straight past the trap, which defeats the point.
+ */
+.nl-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

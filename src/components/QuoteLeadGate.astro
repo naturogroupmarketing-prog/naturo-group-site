@@ -29,6 +29,10 @@ const lc = leadCapture;
     </div>
 
     <form class="qlg-stage" id="qlgForm" novalidate>
+      <!-- Spam trap; see .nl-hp in global.css. -->
+      <div class="nl-hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+      </div>
       <!-- STEP 0 · intro -->
       <section class="qlg-screen" data-step="intro">
         <div class="qlg-intro">

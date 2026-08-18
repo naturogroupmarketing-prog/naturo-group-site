@@ -54,6 +54,10 @@ const lc = leadCapture;
       </div>
 
       <form class="exi-form" id="exiForm" novalidate>
+      <!-- Spam trap; see .nl-hp in global.css. -->
+      <div class="nl-hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+      </div>
         <label class="exi-field">
           <span class="exi-label">Full name</span>
           <input class="exi-input" type="text" name="name" id="exiName" autocomplete="name" required placeholder="Your name" />

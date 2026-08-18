@@ -124,14 +124,17 @@ export const leadCapture = {
     // Appends every lead to the "NATURO — Website leads (backup)" sheet.
     // Source and deployment notes in scripts/lead-backup/.
     'https://script.google.com/macros/s/AKfycbx3d4tNS99N9ZQQBLmz476_rfZGEfncX9ubNp3TV2dWdGf9b3vuat1ap1vyds_Zt7Y/exec',
-    // Formspree — the original email alert. Kept connected while the new
-    // pipeline is being trialled; remove this line (and the third-party
-    // paragraph in cookies-data-policy.astro) once the trial is over and the
-    // subscription is cancelled.
+    // Formspree — the email alert, and NOT a temporary hangover from the old
+    // setup. Admin staff who do not work in the AI Reception dashboard rely on
+    // this email to see an enquiry at all: for them it is the only delivery,
+    // not a copy. So it stays until those people are on the dashboard, which
+    // is a decision about how the team works rather than a technical one.
+    // If it is ever removed, the third-party paragraph in
+    // cookies-data-policy.astro has to go with it.
     'https://formspree.io/f/xyklabez',
   ],
-  // Sophiie AI-reception CRM lead-intake (public, CORS-open). This is now the
-  // ONLY destination a lead is delivered to, so a failure here loses it.
+  // Sophiie AI-reception CRM lead-intake (public, CORS-open). One of three
+  // destinations, not the only one — see webhookUrls above.
   // Creates a Customer (status LEAD, source "Web form") + an Inbox message and
   // runs the CRM's AI auto-capture. Requires the webform widget enabled in
   // Sophiie (Settings → widgets); if it is switched off this endpoint answers

@@ -4,8 +4,12 @@ A second, independent destination for every web enquiry.
 
 ## Why this exists
 
-Leads used to go to two places: Formspree (email alert) and the Sophiie CRM
-(Inbox + auto-capture). Formspree was retired in August 2026, which left the
+Leads go to three places: the Sophiie CRM (Inbox + auto-capture), this Sheet,
+and Formspree. Formspree is not legacy — admin staff who do not work in the AI
+Reception dashboard see an enquiry only via that email, so for them it is the
+delivery rather than a copy.
+
+Formspree was briefly switched off in August 2026, which left the
 CRM as the only path — and the forms could not tell when that path failed,
 because `fetch` only rejects on network errors. An HTTP 403 (the webform widget
 switched off in Sophiie) or a 500 read as success, and the visitor was thanked

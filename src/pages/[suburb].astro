@@ -268,7 +268,6 @@ const schema = [
         <div class="hero-partners">
           <p class="hero-partners-label">Partners &amp; Providers</p>
           <img src="/images/partners-composite.webp" alt="Partners and providers: NRMA, phsa, ipar, Allianz, QBE" class="hero-partners-img" width="300" height="156" loading="lazy" />
-        </div>
       </div>
     </div>
   </section>
@@ -398,8 +397,9 @@ const schema = [
           eco-conscious products, police-checked cleaners, every clean satisfaction-guaranteed.
         </p>
       </div>
+    </div>
 
-      <div class="map-grid">
+    <div class="map-grid" data-long-list={suburb.nearbySuburbs.length > 24 ? '' : undefined}>
         <div class="map-iframe-wrap">
           <iframe
             src={mapEmbedSrc}
@@ -415,7 +415,7 @@ const schema = [
 
         <div class="map-list-wrap">
           <h3 class="map-list-title">Suburbs we service</h3>
-          <ul class="map-list">
+          <ul class="map-list" data-long={suburb.nearbySuburbs.length > 24 ? '' : undefined}>
             <li class="map-list-item map-list-item-hub">{suburb.name}</li>
             {suburb.nearbySuburbs.map((s) => {
               const slug = suburbNameToSlug.get(s);
@@ -916,6 +916,18 @@ const schema = [
     grid-template-columns: 1.4fr 1fr;
     gap: clamp(24px, 4vw, 48px);
     align-items: stretch;
+    /* Match the "60 seconds away" banner rather than the narrower
+       .container-site the heading uses, so the map and the service-area list
+       line up with the widest block on the page. */
+    margin-inline: clamp(12px, 2.5vw, 32px);
+  }
+  /* Regional hubs list far more suburbs than a side panel can hold — Geelong
+     covers 50. Squeezed into a third of the width, names like "Armstrong
+     Creek" wrap and the panel stretches the map to match. So on hub pages the
+     map goes full width and the list sits beneath it, where it has room for
+     four columns on one line each. */
+  .map-grid[data-long-list] {
+    grid-template-columns: 1fr;
   }
   @media (max-width: 860px) {
     .map-grid { grid-template-columns: 1fr; }
@@ -941,6 +953,10 @@ const schema = [
   @media (max-width: 640px) {
     .map-iframe-wrap,
     .map-iframe-wrap iframe { min-height: 320px; }
+  }
+  .map-grid[data-long-list] .map-iframe-wrap,
+  .map-grid[data-long-list] .map-iframe-wrap iframe {
+    min-height: 420px;
   }
   .map-list-wrap {
     background-color: #f6f8fa;
@@ -969,8 +985,22 @@ const schema = [
     gap: 6px 16px;
     column-gap: 24px;
   }
+  /* Regional hubs list a lot of suburbs — Geelong covers 50. Two columns
+     would run the panel well past the height of the map beside it, so long
+     lists get a third column on wider viewports. */
+  .map-list[data-long] {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .map-list[data-long] { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .map-list[data-long] { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 540px) {
-    .map-list { grid-template-columns: 1fr; }
+    .map-list,
+    .map-list[data-long] { grid-template-columns: 1fr; }
   }
   .map-list-item {
     font-family: "Poppins", sans-serif;

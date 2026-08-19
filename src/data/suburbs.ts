@@ -3700,7 +3700,7 @@ export const suburbs: Suburb[] = [
       title: 'Eco-Friendly House Cleaning Geelong VIC',
       description: 'House cleaning in Geelong. Police-checked, eco-friendly team across Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price.',
     },
-    nearbySuburbs: ['Newtown', 'East Geelong', 'South Geelong', 'Geelong West', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights', 'Herne Hill', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lara', 'Ocean Grove', 'Barwon Heads', 'Torquay', 'Jan Juc', 'Drysdale', 'Leopold', 'Curlewis'],
+    nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Geelong?',

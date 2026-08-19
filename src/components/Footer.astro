@@ -73,7 +73,7 @@ import {
           {Object.entries(footerLocations).map(([state, locs]) => (
             <div class="footer-state">
               <p class="footer-state-name">{state}</p>
-              <ul class="footer-state-cities" data-long={locs.length > 12 ? '' : undefined}>
+              <ul class="footer-state-cities">
                 {locs.map((l) => (
                   <li><a href={l.href} class="footer-city-link">{l.label}</a></li>
                 ))}
@@ -316,36 +316,22 @@ import {
      right column. Order is driven by the data in footerLocations
      (NSW → QLD → VIC), which lines up with :nth-child placement below. */
   .footer-states {
-    /* Auto-flowing two-column grid. Groups vary a lot in length (Geelong &
-       Bellarine has 26 suburbs, Surf Coast has 2), so we let them flow into
-       whichever cell is next rather than pinning each to a fixed one — the
-       old nth-child(1..3) rules assumed exactly three groups and broke once
-       the location list was regrouped by region. */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: min-content;
-    align-items: start;
-    gap: 22px 40px;
+    gap: 24px 40px;
     max-width: 560px;
   }
+  .footer-state:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+  .footer-state:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .footer-state:nth-child(3) { grid-column: 2; grid-row: 2; }
   /* On narrow viewports collapse to a single column so the NSW list
      doesn't get squashed against QLD/VIC. */
   @media (max-width: 480px) {
     .footer-states { grid-template-columns: 1fr; }
-  }
-  /* Give only the genuinely long lists a second sub-column, so a 35-item
-     group does not run several hundred pixels down the footer. */
-  .footer-state-cities[data-long] {
-    columns: 2;
-    column-gap: 20px;
-  }
-  /* Two sub-columns inside a half-width footer cell get cramped on tablets. */
-  @media (max-width: 1024px) {
-    .footer-state-cities[data-long] { columns: 1; }
-  }
-  .footer-state-cities li {
-    break-inside: avoid;
-    margin-bottom: 4px;
+    .footer-state:nth-child(1),
+    .footer-state:nth-child(2),
+    .footer-state:nth-child(3) { grid-column: auto; grid-row: auto; }
   }
   .footer-state-name {
     font-family: "Poppins", sans-serif;
@@ -360,13 +346,12 @@ import {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* Long regions (Geelong & Bellarine, Mid North Coast) would otherwise
-       run 20+ items down a single column and stretch the footer past
-       1500px. Flow them into narrow sub-columns instead so every group
-       stays a similar height. */
-    display: block;
-    columns: 1;
-    column-gap: 20px;
+    /* Single column inside each state — the parent .footer-states grid
+       already provides the two-column NSW | (QLD/VIC) split, so each
+       state's suburbs stack vertically beneath their state heading. */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     line-height: 1.5;
     font-family: "Poppins", sans-serif;
     font-size: 12px;

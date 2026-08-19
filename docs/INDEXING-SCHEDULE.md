@@ -1,6 +1,6 @@
 # Indexing submission schedule — naturogroup.com.au
 
-Created 2026-08-19, after the location-page SEO rebuild (commits `efdbc6d`, `e09ed83`).
+Created 2026-08-19, after the location-page SEO rebuild (commits `efdbc6d`, `e09ed83`, `8de1945`).
 
 ---
 
@@ -20,14 +20,14 @@ verified property, not to your login, so a second account does not help.
 pages with `JobPosting` or `BroadcastEvent` markup. Cleaning service pages
 qualify for neither, and using it anyway is against Google's stated policy.
 
-**What actually does the work is the sitemap.** All 125 URLs are already
+**What actually does the work is the sitemap.** All 148 URLs are already
 listed in `sitemap-index.xml`, referenced from `robots.txt`, and every page is
 now internally linked from the site-wide footer. That combination is what gets
 pages crawled. Manual requests are a nudge for priority pages, not a delivery
 mechanism for a whole site.
 
 **So the plan below is ~8 URLs per day**, ordered by commercial value, which
-stays comfortably under the cap and finishes the priority set in two weeks. If
+stays comfortably under the cap and finishes the priority set in about two and a half weeks. If
 you would rather stick to one per hour, cap it at 8 per day and spread them
 across the working day — same result, same order.
 
@@ -90,7 +90,41 @@ Tick each off as you go.
 - [ ] `/services/end-of-lease/`
 - [ ] `/services/ndis-cleaning/`
 
-### Day 5 — service hub + Port Macquarie core
+### Days 5–7 — the 23 brand-new pages (highest priority)
+
+Google has never seen these URLs. They have no history, so they need the nudge
+more than any established page does. Submit before the older non-Geelong pages.
+
+Day 5 — eastern and inner Geelong
+- [ ] `/house-cleaning-newcomb/`
+- [ ] `/house-cleaning-whittington/`
+- [ ] `/house-cleaning-st-albans-park/`
+- [ ] `/house-cleaning-thomson/`
+- [ ] `/house-cleaning-moolap/`
+- [ ] `/house-cleaning-breakwater/`
+- [ ] `/house-cleaning-north-geelong/`
+- [ ] `/house-cleaning-rippleside/`
+
+Day 6 — western, northern and southern Geelong
+- [ ] `/house-cleaning-fyansford/`
+- [ ] `/house-cleaning-ceres/`
+- [ ] `/house-cleaning-batesford/`
+- [ ] `/house-cleaning-lovely-banks/`
+- [ ] `/house-cleaning-marshall/`
+- [ ] `/house-cleaning-charlemont/`
+- [ ] `/house-cleaning-wallington/`
+- [ ] `/house-cleaning-connewarre/`
+
+Day 7 — Bellarine coastal
+- [ ] `/house-cleaning-clifton-springs/`
+- [ ] `/house-cleaning-portarlington/`
+- [ ] `/house-cleaning-st-leonards/`
+- [ ] `/house-cleaning-indented-head/`
+- [ ] `/house-cleaning-point-lonsdale/`
+- [ ] `/house-cleaning-queenscliff/`
+- [ ] `/house-cleaning-marcus-hill/`
+
+### Day 8 — service hub + Port Macquarie core
 - [ ] `/services/`
 - [ ] `/services/house-cleaning/`
 - [ ] `/services/deep-clean/`
@@ -100,13 +134,13 @@ Tick each off as you go.
 - [ ] `/end-of-lease-cleaning-port-macquarie/`
 - [ ] `/ndis-cleaning-port-macquarie/`
 
-### Days 6–8 — Port Macquarie region (21 pages, 8/7/6)
+### Days 9–11 — Port Macquarie region (21 pages, 8/7/6)
 Work down the Port Macquarie & Mid North Coast footer group in order.
 
-### Days 9–11 — metro (Sydney 10, Melbourne 6, Queensland 7)
+### Days 12–14 — metro (Sydney 10, Melbourne 6, Queensland 7)
 Sydney first, then Melbourne, then Queensland.
 
-### Days 12–14 — regional NSW, Surf Coast, blog
+### Days 15–17 — regional NSW, Surf Coast, blog
 Then `/resource/` posts, most commercially relevant first.
 
 ---
@@ -130,16 +164,36 @@ and see whether naturogroup.com.au is cited. Google AI Overviews take longer.
 
 ## Still outstanding after this round
 
-- **Content uniqueness is 15.9%, up from 10.9%.** Better, not finished. The
-  remaining bulk is shared boilerplate (pricing cards, features, checklist,
-  app promo, testimonials). Trimming it would lift the ratio further but is a
-  design and conversion decision, not purely an SEO one.
-- **Testimonials are still generic.** All 78 pages show the same quotes. Real
-  suburb-attributed reviews would be a genuine differentiator and would also
-  let `aggregateRating` schema return honestly. These have to be actual
-  customer reviews — they cannot be written.
+- **Testimonials are still generic.** All 101 pages show the same quotes. They
+  are real reviews of the business, and no Review schema is emitted without
+  genuine local ones, so nothing on the page is misattributed. But real
+  suburb-attributed reviews would be a genuine differentiator and would let
+  `aggregateRating` schema return honestly. These have to be actual customer
+  reviews — they cannot be written.
 - **No Geelong-local phone number.** Still the single biggest local ranking
-  lever, and the one thing Maid2Match has that we do not.
-- **Coverage gap.** Jim's lists 60+ Greater Geelong suburbs; we have 26.
+  lever, and the one thing Maid2Match has that we do not. Blocked until a 03
+  number exists.
 - **No named local contact.** Jim's puts a real franchisee on each suburb
-  page. Naming the Geelong coordinator would match that.
+  page. Blocked until there is a real person to name.
+- **Boilerplate share.** Body text is now 52-54% unique between adjoining
+  suburb pages, up from 42.6%. The remaining shared half is pricing cards,
+  features, the inclusions checklist, testimonials and the app promo. Cutting
+  any of it would lift the ratio further but is a conversion decision, not
+  purely an SEO one.
+
+## What changed on 2026-08-19
+
+Three commits, in order:
+
+1. `efdbc6d` — robots.txt stopped blocking AI search crawlers; all location
+   pages surfaced in the footer; every over-length title fixed, including
+   seven pages that rendered "Naturo Group | Naturo Group".
+2. `e09ed83` — 395 suburb-specific FAQs replacing the name-swap fallback on 68
+   pages; visible breadcrumbs and a three-tier BreadcrumbList; an honest
+   "Last updated" signal that only appears where copy actually changed.
+3. `8de1945` — 23 new Geelong and Bellarine pages, taking the region from 26
+   to 49 and the site from 78 to 101 locations; footer regrouped by region.
+
+Every location page now has a canonical, a meta description, exactly one H1,
+at least four FAQs with FAQPage schema, LocalBusiness schema, a breadcrumb, a
+map embed, and a title under 60 characters.

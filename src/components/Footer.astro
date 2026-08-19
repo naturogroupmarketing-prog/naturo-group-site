@@ -73,7 +73,7 @@ import {
           {Object.entries(footerLocations).map(([state, locs]) => (
             <div class="footer-state">
               <p class="footer-state-name">{state}</p>
-              <ul class="footer-state-cities" data-long={locs.length > 8 ? '' : undefined}>
+              <ul class="footer-state-cities" data-long={locs.length > 12 ? '' : undefined}>
                 {locs.map((l) => (
                   <li><a href={l.href} class="footer-city-link">{l.label}</a></li>
                 ))}
@@ -333,9 +333,15 @@ import {
   @media (max-width: 480px) {
     .footer-states { grid-template-columns: 1fr; }
   }
-  /* Give only the genuinely long lists a second sub-column. */
+  /* Give only the genuinely long lists a second sub-column, so a 35-item
+     group does not run several hundred pixels down the footer. */
   .footer-state-cities[data-long] {
     columns: 2;
+    column-gap: 20px;
+  }
+  /* Two sub-columns inside a half-width footer cell get cramped on tablets. */
+  @media (max-width: 1024px) {
+    .footer-state-cities[data-long] { columns: 1; }
   }
   .footer-state-cities li {
     break-inside: avoid;

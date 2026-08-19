@@ -6212,6 +6212,1768 @@ export const suburbs: Suburb[] = [
       },
     ],
   },
+
+{
+    slug: 'house-cleaning-newcomb',
+    name: 'Newcomb',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Newcomb Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Newcomb'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Newcomb',
+      h2: 'Professional house cleaning in Newcomb & eastern Geelong',
+      paragraphs: [
+        'Newcomb sits east of central Geelong on the flat country between the city and the bay, and it works as the shopping and services hub for the eastern suburbs. Most of its streets are post-war and mid-century family housing, with weatherboard and brick veneer homes on generous blocks and newer infill quietly filling the gaps between them.',
+        'That mix means no two Newcomb homes are quite the same to clean, and our police-checked cleaners come prepared for all of them. We handle regular fortnightly and weekly cleans, one-off deep cleans and end-of-lease cleans, and we bring every product and every piece of equipment with us so nothing is asked of your own cupboard.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Newcomb & eastern Geelong',
+      paragraphs: [
+        'Because Newcomb is where much of the eastern side comes to shop and run errands, our cleaners are in the area most days of the week. That makes it straightforward to hold a regular slot, and easier to move one when a week goes sideways.',
+        'We service Newcomb along with Whittington, St Albans Park, Moolap, Thomson, East Geelong and Leopold, so the whole eastern corridor is covered by one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner entering a Newcomb home is police-checked and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Weekly, fortnightly or one-off cleans arranged around work, school runs and appointments in Newcomb.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products with no harsh fumes, safe around children, pets and asthma.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that training shapes how our cleaners work in every Newcomb home.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across Newcomb.',
+      'Every Newcomb clean carries our satisfaction guarantee, and there are no lock-in contracts to sign before you try us.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Newcomb?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Newcomb clean in about 60 seconds.',
+      trust: 'Trusted by Newcomb households across eastern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Newcomb VIC',
+      description: 'Eco-friendly house cleaning in Newcomb, eastern Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+    },
+    nearbySuburbs: ['Whittington', 'St Albans Park', 'Moolap', 'Thomson', 'East Geelong', 'Leopold', 'Breakwater', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean while I am out doing the shopping in Newcomb?',
+        a: 'Yes, and a lot of Newcomb clients do exactly that. Because the shops and services sit right in the middle of the suburb, plenty of households book a clean for the window they are out running errands. You can leave a key, a lockbox code or arrange access however suits you, and our cleaners will secure the home when they finish.',
+      },
+      {
+        q: 'Do you clean older weatherboard and brick veneer homes?',
+        a: 'We do, and they make up much of Newcomb. Post-war and mid-century homes often have painted timber trims, older vinyl or lino floors and windows that need a gentler touch than modern surfaces. Our cleaners match the method to what is in front of them rather than using one aggressive approach everywhere, so finishes are protected.',
+      },
+      {
+        q: 'What does a clean cost in Newcomb?',
+        a: 'It depends on the size of your home, the condition it is in and how often you book, so a fortnightly clean in a small Newcomb unit and a one-off deep clean in a four-bedroom house are very different jobs. Rather than quote a figure blind, we offer a free instant online quote that gives you the number in about 60 seconds with no phone call needed.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for Newcomb rentals?',
+        a: 'Yes. End-of-lease cleaning is one of our core services in Newcomb, covering the oven, the wet areas, inside cupboards, skirtings and window tracks. If your agent raises something at the final inspection, our bond-back re-clean guarantee applies when you have your receipt, and we will return to put it right.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients in Newcomb?',
+        a: 'We do. In Newcomb we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company we treat support-related cleaning with the discretion and consistency it deserves, usually with the same cleaner each visit.',
+      },
+      {
+        q: 'How soon can you start in Newcomb?',
+        a: 'A first booking in Newcomb is usually two to five business days away. You can book online in about 60 seconds, and our office is available Monday to Friday, 8:30am to 5:00pm on 1300 876 472 if you would rather talk it through. There is no lock-in contract, so you can trial a single clean first.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-whittington',
+    name: 'Whittington',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Whittington Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Whittington'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Whittington',
+      h2: 'Professional house cleaning in Whittington & eastern Geelong',
+      paragraphs: [
+        'Whittington is a compact residential pocket on the eastern side of Geelong, tucked between Newcomb and the low ground that runs down towards the Barwon River. Its housing is largely established post-war stock on well-proportioned blocks, with a steady amount of renovation and rebuilding adding newer homes among the older ones.',
+        'NATURO GROUP cleans right across that mix. Our police-checked, insured cleaners handle regular weekly and fortnightly visits, one-off deep cleans and end-of-lease work, and we bring all products and equipment ourselves. Everything we use is plant-based, biodegradable and free of harsh fumes, which suits homes with children, pets or asthma.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Whittington & eastern Geelong',
+      paragraphs: [
+        'Whittington is a close neighbourhood where people notice who comes and goes, and we think that is a good thing. The same cleaner attends wherever we can manage it, so you are not explaining your home from scratch every visit.',
+        'We service Whittington alongside Newcomb, St Albans Park, Thomson, Breakwater, East Geelong and Moolap, which keeps one familiar team across the eastern suburbs.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability insurance in every Whittington home we attend.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Weekly, fortnightly or occasional cleans, and you can focus the visit on the rooms that matter most.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Non-toxic, plant-based products supplied by us, safe around kids, pets and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP was founded from a nursing background, and that shows in how carefully our cleaners work through a Whittington home rather than rushing it.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Whittington.',
+      'Every Whittington clean is covered by our satisfaction guarantee, with no lock-in contract and no obligation to keep booking.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Whittington?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Whittington clean in about 60 seconds.',
+      trust: 'Trusted by Whittington households across eastern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Whittington VIC',
+      description: 'Eco-friendly house cleaning in Whittington, eastern Geelong VIC. Police-checked, insured cleaners for regular, deep and end-of-lease cleans. Book online.',
+    },
+    nearbySuburbs: ['Newcomb', 'St Albans Park', 'Thomson', 'Breakwater', 'Moolap', 'East Geelong', 'Belmont', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Will I get the same cleaner each visit in Whittington?',
+        a: 'Wherever the roster allows it, yes. Whittington is a small enough neighbourhood that our cleaners get to know the streets quickly, and keeping the same person on a home means less explaining and a more consistent result. If your regular cleaner is unwell or on leave, we brief whoever covers so your preferences carry across.',
+      },
+      {
+        q: 'Can I book a smaller clean rather than the whole house?',
+        a: 'Yes, and it is a common request in Whittington. Some households book us for kitchen, bathrooms and floors only, or ask us to skip rooms that are rarely used. It is a normal way to work with us and nobody needs to explain why. The online quote lets you set the scope and shows the figure straight away.',
+      },
+      {
+        q: 'Do you clean rental properties in Whittington?',
+        a: 'We do. Whittington has a solid share of rentals, and we handle both routine cleans during a tenancy and full end-of-lease cleans at the end of one. End-of-lease work covers oven, wet areas, inside cupboards, skirtings and window tracks, and our bond-back re-clean guarantee applies when you keep your receipt.',
+      },
+      {
+        q: 'Are the products safe for someone with asthma or eczema?',
+        a: 'Yes. Everything brought into a Whittington home is plant-based, biodegradable and non-toxic, with no heavy fragrance and no chemical haze left behind afterwards. That matters in households with asthma, eczema, young children or pets. We supply all products and equipment, so there is nothing for you to buy or store between visits.',
+      },
+      {
+        q: 'Do you help NDIS participants and Home Care Package clients here?',
+        a: 'We do. In Whittington we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led, so cleaners are trained to work respectfully around people who are home during the visit.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-st-albans-park',
+    name: 'St Albans Park',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in St Albans Park Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'St Albans Park'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in St Albans Park',
+      h2: 'Professional house cleaning in St Albans Park & eastern Geelong',
+      paragraphs: [
+        'St Albans Park sits on the south-eastern edge of Geelong, out where the suburbs begin to give way to the open country on the approach to the Bellarine. It is a settled residential suburb of brick veneer family homes on curved streets, with open reserves threaded between them and newer housing along the outer edges.',
+        'Homes here tend to be family sized, which usually means more floor area and more bathrooms than an inner suburb. Our police-checked cleaners plan the visit around that, working through a St Albans Park home methodically with plant-based products and all equipment supplied, whether it is a regular clean, a deep clean or an end-of-lease.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across St Albans Park & eastern Geelong',
+      paragraphs: [
+        'St Albans Park is a suburb people tend to stay in, and long-term homes ask for a consistent standard rather than a one-off blitz. Our cleaners work to the same checklist every visit so the result does not drift over the months.',
+        'We service St Albans Park along with Newcomb, Whittington, Moolap, Leopold, Thomson and Belmont, covering the eastern and south-eastern suburbs with one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked, insured cleaners carrying $20m public liability cover into every St Albans Park home.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Regular or one-off cleans arranged around school pick-ups, shift work and family routines.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products chosen to be safe for children, pets and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and that standard of care travels into every St Albans Park home.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across St Albans Park.',
+      'Every St Albans Park clean comes with our satisfaction guarantee, and there is no lock-in contract at any stage.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in St Albans Park?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your St Albans Park clean in about 60 seconds.',
+      trust: 'Trusted by St Albans Park families across south-eastern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning St Albans Park',
+      description: 'Eco-friendly house cleaning in St Albans Park, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+    },
+    nearbySuburbs: ['Newcomb', 'Whittington', 'Moolap', 'Leopold', 'Thomson', 'Breakwater', 'Belmont', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you charge more for a larger family home in St Albans Park?',
+        a: 'Cost depends on the size of the home, its condition and how often you book, so a larger St Albans Park house with several bathrooms takes longer than a compact one. There is no separate suburb loading. The free instant online quote asks a few questions about your home and returns the figure in about 60 seconds, with no phone call needed.',
+      },
+      {
+        q: 'Can you clean while the kids are home during school holidays?',
+        a: 'Yes. St Albans Park is a family suburb and school holidays are one of our busier stretches there. Our cleaners are used to working around children being home, and every product we use is plant-based, non-toxic and free of harsh fumes, so there is no reason to send anyone out of the house while we work.',
+      },
+      {
+        q: 'Do you cover the newer homes on the outer edges of the suburb?',
+        a: 'We do. St Albans Park runs from settled brick veneer streets through to newer housing on its outer edges, and we clean the full range. Newer homes often have more glass, tiling and engineered surfaces, so our cleaners adjust the products and cloths accordingly, but the standard and the guarantee are identical either way.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleaning in St Albans Park?',
+        a: 'Yes. Our end-of-lease clean in St Albans Park covers the oven, wet areas, inside cupboards, skirtings, window tracks and the details agents check first. If anything is raised at the final inspection, our bond-back re-clean guarantee applies when you have your receipt and we will come back to sort it out.',
+      },
+      {
+        q: 'Can you help an older relative living in St Albans Park?',
+        a: 'Yes, and we are often booked by an adult child rather than the resident. In St Albans Park we work with Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Being nursing-led, our cleaners know how to work calmly around someone who is home throughout.',
+      },
+      {
+        q: 'How quickly can a first clean be arranged in St Albans Park?',
+        a: 'Usually two to five business days from booking. You can book online in about 60 seconds, or call 1300 876 472 between 8:30am and 5:00pm Monday to Friday if you would prefer to talk it over first. There is no lock-in contract, so a single St Albans Park clean to see how it goes is completely fine.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-thomson',
+    name: 'Thomson',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Thomson Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Thomson'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Thomson',
+      h2: 'Professional house cleaning in Thomson & eastern Geelong',
+      paragraphs: [
+        'Thomson is a small suburb on the low ground south-east of central Geelong, sitting close to the Barwon River with light industrial land along one edge and quiet residential streets along the other. Its housing is mostly established mid-century stock, modest in scale and close to the city without being part of it.',
+        'Being a compact suburb, Thomson is easy for our cleaners to work into a regular run, which helps when you want a fixed weekly or fortnightly slot. We provide regular cleans, one-off deep cleans and end-of-lease cleans, with police-checked cleaners, $20m public liability insurance and all products and equipment supplied.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Thomson & eastern Geelong',
+      paragraphs: [
+        'Living near working land and busier roads means dust and grit find their way indoors more readily than they might elsewhere. Our cleaners in Thomson pay particular attention to floors, sills and entry areas because that is where it shows up first.',
+        'We service Thomson along with Breakwater, Whittington, Newcomb, East Geelong, South Geelong and Belmont, so the whole pocket is covered by one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every Thomson clean is carried out by police-checked cleaners covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Fixed weekly or fortnightly slots are easy to hold in a compact suburb like Thomson.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable and non-toxic products, supplied by us and safe for children and pets.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and our cleaners are trained to that standard before they set foot in a Thomson home.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Thomson.',
+      'Our satisfaction guarantee covers every Thomson clean, and we do not ask anyone to sign a lock-in contract.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Thomson?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Thomson clean in about 60 seconds.',
+      trust: 'Trusted by Thomson households across eastern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Thomson VIC',
+      description: 'Eco-friendly house cleaning in Thomson, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get an online quote.',
+    },
+    nearbySuburbs: ['Breakwater', 'Whittington', 'Newcomb', 'East Geelong', 'South Geelong', 'Belmont', 'St Albans Park', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Does living near industrial land in Thomson change how you clean?',
+        a: 'It changes where we spend the time rather than what we use. Homes on the industrial edge of Thomson tend to collect more fine dust on sills, blinds, skirtings and hard floors, so our cleaners work those areas harder and rinse cloths more often. The products stay the same plant-based, non-toxic range we use everywhere.',
+      },
+      {
+        q: 'Do you clean smaller homes and units in Thomson?',
+        a: 'Yes. A lot of Thomson housing is modest in scale, and small homes are perfectly worth booking. A compact home usually takes less time, which is reflected in the quote. You can also ask us to concentrate on kitchen, bathroom and floors if you would rather keep the visit short and focused.',
+      },
+      {
+        q: 'What does a Thomson clean cost?',
+        a: 'There is no fixed price, because it depends on how big your home is, what condition it is in and how often you book. Rather than guess, use the free instant online quote. It takes about 60 seconds, asks a few questions about your Thomson home and gives you the figure on the spot, with no phone call and no obligation.',
+      },
+      {
+        q: 'Can you do an end-of-lease clean in Thomson at short notice?',
+        a: 'Often, yes, though a first booking is usually two to five business days away so it helps to ask early. Our Thomson end-of-lease clean covers the oven, wet areas, inside cupboards, skirtings and window tracks, and our bond-back re-clean guarantee applies when you keep your receipt in case the agent flags anything.',
+      },
+      {
+        q: 'Do you work with NDIS and aged care clients in Thomson?',
+        a: 'We do. In Thomson we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Because we are nursing-led, cleaners are trained to be unobtrusive and consistent when someone is home for the whole visit.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-moolap',
+    name: 'Moolap',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Moolap Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Moolap'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Moolap',
+      h2: 'Professional house cleaning in Moolap & eastern Geelong',
+      paragraphs: [
+        'Moolap lies east of Geelong along the bay edge, where the residential streets thin out into saltworks, open flats and industrial land on the way to the Bellarine. It is a mixed suburb rather than a uniform one, with pockets of housing sitting alongside working land and a good deal of open sky.',
+        'That bayside position is lovely to live with and slightly harder on a house. Salt-laden air and coastal dust settle on glass, tracks and frames faster than they do inland, so our cleaners give those surfaces extra attention in Moolap while using the same plant-based, non-toxic products we use everywhere.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Moolap & the bay edge',
+      paragraphs: [
+        'Moolap homes are spread out rather than packed together, so we plan routes carefully and hold realistic arrival windows. If our cleaner is going to be delayed getting to you, you will hear about it rather than guess.',
+        'We service Moolap along with Newcomb, St Albans Park, Whittington, Leopold, Thomson and Curlewis, keeping one team across the eastern approach to the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability insurance in every Moolap home we attend.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Regular or one-off cleans with realistic arrival windows for Moolap\'s spread-out streets.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products, safe near the water and safe around children and pets.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP was founded by someone from a nursing background, and that nursing-led approach sets the standard our cleaners work to in Moolap.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across Moolap.',
+      'Every Moolap clean carries our satisfaction guarantee, with no lock-in contract and no pressure to keep booking.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Moolap?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Moolap clean in about 60 seconds.',
+      trust: 'Trusted by Moolap households along the eastern bay edge.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Moolap VIC',
+      description: 'Eco-friendly house cleaning in Moolap, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Free online quote.',
+    },
+    nearbySuburbs: ['Newcomb', 'St Albans Park', 'Whittington', 'Leopold', 'Thomson', 'Curlewis', 'East Geelong', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Does being near the bay in Moolap affect the cleaning?',
+        a: 'It does, mostly on glass and metal. Salt-laden air near the Moolap bay edge leaves a film on windows, sliding door tracks, flyscreens and window frames far quicker than inland suburbs, and it can dull stainless fittings too. Our cleaners spend longer on those surfaces during a Moolap visit and rinse thoroughly rather than simply wiping the salt around.',
+      },
+      {
+        q: 'Are your products safe to use so close to the water?',
+        a: 'Yes. Everything we bring to a Moolap home is plant-based, biodegradable and non-toxic, which matters when the drains and stormwater run out toward the bay flats. There are no harsh solvents or heavy fragrances in the kit. It is also the same range that suits households with asthma, young children or pets.',
+      },
+      {
+        q: 'Do you travel to homes on the outer, more spread-out parts of Moolap?',
+        a: 'We do. Moolap housing is scattered between open land and working ground rather than packed into a grid, and we cover the whole suburb. Because the travel between homes is longer, we book realistic arrival windows and let you know if our cleaner is running behind, rather than leaving you waiting without word.',
+      },
+      {
+        q: 'What will a clean in Moolap cost me?',
+        a: 'It depends on the size of your home, the condition it is in and how often you book, so there is no single number we can quote for Moolap. The free instant online quote is the fastest way to find out. It takes about 60 seconds, needs no phone call and gives you a figure you can think about with no obligation.',
+      },
+      {
+        q: 'Can you handle deep cleans and end-of-lease cleans in Moolap?',
+        a: 'Yes, both. A Moolap deep clean digs into build-up that regular visits do not reach, and our end-of-lease clean covers the oven, wet areas, inside cupboards, skirtings and window tracks. With coastal grime on tracks and screens, that last item usually needs real work here. The bond-back re-clean guarantee applies when you keep your receipt.',
+      },
+      {
+        q: 'Do you support NDIS participants in Moolap?',
+        a: 'We do. In Moolap we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led, so support-related cleaning is handled with discretion and, wherever the roster allows, the same familiar cleaner each visit.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-breakwater',
+    name: 'Breakwater',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Breakwater Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Breakwater'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Breakwater',
+      h2: 'Professional house cleaning in Breakwater & south-eastern Geelong',
+      paragraphs: [
+        'Breakwater sits on the Barwon River south-east of central Geelong, a small suburb where housing shares the ground with industrial and commercial land. Its residential streets are modest and established, and the river and its open surrounds sit close by, which gives the place a quieter feel than its working edges suggest.',
+        'We clean the residential side of Breakwater, from regular weekly and fortnightly visits to one-off deep cleans and end-of-lease cleans. Cleaners are police-checked and covered by $20m public liability insurance, and every product and piece of equipment comes with them, so nothing needs to be bought or stored on your side.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Breakwater & south-eastern Geelong',
+      paragraphs: [
+        'A suburb with working land on its doorstep sees more dust drift indoors, particularly through open windows in summer. In Breakwater our cleaners focus early on floors, sills and entry areas, because that is where it gathers before anywhere else.',
+        'We service Breakwater along with Thomson, Whittington, Belmont, South Geelong, East Geelong and Newcomb, so the whole south-eastern pocket shares one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked, insured cleaners carrying $20m public liability cover into every Breakwater home.' },
+        { icon: 'clock', title: 'Affordable, flexible scheduling', body: 'Weekly, fortnightly or one-off cleans arranged around shift work and other irregular hours.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Non-toxic, plant-based and biodegradable products that are safe for children, pets and asthma.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and our cleaners are trained to that standard before attending a Breakwater home.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Breakwater.',
+      'Every Breakwater clean is backed by our satisfaction guarantee, and there is no lock-in contract to sign.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Breakwater?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Breakwater clean in about 60 seconds.',
+      trust: 'Trusted by Breakwater households across south-eastern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Breakwater VIC',
+      description: 'Eco-friendly house cleaning in Breakwater, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Thomson', 'Whittington', 'Belmont', 'South Geelong', 'East Geelong', 'Newcomb', 'St Albans Park', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you book cleans around shift work in Breakwater?',
+        a: 'Yes. With commercial and industrial employers close to Breakwater, plenty of local households are not on a standard nine to five, and a clean that lands mid-morning while someone sleeps off a night shift is a normal request. Tell us which rooms to leave until later and our cleaner will organise the visit around it.',
+      },
+      {
+        q: 'Do you clean homes backing onto the river side of Breakwater?',
+        a: 'We do. Homes near the Barwon River in Breakwater often deal with more damp in wet months, which can show up as mustiness in bathrooms, laundries and less-used rooms. Our cleaners treat and ventilate those areas properly rather than masking them with fragrance, and everything we use is plant-based and biodegradable.',
+      },
+      {
+        q: 'Does the industrial dust need a stronger chemical?',
+        a: 'No. Fine dust drifting into Breakwater homes is a matter of method rather than harshness, so we use more passes, cleaner cloths and proper rinsing instead of stronger chemicals. That keeps every product in the kit plant-based, biodegradable and non-toxic, which is what makes them safe around children, pets and asthma sufferers.',
+      },
+      {
+        q: 'How much does a Breakwater clean cost?',
+        a: 'It comes down to the size of your home, the condition it is in and how often you book, so we do not publish a set figure. The free instant online quote takes about 60 seconds, asks a few questions about your Breakwater home and gives you the number straight away, with no phone call and no obligation to proceed.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans in Breakwater?',
+        a: 'Yes. Our Breakwater end-of-lease clean covers the oven, wet areas, inside cupboards, skirtings and window tracks, which is where agents look hardest. If something is raised at the final inspection, our bond-back re-clean guarantee applies when you have your receipt and we will return to put it right.',
+      },
+      {
+        q: 'Do you support NDIS and DVA clients in Breakwater?',
+        a: 'We do. In Breakwater we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company, our cleaners are trained to work calmly and respectfully when someone is home throughout the visit.',
+      },
+    ],
+  },
+
+{
+    slug: 'house-cleaning-north-geelong',
+    name: 'North Geelong',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in North Geelong Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'North Geelong'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in North Geelong',
+      h2: 'Professional house cleaning in North Geelong',
+      paragraphs: [
+        'North Geelong sits immediately north of the city centre, where established residential streets meet a long-standing band of industrial and commercial land. It is one of the better connected parts of Geelong, with its own railway station and main road links running in every direction. NATURO GROUP cleans homes right across the suburb.',
+        'Housing here leans towards older weatherboard and brick homes on compact blocks, along with units and townhouses that have filled in over the years. Living close to working land means dust and road grime turn up on sills, tracks and blinds, and our regular cleans are built to keep on top of exactly that.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across North Geelong',
+      paragraphs: [
+        'A suburb that works for a living deserves a cleaning team that does the same. Our police-checked, insured cleaners arrive with everything needed, work to a set routine so nothing is skipped, and leave North Geelong homes genuinely finished rather than merely tidied.',
+        'We service North Geelong along with Rippleside, Herne Hill, Bell Park, Geelong West, North Shore, Norlane and central Geelong, so the inner-north is looked after by one familiar team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner entering a North Geelong home is police-checked and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Scheduling that suits shift work', body: 'Weekly, fortnightly or one-off cleans arranged around North Geelong households who do not keep nine-to-five hours.' },
+        { icon: 'sparkle', title: 'Plant-based, low-fume products', body: 'Non-toxic biodegradable products with no harsh fumes, which matters in homes near busier roads and industry.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, and our founder came to cleaning from a nursing background where thoroughness was never optional.',
+      'That training shows up in North Geelong homes as a consistent method, sensible products and cleaners who understand hygiene rather than just appearance.',
+      'We support NDIS participants, Home Care Package recipients, DVA card holders and insurance clients throughout North Geelong, and every clean carries our satisfaction guarantee.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in North Geelong?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your North Geelong clean in under 60 seconds.',
+      trust: 'Trusted by North Geelong households across the inner-north of Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning North Geelong VIC',
+      description: 'Eco-friendly house cleaning in North Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease jobs. Free instant online quote.',
+    },
+    nearbySuburbs: ['Rippleside', 'Herne Hill', 'Bell Park', 'Geelong West', 'North Shore', 'Norlane', 'Geelong', 'Hamlyn Heights'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Does living near industrial land change how you clean a North Geelong home?',
+        a: 'It changes what we spend time on rather than how we work. Homes on the industrial side of North Geelong tend to collect fine dust on window sills, sliding door tracks, blinds and outdoor furniture, so those get more attention in the routine. The method, the products and the standard stay the same as any other home we clean.',
+      },
+      {
+        q: 'Can you clean a unit or townhouse rather than a whole house?',
+        a: 'Yes. A good share of North Geelong is units, villas and townhouses, and they are very common bookings for us. Smaller homes usually need less time, so a regular clean can be a straightforward way to keep on top of things. The free online quote takes your home size into account and gives you a figure without a phone call.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for North Geelong rentals?',
+        a: 'We do, and they are a regular part of our work in North Geelong given how much of the suburb is rented. An end-of-lease clean is far more detailed than a routine visit and covers the oven, inside cupboards, wet areas and skirtings. Keep your receipt and our bond-back re-clean guarantee applies if the agent raises something.',
+      },
+      {
+        q: 'Do you support NDIS participants and Home Care Package clients here?',
+        a: 'Yes. In North Geelong we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Because the company is nursing-led, support-related cleaning is handled with the care and discretion it should be.',
+      },
+      {
+        q: 'How soon can you start in North Geelong?',
+        a: 'A first booking in North Geelong is usually two to five business days away, though it can be sooner depending on the week. You can book online in about 60 seconds, and our office hours are Monday to Friday, 8:30am to 5:00pm on 1300 876 472 if you would rather talk it through first. There are no lock-in contracts.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-rippleside',
+    name: 'Rippleside',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Rippleside Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Rippleside'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Rippleside',
+      h2: 'Professional house cleaning in bayside Rippleside',
+      paragraphs: [
+        'Rippleside is a small bayside pocket on the northern edge of central Geelong, wrapped around the shoreline of Corio Bay and its waterfront parkland. It is one of the most sought-after addresses in the inner-north, and the walk to the water is part of the reason. NATURO GROUP cleans homes throughout the neighbourhood.',
+        'The housing stock here is characterful, with period homes, careful renovations and a scattering of newer builds and apartments taking in the bay outlook. Older timber, tiling and joinery reward a gentle hand, and our cleaners match their method to the surfaces in front of them rather than treating every home the same.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Rippleside & the bay edge',
+      paragraphs: [
+        'Character homes are easy to damage and hard to put right, so our cleaners are trained to read a surface before they touch it. Nothing abrasive goes near original timber, tiles or fittings, and everything we bring into a Rippleside home is plant-based and biodegradable.',
+        'We service Rippleside together with North Geelong, Geelong West, Herne Hill, Manifold Heights, Bell Park, North Shore and central Geelong, so the whole bayside inner-north shares one cleaning team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Careful with period homes', body: 'Police-checked, insured cleaners who adjust their method for original timber, tiling and joinery in older Rippleside homes.' },
+        { icon: 'clock', title: 'Reliable, regular visits', body: 'Weekly or fortnightly cleans at a time that suits, with no lock-in contracts and easy online booking.' },
+        { icon: 'sparkle', title: 'Safe near the bay', body: 'Non-toxic biodegradable products with nothing harsh going down the drain so close to Corio Bay.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP was founded by someone from a nursing background, and that shaped the whole company around thoroughness and care rather than speed.',
+      'In Rippleside that means cleaners who take the extra minute an older home needs and who understand why the wrong product on the wrong surface matters.',
+      'We also support NDIS participants, Home Care Package recipients, DVA card holders and insurance clients here, and every Rippleside clean is backed by our satisfaction guarantee.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Rippleside?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Rippleside clean in under 60 seconds.',
+      trust: 'Trusted by Rippleside homeowners along the bayside edge of Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Rippleside VIC',
+      description: 'Eco-friendly house cleaning in bayside Rippleside Geelong VIC. Police-checked, insured cleaners, careful with period homes. Free instant online quote.',
+    },
+    nearbySuburbs: ['North Geelong', 'Geelong West', 'Herne Hill', 'Manifold Heights', 'Bell Park', 'North Shore', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your cleaners experienced with older character homes in Rippleside?',
+        a: 'Yes. Much of Rippleside is period housing, so original floorboards, leadlight, cast fittings and older tiling are everyday work for us. Our cleaners are trained to identify a surface before choosing a method, avoid anything abrasive on original material, and flag anything that looks fragile rather than pushing on with it.',
+      },
+      {
+        q: 'Does being close to Corio Bay affect the products you use?',
+        a: 'It reinforces the choice we had already made. Everything we use in Rippleside is plant-based, biodegradable and non-toxic, so what goes down the drain this close to the bay is not a concern. It is also better for the household, with no harsh fumes or heavy fragrance left behind after we leave.',
+      },
+      {
+        q: 'Do you handle salt air marks on windows and outdoor areas?',
+        a: 'We do. Homes near the Rippleside waterfront pick up a salty film on glass, frames, balustrades and outdoor furniture that ordinary wiping tends to smear. Interior glass, sills and tracks are part of our regular clean, and a one-off deep clean is the better option if it has built up over a season.',
+      },
+      {
+        q: 'Can you clean an apartment or townhouse with a bay outlook?',
+        a: 'Yes. Rippleside has a mix of apartments and townhouses alongside its older homes, and they are common bookings. Smaller floorplans generally need less time, and a fortnightly visit is often enough to keep things in order. What it costs depends on size, condition and frequency, and the free online quote gives you a figure with no phone call.',
+      },
+      {
+        q: 'Do you clean before a property goes on the market?',
+        a: 'Often, yes. Rippleside homes tend to be presented carefully for sale or lease, and a pre-listing deep clean covers the detail that photographs pick up — glass, tracks, skirtings, wet areas and inside cupboards. Let us know the photography or inspection date when you book so we can work back from it.',
+      },
+      {
+        q: 'Which nearby suburbs share the same team as Rippleside?',
+        a: 'Rippleside is serviced alongside North Geelong, Geelong West, Herne Hill, Manifold Heights, Bell Park, North Shore and central Geelong. Because it is all one team across the inner-north, cleans for a family member nearby can usually be arranged on the same day as yours.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-fyansford',
+    name: 'Fyansford',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Fyansford Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Fyansford'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Fyansford',
+      h2: 'Professional house cleaning in Fyansford & the river valley',
+      paragraphs: [
+        'Fyansford sits west of Geelong where the Moorabool River joins the Barwon, in a valley long associated with limestone quarrying and cement making. The old village and its heritage remnants still sit alongside the river, while newer residential streets have grown on the higher ground above. NATURO GROUP cleans homes across both parts of the suburb.',
+        'That mix makes for two quite different cleaning jobs in the one postcode. Newer homes here are large and open-plan with plenty of glass and hard flooring, while the older cottages nearer the river are compact and full of original detail. Our cleaners are set up for either without changing the standard.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Fyansford & western Geelong',
+      paragraphs: [
+        'Whether your home is a recent build on the rise or a heritage cottage near the river crossing, the same police-checked, insured team attends, brings all products and equipment, and works through a set routine so nothing gets missed.',
+        'We service Fyansford along with Herne Hill, Hamlyn Heights, Manifold Heights, Newtown, Highton, Ceres and Batesford, covering the western side of Geelong with one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every Fyansford clean is carried out by police-checked cleaners covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Built for bigger floorplans', body: 'Newer Fyansford homes are large and open-plan, and we scope the time properly rather than rushing the finish.' },
+        { icon: 'sparkle', title: 'Eco-friendly and family-safe', body: 'Plant-based, biodegradable, non-toxic products that suit households with young children, pets or asthma.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, with a founder who came from nursing and brought that eye for detail into every home we clean.',
+      'In Fyansford that means a consistent, methodical clean whether the home is brand new or well over a century old.',
+      'We work with NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Fyansford, and every clean is covered by our satisfaction guarantee.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Fyansford?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Fyansford clean in under 60 seconds.',
+      trust: 'Trusted by Fyansford households on both sides of the river valley.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Fyansford VIC',
+      description: 'Eco-friendly house cleaning in Fyansford Geelong VIC. Police-checked, insured cleaners for new homes and heritage cottages alike. Free instant online quote.',
+    },
+    nearbySuburbs: ['Herne Hill', 'Hamlyn Heights', 'Manifold Heights', 'Newtown', 'Highton', 'Ceres', 'Batesford', 'Geelong West'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean both the newer homes and the older cottages in Fyansford?',
+        a: 'Yes, and we do both regularly. Fyansford is unusual in holding a lot of recent, large open-plan housing and a pocket of much older cottages close to the river. Our cleaners adjust the method to the surfaces in each home, but the routine, the products and the satisfaction guarantee do not change between them.',
+      },
+      {
+        q: 'Do larger open-plan Fyansford homes need a longer clean?',
+        a: 'Usually, yes. Big living zones, extra bathrooms and large expanses of glass and hard flooring simply take more time to do properly, and we would rather scope it correctly than rush the finish. The free online quote factors in your home size and condition, so you see the figure up front without needing to call.',
+      },
+      {
+        q: 'Do you handle construction dust in newly built Fyansford homes?',
+        a: 'We do. A builders or post-construction style deep clean is a common first booking in the newer parts of Fyansford, because fine dust settles inside cupboards, in door tracks, on top of skirtings and across every window frame. It is a longer job than a routine clean, so tell us it is a new build when you book.',
+      },
+      {
+        q: 'Do you also clean rural or acreage-style properties near the river?',
+        a: 'Yes. Some Fyansford properties sit on larger, semi-rural blocks near the Moorabool and Barwon, and those homes tend to bring more outdoor dirt inside through entryways and laundries. We clean the interior of the house rather than sheds or outbuildings, and we plan extra attention for entry areas and hard floors.',
+      },
+      {
+        q: 'Are your products safe around children, pets and asthma?',
+        a: 'Yes. Everything used in a Fyansford home is plant-based, biodegradable and non-toxic, with no harsh fumes or strong fragrance, which suits families with young children, pets or asthma sufferers. We supply all products and equipment ourselves, so there is nothing for you to buy, store or have ready.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-ceres',
+    name: 'Ceres',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Ceres Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Ceres'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Ceres',
+      h2: 'Professional house cleaning in rural Ceres',
+      paragraphs: [
+        'Ceres is a small rural community on the hills west of the Barwon River, looking back across the valley towards Geelong. It is a place of acreage, lifestyle blocks and long driveways rather than suburban streets, and the pace reflects that. NATURO GROUP travels out to Ceres properties as part of our regular western Geelong run.',
+        'Country living brings its own cleaning realities. Paddock dust, gravel drives, working boots and animals all find their way indoors, and homes here are often larger with more hard flooring and more glass. Our cleans are scoped for that instead of being priced as though the house sat on a quarter-acre block in town.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Ceres & the Barwon hills',
+      paragraphs: [
+        'Rural properties need cleaners who are organised, because a return visit for something forgotten is a real inconvenience out here. Our team arrives with all products and equipment supplied and works through a set routine so the job is complete in one visit.',
+        'We service Ceres along with Fyansford, Batesford, Highton, Wandana Heights, Newtown, Waurn Ponds and central Geelong, so the western hills and the city share one cleaning team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability insurance, which matters on properties where you may not be home.' },
+        { icon: 'clock', title: 'Scoped for larger properties', body: 'Ceres homes are often big with plenty of hard flooring, and we allow the time the house actually needs.' },
+        { icon: 'sparkle', title: 'Safe on tank water', body: 'Plant-based, biodegradable, non-toxic products with nothing harsh going into rural drainage or septic systems.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone whose nursing background set the standard we still clean to.',
+      'For Ceres properties that means a methodical, complete clean in a single visit, because coming back out for a missed room helps nobody.',
+      'We also support NDIS participants, Home Care Package recipients, DVA card holders and insurance clients in Ceres, with our satisfaction guarantee on every clean.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Ceres?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Ceres clean in under 60 seconds.',
+      trust: 'Trusted by Ceres families on acreage and lifestyle blocks west of the Barwon.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Ceres VIC',
+      description: 'Eco-friendly house cleaning in Ceres near Geelong VIC. Police-checked, insured cleaners for acreage and lifestyle properties. Free instant online quote.',
+    },
+    nearbySuburbs: ['Fyansford', 'Batesford', 'Highton', 'Wandana Heights', 'Newtown', 'Waurn Ponds', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you travel out to acreage properties in Ceres?',
+        a: 'Yes. Ceres is part of our western Geelong run, so lifestyle blocks and acreage homes on the hills above the Barwon are normal bookings rather than an exception. Because travel is involved, we prefer to lock in a regular day where possible, which keeps the routine predictable for you and for the cleaner attending.',
+      },
+      {
+        q: 'Can you deal with paddock dust and mud tracked in from outside?',
+        a: 'That is a standard part of cleaning in Ceres. Gravel drives, paddocks and working boots put a lot of grit through entryways, laundries and hallways, so those areas get extra attention along with hard floors and door tracks. If it has built up over a dry or wet season, a one-off deep clean is the better place to start.',
+      },
+      {
+        q: 'Are your products safe for septic systems and tank water?',
+        a: 'Yes, and this is a common question in Ceres. Everything we use is plant-based, biodegradable and non-toxic, with no harsh solvents or bleach going into rural drainage or a septic system. It is also gentler on the household, with no lingering fumes or heavy fragrance after we finish.',
+      },
+      {
+        q: 'What if nobody is home when the cleaners arrive?',
+        a: 'That suits plenty of Ceres properties, where people are out during the day or working elsewhere on the block. Many clients arrange access ahead of time and simply come home to a finished house. Our cleaners are police-checked and the company carries $20m public liability insurance, so an empty house is no obstacle.',
+      },
+      {
+        q: 'Do you clean sheds, garages or outbuildings on the property?',
+        a: 'Our service covers the inside of the home rather than sheds, barns or outbuildings, which is worth knowing on a Ceres property where those buildings can be substantial. Garages are best discussed when you book. Everything inside the house is fair game, including a deep clean of ovens, wet areas and inside cupboards.',
+      },
+      {
+        q: 'How is the cost worked out for a large rural home?',
+        a: 'It comes down to the size of the home, its current condition and how often you would like us. Ceres homes are often larger than their suburban equivalents, so the free instant online quote is the quickest way to see a realistic figure. It takes about 60 seconds and there is no phone call required.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-batesford',
+    name: 'Batesford',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Batesford Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Batesford'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Batesford',
+      h2: 'Professional house cleaning in the Batesford township',
+      paragraphs: [
+        'Batesford is a small township north-west of Geelong, set near the Moorabool River in country that has long been associated with quarrying and farming. It stays semi-rural in character, with a modest cluster of homes and larger holdings spread around it rather than continuous suburban streets. NATURO GROUP cleans homes throughout the district.',
+        'Properties here range from older township houses to newer homes on generous blocks, and most sit closer to open paddocks than to shops. That means more dust, more outdoor dirt at the door and often more floor area to cover, all of which we allow for when a Batesford clean is scoped.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Batesford & the Moorabool district',
+      paragraphs: [
+        'In a small township, word travels, and we would rather earn a reputation slowly than talk one up. Our police-checked, insured cleaners bring every product and piece of equipment with them, follow the same routine each visit, and finish the job before they leave.',
+        'We service Batesford together with Fyansford, Ceres, Lovely Banks, Bell Post Hill, Hamlyn Heights, Highton and central Geelong, so the north-western fringe is covered by one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners covered by $20m public liability insurance, in every Batesford home we attend.' },
+        { icon: 'clock', title: 'A set day that sticks', body: 'Regular Batesford cleans work best on a locked-in day, so you always know when the team is coming.' },
+        { icon: 'sparkle', title: 'Gentle on rural drainage', body: 'Plant-based, biodegradable and non-toxic products, suited to homes on tank water or septic systems.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, and our founder\'s nursing background is the reason the company measures a clean by hygiene rather than appearance.',
+      'In Batesford that translates into a thorough, unhurried clean and cleaners who are comfortable working in homes on larger, semi-rural blocks.',
+      'We support NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients in Batesford, and every clean carries our satisfaction guarantee.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Batesford?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Batesford clean in under 60 seconds.',
+      trust: 'Trusted by Batesford households across the north-western fringe of Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Batesford VIC',
+      description: 'Eco-friendly house cleaning in Batesford near Geelong VIC. Police-checked, insured cleaners for township and semi-rural homes. Free instant online quote.',
+    },
+    nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you actually service a township as small as Batesford?',
+        a: 'We do. Batesford sits on our north-western run alongside Fyansford, Ceres and Lovely Banks, so getting there is straightforward. Being a smaller township, we do prefer to set a regular day for ongoing clients where we can, which keeps the schedule tidy and means you always know when the team is arriving.',
+      },
+      {
+        q: 'Can you handle the dust that comes with living near open country?',
+        a: 'Yes. Homes around Batesford collect fine dust from paddocks, gravel and passing traffic on sills, blinds, door tracks and hard floors, so those get more attention in the routine than they would in a sheltered suburban street. Where it has accumulated over a season, a one-off deep clean is a better starting point than a standard visit.',
+      },
+      {
+        q: 'Are your products suitable if we are on tank water or septic?',
+        a: 'They are. Everything we bring to a Batesford home is plant-based, biodegradable and non-toxic, so nothing harsh goes into a septic system or rural drainage. There are no strong solvents, no bleach fumes and no heavy fragrance left behind, which also suits households with children, pets or asthma sufferers.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleaning for Batesford properties?',
+        a: 'Yes. An end-of-lease clean in Batesford covers the full detail an agent will look for, including the oven, inside cupboards and drawers, wet areas, skirtings, tracks and interior glass. Keep the receipt and our bond-back re-clean guarantee applies, so if something is raised at the final inspection we come back and put it right.',
+      },
+      {
+        q: 'Can one visit cover both my home and a family member\'s nearby?',
+        a: 'Often, yes. Because Batesford is serviced on the same run as Fyansford, Ceres, Lovely Banks and Bell Post Hill, cleans for two households in the district can usually be arranged on the same day. Mention it when booking and the office can line the two visits up rather than sending the team out twice.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-lovely-banks',
+    name: 'Lovely Banks',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Lovely Banks Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Lovely Banks'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Lovely Banks',
+      h2: 'Professional house cleaning in Lovely Banks & the northern fringe',
+      paragraphs: [
+        'Lovely Banks sits on the rising ground at Geelong\'s northern fringe, where the city thins out into open country. It has long been a rural-residential pocket of large blocks, and newer estate housing has since been added alongside it. NATURO GROUP cleans homes in both the older acreage and the newer streets.',
+        'That gives the suburb two very different sorts of home. Recent builds tend to be large and open-plan with plenty of glass, while the rural-residential blocks bring paddock dust and outdoor dirt indoors. We scope each Lovely Banks clean around the property in front of us rather than a standard suburban template.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Lovely Banks & northern Geelong',
+      paragraphs: [
+        'Growth areas often get the leftovers of a cleaning run, squeezed in at the end of a day. We would rather book Lovely Banks properly, with the time the home actually needs and a police-checked, insured cleaner who brings everything required.',
+        'We service Lovely Banks along with Bell Post Hill, Corio, Norlane, Lara, Batesford, Hamlyn Heights and central Geelong, so the northern fringe shares one cleaning team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner attending a Lovely Banks home is police-checked and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Time to match the home', body: 'Larger new builds and acreage homes in Lovely Banks are scoped honestly instead of squeezed into a short slot.' },
+        { icon: 'sparkle', title: 'Family-safe, plant-based', body: 'Non-toxic biodegradable products safe around children and pets, and gentle on tank water and septic systems.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background who built the service around hygiene and consistency.',
+      'In Lovely Banks that shows in a clean that is the same standard whether the home is a new estate build or an older place on acreage.',
+      'We support NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients here, and every clean carries our satisfaction guarantee.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Lovely Banks?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Lovely Banks clean in under 60 seconds.',
+      trust: 'Trusted by Lovely Banks families across the northern fringe of Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Lovely Banks VIC',
+      description: 'Eco-friendly house cleaning in Lovely Banks Geelong VIC. Police-checked, insured cleaners for new estate and acreage homes. Free instant online quote.',
+    },
+    nearbySuburbs: ['Bell Post Hill', 'Corio', 'Norlane', 'Lara', 'Batesford', 'Hamlyn Heights', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean both the new estate homes and the older acreage in Lovely Banks?',
+        a: 'Yes, and the two are quite different jobs. Newer Lovely Banks builds are large and open-plan with a lot of glass and hard flooring, while the rural-residential blocks bring more outdoor dirt through entryways. Our cleaners adjust the plan to the property, but the routine, the products and the guarantee stay identical.',
+      },
+      {
+        q: 'Do you do a first deep clean before starting regular visits?',
+        a: 'It is often the sensible order in Lovely Banks, particularly for a home that has just been built or has not had a professional clean for a while. The initial deep clean covers ovens, inside cupboards, wet areas, skirtings and tracks, and regular visits afterwards are shorter because they are maintaining a house that has already been reset.',
+      },
+      {
+        q: 'Can you clean a brand new build before we move in?',
+        a: 'Yes. Handover cleans are common in the newer parts of Lovely Banks, where construction dust settles inside cupboards, along skirtings, in window frames and across door tracks long after the trades have gone. Let us know it is a new build when booking so we allow the extra time a post-construction clean genuinely needs.',
+      },
+      {
+        q: 'How far out do you travel on the northern fringe?',
+        a: 'Lovely Banks is comfortably within our service area, and it is covered on the same run as Bell Post Hill, Corio, Norlane, Lara and Batesford. Because that run is a set part of the week, ongoing clients in Lovely Banks generally get a regular day, which makes the schedule easier for everyone.',
+      },
+      {
+        q: 'Do you support NDIS participants and aged care clients in Lovely Banks?',
+        a: 'We do. In Lovely Banks we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. The company being nursing-led means support-related cleaning is handled with the care and discretion it deserves.',
+      },
+      {
+        q: 'What determines the cost of a clean out here?',
+        a: 'The size of the home, its current condition and how often you book. Lovely Banks homes are often larger than the Geelong average, so a quick guess over the phone would not be much use to you. The free instant online quote takes about 60 seconds, needs no phone call, and there are no lock-in contracts once you start.',
+      },
+    ],
+  },
+
+{
+    slug: 'house-cleaning-marshall',
+    name: 'Marshall',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Marshall Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Marshall'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Marshall',
+      h2: 'Professional house cleaning in Marshall & south Geelong',
+      paragraphs: [
+        'Marshall sits south of central Geelong near the Barwon River, an established residential pocket with its own railway station on the line running down toward the Surf Coast. Housing here is settled rather than brand new, with brick and weatherboard family homes, some long held by the same owners, sitting alongside newer infill builds on subdivided blocks.',
+        'The station makes Marshall a genuine commuter suburb, so a good many households are out early and home late, and want a clean that simply happens without them having to be there. NATURO GROUP works to that rhythm, using police-checked, insured cleaners and plant-based products in every Marshall home we attend.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Marshall & the southern corridor',
+      paragraphs: [
+        'Marshall is a suburb people commute out of and come home to, which is exactly why a reliable, unfussy cleaning routine matters here. We book a consistent time, work to an agreed scope and leave the home ready for the evening rather than adding another job to it.',
+        'We service Marshall along with Belmont, Grovedale, Charlemont, Armstrong Creek, Waurn Ponds, Highton and Leopold, so the whole southern Geelong corridor is covered by one trusted team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner entering a Marshall home is police-checked and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Cleans that fit a commute', body: 'Weekday cleans scheduled while Marshall households are at work, with no need for anyone to be home.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products with no harsh fumes, safe around children, pets and asthma.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that training still shapes how our cleaners work in Marshall homes.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Marshall.',
+      'Every Marshall clean is covered by our satisfaction guarantee, with no lock-in contracts and no obligation to keep a regular slot you no longer need.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Marshall?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Marshall clean in under 60 seconds.',
+      trust: 'Trusted by Marshall families, commuters and homeowners across southern Geelong.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Marshall VIC',
+      description: 'Eco-friendly house cleaning in Marshall, south Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+    },
+    nearbySuburbs: ['Belmont', 'Grovedale', 'Charlemont', 'Armstrong Creek', 'Waurn Ponds', 'Highton', 'Leopold', 'South Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean while I am at work and catching the train from Marshall?',
+        a: 'Yes, and it is how most Marshall bookings run. Plenty of households here commute from the station, so we agree a weekday window, arrange access in a way you are comfortable with, and complete the clean while the house is empty. You come home to a finished job. We bring all products and equipment, so nothing needs to be left out for us.',
+      },
+      {
+        q: 'Do you clean both older family homes and newer infill builds in Marshall?',
+        a: 'We do. Marshall has long-established brick and weatherboard homes on original blocks as well as newer townhouses and units built on subdivided land. Our cleaners match the method to the surfaces in front of them, so older timber floors and modern engineered finishes each get appropriate treatment, but the standard and the guarantee are the same in every home.',
+      },
+      {
+        q: 'What does a clean in Marshall cost?',
+        a: 'It depends on the size of your home, the condition it is in and how often you book, so we do not publish a flat figure. The free instant online quote gives you a price for your specific Marshall home in about a minute, with no phone call and no obligation. There are no lock-in contracts if you decide to book.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for Marshall rentals?',
+        a: 'Yes. End-of-lease cleaning is one of our core services in Marshall, covering the detail that property managers check at final inspection. Our bond-back re-clean guarantee applies when you hold your receipt, so if something is raised at inspection we return and address it. Book with enough lead time before your handover date where you can.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients in Marshall?',
+        a: 'We do. In Marshall we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company we handle support-related cleaning with care and discretion, and we are happy to work to a scope set out by a coordinator or family member.',
+      },
+      {
+        q: 'How soon can you start in Marshall?',
+        a: 'A first booking in Marshall is usually two to five business days out, depending on the day and time you want. Booking online takes about 60 seconds and our office is open Monday to Friday, 8:30am to 5:00pm, on 1300 876 472 if you would rather talk it through before locking anything in.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-charlemont',
+    name: 'Charlemont',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Greater Geelong',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Charlemont Geelong VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Charlemont'],
+      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+    },
+    intro: {
+      kicker: 'House cleaning in Charlemont',
+      h2: 'Professional house cleaning in Charlemont & Armstrong Creek',
+      paragraphs: [
+        'Charlemont is part of the Armstrong Creek growth area south of Geelong, and it is one of the newest residential addresses in the region. Much of the housing is recently built or still going up, so streets fill with young families and first home buyers moving into homes that have never been lived in before.',
+        'New builds bring their own kind of mess. Construction dust settles in tracks and window channels, silicone and paint marks linger, and fresh landscaping walks straight through the back door. NATURO GROUP handles that first clean properly, then keeps the house on top of it with regular eco-friendly visits.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Charlemont & the growth corridor',
+      paragraphs: [
+        'A brand new home deserves to start clean, and a builder handover rarely leaves it that way. Our cleaners work through a new Charlemont house room by room, including the places dust hides after trades have finished, so you move into a home that is genuinely ready.',
+        'We service Charlemont along with Armstrong Creek, Mount Duneed, Marshall, Grovedale, Waurn Ponds, Belmont and Connewarre, so the growth corridor south of Geelong is looked after by one team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability insurance, working in brand new Charlemont homes.' },
+        { icon: 'clock', title: 'Handover and move-in timing', body: 'Cleans booked around settlement and handover dates so your Charlemont home is ready on the day.' },
+        { icon: 'sparkle', title: 'Safe for new families', body: 'Plant-based, non-toxic products with no harsh fumes, suited to babies, toddlers and pets.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and that shows in how thoroughly a new Charlemont home is finished before a family moves in.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Charlemont.',
+      'Every Charlemont clean carries our satisfaction guarantee, with no lock-in contracts, so a regular slot can change as your household does.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Charlemont?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Charlemont clean in under 60 seconds.',
+      trust: 'Trusted by Charlemont families settling into new homes across the Armstrong Creek growth area.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Charlemont VIC',
+      description: 'Eco-friendly house cleaning in Charlemont, Armstrong Creek growth area VIC. New-build first cleans, regular and deep cleans by police-checked cleaners.',
+    },
+    nearbySuburbs: ['Armstrong Creek', 'Mount Duneed', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Belmont', 'Connewarre', 'Torquay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you do a first clean after builder handover on a new Charlemont home?',
+        a: 'Yes, and it is one of our most common Charlemont jobs. A handover clean by the builder is usually a quick pass, so we go back through properly: window and door tracks, inside cupboards and drawers, skirtings, light fittings, wet areas and floors. It gets the fine construction dust out before your furniture arrives and starts holding it.',
+      },
+      {
+        q: 'Our Charlemont home is still surrounded by building sites. Is regular cleaning worth it yet?',
+        a: 'Many Charlemont households find it is. While nearby lots are still under construction, dust travels and gets tracked in constantly, so a fortnightly or weekly clean stops it building up in carpets and on hard surfaces. Some families scale back to a lighter routine once the surrounding streets are finished and landscaped, which is easy to change at any time.',
+      },
+      {
+        q: 'Will your products be safe for a baby or toddler in a new home?',
+        a: 'Yes. Everything we use in Charlemont is plant-based, biodegradable and non-toxic, with no heavy fragrance and no harsh fumes. That matters in a new home where the house is often closed up and finishes are still off-gassing. We supply all products and equipment, so there is nothing for you to buy, store or keep away from small hands.',
+      },
+      {
+        q: 'What does a clean in Charlemont cost?',
+        a: 'It depends on the size of the home, its condition and how often you book, so there is no flat rate. A brand new four bedroom Charlemont house needing a post-construction detail is a different job to an ongoing fortnightly clean. The free online quote gives you a figure in about a minute with no phone call and no obligation.',
+      },
+      {
+        q: 'Can you clean before settlement or on moving day in Charlemont?',
+        a: 'Usually yes, provided access can be arranged. We often clean an empty Charlemont home in the window between handover and the removalists arriving, which is by far the easiest time to do it properly. Let us know your dates when you book so we can hold a slot, and give us a few days notice where possible.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-wallington',
+    name: 'Wallington',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Wallington on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Wallington'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Wallington',
+      h2: 'Professional house cleaning in Wallington & the rural Bellarine',
+      paragraphs: [
+        'Wallington sits in the rural middle of the Bellarine Peninsula, between Geelong and Ocean Grove, and it has kept its farming character. Orchards, paddocks, market gardens and lifestyle blocks make up much of the area, and homes tend to sit on acreage well back from the road rather than in tight residential streets.',
+        'Country properties clean differently to suburban ones. Gravel driveways and paddocks send fine dust indoors, boots and dogs come through mud rooms and laundries, and many households run on tank water. NATURO GROUP works with all of that, bringing plant-based products and every piece of equipment we need to each Wallington property.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Wallington & the central Bellarine',
+      paragraphs: [
+        'Acreage homes are often larger than they look from the driveway, with verandahs, second living areas and hard-working laundries. We walk the property with you first so the scope is clear and your Wallington clean is quoted and staffed for the house you actually have.',
+        'We service Wallington along with Ocean Grove, Drysdale, Curlewis, Barwon Heads, Leopold, Connewarre and Clifton Springs, so the Bellarine is covered by one trusted team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability insurance, used to working on rural Wallington properties.' },
+        { icon: 'clock', title: 'Everything brought with us', body: 'All products and equipment supplied, which matters on properties where the nearest shop is a drive away.' },
+        { icon: 'sparkle', title: 'Gentle on tank water systems', body: 'Plant-based, biodegradable products with no harsh chemicals going down the drain.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that thoroughness suits the larger homes we clean around Wallington.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Wallington.',
+      'Every Wallington clean is covered by our satisfaction guarantee, with no lock-in contracts, so seasonal changes to your routine are simple to arrange.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Wallington?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Wallington clean in under 60 seconds.',
+      trust: 'Trusted by Wallington families and acreage owners across the rural Bellarine.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Wallington VIC',
+      description: 'Eco-friendly house cleaning in Wallington on the Bellarine Peninsula VIC. Acreage and lifestyle homes cleaned by police-checked, insured cleaners. Book online.',
+    },
+    nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Curlewis', 'Barwon Heads', 'Leopold', 'Connewarre', 'Clifton Springs', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe for a Wallington property on tank water and a septic system?',
+        a: 'Yes. Everything we bring to Wallington is plant-based, biodegradable and non-toxic, so nothing harsh goes down the drain and into a septic system. That is one reason rural households on the Bellarine choose us. If you have particular concerns about your setup, tell us when you book and we will confirm the products we plan to use.',
+      },
+      {
+        q: 'Can you handle a mud room, laundry and boot area on a working property?',
+        a: 'We can, and on Wallington properties that is often where the real work is. Entry areas, laundries and mud rooms take the brunt of paddock dust, gravel and wet dogs, so we treat them as a proper part of the clean rather than an afterthought. Let us know if you want extra time spent there and we will scope it in.',
+      },
+      {
+        q: 'Do you charge extra to travel out to a rural Wallington address?',
+        a: 'Wallington is within our regular Bellarine service area, so it is booked the same way as any other suburb. What the clean costs depends on the size and condition of the home and how often you book, not on how far down the road you are. The free online quote gives you a figure in about a minute.',
+      },
+      {
+        q: 'Our house is much bigger than a standard suburban home. Can you still quote it online?',
+        a: 'Yes. The online quote handles larger Wallington homes, and if the property has features that are hard to capture in a form, such as multiple living areas, extensive glass or long verandahs, add a note and we will confirm the scope with you before the first visit. That way there are no surprises for either side.',
+      },
+      {
+        q: 'Do you clean holiday and weekender properties in Wallington?',
+        a: 'Yes. Some Wallington properties are only used part of the year, and we can do a clean before an owner arrives, a turnaround afterwards, or an occasional deep clean to keep dust and cobwebs in check while the house sits empty. Access can be arranged without you being on site.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients in Wallington?',
+        a: 'We do. Around Wallington we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Being nursing-led, we handle in-home support cleaning with discretion, and we can work to a scope set by a support coordinator or family member.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-connewarre',
+    name: 'Connewarre',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Connewarre on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Connewarre'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Connewarre',
+      h2: 'Professional house cleaning in Connewarre & the coastal hinterland',
+      paragraphs: [
+        'Connewarre lies in the coastal hinterland south of Geelong, near the Barwon estuary and the wetlands that carry its name. It is a rural area of acreage, farmland and lifestyle blocks rather than a suburban grid, with homes spread along country roads between the river flats and the coast.',
+        'Living close to wetlands and open paddocks means wind-borne dust, mud through the back door and a house that has to work hard. NATURO GROUP cleans Connewarre homes with plant-based, biodegradable products, which matters when your property sits in a sensitive environment and drains toward the estuary.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Connewarre & the Barwon hinterland',
+      paragraphs: [
+        'Rural homes rarely fit a standard template, so we start with a clear scope rather than assumptions. Whether your Connewarre property is a compact cottage on a small holding or a large family home on acreage, the clean is planned around the rooms you actually want covered.',
+        'We service Connewarre along with Barwon Heads, Ocean Grove, Wallington, Armstrong Creek, Mount Duneed, Marshall and Leopold, so the hinterland and the coast share one trusted team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners covered by $20m public liability insurance on every Connewarre property.' },
+        { icon: 'clock', title: 'Flexible rural scheduling', body: 'Regular, one-off and seasonal cleans arranged around farm work, guests and quiet months.' },
+        { icon: 'sparkle', title: 'Kind to a sensitive catchment', body: 'Plant-based, biodegradable products chosen so nothing harsh ends up in the drain or the ground.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and that standard travels to every Connewarre home we clean.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients around Connewarre.',
+      'Every Connewarre clean is covered by our satisfaction guarantee, and there are no lock-in contracts to sign before we start.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Connewarre?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Connewarre clean in under 60 seconds.',
+      trust: 'Trusted by Connewarre families and acreage owners across the Barwon hinterland.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Connewarre VIC',
+      description: 'Eco-friendly house cleaning in Connewarre on the Bellarine Peninsula VIC. Acreage and lifestyle homes, police-checked and insured cleaners, book online.',
+    },
+    nearbySuburbs: ['Barwon Heads', 'Ocean Grove', 'Wallington', 'Armstrong Creek', 'Mount Duneed', 'Marshall', 'Leopold', 'Torquay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'We back onto paddocks and wetland. Can you keep dust and mud under control?',
+        a: 'That is the usual brief in Connewarre. Fine dust blows in off open ground and settles on sills, fans, blinds and hard floors, while mud arrives through entries and laundries. We build those areas into the regular scope rather than treating them as extras, and a periodic deep clean handles the build-up that a routine visit does not reach.',
+      },
+      {
+        q: 'Do your products matter if our property drains toward the estuary?',
+        a: 'We think so. Everything used in Connewarre homes is plant-based, biodegradable and non-toxic, with no harsh solvents or bleaches, so what goes down the drain is far gentler on a septic system and on the surrounding catchment. It is also better for anyone in the house with asthma, and safe around children and pets.',
+      },
+      {
+        q: 'Can you clean a large acreage home rather than a standard house?',
+        a: 'Yes. Many Connewarre homes are larger than a typical suburban house, with extra living areas, wide glass and hard-working laundries and entries. We scope the job to the actual home and staff it accordingly. If the online form does not capture something, add a note and we will confirm the details before your first clean.',
+      },
+      {
+        q: 'What does a clean in Connewarre cost?',
+        a: 'It depends on the size of your home, the condition it is in and how often you book, so we do not advertise a set price. The free instant online quote covers Connewarre properties and gives you a figure in about a minute, with no phone call needed. There are no lock-in contracts if you decide to go ahead.',
+      },
+      {
+        q: 'Can you clean between guests or before family come to stay?',
+        a: 'Yes. Connewarre homes often host visitors over summer and holiday periods, and a one-off clean before arrivals or a turnaround afterwards is straightforward to arrange. You do not need an ongoing booking to use us. Give us a few days notice where you can, since a first booking is usually two to five business days out.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-clifton-springs',
+    name: 'Clifton Springs',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Clifton Springs on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Clifton Springs'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Clifton Springs',
+      h2: 'Professional house cleaning in Clifton Springs & the northern Bellarine',
+      paragraphs: [
+        'Clifton Springs is a bayside township on the northern edge of the Bellarine Peninsula, looking out over Corio Bay. Streets step down toward the water, so a great many homes have a view, and the housing mix runs from established brick homes through to newer family builds and low-maintenance units.',
+        'It is a township with a strong retiree and semi-retired population living alongside families, which shapes what people ask us for. NATURO GROUP provides everything from a light fortnightly clean that keeps a home manageable to a full deep clean, using plant-based products across every Clifton Springs address.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Clifton Springs & the bay side of the Bellarine',
+      paragraphs: [
+        'Living close to the bay is lovely and hard on a house. Salt-laden air marks windows, tracks and flyscreens faster than it does inland, so we give glass and external-facing surfaces the attention they need in Clifton Springs rather than a token pass.',
+        'We service Clifton Springs along with Drysdale, Curlewis, Portarlington, Leopold, Wallington, Ocean Grove and St Leonards, so the northern Bellarine is looked after by one trusted team.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked, insured cleaners with $20m public liability cover, trusted in Clifton Springs homes.' },
+        { icon: 'clock', title: 'Regular support at home', body: 'Fortnightly and weekly routines that help Clifton Springs residents stay comfortably in their own home.' },
+        { icon: 'sparkle', title: 'Gentle, low-odour products', body: 'Plant-based and biodegradable, with no harsh fumes, which suits older residents and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, so in-home care work is familiar territory for our Clifton Springs team.',
+      'We work with Home Care Package recipients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders and insurance clients across Clifton Springs.',
+      'Every Clifton Springs clean carries our satisfaction guarantee, with no lock-in contracts and the same cleaner wherever we can manage it.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Clifton Springs?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Clifton Springs clean in under 60 seconds.',
+      trust: 'Trusted by Clifton Springs residents, retirees and families across the northern Bellarine.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Clifton Springs',
+      description: 'Eco-friendly house cleaning in Clifton Springs on the Bellarine Peninsula VIC. Home Care Package and NDIS friendly cleans, police-checked, insured cleaners.',
+    },
+    nearbySuburbs: ['Drysdale', 'Curlewis', 'Portarlington', 'Leopold', 'Wallington', 'Ocean Grove', 'St Leonards', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can a Home Care Package pay for cleaning in Clifton Springs?',
+        a: 'Domestic assistance is commonly included in Home Care Packages, and we work with package recipients across Clifton Springs. Your provider or case manager arranges the funding side and we deliver the clean to the agreed scope. We also support DVA Gold and White card holders and NDIS participants who are plan-managed or self-managed. Speak to your coordinator, then book with us.',
+      },
+      {
+        q: 'Does living near the bay make a difference to how you clean here?',
+        a: 'It does. Salt air off Corio Bay leaves a film on glass, window tracks, flyscreens and metal fittings that inland homes do not get to the same degree, and it comes back faster. In Clifton Springs we give those surfaces regular attention, and a periodic deep clean is worth booking for tracks, screens and external-facing glass.',
+      },
+      {
+        q: 'Can I have the same cleaner each visit?',
+        a: 'We aim for it, and in Clifton Springs it is often what people most want, particularly older residents who would rather not explain the house again each fortnight. Leave and illness mean we cannot promise it every single time, but continuity is something we actively schedule for, and a replacement is briefed on your home before they arrive.',
+      },
+      {
+        q: 'I only need help with the heavier jobs, not the whole house.',
+        a: 'That is a very common Clifton Springs booking. Plenty of residents manage day-to-day tidying themselves and want help with bathrooms, floors, the kitchen or anything involving bending and reaching. Tell us what you want covered and we will work to that list. You can adjust it later, and there are no lock-in contracts.',
+      },
+      {
+        q: 'What does a clean in Clifton Springs cost?',
+        a: 'It depends on the size of the home, its condition and how often you book, so there is no single figure to quote. A light fortnightly clean of a low-maintenance unit sits well below a full deep clean of a large family home. The free online quote covers Clifton Springs and takes about a minute, with no phone call.',
+      },
+      {
+        q: 'Do you do end-of-lease and pre-sale cleans in Clifton Springs?',
+        a: 'Yes. We do end-of-lease cleans with a bond-back re-clean guarantee when you keep your receipt, and presentation cleans before a home goes on the market, which comes up regularly in Clifton Springs when people downsize. Book with as much notice as you can so we can align with your inspection or photography date.',
+      },
+    ],
+  },
+
+{
+    slug: 'house-cleaning-portarlington',
+    name: 'Portarlington',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Portarlington on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Portarlington'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Portarlington',
+      h2: 'Professional house cleaning in Portarlington & the northern Bellarine',
+      paragraphs: [
+        'Portarlington sits on the northern edge of the Bellarine Peninsula, looking out across Port Phillip. It is a working bayside town with a harbour, a mussel industry and a passenger ferry service to Melbourne, and that mix gives it a rhythm of its own. NATURO GROUP cleans homes here with plant-based products and police-checked cleaners.',
+        'The housing runs from older bayside cottages and brick homes through to newer builds on the rises behind the foreshore. Many are permanent family or retiree homes, and many are holiday houses that sit empty between visits. We handle both, with regular cleans, one-off deep cleans and end-of-lease work.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Portarlington & the northern Bellarine',
+      paragraphs: [
+        'A town that runs on the water and on visitors needs cleaners who can work to a timetable. We plan Portarlington bookings around ferry days, guest changeovers and the busier warm-weather months, so a home is ready when it needs to be rather than whenever suits us.',
+        'We service Portarlington, Indented Head, St Leonards, Drysdale, Curlewis, Leopold and Ocean Grove — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner entering a Portarlington home is police-checked and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Works around your schedule', body: 'Regular, one-off and changeover cleans timed around visits, guests and the busy Portarlington summer.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Non-toxic, plant-based products that are safe for children, pets and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that shows in how carefully we work in a Portarlington home.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, and DVA Gold and White card holders across Portarlington.',
+      'Every Portarlington clean is covered by our satisfaction guarantee, and there are no lock-in contracts to sign.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Portarlington?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Portarlington clean in under 60 seconds.',
+      trust: 'Trusted by Portarlington families, retirees and holiday-home owners.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Portarlington',
+      description: 'Eco-friendly house cleaning in Portarlington VIC. Police-checked, insured cleaners for homes, holiday houses, regular, deep clean and end-of-lease work.',
+    },
+    nearbySuburbs: ['Indented Head', 'St Leonards', 'Drysdale', 'Curlewis', 'Leopold', 'Ocean Grove', 'Marcus Hill', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean a Portarlington holiday house between guests?',
+        a: 'Yes. Changeover cleaning is common work for us in Portarlington, and it covers linen areas, bathrooms, kitchen, floors and a general reset so the place is ready for the next stay. Tell us the window you have between bookings and we will fit the clean inside it. Over summer and school holidays we ask for as much notice as you can give.',
+      },
+      {
+        q: 'I am not in town on cleaning day. How do you get in?',
+        a: 'Plenty of Portarlington owners live elsewhere, so we work with key safes, lock boxes, smart locks or a key left with a neighbour or property manager. You tell us the arrangement when you book, we confirm it in writing, and our police-checked cleaners follow it exactly. We can also message you once the clean is finished.',
+      },
+      {
+        q: 'Does the salt air off the bay affect how you clean?',
+        a: 'It does. Homes near the Portarlington foreshore collect salt film on windows, flyscreens, tracks, tapware and outdoor furniture far faster than inland homes. We clean glass and metal fittings with that in mind and rinse rather than smear, and if the build-up has been left a while a one-off deep clean is the sensible starting point.',
+      },
+      {
+        q: 'Do you work with retirees and Home Care Package clients here?',
+        a: 'We do. Portarlington has a strong retiree community, and we support Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders, and insurance clients. Because the company is nursing-led, our cleaners are trained to work respectfully and discreetly in someone\'s own home.',
+      },
+      {
+        q: 'What does a clean in Portarlington cost?',
+        a: 'It depends on the size of your Portarlington home, its current condition and how often you book, so a single number would not be honest. The free instant quote online gives you the figure in about a minute with no phone call and no obligation. Booking itself takes around 60 seconds, and a first clean is usually 2 to 5 business days away.',
+      },
+      {
+        q: 'Which other Bellarine towns does the same team cover?',
+        a: 'The team that cleans in Portarlington also covers Indented Head, St Leonards, Drysdale, Curlewis, Leopold and Ocean Grove. If you own a home in one of those and a family member has one here, we can often schedule both on the same run, which makes the day simpler for everyone involved.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-st-leonards',
+    name: 'St Leonards',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in St Leonards on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'St Leonards'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in St Leonards',
+      h2: 'Professional house cleaning in St Leonards & the northern Bellarine',
+      paragraphs: [
+        'St Leonards is a quiet beach town on the northern Bellarine, the sort of place that fills up over summer and empties out again by autumn. Alongside its permanent residents and retirees sit a large number of holiday houses and old family shacks. NATURO GROUP cleans all of them with plant-based products and police-checked cleaners.',
+        'Housing here is modest and varied, from weatherboard beach shacks and additions built on over the years to newer brick homes set back from the water. We provide regular cleans, one-off deep cleans, spring and pre-season cleans, and end-of-lease cleaning with a bond-back re-clean guarantee.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across St Leonards & the northern Bellarine',
+      paragraphs: [
+        'A house that has been shut up all winter needs a different clean to one lived in every day. In St Leonards we do a lot of both, and we would rather ask what state a place is in before we arrive than guess and under-quote the job.',
+        'We service St Leonards, Indented Head, Portarlington, Drysdale, Marcus Hill, Queenscliff and Curlewis — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked, insured cleaners you can trust in a St Leonards home whether you are there or not.' },
+        { icon: 'clock', title: 'Seasonal and regular cleans', body: 'Pre-season openings, summer changeovers and quiet-season maintenance cleans to suit St Leonards.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products with no harsh fumes, safe for children, pets and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, with a founder from a nursing background, and we bring that standard of care into every St Leonards home we attend.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in St Leonards.',
+      'All products and equipment are supplied, every clean carries our satisfaction guarantee, and there are no lock-in contracts.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in St Leonards?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your St Leonards clean in under 60 seconds.',
+      trust: 'Trusted by St Leonards residents, retirees and beach-house owners.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning St Leonards VIC',
+      description: 'Eco-friendly house cleaning in St Leonards VIC on the Bellarine Peninsula. Police-checked, insured cleaners for regular, deep clean and end-of-lease jobs.',
+    },
+    nearbySuburbs: ['Indented Head', 'Portarlington', 'Drysdale', 'Marcus Hill', 'Queenscliff', 'Curlewis', 'Ocean Grove', 'Leopold'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Our shack has been shut up all winter. Can you open it up for summer?',
+        a: 'That is one of the most common jobs we get in St Leonards. A house closed since autumn usually needs dust taken off every surface, cobwebs cleared, bathrooms and the kitchen brought back, and floors done properly rather than a quick pass. We treat it as a deep clean rather than a regular one, and you get a fresher result for it.',
+      },
+      {
+        q: 'Can you clean while nobody is at the property?',
+        a: 'Yes. Many St Leonards houses belong to people who live elsewhere most of the year, so we work with lock boxes, key safes, smart locks or a key held by a neighbour. Access arrangements are agreed in writing before the first visit, and every cleaner attending is police-checked and covered by our public liability insurance.',
+      },
+      {
+        q: 'How far ahead should I book over the summer peak?',
+        a: 'As early as you can. St Leonards gets very busy from December through the school holidays and changeover slots go quickly, so owners who book their season in advance get the times they want. Outside those months there is far more flexibility, and a first booking is usually 2 to 5 business days away.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans in St Leonards?',
+        a: 'We do, for permanent rentals and for longer-term lets alike. The clean covers the areas agents check, including oven, bathrooms, skirtings, tracks and interior glass, and it comes with our bond-back re-clean guarantee when you hold the receipt. Tell us at booking whether carpets and blinds are included so nothing is missed.',
+      },
+      {
+        q: 'What does a St Leonards clean cost?',
+        a: 'There is no fixed figure, because it depends on the size of the house, the condition it is in when we arrive and how often you book. A shack opened after winter takes longer than a home cleaned fortnightly. The free online quote gives you a price for your St Leonards property in about a minute, with no phone call needed.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-indented-head',
+    name: 'Indented Head',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Indented Head on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Indented Head'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Indented Head',
+      h2: 'Professional house cleaning in Indented Head & the northern Bellarine',
+      paragraphs: [
+        'Indented Head sits between Portarlington and St Leonards on the northern Bellarine, facing the calm side of the bay. It is a small, low-key beach settlement rather than a busy town, with a mix of permanent residents, retirees and families who have held onto the same holiday house for generations. NATURO GROUP cleans homes across all of it.',
+        'The housing is largely single-storey and unpretentious, much of it built for summers rather than winters, with plenty of extensions and enclosed verandahs added over the years. We provide regular cleans, deep cleans, changeover cleans between guests and end-of-lease cleaning, using plant-based products throughout.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Indented Head & the northern Bellarine',
+      paragraphs: [
+        'Small towns notice who comes and goes. Every cleaner we send to an Indented Head home is police-checked, insured and briefed on the access arrangement before they arrive, which matters when the owner is not there to let anyone in.',
+        'We service Indented Head, St Leonards, Portarlington, Drysdale, Curlewis, Marcus Hill and Leopold — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners and $20m public liability cover on every Indented Head booking.' },
+        { icon: 'clock', title: 'Quiet season or peak season', body: 'Maintenance cleans through the quiet months and quick turnarounds when Indented Head fills up.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Non-toxic, biodegradable products that leave no chemical smell in a closed-up beach house.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP was founded by someone from a nursing background, and that nursing-led standard travels with us to every Indented Head home.',
+      'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance clients across Indented Head.',
+      'We supply all products and equipment, our satisfaction guarantee covers every visit, and there are no lock-in contracts.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Indented Head?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Indented Head clean in under 60 seconds.',
+      trust: 'Trusted by Indented Head residents and holiday-house owners on the Bellarine.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Indented Head VIC',
+      description: 'Eco-friendly house cleaning in Indented Head VIC. Police-checked, insured cleaners for beach houses, regular cleans, deep cleans and end-of-lease work.',
+    },
+    nearbySuburbs: ['St Leonards', 'Portarlington', 'Drysdale', 'Curlewis', 'Marcus Hill', 'Leopold', 'Ocean Grove', 'Queenscliff'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Will the products leave a smell in a house that stays closed up?',
+        a: 'No, and it matters here. An Indented Head beach house is often locked up for weeks, so anything strongly fragranced or chemical sits in the air until someone opens a door. We use plant-based, biodegradable products with no harsh fumes, which means the house smells clean rather than sprayed when you next walk in.',
+      },
+      {
+        q: 'Do you clean an older beach shack differently to a modern home?',
+        a: 'The standard is the same, but the method adapts. A lot of Indented Head housing is older, with painted timber, enclosed verandahs, louvre windows and surfaces that do not take aggressive scrubbing. Our cleaners match the approach to what is in front of them, so an original finish is cleaned carefully rather than stripped back.',
+      },
+      {
+        q: 'Can a family member or neighbour let you in?',
+        a: 'Yes. In Indented Head we regularly work with a key held next door, a lock box, a key safe or a smart lock code. Whatever the arrangement is, we confirm it in writing before the first clean and follow it exactly. Our cleaners are police-checked, and we can send you a message when the job is finished if you are away.',
+      },
+      {
+        q: 'What is included in a regular clean?',
+        a: 'A regular Indented Head clean covers kitchen and bathrooms, dusting and surfaces, floors vacuumed and mopped, bins and general tidying. Ovens, windows, inside cupboards and similar extras are add-ons rather than standard, so nobody is surprised. All products and equipment come with us and nothing needs to be stored at the house.',
+      },
+      {
+        q: 'Do you support older residents who live here year-round?',
+        a: 'We do. Indented Head has a settled retiree population, and we support Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders, and insurance clients. Ongoing fortnightly or weekly cleans can be arranged, and the same cleaner attends wherever the schedule allows.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-point-lonsdale',
+    name: 'Point Lonsdale',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Point Lonsdale on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Point Lonsdale'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Point Lonsdale',
+      h2: 'Professional house cleaning in Point Lonsdale & the southern Bellarine',
+      paragraphs: [
+        'Point Lonsdale sits right at the entrance to Port Phillip, where the ocean meets the bay beneath the lighthouse. It has surf beaches on one side and calmer bay water on the other, and homes here take the weather from both. NATURO GROUP cleans in Point Lonsdale with police-checked cleaners and plant-based, non-toxic products.',
+        'Housing ranges from established permanent homes set among tea tree to renovated and architect-designed properties closer to the water, plus a solid share of holiday houses. We provide regular cleans, one-off deep cleans, changeover cleans and end-of-lease cleaning with a bond-back re-clean guarantee.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Point Lonsdale & the southern Bellarine',
+      paragraphs: [
+        'Exposed coastal homes ask more of a clean. Wind carries sand and salt spray inside, and glass, tracks and metal fittings show it first, so our Point Lonsdale cleans give those surfaces the attention they actually need instead of a quick wipe.',
+        'We service Point Lonsdale, Queenscliff, Ocean Grove, Barwon Heads, Marcus Hill, Drysdale and St Leonards — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners carrying $20m public liability insurance into every Point Lonsdale home.' },
+        { icon: 'clock', title: 'Booked around your season', body: 'Regular cleans through the year and faster turnarounds when Point Lonsdale fills over summer.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products that are safe for children, pets and asthma sufferers.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company with a founder from a nursing background, and that care shows in how we work inside a Point Lonsdale home.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Point Lonsdale.',
+      'Every Point Lonsdale clean carries our satisfaction guarantee, all products and equipment are supplied, and there are no lock-in contracts.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Point Lonsdale?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Point Lonsdale clean in under 60 seconds.',
+      trust: 'Trusted by Point Lonsdale families, retirees and holiday-home owners.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Point Lonsdale',
+      description: 'Eco-friendly house cleaning in Point Lonsdale VIC. Police-checked, insured cleaners for coastal homes, regular cleans, deep cleans and end-of-lease work.',
+    },
+    nearbySuburbs: ['Queenscliff', 'Ocean Grove', 'Barwon Heads', 'Marcus Hill', 'Drysdale', 'St Leonards', 'Indented Head', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Sand and salt get into everything here. Can you deal with that?',
+        a: 'Yes, and it is one of the reasons a Point Lonsdale clean is not the same as an inland one. Sand collects in door tracks, entry mats, floor edges and upholstery, while salt spray hazes windows and dulls tapware and outdoor fittings. We work through those areas properly rather than surface-wiping, which is what actually keeps a coastal home looking clean.',
+      },
+      {
+        q: 'Do you clean between short stays at a holiday property?',
+        a: 'We do. Changeover cleaning in Point Lonsdale covers bathrooms, kitchen, floors, surfaces, bins and a general reset so the property presents well for the next arrival. Give us your booking gap and we will work inside it. During summer and school holidays those slots book out early, so plan your season ahead if you can.',
+      },
+      {
+        q: 'Can you clean a home with a lot of glass facing the water?',
+        a: 'Yes. Point Lonsdale has plenty of homes built to take in the view, and large glass is exactly what shows salt film and finger marks the fastest. Interior glass and tracks can be added to a regular clean or booked as part of a deep clean. External windows and any work at height are quoted separately.',
+      },
+      {
+        q: 'We only use the house part of the year. What do you suggest?',
+        a: 'A common pattern in Point Lonsdale is a deep clean before the season starts, regular or changeover cleans through the busy months, then a close-up clean when the house is left for a while. It keeps the property in good order without paying for cleans nobody is there to benefit from.',
+      },
+      {
+        q: 'How much does cleaning a Point Lonsdale home cost?',
+        a: 'It depends on the size of the home, how it is presenting when we arrive and how often you book, so we do not publish a set figure. The free instant quote online covers your Point Lonsdale property in about a minute with no phone call. Booking takes about 60 seconds and first cleans are usually 2 to 5 business days out.',
+      },
+      {
+        q: 'Are you insured and police-checked?',
+        a: 'Yes. Every cleaner attending a Point Lonsdale home is police-checked, and we carry $20m public liability insurance. We are a nursing-led company, our cleaners are trained to that standard, and we bring all our own plant-based products and equipment so nothing needs to be supplied at the property.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-queenscliff',
+    name: 'Queenscliff',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Queenscliff on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Queenscliff'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Queenscliff',
+      h2: 'Professional house cleaning in Queenscliff & the southern Bellarine',
+      paragraphs: [
+        'Queenscliff is a historic maritime town at the Heads, with Victorian-era streetscapes, a long tourism tradition and a ferry running across to Sorrento. Its character comes from buildings that have been standing a long time and cared for accordingly. NATURO GROUP cleans Queenscliff homes with police-checked cleaners and plant-based products.',
+        'A lot of the housing here is heritage or heritage-influenced, with ornate timber, tessellated tiles, leadlight, original floorboards and period bathrooms. Alongside those are modern homes and short-stay properties. We handle regular cleans, deep cleans, changeover cleans and end-of-lease work across all of them.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Queenscliff & the southern Bellarine',
+      paragraphs: [
+        'Old finishes are unforgiving. Harsh chemicals and rough pads can strip a period surface in a single visit, so our Queenscliff cleans are built around gentle plant-based products and methods chosen to suit the material rather than whatever is fastest.',
+        'We service Queenscliff, Point Lonsdale, Marcus Hill, St Leonards, Ocean Grove, Barwon Heads and Drysdale — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Careful in heritage homes', body: 'Police-checked, insured cleaners trained to work carefully around older Queenscliff finishes.' },
+        { icon: 'clock', title: 'Tourism-season ready', body: 'Changeover and regular cleans scheduled around the busy visitor months in Queenscliff.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Gentle, non-toxic, biodegradable products that suit period surfaces as well as modern ones.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and we bring that attention to detail into every Queenscliff home.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance clients in Queenscliff.',
+      'All products and equipment are supplied, every Queenscliff clean carries our satisfaction guarantee, and we ask for no lock-in contract.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Queenscliff?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Queenscliff clean in under 60 seconds.',
+      trust: 'Trusted by Queenscliff homeowners, including those in period properties.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Queenscliff VIC',
+      description: 'Eco-friendly house cleaning in Queenscliff VIC. Police-checked, insured cleaners, gentle on heritage finishes. Regular, deep clean and end-of-lease work.',
+    },
+    nearbySuburbs: ['Point Lonsdale', 'Marcus Hill', 'St Leonards', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Indented Head', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Our home is a period property. Will your products damage original finishes?',
+        a: 'No. Queenscliff has a great deal of heritage housing, and original floorboards, tessellated tiles, leadlight, cast fittings and painted timber all need gentle treatment. Our plant-based products are non-abrasive and non-caustic, and our cleaners choose the method to match the surface. If something looks fragile we will check with you before touching it.',
+      },
+      {
+        q: 'Can you clean a short-stay property between guests?',
+        a: 'Yes. Queenscliff draws visitors year-round, and changeover cleaning covers bathrooms, kitchen, floors, surfaces, bins and a general reset so the property is ready for the next arrival. Tell us your booking gap and we will work inside it. Peak periods fill quickly, so early notice makes a real difference.',
+      },
+      {
+        q: 'Do you clean the awkward details in an old house?',
+        a: 'Within reason, yes. Queenscliff homes often have picture rails, ceiling roses, fretwork, deep skirtings and sash windows that collect dust in places a routine clean skips. Those details are best handled as part of a deep clean rather than a standard visit, so ask for them at booking and we will allow the time.',
+      },
+      {
+        q: 'What about salt air on windows and fittings?',
+        a: 'Being at the Heads, Queenscliff homes cop salt-laden air on glass, flyscreens, door furniture and outdoor metalwork. We clean glass and fittings with that in mind, rinsing rather than smearing, and we avoid anything harsh on older brass, copper or painted hardware where a strong cleaner would do lasting harm.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans in Queenscliff?',
+        a: 'We do. The clean covers the areas agents inspect, including oven, bathrooms, skirtings, tracks and interior glass, and it comes with our bond-back re-clean guarantee when you keep the receipt. Older Queenscliff properties often need more time than a modern rental, so let us know the age and condition at booking.',
+      },
+      {
+        q: 'How do I get a price?',
+        a: 'Use the free instant quote online. It gives you a figure for your Queenscliff home in about a minute with no phone call and no obligation, because the cost depends on the size of the property, its condition and how often you book. Booking takes about 60 seconds, and a first clean is usually 2 to 5 business days away.',
+      },
+    ],
+  },
+  {
+    slug: 'house-cleaning-marcus-hill',
+    name: 'Marcus Hill',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bellarine Peninsula',
+    heroImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    heroImageAlt: 'Eco-friendly house cleaning in Marcus Hill on the Bellarine Peninsula VIC',
+    ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
+    hero: {
+      h1Lines: ['Eco-friendly', 'House Cleaning in', 'Marcus Hill'],
+      tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
+    },
+    intro: {
+      kicker: 'House cleaning in Marcus Hill',
+      h2: 'Professional house cleaning in Marcus Hill & the rural Bellarine',
+      paragraphs: [
+        'Marcus Hill is a small rural locality inland on the Bellarine, sitting between Drysdale and Point Lonsdale. Rather than a beachfront town it is farmland, paddocks and lifestyle blocks, with homes spread out along country roads. NATURO GROUP cleans out this way with police-checked cleaners and plant-based, non-toxic products.',
+        'Properties here tend to be larger than a coastal cottage, often with sheds, verandahs, boot rooms and open-plan living that takes in dust from the paddocks. We provide regular cleans, one-off deep cleans, spring cleans and end-of-lease cleaning, and we bring all our own products and equipment.',
+      ],
+    },
+    trust: {
+      h2: 'Trusted cleaners across Marcus Hill & the rural Bellarine',
+      paragraphs: [
+        'Rural homes are a different job to a townhouse. Dust from dry paddocks, mud through the back door, animals in and out and a bigger floor plan all add up, so we scope a Marcus Hill clean around the property rather than assuming a standard suburban house.',
+        'We service Marcus Hill, Drysdale, Point Lonsdale, Queenscliff, Ocean Grove, Curlewis and Leopold — one trusted cleaning team across the Bellarine.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Police-checked cleaners with $20m public liability cover attending every Marcus Hill property.' },
+        { icon: 'clock', title: 'Built around larger homes', body: 'Cleans scoped to the size of a Marcus Hill acreage home rather than a standard suburban plan.' },
+        { icon: 'sparkle', title: 'Eco-friendly & family-safe', body: 'Plant-based, biodegradable products that are safe around children, pets and farm animals.' },
+      ],
+    },
+    founderBody: [
+      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and that standard of care applies just as much on a rural block as in town.',
+      'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients around Marcus Hill.',
+      'Every Marcus Hill clean carries our satisfaction guarantee, and there are no lock-in contracts to sign.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'cleaner home',
+      h2Post: 'in Marcus Hill?',
+      sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Marcus Hill clean in under 60 seconds.',
+      trust: 'Trusted by Marcus Hill families and rural property owners on the Bellarine.',
+    },
+    seo: {
+      title: 'Eco-Friendly House Cleaning Marcus Hill VIC',
+      description: 'Eco-friendly house cleaning in Marcus Hill VIC on the Bellarine. Police-checked, insured cleaners for rural and acreage homes, regular and deep cleans.',
+    },
+    nearbySuburbs: ['Drysdale', 'Point Lonsdale', 'Queenscliff', 'Ocean Grove', 'Curlewis', 'Leopold', 'St Leonards', 'Barwon Heads'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean acreage and lifestyle properties out here?',
+        a: 'Yes. Marcus Hill is mostly farmland and lifestyle blocks rather than suburban streets, and larger homes are normal for us. We clean the house itself, including boot rooms, laundries and verandah entries where the outdoors comes inside. Sheds, garages and outbuildings can be quoted, but they are not part of a standard house clean.',
+      },
+      {
+        q: 'Paddock dust gets through the whole house. Can you keep on top of it?',
+        a: 'That is the main thing that separates a Marcus Hill clean from a coastal one. Dry paddocks push fine dust onto sills, shelves, ceiling fans, flyscreens and hard floors far faster than in town. Many rural clients book fortnightly for that reason, and we focus on the surfaces that show dust first rather than treating everything equally.',
+      },
+      {
+        q: 'We have working dogs and farm animals. Is that a problem?',
+        a: 'Not at all. Our products are plant-based, biodegradable and non-toxic, so they are safe around pets, working dogs and children. Let us know at booking where animals will be and whether any doors need to stay shut, and our cleaners will follow that. Pet hair on floors and soft furnishings is routine work for us.',
+      },
+      {
+        q: 'Do you travel out to Marcus Hill for a single clean?',
+        a: 'Yes. Marcus Hill sits between Drysdale and Point Lonsdale, both of which we service, so the property is on our regular Bellarine run. One-off deep cleans, spring cleans and end-of-lease cleans are all available, and there is no requirement to commit to an ongoing booking to get one.',
+      },
+      {
+        q: 'Can you do an end-of-lease clean on a rural property?',
+        a: 'We can. The clean covers what agents inspect inside the home, including oven, bathrooms, skirtings, tracks and interior glass, with our bond-back re-clean guarantee when you keep the receipt. Rural Marcus Hill homes are often larger than a town rental, so tell us the bedroom and bathroom count when you book.',
+      },
+      {
+        q: 'What will it cost for a larger home?',
+        a: 'Cost depends on the size of the home, its condition and how often you book, which is exactly why bigger Marcus Hill properties need their own quote rather than a published figure. The free instant quote online takes about a minute and needs no phone call. First bookings are usually 2 to 5 business days away.',
+      },
+    ],
+  },
 ];
 
 export const suburbBySlug = (slug: string): Suburb | undefined =>

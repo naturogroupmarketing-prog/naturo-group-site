@@ -72,6 +72,26 @@
   to   = "/cleaners-lismore"
   status = 301
 
+[[redirects]]
+  from = "/cleaners-elermore-vale"
+  to   = "/cleaners-newcastle"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-elermore-vale/"
+  to   = "/cleaners-newcastle"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-richmond"
+  to   = "/cleaners-melbourne"
+  status = 301
+
+[[redirects]]
+  from = "/cleaners-richmond/"
+  to   = "/cleaners-melbourne"
+  status = 301
+
 # ── Old service URL patterns ─────────────────────────────────────────────────
 [[redirects]]
   from = "/service-veterans"
@@ -128,12 +148,12 @@
 # ── Old Shopify / legacy service URLs ────────────────────────────────────────
 [[redirects]]
   from = "/pages/commercial-cleaning"
-  to   = "/commercial-cleaning-geelong"
+  to   = "/services"
   status = 301
 
 [[redirects]]
   from = "/pages/commercial-cleaning/"
-  to   = "/commercial-cleaning-geelong"
+  to   = "/services"
   status = 301
 
 [[redirects]]
@@ -181,12 +201,22 @@
 
 [[redirects]]
   from = "/about-us"
-  to   = "/about"
+  to   = "/team"
   status = 301
 
 [[redirects]]
   from = "/about-us/"
-  to   = "/about"
+  to   = "/team"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to   = "/team"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to   = "/team"
   status = 301
 
 [[redirects]]

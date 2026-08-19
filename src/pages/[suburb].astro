@@ -108,6 +108,19 @@ const mapEmbedSrc =
   suburb.mapEmbedSrc ??
   `https://www.google.com/maps?q=${encodeURIComponent(`${suburb.name}, ${suburb.state}, Australia`)}&output=embed`;
 
+// Human-readable "Last updated" label. Only rendered when the suburb
+// actually declares contentUpdated — see the field's note in suburbs.ts on
+// why we never fall back to the build date.
+const updatedISO = suburb.contentUpdated;
+const updatedLabel = updatedISO
+  ? new Date(`${updatedISO}T00:00:00Z`).toLocaleDateString('en-AU', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    })
+  : null;
+
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -168,14 +181,31 @@ const schema = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      // Region tier has no page of its own, so it carries no `item` — a
+      // BreadcrumbList entry without a URL is valid and keeps the trail
+      // honest rather than pointing the crawler at a 404.
+      { '@type': 'ListItem', position: 2, name: suburb.region },
       {
         '@type': 'ListItem',
-        position: 2,
+        position: 3,
         name: `${suburb.name} cleaners`,
         item: pageUrl,
       },
     ],
   },
+  ...(updatedISO
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          '@id': pageUrl,
+          url: pageUrl,
+          name: suburb.seo.title,
+          description: suburb.seo.description,
+          dateModified: updatedISO,
+        },
+      ]
+    : []),
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -242,6 +272,27 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <!-- Visible breadcrumb trail.
+       The BreadcrumbList JSON-LD above described a hierarchy the page never
+       actually showed. Google's guidance is that structured data should
+       describe visible content, and a real trail also gives visitors a way
+       back up — Jim's Cleaning renders one on every suburb page and we did
+       not. -->
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <div class="container-site">
+      <ol class="crumbs-list">
+        <li class="crumbs-item"><a href="/">Home</a></li>
+        <li class="crumbs-item crumbs-region">{suburb.region}</li>
+        <li class="crumbs-item" aria-current="page">{suburb.name}</li>
+      </ol>
+      {updatedLabel && (
+        <p class="crumbs-updated">
+          Last updated <time datetime={updatedISO}>{updatedLabel}</time>
+        </p>
+      )}
+    </div>
+  </nav>
 
   <PricingCards />
   <ExperienceBanner />
@@ -588,6 +639,62 @@ const schema = [
   @media (max-width: 640px) {
     /* Hide the Partners & Providers logo strip on mobile */
     .hero-partners { display: none; }
+  }
+
+  /* ---------- Breadcrumb trail ---------- */
+  .crumbs {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    padding: 14px 0;
+  }
+  .crumbs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgb(100, 116, 139);
+  }
+  .crumbs-item + .crumbs-item::before {
+    content: "/";
+    margin-right: 8px;
+    color: rgba(15, 23, 42, 0.28);
+  }
+  .crumbs-item a {
+    color: #3a5dff;
+    text-decoration: none;
+  }
+  .crumbs-item a:hover { text-decoration: underline; }
+  .crumbs-item[aria-current="page"] {
+    color: #0f172a;
+    font-weight: 500;
+  }
+  /* The region tier is a label, not a link — it has no page of its own. */
+  .crumbs-region { color: rgb(100, 116, 139); }
+  .crumbs .container-site {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+  }
+  .crumbs-updated {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(100, 116, 139);
+  }
+  @media (max-width: 480px) {
+    .crumbs { padding: 12px 0; }
+    .crumbs-list { font-size: 12px; gap: 6px; }
+    .crumbs-item + .crumbs-item::before { margin-right: 6px; }
   }
 
   /* ---------- Localised IntroCopy ---------- */

@@ -112,6 +112,17 @@ export interface Suburb {
    * hardcoded values. Should reflect real GBP numbers for this location.
    */
   aggregateRating?: { ratingValue: string; reviewCount: string };
+  /**
+   * ISO date (YYYY-MM-DD) this suburb's own copy was last genuinely
+   * rewritten — NOT the last build. Drives the visible "Last updated" line
+   * and schema dateModified.
+   *
+   * Only set this when the page's actual content changed. Google treats a
+   * date that moves without the content moving as a spam signal, so the
+   * field stays undefined (and the line stays hidden) rather than
+   * defaulting to the build timestamp.
+   */
+  contentUpdated?: string;
 }
 
 
@@ -246,6 +257,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Wauchope & Hastings Valley NSW. Police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean older weatherboard cottages in Wauchope?',
+        a: 'Yes. Wauchope\'s classic weatherboard cottages are a big part of what we clean, alongside modern family homes on the town\'s quieter leafy streets. Older timber interiors need a gentler approach, so we use plant-based products and methods suited to timber, painted boards and original fittings rather than harsh chemicals that can strip or mark them.',
+      },
+      {
+        q: 'Can you reach rural properties outside the Wauchope township?',
+        a: 'We do. As well as central Wauchope, we regularly travel out to Beechwood, Bago, Pembrooke, Rollands Plains, Telegraph Point, King Creek and Sancrox. Rural and semi-rural households in the Hastings Valley get exactly the same service standard as clients in town, and we bring all our own products and equipment with us.',
+      },
+      {
+        q: 'Will you work around farm and school schedules?',
+        a: 'Yes. Plenty of Wauchope households run on country routines, so we offer morning, afternoon and weekend slots and book around farm work, school runs and highway commutes. Once we know what suits you, we keep the same regular slot for weekly or fortnightly cleans so the visit becomes predictable rather than something you have to plan around.',
+      },
+      {
+        q: 'Do you support NDIS and Home Care Package clients in the Hastings Valley?',
+        a: 'We do. Across Wauchope and the wider Hastings Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. We are a nursing-led company, so our cleaners are trained to a nursing-grade standard for respectful in-home work.',
+      },
+      {
+        q: 'What does an end-of-lease clean in Wauchope include?',
+        a: 'A full bond clean covers the whole property inside, including oven, bathrooms, skirtings, window tracks and cupboards. You get a receipt for your property manager, and if they raise an issue we return for a bond-back re-clean. It is a common request in Wauchope, where rentals turn over across town and the surrounding rural blocks.',
+      },
+      {
+        q: 'How much does cleaning in Wauchope cost and how do I book?',
+        a: 'Pricing depends on the size of your home, its condition and how often you would like us. You can get a free instant quote online in about 60 seconds with no phone call needed, and most first bookings in Wauchope happen within two to five business days. There are no lock-in contracts.',
+      },
+    ],
   },
 
   {
@@ -298,6 +336,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Lake Cathie & Mid North Coast NSW. Police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you handle holiday-let and short-stay turnovers in Lake Cathie?',
+        a: 'Yes, and it is one of our most requested services here. Many Lake Cathie homes double as short-stay rentals through peak season, so we offer same-day and next-day turnovers coordinated with check-in and check-out times, and we provide condition reports for property managers. We cover Bonny Hills, Lakewood and Port Macquarie on the same runs.',
+      },
+      {
+        q: 'How do you deal with salt air and humidity in coastal homes?',
+        a: 'Coastal homes in Lake Cathie collect fine sand, salt residue and humidity-related grime on tracks, flyscreens, glass and wet areas. Our cleaners are experienced with those conditions and work through them properly rather than surface-wiping, using plant-based products that lift salt film without damaging aluminium joinery or coastal timber.',
+      },
+      {
+        q: 'Are your products safe to use near the lake?',
+        a: 'They are. Everything we use is plant-based, biodegradable and non-toxic, which matters in a village sitting between the ocean and a coastal lake. Nothing harsh goes down Lake Cathie drains, and the same products are safe for children, pets and anyone in the household with asthma or sensitive airways.',
+      },
+      {
+        q: 'Can you clean my Lake Cathie holiday home while I am not there?',
+        a: 'Yes. Plenty of our Lake Cathie clients are holiday-home owners who live elsewhere, so we arrange key or lockbox access and clean while the property is empty. We can also do a seasonal deep clean before you arrive for the summer and a reset after the last guests leave.',
+      },
+      {
+        q: 'Do you work with retirees and NDIS participants in Lake Cathie?',
+        a: 'We do. Lake Cathie\'s mix of families, retirees and retirement units means a lot of our work here is ongoing in-home support. We assist NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, with a nursing-led team trained for careful, respectful work in someone\'s home.',
+      },
+      {
+        q: 'What will a clean in Lake Cathie cost?',
+        a: 'There is no set rate, because cost depends on the size and condition of the property and how often you book. Get a free instant quote online in about 60 seconds without speaking to anyone. Lake Cathie bookings usually start within two to five business days, with a satisfaction guarantee and no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -350,6 +415,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Bonny Hills & Rainbow Beach NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean older fibro and timber beach cottages in Bonny Hills?',
+        a: 'Yes. Bonny Hills has a lot of original beach cottages in fibro and timber alongside modern family homes, and our cleaners are trained in products suited to those surfaces. Plant-based formulas clean thoroughly without the harsh solvents that can dull painted fibro sheeting or older timber linings.',
+      },
+      {
+        q: 'Can you fit cleans around surfing, school runs and guest arrivals?',
+        a: 'We can. Life in Bonny Hills runs on its own timetable, so we offer morning slots, weekend cleans and same-day turnovers when a rental changes over. Tell us the window that works and we will book into it, whether that is before the surf, after school drop-off or between guests.',
+      },
+      {
+        q: 'Which other coastal communities near Bonny Hills do you service?',
+        a: 'Bonny Hills sits between Lake Cathie and North Haven, and we service that whole stretch. Along with Bonny Hills we clean in Lake Cathie, North Haven, Dunbogan, Laurieton, King Creek, Settlement Point and Port Macquarie, so households along the southern Mid North Coast deal with one team rather than several.',
+      },
+      {
+        q: 'Are your products safe for the coastal environment here?',
+        a: 'Yes. Everything is biodegradable, plant-based and non-toxic, which suits a community like Bonny Hills that sits above Rainbow Beach and values its coastal surroundings. Nothing corrosive goes into the stormwater, and the products are safe for children, pets and asthma sufferers inside the house as well.',
+      },
+      {
+        q: 'What happens if I am not happy with the clean?',
+        a: 'We back every Bonny Hills clean with a satisfaction guarantee. If something has been missed or is not up to standard, tell us and we come back and fix it. For end-of-lease work there is also a bond-back re-clean if the property manager raises an issue, plus a receipt for your records.',
+      },
+      {
+        q: 'Do I need to supply cleaning products or equipment?',
+        a: 'No. We bring everything, including all products, cloths and equipment, to every Bonny Hills job. That is helpful for holiday rentals and sea-change households where nobody wants a cupboard full of chemicals sitting around, and it means the same eco-friendly products are used on every visit.',
+      },
+    ],
   },
 
   {
@@ -402,6 +494,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Laurieton & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean heritage and older homes around Laurieton\'s foreshore?',
+        a: 'Yes. Laurieton has a real mix of heritage homes, weatherboard cottages, brick residences and waterfront holiday lets, and we clean all of them. Older properties get a gentler approach with plant-based products chosen for original timber, tiles and fittings, so nothing is stripped or scratched in the process.',
+      },
+      {
+        q: 'Are your products safe for the Camden Haven waterways?',
+        a: 'They are. With Queens Lake and the Camden Haven Inlet on Laurieton\'s doorstep, we only use biodegradable, non-toxic products. Nothing we rinse away carries harsh chemicals into the estuary, and the same formulas are safe for children, pets and anyone with sensitive airways living in the home.',
+      },
+      {
+        q: 'Do you service the rest of the Camden Haven villages?',
+        a: 'We do. From Laurieton we cover North Haven, Dunbogan, Camden Head, Bonny Hills, Lake Cathie, Kew, Wauchope and Port Macquarie. That means one team across the Camden Haven and the wider Mid North Coast corridor, which helps if you have more than one property in the area.',
+      },
+      {
+        q: 'Can you help retirees and Home Care Package recipients in Laurieton?',
+        a: 'Yes. A large share of the Laurieton and Camden Haven community is retired, and we regularly work with Home Care Package recipients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. As a nursing-led company, our cleaners are trained to a nursing-grade standard for in-home care settings.',
+      },
+      {
+        q: 'Can I book around boating, fishing and weekends away?',
+        a: 'Of course. Laurieton\'s waterfront lifestyle means people are often out on the water or away for the weekend, so we schedule at times that suit you and can clean while you are out using arranged key access. Regular weekly or fortnightly slots stay consistent, with no lock-in contract.',
+      },
+      {
+        q: 'How do I get a price for a Laurieton clean?',
+        a: 'Use the online quote form, which takes about 60 seconds and needs no phone call. Cost depends on your home\'s size, its current condition and whether you want a regular, deep or end-of-lease clean. Most Laurieton first bookings are scheduled within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -454,6 +573,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in North Haven & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean fishing cottages and beach houses in North Haven?',
+        a: 'Yes. North Haven\'s beach houses, fishing cottages, holiday rentals and permanent family homes are all part of our regular work. We use plant-based formulas suited to the timber, fibro and fibreglass surfaces that are common in these coastal properties, cleaning them properly without harsh chemical fumes indoors.',
+      },
+      {
+        q: 'Can you schedule around boat maintenance and fishing trips?',
+        a: 'We can. North Haven runs at its own pace, and we book around fishing runs, boat work, guests and everything else. If you would rather not be home, we arrange key or lockbox access and let ourselves in. Regular slots stay the same each week or fortnight so nothing needs rearranging.',
+      },
+      {
+        q: 'Which nearby areas do you cover from North Haven?',
+        a: 'We clean across the whole Camden Haven corridor: North Haven, Dunbogan, Camden Head, Laurieton, Bonny Hills, Lake Cathie and Port Macquarie. It is one consistent team along that stretch, which suits owners with a holiday property in one village and a home in another.',
+      },
+      {
+        q: 'Is your team safe to have in my home?',
+        a: 'Every cleaner is police-checked and fully insured with $20m public liability cover. We are a nursing-led company and train to a nursing-grade standard, which matters in a tight-knit community like North Haven where people rightly want to know exactly who is coming through the door.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleans for North Haven rentals?',
+        a: 'Yes. Our end-of-lease clean covers the property throughout and comes with a receipt for the agent. If your property manager raises an issue, we return for a bond-back re-clean. It is a service we run often in North Haven, where holiday rentals and permanent tenancies both change hands regularly.',
+      },
+      {
+        q: 'What does cleaning in North Haven cost?',
+        a: 'It depends on the size and condition of the home and how frequently you book, so there is no single rate. You can get a free instant quote online in about 60 seconds with no phone call required. Every North Haven clean is covered by our satisfaction guarantee, with no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -506,6 +652,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Dunbogan & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Is Dunbogan too small for you to service regularly?',
+        a: 'Not at all. Dunbogan is a small waterfront village, but we run regular weekly and fortnightly cleans here just as we do in larger towns. Because we already service North Haven, Laurieton, Camden Head and the surrounding Camden Haven villages, getting to Dunbogan on a consistent schedule is straightforward.',
+      },
+      {
+        q: 'Do you clean holiday cabins as well as permanent homes in Dunbogan?',
+        a: 'Yes. We look after holiday cabins, waterfront cottages and established family homes throughout Dunbogan. That includes turnover cleans between guests, seasonal deep cleans before a busy period, and ongoing maintenance cleans for the people who live in the village year-round. Regular weekly or fortnightly schedules are available alongside one-off jobs.',
+      },
+      {
+        q: 'Are your products safe for the Camden Haven Inlet?',
+        a: 'They are. Dunbogan sits right on the inlet with waterside reserves close by, so we only use plant-based, biodegradable, non-toxic products. Nothing harsh ends up in the waterway, and inside the home the same products are safe for children, pets and asthma sufferers.',
+      },
+      {
+        q: 'Who will be coming into my home?',
+        a: 'A police-checked cleaner insured for $20m public liability, trained to a nursing-grade standard by our nursing-led company. In a Dunbogan street where people know their neighbours, that matters. We bring all our own products and equipment, so you do not need to leave anything out for us.',
+      },
+      {
+        q: 'Can you clean while I am away from my Dunbogan property?',
+        a: 'Yes. Many Dunbogan owners are away between visits, so we arrange key or lockbox access and clean in your absence. We let you know when the job is done. If you have pets at home, just tell us their routine when you book and we will work around them.',
+      },
+      {
+        q: 'How do I get a quote for a Dunbogan clean?',
+        a: 'Book online and you will get a free instant quote in about 60 seconds, with no phone call needed. The price reflects your home\'s size, its condition and how often you want us. Our satisfaction guarantee applies to every Dunbogan job, however small, and there is no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -558,6 +731,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Camden Head & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you travel out to Camden Head?',
+        a: 'Yes. Camden Head sits at the northern tip of Camden Haven and is more secluded than its neighbours, but it is part of our regular run. We already service Dunbogan, North Haven, Laurieton, Bonny Hills, Lake Cathie and Port Macquarie, so reaching Camden Head on a consistent schedule is no trouble.',
+      },
+      {
+        q: 'Can you clean my Camden Head holiday property between guests?',
+        a: 'We can. With a small permanent population and a seasonal influx of visitors, Camden Head holiday-let turnovers are a big part of what we do. We coordinate around check-out and check-in windows, and we also handle seasonal deep cleans before and after the busy period.',
+      },
+      {
+        q: 'Are your products suitable given the National Park is right there?',
+        a: 'Yes. With Crowdy Bay National Park adjoining Camden Head, we deliberately use biodegradable, non-toxic, plant-based products. Nothing corrosive is rinsed into the coastal bushland, and the same products are gentle enough for children, pets and anyone with asthma living in the house.',
+      },
+      {
+        q: 'How do I know I can trust someone accessing my home when I am not there?',
+        a: 'Every cleaner is police-checked and covered by $20m public liability insurance, and we are a nursing-led company training to a nursing-grade standard. Camden Head residents place real trust in anyone accessing their homes, and we treat that seriously, whether you are present for the clean or interstate.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients at Camden Head?',
+        a: 'We do. Across Camden Head and the wider Camden Haven we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders. Our nursing background shapes how we approach in-home cleaning where someone\'s health or mobility is a factor.',
+      },
+      {
+        q: 'What does it cost and how quickly can you start?',
+        a: 'Cost depends on the size of the property, its condition and how often you book, so get a free instant quote online in about 60 seconds without a phone call. First bookings at Camden Head typically happen within two to five business days, backed by our satisfaction guarantee.',
+      },
+    ],
   },
 
   {
@@ -610,6 +810,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Telegraph Point & Hastings Valley NSW. Police-checked, insured. Suitable for rural and hobby-farm homes.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you handle the dust and mud that comes with a rural property?',
+        a: 'That is exactly what we are set up for. Telegraph Point homes deal with paddock dust, mud through entryways and timber floors that show every mark. Our team is trained and equipped for those conditions on larger properties, and we bring all products and equipment, so nothing gets left to your own supplies.',
+      },
+      {
+        q: 'Are your products safe around working dogs, horses and water tanks?',
+        a: 'Yes. Everything we use is plant-based, biodegradable and non-toxic, which matters on Telegraph Point\'s cattle properties and hobby farms where tank water and animals are part of daily life. There are no harsh chemical fumes indoors either, so the products suit children and anyone with sensitive airways.',
+      },
+      {
+        q: 'Will you book around farm operations and the school bus?',
+        a: 'We will. Bookings around Telegraph Point are arranged to fit stock moves, farm operations, school bus times and everything else rural life demands. Once we settle on a slot that works for your property, we hold it for your regular weekly or fortnightly clean so it fits the rhythm of the week.',
+      },
+      {
+        q: 'Do you clean farmhouses as well as newer homes in Telegraph Point?',
+        a: 'Yes. We work across farmhouses, rural cottages and modern homes throughout Telegraph Point and the upper Hastings Valley. Larger country homes take more time than a compact town house, and we plan the visit accordingly rather than rushing through a fixed block.',
+      },
+      {
+        q: 'Which other Hastings Valley areas do you cover?',
+        a: 'From Telegraph Point we also service Wauchope, Sancrox, Beechwood, Bago, King Creek, Rollands Plains, Kendall, Comboyne and Port Macquarie. Rural Hastings Valley households get the same standard of cleaning as city clients, delivered by police-checked cleaners who carry $20m public liability cover and bring all their own products and equipment.',
+      },
+      {
+        q: 'What will it cost to have my Telegraph Point home cleaned?',
+        a: 'Pricing depends on the size and condition of the home and how often you book, so larger Telegraph Point rural properties are quoted on their own terms. Get a free instant quote online in about 60 seconds with no phone call needed, and expect a first booking within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -662,6 +889,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Sancrox near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean both new estate homes and rural blocks in Sancrox?',
+        a: 'Yes. Sancrox mixes newer housing estates with larger rural residential holdings, so we handle tiled open-plan homes and older timber properties with weatherboard walls and big back yards. The approach and the time allowed differ between the two, and we scope the job to the property rather than the postcode.',
+      },
+      {
+        q: 'Can you clean around a work-from-home schedule?',
+        a: 'We can. Plenty of Sancrox households work from home, so we book at times that keep disruption low and can start in the parts of the house you are not using. Regular fortnightly cleans keep the same slot each time, which makes them easy to plan meetings around.',
+      },
+      {
+        q: 'Do you clean hobby-farm properties on the outskirts of Sancrox?',
+        a: 'Yes. Hobby-farm and rural residential properties on the Sancrox side of Port Macquarie are part of our regular work. We bring all our own products and equipment, and the plant-based formulas we use are non-toxic and safe around children, pets and the semi-rural surroundings.',
+      },
+      {
+        q: 'Which areas around Sancrox do you also service?',
+        a: 'We cover the whole Port Macquarie hinterland: Sancrox, Wauchope, King Creek, Telegraph Point, Lakewood, Beechwood, Settlement Point and Port Macquarie itself. One team across that area means consistency, whether you are in a new estate or on acreage further out.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleans in Sancrox?',
+        a: 'We do. Bond cleans cover the property throughout, including oven, wet areas, tracks and cupboards, and you receive a receipt to give your property manager. If the agent raises an issue, we return for a bond-back re-clean. It is a common request as newer Sancrox estates turn over tenants.',
+      },
+      {
+        q: 'How much does a Sancrox clean cost?',
+        a: 'There is no fixed rate, since price depends on the size of the home, its condition and how often you book. A free instant quote takes about 60 seconds online with no phone call required. Every Sancrox clean carries our satisfaction guarantee and there is no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -714,6 +968,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Kendall & Manning Valley NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean federation-era homes and character cottages in Kendall?',
+        a: 'Yes. Kendall\'s federation-era homes and character cottages need care that newer builds do not, so we use plant-based products chosen for original timber, pressed surfaces and older fittings. Modern family residences in town are just as welcome, and both get the same thorough approach rather than a quick surface pass.',
+      },
+      {
+        q: 'Can you book around markets and the Kendall Art Show?',
+        a: 'We can. Kendall\'s arts community keeps a busy calendar, and we schedule around markets, the annual art show, farm operations and everything else the Manning Valley throws up. If you need the house reset before or after an event, tell us the window and we will work to it.',
+      },
+      {
+        q: 'Do your products suit Kendall\'s environmental values?',
+        a: 'They should. Everything we use is plant-based, biodegradable and non-toxic, which fits a green, forest-surrounded town like Kendall and its bush-sensitive properties. We clean thoroughly without harsh chemicals, and the same products are safe for children, pets and anyone in the household with asthma.',
+      },
+      {
+        q: 'Which other Manning Valley and Hastings areas do you service?',
+        a: 'From Kendall we also clean in Comboyne, Wauchope, Telegraph Point, Rollands Plains, Beechwood, Laurieton and Port Macquarie. Manning Valley households get the same standard of service as clients on the coast, with police-checked cleaners insured for $20m public liability and trained to a nursing-grade standard by our nursing-led team.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients in Kendall?',
+        a: 'Yes. Across Kendall and the Manning Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, as well as insurance and workers compensation clients. Our nursing-led training shapes how we handle in-home work.',
+      },
+      {
+        q: 'How do I get a price for cleaning in Kendall?',
+        a: 'Get a free instant quote online in about 60 seconds, with no phone call needed. The figure depends on the size and condition of your Kendall home and whether you want regular, deep or end-of-lease cleaning. First bookings usually land within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -766,6 +1047,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Comboyne & Comboyne Plateau NSW. Police-checked, insured. Regular, deep clean & rural property cleaning.',
     },
     nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you actually come up onto the Comboyne Plateau?',
+        a: 'We do. Comboyne is part of our regular service area along with Kendall, Wauchope, Telegraph Point, Port Macquarie and the surrounding plateau communities. Farming families up here get the same standard of cleaning as any city suburb, delivered by police-checked cleaners insured for $20m public liability.',
+      },
+      {
+        q: 'Can you clean large farmhouses and rural homes?',
+        a: 'Yes. Comboyne homes are often spacious rural properties with timber finishes and wide verandahs, and they take longer than a compact town house. Our team is trained and equipped for that scale, and we bring every product and piece of equipment with us, so nothing comes out of your own shed.',
+      },
+      {
+        q: 'Will you work around milking and farm operations?',
+        a: 'We will. Bookings in Comboyne are scheduled around milking, other farm operations and the seasonal rhythms of dairy country. Tell us the quiet part of your day and we will hold that slot for your regular clean rather than turning up in the middle of the busiest hours.',
+      },
+      {
+        q: 'Are your products safe around dairy cattle and tank water?',
+        a: 'Yes. Everything is plant-based, biodegradable and non-toxic, which is important on Comboyne properties where cattle, horses and rainwater tanks are part of daily life. Inside the home the same products are safe for children, pets and asthma sufferers, with no harsh chemical fumes.',
+      },
+      {
+        q: 'How do you handle the dust that comes with plateau living?',
+        a: 'Country living brings dust, mud and the marks that go with it, especially on the timber floors and verandah entries common in Comboyne. Our cleaners are equipped for those conditions and work through them properly. For a property that has not had attention in a while, a one-off deep clean before starting a regular schedule usually makes sense.',
+      },
+      {
+        q: 'What does cleaning cost in Comboyne?',
+        a: 'There is no set rate. Price depends on the size and condition of the property and how often you book, which matters on larger plateau homes. A free instant quote takes about 60 seconds online with no phone call, and every Comboyne clean is covered by our satisfaction guarantee.',
+      },
+    ],
   },
 
   {
@@ -818,6 +1126,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Beechwood & Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean horse properties and hobby farms in Beechwood?',
+        a: 'Yes. Horse properties and hobby farms are a big part of Beechwood, and our cleaners are used to the extra dust, boot traffic and larger floor areas that come with them. We use plant-based products that are safe around horses, pets, children and rural water supplies.',
+      },
+      {
+        q: 'Can you schedule around horse care and feeding routines?',
+        a: 'We can. Beechwood households run on stable and paddock routines, so we book around feeds, horse care, farming schedules and school runs. Once we find a time that fits your day we keep it for your regular weekly or fortnightly clean, and there is no lock-in contract if things change.',
+      },
+      {
+        q: 'Do you clean older timber homes as well as newer rural blocks?',
+        a: 'Yes. Beechwood has timber homes, hobby-farm residences and newer rural blocks, and we clean all of them. Older timber interiors get gentler products and methods, while newer builds with large tiled areas and glass get an approach suited to those surfaces instead.',
+      },
+      {
+        q: 'Do I get city-standard service out here in the Hastings Valley?',
+        a: 'You do. Beechwood sits between Wauchope and Port Macquarie, and our service bridges that same gap: professional standards delivered to a country doorstep. Every cleaner is police-checked, insured for $20m public liability and trained to a nursing-grade standard by our nursing-led company.',
+      },
+      {
+        q: 'Which other areas near Beechwood do you cover?',
+        a: 'We service Beechwood along with Wauchope, Sancrox, Telegraph Point, Bago, Pembrooke, King Creek and Port Macquarie. That gives Hastings Valley households one consistent team across the whole area, which helps if you have family, a rental or a second property somewhere else in the valley and want the same cleaners at both.',
+      },
+      {
+        q: 'How much will it cost and how soon can you come?',
+        a: 'Cost depends on the size of the home, its condition and how often you book, so a large rural home is quoted differently to a compact one. Get a free instant quote online in about 60 seconds with no phone call. First Beechwood bookings are typically within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -870,6 +1205,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Bago near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Will you travel out to bush-block properties on the edge of the Bago State Forest?',
+        a: 'Yes. Bago sits on the rural western corridor of the Hastings Valley and we service it as part of our regular run through Wauchope, Beechwood, Pembrooke, Telegraph Point and Port Macquarie. Long driveways, gravel tracks and gates are all part of the job here. Just let us know about access when you book and our cleaner will arrive prepared.',
+      },
+      {
+        q: 'Can you handle the dust, pollen and leaf litter that bush-block homes collect?',
+        a: 'That is one of the main reasons Bago residents call us. Living among tall eucalypts means constant fine dust, pollen and leaf litter through doorways and on windowsills, sills, fans and flyscreens. Our cleaners are trained and equipped for those conditions and work methodically through the areas that build up fastest between visits.',
+      },
+      {
+        q: 'Are your cleaning products safe for rainwater tanks and native gardens?',
+        a: 'Yes. Everything we use in Bago is plant-based, biodegradable and non-toxic, so there are no harsh chemical residues washing into your garden beds or your tank catchment. The same products are safe around children, pets and asthma sufferers. We bring all products and equipment with us, so you do not need to supply anything.',
+      },
+      {
+        q: 'Do you clean rural rental properties at the end of a lease in Bago?',
+        a: 'We do. Our end-of-lease clean covers the whole property to the standard a property manager expects, and you receive a receipt for your records. If the agent raises an issue with the clean, we return and re-do it under our bond-back re-clean guarantee. Book online and we can usually be at your Bago rental within two to five business days.',
+      },
+      {
+        q: 'Can you work around farm operations and the daily routine on a hobby farm?',
+        a: 'Yes. We book around what is happening on the property rather than forcing a set city timetable, so a Bago hobby farm or farming household can pick a window that suits stock work, deliveries or school runs. Weekly, fortnightly and one-off deep cleans are all available, with no lock-in contracts.',
+      },
+      {
+        q: 'Do you support NDIS participants and older residents living out at Bago?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. As a nursing-led company, our team is trained to a nursing-grade standard, which matters for rural Bago households where regular in-home support is harder to arrange.',
+      },
+    ],
   },
 
   {
@@ -922,6 +1284,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Rollands Plains & Hastings hinterland NSW. Police-checked, insured. Regular, deep clean & rural services.',
     },
     nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you deal with muddy boot entries and timber floors on a working property?',
+        a: 'Yes. Country homes around Rollands Plains almost always have a hard-working entry, a laundry that doubles as a mud room and timber floors that show every mark. We clean those areas properly rather than skimming them, using non-abrasive, plant-based products that lift the grime without stripping or dulling the timber finish.',
+      },
+      {
+        q: 'Can you book around mustering and cropping seasons?',
+        a: 'We can. Rural work does not follow office hours, so we schedule Rollands Plains cleans around mustering, cropping and whatever else the season is demanding. Our office is contactable Monday to Friday, 8:30am to 5:00pm on 1300 876 472, and you can also change or pause a booking without penalty because there are no lock-in contracts.',
+      },
+      {
+        q: 'Do I need to be home while you clean my Rollands Plains farmhouse?',
+        a: 'Not at all. Many of our Rollands Plains clients are out on the property or in town while we work. You can leave a key, give us a gate or lock-box code, or be home if you would rather. Every cleaner is police-checked and covered by $20m public liability insurance, so an empty house is no concern.',
+      },
+      {
+        q: 'How do I find out what a clean at Rollands Plains will cost?',
+        a: 'Pricing depends on the size of the home, its current condition and how often you would like us. Rather than quoting over the phone, we give you a free instant quote online in about 60 seconds, with no phone call required. From there you can book straight away, and a first clean in Rollands Plains is typically within two to five business days.',
+      },
+      {
+        q: 'Which other hinterland towns do you cover from Rollands Plains?',
+        a: 'We cover the whole Hastings hinterland with one team, so Rollands Plains, Wauchope, Telegraph Point, Bago, Beechwood, Pembrooke, Kendall and Port Macquarie are all serviced. That means the same standard and the same vetted cleaners whether you are on a cattle property here or in a home in town.',
+      },
+      {
+        q: 'Do you help NDIS participants and aged care clients on rural properties?',
+        a: 'Yes. We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Being nursing-led shapes how our cleaners work in a home, and it means Rollands Plains families do not have to look to the city for that level of care.',
+      },
+    ],
   },
 
   {
@@ -974,6 +1363,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Pembrooke near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe around farm animals and dairy properties?',
+        a: 'Yes. Everything we use in Pembrooke is plant-based, biodegradable and non-toxic, with no harsh residues left on floors, benches or laundry surfaces. That matters on a property where working dogs, poultry and stock come and go through the house, and where run-off eventually reaches the garden, the tank and the local waterways.',
+      },
+      {
+        q: 'Can you schedule around milking and other daily farm routines?',
+        a: 'We can. A Pembrooke dairy or hobby-farm household runs to its own clock, so we set the clean around milking, feeding and stock work rather than a fixed city-hours slot. Weekly, fortnightly and one-off bookings are all available, and you can shift a visit as the season changes because we do not use lock-in contracts.',
+      },
+      {
+        q: 'Do you clean farmhouses that have not had a proper going-over in years?',
+        a: 'Yes, that is what a deep clean is for. Older Pembrooke farmhouses often need extra attention to skirting boards, window tracks, ceiling fans, range hoods and bathrooms before regular fortnightly cleaning makes sense. We will do the heavy reset first, then keep it there with a lighter recurring visit if you want one.',
+      },
+      {
+        q: 'Do you actually come out this far, or only as far as Wauchope?',
+        a: 'We service Pembrooke directly. It sits on our rural western corridor run through the Hastings Valley alongside Wauchope, Bago, Beechwood, Rollands Plains, Telegraph Point and Port Macquarie. Small agricultural communities get the same police-checked, insured cleaners and the same satisfaction guarantee as any suburb closer to the coast.',
+      },
+      {
+        q: 'Do you supply your own water and equipment on rural properties?',
+        a: 'We bring all our own products and equipment to every Pembrooke job, so you supply nothing. On properties running on tank water we work efficiently and use low-water methods where we can, which is another reason our biodegradable, plant-based range suits homes here better than supermarket chemicals.',
+      },
+      {
+        q: 'Do you take NDIS, aged care or DVA clients around Pembrooke?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP is nursing-led, so our cleaners are trained to a nursing-grade standard and understand how to work respectfully in a Pembrooke home where someone needs ongoing support.',
+      },
+    ],
   },
 
   {
@@ -1026,6 +1442,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Kew on the Mid North Coast NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean holiday homes and short-stay properties at Kew?',
+        a: 'Yes. Kew has a steady mix of long-term residents and holiday visitors, so turnovers between stays are a regular part of our work here. We can coordinate the clean with your check-out and check-in windows and reset the home fully between guests. The same team covers Laurieton, North Haven, Dunbogan and Camden Head.',
+      },
+      {
+        q: 'Are your products safe to use near the Manning River estuary?',
+        a: 'They are. Everything we use in Kew is plant-based, biodegradable and non-toxic, so nothing harsh goes down the drain or into the stormwater that ends up in the estuary. It also means the home is safe for children, pets and anyone with asthma as soon as we walk out the door.',
+      },
+      {
+        q: 'Can you clean a waterfront home that gets salt air and damp?',
+        a: 'Yes. Waterfront and estuary-facing homes in Kew pick up salt film on glass and window frames, and bathrooms and wardrobes hold moisture longer than they do inland. Our cleaners pay particular attention to glass, tracks, wet areas and any spots where mould likes to establish, using products that will not damage coastal finishes.',
+      },
+      {
+        q: 'I only get down to my Kew place occasionally. Can you clean while I am away?',
+        a: 'That is a common arrangement here. You can leave a key or a lock-box code and we will clean while the house is empty, whether that is before you arrive for a stretch or after you head home. Every cleaner is police-checked and insured for $20m public liability, so your Kew property is in safe hands.',
+      },
+      {
+        q: 'Do you do bond cleans for rentals in Kew?',
+        a: 'We do. Our end-of-lease clean is a full property reset with a receipt provided, and if the property manager raises an issue with our work we come back and re-clean it under our bond-back guarantee. Book online for your Kew rental and we can usually attend within two to five business days.',
+      },
+      {
+        q: 'Do you support older residents and NDIS participants at Kew?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. Many Kew residents have chosen the quieter side of the Mid North Coast for retirement, and we help them stay comfortable and independent at home.',
+      },
+    ],
   },
 
   {
@@ -1078,6 +1521,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Lakewood near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & new-home services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe for babies, toddlers and pets in a new-estate home?',
+        a: 'Yes, and this is the question we get most in Lakewood. Our whole range is plant-based, biodegradable and non-toxic, so there is no chemical smell lingering in a closed-up new home and nothing harsh left on floors where a crawling baby or the dog spends the day. It suits sensitive skin and asthma sufferers too.',
+      },
+      {
+        q: 'Can you fit a clean around two working parents and daycare pickup?',
+        a: 'We can. Plenty of Lakewood households are dual-income with young kids, so we set a weekly or fortnightly slot that works around work hours, school and daycare runs. You do not have to be home. There are no lock-in contracts, so you can move to a different day or pause during holidays.',
+      },
+      {
+        q: 'We are moving into a brand-new build in Lakewood. Can you clean it first?',
+        a: 'Yes. A deep clean before you move furniture in is much easier than after, and new homes often carry fine construction dust in window tracks, cupboards, skirtings and light fittings. We will do the full reset with our own products and equipment so your Lakewood home is ready on handover day.',
+      },
+      {
+        q: 'What does a clean in Lakewood cost?',
+        a: 'It depends on how big the home is, what condition it is in and whether you want us regularly or as a one-off, so there is no flat rate. You can get a free instant quote online in about 60 seconds without speaking to anyone, then book if it suits. A first Lakewood booking is typically two to five business days out.',
+      },
+      {
+        q: 'Do you clean the semi-rural blocks around Lakewood as well as the estates?',
+        a: 'Yes. Lakewood sits between the newer estates and the hinterland, and we clean both. The same team covers Sancrox, King Creek, Settlement Point, Wauchope and Port Macquarie, so whether your place is a compact new build or a larger block on the edge of the suburb, it is the same police-checked, insured cleaners.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for Lakewood rentals?',
+        a: 'We do, and it is common here as families move between rentals and their first purchase. Our end-of-lease clean covers the property thoroughly and comes with a receipt, plus a bond-back re-clean guarantee if your property manager raises an issue. Book your Lakewood vacate clean online and we will confirm a date with you.',
+      },
+    ],
   },
 
   {
@@ -1130,6 +1600,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in King Creek near Port Macquarie NSW. Police-checked, insured. Acreage and rural property cleaning specialists.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you charge differently for acreage homes with large floor areas?',
+        a: 'Every quote is built around the size of the home, its condition and how often you want us, so a larger King Creek residence is priced on what it actually takes rather than a fixed rate. The free instant quote online takes about 60 seconds and needs no phone call, and you will see the figure before you commit to anything.',
+      },
+      {
+        q: 'Are your products safe around chickens, orchards and rainwater tanks?',
+        a: 'Yes. Our range is plant-based, biodegradable and non-toxic, so nothing harsh reaches your run-off, your tank catchment or the ground around fruit trees and vegetable beds. King Creek properties often have poultry, pets and productive gardens close to the house, and our products are chosen with exactly that in mind.',
+      },
+      {
+        q: 'How long does a clean take on a bigger King Creek property?',
+        a: 'Longer than a standard suburban home, and we plan for it. More floor area means more surfaces, and acreage brings extra dust and pollen indoors through the year. We allocate the time the property genuinely needs so the clean is thorough rather than rushed, and we confirm the scope with you before the first King Creek visit.',
+      },
+      {
+        q: 'Can you do a one-off deep clean rather than a regular service?',
+        a: 'Absolutely. Many King Creek homeowners start with a one-off deep clean to reset the house, then decide afterwards whether a fortnightly service is worth it. There are no lock-in contracts either way, and every clean is covered by our satisfaction guarantee. Deep cleans, regular cleans and end-of-lease cleans are all available here.',
+      },
+      {
+        q: 'Which surrounding areas does the same King Creek team cover?',
+        a: 'One team covers the whole outer ring of Port Macquarie, so King Creek, Sancrox, Lakewood, Settlement Point, Beechwood, Lake Cathie, Wauchope and Port Macquarie itself are all serviced. If you own more than one property across those areas, you can have the same standard applied to each of them.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients on semi-rural blocks?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. A larger King Creek home can be hard to maintain as circumstances change, and our nursing-led team is trained to work respectfully and thoroughly in that situation.',
+      },
+    ],
   },
 
   {
@@ -1182,6 +1679,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Settlement Point on the Hastings River NSW. Police-checked, insured. Waterfront, holiday-let & regular cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you understand the extra wear that riverside homes get?',
+        a: 'We do. Settlement Point homes sit right on the Hastings River, and salt air, humidity and river breeze leave film on glass, marks on window tracks and damp in bathrooms and wardrobes. Timber decks and outdoor living areas also need a different touch. Our cleaners are experienced with waterfront properties and work through those areas deliberately.',
+      },
+      {
+        q: 'Are your products safe for the Hastings River environment?',
+        a: 'Yes. Everything we use at Settlement Point is plant-based, biodegradable and non-toxic, so nothing aggressive washes off decks or down drains so close to the water. The same products are safe for children and pets, and there is no chemical smell left in the house afterwards.',
+      },
+      {
+        q: 'I use my Settlement Point place as a holiday home. Can you clean between visits?',
+        a: 'Yes. We clean plenty of holiday homes at Settlement Point, either before you arrive so the house is fresh, or after you leave so it is not sitting closed up. You can leave a key or a lock-box code and you do not need to be present. Every cleaner is police-checked and covered by $20m public liability insurance.',
+      },
+      {
+        q: 'Can you work around boating and fishing plans?',
+        a: 'We can. Life at Settlement Point runs around the water rather than a fixed timetable, so we set your clean for a window that suits you and adjust it when plans change. Weekly, fortnightly and one-off bookings are all available and there are no lock-in contracts, so nothing is locked to a rigid day.',
+      },
+      {
+        q: 'Are you discreet when working in a riverside home?',
+        a: 'Yes. Many of our Settlement Point clients are retirees, holiday homeowners or families who value privacy. Our cleaners are police-checked, fully insured and trained to a nursing-grade standard, which includes being quiet, respectful and careful with personal belongings, whether you are home during the clean or away for the day.',
+      },
+      {
+        q: 'Do you support NDIS participants and Home Care Package recipients at Settlement Point?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP is nursing-led, and that background shapes how our cleaners work in a Settlement Point home where someone needs regular, dependable in-home support.',
+      },
+    ],
   },
 
   {
@@ -1234,6 +1758,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Lighthouse Beach Port Macquarie NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you turn over a holiday let between guests on the same day?',
+        a: 'Yes. Same-day turnovers are a regular part of our Lighthouse Beach work. We coordinate the clean with your check-out and check-in times so the property is fully reset for the next guests, including bathrooms, kitchen, floors and presentation. Let us know your booking windows and we will schedule around them through the busy periods.',
+      },
+      {
+        q: 'Do you clean ocean-view apartments as well as houses?',
+        a: 'We do. Lighthouse Beach has everything from ocean-view apartments to architect-designed homes, and we clean both. For apartments, tell us at booking how building access and parking work, whether that is an intercom, a fob or a visitor bay, and we will make sure the cleaner has what they need to get in without you being there.',
+      },
+      {
+        q: 'How do you deal with salt film on ocean-facing glass?',
+        a: 'Glass facing the ocean here needs regular attention or the view suffers. Our Lighthouse Beach cleans include interior glass, sills and tracks as standard, using plant-based products that cut the film without harming coastal finishes, seals or frames. If the home has a lot of glazing we plan the time for it rather than rushing that part.',
+      },
+      {
+        q: 'Will the same cleaner look after my Lighthouse Beach property each time?',
+        a: 'We aim for consistency on recurring Lighthouse Beach bookings so your cleaner learns the property, which matters most in a premium home or a short-stay let with a specific setup. Every cleaner is police-checked and insured for $20m public liability, and every clean is covered by our satisfaction guarantee with no lock-in contract.',
+      },
+      {
+        q: 'Do you cover the rest of the beachside corridor?',
+        a: 'Yes. One team services Lighthouse Beach, Settlement Point, Lake Cathie, Bonny Hills, King Creek, Sancrox and all of Port Macquarie. If you own an investment property or a second home elsewhere along that beachside stretch, you can have the same cleaners and the same standard applied to both.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for Lighthouse Beach rentals?',
+        a: 'We do. Our end-of-lease clean is a thorough reset of the whole property with a receipt provided, and if the managing agent raises an issue with the clean we return and re-do it under our bond-back guarantee. Get a free instant quote online and we can usually attend a Lighthouse Beach vacate within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -1360,6 +1911,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Gosford', 'Terrigal', 'Avoca Beach', 'Erina', 'Wyong', 'Tuggerah', 'The Entrance', 'Long Jetty', 'Woy Woy', 'Ettalong Beach', 'Umina Beach', 'Killarney Vale', 'Bateau Bay', 'Forresters Beach', 'Kincumber', 'Saratoga', 'Davistown', 'Berkeley Vale', 'Lake Munmorah', 'Toukley'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you fit a clean around a Sydney commute?',
+        a: 'Yes. A lot of Central Coast households have someone catching an early train and getting home late, so we set the clean for a weekday window while the house is empty. You can leave a key or a lock-box code, and every cleaner is police-checked and insured for $20m public liability. Weekly, fortnightly and one-off bookings are all available.',
+      },
+      {
+        q: 'Are your products safe for the lake catchments?',
+        a: 'They are. Everything we use across the Central Coast is plant-based, biodegradable and non-toxic, so nothing harsh goes down the drain in suburbs draining into Tuggerah Lakes or Brisbane Water. The same products are gentle on coastal finishes and safe for children, pets and asthma sufferers in the home.',
+      },
+      {
+        q: 'Which Central Coast suburbs do you actually service?',
+        a: 'We cover the region broadly, from Gosford, Terrigal, Avoca Beach and Erina through Woy Woy, Ettalong and Umina Beach on the peninsula, and north through The Entrance, Long Jetty, Bateau Bay, Tuggerah, Berkeley Vale, Wyong, Toukley and Lake Munmorah. If your Central Coast suburb is not on that list, it is still worth checking with us.',
+      },
+      {
+        q: 'Do you clean holiday rentals over the summer season?',
+        a: 'Yes. Summer is the busiest stretch on the Central Coast and we handle turnovers for holiday rentals along the beaches and lakes, coordinated with your check-out and check-in times. Because bookings tighten up over the holidays, it is worth locking in your dates early rather than waiting for the week itself.',
+      },
+      {
+        q: 'Do you clean in retirement villages and units as well as houses?',
+        a: 'We do. The Central Coast has a wide mix of housing, from waterfront homes and older weatherboard cottages to new builds in the northern growth corridor and units in retirement villages. Our team works in all of them, and we support NDIS participants, Home Care Package recipients, DVA card holders and insurance or workers compensation clients.',
+      },
+      {
+        q: 'How quickly can you start on the Central Coast?',
+        a: 'Most first bookings happen within two to five business days. You can get a free instant quote online in about 60 seconds without a phone call, or reach the office on 1300 876 472 Monday to Friday between 8:30am and 5:00pm. There is no lock-in contract, and every Central Coast clean carries our satisfaction guarantee.',
+      },
+    ],
   },
 
   {
@@ -1412,6 +1990,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Lismore & the Northern Rivers. Insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Goonellabah', 'Wollongbar', 'Alstonville', 'Casino', 'Nimbin', 'Clunes', 'Dunoon', 'Bexhill', 'Modanville', 'Ruthven', 'Caniaba', 'Tregeagle', 'Wyrallah', 'North Lismore', 'East Lismore', 'South Lismore', 'Girards Hill', 'Loftville', 'Eltham'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean a home that has just been rebuilt after flooding?',
+        a: 'Yes, and we do a lot of it in Lismore. Rebuild handovers leave fine dust through everything, and we can allocate extra hours for that kind of clean rather than squeezing it into a standard visit. We work carefully around new joinery, replaced subfloors and finishes that are still settling in.',
+      },
+      {
+        q: 'Are your products safe on polished concrete and new joinery?',
+        a: 'They are. Our range is plant-based, biodegradable and low-residue, which matters in Lismore where so many homes now have polished concrete floors, new cabinetry and replaced timber finishes that harsh supermarket chemicals can dull or streak. Nothing we use leaves a chemical film, and it is all safe for children, pets and asthma sufferers.',
+      },
+      {
+        q: 'Do you handle insurance-funded cleaning work?',
+        a: 'Yes. We take insurance and workers compensation work alongside NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders. Given what Lismore households have been through with insurers, we keep our documentation clear and provide receipts so the paperwork side is straightforward.',
+      },
+      {
+        q: 'Do you clean student rentals and share houses near the university?',
+        a: 'We do. Lismore has a steady student population around Southern Cross University, and we clean share houses both as a regular service and as an end-of-lease clean at the end of the year. Vacate cleans come with a receipt and a bond-back re-clean guarantee if the property manager raises an issue with our work.',
+      },
+      {
+        q: 'Do you service the villages around Lismore or only the city?',
+        a: 'Both. As well as the Lismore CBD, East Lismore, North Lismore, South Lismore and Goonellabah, our team covers Wollongbar, Alstonville, Clunes, Dunoon, Bexhill, Eltham, Nimbin, Bangalow and Casino. It is one team across the Northern Rivers, so the standard does not change depending on which side of the river you are on.',
+      },
+      {
+        q: 'Is your team sensitive to what this community has been through?',
+        a: 'We try to be. NATURO GROUP is nursing-led, and that background shows in how our cleaners approach a Lismore home that is still being put back together. We work at the pace the household needs, we do not rush people through decisions about their own belongings, and there are no lock-in contracts if circumstances change.',
+      },
+    ],
   },
 
   {
@@ -1464,6 +2069,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Hamilton', 'Merewether', 'The Junction', 'Cooks Hill', 'New Lambton', 'Adamstown', 'Bar Beach', 'Stockton', 'Mayfield', 'Wickham', 'Islington', 'Hamilton East', 'Tighes Hill', 'Carrington', 'Waratah', 'Lambton', 'Charlestown', 'Kahibah', 'Newcastle East', 'Newcastle West'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you work around shift rosters?',
+        a: 'Yes. Newcastle runs on shift work between the hospitals, the port and FIFO rotations, so we set cleans for whichever window actually suits your roster rather than a fixed weekly slot. You can leave a key or an access code and sleep through it, or have the clean done while you are out. Weekly, fortnightly and one-off bookings are available.',
+      },
+      {
+        q: 'Do you clean heritage terraces without damaging period detail?',
+        a: 'We do. Cooks Hill, The Hill and the older inner streets are full of terraces with original timber, pressed detail and delicate paintwork that harsh chemicals will strip over time. Our plant-based, non-toxic products are chosen to be gentle on those surfaces, and our Newcastle cleaners are trained to treat period features carefully rather than scrubbing everything the same way.',
+      },
+      {
+        q: 'How do you get into a harbourside apartment building?',
+        a: 'Tell us at booking how access works, whether that is an intercom, a security fob, a concierge or a visitor parking bay, and we will brief the cleaner before they arrive. Building access is the one thing that slows down apartment cleans in Newcastle, so a few details up front means the clean starts on time.',
+      },
+      {
+        q: 'Does the salt air near the beaches change how you clean?',
+        a: 'It does. Homes around Merewether, Bar Beach and Newcastle East pick up salt film on glass and window frames faster than inland suburbs, and bathrooms hold moisture longer. We give glass, tracks and wet areas extra attention with products that will not attack coastal finishes or the seals around them.',
+      },
+      {
+        q: 'Do you do rental turnovers and end-of-lease cleans in Newcastle?',
+        a: 'Yes, and they are a steady part of our Newcastle work given how much of the inner city is rented. An end-of-lease clean is a full reset of the property with a receipt provided, plus a bond-back re-clean guarantee if the agent raises an issue. Get a free instant quote online and book a date that suits your handover.',
+      },
+      {
+        q: 'Which suburbs beyond the city do you reach?',
+        a: 'Our team covers Newcastle and out across the Hunter, including Hamilton, Islington, Tighes Hill, Carrington, Wickham, Mayfield, Waratah, Lambton, New Lambton, Adamstown, Merewether, The Junction, Stockton, Kahibah and Charlestown, plus Lake Macquarie, Warners Bay, Belmont, Maitland and Cessnock. Same police-checked cleaners and the same satisfaction guarantee throughout.',
+      },
+    ],
   },
 
   {
@@ -1516,6 +2148,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Cronulla', 'Caringbah', 'Miranda', 'Gymea', 'Engadine', 'Heathcote', 'Sylvania', 'Kirrawee', 'Jannali', 'Como', 'Oyster Bay', 'Bonnet Bay', 'Sylvania Waters', 'Yowie Bay', 'Grays Point', 'Loftus', 'Woronora', 'Menai', 'Illawong', 'Bangor'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe for kids, dogs and a backyard pond?',
+        a: 'Yes. Everything we use across the Sutherland Shire is plant-based, biodegradable and non-toxic, so there is nothing harsh left on hardwood floors where the kids and the dog spend their day, and nothing aggressive going down drains near garden ponds. It also suits households with asthma or sensitive skin.',
+      },
+      {
+        q: 'Can you fit a clean around school runs and weekend sport?',
+        a: 'We can. Sutherland Shire family life runs on a tight weekly rhythm of school drop-offs, training and Saturday sport, so we set your clean for the window that actually works and keep it consistent. Weekly, fortnightly and one-off cleans are all available, and there are no lock-in contracts if the season changes your routine.',
+      },
+      {
+        q: 'Do you clean beachside units as well as family homes?',
+        a: 'Yes. The Sutherland Shire ranges from Cronulla beach apartments through to family homes in Engadine and townhouses in between, and we clean the lot. For units, let us know at booking how building access and parking work so the cleaner is not stuck at the front door. Salt air near the coast means we give glass and window tracks extra attention.',
+      },
+      {
+        q: 'We are downsizing. Can you clean the old house once it is empty?',
+        a: 'That is one of our most requested jobs in the Sutherland Shire. An empty house is much easier to reset properly, and we can do a full deep clean before it goes on the market or before handover to the new owners. If it is a rental, our end-of-lease clean includes a receipt and a bond-back re-clean guarantee.',
+      },
+      {
+        q: 'Do you support DVA card holders and NDIS participants in the Shire?',
+        a: 'Yes. We work with DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, Home Care Package recipients and insurance or workers compensation clients. NATURO GROUP is nursing-led, so our Sutherland Shire cleaners are trained to a nursing-grade standard and understand how to work in a home where someone needs ongoing support.',
+      },
+      {
+        q: 'Which Shire suburbs do you cover?',
+        a: 'We service across the Sutherland Shire, including Cronulla, Caringbah, Miranda, Gymea, Kirrawee, Jannali, Como, Oyster Bay, Bonnet Bay, Sylvania, Sylvania Waters, Yowie Bay, Grays Point, Loftus, Woronora, Engadine, Heathcote, Menai, Illawong and Bangor. Every cleaner is police-checked and insured for $20m public liability, with a satisfaction guarantee on every clean.',
+      },
+    ],
   },
 
   {
@@ -1568,6 +2227,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Which parts of Sydney do your cleaners actually cover?',
+        a: 'We work right across the metropolitan area: the CBD, Eastern Suburbs, Inner West, Northern Beaches, North Shore, Hills District, Western Sydney and the Sutherland Shire. That includes inner-city pockets like Surry Hills, Pyrmont, Ultimo, Chippendale, Redfern, Alexandria, Waterloo and Zetland, along with Paddington, Woollahra, Potts Point and Barangaroo. If your Sydney suburb is not listed, ask when you book online.',
+      },
+      {
+        q: 'Can you clean a CBD apartment where I need to arrange building access?',
+        a: 'Yes. A large share of our Sydney work is apartments, so we are used to visitor parking, loading docks, lift bookings and building managers. Let us know the access arrangements when you book and we will follow them. You do not need to be home if you would rather leave a key, fob or concierge instruction for our Sydney cleaner.',
+      },
+      {
+        q: 'Will your products set off the smoke alarm in a closed Sydney apartment?',
+        a: 'No. We use plant-based, low-fume, biodegradable products chosen partly because so many Sydney homes are sealed apartments with limited ventilation. They are non-toxic and safe around children, pets and asthma sufferers, and they will not harm the harbour catchment when they go down the drain. We bring everything with us, so you supply nothing.',
+      },
+      {
+        q: 'Do you help NDIS participants and Home Care Package recipients in Sydney?',
+        a: 'We do, in every postcode from Bondi to Penrith. NATURO GROUP is a nursing-led company, and we support NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Sydney bookings are tailored around comfort, independence and a consistent cleaner wherever possible.',
+      },
+      {
+        q: 'How quickly can I get a first clean in Sydney, and what does it cost?',
+        a: 'Most first Sydney bookings happen within two to five business days. Pricing depends on the size of the home, its current condition and how often you want us, so the fairest way to find out is a free instant quote online. It takes about 60 seconds and no phone call is needed. There are no lock-in contracts.',
+      },
+    ],
   },
 
   {
@@ -1620,6 +2302,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Banora Point', 'Tweed Heads South', 'Tweed Heads West', 'Bilambil', 'Terranora', 'Cobaki Lakes', 'Kingscliff', 'Casuarina', 'Pottsville', 'Cabarita Beach', 'Hastings Point', 'Bogangar', 'Murwillumbah', 'Chinderah', 'Fingal Head', 'Bilambil Heights', 'Piggabeen'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean holiday rentals and Airbnb properties around Tweed Heads?',
+        a: 'Yes, short-stay turnovers are a big part of our Tweed Heads work. We schedule around check-out and check-in windows, run same-day turnovers through the busy summer season and handle weekly maintenance cleans between guests. We cover the riverfront apartments in Tweed Heads as well as Kingscliff, Casuarina, Cabarita Beach, Pottsville, Hastings Point and Chinderah.',
+      },
+      {
+        q: 'Can the same team clean on both the NSW and Queensland sides of the border?',
+        a: 'Yes. Tweed Heads sits right on the border where the Tweed River meets the Pacific, and our team works to the same standards either side of it. Whether your property is in Tweed Heads, Tweed Heads South, Tweed Heads West, Banora Point or over towards Coolangatta, you get police-checked cleaners, eco-friendly products and the same satisfaction guarantee.',
+      },
+      {
+        q: 'Are your products safe for the Tweed River and the wildlife around it?',
+        a: 'They are. Everything we use in Tweed Heads is plant-based, biodegradable and non-toxic, chosen so what washes down the drain does not harm the Tweed catchment or the ocean it flows into. The same products are gentle enough for children, pets and asthma sufferers, which matters in closed-up riverfront apartments through the humid months.',
+      },
+      {
+        q: 'Do you clean high-rise river apartments as well as houses in the hinterland?',
+        a: 'Yes. Homes around Tweed Heads range from high-rise apartments along the river to beachside houses and rural-residential blocks up in the green hinterland. We clean all of them, including properties at Terranora, Bilambil, Bilambil Heights, Cobaki Lakes, Piggabeen, Fingal Head and out to Murwillumbah. Access details like lift bookings or long driveways can be noted when you book.',
+      },
+      {
+        q: 'Can you support older residents and NDIS participants in the Tweed?',
+        a: 'Yes. NATURO GROUP is nursing-led, and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Tweed Heads and the Northern Rivers. Many Tweed Heads apartments are retiree homes, so we focus on comfort, independence and a familiar face each visit.',
+      },
+      {
+        q: 'How do I get a price for a clean in Tweed Heads?',
+        a: 'Book online for a free instant quote. It takes about 60 seconds and there is no phone call required. What you pay depends on how large the property is, what condition it is in and whether you want a one-off, a fortnightly clean or a holiday-let turnover, so the online form asks a few quick questions about your Tweed Heads home.',
+      },
+    ],
   },
 
   {
@@ -1672,6 +2381,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Parramatta & Western Sydney \u2014 CBD apartments, Westmead, Harris Park, North Parramatta. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Harris Park', 'Westmead', 'North Parramatta', 'Northmead', 'Wentworthville', 'Granville', 'Merrylands', 'Rosehill', 'Camellia', 'Carlingford', 'Telopea', 'Rydalmere', 'Dundas', 'Ermington', 'Oatlands', 'Old Toongabbie', 'South Granville', 'Holroyd'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you schedule cleans around hospital shifts at Westmead?',
+        a: 'Yes. Parramatta is a major hub for healthcare, and plenty of our clients work rotating shifts. We book weekly, fortnightly or one-off cleans at whatever time of day suits your roster, not just the standard nine-to-five window. You do not need to be there; leave a key or building access instructions and our Parramatta cleaner will let themselves in and lock up.',
+      },
+      {
+        q: 'Do you clean the new high-rise apartments in the Parramatta CBD?',
+        a: 'We do. Apartments are going up faster in Parramatta than anywhere in NSW, and we work in these buildings constantly. Tell us about visitor parking, loading dock bookings, lift access or the building manager\'s requirements when you book and we will follow them. We also clean townhouses and family homes through Northmead, Oatlands and Ermington.',
+      },
+      {
+        q: 'Do you do end-of-lease and bond cleans in Parramatta?',
+        a: 'Yes, and they are one of our most requested Parramatta services given how many people rent here. An end-of-lease clean comes with a receipt for your property manager and a bond-back re-clean guarantee: if the agent raises an issue with our work, we come back. We cover Harris Park, Granville, Rosehill, Merrylands, Westmead and Wentworthville.',
+      },
+      {
+        q: 'Are your products suitable for restored Victorian terraces in Harris Park?',
+        a: 'Yes. Our plant-based, non-toxic products are gentle on older finishes as well as modern apartment surfaces, so the same Parramatta team can move between a heritage terrace and a CBD tower. Nothing we use is harsh or high-fume, which matters in a closed apartment. We bring all products and equipment, so you never need to leave anything out.',
+      },
+      {
+        q: 'Do you work with NDIS participants and multigenerational households in Parramatta?',
+        a: 'We do. Parramatta\'s household mix spans students, professionals, multigenerational families and downsizers, and we tailor the clean accordingly. NATURO GROUP is nursing-led and supports NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Western Sydney, including Telopea, Dundas, Rydalmere and Carlingford.',
+      },
+    ],
   },
 
   {
@@ -1724,6 +2456,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Fairy Meadow', 'North Wollongong', 'Coniston', 'Mangerton', 'Mount Pleasant', 'Mount Ousley', 'Keiraville', 'Gwynneville', 'Figtree', 'West Wollongong', 'Mount Saint Thomas', 'Cordeaux Heights', 'Unanderra', 'Berkeley', 'Corrimal', 'Bellambi', 'Thirroul', 'Bulli', 'Woonona', 'Austinmer'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you do end-of-lease cleans for student rentals near the University of Wollongong?',
+        a: 'Yes. Wollongong has a lot of student housing, and share-house handovers are a regular job for us in Keiraville, Gwynneville, North Wollongong and Fairy Meadow. Our end-of-lease clean includes a receipt for the property manager and a bond-back re-clean guarantee if they raise an issue. Bookings can be split around exam periods and lease end dates.',
+      },
+      {
+        q: 'How far along the Illawarra coast do you travel?',
+        a: 'We cover the city and the northern suburbs, from Helensburgh down through Austinmer, Thirroul, Bulli, Woonona, Bellambi and Corrimal, in to the Wollongong CBD and Coniston, and out to Figtree, West Wollongong, Mount Saint Thomas, Cordeaux Heights, Unanderra and Berkeley. We also service Shellharbour and Kiama. If you are unsure about your street, mention it when you book.',
+      },
+      {
+        q: 'Are your products safe for the Illawarra catchment and the beaches?',
+        a: 'Yes. Wollongong sits between the escarpment and a 17-beach coastline, so everything we use is plant-based, biodegradable and non-toxic. It is gentle on coastal finishes that cop salt air, safe for children, pets and asthma sufferers, and it will not do damage to the catchment or the surf you swim in the next morning.',
+      },
+      {
+        q: 'Can you clean around shift work and the school run?',
+        a: 'That is normal for us in Wollongong, where plenty of households juggle shift rosters, UOW timetables and school drop-offs. Weekly, fortnightly and one-off cleans can be scheduled for whatever window is quietest for you, and you do not need to be home. Leave a key or arrange access and we will lock up when we finish.',
+      },
+      {
+        q: 'Do you support aged care and DVA clients in the Illawarra?',
+        a: 'We do. NATURO GROUP is a nursing-led company, and across Wollongong and the Illawarra we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are built around comfort and independence at home, in family houses at Figtree or apartments closer to the CBD.',
+      },
+      {
+        q: 'What will a clean cost, and how soon can you start?',
+        a: 'Price depends on the size of the home, its condition and how often you would like us, so we give you a free instant quote online rather than a made-up figure. It takes about 60 seconds and no phone call is needed. Most first Wollongong bookings happen within two to five business days, with no lock-in contracts.',
+      },
+    ],
   },
 
   {
@@ -1776,6 +2535,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Manly', 'Dee Why', 'Brookvale', 'Collaroy', 'Narrabeen', 'Mona Vale', 'Avalon Beach', 'Newport', 'Palm Beach', 'Whale Beach', 'Freshwater', 'Curl Curl', 'Queenscliff', 'Balgowlah', 'Seaforth', 'Forestville', 'Frenchs Forest', 'Beacon Hill', 'Cromer', 'Warriewood', 'Bayview', 'Church Point'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you travel the full 30km of the peninsula from Manly to Palm Beach?',
+        a: 'We do. Our Northern Beaches team covers Manly, Freshwater, Curl Curl, Queenscliff, Dee Why, Brookvale, Collaroy, Narrabeen, Warriewood, Mona Vale, Newport, Avalon Beach, Whale Beach and Palm Beach, plus the inland pockets at Frenchs Forest, Forestville, Beacon Hill, Cromer, Seaforth, Balgowlah, Bayview and Church Point. Our cleaners know the streets and the parking.',
+      },
+      {
+        q: 'Can you clean holiday lets and weekenders between bookings?',
+        a: 'Yes. A good number of Northern Beaches homes are holiday lets or weekenders that sit empty then fill up fast. We schedule turnovers around guest arrivals and can do a deep clean before a busy stretch or after a season of visitors. Owners at Avalon Beach, Newport, Palm Beach and Whale Beach use us this way regularly.',
+      },
+      {
+        q: 'Will your products harm Pittwater or the ocean?',
+        a: 'No. The Northern Beaches peninsula has the Pacific on one side and Pittwater on the other, so we deliberately use plant-based, biodegradable, non-toxic products. They protect the catchment and the water you swim, surf and paddleboard in, and they are safe around children, pets and asthma sufferers. We supply every product and piece of equipment ourselves.',
+      },
+      {
+        q: 'Do you clean older Federation cottages as well as modern beachfront houses?',
+        a: 'Yes. Northern Beaches homes range from beachfront houses on Avalon to Federation cottages in Newport, and our cleaners are trained to treat older timber, tiles and original detail gently rather than blast them. The same team also handles family homes and apartments through Dee Why, Collaroy and Manly. Tell us about anything delicate when you book.',
+      },
+      {
+        q: 'I am a downsizer and want the same cleaner each visit. Is that possible?',
+        a: 'We aim for it. Many of our Northern Beaches clients are downsizers and long-term residents who would rather not explain their home twice, so we keep bookings with a familiar cleaner wherever scheduling allows. NATURO GROUP is nursing-led and also supports NDIS participants, Home Care Package recipients, DVA card holders and insurance clients across the peninsula.',
+      },
+    ],
   },
 
   {
@@ -1828,6 +2610,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Bondi', 'Bondi Beach', 'Bronte', 'Coogee', 'Tamarama', 'Clovelly', 'Maroubra', 'Randwick', 'Waverley', 'Bondi Junction', 'Queens Park', 'Kensington', 'Kingsford', 'North Bondi', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Little Bay', 'Malabar'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Why is end-of-lease cleaning so common along the Eastern Beaches?',
+        a: 'Homes here turn over often. The Eastern Beaches strip mixes long-term locals with professionals and short-stay tenants, so leases end constantly and standards stay high. Our end-of-lease clean covers the handover detail agents look for, comes with a receipt and includes a bond-back re-clean guarantee if the property manager raises an issue with our work.',
+      },
+      {
+        q: 'Do you clean small apartments as thoroughly as houses?',
+        a: 'Yes, and small-footprint apartments are most of what we do on the Eastern Beaches. Compact kitchens, single bathrooms and balconies that cop salt spray get the same trained, nursing-grade standard as a large home. Our cleaners work through Bondi, North Bondi, Bronte, Tamarama, Clovelly, Coogee and Maroubra, as well as terrace houses set back from the water.',
+      },
+      {
+        q: 'Which suburbs beyond the beachfront do you service?',
+        a: 'Along with the Eastern Beaches strip itself, we service Bondi Junction, Waverley, Queens Park, Kensington, Kingsford and Randwick, and further along the coast at Little Bay and Malabar. We also work up through Dover Heights, Vaucluse and Rose Bay. If your street sits between two of those, mention it when you book online.',
+      },
+      {
+        q: 'Do I need to be home for the clean?',
+        a: 'No. Plenty of Eastern Beaches clients are at work, at the beach or interstate when we visit. You can leave a key, arrange building access through a concierge or share an entry code, and we will lock up when we finish. Let us know about pets and any rooms you would rather we skipped.',
+      },
+      {
+        q: 'Are your products safe to use this close to the water?',
+        a: 'Yes. Living beside one of the most photographed coastal walks on earth, Eastern Beaches locals care about what goes down the drain, and so do we. Our products are plant-based, biodegradable, low-fume and non-toxic, so they will not set off a closed-apartment smoke alarm, irritate asthma sufferers or harm the surf at the end of your street.',
+      },
+    ],
   },
 
   {
@@ -1880,6 +2685,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Bondi & the Eastern Suburbs. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Bondi Beach', 'North Bondi', 'Bondi Junction', 'Tamarama', 'Bronte', 'Waverley', 'Queens Park', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Watsons Bay', 'Double Bay', 'Bellevue Hill', 'Woollahra', 'Paddington', 'Centennial Park', 'Clovelly', 'Coogee'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you handle Airbnb and holiday-let turnovers in Bondi?',
+        a: 'Yes. Turnovers are fast in Bondi and we schedule around them, including same-day changeovers between guests, weekly maintenance cleans while a place is booked out and one-off deep cleans between seasons. Hosts book online in about 60 seconds. We work across Bondi Beach, North Bondi, Tamarama, Bronte and Bondi Junction.',
+      },
+      {
+        q: 'Can you clean art-deco apartments without damaging original features?',
+        a: 'We can. A lot of Bondi housing stock is art-deco apartments with original tiling, timber and joinery, and our cleaners use pH-neutral, plant-based products rather than anything harsh. The same care applies to the renovated terraces behind Campbell Parade. Tell us about any finish you are particular about and we will note it on your Bondi booking.',
+      },
+      {
+        q: 'Are your products suitable for guests with sensitive skin or asthma?',
+        a: 'Yes. Everything we use in Bondi is plant-based, biodegradable, non-toxic and low-fume, which suits sensitive-skinned guests, children, pets and asthma sufferers alike. It also means no chemical haze lingering in a small closed apartment, and nothing harmful heading into the ocean at the end of the street. We supply all products and equipment ourselves.',
+      },
+      {
+        q: 'Do you do bond cleans for Bondi rentals?',
+        a: 'Yes. With homes smaller and turnovers faster in Bondi than almost anywhere, end-of-lease work is a steady part of what we do. You get a receipt for your property manager and a bond-back re-clean guarantee, so if the agent raises an issue with our clean we return and put it right at no extra cost.',
+      },
+      {
+        q: 'How far beyond Bondi does your team go?',
+        a: 'Our Bondi cleaners also cover North Bondi, Bondi Beach, Bondi Junction, Tamarama, Bronte, Waverley, Queens Park, Clovelly and Coogee, and north through Dover Heights, Vaucluse, Watsons Bay, Rose Bay, Double Bay and Bellevue Hill. Woollahra, Paddington and Centennial Park are covered too. Enter your address online and we will confirm availability instantly.',
+      },
+    ],
   },
 
   {
@@ -1932,6 +2760,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Manly, Fairlight, Balgowlah & Freshwater. Holiday-let turnovers, regular cleans. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Fairlight', 'Balgowlah', 'Balgowlah Heights', 'Clontarf', 'Seaforth', 'North Balgowlah', 'Queenscliff', 'Freshwater', 'Curl Curl', 'North Manly', 'Brookvale', 'Allambie Heights', 'Beacon Hill', 'Frenchs Forest', 'Killarney Heights', 'Manly Vale', 'Dee Why'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean while I am on the ferry to work?',
+        a: 'Yes, that is how many Manly clients use us. Weekly, fortnightly and one-off cleans are scheduled around the ferry timetable, the school run and weekend plans, and you do not need to be home. Leave a key or arrange building access when you book, and our Manly cleaner will let themselves in and lock up afterwards.',
+      },
+      {
+        q: 'Do you clean holiday lets around Manly Beach and Shelly Beach?',
+        a: 'We do. Manly has a strong holiday-let community, and we handle guest changeovers, maintenance cleans during a booked stretch and deep cleans between seasons. Because the beach is on your doorstep, we pay attention to sand, salt residue and outdoor areas. Hosts at Manly Beach, Shelly Beach, Queenscliff and Freshwater book us on repeat schedules.',
+      },
+      {
+        q: 'Are your products safe for Sydney Harbour and Manly Cove?',
+        a: 'Yes. Manly sits on a sliver of land between Manly Cove and the Pacific, so we use plant-based, biodegradable, low-fume products that protect the harbour and the surf. They are safe around children, pets and asthma sufferers, and they will not build up a chemical smell in the small-footprint apartments common right through Manly.',
+      },
+      {
+        q: 'Do you clean Federation cottages and renovated terraces too?',
+        a: 'We do. Alongside beachfront apartments, Manly and the surrounding streets have Federation cottages and renovated terraces with original timber, tiles and detail. Our cleaners are trained to work gently on those finishes rather than use anything abrasive. We also service family homes at Fairlight, Balgowlah, Balgowlah Heights, North Balgowlah, Clontarf, Seaforth and Manly Vale.',
+      },
+      {
+        q: 'Do you support NDIS participants and older residents in Manly?',
+        a: 'Yes. NATURO GROUP is a nursing-led company, and around Manly we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are arranged around comfort and independence at home, with the same cleaner each visit wherever the schedule allows.',
+      },
+      {
+        q: 'How do I find out what it will cost?',
+        a: 'Get a free instant quote online. It takes about 60 seconds, no phone call is required, and there are no lock-in contracts. What you pay depends on the size of your Manly home, its current condition and whether you want a regular clean, a one-off deep clean or an end-of-lease clean. Office hours are Monday to Friday, 8:30am to 5:00pm.',
+      },
+    ],
   },
 
   {
@@ -1984,6 +2839,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Mosman, Cremorne, Neutral Bay & Balmoral. Premium harbourside homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Beauty Point', 'Clifton Gardens', 'Balmoral', 'The Spit', 'Cremorne', 'Cremorne Point', 'Neutral Bay', 'Cammeray', 'Northbridge', 'Castlecrag', 'Castle Cove', 'Willoughby', 'Naremburn', 'Wollstonecraft', 'McMahons Point', 'Kirribilli', 'Lavender Bay', 'Crows Nest'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe for marble bathrooms and natural-stone benchtops?',
+        a: 'Yes. Mosman homes often have marble, natural stone and premium joinery, so we use pH-neutral, plant-based products rather than acidic or abrasive cleaners that etch stone. The same products are safe for the labrador, the children and the harbour catchment your property backs onto. Point out anything specialised on your first visit and we will note it permanently.',
+      },
+      {
+        q: 'Can you work discreetly in a home while the family is out or travelling?',
+        a: 'Yes. Discretion is part of what Mosman clients expect. Every cleaner is police-checked, trained and fully insured for $20m public liability, so you can hand over access with confidence. We can clean while you are at work or overseas, follow instructions about which rooms to leave alone, and lock up carefully when we are done.',
+      },
+      {
+        q: 'Do you clean harbourfront houses as well as apartments?',
+        a: 'We do. Mosman spans Federation homes, contemporary architectural builds and high-end apartments looking over Sydney Harbour and Middle Harbour, and our team is comfortable in all three. We also service Beauty Point, Clifton Gardens, Balmoral, The Spit, Cremorne, Cremorne Point, Neutral Bay, Cammeray, Northbridge, Castlecrag, Castle Cove, Willoughby, Naremburn and Crows Nest.',
+      },
+      {
+        q: 'Can you schedule around work travel and weekend visitors?',
+        a: 'That is a common request in Mosman. Weekly, fortnightly and one-off cleans can be timed around school runs, work trips and the Friday before guests arrive. A deep clean before a house full of visitors, then a regular schedule afterwards, works well. There are no lock-in contracts, so you can adjust frequency as your year changes.',
+      },
+      {
+        q: 'Do you provide support for older residents staying in their Mosman home?',
+        a: 'Yes. Mosman has many long-term residents and downsizers, and NATURO GROUP\'s nursing background shapes how we approach that work. We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across the Lower North Shore, with the aim of keeping people comfortable and independent at home.',
+      },
+    ],
   },
 
   {
@@ -2036,6 +2914,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Heritage-home friendly. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Woolwich', 'Henley', 'Gladesville', 'Boronia Park', 'Putney', 'Tennyson Point', 'Mortlake', 'Concord', 'Drummoyne', 'Russell Lea', 'Five Dock', 'Abbotsford', 'Chiswick', 'Wareemba', 'Lane Cove', 'Riverview', 'Linley Point', 'Longueville', 'Northwood'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do your cleaners know how to look after 1860s sandstone homes?',
+        a: 'Yes. Hunters Hill is the oldest garden suburb in Australia and its sandstone heritage houses need a gentler approach than a modern build. Our cleaners are trained to work carefully around sandstone, original timber, decorative detail and restored Victorian joinery, using pH-neutral, plant-based products rather than anything harsh, acidic or abrasive that could mark a heritage finish.',
+      },
+      {
+        q: 'Are your products safe for the Lane Cove and Parramatta Rivers?',
+        a: 'They are. The Hunters Hill peninsula is wrapped by both rivers, so everything that goes down your drain matters. Our products are plant-based, biodegradable and non-toxic, safe for the river catchment as well as for children, pets and anyone in the house with asthma. We bring all products and equipment with us on every visit.',
+      },
+      {
+        q: 'Can you clean while we are at work or on the ferry?',
+        a: 'Yes. Hunters Hill is walkable to the ferry and many clients commute, so we schedule weekly, fortnightly or one-off cleans around ferry timetables, school runs and weekend plans. You do not need to be home. Leave a key or arrange access and our cleaner will secure the house when the clean is finished.',
+      },
+      {
+        q: 'Which nearby suburbs does your Hunters Hill team also cover?',
+        a: 'Our Hunters Hill cleaners also service Woolwich, Henley, Boronia Park, Gladesville, Putney, Tennyson Point and Riverview, along with Lane Cove, Linley Point, Longueville and Northwood. Across the water we also cover Drummoyne, Russell Lea, Five Dock, Abbotsford, Chiswick, Wareemba, Mortlake and Concord. Enter your address when booking online and availability is confirmed straight away.',
+      },
+      {
+        q: 'We care about sustainability. What makes your service eco-friendly?',
+        a: 'Every product we use in Hunters Hill is plant-based, biodegradable and non-toxic, which suits both a heritage home and a household that would rather not send harsh chemicals into the river. Nothing needs to be supplied by you, and we bring our own equipment. It is a discreet, professional service without a cupboard full of synthetic cleaners left behind.',
+      },
+      {
+        q: 'How do I get a price for a Hunters Hill home?',
+        a: 'Book online for a free instant quote in about 60 seconds, with no phone call required. Cost depends on the size of the Hunters Hill house, its condition and how frequently you want us, which is why we ask a few questions rather than quote blind. First bookings are typically within two to five business days, with no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -2088,6 +2993,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Vaucluse, Watsons Bay, Rose Bay & Bellevue Hill. Premium harbourside homes, gentle on stone & marble. Police-checked.',
     },
     nearbySuburbs: ['Watsons Bay', 'Dover Heights', 'Rose Bay', 'Point Piper', 'Bellevue Hill', 'Double Bay', 'Darling Point', 'Edgecliff', 'Woollahra', 'Paddington', 'Bondi', 'North Bondi', 'Bondi Junction', 'Diamond Bay', 'Hermit Point', 'Parsley Bay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'How do you protect marble, natural stone and premium joinery?',
+        a: 'With pH-neutral, plant-based products and cleaners trained not to use anything acidic or abrasive on stone. Vaucluse homes tend to have marble bathrooms, natural-stone surfaces and bespoke joinery, and the wrong product can etch or dull them permanently. We record the finishes in your home on the first visit so every clean afterwards follows the same approach.',
+      },
+      {
+        q: 'Can I trust cleaners in a home with valuables while I am away?',
+        a: 'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance, and discretion is a standing expectation on Vaucluse jobs. You can leave access arrangements with us, tell us which rooms or areas to leave untouched, and we will lock the house up properly. Many clients are away for work when we visit.',
+      },
+      {
+        q: 'Do you clean the gardens-side outdoor living areas as well as inside?',
+        a: 'Our service is interior cleaning, though we tidy the indoor-outdoor spaces that flow off living areas, which most Vaucluse homes have given the harbour and South Head outlooks. Discuss what you would like covered when you book and we can shape a deep clean or a regular schedule around it. We supply all products and equipment ourselves.',
+      },
+      {
+        q: 'Which surrounding Eastern Suburbs addresses do you service?',
+        a: 'As well as Vaucluse itself, we cover Watsons Bay, Parsley Bay, Diamond Bay, Hermit Point, Dover Heights, Rose Bay, Point Piper, Bellevue Hill, Double Bay, Darling Point, Edgecliff, Woollahra, Paddington, Bondi, North Bondi and Bondi Junction. Both freestanding harbourside homes and apartments are welcome. Put your address into the booking form for instant confirmation.',
+      },
+      {
+        q: 'Do you work with aged care and DVA clients in Vaucluse?',
+        a: 'Yes. NATURO GROUP is nursing-led, and across Vaucluse and the Eastern Suburbs we support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. In a quiet, family-oriented suburb like this, the goal is keeping people comfortable and independent in a home they know well.',
+      },
+    ],
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -2143,6 +3071,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['New Farm', 'Fortitude Valley', 'Newstead', 'Teneriffe', 'West End', 'South Brisbane', 'Highgate Hill', 'Paddington', 'Milton', 'Toowong', 'Auchenflower', 'Spring Hill', 'Kelvin Grove', 'Red Hill', 'Bardon', 'Ascot', 'Hamilton', 'Bulimba', 'Hawthorne', 'Norman Park', 'Camp Hill', 'Coorparoo', 'Greenslopes'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you know how to clean a classic Queenslander?',
+        a: 'Yes. Queenslander cottages have polished timber floors, VJ walls and breezeway joinery that do not respond well to heavy-handed cleaning or excess water. Our Brisbane cleaners use low-residue, plant-based products and a gentler method on timber, so the floors stay looking right. We work on Queenslanders through Paddington, Red Hill, Bardon, New Farm and Highgate Hill.',
+      },
+      {
+        q: 'Do your products cope with Brisbane\'s humidity?',
+        a: 'They are chosen for it. In a subtropical climate, products that leave a residue attract dust and feel sticky afterwards, so we use low-residue, plant-based, biodegradable formulas that dry down cleanly in humid conditions. They are non-toxic and safe around children, pets and asthma sufferers, and they will not harm the Brisbane River catchment.',
+      },
+      {
+        q: 'Which Brisbane suburbs does your team cover?',
+        a: 'We service the CBD, South Bank, Spring Hill, Fortitude Valley, Newstead, Teneriffe, New Farm, West End, South Brisbane, Highgate Hill, Paddington, Milton, Toowong, Auchenflower, Kelvin Grove, Red Hill, Bardon, Ascot, Hamilton, Bulimba, Hawthorne, Norman Park, Camp Hill, Coorparoo and Greenslopes, plus Indooroopilly, Chermside and Mount Gravatt. Enter your Brisbane address online to confirm.',
+      },
+      {
+        q: 'Can you clean a riverside apartment with lift and parking restrictions?',
+        a: 'Yes. Inner-city apartments along the Brisbane River usually come with visitor parking rules, lift bookings or a building manager, and we work within them every week. Include the access details when you book and we will follow them. You do not need to be home; leave a key, fob or concierge instruction and we will secure the apartment.',
+      },
+      {
+        q: 'Do you do bond cleans in Brisbane?',
+        a: 'We do. End-of-lease cleans include a receipt for your property manager and a bond-back re-clean guarantee, so if the agent raises an issue with our work we return to fix it. Brisbane bond cleans cover the full property, including the areas that get overlooked in a Queenslander such as under-house spaces and breezeway joinery.',
+      },
+      {
+        q: 'Do you support NDIS participants and Home Care Package recipients in Brisbane?',
+        a: 'Yes. NATURO GROUP is a nursing-led company, and across Greater Brisbane we work with NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are tailored around comfort and independence, in an inner-city apartment or a family home further out.',
+      },
+    ],
   },
 
   {
@@ -2195,6 +3150,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Cairns, Trinity Beach, Palm Cove & the Northern Beaches. Reef-safe products. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Edge Hill', 'Whitfield', 'Manunda', 'Manoora', 'Mooroobool', 'Westcourt', 'Earlville', 'Bungalow', 'Parramatta Park', 'Trinity Beach', 'Palm Cove', 'Clifton Beach', 'Kewarra Beach', 'Smithfield', 'Yorkeys Knob', 'Holloways Beach', 'Machans Beach', 'Redlynch', 'Stratford', 'Freshwater', 'Brinsmead'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do your products cope with the humidity in Cairns homes?',
+        a: 'Yes. Our plant-based, biodegradable products are chosen to work in the tropics and are reef-safe, which matters in a city sitting on the doorstep of the Great Barrier Reef. They are non-toxic and safe for children, pets and asthma sufferers, so a thorough Cairns clean does not leave harsh fumes behind in a closed-up apartment.',
+      },
+      {
+        q: 'Can you clean short-stay and holiday properties on the Northern Beaches?',
+        a: 'Yes. We service short-stay properties across Cairns, including Esplanade and CBD apartments and holiday homes at Trinity Beach, Palm Cove, Clifton Beach and Kewarra Beach. Turnovers can be scheduled around check-out and check-in windows through the busy season, and we bring all products and equipment so nothing needs to be stored at the property.',
+      },
+      {
+        q: 'I work FIFO and my roster changes. Can bookings be scheduled around that?',
+        a: 'They can. A good share of Cairns households are FIFO workers, so we schedule weekly, fortnightly or one-off cleans around shift rotations rather than a fixed weekday. You can change or pause a booking online, there are no lock-in contracts, and our office team is available Monday to Friday, 8:30am to 5:00pm on 1300 876 472.',
+      },
+      {
+        q: 'Which Cairns suburbs do you cover?',
+        a: 'We clean across Cairns and the wider Far North Queensland area, including Edge Hill, Whitfield, Manunda, Manoora, Mooroobool, Westcourt, Earlville, Bungalow and Parramatta Park, plus Redlynch, Stratford, Freshwater and Brinsmead in the foothills and the Northern Beaches from Machans Beach and Yorkeys Knob up to Palm Cove. If your street is nearby, ask us.',
+      },
+      {
+        q: 'Do you support NDIS participants and Veterans in Cairns?',
+        a: 'We do. NATURO GROUP is a nursing-led company and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Cairns and Far North Queensland. Every cleaner is police-checked and covered by $20m public liability insurance.',
+      },
+      {
+        q: 'How much does a house clean in Cairns cost?',
+        a: 'Pricing depends on the size of your home, its current condition and how often you would like us. A high-rise Cairns apartment and a large home in the foothills are very different jobs, so we do not publish a flat rate. You can get a free instant quote online in about 60 seconds, with no phone call required.',
+      },
+    ],
   },
 
   {
@@ -2247,6 +3229,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across the Gold Coast \u2014 Surfers, Broadbeach, Burleigh, Palm Beach, Coolangatta. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Surfers Paradise', 'Broadbeach', 'Mermaid Beach', 'Burleigh Heads', 'Palm Beach', 'Currumbin', 'Coolangatta', 'Tugun', 'Miami', 'Nobby Beach', 'Bilinga', 'Kirra', 'Robina', 'Varsity Lakes', 'Mudgeeraba', 'Reedy Creek', 'Helensvale', 'Hope Island', 'Southport', 'Main Beach', 'Labrador', 'Biggera Waters', 'Runaway Bay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean high-rise apartments as well as houses on the Gold Coast?',
+        a: 'Yes. The Gold Coast covers everything from Surfers Paradise and Main Beach towers to canal homes and beach houses, and our team cleans all of them. For apartment buildings we work in with building access and lift bookings where needed. Our plant-based products are gentle on salt-exposed glass and balcony finishes.',
+      },
+      {
+        q: 'Can you turn around a holiday let between guests?',
+        a: 'We do holiday-let and short-stay turnovers across the Gold Coast, coordinated around check-out and check-in times through peak season. That includes apartments in Broadbeach and Surfers Paradise and beach houses through Mermaid Beach, Miami, Burleigh Heads, Palm Beach and Currumbin. We supply all products and equipment, so nothing has to be stored on site.',
+      },
+      {
+        q: 'Do you handle end-of-lease cleaning for Gold Coast rentals?',
+        a: 'Yes. Our end-of-lease cleans are built around what property managers actually inspect, and you receive a receipt for your records. If your agent raises an issue with the clean, we return for a bond-back re-clean. It is a popular service in high-turnover pockets of the Gold Coast such as Southport, Labrador, Robina and Varsity Lakes.',
+      },
+      {
+        q: 'Which parts of the coast do you service?',
+        a: 'We cover the length of the Gold Coast, from Coolangatta, Bilinga, Kirra and Tugun in the south through Palm Beach, Nobby Beach and Broadbeach, out to Robina, Varsity Lakes, Mudgeeraba and Reedy Creek, and north through Southport, Biggera Waters, Runaway Bay, Helensvale and Hope Island. One team, the whole strip.',
+      },
+      {
+        q: 'Are your products safe to use near the canals and the beach?',
+        a: 'They are. We use plant-based, biodegradable and non-toxic products, which matters when your back fence is a Gold Coast canal and the stormwater runs to the beach. They are also safe around children, pets and asthma sufferers, and they will not strip canal-edge timber decking or leave a chemical smell through a closed-up apartment.',
+      },
+      {
+        q: 'How quickly can you start, and do I have to sign up for anything?',
+        a: 'Most first bookings on the Gold Coast happen within two to five business days. You can book online in about 60 seconds and get a free instant quote without a phone call. There are no lock-in contracts, so you can move to weekly, drop to fortnightly, or book a single deep clean and leave it there.',
+      },
+    ],
   },
 
   {
@@ -2299,6 +3308,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Brassall', 'Booval', 'Bundamba', 'Eastern Heights', 'Newtown', 'Raceview', 'Silkstone', 'Sadliers Crossing', 'North Ipswich', 'Wulkuraka', 'One Mile', 'Goodna', 'Redbank', 'Springfield', 'Springfield Lakes', 'Augustine Heights', 'Karalee', 'Karana Downs', 'Rosewood', 'Walloon', 'Marburg', 'Yamanto'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe for the timber in an Ipswich Queenslander?',
+        a: 'Yes. Ipswich has a lot of heritage timber housing, and our plant-based, biodegradable products are chosen to be gentle on timber floors, VJ walls and painted joinery rather than stripping them. They are non-toxic and low-fume, which suits older homes as well as families with asthma, young children or pets.',
+      },
+      {
+        q: 'Do you clean brand-new homes in Ripley and Springfield Lakes?',
+        a: 'We do. The Ipswich estates through Ripley, South Ripley, Springfield, Springfield Lakes and Augustine Heights are growing quickly, and new builds usually need a proper first clean before you move in, with construction dust taken off the skirtings, tracks and windows. We also set up regular weekly or fortnightly cleans once you are settled.',
+      },
+      {
+        q: 'Can bookings work around the school run?',
+        a: 'Yes. Most of our Ipswich clients are families, so we schedule weekly, fortnightly or one-off cleans around drop-off and pick-up, shift work and weekend plans. You can adjust or pause your booking online at any time, and there are no lock-in contracts. Office hours are Monday to Friday, 8:30am to 5:00pm.',
+      },
+      {
+        q: 'Do you do bond cleans for Ipswich rentals?',
+        a: 'We do end-of-lease cleaning across Ipswich, and it comes with a bond-back re-clean guarantee. If your property manager raises an issue with the clean at the final inspection, we come back and fix it, and you get a receipt to pass on. Popular through Booval, Bundamba, Goodna, Redbank, Raceview and Silkstone.',
+      },
+      {
+        q: 'Which suburbs around Ipswich do you reach?',
+        a: 'We service central Ipswich and the wider West Moreton area, including Brassall, North Ipswich, Sadliers Crossing, Eastern Heights, Newtown, One Mile, Wulkuraka, Yamanto, Raceview, Silkstone, Booval and Bundamba, out to Karalee, Karana Downs, Rosewood, Walloon and Marburg, and east through Goodna and Redbank.',
+      },
+      {
+        q: 'Can you help with an NDIS or aged care cleaning plan in Ipswich?',
+        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Ipswich. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit where we can.',
+      },
+    ],
   },
 
   {
@@ -2351,6 +3387,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you service the hinterland as well as the beaches?',
+        a: 'Yes. Our Sunshine Coast team works right across the region, from Caloundra, Currimundi, Wurtulla and Kawana Waters up through Mooloolaba, Maroochydore, Twin Waters, Marcoola and Coolum Beach to Peregian Beach, Sunshine Beach, Noosa Heads, Noosaville and Tewantin, and inland through Buderim, Sippy Downs, Bli Bli, Nambour, Yandina, Eumundi, Cooroy and Pomona.',
+      },
+      {
+        q: 'Can you manage holiday-let changeovers in Noosa and Mooloolaba?',
+        a: 'We can. Short-stay turnovers are a regular part of our Sunshine Coast work, scheduled around check-out and check-in windows so a property is guest-ready on time. We bring all products and equipment ourselves, and can run a heavier deep clean between peak periods rather than only surface turnovers.',
+      },
+      {
+        q: 'Are your products suitable for coastal finishes?',
+        a: 'They are. We use plant-based, biodegradable and marine-friendly products that clean salt-affected glass, tiles and outdoor living areas without harsh chemicals running off toward the marine park the Sunshine Coast sits beside. They are also non-toxic and safe for children, pets and asthma sufferers, which matters in homes that stay open to the air most of the year.',
+      },
+      {
+        q: 'I work shifts in the health precinct. Can you clean while I am out?',
+        a: 'Yes. Plenty of Sunshine Coast households work around the region\'s health and education precincts, so we are used to scheduling cleans while people are on shift or at campus. Access arrangements are agreed up front, every cleaner is police-checked and insured, and you can change your day online without a phone call.',
+      },
+      {
+        q: 'Do you support aged care and NDIS clients on the Sunshine Coast?',
+        a: 'We do. NATURO GROUP was founded on a nursing background, and we support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across the Sunshine Coast. Services are tailored to the household rather than run to a fixed checklist.',
+      },
+      {
+        q: 'What does a clean cost, and how soon can you come?',
+        a: 'Cost depends on the size and condition of the property and how often you book, so a Noosaville apartment and a large Buderim family home are quoted differently. You can get a free instant quote online in about 60 seconds with no phone call. First bookings on the Sunshine Coast are typically two to five business days out.',
+      },
+    ],
   },
 
   {
@@ -2403,6 +3466,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Toowoomba, East Toowoomba, Rangeville & Highfields. Heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['East Toowoomba', 'North Toowoomba', 'South Toowoomba', 'Newtown', 'Rangeville', 'Mount Lofty', 'Centenary Heights', 'Middle Ridge', 'Kearneys Spring', 'Glenvale', 'Wilsonton', 'Harristown', 'Drayton', 'Westbrook', 'Highfields', 'Cabarlah', 'Crows Nest', 'Withcott', 'Helidon', 'Hodgson Vale'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean heritage Federation homes and Queenslander cottages?',
+        a: 'Yes. Toowoomba has a lot of period housing, particularly through East Toowoomba, and our cleaners work carefully around original joinery, leadlight, picture rails and timber floors. Our plant-based products are low-fume and non-abrasive, so period detail is cleaned rather than scoured, and there is no chemical residue left through the house afterwards.',
+      },
+      {
+        q: 'Do you clean rural-residential properties outside the city?',
+        a: 'We do. Along with suburban Toowoomba we service rural-residential households out through Highfields, Cabarlah, Crows Nest, Westbrook, Hodgson Vale, Withcott and Helidon at the bottom of the Range. Cleans can be scheduled around farm days and trips down the Range, weekly, fortnightly or as a one-off deep clean.',
+      },
+      {
+        q: 'We are hosting visitors during the Carnival of Flowers. Can you deep clean beforehand?',
+        a: 'Yes. A one-off deep clean before guests arrive is one of the more common requests we get in Toowoomba, and spring is a busy time to be hosting. It goes further than a regular clean, covering things like skirtings, tracks, inside cupboards and bathrooms in detail. Book early if you want a specific week.',
+      },
+      {
+        q: 'Are your products suitable for someone with sensitive lungs?',
+        a: 'They are. Our products are plant-based, biodegradable, low-fume and free of harsh chemicals, so they suit asthma sufferers, children and pets. In Toowoomba\'s cooler highland climate, homes tend to be closed up for much of the year, which is exactly when a low-fume clean makes the most difference to the air inside.',
+      },
+      {
+        q: 'Do you clean for downsizers and older residents in Toowoomba?',
+        a: 'Yes. We work with downsizers, retirees and aged-care residences across Toowoomba, and as a nursing-led company we support Home Care Package recipients, DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
+      },
+      {
+        q: 'Which Toowoomba suburbs do you cover?',
+        a: 'We clean across Toowoomba and the Darling Downs, including East, North and South Toowoomba, Newtown, Rangeville, Mount Lofty, Centenary Heights, Middle Ridge, Kearneys Spring, Glenvale, Wilsonton, Harristown and Drayton, plus Westbrook, Highfields, Cabarlah, Crows Nest, Hodgson Vale, Withcott and Helidon.',
+      },
+    ],
   },
 
   {
@@ -2455,6 +3545,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['North Ward', 'Belgian Gardens', 'Castle Hill', 'South Townsville', 'Railway Estate', 'Hyde Park', 'Mundingburra', 'Hermit Park', 'Aitkenvale', 'Currajong', 'Gulliver', 'Pimlico', 'Rosslea', 'Cranbrook', 'Vincent', 'Heatley', 'Kirwan', 'Thuringowa Central', 'Annandale', 'Douglas', 'Idalia', 'Pallarenda'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you do end-of-posting cleans for ADF families?',
+        a: 'Yes. Townsville is a garrison city and relocations are a regular part of our work here, so we offer end-of-posting and end-of-lease cleans for defence-housing and private rentals. They include a bond-back re-clean if the property manager raises an issue at inspection, plus a receipt. We can also do the move-in clean at the other end of the street.',
+      },
+      {
+        q: 'Can you clean Queenslanders in North Ward without damaging the timber?',
+        a: 'We can. Older Townsville homes through North Ward, Belgian Gardens, South Townsville and Hermit Park often have original timber floors, VJ walls and louvres, and our cleaners work gently across those surfaces. The plant-based, non-abrasive products we use will not strip finishes, and they are safe around children, pets and asthma sufferers.',
+      },
+      {
+        q: 'Do you clean student rentals near the university?',
+        a: 'Yes. We do end-of-lease cleans for share houses and student rentals around Douglas, Annandale, Cranbrook and Gulliver, which is useful at the end of a semester when everyone is moving at once. All products and equipment are supplied by us, and the bond-back re-clean guarantee applies the same way it does for any Townsville property.',
+      },
+      {
+        q: 'How do you handle the humidity in the wet season?',
+        a: 'Our plant-based, biodegradable products are chosen for tropical conditions and clean bathrooms, wet areas and tiled floors thoroughly without harsh chemicals, which matters when the runoff heads toward the reef on Townsville\'s doorstep. Homes that stay closed up through the wet also benefit from a low-fume product that does not linger in the air.',
+      },
+      {
+        q: 'Which Townsville suburbs do you service?',
+        a: 'We cover Townsville broadly, including North Ward, Belgian Gardens, Castle Hill, Pallarenda, South Townsville, Railway Estate, Hyde Park, Mundingburra, Hermit Park, Rosslea, Pimlico, Currajong, Gulliver, Aitkenvale, Cranbrook, Vincent, Heatley, Kirwan, Thuringowa Central, Annandale, Douglas and Idalia, along with Magnetic Island.',
+      },
+      {
+        q: 'Do you support DVA card holders and NDIS participants here?',
+        a: 'Yes. With a large veteran and defence community in Townsville, we regularly work with DVA Gold and White card holders, alongside NDIS participants who are plan-managed or self-managed, Home Care Package recipients, and insurance and workers compensation clients. We are a nursing-led company, and every cleaner is police-checked and insured for $20m public liability.',
+      },
+    ],
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -3116,6 +4233,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Newtown Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your cleaners experienced with Victorian and Edwardian homes?',
+        a: 'Yes. Newtown is largely period housing, and our cleaners are trained to work gently on original joinery, polished timber, ornate plaster and heritage surfaces rather than attacking them. The products we use are plant-based, non-toxic and free of harsh chemicals, so period finishes are cleaned without being stripped, bleached or scratched.',
+      },
+      {
+        q: 'We value our privacy. How discreet is your team?',
+        a: 'Discretion is part of how we work in Newtown. Cleans are quiet, tidy and to time, access arrangements are agreed with you up front and kept to, and the same approach applies whether you are home or not. Every cleaner is police-checked and covered by $20m public liability insurance, and we bring all our own products and equipment.',
+      },
+      {
+        q: 'Can you clean a large heritage home after a renovation?',
+        a: 'We can. Renovations are common in Newtown, and a post-renovation deep clean is a bigger job than a regular visit, covering fine dust off cornices, skirtings, window tracks, inside cupboards and floors. We use non-toxic products throughout, which suits a home with newly finished timber, fresh paintwork and restored period detail.',
+      },
+      {
+        q: 'Can a regular clean be timed around school and work?',
+        a: 'Yes. Many Newtown households book weekly or fortnightly cleans in a set window that fits around school drop-offs, pick-ups and working hours, so the house is done before everyone is home. There are no lock-in contracts and you can change your day online. Our office is available Monday to Friday, 8:30am to 5:00pm.',
+      },
+      {
+        q: 'Do you clean nearby inner Geelong suburbs too?',
+        a: 'We do. Alongside Newtown we service Manifold Heights, Geelong West, Herne Hill, South Geelong, East Geelong, Highton, Belmont and central Geelong, so households with a rental or a family member nearby can use the same team. It also means we can usually find a slot even when your preferred day is busy.',
+      },
+      {
+        q: 'What does cleaning a Newtown home cost?',
+        a: 'There is no set rate, because a Newtown home can be anything from a compact Edwardian to a large restored Victorian with multiple living areas. Pricing depends on size, condition and how often you book. You can get a free instant quote online in about 60 seconds, with no phone call and no obligation to proceed.',
+      },
+    ],
   },
 
   {
@@ -3168,6 +4312,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in East Geelong VIC. Heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Newtown', 'South Geelong', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean weatherboard cottages without damaging period finishes?',
+        a: 'Yes. East Geelong has a lot of character weatherboard homes and Victorian cottages, and our cleaners are trained to treat original timber, plaster and painted surfaces gently. Our plant-based, non-toxic products lift grime without harsh chemicals, so period finishes stay intact and there is no chemical smell left through a small cottage afterwards.',
+      },
+      {
+        q: 'Do you clean modern renovated homes in East Geelong as well?',
+        a: 'We do. The suburb mixes heritage cottages with fully renovated residences, and the same team handles both. In a renovated East Geelong home that usually means engineered floors, stone benchtops, glass splashbacks and modern bathrooms, all of which we clean with non-abrasive, plant-based products rather than anything that could mark the finish.',
+      },
+      {
+        q: 'We have kids and a dog. Is your cleaning safe for them?',
+        a: 'Yes. Everything we use in East Geelong homes is plant-based, biodegradable and non-toxic, chosen to be safe for children, pets and asthma sufferers. There is no need to keep anyone out of the house for hours afterwards, and nothing harsh is left on floors where a toddler or a dog spends the day.',
+      },
+      {
+        q: 'Can we get the same cleaner each visit?',
+        a: 'We aim for consistency on regular East Geelong bookings, because a familiar cleaner learns your home and how you like it done. Weekly or fortnightly slots keep the same routine year-round, there are no lock-in contracts, and every cleaner is police-checked and insured for $20m public liability before they set foot in your home.',
+      },
+      {
+        q: 'Which suburbs near East Geelong do you cover?',
+        a: 'We service East Geelong along with Newtown, South Geelong, Manifold Heights, Belmont, Highton, Wandana Heights and central Geelong, so the eastern corridor and the waterfront area share one reliable team. That helps if you have a rental in one suburb and live in another, or want cleans coordinated for a parent nearby.',
+      },
+      {
+        q: 'Do you do bond cleans in East Geelong?',
+        a: 'Yes. Our end-of-lease clean is a detailed job covering the areas property managers check closely, and you receive a receipt afterwards. If the agent raises an issue with the clean, we return for a bond-back re-clean. It works for both older East Geelong cottages and modern renovated rentals.',
+      },
+    ],
   },
 
   {
@@ -3220,6 +4391,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in South Geelong VIC. Police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'East Geelong', 'Newtown', 'Manifold Heights', 'Geelong West', 'Belmont', 'Herne Hill'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean apartments and terraces, not just houses?',
+        a: 'Yes. South Geelong runs from heritage workers cottages and renovated terraces through to newer apartment buildings, and we clean all three. Smaller footprints are quoted differently to full houses, and for apartments we work in with building access where it is needed. All products and equipment come with us, so nothing has to be stored on site.',
+      },
+      {
+        q: 'I work full time in the CBD. When can you clean?',
+        a: 'We offer morning, afternoon and weekend slots for South Geelong, which suits professionals working nearby in the city edge. Access can be arranged so you do not need to be home, and every cleaner is police-checked and insured for $20m public liability. Bookings are changed online without a phone call, and there are no lock-in contracts.',
+      },
+      {
+        q: 'I am renting. Do you do end-of-lease cleans here?',
+        a: 'Yes, and it is one of our busier services in South Geelong given how many people rent close to the city. The clean targets what property managers inspect, you get a receipt, and if the agent raises an issue we return for a bond-back re-clean. It works for apartments, terraces and older cottages alike.',
+      },
+      {
+        q: 'Our home mixes heritage plaster with modern tiles. Can one product handle both?',
+        a: 'That mix is very common in South Geelong, where a heritage cottage has often gained a modern kitchen or bathroom. Our plant-based, non-toxic formulas are chosen to work across original plaster and timber as well as tiles, glass and stone, so nothing gets scoured and nothing is left dull. Cleaners adjust method by surface, not just product.',
+      },
+      {
+        q: 'Do you cover the rest of inner Geelong?',
+        a: 'We do. As well as South Geelong we service East Geelong, Newtown, Manifold Heights, Geelong West, Herne Hill, Belmont and central Geelong, so the whole inner city is covered by one team. That is handy if you are moving between inner suburbs or need a bond clean at one address and a regular clean at another.',
+      },
+      {
+        q: 'How much notice do you need for a first clean?',
+        a: 'Most first bookings in South Geelong happen within two to five business days, so it is worth booking as soon as you have a date, particularly for an end-of-lease clean tied to a handover. You can get a free instant quote and lock in a time online in about 60 seconds, with no phone call required.',
+      },
+    ],
   },
 
   {
@@ -3272,6 +4470,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Geelong West VIC. Plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Herne Hill', 'Newtown', 'South Geelong', 'Hamlyn Heights', 'Bell Park'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'What makes your products a good fit for Geelong West?',
+        a: 'Geelong West residents tend to look closely at what goes into a product before buying it. Ours are plant-based, biodegradable and cruelty-free, with no harsh chemicals, and we work to minimal waste. They are safe for children, pets and asthma sufferers, and they clean well enough that we do not need anything stronger in reserve.',
+      },
+      {
+        q: 'Can you book me in around evening classes and weekend plans?',
+        a: 'Yes. We hold morning, evening and weekend slots for Geelong West, which suits a suburb built around the Pakington Street routine of café mornings, yoga and weekend markets. You choose the window that fits, change it online whenever you need, and there are no lock-in contracts tying you to a particular day.',
+      },
+      {
+        q: 'Do you clean Federation homes and character cottages here?',
+        a: 'We do. Geelong West is mostly character cottages and renovated Federation homes, often with original timber floors, high skirtings and detailed plaster. Our cleaners work gently across those surfaces, using non-abrasive, plant-based products rather than anything that could dull or strip a finish. Modern townhouses in the suburb are handled by the same team.',
+      },
+      {
+        q: 'Which nearby suburbs share this team?',
+        a: 'We cover Geelong West together with Manifold Heights, Herne Hill, Hamlyn Heights, Bell Park, Newtown, South Geelong and central Geelong, so the Pakington Street precinct and the streets around it use one consistent team. If a neighbour or family member nearby wants the same cleaners, we can usually schedule you back to back.',
+      },
+      {
+        q: 'Do you offer one-off deep cleans, or only regular visits?',
+        a: 'Both. Plenty of Geelong West households book a single deep clean before hosting, after a renovation or at the change of seasons, then decide later whether to move to fortnightly. A deep clean goes beyond the regular routine into skirtings, window tracks, inside cupboards and detailed bathroom work. There is no obligation to continue.',
+      },
+      {
+        q: 'What will it cost for my Geelong West home?',
+        a: 'We do not publish rates, because a two-bedroom Geelong West cottage and a renovated Federation home with an extension are quite different jobs. Price reflects size, condition and frequency. Get a free instant quote online in about 60 seconds, with no phone call, and decide in your own time whether to go ahead.',
+      },
+    ],
   },
 
   {
@@ -3324,6 +4549,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Belmont Geelong VIC. Family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can cleans be scheduled around school drops and after-school sport?',
+        a: 'Yes. Most of our Belmont clients are families, so we set weekly or fortnightly cleans in a window that works around drop-off, pick-up, after-school activities and weekend sport. You can shift the day online when the calendar changes, and there are no lock-in contracts if the routine needs to pause during school holidays.',
+      },
+      {
+        q: 'Do you clean older brick-veneer and 1970s family homes?',
+        a: 'We do. A lot of Belmont housing is brick-veneer classics and 1970s family homes, often with original bathrooms, carpeted bedrooms and a separate kitchen and living area. Those homes clean up well with the right method, and we use plant-based products that suit older tiles, laminate and timber without leaving harsh chemical residue behind.',
+      },
+      {
+        q: 'Our home is large with several living areas. Can you handle that?',
+        a: 'Yes. Belmont ranges from compact three-bedroom homes to large family residences with multiple living areas, and we quote and staff accordingly rather than running everything to one template. Larger homes may be cleaned by more than one cleaner so the visit stays within a reasonable window and the finish is consistent through every room.',
+      },
+      {
+        q: 'Are the products safe for kids and dogs?',
+        a: 'They are. Everything we use in Belmont homes is non-toxic, plant-based and biodegradable, and safe for children, pets and asthma sufferers. Floors, benches and bathrooms are left clean without a chemical film or a lingering smell, which matters in a busy family house where the kids and the dog are back inside within the hour.',
+      },
+      {
+        q: 'Which southern Geelong suburbs do you cover?',
+        a: 'We service Belmont along with Highton, Wandana Heights, Grovedale, Waurn Ponds, East Geelong, South Geelong and central Geelong, giving the southern corridor one team. It is useful when you have a parent in a nearby suburb or a rental to prepare, since both addresses can be booked and coordinated through the same account.',
+      },
+      {
+        q: 'Can you clean for an older parent or an NDIS participant in Belmont?',
+        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Belmont. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit wherever possible.',
+      },
+    ],
   },
 
   {
@@ -3376,6 +4628,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Highton Geelong VIC. Premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Belmont', 'Wandana Heights', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Newtown'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Are your products safe on stone benchtops and premium timber?',
+        a: 'Yes. Highton homes often feature stone benchtops, quality timber floors and premium joinery, and harsh chemicals are the fastest way to dull them. Our plant-based, non-toxic formulas are non-abrasive and chosen to clean those finishes without etching, streaking or stripping, while staying safe for children, pets and anyone in the house with asthma.',
+      },
+      {
+        q: 'Can you clean large executive homes properly in one visit?',
+        a: 'We can. Highton has a lot of large family homes and executive residences with multiple living areas, several bathrooms and extensive glass. We scope the job on size and condition rather than a fixed time block, and where a home warrants it we send more than one cleaner so the whole house is finished to the same standard.',
+      },
+      {
+        q: 'How discreet is your team in a family home?',
+        a: 'Discretion is a standing expectation among Highton households, and we work to it. Access details are agreed with you and kept private, cleans are quiet and to time, and we do not discuss clients. Every cleaner is police-checked before joining us and is covered by $20m public liability insurance while working in your home.',
+      },
+      {
+        q: 'We back onto the Barwon bushland. Does that change the clean?',
+        a: 'It can. Homes along the Barwon River bushland reserves in Highton tend to bring in more dust, leaf litter and outdoor traffic, so entry areas, hard floors, window tracks and outdoor living spaces usually need more attention. Our products are biodegradable, which matters when the runoff from your home ends up in a river corridor.',
+      },
+      {
+        q: 'Do you clean rental properties and prepare homes for sale in Highton?',
+        a: 'Yes. We do end-of-lease cleans for Highton rentals with a bond-back re-clean if the property manager raises an issue, plus a receipt for your records. Owners preparing a home for sale or inspection more often book a one-off deep clean, which covers detailed work through kitchens, bathrooms, skirtings, tracks and glass.',
+      },
+      {
+        q: 'Which nearby suburbs do you service from Highton?',
+        a: 'We cover Highton along with Belmont, Wandana Heights, Waurn Ponds, Grovedale, East Geelong, Newtown and central Geelong, so the upper Barwon corridor and the rest of south Geelong get the same standard of eco-friendly cleaning. Coordinating two addresses in the area, such as a family home and a rental, is straightforward.',
+      },
+    ],
   },
 
   {
@@ -3428,6 +4707,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Wandana Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Highton', 'Belmont', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Geelong', 'Newtown'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Will your products streak the windows in a bay-view home?',
+        a: 'No. Our plant-based, non-toxic formulas are chosen so they will not cloud glass or leave streaks, which matters in Wandana Heights where so many homes are built around the bay outlook. We clean interior glass, sills and tracks as part of a deep clean, and can include internal glass in a regular weekly or fortnightly visit if the view is the feature of the room.',
+      },
+      {
+        q: 'Do you clean larger elevated family homes with multiple levels?',
+        a: 'Yes. Many Wandana Heights homes are elevated, split-level or extended, and we scope each job on the actual layout rather than a generic room count. Stairs, landings, upper-level bathrooms and living areas are all included. Because the size and condition vary so much street to street, the fairest way to see your price is the free instant online quote, which takes about 60 seconds.',
+      },
+      {
+        q: 'Which suburbs around Wandana Heights do you cover?',
+        a: 'We service Wandana Heights along with Highton, Belmont, East Geelong, Newtown, Waurn Ponds and Grovedale, so the whole southern Geelong corridor is handled by one eco-friendly team. That means neighbours, family members and rental properties nearby can all be booked with the same company, and you are not chasing a different cleaner for each address.',
+      },
+      {
+        q: 'Can we keep the same weekly or fortnightly slot all year?',
+        a: 'Yes. Consistent scheduling is what most Wandana Heights households ask for, so we set a regular weekly or fortnightly slot and keep it. There are no lock-in contracts, so you can pause for holidays or change frequency whenever you need. A typical first booking is within two to five business days of you booking online.',
+      },
+      {
+        q: 'Do you help with a renovated or newly finished home?',
+        a: 'Yes. Wandana Heights has plenty of modern renovations alongside established brick residences, and a post-renovation deep clean removes fine dust from skirtings, tracks, light fittings and inside cupboards before you move furniture back. We bring all products and equipment, so you supply nothing, and everything we use is plant-based and safe around children and pets.',
+      },
+      {
+        q: 'Do you support NDIS and aged care clients in the area?',
+        a: 'We do. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Wandana Heights. Our founder has a nursing background and the team is trained to a nursing-grade standard, which suits households where health, hygiene and a calm routine matter.',
+      },
+    ],
   },
 
   {
@@ -3480,6 +4786,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Manifold Heights Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'Herne Hill', 'South Geelong', 'Geelong', 'Hamlyn Heights', 'Bell Park'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'How do you clean period homes without damaging original features?',
+        a: 'Carefully and by hand where it counts. Manifold Heights has a lot of original joinery, timber detail and heritage plasterwork, so our cleaners are trained to use soft cloths, controlled moisture and pH-gentle plant-based products rather than harsh chemicals on those surfaces. Skirtings, architraves, picture rails and mantels are dusted rather than saturated, which protects finishes that are difficult to restore.',
+      },
+      {
+        q: 'Do you clean renovated cottages and modern townhouses too?',
+        a: 'Yes. Manifold Heights blends period homes and renovated cottages with newer townhouses, and we scope each clean to the property in front of us. A townhouse may be about stairs, bathrooms and glass, while a cottage may need more time on detail work. The free online quote covers both, and no phone call is needed to get a price.',
+      },
+      {
+        q: 'What areas near Manifold Heights does your team cover?',
+        a: 'We service Manifold Heights, Newtown, Geelong West, Herne Hill, South Geelong, Hamlyn Heights and Bell Park, so the western inner-city corridor is looked after by one team. It is useful if you own a home in Manifold Heights and an investment property elsewhere in inner Geelong, since both can sit with the same cleaners and the same standard.',
+      },
+      {
+        q: 'Can you clean around professional work-from-home hours?',
+        a: 'Yes. Manifold Heights attracts professionals and young families, and plenty of our clients are on calls during the day. We can work room by room, start with the areas you are not using, or book a time that lands outside your meetings. Office hours are Monday to Friday 8:30am to 5:00pm, and you can set the time yourself when booking online.',
+      },
+      {
+        q: 'Are your products safe for kids and pets in an older house?',
+        a: 'Yes. Everything we use in Manifold Heights homes is plant-based, biodegradable and non-toxic, with no lingering chemical smell. That suits older houses where rooms are smaller and ventilation is limited, and it suits households with young children, pets or asthma sufferers. We supply all products and equipment ourselves, so nothing needs to be stored in your cupboards.',
+      },
+    ],
   },
 
   {
@@ -3532,6 +4861,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Herne Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong West', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Geelong', 'Newtown', 'Bell Post Hill'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean 1960s brick homes and older family residences?',
+        a: 'Yes, they are a large part of our Herne Hill work. Established brick homes often have textured surfaces, tiled bathrooms, laminate benchtops and vinyl or timber floors, and our team is trained to match the method to each one. We bring all our own products and equipment, and everything we use is plant-based and non-toxic, so nothing harsh is left behind.',
+      },
+      {
+        q: 'Will you clean a smaller unit or townhouse?',
+        a: 'Absolutely. Herne Hill has plenty of units and townhouses alongside its family homes, and small properties are welcome. A compact clean is quicker, which many of our clients use for a fortnightly tidy of kitchen, bathroom, floors and dusting. Price depends on the size, condition and how often you book, so use the free instant quote online to see yours.',
+      },
+      {
+        q: 'Do you work with retirees and Home Care Package recipients?',
+        a: 'We do. Herne Hill has many long-term residents and retirees, and we support Home Care Package clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Our company is nursing-led, so cleaners are trained to work respectfully and calmly in homes where someone is present throughout the visit.',
+      },
+      {
+        q: 'Which nearby suburbs share the same Herne Hill team?',
+        a: 'We service Herne Hill together with Geelong West, Manifold Heights, Hamlyn Heights, Bell Park, Bell Post Hill and central Geelong. One team covers the western Geelong corridor, which keeps scheduling simple if you have family nearby or you move within the area and want to keep the same cleaning arrangement.',
+      },
+      {
+        q: 'Do you do end-of-lease cleaning for Herne Hill rentals?',
+        a: 'Yes. Our end-of-lease clean covers the detail property managers look at, including oven, range hood, inside cupboards, window tracks, skirtings and wet areas. You get a receipt for your records, and if your property manager raises an issue we return and re-clean under our bond-back guarantee. Book online and we usually attend a Herne Hill property within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -3584,6 +4936,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Hamlyn Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Herne Hill', 'Geelong West', 'Bell Park', 'Bell Post Hill', 'Norlane', 'Geelong', 'Manifold Heights'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean during school holidays when the house is busy?',
+        a: 'Yes, and school-holiday cleans are one of our regular Hamlyn Heights requests. We can do a one-off deep clean before the break, keep the usual fortnightly visit running through it, or come in at the end to reset the house. Kids and pets can stay home while we work, because every product we use is plant-based and non-toxic.',
+      },
+      {
+        q: 'How much does a regular clean cost in Hamlyn Heights?',
+        a: 'There is no set rate, because a three-bedroom Hamlyn Heights brick veneer and a larger extended family home are different jobs. Price depends on the size of your home, its current condition and how often you book, with regular fortnightly or weekly cleans working out lower per visit. The online quote is free and instant, and no phone call is required.',
+      },
+      {
+        q: 'Do you clean brick veneers, units and townhouses alike?',
+        a: 'Yes. Hamlyn Heights has established family homes and brick veneers alongside units and townhouses, and we clean all of them. The scope is set by your home rather than a fixed package, so a smaller unit gets a shorter, focused visit and a larger family home gets the time it needs. We supply all products and equipment for every job.',
+      },
+      {
+        q: 'What if I am not happy with a clean?',
+        a: 'Tell us and we will make it right. Every Hamlyn Heights clean is covered by our satisfaction guarantee, and there are no lock-in contracts, so you are never tied in while an issue is sorted out. Our cleaners are police-checked and we carry $20m public liability insurance, so your home is protected on every visit.',
+      },
+      {
+        q: 'Which northern Geelong suburbs do you also service?',
+        a: 'As well as Hamlyn Heights we cover Herne Hill, Geelong West, Bell Park, Bell Post Hill, Manifold Heights and Norlane, so the northern Geelong corridor is served by one team. That is handy if you are cleaning a parent\'s home in a neighbouring suburb or preparing a rental nearby at the same time as your own place.',
+      },
+      {
+        q: 'Do you support NDIS participants in Hamlyn Heights?',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, along with aged care and Home Care Package clients, DVA card holders, and insurance or workers compensation clients. Our founder has a nursing background and cleaners are trained to a nursing-grade standard, which matters in Hamlyn Heights homes where hygiene supports someone\'s health or recovery.',
+      },
+    ],
   },
 
   {
@@ -3636,6 +5015,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Bell Park Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Norlane', 'Geelong West', 'Herne Hill', 'Bell Post Hill', 'Corio', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean older fibro and weatherboard homes?',
+        a: 'Yes, they are common in Bell Park and we clean them regularly. Older fibro and weatherboard houses often have painted interior surfaces, timber trims and original wet areas, so we use gentle, plant-based products and controlled moisture rather than aggressive chemicals or heavy scrubbing. The aim is a genuinely clean home with the existing finishes treated with care.',
+      },
+      {
+        q: 'Can we book the same cleaner each visit?',
+        a: 'We aim for consistency, because Bell Park is full of long-term residents who would rather not explain their home twice. A regular weekly or fortnightly booking means the team gets to know your layout, your preferences and the spots that matter to you, and there are no lock-in contracts if your circumstances change.',
+      },
+      {
+        q: 'I have not had a professional clean before. Where do we start?',
+        a: 'Most Bell Park households start with a one-off deep clean, then decide whether to move to a regular weekly or fortnightly visit. A deep clean covers the areas that build up over time, including oven, range hood, wet areas, skirtings and window tracks. You can book online in about 60 seconds and see a free quote without speaking to anyone.',
+      },
+      {
+        q: 'Are your cleaners checked before entering my home?',
+        a: 'Yes. Every NATURO GROUP cleaner is police-checked and we hold $20m public liability insurance, which covers your Bell Park home on every visit. We supply all our own products and equipment, so you do not need to leave anything out, and our satisfaction guarantee applies to every clean we do.',
+      },
+      {
+        q: 'Which suburbs around Bell Park do you also clean?',
+        a: 'We service Bell Park along with Hamlyn Heights, Norlane, Geelong West, Herne Hill, Bell Post Hill and Corio, so the broader northern Geelong corridor is covered by one team. If you are arranging a clean for a relative a few streets away in a neighbouring suburb, it can sit with the same booking arrangement.',
+      },
+    ],
   },
 
   {
@@ -3688,6 +5090,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Bell Post Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Herne Hill', 'Bell Park', 'North Shore', 'Corio', 'Geelong West', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you handle larger homes on bigger blocks?',
+        a: 'Yes. Bell Post Hill is popular with families wanting more space, and larger floor plans simply need more time rather than a different service. We scope the clean on the actual number of bedrooms, bathrooms and living areas, so nothing gets rushed. Because size and condition vary, the free instant online quote is the quickest way to see what your home costs.',
+      },
+      {
+        q: 'Can cleans be scheduled around school and weekend sport?',
+        a: 'Yes. Most Bell Post Hill families book a weekday slot while everyone is out, then keep that same weekly or fortnightly time so it becomes part of the routine. If sport, shift work or school pick-up moves things around, you can change the time, and there are no lock-in contracts holding you to a schedule that stops working.',
+      },
+      {
+        q: 'Do you clean newer estate homes as well as established brick houses?',
+        a: 'We clean both. Bell Post Hill has newer estates sitting alongside established brick residences, and the approach differs. Newer homes usually need care with modern finishes such as stone benchtops, semi-frameless showers and engineered floors, while established homes often need more attention on older wet areas and detail work. All our products are plant-based and non-toxic either way.',
+      },
+      {
+        q: 'What areas near Bell Post Hill do you cover?',
+        a: 'We service Bell Post Hill, Hamlyn Heights, Herne Hill, Bell Park, North Shore, Corio and Geelong West, so western and northern Geelong sit with one reliable team. That is useful for families with a rental or a relative\'s home in a nearby suburb, since everything can be arranged through the same company.',
+      },
+      {
+        q: 'Do you offer end-of-lease cleaning when we upsize or move on?',
+        a: 'Yes. Plenty of moves in Bell Post Hill are people upsizing locally, and our end-of-lease clean is built for the property manager\'s checklist, including oven, cupboards, wet areas, tracks and skirtings. You receive a receipt, and if an issue is raised we return and re-clean under our bond-back guarantee. Your new home can be booked in the same week.',
+      },
+    ],
   },
 
   {
@@ -3740,6 +5165,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Norlane Geelong VIC. Police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Corio', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Geelong West', 'Bell Post Hill', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean rental properties and homes in Norlane\'s older estates?',
+        a: 'Yes. Norlane\'s housing ranges from older fibro homes and commission estates through to newer renovations, and every one of them gets the same service and the same standard. We provide regular cleans, one-off deep cleans and end-of-lease cleans across all of them, using the same police-checked, insured team and the same plant-based products.',
+      },
+      {
+        q: 'Can I book a clean that fits a tight budget?',
+        a: 'Yes. Norlane households often book fortnightly rather than weekly, or ask us to focus on kitchen, bathrooms and floors instead of the whole house, and both are perfectly normal ways to work with us. Cost depends on the size of your home, its condition and how often you book, and the free online quote shows you the figure with no phone call.',
+      },
+      {
+        q: 'Do you support NDIS participants and Home Care Package clients here?',
+        a: 'We do. In Norlane we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led and cleaners are trained to a nursing-grade standard, so support-related cleaning is handled with the care and discretion it deserves.',
+      },
+      {
+        q: 'Will a renovated Norlane home be treated differently to an older one?',
+        a: 'No. Renewal has brought a lot of renovation work to Norlane, so we see newly finished kitchens and bathrooms next door to homes that have been in the family for decades. Our cleaners match the method to the surfaces in front of them, but the standard, the products and the satisfaction guarantee are identical in every home we attend.',
+      },
+      {
+        q: 'Which nearby suburbs share the same team as Norlane?',
+        a: 'We service Norlane along with Corio, North Shore, Bell Park, Hamlyn Heights, Bell Post Hill and Geelong West, so the northern Geelong corridor is looked after by one cleaning team. If you are organising a clean for a relative in one of those suburbs at the same time as your own, it can be arranged together.',
+      },
+      {
+        q: 'Are the products safe if someone in the house has asthma?',
+        a: 'Yes. Everything we bring to a Norlane home is plant-based, biodegradable and non-toxic, with no harsh fumes or heavy fragrance, which suits households with asthma sufferers, young children or pets. We supply all products and equipment, so you do not need to buy or store anything for us.',
+      },
+    ],
   },
 
   {
@@ -3792,6 +5244,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in North Shore Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean window sills and tracks as part of a visit?',
+        a: 'Yes. In North Shore homes we include internal sills, window tracks, skirtings and door frames in a deep clean, and we can add them to a regular visit if they are a priority for you. If you find grime building up in those spots faster than you would like, tell us at booking and we will allow time for them.',
+      },
+      {
+        q: 'How straightforward is it to book?',
+        a: 'Very. You book online in about 60 seconds, choose the service and time, and get a free instant quote without a phone call or a sales pitch. Most first bookings in North Shore happen within two to five business days. If you would rather speak to someone, the office is on 1300 876 472, Monday to Friday 8:30am to 5:00pm.',
+      },
+      {
+        q: 'Do you clean units and smaller established homes?',
+        a: 'Yes. North Shore has established family homes, newer renovations and units, and all of them are welcome. A smaller property means a shorter visit rather than a lesser one, and the same police-checked, insured cleaners attend. Price depends on the size of your home, its condition and how often you book.',
+      },
+      {
+        q: 'What if I work shifts and I am asleep during the day?',
+        a: 'That is common in North Shore and easy to work around. We can start at the far end of the house, skip a room entirely and come back to it next visit, or book a time that fits between shifts. Regular slots can be set weekly or fortnightly, and there are no lock-in contracts if your roster changes.',
+      },
+      {
+        q: 'Which northern Geelong suburbs do you service alongside North Shore?',
+        a: 'We cover North Shore, Norlane, Corio, Bell Park, Hamlyn Heights, Bell Post Hill and Lara, so the northern Geelong corridor is handled by one team. That is convenient when you are managing more than one property along the corridor, or arranging a clean for family in a neighbouring suburb.',
+      },
+    ],
   },
 
   {
@@ -3844,6 +5319,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Corio Geelong VIC. Police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Lara', 'Bell Post Hill', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean brand new estate homes in Corio as well as established houses?',
+        a: 'Yes. Since the closure of Ford\'s Australian manufacturing, new estates have grown up alongside Corio\'s established streets, and we clean both. New builds usually need care with modern finishes and a thorough first clean, while long-established homes often want more time on wet areas and detail work. Same team, same products, same standard in either case.',
+      },
+      {
+        q: 'Do you work with DVA card holders in Corio?',
+        a: 'We do. We support DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, and insurance or workers compensation clients across Corio. Our founder has a nursing background and the team is trained to a nursing-grade standard, so we are comfortable working in homes where health needs come first.',
+      },
+      {
+        q: 'Can I book a clean that suits my budget and schedule?',
+        a: 'Yes. Corio households book everything from weekly cleans to fortnightly visits and one-off deep cleans, and you can set the frequency that suits you with no lock-in contract. Cost depends on the size of your home, its condition and how often you book. The online quote is free and instant, and you never have to call to get a price.',
+      },
+      {
+        q: 'Do you do bond cleans for Corio rentals?',
+        a: 'Yes, end-of-lease cleaning is one of our most requested Corio services. We clean to what property managers actually inspect, including oven and range hood, inside cupboards, wet areas, window tracks and skirtings, and you receive a receipt. If the property manager raises an issue, we come back and re-clean under our bond-back guarantee.',
+      },
+      {
+        q: 'Which suburbs around Corio does the same team cover?',
+        a: 'We service Corio, Norlane, North Shore, Bell Park, Hamlyn Heights, Bell Post Hill and Lara, which means the entire northern Geelong corridor sits with one team. Households often use that to arrange their own regular clean and a family member\'s clean nearby through the same booking.',
+      },
+      {
+        q: 'Are your cleaners police-checked and insured?',
+        a: 'Every cleaner who enters a Corio home is police-checked, and we carry $20m public liability insurance. We bring all our own plant-based, non-toxic products and equipment, so you supply nothing, and every clean is backed by our satisfaction guarantee. If something is not right, we come back and fix it.',
+      },
+    ],
   },
 
   {
@@ -3896,6 +5398,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Lara VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
     },
     nearbySuburbs: ['Geelong', 'Corio', 'North Shore', 'Norlane', 'Ocean Grove', 'Werribee', 'Little River'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean while we are commuting to Melbourne?',
+        a: 'Yes, and that is how most Lara households use us. We can clean during the working day while you are on the freeway or at the office, using an agreed access arrangement, and you come home to a finished house. Regular weekly or fortnightly slots can be set to the same day each time so it becomes part of the commuting routine.',
+      },
+      {
+        q: 'Do you clean new-build homes in Lara\'s housing estates?',
+        a: 'We do. Lara\'s newer estates are full of modern finishes such as stone benchtops, semi-frameless showers and engineered timber floors, which need appropriate products rather than harsh chemicals. Everything we use is plant-based and non-toxic, so it is gentle on new-build finishes and safe for babies, toddlers and pets who live with those surfaces every day.',
+      },
+      {
+        q: 'How do dual-income families usually book?',
+        a: 'Most Lara families book a fortnightly clean and add a deep clean once or twice a year, which keeps the ongoing visits short. You can set it all up online in about 60 seconds and see a free instant quote with no phone call, which suits households where there is rarely a spare moment during business hours.',
+      },
+      {
+        q: 'Do you also clean older homes near the Lara Town Centre?',
+        a: 'Yes. Alongside the estates, Lara has established properties closer to the town centre, and they are a regular part of our work. Older homes often need more time on wet areas, tiled surfaces and detail work than a new build, so we scope each clean on the property rather than applying a fixed package.',
+      },
+      {
+        q: 'How far along the corridor do you travel?',
+        a: 'We service Lara plus Corio, North Shore, Norlane, Ocean Grove and central Geelong, covering the Geelong to Melbourne freeway corridor and the outer Greater Geelong region. If you have moved to Lara from elsewhere in the region or have a second property nearby, both can be handled by the same team.',
+      },
+      {
+        q: 'What happens if we need to move a booking at short notice?',
+        a: 'Just let us know. Commuter schedules shift, and Lara clients change days more often than most, so we build flexibility into the arrangement. There are no lock-in contracts, you can pause or reschedule, and the office is available Monday to Friday 8:30am to 5:00pm on 1300 876 472.',
+      },
+    ],
   },
 
   {
@@ -3948,6 +5477,29 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Curlewis on the Bellarine Peninsula VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean rural residential and lifestyle blocks around Curlewis?',
+        a: 'Yes. Curlewis has rural lifestyle blocks as well as estate housing, and we clean the home itself, including the areas that come with country living such as entry ways, laundries and mud rooms where boots and dust arrive first. The clean is scoped on the house rather than the land, so a large block does not change the approach.',
+      },
+      {
+        q: 'Why do you use biodegradable products on the Bellarine?',
+        a: 'Because what goes down the drain matters in a coastal community. Our products are plant-based and biodegradable rather than harsh chemical formulas, which suits Curlewis homes close to Corio Bay and Port Phillip Bay, and homes on rural blocks with their own wastewater systems. They are also safe for children, pets and anyone in the house with asthma.',
+      },
+      {
+        q: 'We have just built in a new Curlewis estate. Can you clean before we move in?',
+        a: 'Yes. A pre-move-in deep clean is one of the most common first bookings we take in Curlewis. We clear fine construction dust from skirtings, window tracks, inside cupboards and light fittings, and clean wet areas and floors before your furniture arrives. We bring all products and equipment, so nothing needs to be set up at the property beforehand.',
+      },
+      {
+        q: 'Do you clean for sea-changers who are not always at the property?',
+        a: 'We do. Plenty of Curlewis owners have come from Melbourne or Geelong and are not at the house every week. We can run a regular fortnightly clean, or clean ahead of a stay so the home is fresh when you arrive. There are no lock-in contracts, so the schedule can flex with how often you are down.',
+      },
+      {
+        q: 'Which Bellarine suburbs do you cover from Curlewis?',
+        a: 'We service Curlewis, Drysdale, Clifton Springs, Portarlington, Ocean Grove, Barwon Heads and Leopold, so the whole Bellarine Peninsula is covered by one eco-friendly team. That helps if you own a home in Curlewis and another property elsewhere on the peninsula, since both can be booked through the same company.',
+      },
+    ],
   },
 
   {
@@ -4000,6 +5552,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Armstrong Creek VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
     },
     nearbySuburbs: ['Grovedale', 'Waurn Ponds', 'Mount Duneed', 'Highton', 'Belmont', 'Ocean Grove', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean in the Warralily and Oakleigh estates?',
+        a: 'Yes. Warralily and Oakleigh are a large part of our Armstrong Creek work, along with the newer streets spreading south of the Ring Road. Estate homes are often close together with similar layouts, which lets us schedule several visits in the same area efficiently and keep your regular day consistent week after week.',
+      },
+      {
+        q: 'Can you do a handover clean on a brand new home?',
+        a: 'Yes. Armstrong Creek is full of new builds, and a handover or pre-move-in deep clean deals with the fine dust builders leave behind in window tracks, skirtings, inside cupboards, exhaust fans and light fittings. It gets the home properly clean before your furniture goes in, and everything we use is biodegradable and safe around new finishes.',
+      },
+      {
+        q: 'Will your products damage the finishes in a new home?',
+        a: 'No. New Armstrong Creek homes typically have stone benchtops, semi-frameless showers and engineered floors, and our plant-based, non-toxic products are chosen to clean those surfaces without the harshness of chlorine or ammonia-heavy chemicals. They are also safe for children and pets, which matters in a suburb with so many young families.',
+      },
+      {
+        q: 'Do we get the same cleaner each visit?',
+        a: 'That is what we aim for. In a new estate, trust builds from the first visit, so we keep the same cleaner and the same standard on your regular Armstrong Creek booking wherever we can. Every cleaner is police-checked and we carry $20m public liability insurance, so your home is protected on every visit.',
+      },
+      {
+        q: 'Can cleans work around school drop-offs and the Surf Coast commute?',
+        a: 'Yes. Most Armstrong Creek families book a weekday slot that sits between drop-off and pick-up, or a day that avoids the commute entirely. Weekly and fortnightly bookings hold the same time each cycle, and there are no lock-in contracts if sports rosters or work patterns change through the year.',
+      },
+      {
+        q: 'Which south Geelong suburbs do you also service?',
+        a: 'We cover Armstrong Creek along with Grovedale, Waurn Ponds, Mount Duneed, Highton, Belmont and Ocean Grove, so the wider south Geelong corridor is served by one team. If you are moving within the corridor, we can do the end-of-lease clean at the old address and start regular cleans at the new one.',
+      },
+    ],
   },
 
   {
@@ -4052,6 +5631,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Grovedale VIC. Police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
     },
     nearbySuburbs: ['Waurn Ponds', 'Highton', 'Belmont', 'Armstrong Creek', 'Mount Duneed', 'Geelong', 'Torquay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Will I get the same cleaner every fortnight in Grovedale?',
+        a: 'Yes. Consistency is the whole point of a regular booking, so we keep the same cleaner on your Grovedale home wherever possible. They learn your layout, your preferences and the spots that matter to you, which means less explaining each visit. If your regular cleaner is ever unavailable, we brief the replacement fully so the standard does not change.',
+      },
+      {
+        q: 'Can you clean 1980s to 2000s brick homes without damaging older fittings?',
+        a: 'We clean a lot of the brick homes built through the 1980s to 2000s across Grovedale, and our plant-based, biodegradable products are gentle on aging laminate benchtops, tiled wet areas, painted trims and older bathroom grout. We match the method to the surface rather than reaching for harsh chemicals, so finishes are cleaned thoroughly without being stripped or dulled over time.',
+      },
+      {
+        q: 'Do you work around school timetables and work rosters in Grovedale?',
+        a: 'We do. Plenty of our Grovedale bookings are set for mid-morning while the kids are at school, or on a fixed weekday that suits a rotating roster. Tell us the window that works when you book and we will hold that slot for your regular clean. Our office is open Monday to Friday, 8:30am to 5:00pm, on 1300 876 472 if you need to shift a visit.',
+      },
+      {
+        q: 'Do you also clean nearby south Geelong suburbs?',
+        a: 'Yes. Grovedale sits in the middle of our south Geelong run, so the same team also services Waurn Ponds, Highton, Belmont, Armstrong Creek and Mount Duneed. That matters if you are arranging cleans for a parent or an adult child in a neighbouring suburb — one company, one standard and one point of contact for every address.',
+      },
+      {
+        q: 'Can you help retirees, NDIS participants and aged care clients in Grovedale?',
+        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Grovedale. Cleaners are police-checked and fully insured for $20m public liability, and we can work to a plan or care coordinator\'s requirements.',
+      },
+      {
+        q: 'What does a clean cost in Grovedale?',
+        a: 'Pricing depends on the size of your Grovedale home, its current condition and how often you would like us. Rather than a flat rate that suits nobody, you can get a free instant quote online in about 60 seconds — no phone call required. There are no lock-in contracts, and a first booking is typically available within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -4104,6 +5710,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Waurn Ponds VIC near Deakin University. Police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Grovedale', 'Highton', 'Armstrong Creek', 'Mount Duneed', 'Belmont', 'Geelong', 'Torquay'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you do end-of-lease cleans for student rentals near the Deakin campus?',
+        a: 'Yes. End-of-lease work is a regular part of what we do in Waurn Ponds, including share houses and student rentals around the Deakin Waurn Ponds campus. Every bond clean comes with a receipt for your property manager and a bond-back re-clean guarantee, so if an issue is raised at the final inspection we come back and put it right.',
+      },
+      {
+        q: 'Can you schedule around university semesters and exam periods?',
+        a: 'We can. Waurn Ponds households often want a lighter routine during semester and a deep clean at the changeover, and we are happy to pause, reduce or increase frequency as the year goes. There are no lock-in contracts, so a fortnightly clean through semester and a full move-out clean at the end of the lease is a completely normal arrangement here.',
+      },
+      {
+        q: 'Do you clean share houses where several people split the cost?',
+        a: 'Yes, and it is common in Waurn Ponds. We can focus on the shared spaces — kitchen, bathrooms, living areas and hallways — and include bedrooms only where the household wants them done. Agree the scope between you before we arrive and we will clean to it consistently every visit, so nobody is left arguing about what was or was not included.',
+      },
+      {
+        q: 'Are your products safe in homes with asthma sufferers?',
+        a: 'They are. We use plant-based, biodegradable, non-toxic products with no harsh fumes, which suits the mix of students, families and older residents across Waurn Ponds. There is no lingering chemical smell afterwards, so a room is comfortable to study or sleep in straight away. We bring all products and equipment, so you supply nothing at all.',
+      },
+      {
+        q: 'Which other suburbs does the Waurn Ponds team cover?',
+        a: 'The same team that works in Waurn Ponds also covers Grovedale, Highton, Armstrong Creek, Mount Duneed and Belmont, right through the south Geelong corridor. If you are moving between suburbs — a common story when a lease ends near the university — your booking and your cleaner can usually move with you rather than starting again.',
+      },
+      {
+        q: 'How much will a clean in Waurn Ponds cost?',
+        a: 'It depends on the property size, the condition it is in and whether you want a one-off or a regular clean, so a bond clean on a vacated rental prices differently to a fortnightly tidy. You can get a free instant quote online for your Waurn Ponds address in about 60 seconds, with no phone call and no obligation.',
+      },
+    ],
   },
 
   {
@@ -4156,6 +5789,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Mount Duneed VIC near Torquay. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Grovedale', 'Waurn Ponds', 'Highton', 'Torquay', 'Jan Juc', 'Geelong'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean brand-new homes before handover in Mount Duneed estates?',
+        a: 'Yes. With so many new estates going up across Mount Duneed, we are often called in once the trades have finished to get a home ready to move into — removing dust, sticker residue and construction grime from floors, windows, cabinetry and wet areas. It is detailed work, so let us know the handover date when you book and we will plan the time it needs.',
+      },
+      {
+        q: 'Can you protect the finishes in a newly built home?',
+        a: 'That is exactly why our plant-based, non-toxic products suit Mount Duneed\'s newer homes. Fresh engineered flooring, matte cabinetry, stone benchtops and tapware all mark easily under harsh supermarket chemicals. We use gentler formulas and the right cloth for each surface, so a new kitchen or bathroom keeps its finish instead of clouding over after a few months of cleaning.',
+      },
+      {
+        q: 'Do you service acreage and semi-rural properties around Mount Duneed?',
+        a: 'We do. Mount Duneed has a good number of larger blocks and semi-rural homes alongside the estates, and they need a different plan to a compact townhouse — more floor area, more dust coming in off the paddocks and often a mudroom or laundry doing heavy duty. Tell us the property size when you quote and we will scope the visit properly.',
+      },
+      {
+        q: 'Can you fit a clean around a Torquay or Geelong commute?',
+        a: 'Yes. Mount Duneed sits at the gateway to the Surf Coast, and plenty of our clients here are travelling to Geelong or Torquay during the week. Your cleaner can work while you are out, and many households prefer a Friday clean so the house is ready for a beach weekend. Just tell us your preferred day and access arrangements.',
+      },
+      {
+        q: 'Do you cover the rest of the Surf Coast corridor?',
+        a: 'We do. Beyond Mount Duneed, the same team services Armstrong Creek, Grovedale, Waurn Ponds and out through the Surf Coast corridor towards Torquay and Jan Juc. It means one company covers you if you move within the corridor or need a clean arranged at a second property, without hunting for a new provider each time.',
+      },
+      {
+        q: 'What does cleaning cost for a Mount Duneed home?',
+        a: 'There is no set rate, because a four-bedroom estate home, an acreage property and a post-build handover clean are three very different jobs. Pricing reflects the size of your Mount Duneed home, its condition and how often you want us. Get a free instant quote online in about 60 seconds, with no phone call and no lock-in contract.',
+      },
+    ],
   },
 
   {
@@ -4208,6 +5868,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Ballarat, Lake Wendouree, Alfredton, Lucas & Sebastopol. Heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Ballarat Central', 'Ballarat East', 'Ballarat North', 'Lake Wendouree', 'Wendouree', 'Soldiers Hill', 'Black Hill', 'Nerrina', 'Brown Hill', 'Mount Pleasant', 'Mount Clear', 'Mount Helen', 'Sebastopol', 'Delacombe', 'Alfredton', 'Lucas', 'Buninyong', 'Cardigan', 'Smythes Creek', 'Miners Rest', 'Invermay', 'Warrenheip'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean heritage and Federation homes without damaging period detail?',
+        a: 'Yes. Ballarat\'s gold-rush legacy means a lot of Victorian and Federation homes with original joinery, ceiling roses, leadlight and timber floors. We use pH-neutral, plant-based products and low-moisture methods on those surfaces rather than harsh sprays, so skirtings, architraves and original timber are cleaned carefully instead of being stripped or left damp.',
+      },
+      {
+        q: 'Are your products suitable for asthma sufferers through the cold Ballarat winter?',
+        a: 'They are. Homes across Ballarat are shut up tight through the colder months with heating running, which concentrates dust and fumes indoors. Our products are plant-based, biodegradable and low-fume, so we are not adding chemical residue to a sealed house. It makes a real difference for children, older residents and anyone with sensitive lungs.',
+      },
+      {
+        q: 'Do you clean the newer estates in Alfredton, Lucas and Sebastopol as well as central Ballarat?',
+        a: 'Yes. Our Ballarat team covers the full spread of the city, from Lake Wendouree and the central heritage streets out to the newer family estates in Alfredton, Lucas and Sebastopol, plus Mount Pleasant, Wendouree and Buninyong. Whether it is a restored cottage or a recent four-bedroom build, the same standard and the same police-checked team applies.',
+      },
+      {
+        q: 'Do you support NDIS, aged care and DVA clients in Ballarat?',
+        a: 'We do. NATURO GROUP is a nursing-led company, and across Ballarat and the Central Highlands we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
+      },
+      {
+        q: 'Can you schedule around a Melbourne commute or weekends away?',
+        a: 'Yes. Plenty of Ballarat households run on V/Line timetables, school runs and weekends in Melbourne, so we offer weekly, fortnightly or one-off cleans on a fixed day that suits you. Many clients choose a weekday clean while the house is empty and come home to it done. Our office takes changes Monday to Friday, 8:30am to 5:00pm.',
+      },
+      {
+        q: 'How much does a clean in Ballarat cost?',
+        a: 'Pricing depends on the size and condition of your Ballarat home and how often you book, since a period home with high ceilings and detailed joinery takes different time to a newer estate house. You can get a free instant quote online in about 60 seconds with no phone call, and there are no lock-in contracts.',
+      },
+    ],
   },
 
   {
@@ -4260,6 +5947,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Dandenong North', 'Dandenong South', 'Springvale', 'Springvale South', 'Noble Park', 'Noble Park North', 'Keysborough', 'Bangholme', 'Endeavour Hills', 'Hallam', 'Lyndhurst', 'Doveton', 'Lynbrook', 'Eumemmerring', 'Berwick', 'Narre Warren', 'Hampton Park', 'Cranbourne'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean larger multigenerational households in Dandenong?',
+        a: 'Yes, and they are a big part of our work in Dandenong. Homes with grandparents, parents and children under one roof see far heavier use in kitchens, bathrooms and living areas, so we scope the visit around that rather than a standard checklist. Tell us how many people the home supports when you book and we will allow the right time.',
+      },
+      {
+        q: 'Are your products safe for children with asthma and for the family dog?',
+        a: 'They are. Everything we use in Dandenong homes is plant-based, biodegradable and non-toxic, with no harsh fumes left behind on floors or benchtops where a toddler crawls or a dog sleeps. That matters in busy households where somebody is always home. We bring all products and equipment with us, so you never need to supply anything.',
+      },
+      {
+        q: 'Can you work around shift work in Dandenong?',
+        a: 'Yes. With so many Dandenong residents working in manufacturing, healthcare and retail, shift patterns are normal here. We can book a fixed weekday slot that lands while you are on shift or sleeping off a night, and arrange access so nobody has to be woken. Changes can be made through the office Monday to Friday, 8:30am to 5:00pm.',
+      },
+      {
+        q: 'Which other south-east suburbs do you cover from Dandenong?',
+        a: 'Our Dandenong team also services Noble Park, Springvale, Keysborough, Endeavour Hills, Hallam, Doveton and Dandenong North. That is useful when a family has relatives spread across the south-east and wants the same cleaning arrangement for an elderly parent\'s place as for their own home, without dealing with several different companies.',
+      },
+      {
+        q: 'Do you provide cleaning funded through NDIS or a Home Care Package in Dandenong?',
+        a: 'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Greater Dandenong. Our nursing background shapes how we work in homes where someone is recovering or living with a disability — respectfully, on time and to a consistent standard.',
+      },
+      {
+        q: 'What will a Dandenong clean cost me?',
+        a: 'It depends on how big your Dandenong home is, what condition it is in and whether you want us weekly, fortnightly or as a one-off deep clean. We do not publish a flat rate because it would be wrong for most homes. Get a free instant quote online in about 60 seconds, with no phone call and no obligation.',
+      },
+    ],
   },
 
   {
@@ -4312,6 +6026,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Mount Eliza', 'Mount Martha', 'Moorooduc', 'Tuerong', 'Somerville', 'Tyabb', 'Hastings', 'Bittern', 'Crib Point', 'Balnarring', 'Merricks', 'Red Hill', 'Red Hill South', 'Main Ridge', 'Arthurs Seat', 'Dromana', 'Safety Beach', 'Rosebud', 'McCrae', 'Capel Sound', 'Rye', 'Sorrento', 'Portsea', 'Blairgowrie'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean weekenders and holiday lets on the Mornington Peninsula?',
+        a: 'Yes. Short-stay turnovers and weekender resets are among our most requested jobs in Mornington. We can work to Friday arrival and Sunday departure windows so the property is ready for guests or for owners coming down from Melbourne. Tell us your changeover times when you book and we will build the schedule around them.',
+      },
+      {
+        q: 'Can you clean a weekender while the owners are in Melbourne?',
+        a: 'We can. Many Mornington properties sit empty midweek, and a good number of our clients never meet their cleaner at all. We arrange secure access, complete the clean and leave the home ready. Every cleaner is police-checked and fully insured for $20m public liability, which matters when you are handing over keys to an unattended property.',
+      },
+      {
+        q: 'Are your products safe to use so close to Port Phillip Bay?',
+        a: 'Yes. Everything that goes down the drain in Mornington ends up in the bay catchment, which is one of the reasons we use plant-based, biodegradable products rather than harsh chemical cleaners. They are also gentler on the salt-exposed glass, coastal finishes and timber decking that beachside homes here rely on, and they are safe around children and pets.',
+      },
+      {
+        q: 'Do you cover the rest of the Peninsula as well as Mornington?',
+        a: 'We do. Alongside Mornington, our team services Mount Martha, Mount Eliza, Frankston South, Safety Beach, Dromana, Rosebud and Sorrento. If you own a home in Mornington and a second property further down the Peninsula, both can run on the same arrangement with one company and one consistent standard.',
+      },
+      {
+        q: 'Can you help retirees and aged care clients living in Mornington year-round?',
+        a: 'Yes. Alongside the weekender owners, Mornington has a strong community of long-term locals and retirees. We are a nursing-led company and support Home Care Package recipients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders and insurance clients, with a regular cleaner who becomes a familiar face.',
+      },
+      {
+        q: 'How is a Mornington clean priced?',
+        a: 'Pricing reflects the size of the property, its condition and how often we visit, so a weekly maintenance clean on an occupied Mornington home costs differently to a full turnover on a holiday let. Get a free instant quote online in about 60 seconds — no phone call needed — and there are no lock-in contracts.',
+      },
+    ],
   },
 
   {
@@ -4364,6 +6105,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Narre Warren North', 'Narre Warren South', 'Berwick', 'Beaconsfield', 'Beaconsfield Upper', 'Officer', 'Cranbourne', 'Cranbourne North', 'Cranbourne West', 'Cranbourne East', 'Hampton Park', 'Lynbrook', 'Lyndhurst', 'Lysterfield', 'Lysterfield South', 'Hallam', 'Endeavour Hills', 'Doveton', 'Pakenham'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Do you clean new townhouses and estate homes around Narre Warren?',
+        a: 'Yes. The growth corridor around Narre Warren and Fountain Gate is full of newer townhouses and estate builds, and they have their own quirks — multiple bathrooms, stair voids, tall windows and open living areas that show every mark. We plan the clean around that layout rather than treating a three-storey townhouse like a single-level house.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for rentals in Narre Warren?',
+        a: 'We do. End-of-lease work is one of our most common jobs across Narre Warren and the surrounding Casey suburbs. You get a receipt for the property manager and a bond-back re-clean guarantee, so if the agent raises an issue at the final inspection we return and fix it. Book early, since move-out dates cluster at month end.',
+      },
+      {
+        q: 'Are your products safe for kids with asthma and pets?',
+        a: 'Yes. We use plant-based, biodegradable, non-toxic products in every Narre Warren home, which suits the young families and pets that fill this part of the south-east. They are gentle on hardwood and timber-look floors and leave no chemical residue where a baby crawls or a dog lies down. We supply all products and equipment ourselves.',
+      },
+      {
+        q: 'Can you fit a clean around school runs and shift work?',
+        a: 'We can. Narre Warren households juggle school drop-offs, shift rosters and weekend sport, so we offer weekly, fortnightly or one-off cleans on a set day that fits your routine. Most clients pick a mid-morning weekday slot while the house is empty. Our office handles changes Monday to Friday, 8:30am to 5:00pm on 1300 876 472.',
+      },
+      {
+        q: 'Which other City of Casey suburbs do you service?',
+        a: 'As well as Narre Warren and Narre Warren South, we cover Berwick, Cranbourne, Hampton Park, Hallam, Pakenham, Beaconsfield and Officer. Casey is one of the largest local government areas in the country by population, so having one team across the whole area means your booking holds even if you move to the next suburb.',
+      },
+      {
+        q: 'How much does cleaning cost in Narre Warren?',
+        a: 'It depends on the size of your Narre Warren home, its condition and how often you would like us, and a vacated bond clean prices differently to an ongoing fortnightly service. You can get a free instant quote online in about 60 seconds without a phone call, and a first booking is typically available within two to five business days.',
+      },
+    ],
   },
 
   {
@@ -4416,6 +6184,33 @@ export const suburbs: Suburb[] = [
       description: 'Eco-friendly house cleaning in Toorak, South Yarra, Armadale & Malvern. Premium period homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['South Yarra', 'Armadale', 'Malvern', 'Malvern East', 'Prahran', 'Windsor', 'Hawthorn', 'Hawthorn East', 'Camberwell', 'Caulfield', 'Caulfield North', 'Caulfield South', 'Caulfield East', 'Glen Iris', 'St Kilda East', 'Elsternwick', 'Kooyong', 'Burnley', 'Cremorne', 'Richmond'],
+    contentUpdated: '2026-08-19',
+    localFaqs: [
+      {
+        q: 'Can you clean marble, natural stone and premium joinery safely?',
+        a: 'Yes, and it is the question we are asked most in Toorak. Acidic supermarket cleaners etch marble and dull natural stone permanently. We use pH-neutral, plant-based products and surface-appropriate methods on stone benchtops, marble bathrooms, polished timber and premium cabinetry, so the finish is cleaned properly rather than slowly damaged over a series of visits.',
+      },
+      {
+        q: 'Are your cleaners discreet in a home where I may not be present?',
+        a: 'Discretion is part of the job in Toorak. Every cleaner is police-checked and fully insured for $20m public liability, and we keep the same person on your home so you are not introducing a new face each visit. We work quietly, respect what is on display or in private rooms, and leave the property secured as we found it.',
+      },
+      {
+        q: 'Do you clean grand period villas as well as modern apartments?',
+        a: 'Yes. Toorak\'s housing stock runs from restored Edwardian and Victorian villas to contemporary architectural builds and apartments near Toorak Road. A period villa with original joinery, ornate cornices and multiple formal rooms needs a very different plan to a two-bedroom apartment, so we scope the time and method to the property rather than applying a fixed checklist.',
+      },
+      {
+        q: 'Can you schedule around work travel and weekend guests?',
+        a: 'We can. Many of our Toorak clients are professionals whose weeks are unpredictable, so we hold a regular weekly or fortnightly slot and can add a one-off clean before guests arrive or after they leave. There are no lock-in contracts, so adjusting frequency around a travel period is straightforward through our office.',
+      },
+      {
+        q: 'Do you also clean in South Yarra, Armadale and Malvern?',
+        a: 'Yes. Alongside Toorak, our inner south-east team services South Yarra, Armadale, Malvern, Hawksburn, Prahran and Windsor. Clients often use us for a family home in Toorak and an apartment or a downsizer\'s place nearby, with the same cleaner standard and one point of contact covering both addresses.',
+      },
+      {
+        q: 'How is pricing worked out for a Toorak home?',
+        a: 'Pricing is based on the size and condition of the home and how often we attend, which matters in Toorak where a grand period residence and a compact apartment sit in the same postcode. Get a free instant quote online in about 60 seconds — no phone call required — and every clean is backed by our satisfaction guarantee.',
+      },
+    ],
   },
 ];
 

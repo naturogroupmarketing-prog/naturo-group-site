@@ -9,12 +9,14 @@ Created 2026-08-19, after the location-page SEO rebuild (commits `efdbc6d`, `e09
 You asked for one page submitted per hour until complete. Two things make that
 not quite workable as stated, and one of them will actively waste your time.
 
-**1. Google Search Console caps manual indexing requests at roughly 10–12 URLs
-per day, per property.** The limit is undocumented and varies with site
-history, but once you hit it the "Request Indexing" button greys out for 24
-hours. One per hour is 24 per day, so you would burn the quota by mid-morning
-and spend the rest of the day clicking a dead button. The cap is tied to the
-verified property, not to your login, so a second account does not help.
+**1. Google Search Console caps manual indexing requests per day, per
+property.** MEASURED on this property 2026-08-20: the 14th request of the day
+returned "Quota Exceeded — you've exceeded your daily quota. Please try
+submitting this again tomorrow." So the working number here is **13 per day**.
+The limit is undocumented and varies with site history. One per hour is 24 per
+day, so you would burn the quota by mid-afternoon and spend the rest of the
+day hitting the error. The cap is tied to the verified property, not to your
+login, so a second account does not help.
 
 **2. The Indexing API is not an option here.** Google only supports it for
 pages with `JobPosting` or `BroadcastEvent` markup. Cleaning service pages
@@ -26,7 +28,7 @@ now internally linked from the site-wide footer. That combination is what gets
 pages crawled. Manual requests are a nudge for priority pages, not a delivery
 mechanism for a whole site.
 
-**So the plan below is ~8 URLs per day**, ordered by commercial value, which
+**So the plan below is ~8 URLs per day**, which leaves headroom under the 13 ceiling, ordered by commercial value, which
 stays comfortably under the cap and finishes the priority set in about two and a half weeks. If
 you would rather stick to one per hour, cap it at 8 per day and spread them
 across the working day — same result, same order.
@@ -51,22 +53,22 @@ Use Search Console → URL Inspection → paste URL → Request Indexing.
 Tick each off as you go.
 
 ### Day 1 — Geelong money pages
-- [ ] `/house-cleaning-geelong/`
-- [ ] `/end-of-lease-cleaning-geelong/`
-- [ ] `/ndis-cleaning-geelong/`
-- [ ] `/house-cleaning-newtown-geelong/`
-- [ ] `/house-cleaning-highton/`
-- [ ] `/house-cleaning-belmont-geelong/`
-- [ ] `/house-cleaning-geelong-west/`
-- [ ] `/house-cleaning-torquay/`
+- [x] `/house-cleaning-geelong/`
+- [x] `/end-of-lease-cleaning-geelong/`
+- [x] `/ndis-cleaning-geelong/`
+- [x] `/house-cleaning-newtown-geelong/`
+- [x] `/house-cleaning-highton/`
+- [x] `/house-cleaning-belmont-geelong/`
+- [x] `/house-cleaning-geelong-west/`
+- [x] `/house-cleaning-torquay/`
 
 ### Day 2 — Geelong tier 2 + Bellarine
-- [ ] `/house-cleaning-ocean-grove/`
-- [ ] `/house-cleaning-barwon-heads/`
-- [ ] `/house-cleaning-east-geelong/`
-- [ ] `/house-cleaning-south-geelong/`
-- [ ] `/house-cleaning-grovedale/`
-- [ ] `/house-cleaning-waurn-ponds/`
+- [x] `/house-cleaning-ocean-grove/`
+- [x] `/house-cleaning-barwon-heads/`
+- [x] `/house-cleaning-east-geelong/`
+- [x] `/house-cleaning-south-geelong/`
+- [x] `/house-cleaning-grovedale/`
+- [x] `/house-cleaning-waurn-ponds/`
 - [ ] `/house-cleaning-armstrong-creek/`
 - [ ] `/house-cleaning-jan-juc/`
 

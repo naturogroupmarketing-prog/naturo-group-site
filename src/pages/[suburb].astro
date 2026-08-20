@@ -179,15 +179,20 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    // Two tiers, not three. The visible trail shows Home / Region / Suburb,
+    // but the region is a label with no page behind it, and Google requires
+    // `item` on every entry except the last — a middle entry without a URL
+    // throws "Missing field 'item' (in 'itemListElement')" and invalidates
+    // the whole breadcrumb, which is exactly what happened after e09ed83.
+    //
+    // Marking up a subset of what is visible is fine; the rule is not to mark
+    // up things that are NOT visible. So the region stays on the page for
+    // readers and stays out of the JSON-LD.
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
-      // Region tier has no page of its own, so it carries no `item` — a
-      // BreadcrumbList entry without a URL is valid and keeps the trail
-      // honest rather than pointing the crawler at a 404.
-      { '@type': 'ListItem', position: 2, name: suburb.region },
       {
         '@type': 'ListItem',
-        position: 3,
+        position: 2,
         name: `${suburb.name} cleaners`,
         item: pageUrl,
       },

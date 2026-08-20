@@ -1,7 +1,55 @@
 // @ts-check
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+
+// ---------------------------------------------------------------------------
+// Real `lastmod` dates for the sitemap.
+//
+// We previously stamped every URL with `new Date()` at build time, so all 148
+// entries claimed the same timestamp and it moved on every deploy — including
+// for pages whose content had not changed in months. Google's guidance is that
+// an inaccurate lastmod gets the signal ignored site-wide, so a uniform build
+// stamp is worse than no date at all.
+//
+// Now: suburb pages use their own `contentUpdated`, blog posts use their
+// updated/published date, and anything without a real date omits lastmod
+// rather than inventing one.
+//
+// Parsed with a regex rather than imported because this config is .mjs and the
+// data files are TypeScript.
+// ---------------------------------------------------------------------------
+function dateMap() {
+  const map = new Map();
+  try {
+    const suburbs = readFileSync('./src/data/suburbs.ts', 'utf8');
+    const entryRe = /slug:\s*'([^']+)'[\s\S]*?(?=\n    slug:\s*'|$)/g;
+    let m;
+    while ((m = entryRe.exec(suburbs))) {
+      const updated = /contentUpdated:\s*'(\d{4}-\d{2}-\d{2})'/.exec(m[0]);
+      if (updated) map.set('/' + m[1] + '/', updated[1]);
+    }
+  } catch {
+    /* data file unreadable — fall through to no dates */
+  }
+  try {
+    const posts = readFileSync('./src/data/posts.ts', 'utf8');
+    const entryRe = /slug:\s*'([^']+)'[\s\S]*?(?=\n    slug:\s*'|$)/g;
+    let m;
+    while ((m = entryRe.exec(posts))) {
+      const upd = /updatedDate:\s*'(\d{4}-\d{2}-\d{2})'/.exec(m[0]);
+      const pub = /publishedDate:\s*'(\d{4}-\d{2}-\d{2})'/.exec(m[0]);
+      const d = (upd && upd[1]) || (pub && pub[1]);
+      if (d) map.set('/resource/' + m[1] + '/', d);
+    }
+  } catch {
+    /* ditto */
+  }
+  return map;
+}
+
+const LASTMOD = dateMap();
 
 export default defineConfig({
   site: 'https://naturogroup.com.au',
@@ -24,9 +72,18 @@ export default defineConfig({
 
         return true;
       },
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
+      // changefreq and priority are deliberately omitted: Google has stated it
+      // ignores both, and every URL previously carried an identical
+      // 'weekly' / 0.7 pair, which conveyed nothing anyway.
+      serialize(item) {
+        const path = new URL(item.url).pathname;
+        const d = LASTMOD.get(path);
+        if (d) item.lastmod = d + 'T00:00:00.000Z';
+        else delete item.lastmod;
+        delete item.changefreq;
+        delete item.priority;
+        return item;
+      },
     }),
   ],
   vite: {

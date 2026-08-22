@@ -63,14 +63,35 @@ const schema = [
       sameAs: site.url,
       logo: `${site.url}/images/logo.png`,
     },
-    jobLocation: {
+    // The role is advertised across NSW, QLD and VIC, but jobLocation used to
+    // declare a single Place with addressRegion 'NSW' and nothing else, which
+    // both misrepresented the posting and triggered three Search Console
+    // warnings (missing addressLocality / postalCode / streetAddress).
+    //
+    // Google accepts an array of Places for genuinely multi-location roles, so
+    // each hiring hub is listed with a real locality, region and postcode.
+    // streetAddress is deliberately omitted: cleaners work in clients' homes,
+    // there is no site address to give, and inventing one would be worse than
+    // the remaining advisory warning.
+    jobLocation: [
+      { city: 'Geelong', region: 'VIC', postcode: '3220' },
+      { city: 'Melbourne', region: 'VIC', postcode: '3000' },
+      { city: 'Sydney', region: 'NSW', postcode: '2000' },
+      { city: 'Port Macquarie', region: 'NSW', postcode: '2444' },
+      { city: 'Newcastle', region: 'NSW', postcode: '2300' },
+      { city: 'Brisbane', region: 'QLD', postcode: '4000' },
+      { city: 'Gold Coast', region: 'QLD', postcode: '4217' },
+      { city: 'Sunshine Coast', region: 'QLD', postcode: '4557' },
+    ].map((l) => ({
       '@type': 'Place',
       address: {
         '@type': 'PostalAddress',
+        addressLocality: l.city,
+        addressRegion: l.region,
+        postalCode: l.postcode,
         addressCountry: 'AU',
-        addressRegion: 'NSW',
       },
-    },
+    })),
     applicantLocationRequirements: { '@type': 'Country', name: 'Australia' },
     baseSalary: {
       '@type': 'MonetaryAmount',

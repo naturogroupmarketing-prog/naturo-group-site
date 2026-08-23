@@ -121,6 +121,15 @@ const updatedLabel = updatedISO
     })
   : null;
 
+// Some suburbs share a name with their region (Geelong sits in "Geelong &
+// Bellarine"), which made the answer block read "in Geelong, Geelong &
+// Bellarine". Drop the region where it already contains the suburb name.
+const regionEchoesName = suburb.region.toLowerCase().includes(suburb.name.toLowerCase());
+const placePhrase = regionEchoesName ? suburb.name : `${suburb.name}, ${suburb.region}`;
+const areaPhrase = regionEchoesName
+  ? `${suburb.region}`
+  : `${suburb.name} and surrounding ${suburb.region}`;
+
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -297,6 +306,58 @@ const schema = [
       )}
     </div>
   </nav>
+
+  <!-- Direct-answer block.
+       AI search engines (Google AI Overviews, ChatGPT Search, Perplexity)
+       quote the first substantive paragraph they find. Previously that was
+       the hero tagline — "Trusted, Trained and Thorough" — which answers
+       nothing. This gives them a factual 50-word summary plus a scannable
+       fact table, both of which are also genuinely useful to a reader
+       deciding whether to call. -->
+  <section class="answer" aria-labelledby="answer-heading">
+    <div class="container-site">
+      <h2 id="answer-heading" class="answer-heading">
+        House cleaning in {suburb.name} at a glance
+      </h2>
+      <p class="answer-lead">
+        NATURO GROUP provides eco-friendly house cleaning in {placePhrase}.
+        Every cleaner is police-checked and insured for $20m
+        public liability, and we bring plant-based, non-toxic products to every
+        job. We offer regular, deep and end-of-lease cleaning, and support NDIS,
+        aged care, DVA and insurance clients. Book online in about 60 seconds.
+      </p>
+      <dl class="answer-facts">
+        <div class="answer-fact">
+          <dt>Service area</dt>
+          <dd>{areaPhrase}{suburb.nearbySuburbs.length ? `, including ${suburb.nearbySuburbs.slice(0, 4).join(', ')}` : ''}</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Services</dt>
+          <dd>Regular weekly or fortnightly cleaning, one-off deep cleans, end-of-lease bond cleans</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Cleaners</dt>
+          <dd>Police-checked and fully insured for $20m public liability</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Products</dt>
+          <dd>Plant-based, biodegradable and non-toxic — safe around children, pets and asthma</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Funded work</dt>
+          <dd>NDIS (plan-managed and self-managed), Home Care Packages, DVA Gold and White card, insurance and workers compensation</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Hours</dt>
+          <dd>Monday to Friday, 8:30am – 5:00pm</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Bookings</dt>
+          <dd>Online in about 60 seconds, or call {suburb.phone ?? site.phone}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
   <PricingCards />
   <ExperienceBanner />
@@ -700,6 +761,59 @@ const schema = [
     .crumbs { padding: 12px 0; }
     .crumbs-list { font-size: 12px; gap: 6px; }
     .crumbs-item + .crumbs-item::before { margin-right: 6px; }
+  }
+
+  /* ---------- Direct-answer block ---------- */
+  .answer {
+    background-color: #ffffff;
+    padding: clamp(40px, 5vw, 64px) 0 clamp(8px, 2vw, 16px);
+  }
+  .answer-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .answer-lead {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(16px, 1.35vw, 18px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+    margin: 0 0 28px;
+    max-width: 68ch;
+  }
+  .answer-facts {
+    margin: 0;
+    padding: 22px 24px;
+    background-color: #f6f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 32px;
+  }
+  @media (max-width: 760px) {
+    .answer-facts { grid-template-columns: 1fr; }
+  }
+  .answer-fact dt {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3a5dff;
+    margin: 0 0 4px;
+  }
+  .answer-fact dd {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(51, 65, 85);
+    margin: 0;
   }
 
   /* ---------- Localised IntroCopy ---------- */

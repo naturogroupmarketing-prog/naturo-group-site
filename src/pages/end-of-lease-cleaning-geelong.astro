@@ -139,6 +139,10 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    // Resolve to the single Organization entity declared in Layout.astro,
+    // so every page describes one recognisable business rather than a
+    // separate one per URL.
+    parentOrganization: { '@id': `${site.url}/#organization` },
     '@id': `${pageUrl}#localbusiness`,
     name: 'Naturo Group End of Lease Cleaning Geelong',
     description:

@@ -134,6 +134,12 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    // Point every location back at the single Organization entity declared in
+    // Layout.astro. Without this each suburb page reads as its own unrelated
+    // business; with it, 101 locations resolve to one company that an engine
+    // can recognise and name.
+    '@id': `${pageUrl}#localbusiness`,
+    parentOrganization: { '@id': `${site.url}/#organization` },
     name: `${site.name} — ${suburb.name}`,
     description: suburb.seo.description,
     url: pageUrl,

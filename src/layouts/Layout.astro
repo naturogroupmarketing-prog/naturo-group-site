@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
 import QuoteLeadGate from '../components/QuoteLeadGate.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import Analytics from '../components/Analytics.astro';
-import { site } from '../data/site';
+import { site, founder } from '../data/site';
 
 interface Props {
   title?: string;
@@ -35,6 +35,53 @@ const {
 const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
 const canonical = new URL(Astro.url.pathname, site.url).toString();
 const isHome = Astro.url.pathname === '/';
+
+// ---------------------------------------------------------------------------
+// Site-wide Organization entity.
+//
+// Every page carried a LocalBusiness or Service block, but nothing tied them
+// together into one identifiable business. A generative engine deciding
+// whether "NATURO GROUP" on this page is the same NATURO GROUP it saw on
+// Facebook, YouTube or a directory had nothing to join on — no stable @id, and
+// no sameAs. Entity confidence is what decides whether an assistant will name
+// a business in an answer rather than describe it vaguely, so this is the
+// difference between being cited and being paraphrased away.
+//
+// The @id is a fragment on the homepage URL, which is the conventional stable
+// identifier. Per-page LocalBusiness blocks point back at it, so all 453 pages
+// resolve to one entity instead of 453 unrelated businesses.
+//
+// sameAs lists only profiles verified to return 200. An unreachable sameAs is
+// worse than none: it invites the engine to distrust the whole block.
+// ---------------------------------------------------------------------------
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  logo: `${site.url}/images/logo.png`,
+  description: site.description,
+  email: site.email,
+  telephone: site.phone,
+  slogan: site.tagline,
+  founder: {
+    '@type': 'Person',
+    name: founder.name,
+    jobTitle: founder.role,
+  },
+  areaServed: { '@type': 'Country', name: 'Australia' },
+  sameAs: [site.social.facebook, site.social.instagram, site.social.youtube],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: site.phone,
+    email: site.email,
+    contactType: 'customer service',
+    areaServed: 'AU',
+    availableLanguage: 'en',
+  },
+};
 ---
 
 <!doctype html>
@@ -73,6 +120,7 @@ const isHome = Astro.url.pathname === '/';
     <meta name="twitter:image" content={new URL(ogImage, site.url).toString()} />
     <meta name="twitter:site" content="@naturogroup" />
 
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     )}

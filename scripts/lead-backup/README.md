@@ -109,10 +109,15 @@ eventually throw away a real enquiry written in a hurry, and losing one customer
 costs more than filing a hundred bot posts.
 
 Refusals are answered exactly like successes — a bot that can see which rule
-caught it can tune around it — and are parked on the **Rejected** tab with the
-reason, rather than dropped. A gate that silently discards is a gate nobody can
-audit: if a rule is ever wrong, the enquiries it ate would be gone with no trace
-they had arrived. Check that tab if someone says their enquiry vanished.
+caught it can tune around it — and are parked on the **Spam** tab with the
+reason, rather than dropped. Nothing here ever deletes: a gate that discards
+silently is a gate nobody can audit, and if a rule is ever wrong the enquiry it
+ate would be gone with no trace it arrived, while the person who typed it simply
+never hears back. Clearing the tab is a human decision. Check it first if
+someone says their enquiry vanished.
+
+The CRM keeps its own copy the same way, under **Spam** in the Inbox sidebar, so
+a submission blocked at either destination is still there to be looked at.
 
 The trap itself is an unlabelled input placed off-screen (`.nl-hp` in
 `src/styles/global.css`), hidden from assistive technology and skipped by the

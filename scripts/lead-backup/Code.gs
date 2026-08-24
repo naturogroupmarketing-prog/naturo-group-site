@@ -42,14 +42,15 @@ var SHEET_ID = 'PASTE_SHEET_ID_HERE';
 var SHEET_NAME = 'Leads';
 
 /**
- * Tab rejected submissions are parked in. Created automatically if missing.
+ * Tab spam is parked in. Created automatically if missing.
  *
- * Spam is quarantined rather than dropped. A gate that silently discards is a
- * gate nobody can audit: if a rule ever turns out to be wrong, the enquiries it
- * ate would be gone with no trace that they had ever arrived. Here they are one
- * tab away, with the reason recorded beside them.
+ * Quarantined, never dropped, and never cleared by this script — deleting is a
+ * person's decision. A gate that discards silently is a gate nobody can audit:
+ * if a rule turns out to be wrong, the enquiries it ate would be gone with no
+ * trace they had ever arrived, and whoever typed them would simply never hear
+ * back. Here they sit one tab away with the reason recorded beside them.
  */
-var SPAM_SHEET_NAME = 'Rejected';
+var SPAM_SHEET_NAME = 'Spam';
 
 /**
  * Deliberately no email alerting.

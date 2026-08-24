@@ -4,10 +4,13 @@ A second, independent destination for every web enquiry.
 
 ## Why this exists
 
-Leads go to three places: the Sophiie CRM (Inbox + auto-capture), this Sheet,
-and Formspree. Formspree is not legacy — admin staff who do not work in the AI
-Reception dashboard see an enquiry only via that email, so for them it is the
-delivery rather than a copy.
+Leads go to two places: the Sophiie CRM (Inbox + auto-capture) and this Sheet.
+
+Formspree was a third, and was there for a real reason: admin staff who never
+open the AI Reception dashboard saw an enquiry only via that email, so for them
+it was the delivery rather than a copy. Sophiie now sends that alert itself over
+the Gmail connection it already has, so in August 2026 Formspree was removed —
+the job it was doing is done by something we run.
 
 Formspree was briefly switched off in August 2026, which left the
 CRM as the only path — and the forms could not tell when that path failed,

@@ -286,3 +286,68 @@ function redirectOut(url) {
       '<a href="' + safe + '">Continue</a>.</p>',
   );
 }
+
+/**
+ * One-off: report which rows already on Leads would be judged spam.
+ *
+ * Run from the editor and read the log. Nothing is changed. The payload is
+ * rebuilt from the Raw JSON column, which is the submission exactly as it
+ * arrived, so the same rules decide it as would have decided it live.
+ */
+function reportExistingSpam() {
+  var found = findExistingSpam();
+  if (!found.length) return 'No spam on the Leads tab.';
+  var lines = found.map(function (f) {
+    return 'row ' + f.row + ' — ' + f.reason + ' — ' + (f.payload.email || f.payload.phone || '(no contact)');
+  });
+  Logger.log(lines.join('\n'));
+  return found.length + ' row(s) would move:\n' + lines.join('\n');
+}
+
+/**
+ * One-off: MOVE those rows to the Spam tab.
+ *
+ * A move, not a delete — every one of them is copied across with its reason
+ * before it leaves Leads, and deleting from Spam stays a human decision. Rows
+ * are removed bottom-up so the earlier indexes stay valid.
+ */
+function moveExistingSpam() {
+  var found = findExistingSpam();
+  if (!found.length) return 'Nothing to move.';
+
+  found.forEach(function (f) {
+    appendRejected(f.payload, f.reason);
+  });
+
+  var sheet = sheetNamed(SHEET_NAME, HEADERS);
+  found
+    .map(function (f) { return f.row; })
+    .sort(function (a, b) { return b - a; })
+    .forEach(function (row) { sheet.deleteRow(row); });
+
+  return 'Moved ' + found.length + ' row(s) to ' + SPAM_SHEET_NAME + '.';
+}
+
+/** Rows on Leads whose stored payload the spam rules would refuse. */
+function findExistingSpam() {
+  var sheet = sheetNamed(SHEET_NAME, HEADERS);
+  var last = sheet.getLastRow();
+  if (last < 2) return [];
+
+  var rawCol = HEADERS.indexOf('Raw JSON') + 1;
+  var values = sheet.getRange(2, 1, last - 1, HEADERS.length).getValues();
+  var out = [];
+  for (var i = 0; i < values.length; i++) {
+    var raw = values[i][rawCol - 1];
+    if (!raw) continue;
+    var payload;
+    try {
+      payload = JSON.parse(raw);
+    } catch (err) {
+      continue; // Unreadable payload is not evidence of anything.
+    }
+    var reason = spamReason(payload);
+    if (reason) out.push({ row: i + 2, reason: reason, payload: payload });
+  }
+  return out;
+}

@@ -130,6 +130,17 @@ wire it up.
 node scripts/lead-backup/spam-gate.test.mjs
 ```
 
+`reportExistingSpam()` and `moveExistingSpam()` in the editor are the one-off
+pair for rows that reached Leads before the gate existed: the first logs what it
+would move and changes nothing, the second copies each row to Spam with its
+reason and only then removes it from Leads. Both rebuild the payload from the
+Raw JSON column, so the same rules decide it as would have decided it live.
+
+A warning if you run them: the editor's function picker and its Run button can
+fall out of step — the name shown in the toolbar is not always the function that
+runs. Check the execution log names the function you expected before trusting
+what it did.
+
 That runs the rules against the real rows — four genuine enquiries and the three
 bot posts — without touching the deployment.
 

@@ -161,21 +161,17 @@
   to   = "/"
   status = 301
 
-# ── PAID-TRAFFIC RESCUE: /house-cleaning/<suburb> ────────────────────────────
-# The live Google Ad for "House cleaning Geelong" points its final URL at
-# /house-cleaning/geelong — a path that has never existed on this site. The
-# real page is /house-cleaning-geelong/ (hyphen, not slash). Every paid click
-# on that ad was landing on the 404 page: money spent, visitor lost, and a
-# bounce signal fed straight back into ad rank and landing-page experience.
+# ── /house-cleaning/<suburb> — display-path safety net ──────────────────────
+# The Google Ads responsive search ads use a display path of
+# House-Cleaning / Geelong, so the ad renders as
+# naturogroup.com.au/house-cleaning/geelong. That path is cosmetic — Google
+# Ads display paths never have to resolve — and the ads' Final URL is, and
+# always was, the correct /house-cleaning-geelong/.
 #
-# The placeholder rule rewrites the slash form to the hyphen form, which covers
-# the Geelong ad and any other suburb an ad or inbound link guesses the same
-# way. Suburbs published under the cleaners-<name> prefix will not match it, so
-# the wildcard beneath catches anything left over and sends it to the service
-# page rather than the 404.
-#
-# Fix the ad's final URL as well — a redirect costs a hop and should not be
-# load-bearing for paid traffic — but this stops the loss today.
+# These rules were added on the mistaken belief that the ads pointed at a 404.
+# They did not, and no spend was wasted. Keeping them anyway for the one case
+# that is real: a person who reads the ad, types the URL they can see, and
+# would otherwise land on the 404 page. Cheap insurance, no downside.
 [[redirects]]
   from   = "/house-cleaning/:suburb"
   to     = "/house-cleaning-:suburb/"

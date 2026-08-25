@@ -177,7 +177,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Port Macquarie | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Port Macquarie & the Mid North Coast. Police-checked, fully insured cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
+      description: 'House cleaning in Port Macquarie & the Mid North Coast. Eco-friendly, police-checked, fully insured cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
@@ -254,7 +254,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wauchope NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Wauchope & Hastings Valley NSW. Police-checked, fully insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Wauchope & Hastings Valley NSW. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
     contentUpdated: '2026-08-19',
@@ -333,7 +333,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lake Cathie NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Lake Cathie & Mid North Coast NSW. Police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
+      description: 'House cleaning in Lake Cathie & Mid North Coast NSW. Eco-friendly, police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
     contentUpdated: '2026-08-19',
@@ -412,7 +412,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bonny Hills NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Bonny Hills & Rainbow Beach NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'House cleaning in Bonny Hills & Rainbow Beach NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
     contentUpdated: '2026-08-19',
@@ -491,7 +491,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Laurieton NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Laurieton & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Laurieton & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
     contentUpdated: '2026-08-19',
@@ -570,7 +570,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Haven NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in North Haven & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'House cleaning in North Haven & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
     contentUpdated: '2026-08-19',
@@ -649,7 +649,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Dunbogan NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Dunbogan & Camden Haven NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Dunbogan & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
     contentUpdated: '2026-08-19',
@@ -728,7 +728,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Camden Head NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Camden Head & Camden Haven NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'House cleaning in Camden Head & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
     contentUpdated: '2026-08-19',
@@ -807,7 +807,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Telegraph Point | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Telegraph Point & Hastings Valley NSW. Police-checked, insured. Suitable for rural and hobby-farm homes.',
+      description: 'House cleaning in Telegraph Point & Hastings Valley NSW. Eco-friendly, police-checked, insured. Suitable for rural and hobby-farm homes.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
     contentUpdated: '2026-08-19',
@@ -886,7 +886,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sancrox NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Sancrox near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Sancrox near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
     contentUpdated: '2026-08-19',
@@ -965,7 +965,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Kendall NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Kendall & Manning Valley NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Kendall & Manning Valley NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
     contentUpdated: '2026-08-19',
@@ -1044,7 +1044,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Comboyne NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Comboyne & Comboyne Plateau NSW. Police-checked, insured. Regular, deep clean & rural property cleaning.',
+      description: 'House cleaning in Comboyne & Comboyne Plateau NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property cleaning.',
     },
     nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
     contentUpdated: '2026-08-19',
@@ -1123,7 +1123,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Beechwood NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Beechwood & Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'House cleaning in Beechwood & Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
     contentUpdated: '2026-08-19',
@@ -1202,7 +1202,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bago NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Bago near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'House cleaning in Bago near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
     contentUpdated: '2026-08-19',
@@ -1281,7 +1281,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Rollands Plains | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Rollands Plains & Hastings hinterland NSW. Police-checked, insured. Regular, deep clean & rural services.',
+      description: 'House cleaning in Rollands Plains & Hastings hinterland NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural services.',
     },
     nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
     contentUpdated: '2026-08-19',
@@ -1360,7 +1360,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Pembrooke NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Pembrooke near Wauchope NSW. Police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'House cleaning in Pembrooke near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
     contentUpdated: '2026-08-19',
@@ -1439,7 +1439,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Kew NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Kew on the Mid North Coast NSW. Police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Kew on the Mid North Coast NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
     contentUpdated: '2026-08-19',
@@ -1518,7 +1518,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lakewood NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Lakewood near Port Macquarie NSW. Police-checked, insured. Regular, deep clean & new-home services.',
+      description: 'House cleaning in Lakewood near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & new-home services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
     contentUpdated: '2026-08-19',
@@ -1597,7 +1597,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning King Creek NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in King Creek near Port Macquarie NSW. Police-checked, insured. Acreage and rural property cleaning specialists.',
+      description: 'House cleaning in King Creek near Port Macquarie NSW. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
     contentUpdated: '2026-08-19',
@@ -1676,7 +1676,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Settlement Point NSW',
-      description: 'Eco-friendly house cleaning in Settlement Point on the Hastings River NSW. Police-checked, insured. Waterfront, holiday-let & regular cleans.',
+      description: 'House cleaning in Settlement Point on the Hastings River NSW. Eco-friendly, police-checked, insured. Waterfront, holiday-let & regular cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
     contentUpdated: '2026-08-19',
@@ -1755,7 +1755,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lighthouse Beach NSW',
-      description: 'Eco-friendly house cleaning in Lighthouse Beach Port Macquarie NSW. Police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'House cleaning in Lighthouse Beach Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],
     contentUpdated: '2026-08-19',
@@ -1834,7 +1834,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Byron Bay NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Byron Bay & the Northern Rivers. Holiday-let turnovers, regular cleans, police-checked and fully insured. Get a free quote.',
+      description: 'House cleaning in Byron Bay & the Northern Rivers. Eco-friendly, holiday-let turnovers, regular cleans, police-checked and fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Suffolk Park', 'Lennox Head', 'Ballina', 'Mullumbimby', 'Bangalow', 'Brunswick Heads', 'Ocean Shores', 'Tyagarah', 'Newrybar', 'Federal', 'Possum Creek', 'Eureka', 'Coopers Shoot', 'Skennars Head', 'Wategos', 'Tallow Beach', 'Myocum', 'Ewingsdale'],
     localFaqs: [
@@ -1908,7 +1908,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Central Coast | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Gosford', 'Terrigal', 'Avoca Beach', 'Erina', 'Wyong', 'Tuggerah', 'The Entrance', 'Long Jetty', 'Woy Woy', 'Ettalong Beach', 'Umina Beach', 'Killarney Vale', 'Bateau Bay', 'Forresters Beach', 'Kincumber', 'Saratoga', 'Davistown', 'Berkeley Vale', 'Lake Munmorah', 'Toukley'],
     contentUpdated: '2026-08-19',
@@ -1987,7 +1987,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lismore NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Lismore & the Northern Rivers. Insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Lismore & the Northern Rivers. Eco-friendly, insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Goonellabah', 'Wollongbar', 'Alstonville', 'Casino', 'Nimbin', 'Clunes', 'Dunoon', 'Bexhill', 'Modanville', 'Ruthven', 'Caniaba', 'Tregeagle', 'Wyrallah', 'North Lismore', 'East Lismore', 'South Lismore', 'Girards Hill', 'Loftville', 'Eltham'],
     contentUpdated: '2026-08-19',
@@ -2066,7 +2066,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newcastle NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Hamilton', 'Merewether', 'The Junction', 'Cooks Hill', 'New Lambton', 'Adamstown', 'Bar Beach', 'Stockton', 'Mayfield', 'Wickham', 'Islington', 'Hamilton East', 'Tighes Hill', 'Carrington', 'Waratah', 'Lambton', 'Charlestown', 'Kahibah', 'Newcastle East', 'Newcastle West'],
     contentUpdated: '2026-08-19',
@@ -2145,7 +2145,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sutherland NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Cronulla', 'Caringbah', 'Miranda', 'Gymea', 'Engadine', 'Heathcote', 'Sylvania', 'Kirrawee', 'Jannali', 'Como', 'Oyster Bay', 'Bonnet Bay', 'Sylvania Waters', 'Yowie Bay', 'Grays Point', 'Loftus', 'Woronora', 'Menai', 'Illawong', 'Bangor'],
     contentUpdated: '2026-08-19',
@@ -2224,7 +2224,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sydney NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
     contentUpdated: '2026-08-19',
@@ -2299,7 +2299,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Tweed Heads NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Banora Point', 'Tweed Heads South', 'Tweed Heads West', 'Bilambil', 'Terranora', 'Cobaki Lakes', 'Kingscliff', 'Casuarina', 'Pottsville', 'Cabarita Beach', 'Hastings Point', 'Bogangar', 'Murwillumbah', 'Chinderah', 'Fingal Head', 'Bilambil Heights', 'Piggabeen'],
     contentUpdated: '2026-08-19',
@@ -2378,7 +2378,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Parramatta NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Parramatta & Western Sydney \u2014 CBD apartments, Westmead, Harris Park, North Parramatta. Police-checked, fully insured.',
+      description: 'House cleaning in Parramatta & Western Sydney \u2014 CBD apartments, Westmead, Harris Park, North Parramatta. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Harris Park', 'Westmead', 'North Parramatta', 'Northmead', 'Wentworthville', 'Granville', 'Merrylands', 'Rosehill', 'Camellia', 'Carlingford', 'Telopea', 'Rydalmere', 'Dundas', 'Ermington', 'Oatlands', 'Old Toongabbie', 'South Granville', 'Holroyd'],
     contentUpdated: '2026-08-19',
@@ -2453,7 +2453,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wollongong NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Fairy Meadow', 'North Wollongong', 'Coniston', 'Mangerton', 'Mount Pleasant', 'Mount Ousley', 'Keiraville', 'Gwynneville', 'Figtree', 'West Wollongong', 'Mount Saint Thomas', 'Cordeaux Heights', 'Unanderra', 'Berkeley', 'Corrimal', 'Bellambi', 'Thirroul', 'Bulli', 'Woonona', 'Austinmer'],
     contentUpdated: '2026-08-19',
@@ -2532,7 +2532,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Northern Beaches NSW',
-      description: 'Eco-friendly house cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Manly', 'Dee Why', 'Brookvale', 'Collaroy', 'Narrabeen', 'Mona Vale', 'Avalon Beach', 'Newport', 'Palm Beach', 'Whale Beach', 'Freshwater', 'Curl Curl', 'Queenscliff', 'Balgowlah', 'Seaforth', 'Forestville', 'Frenchs Forest', 'Beacon Hill', 'Cromer', 'Warriewood', 'Bayview', 'Church Point'],
     contentUpdated: '2026-08-19',
@@ -2607,7 +2607,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Eastern Beaches | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Bondi', 'Bondi Beach', 'Bronte', 'Coogee', 'Tamarama', 'Clovelly', 'Maroubra', 'Randwick', 'Waverley', 'Bondi Junction', 'Queens Park', 'Kensington', 'Kingsford', 'North Bondi', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Little Bay', 'Malabar'],
     contentUpdated: '2026-08-19',
@@ -2682,7 +2682,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bondi NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Bondi & the Eastern Suburbs. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
+      description: 'House cleaning in Bondi & the Eastern Suburbs. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Bondi Beach', 'North Bondi', 'Bondi Junction', 'Tamarama', 'Bronte', 'Waverley', 'Queens Park', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Watsons Bay', 'Double Bay', 'Bellevue Hill', 'Woollahra', 'Paddington', 'Centennial Park', 'Clovelly', 'Coogee'],
     contentUpdated: '2026-08-19',
@@ -2757,7 +2757,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Manly NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Manly, Fairlight, Balgowlah & Freshwater. Holiday-let turnovers, regular cleans. Police-checked, fully insured.',
+      description: 'House cleaning in Manly, Fairlight, Balgowlah & Freshwater. Eco-friendly, holiday-let turnovers, regular cleans. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Fairlight', 'Balgowlah', 'Balgowlah Heights', 'Clontarf', 'Seaforth', 'North Balgowlah', 'Queenscliff', 'Freshwater', 'Curl Curl', 'North Manly', 'Brookvale', 'Allambie Heights', 'Beacon Hill', 'Frenchs Forest', 'Killarney Heights', 'Manly Vale', 'Dee Why'],
     contentUpdated: '2026-08-19',
@@ -2836,7 +2836,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mosman NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Mosman, Cremorne, Neutral Bay & Balmoral. Premium harbourside homes, gentle on stone & marble. Police-checked, fully insured.',
+      description: 'House cleaning in Mosman, Cremorne, Neutral Bay & Balmoral. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Beauty Point', 'Clifton Gardens', 'Balmoral', 'The Spit', 'Cremorne', 'Cremorne Point', 'Neutral Bay', 'Cammeray', 'Northbridge', 'Castlecrag', 'Castle Cove', 'Willoughby', 'Naremburn', 'Wollstonecraft', 'McMahons Point', 'Kirribilli', 'Lavender Bay', 'Crows Nest'],
     contentUpdated: '2026-08-19',
@@ -2911,7 +2911,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hunters Hill | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Heritage-home friendly. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Eco-friendly, heritage-home friendly. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Woolwich', 'Henley', 'Gladesville', 'Boronia Park', 'Putney', 'Tennyson Point', 'Mortlake', 'Concord', 'Drummoyne', 'Russell Lea', 'Five Dock', 'Abbotsford', 'Chiswick', 'Wareemba', 'Lane Cove', 'Riverview', 'Linley Point', 'Longueville', 'Northwood'],
     contentUpdated: '2026-08-19',
@@ -2990,7 +2990,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Vaucluse NSW | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Vaucluse, Watsons Bay, Rose Bay & Bellevue Hill. Premium harbourside homes, gentle on stone & marble. Police-checked.',
+      description: 'House cleaning in Vaucluse, Watsons Bay, Rose Bay & Bellevue Hill. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked.',
     },
     nearbySuburbs: ['Watsons Bay', 'Dover Heights', 'Rose Bay', 'Point Piper', 'Bellevue Hill', 'Double Bay', 'Darling Point', 'Edgecliff', 'Woollahra', 'Paddington', 'Bondi', 'North Bondi', 'Bondi Junction', 'Diamond Bay', 'Hermit Point', 'Parsley Bay'],
     contentUpdated: '2026-08-19',
@@ -3068,7 +3068,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Brisbane QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['New Farm', 'Fortitude Valley', 'Newstead', 'Teneriffe', 'West End', 'South Brisbane', 'Highgate Hill', 'Paddington', 'Milton', 'Toowong', 'Auchenflower', 'Spring Hill', 'Kelvin Grove', 'Red Hill', 'Bardon', 'Ascot', 'Hamilton', 'Bulimba', 'Hawthorne', 'Norman Park', 'Camp Hill', 'Coorparoo', 'Greenslopes'],
     contentUpdated: '2026-08-19',
@@ -3147,7 +3147,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Cairns QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Cairns, Trinity Beach, Palm Cove & the Northern Beaches. Reef-safe products. Police-checked, fully insured.',
+      description: 'House cleaning in Cairns, Trinity Beach, Palm Cove & the Northern Beaches. Eco-friendly, reef-safe products. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Edge Hill', 'Whitfield', 'Manunda', 'Manoora', 'Mooroobool', 'Westcourt', 'Earlville', 'Bungalow', 'Parramatta Park', 'Trinity Beach', 'Palm Cove', 'Clifton Beach', 'Kewarra Beach', 'Smithfield', 'Yorkeys Knob', 'Holloways Beach', 'Machans Beach', 'Redlynch', 'Stratford', 'Freshwater', 'Brinsmead'],
     contentUpdated: '2026-08-19',
@@ -3226,7 +3226,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Gold Coast QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across the Gold Coast \u2014 Surfers, Broadbeach, Burleigh, Palm Beach, Coolangatta. Police-checked, fully insured.',
+      description: 'House cleaning across the Gold Coast \u2014 Surfers, Broadbeach, Burleigh, Palm Beach, Coolangatta. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Surfers Paradise', 'Broadbeach', 'Mermaid Beach', 'Burleigh Heads', 'Palm Beach', 'Currumbin', 'Coolangatta', 'Tugun', 'Miami', 'Nobby Beach', 'Bilinga', 'Kirra', 'Robina', 'Varsity Lakes', 'Mudgeeraba', 'Reedy Creek', 'Helensvale', 'Hope Island', 'Southport', 'Main Beach', 'Labrador', 'Biggera Waters', 'Runaway Bay'],
     contentUpdated: '2026-08-19',
@@ -3305,7 +3305,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ipswich QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Brassall', 'Booval', 'Bundamba', 'Eastern Heights', 'Newtown', 'Raceview', 'Silkstone', 'Sadliers Crossing', 'North Ipswich', 'Wulkuraka', 'One Mile', 'Goodna', 'Redbank', 'Springfield', 'Springfield Lakes', 'Augustine Heights', 'Karalee', 'Karana Downs', 'Rosewood', 'Walloon', 'Marburg', 'Yamanto'],
     contentUpdated: '2026-08-19',
@@ -3384,7 +3384,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sunshine Coast | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
     contentUpdated: '2026-08-19',
@@ -3463,7 +3463,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Toowoomba QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Toowoomba, East Toowoomba, Rangeville & Highfields. Heritage-home friendly. Police-checked, fully insured.',
+      description: 'House cleaning in Toowoomba, East Toowoomba, Rangeville & Highfields. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['East Toowoomba', 'North Toowoomba', 'South Toowoomba', 'Newtown', 'Rangeville', 'Mount Lofty', 'Centenary Heights', 'Middle Ridge', 'Kearneys Spring', 'Glenvale', 'Wilsonton', 'Harristown', 'Drayton', 'Westbrook', 'Highfields', 'Cabarlah', 'Crows Nest', 'Withcott', 'Helidon', 'Hodgson Vale'],
     contentUpdated: '2026-08-19',
@@ -3542,7 +3542,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Townsville QLD | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['North Ward', 'Belgian Gardens', 'Castle Hill', 'South Townsville', 'Railway Estate', 'Hyde Park', 'Mundingburra', 'Hermit Park', 'Aitkenvale', 'Currajong', 'Gulliver', 'Pimlico', 'Rosslea', 'Cranbrook', 'Vincent', 'Heatley', 'Kirwan', 'Thuringowa Central', 'Annandale', 'Douglas', 'Idalia', 'Pallarenda'],
     contentUpdated: '2026-08-19',
@@ -3624,7 +3624,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Melbourne VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning across Melbourne \u2014 CBD, South Yarra, Richmond, Brighton, Hawthorn, St Kilda. Police-checked, fully insured.',
+      description: 'House cleaning across Melbourne \u2014 CBD, South Yarra, Richmond, Brighton, Hawthorn, St Kilda. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Carlton', 'Fitzroy', 'Collingwood', 'Richmond', 'South Yarra', 'Prahran', 'Windsor', 'St Kilda', 'Albert Park', 'Port Melbourne', 'Southbank', 'Docklands', 'North Melbourne', 'West Melbourne', 'Parkville', 'East Melbourne', 'South Melbourne', 'Hawthorn', 'Toorak', 'Brunswick', 'Cremorne', 'Carlton North', 'Fitzroy North'],
     localFaqs: [
@@ -3800,7 +3800,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Torquay VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Torquay & the Surf Coast. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Torquay & the Surf Coast. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Jan Juc', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Lorne', 'Ocean Grove', 'Barwon Heads', 'Geelong', 'Belmont', 'Highton'],
     localFaqs: [
@@ -3874,7 +3874,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ocean Grove VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Ocean Grove & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'House cleaning in Ocean Grove & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Barwon Heads', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Collendina', 'Geelong', 'Torquay', 'Jan Juc'],
     localFaqs: [
@@ -3948,7 +3948,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Barwon Heads | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Barwon Heads & the Bellarine Peninsula. Holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
+      description: 'House cleaning in Barwon Heads & the Bellarine Peninsula. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Geelong', 'Torquay'],
     localFaqs: [
@@ -4018,7 +4018,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Drysdale VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Drysdale, Clifton Springs & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+      description: 'House cleaning in Drysdale, Clifton Springs & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
     },
     nearbySuburbs: ['Clifton Springs', 'Portarlington', 'Leopold', 'Ocean Grove', 'Barwon Heads', 'Queenscliff', 'Point Lonsdale', 'Geelong', 'Lara'],
     localFaqs: [
@@ -4088,7 +4088,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Leopold VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Leopold, Wallington & the Bellarine Peninsula. Police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+      description: 'House cleaning in Leopold, Wallington & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
     },
     nearbySuburbs: ['Wallington', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Clifton Springs', 'Geelong', 'Belmont', 'Highton', 'Lara'],
     localFaqs: [
@@ -4158,7 +4158,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Jan Juc VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Jan Juc & Torquay on the Surf Coast VIC. Police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'House cleaning in Jan Juc & Torquay on the Surf Coast VIC. Eco-friendly, police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Torquay', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Ocean Grove', 'Barwon Heads', 'Geelong'],
     localFaqs: [
@@ -4230,7 +4230,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newtown VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Newtown Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'House cleaning in Newtown Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
     contentUpdated: '2026-08-19',
@@ -4309,7 +4309,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning East Geelong | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in East Geelong VIC. Heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in East Geelong VIC. Eco-friendly, heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Newtown', 'South Geelong', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights'],
     contentUpdated: '2026-08-19',
@@ -4388,7 +4388,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning South Geelong | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in South Geelong VIC. Police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
+      description: 'House cleaning in South Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'East Geelong', 'Newtown', 'Manifold Heights', 'Geelong West', 'Belmont', 'Herne Hill'],
     contentUpdated: '2026-08-19',
@@ -4467,7 +4467,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Geelong West | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Geelong West VIC. Plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'House cleaning in Geelong West VIC. Eco-friendly, plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Herne Hill', 'Newtown', 'South Geelong', 'Hamlyn Heights', 'Bell Park'],
     contentUpdated: '2026-08-19',
@@ -4546,7 +4546,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Belmont VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Belmont Geelong VIC. Family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Belmont Geelong VIC. Eco-friendly, family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
     contentUpdated: '2026-08-19',
@@ -4625,7 +4625,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Highton VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Highton Geelong VIC. Premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'House cleaning in Highton Geelong VIC. Eco-friendly, premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Belmont', 'Wandana Heights', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Newtown'],
     contentUpdated: '2026-08-19',
@@ -4704,7 +4704,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wandana Heights | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Wandana Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Wandana Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Highton', 'Belmont', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Geelong', 'Newtown'],
     contentUpdated: '2026-08-19',
@@ -4783,7 +4783,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Manifold Heights VIC',
-      description: 'Eco-friendly house cleaning in Manifold Heights Geelong VIC. Heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
+      description: 'House cleaning in Manifold Heights Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'Herne Hill', 'South Geelong', 'Geelong', 'Hamlyn Heights', 'Bell Park'],
     contentUpdated: '2026-08-19',
@@ -4858,7 +4858,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Herne Hill VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Herne Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Herne Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong West', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Geelong', 'Newtown', 'Bell Post Hill'],
     contentUpdated: '2026-08-19',
@@ -4933,7 +4933,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hamlyn Heights | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Hamlyn Heights Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Hamlyn Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Herne Hill', 'Geelong West', 'Bell Park', 'Bell Post Hill', 'Norlane', 'Geelong', 'Manifold Heights'],
     contentUpdated: '2026-08-19',
@@ -5012,7 +5012,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bell Park VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Bell Park Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Bell Park Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Norlane', 'Geelong West', 'Herne Hill', 'Bell Post Hill', 'Corio', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5087,7 +5087,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bell Post Hill | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Bell Post Hill Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Bell Post Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Herne Hill', 'Bell Park', 'North Shore', 'Corio', 'Geelong West', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5162,7 +5162,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Norlane VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Norlane Geelong VIC. Police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Norlane Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Corio', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Geelong West', 'Bell Post Hill', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5241,7 +5241,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Shore VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in North Shore Geelong VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in North Shore Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5316,7 +5316,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Corio VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Corio Geelong VIC. Police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
+      description: 'House cleaning in Corio Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Lara', 'Bell Post Hill', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5395,7 +5395,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lara VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Lara VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
+      description: 'House cleaning in Lara VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
     },
     nearbySuburbs: ['Geelong', 'Corio', 'North Shore', 'Norlane', 'Ocean Grove', 'Werribee', 'Little River'],
     contentUpdated: '2026-08-19',
@@ -5474,7 +5474,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Curlewis VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Curlewis on the Bellarine Peninsula VIC. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Curlewis on the Bellarine Peninsula VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5549,7 +5549,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Armstrong Creek | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Armstrong Creek VIC. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
+      description: 'House cleaning in Armstrong Creek VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
     },
     nearbySuburbs: ['Grovedale', 'Waurn Ponds', 'Mount Duneed', 'Highton', 'Belmont', 'Ocean Grove', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5628,7 +5628,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Grovedale VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Grovedale VIC. Police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
+      description: 'House cleaning in Grovedale VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
     },
     nearbySuburbs: ['Waurn Ponds', 'Highton', 'Belmont', 'Armstrong Creek', 'Mount Duneed', 'Geelong', 'Torquay'],
     contentUpdated: '2026-08-19',
@@ -5707,7 +5707,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Waurn Ponds VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Waurn Ponds VIC near Deakin University. Police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'House cleaning in Waurn Ponds VIC near Deakin University. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Grovedale', 'Highton', 'Armstrong Creek', 'Mount Duneed', 'Belmont', 'Geelong', 'Torquay'],
     contentUpdated: '2026-08-19',
@@ -5786,7 +5786,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mount Duneed | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Mount Duneed VIC near Torquay. Police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
+      description: 'House cleaning in Mount Duneed VIC near Torquay. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Grovedale', 'Waurn Ponds', 'Highton', 'Torquay', 'Jan Juc', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -5865,7 +5865,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ballarat VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Ballarat, Lake Wendouree, Alfredton, Lucas & Sebastopol. Heritage-home friendly. Police-checked, fully insured.',
+      description: 'House cleaning in Ballarat, Lake Wendouree, Alfredton, Lucas & Sebastopol. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Ballarat Central', 'Ballarat East', 'Ballarat North', 'Lake Wendouree', 'Wendouree', 'Soldiers Hill', 'Black Hill', 'Nerrina', 'Brown Hill', 'Mount Pleasant', 'Mount Clear', 'Mount Helen', 'Sebastopol', 'Delacombe', 'Alfredton', 'Lucas', 'Buninyong', 'Cardigan', 'Smythes Creek', 'Miners Rest', 'Invermay', 'Warrenheip'],
     contentUpdated: '2026-08-19',
@@ -5944,7 +5944,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Dandenong VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Dandenong North', 'Dandenong South', 'Springvale', 'Springvale South', 'Noble Park', 'Noble Park North', 'Keysborough', 'Bangholme', 'Endeavour Hills', 'Hallam', 'Lyndhurst', 'Doveton', 'Lynbrook', 'Eumemmerring', 'Berwick', 'Narre Warren', 'Hampton Park', 'Cranbourne'],
     contentUpdated: '2026-08-19',
@@ -6023,7 +6023,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mornington VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Mount Eliza', 'Mount Martha', 'Moorooduc', 'Tuerong', 'Somerville', 'Tyabb', 'Hastings', 'Bittern', 'Crib Point', 'Balnarring', 'Merricks', 'Red Hill', 'Red Hill South', 'Main Ridge', 'Arthurs Seat', 'Dromana', 'Safety Beach', 'Rosebud', 'McCrae', 'Capel Sound', 'Rye', 'Sorrento', 'Portsea', 'Blairgowrie'],
     contentUpdated: '2026-08-19',
@@ -6102,7 +6102,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Narre Warren | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Narre Warren North', 'Narre Warren South', 'Berwick', 'Beaconsfield', 'Beaconsfield Upper', 'Officer', 'Cranbourne', 'Cranbourne North', 'Cranbourne West', 'Cranbourne East', 'Hampton Park', 'Lynbrook', 'Lyndhurst', 'Lysterfield', 'Lysterfield South', 'Hallam', 'Endeavour Hills', 'Doveton', 'Pakenham'],
     contentUpdated: '2026-08-19',
@@ -6181,7 +6181,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Toorak VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Toorak, South Yarra, Armadale & Malvern. Premium period homes, gentle on stone & marble. Police-checked, fully insured.',
+      description: 'House cleaning in Toorak, South Yarra, Armadale & Malvern. Eco-friendly, premium period homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['South Yarra', 'Armadale', 'Malvern', 'Malvern East', 'Prahran', 'Windsor', 'Hawthorn', 'Hawthorn East', 'Camberwell', 'Caulfield', 'Caulfield North', 'Caulfield South', 'Caulfield East', 'Glen Iris', 'St Kilda East', 'Elsternwick', 'Kooyong', 'Burnley', 'Cremorne', 'Richmond'],
     contentUpdated: '2026-08-19',
@@ -6260,7 +6260,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newcomb VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Newcomb, eastern Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'House cleaning in Newcomb, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Whittington', 'St Albans Park', 'Moolap', 'Thomson', 'East Geelong', 'Leopold', 'Breakwater', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6338,7 +6338,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Whittington VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Whittington, eastern Geelong VIC. Police-checked, insured cleaners for regular, deep and end-of-lease cleans. Book online.',
+      description: 'House cleaning in Whittington, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease cleans. Book online.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Thomson', 'Breakwater', 'Moolap', 'East Geelong', 'Belmont', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6412,7 +6412,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning St Albans Park | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in St Albans Park, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'House cleaning in St Albans Park, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Newcomb', 'Whittington', 'Moolap', 'Leopold', 'Thomson', 'Breakwater', 'Belmont', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6490,7 +6490,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Thomson VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Thomson, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get an online quote.',
+      description: 'House cleaning in Thomson, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get an online quote.',
     },
     nearbySuburbs: ['Breakwater', 'Whittington', 'Newcomb', 'East Geelong', 'South Geelong', 'Belmont', 'St Albans Park', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6564,7 +6564,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Moolap VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Moolap, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Free online quote.',
+      description: 'House cleaning in Moolap, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Free online quote.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Whittington', 'Leopold', 'Thomson', 'Curlewis', 'East Geelong', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6642,7 +6642,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Breakwater VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Breakwater, Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get a free online quote.',
+      description: 'House cleaning in Breakwater, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get a free online quote.',
     },
     nearbySuburbs: ['Thomson', 'Whittington', 'Belmont', 'South Geelong', 'East Geelong', 'Newcomb', 'St Albans Park', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6721,7 +6721,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Geelong | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in North Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease jobs. Free instant online quote.',
+      description: 'House cleaning in North Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs. Free instant online quote.',
     },
     nearbySuburbs: ['Rippleside', 'Herne Hill', 'Bell Park', 'Geelong West', 'North Shore', 'Norlane', 'Geelong', 'Hamlyn Heights'],
     contentUpdated: '2026-08-19',
@@ -6795,7 +6795,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Rippleside VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in bayside Rippleside Geelong VIC. Police-checked, insured cleaners, careful with period homes. Free instant online quote.',
+      description: 'House cleaning in bayside Rippleside Geelong VIC. Eco-friendly, police-checked, insured cleaners, careful with period homes. Free instant online quote.',
     },
     nearbySuburbs: ['North Geelong', 'Geelong West', 'Herne Hill', 'Manifold Heights', 'Bell Park', 'North Shore', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -6873,7 +6873,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Fyansford VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Fyansford Geelong VIC. Police-checked, insured cleaners for new homes and heritage cottages alike. Free instant online quote.',
+      description: 'House cleaning in Fyansford Geelong VIC. Eco-friendly, police-checked, insured cleaners for new homes and heritage cottages alike. Free instant online quote.',
     },
     nearbySuburbs: ['Herne Hill', 'Hamlyn Heights', 'Manifold Heights', 'Newtown', 'Highton', 'Ceres', 'Batesford', 'Geelong West'],
     contentUpdated: '2026-08-19',
@@ -6947,7 +6947,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ceres VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Ceres near Geelong VIC. Police-checked, insured cleaners for acreage and lifestyle properties. Free instant online quote.',
+      description: 'House cleaning in Ceres near Geelong VIC. Eco-friendly, police-checked, insured cleaners for acreage and lifestyle properties. Free instant online quote.',
     },
     nearbySuburbs: ['Fyansford', 'Batesford', 'Highton', 'Wandana Heights', 'Newtown', 'Waurn Ponds', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7025,7 +7025,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Batesford VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Batesford near Geelong VIC. Police-checked, insured cleaners for township and semi-rural homes. Free instant online quote.',
+      description: 'House cleaning in Batesford near Geelong VIC. Eco-friendly, police-checked, insured cleaners for township and semi-rural homes. Free instant online quote.',
     },
     nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7099,7 +7099,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lovely Banks | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Lovely Banks Geelong VIC. Police-checked, insured cleaners for new estate and acreage homes. Free instant online quote.',
+      description: 'House cleaning in Lovely Banks Geelong VIC. Eco-friendly, police-checked, insured cleaners for new estate and acreage homes. Free instant online quote.',
     },
     nearbySuburbs: ['Bell Post Hill', 'Corio', 'Norlane', 'Lara', 'Batesford', 'Hamlyn Heights', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7178,7 +7178,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Marshall VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Marshall, south Geelong VIC. Police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'House cleaning in Marshall, south Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Belmont', 'Grovedale', 'Charlemont', 'Armstrong Creek', 'Waurn Ponds', 'Highton', 'Leopold', 'South Geelong'],
     contentUpdated: '2026-08-19',
@@ -7256,7 +7256,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Charlemont VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Charlemont, Armstrong Creek growth area VIC. New-build first cleans, regular and deep cleans by police-checked cleaners.',
+      description: 'House cleaning in Charlemont, Armstrong Creek growth area VIC. Eco-friendly, new-build first cleans, regular and deep cleans by police-checked cleaners.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Mount Duneed', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Belmont', 'Connewarre', 'Torquay'],
     contentUpdated: '2026-08-19',
@@ -7330,7 +7330,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wallington VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Wallington on the Bellarine Peninsula VIC. Acreage and lifestyle homes cleaned by police-checked, insured cleaners. Book online.',
+      description: 'House cleaning in Wallington on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes cleaned by police-checked, insured cleaners. Book online.',
     },
     nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Curlewis', 'Barwon Heads', 'Leopold', 'Connewarre', 'Clifton Springs', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7408,7 +7408,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Connewarre VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Connewarre on the Bellarine Peninsula VIC. Acreage and lifestyle homes, police-checked and insured cleaners, book online.',
+      description: 'House cleaning in Connewarre on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes, police-checked and insured cleaners, book online.',
     },
     nearbySuburbs: ['Barwon Heads', 'Ocean Grove', 'Wallington', 'Armstrong Creek', 'Mount Duneed', 'Marshall', 'Leopold', 'Torquay'],
     contentUpdated: '2026-08-19',
@@ -7482,7 +7482,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Clifton Springs | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Clifton Springs on the Bellarine Peninsula VIC. Home Care Package and NDIS friendly cleans, police-checked, insured cleaners.',
+      description: 'House cleaning in Clifton Springs on the Bellarine Peninsula VIC. Eco-friendly, home Care Package and NDIS friendly cleans, police-checked, insured cleaners.',
     },
     nearbySuburbs: ['Drysdale', 'Curlewis', 'Portarlington', 'Leopold', 'Wallington', 'Ocean Grove', 'St Leonards', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7561,7 +7561,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Portarlington | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Portarlington VIC. Police-checked, insured cleaners for homes, holiday houses, regular, deep clean and end-of-lease work.',
+      description: 'House cleaning in Portarlington VIC. Eco-friendly, police-checked, insured cleaners for homes, holiday houses, regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Indented Head', 'St Leonards', 'Drysdale', 'Curlewis', 'Leopold', 'Ocean Grove', 'Marcus Hill', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7639,7 +7639,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning St Leonards VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in St Leonards VIC on the Bellarine Peninsula. Police-checked, insured cleaners for regular, deep clean and end-of-lease jobs.',
+      description: 'House cleaning in St Leonards VIC on the Bellarine Peninsula. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs.',
     },
     nearbySuburbs: ['Indented Head', 'Portarlington', 'Drysdale', 'Marcus Hill', 'Queenscliff', 'Curlewis', 'Ocean Grove', 'Leopold'],
     contentUpdated: '2026-08-19',
@@ -7713,7 +7713,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Indented Head | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Indented Head VIC. Police-checked, insured cleaners for beach houses, regular cleans, deep cleans and end-of-lease work.',
+      description: 'House cleaning in Indented Head VIC. Eco-friendly, police-checked, insured cleaners for beach houses, regular cleans, deep cleans and end-of-lease work.',
     },
     nearbySuburbs: ['St Leonards', 'Portarlington', 'Drysdale', 'Curlewis', 'Marcus Hill', 'Leopold', 'Ocean Grove', 'Queenscliff'],
     contentUpdated: '2026-08-19',
@@ -7787,7 +7787,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Point Lonsdale | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Point Lonsdale VIC. Police-checked, insured cleaners for coastal homes, regular cleans, deep cleans and end-of-lease work.',
+      description: 'House cleaning in Point Lonsdale VIC. Eco-friendly, police-checked, insured cleaners for coastal homes, regular cleans, deep cleans and end-of-lease work.',
     },
     nearbySuburbs: ['Queenscliff', 'Ocean Grove', 'Barwon Heads', 'Marcus Hill', 'Drysdale', 'St Leonards', 'Indented Head', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7865,7 +7865,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Queenscliff VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Queenscliff VIC. Police-checked, insured cleaners, gentle on heritage finishes. Regular, deep clean and end-of-lease work.',
+      description: 'House cleaning in Queenscliff VIC. Eco-friendly, police-checked, insured cleaners, gentle on heritage finishes. Regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Point Lonsdale', 'Marcus Hill', 'St Leonards', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Indented Head', 'Geelong'],
     contentUpdated: '2026-08-19',
@@ -7943,7 +7943,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Marcus Hill VIC | Eco-Friendly',
-      description: 'Eco-friendly house cleaning in Marcus Hill VIC on the Bellarine. Police-checked, insured cleaners for rural and acreage homes, regular and deep cleans.',
+      description: 'House cleaning in Marcus Hill VIC on the Bellarine. Eco-friendly, police-checked, insured cleaners for rural and acreage homes, regular and deep cleans.',
     },
     nearbySuburbs: ['Drysdale', 'Point Lonsdale', 'Queenscliff', 'Ocean Grove', 'Curlewis', 'Leopold', 'St Leonards', 'Barwon Heads'],
     contentUpdated: '2026-08-19',

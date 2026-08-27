@@ -69,18 +69,18 @@ Tick each off as you go.
 - [x] `/house-cleaning-south-geelong/`
 - [x] `/house-cleaning-grovedale/`
 - [x] `/house-cleaning-waurn-ponds/`
-- [ ] `/house-cleaning-armstrong-creek/`
-- [ ] `/house-cleaning-jan-juc/`
+- [x] `/house-cleaning-armstrong-creek/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-jan-juc/` — verified already indexed 2026-08-27, no request needed
 
 ### Day 3 — northern + western Geelong
-- [ ] `/house-cleaning-corio/`
-- [ ] `/house-cleaning-lara/`
-- [ ] `/house-cleaning-norlane/`
-- [ ] `/house-cleaning-bell-park/`
-- [ ] `/house-cleaning-bell-post-hill/`
-- [ ] `/house-cleaning-hamlyn-heights/`
-- [ ] `/house-cleaning-herne-hill/`
-- [ ] `/house-cleaning-manifold-heights/`
+- [x] `/house-cleaning-corio/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-lara/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-norlane/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-bell-park/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-bell-post-hill/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-hamlyn-heights/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-herne-hill/` — verified already indexed 2026-08-27, no request needed
+- [x] `/house-cleaning-manifold-heights/` — verified already indexed 2026-08-27, no request needed
 
 ### Day 4 — remaining Geelong + Bellarine
 - [ ] `/house-cleaning-wandana-heights/`

@@ -16,10 +16,19 @@ export type ServiceDetail = {
   whatsIncluded: { group: string; items: string[] }[];
   process: { step: string; title: string; desc: string }[];
   faqIds?: string[];
+  /** Slugs from posts.ts that genuinely cover this service. Optional:
+   *  services with no matching guide render no resources block. */
+  relatedPosts?: string[];
 };
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   'house-cleaning': {
+    relatedPosts: [
+      'house-cleaning-cost-geelong',
+      'house-cleaning-cost-port-macquarie',
+      'eco-friendly-cleaning-geelong',
+      'non-toxic-cleaning-products-australia',
+    ],
     hero: {
       eyebrow: 'Regular cleaning',
       heading: 'House Cleaning<br />Reliable<br />Every visit',
@@ -76,6 +85,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'deep-clean': {
+    relatedPosts: [
+      'how-to-clean-oven-grease-naturally',
+      'shower-screen-soap-scum-removal',
+      'pet-safe-carpet-stain-removal',
+    ],
     hero: {
       eyebrow: 'One-off deep clean',
       heading: 'Deep Cleaning<br />Top-to-bottom<br />Sparkle',
@@ -132,6 +146,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'end-of-lease': {
+    relatedPosts: [
+      'end-of-lease-cleaning-checklist-australia',
+      'end-of-lease-cleaning-geelong-checklist',
+      'end-of-lease-cleaning-port-macquarie-checklist',
+    ],
     hero: {
       eyebrow: 'Bond clean',
       heading: 'End of Lease<br />Bond-back<br />Guaranteed',
@@ -201,6 +220,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'ndis-cleaning': {
+    relatedPosts: [
+      'ndis-cleaning-routine-supports-independence',
+      'ndis-cleaning-geelong-guide',
+      'ndis-cleaning-port-macquarie-guide',
+    ],
     hero: {
       eyebrow: 'NDIS-friendly cleaning',
       heading: 'NDIS Cleaning<br />Compassionate<br />In-home support',

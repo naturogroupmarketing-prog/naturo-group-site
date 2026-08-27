@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import ServiceIntro from '../../components/ServiceIntro.astro';
 import ServiceInclusions from '../../components/ServiceInclusions.astro';
+import ServiceResources from '../../components/ServiceResources.astro';
 import PricingCards from '../../components/PricingCards.astro';
 import Features from '../../components/Features.astro';
 import Providers from '../../components/Providers.astro';
@@ -86,7 +87,10 @@ const schema = [
   <!-- 3. What's included -->
   <ServiceInclusions groups={detail.whatsIncluded} />
 
-  <!-- 4. Why choose Naturo -->
+  <!-- 4. Guides for this service (renders only where genuine matches exist) -->
+  <ServiceResources slugs={detail.relatedPosts} serviceTitle={service.title} />
+
+  <!-- 5. Why choose Naturo -->
   <Features />
 
   <!-- 5. Social proof -->

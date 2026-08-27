@@ -19,10 +19,13 @@ export type ServiceDetail = {
   /** Slugs from posts.ts that genuinely cover this service. Optional:
    *  services with no matching guide render no resources block. */
   relatedPosts?: string[];
+  /** ISO date this page's copy last genuinely changed; feeds sitemap lastmod. */
+  contentUpdated?: string;
 };
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   'house-cleaning': {
+    contentUpdated: '2026-08-27',
     relatedPosts: [
       'house-cleaning-cost-geelong',
       'house-cleaning-cost-port-macquarie',
@@ -85,6 +88,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'deep-clean': {
+    contentUpdated: '2026-08-27',
     relatedPosts: [
       'how-to-clean-oven-grease-naturally',
       'shower-screen-soap-scum-removal',
@@ -146,6 +150,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'end-of-lease': {
+    contentUpdated: '2026-08-27',
     relatedPosts: [
       'end-of-lease-cleaning-checklist-australia',
       'end-of-lease-cleaning-geelong-checklist',
@@ -220,6 +225,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'ndis-cleaning': {
+    contentUpdated: '2026-08-27',
     relatedPosts: [
       'ndis-cleaning-routine-supports-independence',
       'ndis-cleaning-geelong-guide',

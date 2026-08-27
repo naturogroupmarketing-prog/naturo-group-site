@@ -141,6 +141,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Port Macquarie'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Mid North Coast',
     },
     intro: {
@@ -257,7 +258,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Wauchope & Hastings Valley NSW. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean older weatherboard cottages in Wauchope?',
@@ -336,7 +337,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lake Cathie & Mid North Coast NSW. Eco-friendly, police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you handle holiday-let and short-stay turnovers in Lake Cathie?',
@@ -415,7 +416,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Bonny Hills & Rainbow Beach NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean older fibro and timber beach cottages in Bonny Hills?',
@@ -494,7 +495,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Laurieton & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean heritage and older homes around Laurieton\'s foreshore?',
@@ -573,7 +574,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in North Haven & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean fishing cottages and beach houses in North Haven?',
@@ -652,7 +653,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Dunbogan & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Is Dunbogan too small for you to service regularly?',
@@ -731,7 +732,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Camden Head & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you travel out to Camden Head?',
@@ -810,7 +811,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Telegraph Point & Hastings Valley NSW. Eco-friendly, police-checked, insured. Suitable for rural and hobby-farm homes.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you handle the dust and mud that comes with a rural property?',
@@ -889,7 +890,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Sancrox near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean both new estate homes and rural blocks in Sancrox?',
@@ -968,7 +969,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Kendall & Manning Valley NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean federation-era homes and character cottages in Kendall?',
@@ -1047,7 +1048,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Comboyne & Comboyne Plateau NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property cleaning.',
     },
     nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you actually come up onto the Comboyne Plateau?',
@@ -1126,7 +1127,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Beechwood & Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean horse properties and hobby farms in Beechwood?',
@@ -1205,7 +1206,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Bago near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Will you travel out to bush-block properties on the edge of the Bago State Forest?',
@@ -1284,7 +1285,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Rollands Plains & Hastings hinterland NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural services.',
     },
     nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you deal with muddy boot entries and timber floors on a working property?',
@@ -1363,7 +1364,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Pembrooke near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe around farm animals and dairy properties?',
@@ -1442,7 +1443,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Kew on the Mid North Coast NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean holiday homes and short-stay properties at Kew?',
@@ -1521,7 +1522,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lakewood near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & new-home services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe for babies, toddlers and pets in a new-estate home?',
@@ -1600,7 +1601,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in King Creek near Port Macquarie NSW. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you charge differently for acreage homes with large floor areas?',
@@ -1679,7 +1680,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Settlement Point on the Hastings River NSW. Eco-friendly, police-checked, insured. Waterfront, holiday-let & regular cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you understand the extra wear that riverside homes get?',
@@ -1758,7 +1759,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lighthouse Beach Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you turn over a holiday let between guests on the same day?',
@@ -1798,6 +1799,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/cleaners-byron-bay.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Byron Bay'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Northern Rivers',
     },
     intro: {
@@ -1911,7 +1913,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Gosford', 'Terrigal', 'Avoca Beach', 'Erina', 'Wyong', 'Tuggerah', 'The Entrance', 'Long Jetty', 'Woy Woy', 'Ettalong Beach', 'Umina Beach', 'Killarney Vale', 'Bateau Bay', 'Forresters Beach', 'Kincumber', 'Saratoga', 'Davistown', 'Berkeley Vale', 'Lake Munmorah', 'Toukley'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you fit a clean around a Sydney commute?',
@@ -1990,7 +1992,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lismore & the Northern Rivers. Eco-friendly, insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Goonellabah', 'Wollongbar', 'Alstonville', 'Casino', 'Nimbin', 'Clunes', 'Dunoon', 'Bexhill', 'Modanville', 'Ruthven', 'Caniaba', 'Tregeagle', 'Wyrallah', 'North Lismore', 'East Lismore', 'South Lismore', 'Girards Hill', 'Loftville', 'Eltham'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean a home that has just been rebuilt after flooding?',
@@ -2069,7 +2071,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Hamilton', 'Merewether', 'The Junction', 'Cooks Hill', 'New Lambton', 'Adamstown', 'Bar Beach', 'Stockton', 'Mayfield', 'Wickham', 'Islington', 'Hamilton East', 'Tighes Hill', 'Carrington', 'Waratah', 'Lambton', 'Charlestown', 'Kahibah', 'Newcastle East', 'Newcastle West'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you work around shift rosters?',
@@ -2148,7 +2150,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Cronulla', 'Caringbah', 'Miranda', 'Gymea', 'Engadine', 'Heathcote', 'Sylvania', 'Kirrawee', 'Jannali', 'Como', 'Oyster Bay', 'Bonnet Bay', 'Sylvania Waters', 'Yowie Bay', 'Grays Point', 'Loftus', 'Woronora', 'Menai', 'Illawong', 'Bangor'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe for kids, dogs and a backyard pond?',
@@ -2227,7 +2229,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Which parts of Sydney do your cleaners actually cover?',
@@ -2302,7 +2304,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Banora Point', 'Tweed Heads South', 'Tweed Heads West', 'Bilambil', 'Terranora', 'Cobaki Lakes', 'Kingscliff', 'Casuarina', 'Pottsville', 'Cabarita Beach', 'Hastings Point', 'Bogangar', 'Murwillumbah', 'Chinderah', 'Fingal Head', 'Bilambil Heights', 'Piggabeen'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean holiday rentals and Airbnb properties around Tweed Heads?',
@@ -2381,7 +2383,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Parramatta & Western Sydney \u2014 CBD apartments, Westmead, Harris Park, North Parramatta. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Harris Park', 'Westmead', 'North Parramatta', 'Northmead', 'Wentworthville', 'Granville', 'Merrylands', 'Rosehill', 'Camellia', 'Carlingford', 'Telopea', 'Rydalmere', 'Dundas', 'Ermington', 'Oatlands', 'Old Toongabbie', 'South Granville', 'Holroyd'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you schedule cleans around hospital shifts at Westmead?',
@@ -2456,7 +2458,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Fairy Meadow', 'North Wollongong', 'Coniston', 'Mangerton', 'Mount Pleasant', 'Mount Ousley', 'Keiraville', 'Gwynneville', 'Figtree', 'West Wollongong', 'Mount Saint Thomas', 'Cordeaux Heights', 'Unanderra', 'Berkeley', 'Corrimal', 'Bellambi', 'Thirroul', 'Bulli', 'Woonona', 'Austinmer'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you do end-of-lease cleans for student rentals near the University of Wollongong?',
@@ -2535,7 +2537,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Manly', 'Dee Why', 'Brookvale', 'Collaroy', 'Narrabeen', 'Mona Vale', 'Avalon Beach', 'Newport', 'Palm Beach', 'Whale Beach', 'Freshwater', 'Curl Curl', 'Queenscliff', 'Balgowlah', 'Seaforth', 'Forestville', 'Frenchs Forest', 'Beacon Hill', 'Cromer', 'Warriewood', 'Bayview', 'Church Point'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you travel the full 30km of the peninsula from Manly to Palm Beach?',
@@ -2610,7 +2612,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Bondi', 'Bondi Beach', 'Bronte', 'Coogee', 'Tamarama', 'Clovelly', 'Maroubra', 'Randwick', 'Waverley', 'Bondi Junction', 'Queens Park', 'Kensington', 'Kingsford', 'North Bondi', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Little Bay', 'Malabar'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Why is end-of-lease cleaning so common along the Eastern Beaches?',
@@ -2685,7 +2687,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Bondi & the Eastern Suburbs. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Bondi Beach', 'North Bondi', 'Bondi Junction', 'Tamarama', 'Bronte', 'Waverley', 'Queens Park', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Watsons Bay', 'Double Bay', 'Bellevue Hill', 'Woollahra', 'Paddington', 'Centennial Park', 'Clovelly', 'Coogee'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you handle Airbnb and holiday-let turnovers in Bondi?',
@@ -2760,7 +2762,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Manly, Fairlight, Balgowlah & Freshwater. Eco-friendly, holiday-let turnovers, regular cleans. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Fairlight', 'Balgowlah', 'Balgowlah Heights', 'Clontarf', 'Seaforth', 'North Balgowlah', 'Queenscliff', 'Freshwater', 'Curl Curl', 'North Manly', 'Brookvale', 'Allambie Heights', 'Beacon Hill', 'Frenchs Forest', 'Killarney Heights', 'Manly Vale', 'Dee Why'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean while I am on the ferry to work?',
@@ -2839,7 +2841,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Mosman, Cremorne, Neutral Bay & Balmoral. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Beauty Point', 'Clifton Gardens', 'Balmoral', 'The Spit', 'Cremorne', 'Cremorne Point', 'Neutral Bay', 'Cammeray', 'Northbridge', 'Castlecrag', 'Castle Cove', 'Willoughby', 'Naremburn', 'Wollstonecraft', 'McMahons Point', 'Kirribilli', 'Lavender Bay', 'Crows Nest'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe for marble bathrooms and natural-stone benchtops?',
@@ -2914,7 +2916,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Eco-friendly, heritage-home friendly. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Woolwich', 'Henley', 'Gladesville', 'Boronia Park', 'Putney', 'Tennyson Point', 'Mortlake', 'Concord', 'Drummoyne', 'Russell Lea', 'Five Dock', 'Abbotsford', 'Chiswick', 'Wareemba', 'Lane Cove', 'Riverview', 'Linley Point', 'Longueville', 'Northwood'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do your cleaners know how to look after 1860s sandstone homes?',
@@ -2993,7 +2995,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Vaucluse, Watsons Bay, Rose Bay & Bellevue Hill. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked.',
     },
     nearbySuburbs: ['Watsons Bay', 'Dover Heights', 'Rose Bay', 'Point Piper', 'Bellevue Hill', 'Double Bay', 'Darling Point', 'Edgecliff', 'Woollahra', 'Paddington', 'Bondi', 'North Bondi', 'Bondi Junction', 'Diamond Bay', 'Hermit Point', 'Parsley Bay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'How do you protect marble, natural stone and premium joinery?',
@@ -3071,7 +3073,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['New Farm', 'Fortitude Valley', 'Newstead', 'Teneriffe', 'West End', 'South Brisbane', 'Highgate Hill', 'Paddington', 'Milton', 'Toowong', 'Auchenflower', 'Spring Hill', 'Kelvin Grove', 'Red Hill', 'Bardon', 'Ascot', 'Hamilton', 'Bulimba', 'Hawthorne', 'Norman Park', 'Camp Hill', 'Coorparoo', 'Greenslopes'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you know how to clean a classic Queenslander?',
@@ -3150,7 +3152,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Cairns, Trinity Beach, Palm Cove & the Northern Beaches. Eco-friendly, reef-safe products. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Edge Hill', 'Whitfield', 'Manunda', 'Manoora', 'Mooroobool', 'Westcourt', 'Earlville', 'Bungalow', 'Parramatta Park', 'Trinity Beach', 'Palm Cove', 'Clifton Beach', 'Kewarra Beach', 'Smithfield', 'Yorkeys Knob', 'Holloways Beach', 'Machans Beach', 'Redlynch', 'Stratford', 'Freshwater', 'Brinsmead'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do your products cope with the humidity in Cairns homes?',
@@ -3229,7 +3231,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across the Gold Coast \u2014 Surfers, Broadbeach, Burleigh, Palm Beach, Coolangatta. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Surfers Paradise', 'Broadbeach', 'Mermaid Beach', 'Burleigh Heads', 'Palm Beach', 'Currumbin', 'Coolangatta', 'Tugun', 'Miami', 'Nobby Beach', 'Bilinga', 'Kirra', 'Robina', 'Varsity Lakes', 'Mudgeeraba', 'Reedy Creek', 'Helensvale', 'Hope Island', 'Southport', 'Main Beach', 'Labrador', 'Biggera Waters', 'Runaway Bay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean high-rise apartments as well as houses on the Gold Coast?',
@@ -3308,7 +3310,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Brassall', 'Booval', 'Bundamba', 'Eastern Heights', 'Newtown', 'Raceview', 'Silkstone', 'Sadliers Crossing', 'North Ipswich', 'Wulkuraka', 'One Mile', 'Goodna', 'Redbank', 'Springfield', 'Springfield Lakes', 'Augustine Heights', 'Karalee', 'Karana Downs', 'Rosewood', 'Walloon', 'Marburg', 'Yamanto'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe for the timber in an Ipswich Queenslander?',
@@ -3387,7 +3389,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you service the hinterland as well as the beaches?',
@@ -3466,7 +3468,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Toowoomba, East Toowoomba, Rangeville & Highfields. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['East Toowoomba', 'North Toowoomba', 'South Toowoomba', 'Newtown', 'Rangeville', 'Mount Lofty', 'Centenary Heights', 'Middle Ridge', 'Kearneys Spring', 'Glenvale', 'Wilsonton', 'Harristown', 'Drayton', 'Westbrook', 'Highfields', 'Cabarlah', 'Crows Nest', 'Withcott', 'Helidon', 'Hodgson Vale'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean heritage Federation homes and Queenslander cottages?',
@@ -3545,7 +3547,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['North Ward', 'Belgian Gardens', 'Castle Hill', 'South Townsville', 'Railway Estate', 'Hyde Park', 'Mundingburra', 'Hermit Park', 'Aitkenvale', 'Currajong', 'Gulliver', 'Pimlico', 'Rosslea', 'Cranbrook', 'Vincent', 'Heatley', 'Kirwan', 'Thuringowa Central', 'Annandale', 'Douglas', 'Idalia', 'Pallarenda'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you do end-of-posting cleans for ADF families?',
@@ -3588,6 +3590,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/cleaners-melbourne.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Melbourne'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Greater Melbourne',
     },
     intro: {
@@ -3662,6 +3665,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Geelong'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Geelong & the Bellarine',
     },
     intro: {
@@ -3764,6 +3768,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Torquay'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
     },
     intro: {
@@ -3838,6 +3843,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Ocean Grove'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -3912,6 +3918,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Barwon Heads'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -3982,6 +3989,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Drysdale'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -4052,6 +4060,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Leopold'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Leopold & the Bellarine',
     },
     intro: {
@@ -4122,6 +4131,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Trusted', 'House Cleaners in', 'Jan Juc'],
+    contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
     },
     intro: {
@@ -4233,7 +4243,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Newtown Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your cleaners experienced with Victorian and Edwardian homes?',
@@ -4312,7 +4322,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in East Geelong VIC. Eco-friendly, heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Newtown', 'South Geelong', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean weatherboard cottages without damaging period finishes?',
@@ -4391,7 +4401,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in South Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'East Geelong', 'Newtown', 'Manifold Heights', 'Geelong West', 'Belmont', 'Herne Hill'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean apartments and terraces, not just houses?',
@@ -4470,7 +4480,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Geelong West VIC. Eco-friendly, plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Herne Hill', 'Newtown', 'South Geelong', 'Hamlyn Heights', 'Bell Park'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'What makes your products a good fit for Geelong West?',
@@ -4549,7 +4559,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Belmont Geelong VIC. Eco-friendly, family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can cleans be scheduled around school drops and after-school sport?',
@@ -4628,7 +4638,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Highton Geelong VIC. Eco-friendly, premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Belmont', 'Wandana Heights', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Newtown'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe on stone benchtops and premium timber?',
@@ -4707,7 +4717,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Wandana Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Highton', 'Belmont', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Geelong', 'Newtown'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Will your products streak the windows in a bay-view home?',
@@ -4786,7 +4796,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Manifold Heights Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'Herne Hill', 'South Geelong', 'Geelong', 'Hamlyn Heights', 'Bell Park'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'How do you clean period homes without damaging original features?',
@@ -4861,7 +4871,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Herne Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong West', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Geelong', 'Newtown', 'Bell Post Hill'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean 1960s brick homes and older family residences?',
@@ -4936,7 +4946,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Hamlyn Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Herne Hill', 'Geelong West', 'Bell Park', 'Bell Post Hill', 'Norlane', 'Geelong', 'Manifold Heights'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean during school holidays when the house is busy?',
@@ -5015,7 +5025,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Bell Park Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Norlane', 'Geelong West', 'Herne Hill', 'Bell Post Hill', 'Corio', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean older fibro and weatherboard homes?',
@@ -5090,7 +5100,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Bell Post Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Herne Hill', 'Bell Park', 'North Shore', 'Corio', 'Geelong West', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you handle larger homes on bigger blocks?',
@@ -5165,7 +5175,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Norlane Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Corio', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Geelong West', 'Bell Post Hill', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean rental properties and homes in Norlane\'s older estates?',
@@ -5244,7 +5254,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in North Shore Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean window sills and tracks as part of a visit?',
@@ -5319,7 +5329,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Corio Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Lara', 'Bell Post Hill', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean brand new estate homes in Corio as well as established houses?',
@@ -5398,7 +5408,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lara VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
     },
     nearbySuburbs: ['Geelong', 'Corio', 'North Shore', 'Norlane', 'Ocean Grove', 'Werribee', 'Little River'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean while we are commuting to Melbourne?',
@@ -5477,7 +5487,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Curlewis on the Bellarine Peninsula VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean rural residential and lifestyle blocks around Curlewis?',
@@ -5552,7 +5562,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Armstrong Creek VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
     },
     nearbySuburbs: ['Grovedale', 'Waurn Ponds', 'Mount Duneed', 'Highton', 'Belmont', 'Ocean Grove', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean in the Warralily and Oakleigh estates?',
@@ -5631,7 +5641,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Grovedale VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
     },
     nearbySuburbs: ['Waurn Ponds', 'Highton', 'Belmont', 'Armstrong Creek', 'Mount Duneed', 'Geelong', 'Torquay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Will I get the same cleaner every fortnight in Grovedale?',
@@ -5710,7 +5720,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Waurn Ponds VIC near Deakin University. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Grovedale', 'Highton', 'Armstrong Creek', 'Mount Duneed', 'Belmont', 'Geelong', 'Torquay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you do end-of-lease cleans for student rentals near the Deakin campus?',
@@ -5789,7 +5799,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Mount Duneed VIC near Torquay. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Grovedale', 'Waurn Ponds', 'Highton', 'Torquay', 'Jan Juc', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean brand-new homes before handover in Mount Duneed estates?',
@@ -5868,7 +5878,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Ballarat, Lake Wendouree, Alfredton, Lucas & Sebastopol. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Ballarat Central', 'Ballarat East', 'Ballarat North', 'Lake Wendouree', 'Wendouree', 'Soldiers Hill', 'Black Hill', 'Nerrina', 'Brown Hill', 'Mount Pleasant', 'Mount Clear', 'Mount Helen', 'Sebastopol', 'Delacombe', 'Alfredton', 'Lucas', 'Buninyong', 'Cardigan', 'Smythes Creek', 'Miners Rest', 'Invermay', 'Warrenheip'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean heritage and Federation homes without damaging period detail?',
@@ -5947,7 +5957,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Dandenong North', 'Dandenong South', 'Springvale', 'Springvale South', 'Noble Park', 'Noble Park North', 'Keysborough', 'Bangholme', 'Endeavour Hills', 'Hallam', 'Lyndhurst', 'Doveton', 'Lynbrook', 'Eumemmerring', 'Berwick', 'Narre Warren', 'Hampton Park', 'Cranbourne'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean larger multigenerational households in Dandenong?',
@@ -6026,7 +6036,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Mount Eliza', 'Mount Martha', 'Moorooduc', 'Tuerong', 'Somerville', 'Tyabb', 'Hastings', 'Bittern', 'Crib Point', 'Balnarring', 'Merricks', 'Red Hill', 'Red Hill South', 'Main Ridge', 'Arthurs Seat', 'Dromana', 'Safety Beach', 'Rosebud', 'McCrae', 'Capel Sound', 'Rye', 'Sorrento', 'Portsea', 'Blairgowrie'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean weekenders and holiday lets on the Mornington Peninsula?',
@@ -6105,7 +6115,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Narre Warren North', 'Narre Warren South', 'Berwick', 'Beaconsfield', 'Beaconsfield Upper', 'Officer', 'Cranbourne', 'Cranbourne North', 'Cranbourne West', 'Cranbourne East', 'Hampton Park', 'Lynbrook', 'Lyndhurst', 'Lysterfield', 'Lysterfield South', 'Hallam', 'Endeavour Hills', 'Doveton', 'Pakenham'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean new townhouses and estate homes around Narre Warren?',
@@ -6184,7 +6194,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Toorak, South Yarra, Armadale & Malvern. Eco-friendly, premium period homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['South Yarra', 'Armadale', 'Malvern', 'Malvern East', 'Prahran', 'Windsor', 'Hawthorn', 'Hawthorn East', 'Camberwell', 'Caulfield', 'Caulfield North', 'Caulfield South', 'Caulfield East', 'Glen Iris', 'St Kilda East', 'Elsternwick', 'Kooyong', 'Burnley', 'Cremorne', 'Richmond'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean marble, natural stone and premium joinery safely?',
@@ -6263,7 +6273,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Newcomb, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Whittington', 'St Albans Park', 'Moolap', 'Thomson', 'East Geelong', 'Leopold', 'Breakwater', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean while I am out doing the shopping in Newcomb?',
@@ -6341,7 +6351,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Whittington, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease cleans. Book online.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Thomson', 'Breakwater', 'Moolap', 'East Geelong', 'Belmont', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Will I get the same cleaner each visit in Whittington?',
@@ -6415,7 +6425,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in St Albans Park, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Newcomb', 'Whittington', 'Moolap', 'Leopold', 'Thomson', 'Breakwater', 'Belmont', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you charge more for a larger family home in St Albans Park?',
@@ -6493,7 +6503,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Thomson, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get an online quote.',
     },
     nearbySuburbs: ['Breakwater', 'Whittington', 'Newcomb', 'East Geelong', 'South Geelong', 'Belmont', 'St Albans Park', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Does living near industrial land in Thomson change how you clean?',
@@ -6567,7 +6577,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Moolap, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Free online quote.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Whittington', 'Leopold', 'Thomson', 'Curlewis', 'East Geelong', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Does being near the bay in Moolap affect the cleaning?',
@@ -6645,7 +6655,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Breakwater, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get a free online quote.',
     },
     nearbySuburbs: ['Thomson', 'Whittington', 'Belmont', 'South Geelong', 'East Geelong', 'Newcomb', 'St Albans Park', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you book cleans around shift work in Breakwater?',
@@ -6724,7 +6734,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in North Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs. Free instant online quote.',
     },
     nearbySuburbs: ['Rippleside', 'Herne Hill', 'Bell Park', 'Geelong West', 'North Shore', 'Norlane', 'Geelong', 'Hamlyn Heights'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Does living near industrial land change how you clean a North Geelong home?',
@@ -6798,7 +6808,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in bayside Rippleside Geelong VIC. Eco-friendly, police-checked, insured cleaners, careful with period homes. Free instant online quote.',
     },
     nearbySuburbs: ['North Geelong', 'Geelong West', 'Herne Hill', 'Manifold Heights', 'Bell Park', 'North Shore', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your cleaners experienced with older character homes in Rippleside?',
@@ -6876,7 +6886,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Fyansford Geelong VIC. Eco-friendly, police-checked, insured cleaners for new homes and heritage cottages alike. Free instant online quote.',
     },
     nearbySuburbs: ['Herne Hill', 'Hamlyn Heights', 'Manifold Heights', 'Newtown', 'Highton', 'Ceres', 'Batesford', 'Geelong West'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean both the newer homes and the older cottages in Fyansford?',
@@ -6950,7 +6960,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Ceres near Geelong VIC. Eco-friendly, police-checked, insured cleaners for acreage and lifestyle properties. Free instant online quote.',
     },
     nearbySuburbs: ['Fyansford', 'Batesford', 'Highton', 'Wandana Heights', 'Newtown', 'Waurn Ponds', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you travel out to acreage properties in Ceres?',
@@ -7028,7 +7038,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Batesford near Geelong VIC. Eco-friendly, police-checked, insured cleaners for township and semi-rural homes. Free instant online quote.',
     },
     nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you actually service a township as small as Batesford?',
@@ -7102,7 +7112,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Lovely Banks Geelong VIC. Eco-friendly, police-checked, insured cleaners for new estate and acreage homes. Free instant online quote.',
     },
     nearbySuburbs: ['Bell Post Hill', 'Corio', 'Norlane', 'Lara', 'Batesford', 'Hamlyn Heights', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean both the new estate homes and the older acreage in Lovely Banks?',
@@ -7181,7 +7191,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Marshall, south Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
     },
     nearbySuburbs: ['Belmont', 'Grovedale', 'Charlemont', 'Armstrong Creek', 'Waurn Ponds', 'Highton', 'Leopold', 'South Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean while I am at work and catching the train from Marshall?',
@@ -7259,7 +7269,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Charlemont, Armstrong Creek growth area VIC. Eco-friendly, new-build first cleans, regular and deep cleans by police-checked cleaners.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Mount Duneed', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Belmont', 'Connewarre', 'Torquay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you do a first clean after builder handover on a new Charlemont home?',
@@ -7333,7 +7343,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Wallington on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes cleaned by police-checked, insured cleaners. Book online.',
     },
     nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Curlewis', 'Barwon Heads', 'Leopold', 'Connewarre', 'Clifton Springs', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Are your products safe for a Wallington property on tank water and a septic system?',
@@ -7411,7 +7421,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Connewarre on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes, police-checked and insured cleaners, book online.',
     },
     nearbySuburbs: ['Barwon Heads', 'Ocean Grove', 'Wallington', 'Armstrong Creek', 'Mount Duneed', 'Marshall', 'Leopold', 'Torquay'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'We back onto paddocks and wetland. Can you keep dust and mud under control?',
@@ -7485,7 +7495,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Clifton Springs on the Bellarine Peninsula VIC. Eco-friendly, home Care Package and NDIS friendly cleans, police-checked, insured cleaners.',
     },
     nearbySuburbs: ['Drysdale', 'Curlewis', 'Portarlington', 'Leopold', 'Wallington', 'Ocean Grove', 'St Leonards', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can a Home Care Package pay for cleaning in Clifton Springs?',
@@ -7564,7 +7574,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Portarlington VIC. Eco-friendly, police-checked, insured cleaners for homes, holiday houses, regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Indented Head', 'St Leonards', 'Drysdale', 'Curlewis', 'Leopold', 'Ocean Grove', 'Marcus Hill', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Can you clean a Portarlington holiday house between guests?',
@@ -7642,7 +7652,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in St Leonards VIC on the Bellarine Peninsula. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs.',
     },
     nearbySuburbs: ['Indented Head', 'Portarlington', 'Drysdale', 'Marcus Hill', 'Queenscliff', 'Curlewis', 'Ocean Grove', 'Leopold'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Our shack has been shut up all winter. Can you open it up for summer?',
@@ -7716,7 +7726,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Indented Head VIC. Eco-friendly, police-checked, insured cleaners for beach houses, regular cleans, deep cleans and end-of-lease work.',
     },
     nearbySuburbs: ['St Leonards', 'Portarlington', 'Drysdale', 'Curlewis', 'Marcus Hill', 'Leopold', 'Ocean Grove', 'Queenscliff'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Will the products leave a smell in a house that stays closed up?',
@@ -7790,7 +7800,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Point Lonsdale VIC. Eco-friendly, police-checked, insured cleaners for coastal homes, regular cleans, deep cleans and end-of-lease work.',
     },
     nearbySuburbs: ['Queenscliff', 'Ocean Grove', 'Barwon Heads', 'Marcus Hill', 'Drysdale', 'St Leonards', 'Indented Head', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Sand and salt get into everything here. Can you deal with that?',
@@ -7868,7 +7878,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Queenscliff VIC. Eco-friendly, police-checked, insured cleaners, gentle on heritage finishes. Regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Point Lonsdale', 'Marcus Hill', 'St Leonards', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Indented Head', 'Geelong'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Our home is a period property. Will your products damage original finishes?',
@@ -7946,7 +7956,7 @@ export const suburbs: Suburb[] = [
       description: 'House cleaning in Marcus Hill VIC on the Bellarine. Eco-friendly, police-checked, insured cleaners for rural and acreage homes, regular and deep cleans.',
     },
     nearbySuburbs: ['Drysdale', 'Point Lonsdale', 'Queenscliff', 'Ocean Grove', 'Curlewis', 'Leopold', 'St Leonards', 'Barwon Heads'],
-    contentUpdated: '2026-08-19',
+    contentUpdated: '2026-08-27',
     localFaqs: [
       {
         q: 'Do you clean acreage and lifestyle properties out here?',

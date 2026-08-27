@@ -46,6 +46,20 @@ function dateMap() {
   } catch {
     /* ditto */
   }
+  try {
+    // Top-level service pages. Only entries that declare contentUpdated get a
+    // lastmod, so a service page that has not changed stays undated rather
+    // than claiming a freshness it does not have.
+    const details = readFileSync('./src/data/serviceDetail.ts', 'utf8');
+    const entryRe = /^  '([\w-]+)':\s*\{[\s\S]*?(?=^  '[\w-]+':\s*\{|^\};)/gm;
+    let m;
+    while ((m = entryRe.exec(details))) {
+      const upd = /contentUpdated:\s*'(\d{4}-\d{2}-\d{2})'/.exec(m[0]);
+      if (upd) map.set('/services/' + m[1] + '/', upd[1]);
+    }
+  } catch {
+    /* ditto */
+  }
   return map;
 }
 

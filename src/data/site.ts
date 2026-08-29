@@ -108,6 +108,13 @@ export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
 //                    `lead_captured` event to dataLayer so any tag
 //                    inside GTM (LinkedIn, TikTok, Pinterest, etc.)
 //                    can fire on it.
+//   - clarityProjectId:
+//                    Microsoft Clarity project ID (Clarity → Settings →
+//                    Overview → "Project ID", a ~10-character string like
+//                    'abcd1234ef'). Clarity records session replays and
+//                    heatmaps, so it only loads after cookie consent, the
+//                    same as every other tag here. Leave it '' to keep
+//                    Clarity switched off entirely.
 // ---------------------------------------------------------------------------
 export const leadCapture = {
   // Destinations posted ALONGSIDE crmUrl, each independently: one failing does
@@ -153,6 +160,9 @@ export const leadCapture = {
     'G-G8R9DWS9CV', // previous property, kept so its reporting stays unbroken
   ],
   gtmId: 'GTM-MKXP59G9',
+  // Microsoft Clarity — session replay + heatmaps. Paste the project ID from
+  // clarity.microsoft.com → Settings → Overview. Empty = not installed.
+  clarityProjectId: '',
 };
 
 export const nav = [

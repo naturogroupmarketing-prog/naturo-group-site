@@ -199,3 +199,31 @@ Three commits, in order:
 Every location page now has a canonical, a meta description, exactly one H1,
 at least four FAQs with FAQPage schema, LocalBusiness schema, a breadcrumb, a
 map embed, and a title under 60 characters.
+
+---
+
+## STATUS 2026-08-29 — the manual schedule is finished, and was largely unnecessary
+
+Spot-checked across the remaining queue (Days 4-17). Everything sampled came
+back "URL is on Google / Page is indexed", including pages that were NEVER
+manually submitted:
+
+- Day 4:    /services/ndis-cleaning/            indexed
+- Days 5-7: /house-cleaning-queenscliff/        indexed  (one of the 23 "new" pages)
+            /house-cleaning-lovely-banks/       indexed
+            /house-cleaning-charlemont/         indexed
+- Services: /services/insurance-cleaning/       indexed
+            /services/veterans-cleaning/        indexed
+            /services/aged-care-cleaning/       indexed
+
+The sitemap did the work, exactly as the preamble to this document predicted.
+The 23 "Google has never seen these URLs" pages were indexed without a single
+manual request. Do not spend quota working down the remaining days.
+
+**The one exception:** /services/deep-clean/ is still "Crawled - currently not
+indexed". Indexing was requested for it on 2026-08-27 and it sits in the
+priority crawl queue. Do NOT resubmit — Google's own response says
+"Submitting a page multiple times will not change its queue position or
+priority." That page needs genuinely distinct content, not another request:
+it shares 98% of its text with /services/house-cleaning/ (~300 unique words
+in a ~6,800-word page). See the boilerplate note above.

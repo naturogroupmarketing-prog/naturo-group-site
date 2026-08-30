@@ -1377,6 +1377,38 @@ const lc = {
   .qlg-btn-icon svg { display: block; width: 14px; height: 14px; }
   .qlg-btn-primary:not([disabled]):hover .qlg-btn-icon { background: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
   .qlg-btn-final { min-height: 46px; }
+  /* Keep the primary action on screen.
+     The card is the scroll container, and the button is the last child of each
+     step, so on a long question (rooms, extras) it fell below the fold and the
+     customer had to scroll to find "Continue" — the one thing they need. It now
+     sticks to the bottom of the card while the answers scroll behind it.
+
+     The white ring is doing real work: the button is a pill, so without it the
+     scrolling content shows through around its rounded ends. The ring is drawn
+     wider than the card's horizontal padding so it covers edge to edge, and the
+     existing blue glow is preserved as the second shadow. */
+  .qlg-screen > .qlg-btn-primary {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff, 0 8px 22px rgba(37, 72, 240, 0.34);
+  }
+  .qlg-screen > .qlg-btn-primary:hover {
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff, 0 12px 30px rgba(37, 72, 240, 0.44);
+  }
+  .qlg-screen > .qlg-btn-primary[disabled] {
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff;
+  }
+  /* Skip sits under the submit button on the notes step; keep the pair together
+     so the sticky button never covers it. */
+  .qlg-screen > .qlg-btn-final ~ .qlg-skip {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: #ffffff;
+    box-shadow: 0 0 0 12px #ffffff;
+  }
+
   .qlg-skip {
     align-self: center;
     background: transparent; border: 0;

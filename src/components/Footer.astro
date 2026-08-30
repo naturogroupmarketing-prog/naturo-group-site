@@ -74,8 +74,10 @@ import {
             <div class="footer-state">
               <p class="footer-state-name">{state}</p>
               <ul class="footer-state-cities">
+                {/* Canonical URLs carry a trailing slash; linking without one
+                    sends every footer link through a 301 on every page. */}
                 {locs.map((l) => (
-                  <li><a href={l.href} class="footer-city-link">{l.label}</a></li>
+                  <li><a href={l.href.endsWith('/') ? l.href : `${l.href}/`} class="footer-city-link">{l.label}</a></li>
                 ))}
               </ul>
             </div>

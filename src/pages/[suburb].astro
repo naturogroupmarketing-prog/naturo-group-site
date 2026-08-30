@@ -493,7 +493,7 @@ const schema = [
               const slug = suburbNameToSlug.get(s);
               return (
                 <li class="map-list-item">
-                  {slug ? <a href={`/${slug}`} class="map-list-link">{s}</a> : s}
+                  {slug ? <a href={`/${slug}/`} class="map-list-link">{s}</a> : s}
                 </li>
               );
             })}

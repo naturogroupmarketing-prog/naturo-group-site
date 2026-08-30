@@ -16,11 +16,21 @@ import { fitTitle } from '../lib/seo';
 // Astro dev server can post at a local AI Reception instance — otherwise
 // testing the form locally would write into production's CRM.
 const funnelBase = import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Get a Free Quote' },
+  ],
+};
 ---
 
 <Layout
   title={fitTitle('Get a Free Cleaning Quote')}
   description="Tell us about your place and we'll send you a quote. Eco-friendly residential and commercial cleaning, with police-checked cleaners."
+  schema={schema}
 >
   <section class="qf-wrap">
     <div class="container-site">

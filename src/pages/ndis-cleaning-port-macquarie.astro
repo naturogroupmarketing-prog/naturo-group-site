@@ -9,7 +9,7 @@ import Providers from '../components/Providers.astro';
 import FAQ from '../components/FAQ.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import { site, ctaPrimary , aggregateRatingSchema} from '../data/site';
+import { site, ctaPrimary  } from '../data/site';
 
 const pageUrl = `${site.url}/ndis-cleaning-port-macquarie`;
 
@@ -93,18 +93,18 @@ const portMacFaqs = [
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    // Resolve to the single Organization entity declared in Layout.astro,
-    // so every page describes one recognisable business rather than a
-    // separate one per URL.
-    parentOrganization: { '@id': `${site.url}/#organization` },
-    '@id': `${pageUrl}#localbusiness`,
-    name: 'Naturo Group — NDIS Cleaning Port Macquarie',
+    // Service, not LocalBusiness: Google requires `address` on
+    // LocalBusiness, and NATURO GROUP has no premises to name here.
+    // `provider` joins this page to the single Organization entity in
+    // Layout.astro, which is what the old parentOrganization did.
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'NDIS cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'NDIS Cleaning in Port Macquarie',
     description:
       'NDIS cleaning services in Port Macquarie for plan-managed and self-managed participants. Police-checked, trained team using eco-conscious products. Serving Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
     url: pageUrl,
-    telephone: site.phone,
-    email: site.email,
     image: {
       '@type': 'ImageObject',
       url: `${site.url}/images/suburbs/cleaners-port-macquarie.jpg`,
@@ -114,7 +114,6 @@ const schema = [
       license: `${site.url}/terms-of-service`,
       acquireLicensePage: `${site.url}/privacy-policies`,
     },
-    priceRange: '$$',
     areaServed: [
       { '@type': 'City', name: 'Port Macquarie', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
       { '@type': 'City', name: 'Wauchope', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
@@ -123,13 +122,18 @@ const schema = [
       { '@type': 'City', name: 'Laurieton', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
       { '@type': 'City', name: 'North Haven', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
     ],
-    openingHoursSpecification: {
+    hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:30',
       closes: '17:00',
     },
-    ...aggregateRatingSchema('portMacquarie'),
+    // No aggregateRating. The 4.7 / 48 figure is genuine and verified against
+    // the Google Business Profile — but a rating about the business, published
+    // on the business's own site, is self-serving and not eligible for a review
+    // snippet under Google's Review snippet policy for LocalBusiness and
+    // Organization. It cannot win stars in the SERP and it can attract a
+    // structured-data manual action. The stars come from the GBP itself.
   },
   {
     '@context': 'https://schema.org',

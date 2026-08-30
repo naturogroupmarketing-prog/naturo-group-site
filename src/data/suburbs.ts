@@ -178,7 +178,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Port Macquarie | Eco-Friendly',
-      description: 'House cleaning in Port Macquarie & the Mid North Coast. Eco-friendly, police-checked, fully insured cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
+      description: 'House cleaning in Port Macquarie & the Mid North Coast. Eco-friendly, police-checked cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
@@ -2838,7 +2838,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mosman NSW | Eco-Friendly',
-      description: 'House cleaning in Mosman, Cremorne, Neutral Bay & Balmoral. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked, fully insured.',
+      description: 'House cleaning in Mosman, Cremorne & Balmoral. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked and fully insured.',
     },
     nearbySuburbs: ['Beauty Point', 'Clifton Gardens', 'Balmoral', 'The Spit', 'Cremorne', 'Cremorne Point', 'Neutral Bay', 'Cammeray', 'Northbridge', 'Castlecrag', 'Castle Cove', 'Willoughby', 'Naremburn', 'Wollstonecraft', 'McMahons Point', 'Kirribilli', 'Lavender Bay', 'Crows Nest'],
     contentUpdated: '2026-08-27',
@@ -3805,7 +3805,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Torquay VIC | Eco-Friendly',
-      description: 'House cleaning in Torquay & the Surf Coast. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning in Torquay & the Surf Coast. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked and fully insured.',
     },
     nearbySuburbs: ['Jan Juc', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Lorne', 'Ocean Grove', 'Barwon Heads', 'Geelong', 'Belmont', 'Highton'],
     localFaqs: [
@@ -3880,7 +3880,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ocean Grove VIC | Eco-Friendly',
-      description: 'House cleaning in Ocean Grove & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'House cleaning in Ocean Grove & the Bellarine Peninsula. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Barwon Heads', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Collendina', 'Geelong', 'Torquay', 'Jan Juc'],
     localFaqs: [
@@ -4026,7 +4026,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Drysdale VIC | Eco-Friendly',
-      description: 'House cleaning in Drysdale, Clifton Springs & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+      description: 'House cleaning in Drysdale, Clifton Springs & the Bellarine. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
     },
     nearbySuburbs: ['Clifton Springs', 'Portarlington', 'Leopold', 'Ocean Grove', 'Barwon Heads', 'Queenscliff', 'Point Lonsdale', 'Geelong', 'Lara'],
     localFaqs: [
@@ -4097,7 +4097,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Leopold VIC | Eco-Friendly',
-      description: 'House cleaning in Leopold, Wallington & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans, deep cleans & end-of-lease.',
+      description: 'House cleaning in Leopold, Wallington & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
     },
     nearbySuburbs: ['Wallington', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Clifton Springs', 'Geelong', 'Belmont', 'Highton', 'Lara'],
     localFaqs: [
@@ -4168,7 +4168,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Jan Juc VIC | Eco-Friendly',
-      description: 'House cleaning in Jan Juc & Torquay on the Surf Coast VIC. Eco-friendly, police-checked, fully insured. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'House cleaning in Jan Juc & Torquay on the Surf Coast. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Torquay', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Ocean Grove', 'Barwon Heads', 'Geelong'],
     localFaqs: [

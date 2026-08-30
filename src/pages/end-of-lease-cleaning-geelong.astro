@@ -9,7 +9,7 @@ import Providers from '../components/Providers.astro';
 import Testimonials from '../components/Testimonials.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import { site, ctaPrimary , aggregateRatingSchema} from '../data/site';
+import { site, ctaPrimary  } from '../data/site';
 import { geelongEolSuburbs } from '../data/geelongEolSuburbs';
 
 const pageUrl = `${site.url}/end-of-lease-cleaning-geelong`;
@@ -139,18 +139,18 @@ const faqs = [
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    // Resolve to the single Organization entity declared in Layout.astro,
-    // so every page describes one recognisable business rather than a
-    // separate one per URL.
-    parentOrganization: { '@id': `${site.url}/#organization` },
-    '@id': `${pageUrl}#localbusiness`,
-    name: 'Naturo Group End of Lease Cleaning Geelong',
+    // Service, not LocalBusiness: Google requires `address` on
+    // LocalBusiness, and NATURO GROUP has no premises to name here.
+    // `provider` joins this page to the single Organization entity in
+    // Layout.astro, which is what the old parentOrganization did.
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'End of lease cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'End of Lease Cleaning in Geelong',
     description:
       'Professional end of lease cleaning in Geelong with a 72-hour bond-back guarantee. Police-checked, eco-conscious team covering Greater Geelong and the Bellarine Peninsula.',
     url: pageUrl,
-    telephone: site.phone,
-    email: site.email,
     image: {
       '@type': 'ImageObject',
       url: `${site.url}/images/suburbs/house-cleaning-geelong.jpg`,
@@ -160,7 +160,6 @@ const schema = [
       license: `${site.url}/terms-of-service`,
       acquireLicensePage: `${site.url}/privacy-policies`,
     },
-    priceRange: '$$$',
     areaServed: [
       { '@type': 'City', name: 'Geelong', containedInPlace: { '@type': 'State', name: 'Victoria' } },
       { '@type': 'City', name: 'Newtown', containedInPlace: { '@type': 'State', name: 'Victoria' } },
@@ -171,13 +170,18 @@ const schema = [
       { '@type': 'City', name: 'Armstrong Creek', containedInPlace: { '@type': 'State', name: 'Victoria' } },
       { '@type': 'City', name: 'Leopold', containedInPlace: { '@type': 'State', name: 'Victoria' } },
     ],
-    openingHoursSpecification: {
+    hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:30',
       closes: '17:00',
     },
-    ...aggregateRatingSchema('geelong'),
+    // No aggregateRating. The 4.7 / 48 figure is genuine and verified against
+    // the Google Business Profile — but a rating about the business, published
+    // on the business's own site, is self-serving and not eligible for a review
+    // snippet under Google's Review snippet policy for LocalBusiness and
+    // Organization. It cannot win stars in the SERP and it can attract a
+    // structured-data manual action. The stars come from the GBP itself.
   },
   {
     '@context': 'https://schema.org',

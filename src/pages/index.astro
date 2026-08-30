@@ -21,11 +21,13 @@ import { site, faqs } from '../data/site';
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    // Resolve to the single Organization entity declared in Layout.astro,
-    // so every page describes one recognisable business rather than a
-    // separate one per URL.
-    parentOrganization: { '@id': `${site.url}/#organization` },
+    // Organization, matching the node Layout.astro emits under this same
+    // @id. It used to be typed LocalBusiness while carrying the Organization's
+    // @id, so one identifier resolved to two conflicting types — and, as a
+    // LocalBusiness, it was missing the `address` Google requires. It also
+    // declared itself its own parentOrganization. Same @id + same @type now
+    // merges cleanly into one entity.
+    '@type': 'Organization',
     '@id': `${site.url}/#organization`,
     name: site.name,
     legalName: site.legalName,
@@ -35,16 +37,9 @@ const schema = [
     email: site.email,
     image: { '@type': 'ImageObject', url: `${site.url}/og-default.jpg`, creator: { '@type': 'Organization', name: site.name }, creditText: site.name, copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`, license: `${site.url}/terms-of-service`, acquireLicensePage: `${site.url}/privacy-policies` },
     logo: `${site.url}/images/logo.avif`,
-    priceRange: '$$',
     areaServed: {
       '@type': 'Country',
       name: 'Australia',
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:30',
-      closes: '17:00',
     },
     sameAs: [
       site.social.facebook,

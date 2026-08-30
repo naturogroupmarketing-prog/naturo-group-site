@@ -5,7 +5,7 @@ import TrustBadges from '../components/TrustBadges.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Providers from '../components/Providers.astro';
-import { site, ctaPrimary, ctaPhone , aggregateRatingSchema} from '../data/site';
+import { site, ctaPrimary, ctaPhone  } from '../data/site';
 
 const pageUrl = `${site.url}/end-of-lease-cleaning-port-macquarie`;
 
@@ -123,18 +123,18 @@ const suburbLinks = [
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    // Resolve to the single Organization entity declared in Layout.astro,
-    // so every page describes one recognisable business rather than a
-    // separate one per URL.
-    parentOrganization: { '@id': `${site.url}/#organization` },
-    '@id': `${pageUrl}#localbusiness`,
-    name: 'Naturo Group End of Lease Cleaning Port Macquarie',
+    // Service, not LocalBusiness: Google requires `address` on
+    // LocalBusiness, and NATURO GROUP has no premises to name here.
+    // `provider` joins this page to the single Organization entity in
+    // Layout.astro, which is what the old parentOrganization did.
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'End of lease cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'End of Lease Cleaning in Port Macquarie',
     description:
       'Professional end of lease cleaning in Port Macquarie with a 72-hour bond-back guarantee. Police-checked, eco-friendly team covering Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
     url: pageUrl,
-    telephone: site.phone,
-    email: site.email,
     image: {
       '@type': 'ImageObject',
       url: `${site.url}/images/suburbs/cleaners-port-macquarie.jpg`,
@@ -144,7 +144,6 @@ const schema = [
       license: `${site.url}/terms-of-service`,
       acquireLicensePage: `${site.url}/privacy-policies`,
     },
-    priceRange: '$$$',
     areaServed: [
       { '@type': 'City', name: 'Port Macquarie', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
       { '@type': 'City', name: 'Wauchope', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
@@ -153,13 +152,18 @@ const schema = [
       { '@type': 'City', name: 'Laurieton', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
       { '@type': 'City', name: 'North Haven', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
     ],
-    openingHoursSpecification: {
+    hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:30',
       closes: '17:00',
     },
-    ...aggregateRatingSchema('portMacquarie'),
+    // No aggregateRating. The 4.7 / 48 figure is genuine and verified against
+    // the Google Business Profile — but a rating about the business, published
+    // on the business's own site, is self-serving and not eligible for a review
+    // snippet under Google's Review snippet policy for LocalBusiness and
+    // Organization. It cannot win stars in the SERP and it can attract a
+    // structured-data manual action. The stars come from the GBP itself.
   },
   {
     '@context': 'https://schema.org',

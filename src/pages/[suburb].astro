@@ -82,18 +82,7 @@ const localTestimonials = suburb.localTestimonials && suburb.localTestimonials.l
 // representation under Australian Consumer Law (CCA 2010 Sch 2, s29).
 // Author names are never modified — a review's author is a fact, not a field
 // to localise.
-const reviewSchema =
-  suburb.localTestimonials && suburb.localTestimonials.length
-    ? suburb.localTestimonials.slice(0, 6).map((t) => ({
-        '@type': 'Review',
-        // Only emit a rating we actually hold. Never assume five stars.
-        ...(t.rating
-          ? { reviewRating: { '@type': 'Rating', ratingValue: String(t.rating), bestRating: '5' } }
-          : {}),
-        author: { '@type': 'Person', name: t.name },
-        reviewBody: t.text,
-      }))
-    : [];
+// reviewSchema removed with the self-serving review markup below.
 
 // Hero rotation: the staff photo leads (slide 1, served as an
 // <img> for crawlable alt + LCP), then the suburb photo, kitchen and ocean
@@ -134,18 +123,33 @@ const areaPhrase = regionEchoesName
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    // Point every location back at the single Organization entity declared in
-    // Layout.astro. Without this each suburb page reads as its own unrelated
-    // business; with it, 101 locations resolve to one company that an engine
-    // can recognise and name.
-    '@id': `${pageUrl}#localbusiness`,
-    parentOrganization: { '@id': `${site.url}/#organization` },
-    name: `${site.name} — ${suburb.name}`,
+    // Service, not LocalBusiness.
+    //
+    // Two things were wrong with LocalBusiness here. Google documents
+    // `address` as a REQUIRED property of LocalBusiness, and these nodes had
+    // none — so all 145 of them were invalid and ineligible for anything.
+    // The reason they had none is the second problem: NATURO GROUP does not
+    // have a premises in 145 suburbs. It is a service-area business. A
+    // LocalBusiness node named "Naturo Group — Corio" asserts a shopfront in
+    // Corio that a customer could visit, which is not true and cannot be made
+    // true by adding an address we do not hold.
+    //
+    // Service says what is actually the case: one organisation providing a
+    // service across a named area. `provider` resolves to the single
+    // Organization declared in Layout.astro, so all 145 pages still join to
+    // one recognisable entity — the property that made the old markup worth
+    // having in the first place.
+    //
+    // If the verified street addresses for the Geelong and Port Macquarie
+    // Google Business Profiles are ever added to the repo, those two hub
+    // pages can legitimately carry LocalBusiness again. The other 143 cannot.
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'House cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: `House cleaning in ${suburb.name}`,
     description: suburb.seo.description,
     url: pageUrl,
-    telephone: site.phone,
-    email: site.email,
     image: {
       '@type': 'ImageObject',
       url: `${site.url}${suburb.ogImage}`,
@@ -155,7 +159,6 @@ const schema = [
       license: `${site.url}/terms-of-service`,
       acquireLicensePage: `${site.url}/privacy-policies`,
     },
-    priceRange: '$$',
     areaServed: [
       { '@type': 'City', name: suburb.name, containedInPlace: { '@type': 'State', name: suburb.state } },
       ...suburb.nearbySuburbs.map((s) => ({
@@ -164,33 +167,28 @@ const schema = [
         containedInPlace: { '@type': 'State', name: suburb.state },
       })),
     ],
-    openingHoursSpecification: {
+    // hoursAvailable is the Service-typed equivalent of the
+    // openingHoursSpecification this node used to carry.
+    hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:30',
       closes: '17:00',
     },
-    // AggregateRating is emitted ONLY where genuine, verifiable per-suburb
-    // review data exists. There is deliberately NO placeholder fallback: a
-    // default rating would publish an unverifiable rating on every page that
-    // has no reviews, producing gold stars in search results that are not
-    // backed by real reviews. That is review spam under Google's
-    // structured-data policies (risking a manual action against the whole
-    // domain) and a false representation about testimonials under Australian
-    // Consumer Law. Populate suburb.aggregateRating from the real Google
-    // Business Profile figures to switch stars on for a given location.
-    ...(suburb.aggregateRating
-      ? {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: suburb.aggregateRating.ratingValue,
-            reviewCount: suburb.aggregateRating.reviewCount,
-            bestRating: '5',
-            worstRating: '1',
-          },
-        }
-      : {}),
-    ...(reviewSchema.length ? { review: reviewSchema } : {}),
+    // No aggregateRating and no review markup on suburb pages.
+    //
+    // The earlier note here was about accuracy — never publish a rating you
+    // cannot verify — and that still holds. The reason these are gone entirely
+    // is separate and stricter: reviews and ratings about the business,
+    // published on the business's own site, are self-serving, and Google's
+    // Review snippet policy makes them ineligible for LocalBusiness and
+    // Organization however genuine they are. Populating them could not produce
+    // stars in search; it could produce a structured-data manual action across
+    // the domain.
+    //
+    // Real testimonials still render on the page for visitors. Star ratings in
+    // search results come from the Google Business Profile, which is where
+    // review collection belongs.
   },
   {
     '@context': 'https://schema.org',

@@ -9,6 +9,7 @@
     - 17px body text, 1.6 line-height, Apple grey link blue (#0066cc)
 */
 import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
 
 interface Props {
   title: string;
@@ -28,9 +29,21 @@ const {
   updated,
   headline,
 } = Astro.props;
+
+// Two tiers, Home → this page. Google requires `item` on every entry except
+// the last, so the trail stops here rather than inventing a "Legal" hub that
+// has no page behind it.
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: headline ?? title },
+  ],
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={breadcrumb}>
   <article class="legal-page">
     {/* Use a div (not <header>) for the page heading block — site-level
         sticky-header hide rules sometimes target every <header>, and we

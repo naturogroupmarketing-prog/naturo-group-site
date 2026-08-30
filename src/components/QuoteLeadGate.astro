@@ -529,6 +529,57 @@ const lc = {
       if (target) setTimeout(function () { try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); } }, 60);
     }
 
+    /**
+     * After answering one field, bring the next one into view.
+     *
+     * The property steps ask four questions in one screen, and on a phone only
+     * the first two fit. Answering "Bedrooms" left the customer looking at an
+     * unchanged screen with no sign there was more to do — so they either
+     * hunted for the scrollbar or assumed they were stuck.
+     *
+     * Scrolls only the card, only downward, and only by the amount actually
+     * needed to clear the sticky Continue button. If the next field is already
+     * visible it does nothing, so answering the last question never jumps.
+     */
+    function revealNextField(fromEl) {
+      const screen = fromEl.closest('.qlg-screen');
+      if (!screen || !card) return;
+      const fields = Array.prototype.slice.call(screen.querySelectorAll('.qlg-field'));
+      const here = fromEl.closest('.qlg-field');
+      const next = fields[fields.indexOf(here) + 1];
+      if (!here || !next) return;
+
+      const cardRect = card.getBoundingClientRect();
+      const nextRect = next.getBoundingClientRect();
+      const btn = screen.querySelector('.qlg-btn-primary');
+      // Keep the field clear of the pinned button rather than under it.
+      const reserve = (btn ? btn.getBoundingClientRect().height : 46) + 28;
+      const delta = nextRect.bottom - (cardRect.bottom - reserve);
+      if (delta <= 0) return;
+
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const from = card.scrollTop;
+      const to = from + delta;
+      card.scrollTo({ top: to, behavior: reduce ? 'auto' : 'smooth' });
+
+      // Smooth scrolling is silently ignored in some contexts — the in-app
+      // browsers inside Facebook and Instagram among them, which is a large
+      // share of this traffic. Without this the field would simply never come
+      // into view and the customer would be back to hunting for it, so confirm
+      // the scroll actually happened and jump if it did not.
+      setTimeout(function () {
+        if (Math.abs(card.scrollTop - from) < 2) card.scrollTop = to;
+      }, 400);
+    }
+
+    // Selects only. A text input fires change on blur, by which point the
+    // browser has already scrolled the next focused field into view, and
+    // scrolling again on top of that fights the customer.
+    form.addEventListener('change', function (ev) {
+      const el = ev.target;
+      if (el && el.tagName === 'SELECT' && el.value) revealNextField(el);
+    });
+
     function showStep(name, dir) {
       stepIndex = STEPS.indexOf(name);
       Object.keys(screens).forEach(function (k) {

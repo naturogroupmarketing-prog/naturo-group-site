@@ -1,11 +1,23 @@
 ---
 // Conversational, one-question-at-a-time lead capture — a premium "chat with
-// an assistant" experience that gates every "Get a Free Quote" CTA. It
-// collects clean type → location → contact → notes across animated steps and
-// ships the lead to the SAME backend as before (Sophiie CRM +
-// Meta/Google/GTM analytics). No prices are shown — it's lead capture.
+// an assistant" experience that gates every "Get a Free Quote" CTA. It collects
+// clean type → location → the home → contact → notes across animated steps.
+//
+// The enquiry goes to two places, both on purpose: the AI Reception FUNNEL,
+// which files it as a proper quote request with the property answers, the
+// consent record and a service-area check; and the existing widget/backup
+// destinations, which produce the staff alert and the backup sheet. Neither is
+// trusted to be the only one that works. No prices are shown — it's lead
+// capture.
 import { leadCapture } from '../data/site';
-const lc = leadCapture;
+
+// PUBLIC_FUNNEL_BASE points a local dev server at a local AI Reception, so
+// testing the popup never writes into the production CRM. Unset, it falls back
+// to the deployed app — the same override the /quote page uses.
+const lc = {
+  ...leadCapture,
+  funnelBase: import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase,
+};
 ---
 
 <div class="qlg-overlay" id="qlgOverlay" aria-labelledby="qlgHeading" hidden>
@@ -244,6 +256,24 @@ const lc = leadCapture;
           <input class="qlg-input" type="email" name="email" id="qlgEmail" autocomplete="email" placeholder="you@example.com" />
           <span class="qlg-error" data-error-for="email"></span>
         </label>
+        <!--
+          Two consents, separate, neither pre-ticked. Under the Spam Act 2003
+          agreeing to be contacted about a quote you asked for is not agreeing
+          to marketing, and bundling them is the classic failure. The exact
+          wording is stored with the enquiry, so what somebody agreed to is
+          answerable later.
+        -->
+        <label class="qlg-consent">
+          <input type="checkbox" name="contact_consent" id="qlgConsent" />
+          <span>I agree to Naturo Group contacting me about this quote request by phone, text or email.</span>
+        </label>
+        <span class="qlg-error" data-error-for="contact_consent"></span>
+
+        <label class="qlg-consent">
+          <input type="checkbox" name="marketing_consent" id="qlgMarketing" />
+          <span>I&rsquo;d also like to hear about cleaning tips, seasonal offers and reminders. You can unsubscribe at any time.</span>
+        </label>
+
         <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgContactNext">
           <span>Continue</span>
           <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -538,7 +568,15 @@ const lc = leadCapture;
       if (!name || name.length < 2) { setError('name', 'What should we call you?'); ok = false; }
       if (phone.replace(/[^0-9]/g, '').length < 8) { setError('phone', 'A valid phone number, please.'); ok = false; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('email', 'Double-check your email?'); ok = false; }
-      if (ok) { state.name = name; state.phone = phone; state.email = email; }
+      if (!document.getElementById('qlgConsent').checked) {
+        setError('contact_consent', 'We need your permission to contact you about this quote.');
+        ok = false;
+      }
+      if (ok) {
+        state.name = name; state.phone = phone; state.email = email;
+        state.contactConsent = true;
+        state.marketingConsent = document.getElementById('qlgMarketing').checked;
+      }
       return ok;
     }
 
@@ -571,6 +609,93 @@ const lc = leadCapture;
           }
         });
       }
+    }
+
+    /**
+     * The popup's own service words, mapped onto the AI Reception catalogue.
+     *
+     * Two vocabularies exist because the popup was written first: it offers
+     * "oneoff" and a single "specialty" option split by data-specialty, while
+     * the app names each service properly. Mapped here rather than renamed in
+     * the markup so the analytics values the site has been sending for months
+     * keep their meaning.
+     */
+    function funnelServiceSlug(values) {
+      if (values.service === 'regular') return 'regular';
+      if (values.service === 'oneoff') return 'deep';
+      if (values.service === 'specialty') {
+        return values.specialtyType === 'insurance' ? 'insurance' : 'ndis-dva-aged-care';
+      }
+      return '';
+    }
+
+    /** "3" → 3, "6+" → 6, "Studio" → 0. Anything else is left unanswered. */
+    function asCount(v) {
+      if (!v) return null;
+      if (/^studio$/i.test(v)) return 0;
+      var m = String(v).match(/\d+/);
+      return m ? Number(m[0]) : null;
+    }
+
+    /**
+     * Post the enquiry to the funnel, which is what files it properly: a Quote
+     * Request with the property answers as fields, the consent wording stored
+     * against it, the postcode checked against the service areas, and a deal
+     * opened at the right stage. The generic widget endpoint only ever produced
+     * readable text in the Inbox.
+     */
+    function shipToFunnel(payload) {
+      var base = config.funnelBase;
+      var slug = payload.funnel_service;
+      // No endpoint configured, or a service the app does not know — fall back
+      // rather than lose the lead. shipToWebhook still runs either way.
+      if (!base || !slug) return Promise.resolve(null);
+
+      var body = {
+        service: slug,
+        suburb: payload.suburb || '',
+        postcode: payload.postcode || '',
+        propertyType: payload.storeys ? 'HOUSE' : '',
+        bedrooms: payload.bedrooms_n,
+        bathrooms: payload.bathrooms_n,
+        frequency: slug === 'deep' || slug === 'insurance' ? 'ONE_OFF' : '',
+        name: payload.name || '',
+        email: payload.email || '',
+        phone: payload.phone || '',
+        contactConsent: payload.contact_consent === true,
+        marketingConsent: payload.marketing_consent === true,
+        // The answers that have no column of their own go in the notes, where a
+        // person reads them, rather than being dropped.
+        notes: [
+          payload.notes || '',
+          payload.living_rooms ? 'Living rooms: ' + payload.living_rooms : '',
+          payload.kitchens ? 'Kitchens: ' + payload.kitchens : '',
+          payload.storeys ? 'Storeys: ' + payload.storeys : '',
+          payload.additional_toilet ? 'Separate toilet: ' + payload.additional_toilet : '',
+          payload.butler_pantry ? "Butler's pantry / second kitchen: " + payload.butler_pantry : '',
+          payload.laundry ? 'Laundry cleaned: ' + payload.laundry : '',
+        ].filter(Boolean).join('\n'),
+        submissionKey: payload.event_id,
+        sessionKey: payload.lead_id,
+        attribution: {
+          source: (payload.attribution || {}).last_source || '',
+          medium: (payload.attribution || {}).last_medium || '',
+          campaign: (payload.attribution || {}).last_campaign || '',
+          landingPage: (payload.attribution || {}).last_landing_page || '',
+          referrerHost: (payload.attribution || {}).referrer_host || '',
+          gclid: (payload.attribution || {}).gclid || '',
+          leadId: payload.lead_id || '',
+        },
+      };
+
+      return fetch(base + '/quote-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        keepalive: true,
+      })
+        .then(function (r) { return r.ok; })
+        .catch(function () { return false; });
     }
 
     // ---- Ship the lead to every destination (unchanged backend) ---------
@@ -705,15 +830,37 @@ const lc = leadCapture;
         additional_toilet: values.additionalToilet,
         butler_pantry: values.butlerPantry,
         laundry: values.laundry,
+        // Numeric forms for the funnel, which stores them as counts.
+        bedrooms_n: asCount(values.bedrooms),
+        bathrooms_n: asCount(values.bathrooms),
+        funnel_service: funnelServiceSlug(values),
+        contact_consent: values.contactConsent === true,
+        marketing_consent: values.marketingConsent === true,
         source: trackingContext,
         attribution: na ? na.attributionFields() : {},
         page: { url: window.location.href, path: window.location.pathname, title: document.title },
       };
+      // Both run. The funnel FILES the enquiry properly (a Quote Request, the
+      // consent record, the service-area check, a deal at the right stage); the
+      // existing destinations keep the Inbox alert and the backup sheet working
+      // exactly as before. Neither is trusted to be the only one that succeeds.
+      var funnel = shipToFunnel(payload);
       var delivery = shipToWebhook(payload);
       shipToMetaPixel(payload);
       shipToGoogleAds(payload);
       shipToDataLayer(payload);
-      return delivery;
+
+      // "Delivered" if ANYTHING accepted it — the visitor is only warned when
+      // nothing did.
+      return Promise.all([delivery, funnel]).then(function (r) {
+        var webhook = r[0] || {};
+        var funnelOk = r[1] === true;
+        return {
+          crm: webhook.crm === true || funnelOk,
+          backups: webhook.backups || [],
+          delivered: webhook.delivered === true || funnelOk,
+        };
+      });
     }
 
     // ---- Step 2: postcode → suburb combobox + serviced check ------------
@@ -1202,6 +1349,29 @@ const lc = leadCapture;
   @media (max-width: 400px) {
     .qlg-grid { grid-template-columns: 1fr; }
   }
+
+  /* Consent rows. Deliberately plain and full-size: a checkbox somebody has to
+     hunt for is not a checkbox they meaningfully ticked. */
+  .qlg-consent {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #475569;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  .qlg-consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin: 1px 0 0;
+    accent-color: #3a5dff;
+    cursor: pointer;
+  }
+  .qlg-consent input:focus-visible { outline: 2px solid #3a5dff; outline-offset: 2px; }
 
   .qlg-sub {
     font-family: "Poppins", sans-serif;

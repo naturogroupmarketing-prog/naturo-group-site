@@ -108,7 +108,7 @@ const schema = [
       <nav class="post-breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="/resource">Resources</a>
+        <a href="/resource/">Resources</a>
         <span aria-hidden="true">/</span>
         <span class="post-breadcrumb-current">{post.category}</span>
       </nav>
@@ -138,7 +138,7 @@ const schema = [
         <h2 id="post-related-h2" class="post-related-h2">Related guides</h2>
         <div class="post-related-grid">
           {related.map((r) => (
-            <a class="post-related-card" href={`/resource/${r.slug}`}>
+            <a class="post-related-card" href={`/resource/${r.slug}/`}>
               <span class="post-related-cat">{r.category}</span>
               <h3 class="post-related-title">{r.title}</h3>
               <span class="post-related-arrow">Read article &rarr;</span>
@@ -146,7 +146,7 @@ const schema = [
           ))}
         </div>
         <p class="post-related-back">
-          <a href="/resource">&larr; Back to all guides</a>
+          <a href="/resource/">&larr; Back to all guides</a>
         </p>
       </div>
     </section>

@@ -13,6 +13,7 @@ import Testimonials from '../../../components/Testimonials.astro';
 import AppPromo from '../../../components/AppPromo.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
 import { site, ctaPrimary } from '../../../data/site';
+import { fitTitle } from '../../../lib/seo';
 
 interface SuburbData {
   slug: string;
@@ -127,7 +128,7 @@ export async function getStaticPaths() {
 interface Props { suburb: SuburbData; allSuburbs: SuburbData[]; }
 const { suburb, allSuburbs } = Astro.props;
 
-const pageUrl = `${site.url}/end-of-lease-cleaning/geelong/${suburb.slug}`;
+const pageUrl = `${site.url}/end-of-lease-cleaning/geelong/${suburb.slug}/`;
 
 const introStats = [
   { num: '100%', label: 'Bond-back guarantee' },
@@ -268,7 +269,10 @@ const schema = [
 ---
 
 <Layout
-  title={`End of Lease Cleaning ${suburb.name} | Bond Back`}
+  title={fitTitle(`End of Lease Cleaning ${suburb.name}`, [
+    'Bond Back Guarantee',
+    'Bond Back',
+  ], ' | ')}
   description={`End of lease cleaning in ${suburb.name}. Police-checked team, 72-hr bond-back guarantee. Part of Naturo Group's Greater Geelong service area.`}
   schema={schema}
 >
@@ -397,7 +401,7 @@ const schema = [
       <div class="flex flex-wrap gap-2 justify-center" style="margin-bottom: 2rem;">
         {allSuburbs.filter((s) => s.slug !== suburb.slug).map((s) => (
           <a
-            href={`/end-of-lease-cleaning/geelong/${s.slug}`}
+            href={`/end-of-lease-cleaning/geelong/${s.slug}/`}
             class="px-4 py-2 rounded-full border border-[rgba(15,23,42,0.08)] text-sm text-[var(--color-slate)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
           >
             {s.name}
@@ -405,10 +409,10 @@ const schema = [
         ))}
       </div>
       <div class="text-center space-y-2">
-        <a href="/end-of-lease-cleaning-geelong" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline block">
+        <a href="/end-of-lease-cleaning-geelong/" class="text-sm font-medium text-[var(--color-accent-blue)] hover:underline block">
           &larr; Back to End of Lease Cleaning Geelong (all areas)
         </a>
-        <a href="/house-cleaning-geelong" class="text-sm text-[var(--color-slate)] hover:underline block">
+        <a href="/house-cleaning-geelong/" class="text-sm text-[var(--color-slate)] hover:underline block">
           Regular house cleaning in {suburb.name} &rarr;
         </a>
       </div>

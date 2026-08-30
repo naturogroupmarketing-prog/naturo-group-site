@@ -13,6 +13,7 @@ import AppPromo from '../../components/AppPromo.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 import { allServices, services, site, faqs } from '../../data/site';
 import { serviceDetails } from '../../data/serviceDetail';
+import { fitTitle } from '../../lib/seo';
 
 export function getStaticPaths() {
   return allServices.map((s) => ({ params: { slug: s.slug } }));
@@ -65,7 +66,11 @@ const schema = [
 ---
 
 <Layout
-  title={`${service.title} — Eco-Friendly, Police-Checked Cleaners`}
+  title={fitTitle(service.title, [
+    'Eco-Friendly, Police-Checked Cleaners',
+    'Police-Checked & Fully Insured',
+    'Police-Checked Cleaners',
+  ])}
   description={detail?.hero?.sub?.replace(/&mdash;/g, '—') ?? service.short}
   schema={schema}
 >

@@ -1,0 +1,166 @@
+---
+/**
+ * Region-specific contextual links for a suburb page.
+ *
+ * The audit of 30 Aug 2026 found zero orphan pages but a completely flat link
+ * graph: 31 pages sat at 147 inbound links each purely because they are in the
+ * global footer, while the pages that actually convert — the Geelong and Port
+ * Macquarie NDIS and end-of-lease landing pages, and the guides that support
+ * them — had two inbound links apiece. Google discounts sitewide footer links,
+ * so those two were doing nearly all the work.
+ *
+ * This renders in-body links with descriptive anchor text from every suburb
+ * page in a region to that region's dedicated service pages and guides. The
+ * 49 Geelong-area and 21 Mid North Coast suburb pages are the source of the
+ * links, which is where the topical relevance actually is.
+ *
+ * Regions with no dedicated landing pages render nothing rather than being
+ * padded with links to national pages the footer already carries.
+ */
+import { postCards } from '../data/posts';
+
+interface Props {
+  suburbName: string;
+  region: string;
+}
+
+const { suburbName, region } = Astro.props;
+
+interface RegionLinks {
+  label: string;
+  services: { href: string; text: string }[];
+  guideSlugs: string[];
+}
+
+// Keyed by the region strings used in src/data/suburbs.ts. Geelong is spread
+// across three region labels ("Greater Geelong", "Bellarine Peninsula",
+// "Geelong & Bellarine", plus "Surf Coast"), all of which are served by the
+// same Geelong landing pages.
+const BY_REGION: Record<string, RegionLinks> = {
+  geelong: {
+    label: 'Geelong',
+    services: [
+      { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
+      { href: '/end-of-lease-cleaning-geelong/', text: 'end of lease cleaning in Geelong' },
+    ],
+    guideSlugs: [
+      'ndis-cleaning-geelong-guide',
+      'end-of-lease-cleaning-geelong-checklist',
+      'house-cleaning-cost-geelong',
+      'eco-friendly-cleaning-geelong',
+    ],
+  },
+  portMacquarie: {
+    label: 'Port Macquarie',
+    services: [
+      { href: '/ndis-cleaning-port-macquarie/', text: 'NDIS cleaning in Port Macquarie' },
+      { href: '/end-of-lease-cleaning-port-macquarie/', text: 'end of lease cleaning in Port Macquarie' },
+    ],
+    guideSlugs: [
+      'ndis-cleaning-port-macquarie-guide',
+      'end-of-lease-cleaning-port-macquarie-checklist',
+      'house-cleaning-cost-port-macquarie',
+    ],
+  },
+};
+
+const REGION_KEY: Record<string, keyof typeof BY_REGION> = {
+  'Greater Geelong': 'geelong',
+  'Bellarine Peninsula': 'geelong',
+  'Geelong & Bellarine': 'geelong',
+  'Surf Coast': 'geelong',
+  'Mid North Coast': 'portMacquarie',
+};
+
+const key = REGION_KEY[region];
+const links = key ? BY_REGION[key] : undefined;
+
+const guides = links
+  ? links.guideSlugs
+      .map((slug) => postCards.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p))
+  : [];
+---
+
+{links && (
+  <section class="lsl-section" aria-labelledby="lsl-h2">
+    <div class="container-site">
+      <h2 id="lsl-h2" class="lsl-h2">More for {suburbName} and the {links.label} area</h2>
+      <p class="lsl-sub">
+        Specialist services and free guides written for {links.label} households.
+      </p>
+
+      <div class="lsl-grid">
+        <div class="lsl-col">
+          <h3 class="lsl-h3">Specialist services</h3>
+          <ul class="lsl-list">
+            {links.services.map((s) => (
+              <li><a href={s.href}>{s.text}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        {guides.length > 0 && (
+          <div class="lsl-col">
+            <h3 class="lsl-h3">{links.label} guides</h3>
+            <ul class="lsl-list">
+              {guides.map((g) => (
+                <li><a href={g.href}>{g.title}</a></li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .lsl-section {
+    padding: 56px 0;
+    background: #f7f8fa;
+  }
+  .lsl-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 600;
+    color: rgb(15, 23, 42);
+    margin: 0 0 8px;
+  }
+  .lsl-sub {
+    font-size: 1rem;
+    color: rgb(91, 94, 102);
+    margin: 0 0 28px;
+  }
+  .lsl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .lsl-h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(15, 23, 42);
+    margin: 0 0 12px;
+  }
+  .lsl-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .lsl-list a {
+    color: rgb(13, 84, 88);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .lsl-list a:hover,
+  .lsl-list a:focus-visible {
+    color: rgb(9, 60, 63);
+  }
+</style>

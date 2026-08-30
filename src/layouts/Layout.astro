@@ -32,7 +32,20 @@ const {
   schema,
 } = Astro.props;
 
-const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+// Append the brand once, and only when the supplied title does not already
+// end with it. Page titles are authored in several places — page frontmatter,
+// the suburb route, and post metaTitle strings in src/data/posts.ts — and a
+// title that already carried "| Naturo Group" used to come out with it twice
+// ("... | Naturo Group | Naturo Group"), pushing 21 pages past the ~60-char
+// SERP truncation point. Fixing the strings alone would only hold until the
+// next post was added, so the guard lives here.
+const brandSuffix = ` | ${site.name}`;
+const endsWithBrand = (t: string) =>
+  t.trim().toLowerCase().endsWith(brandSuffix.trim().toLowerCase()) ||
+  t.trim().toLowerCase() === site.name.toLowerCase();
+const fullTitle = title
+  ? (endsWithBrand(title) ? title.trim() : `${title.trim()}${brandSuffix}`)
+  : `${site.name} — ${site.tagline}`;
 const canonical = new URL(Astro.url.pathname, site.url).toString();
 const isHome = Astro.url.pathname === '/';
 

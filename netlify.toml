@@ -21,7 +21,7 @@
 # link. 301 so whatever equity the page holds passes to the contact page.
 [[redirects]]
   from   = "/quote"
-  to     = "/contact-us"
+  to     = "/contact-us/"
   status = 301
 
 # Force HTTPS
@@ -59,58 +59,58 @@
 
 [[redirects]]
   from = "/cleaners-woolloongabba"
-  to   = "/cleaners-brisbane"
+  to   = "/cleaners-brisbane/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-carlton"
-  to   = "/cleaners-melbourne"
+  to   = "/cleaners-melbourne/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-ballina"
-  to   = "/cleaners-lismore"
+  to   = "/cleaners-lismore/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-elermore-vale"
-  to   = "/cleaners-newcastle"
+  to   = "/cleaners-newcastle/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-elermore-vale/"
-  to   = "/cleaners-newcastle"
+  to   = "/cleaners-newcastle/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-richmond"
-  to   = "/cleaners-melbourne"
+  to   = "/cleaners-melbourne/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-richmond/"
-  to   = "/cleaners-melbourne"
+  to   = "/cleaners-melbourne/"
   status = 301
 
 # ── Old service URL patterns ─────────────────────────────────────────────────
 [[redirects]]
   from = "/service-veterans"
-  to   = "/services/veterans-cleaning"
+  to   = "/services/veterans-cleaning/"
   status = 301
 
 [[redirects]]
   from = "/service-veterans/"
-  to   = "/services/veterans-cleaning"
+  to   = "/services/veterans-cleaning/"
   status = 301
 
 [[redirects]]
   from = "/services-end-of-lease"
-  to   = "/services/end-of-lease"
+  to   = "/services/end-of-lease/"
   status = 301
 
 [[redirects]]
   from = "/services-end-of-lease/"
-  to   = "/services/end-of-lease"
+  to   = "/services/end-of-lease/"
   status = 301
 
 # ── /locations — internal link exists but page was never built ───────────────
@@ -127,33 +127,33 @@
 # ── Geelong URL renames — old slugs that Google may have indexed ─────────────
 [[redirects]]
   from = "/cleaners-ocean-grove"
-  to   = "/house-cleaning-ocean-grove"
+  to   = "/house-cleaning-ocean-grove/"
   status = 301
 
 [[redirects]]
   from = "/cleaners-ocean-grove/"
-  to   = "/house-cleaning-ocean-grove"
+  to   = "/house-cleaning-ocean-grove/"
   status = 301
 
 [[redirects]]
   from = "/house-cleaning-in-ocean-grove-copy"
-  to   = "/house-cleaning-ocean-grove"
+  to   = "/house-cleaning-ocean-grove/"
   status = 301
 
 [[redirects]]
   from = "/house-cleaning-in-ocean-grove-copy/"
-  to   = "/house-cleaning-ocean-grove"
+  to   = "/house-cleaning-ocean-grove/"
   status = 301
 
 # ── Old Shopify / legacy service URLs ────────────────────────────────────────
 [[redirects]]
   from = "/pages/commercial-cleaning"
-  to   = "/services"
+  to   = "/services/"
   status = 301
 
 [[redirects]]
   from = "/pages/commercial-cleaning/"
-  to   = "/services"
+  to   = "/services/"
   status = 301
 
 [[redirects]]
@@ -179,29 +179,29 @@
 
 [[redirects]]
   from   = "/house-cleaning"
-  to     = "/services/house-cleaning"
+  to     = "/services/house-cleaning/"
   status = 301
 
 [[redirects]]
   from   = "/house-cleaning/*"
-  to     = "/services/house-cleaning"
+  to     = "/services/house-cleaning/"
   status = 301
 
 # ── Legacy blog routes (blogs/ vs blog/) ─────────────────────────────────────
 [[redirects]]
   from = "/blogs/*"
-  to   = "/resource"
+  to   = "/resource/"
   status = 301
 
 # ── /account — login link in TopBar; sends users to the booking app ──────────
 [[redirects]]
   from = "/account"
-  to   = "/contact-us"
+  to   = "/contact-us/"
   status = 301
 
 [[redirects]]
   from = "/account/"
-  to   = "/contact-us"
+  to   = "/contact-us/"
   status = 301
 
 # ── Common WordPress URL patterns → new equivalents ──────────────────────────
@@ -212,47 +212,47 @@
 
 [[redirects]]
   from = "/services/"
-  to   = "/services"
+  to   = "/services/"
   status = 301
 
 [[redirects]]
   from = "/contact/"
-  to   = "/contact-us"
+  to   = "/contact-us/"
   status = 301
 
 [[redirects]]
   from = "/contact"
-  to   = "/contact-us"
+  to   = "/contact-us/"
   status = 301
 
 [[redirects]]
   from = "/about-us"
-  to   = "/team"
+  to   = "/team/"
   status = 301
 
 [[redirects]]
   from = "/about-us/"
-  to   = "/team"
+  to   = "/team/"
   status = 301
 
 [[redirects]]
   from = "/about"
-  to   = "/team"
+  to   = "/team/"
   status = 301
 
 [[redirects]]
   from = "/about/"
-  to   = "/team"
+  to   = "/team/"
   status = 301
 
 [[redirects]]
   from = "/faq"
-  to   = "/faqs"
+  to   = "/faqs/"
   status = 301
 
 [[redirects]]
   from = "/faq/"
-  to   = "/faqs"
+  to   = "/faqs/"
   status = 301
 
 [[redirects]]
@@ -280,14 +280,8 @@
   to   = "/"
   status = 301
 
-# Trailing slash normalisation — Astro static output has no trailing slash
-[[redirects]]
-  from = "/services/*/"
-  to   = "/services/:splat"
-  status = 301
-
 # 404 fallback
 [[redirects]]
   from = "/*"
-  to   = "/404"
+  to   = "/404/"
   status = 404

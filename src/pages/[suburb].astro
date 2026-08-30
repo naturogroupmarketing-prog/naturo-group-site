@@ -13,6 +13,7 @@ import Testimonials from '../components/Testimonials.astro';
 import AppPromo from '../components/AppPromo.astro';
 import { site, ctaPrimary, ctaPhone, testimonials } from '../data/site';
 import { suburbs, type Suburb } from '../data/suburbs';
+import LocalServiceLinks from '../components/LocalServiceLinks.astro';
 
 export async function getStaticPaths() {
   return suburbs.map((s) => ({
@@ -250,6 +251,8 @@ const schema = [
         src="/images/hero-staff-bathroom.webp"
         alt={suburb.heroImageAlt}
         class="hero-slide hero-slide-img"
+        width="1500"
+        height="785"
         fetchpriority="high"
         loading="eager"
         decoding="async"
@@ -457,6 +460,7 @@ const schema = [
 
   <SixtySecondsAway />
   <Testimonials location={suburb.name} items={localTestimonials} />
+  <LocalServiceLinks suburbName={suburb.name} region={suburb.region} />
   <AppPromo />
 
   <!-- ───── Service Area Map (matches the original site's "Locations" block) ───── -->

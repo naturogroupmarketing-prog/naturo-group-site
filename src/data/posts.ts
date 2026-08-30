@@ -37,7 +37,7 @@ export const posts: BlogPost[] = [
     title: 'How to Clean Baked-On Oven Grease Naturally (Without Harsh Chemicals)',
     excerpt:
       'A step-by-step DIY method using bicarb, vinegar and a lemon — safe for the family and the planet.',
-    metaTitle: 'How to Clean Oven Grease Naturally | Naturo Group',
+    metaTitle: 'How to Clean Oven Grease Naturally',
     metaDescription:
       'Cut through baked-on oven grease without harsh chemicals. A safe, eco-friendly bicarb-and-vinegar method from professional Australian cleaners.',
     keywords: [
@@ -121,7 +121,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Want a sparkling oven without lifting a finger?',
         body: 'Book a Naturo Group deep clean — police-checked, fully insured, eco-friendly products only.',
-        href: '/services/deep-clean',
+        href: '/services/deep-clean/',
         label: 'See deep cleaning options',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -157,7 +157,7 @@ export const posts: BlogPost[] = [
     title: 'How to Remove Soap Scum from Glass Shower Screens (and Keep Them Clear)',
     excerpt:
       'Soap scum, hard-water spots and a 2-minute weekly habit that keeps your shower screen looking new.',
-    metaTitle: 'Remove Soap Scum from Shower Screens | Naturo Group',
+    metaTitle: 'Remove Soap Scum from Shower Screens',
     metaDescription:
       'Lift soap scum and hard-water marks off glass shower screens with a safe, two-step method — plus the 2-minute weekly habit that prevents it coming back.',
     keywords: [
@@ -241,7 +241,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Time-poor? Let us handle the bathrooms.',
         body: 'Naturo Group’s regular and deep-clean services include shower screens, grout and tile restoration — booked in 60 seconds.',
-        href: '/services/house-cleaning',
+        href: '/services/house-cleaning/',
         label: 'Get a free quote',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -273,7 +273,7 @@ export const posts: BlogPost[] = [
     title: 'The 5 Non-Toxic Cleaning Products Every Australian Home Should Own',
     excerpt:
       'A short list of multi-purpose, plant-based products that replace a cupboard full of chemicals.',
-    metaTitle: '5 Non-Toxic Cleaning Products for Aussie Homes',
+    metaTitle: 'Non-Toxic Cleaning Products for Aussie Homes',
     metaDescription:
       'A simple, eco-friendly cleaning kit for Australian homes. Five plant-based products that replace ten chemical cleaners — safer for kids, pets and waterways.',
     keywords: [
@@ -362,7 +362,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Want professional results without the chemicals?',
         body: 'Naturo Group cleans every home with plant-based, non-toxic products as standard — never anything you wouldn’t want around your kids.',
-        href: '/services/house-cleaning',
+        href: '/services/house-cleaning/',
         label: 'Book a clean',
       },
 
@@ -399,7 +399,7 @@ export const posts: BlogPost[] = [
     title: 'Setting Up an NDIS Cleaning Routine That Supports Independence',
     excerpt:
       'Practical advice for participants, families and care coordinators on building a sustainable in-home cleaning routine.',
-    metaTitle: 'NDIS Cleaning Routine for Independence | Naturo Group',
+    metaTitle: 'NDIS Cleaning Routine for Independence',
     metaDescription:
       'How to build a sustainable in-home cleaning routine under an NDIS plan. A practical guide for participants, families and support coordinators across Australia.',
     keywords: [
@@ -490,7 +490,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Looking for an NDIS-friendly cleaning team?',
         body: 'Naturo Group works with plan-managed and self-managed NDIS participants and aged-care clients across NSW, Queensland and Victoria. Friendly, trained, police-checked teams.',
-        href: '/services/ndis-cleaning',
+        href: '/services/ndis-cleaning/',
         label: 'See NDIS cleaning services',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -526,9 +526,9 @@ export const posts: BlogPost[] = [
     title: 'End of Lease Cleaning Checklist (the One Property Managers Use)',
     excerpt:
       'A printable checklist covering every item property managers inspect — tick them off and get your bond back.',
-    metaTitle: 'End of Lease Cleaning Checklist | Bond-Back Guide',
+    metaTitle: 'End of Lease Cleaning Checklist | Bond Back',
     metaDescription:
-      'The complete end of lease cleaning checklist Australian property managers actually use. Tick every item and protect your bond — written by professional cleaners.',
+      'The end of lease cleaning checklist Australian property managers actually use. Tick every item and protect your bond — written by professional cleaners.',
     keywords: [
       'end of lease cleaning checklist',
       'bond back cleaning checklist',
@@ -657,7 +657,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Want a guaranteed bond back?',
         body: 'Naturo Group end-of-lease cleans are bond-back guaranteed and use eco-friendly products only. Quotes in 60 seconds.',
-        href: '/services/end-of-lease',
+        href: '/services/end-of-lease/',
         label: 'Get an end-of-lease quote',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -693,7 +693,7 @@ export const posts: BlogPost[] = [
     title: 'Carpet Stain Removal That’s Safe Around Kids and Pets',
     excerpt:
       'Six common spills (juice, mud, vomit, pet accidents) and the gentle methods that lift them.',
-    metaTitle: 'Pet & Kid Safe Carpet Stain Removal | Naturo Group',
+    metaTitle: 'Pet & Kid Safe Carpet Stain Removal',
     metaDescription:
       'Lift juice, mud, vomit and pet stains from carpet using safe, non-toxic methods. A practical guide for Australian households with small humans and animals.',
     keywords: [
@@ -800,7 +800,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Want carpets that look new again?',
         body: 'Naturo Group offers professional carpet care as part of our deep cleans, end-of-lease cleans, and ongoing residential plans. Eco-friendly, kid-safe, pet-safe.',
-        href: '/services/deep-clean',
+        href: '/services/deep-clean/',
         label: 'Book a deep clean',
       },
 
@@ -837,9 +837,9 @@ export const posts: BlogPost[] = [
     title: 'End of Lease Cleaning Geelong: The Complete Checklist [2026]',
     excerpt:
       'Everything Geelong property managers check at final inspection — room by room, with tips to get your full bond back.',
-    metaTitle: 'End of Lease Cleaning Geelong Checklist 2026 | Naturo Group',
+    metaTitle: 'End of Lease Cleaning Geelong Checklist 2026',
     metaDescription:
-      'The exact room-by-room checklist Geelong property managers use at final inspection. Avoid bond deductions — and find out what a professional bond clean costs in Geelong.',
+      'The room-by-room checklist Geelong property managers use at final inspection. Avoid bond deductions, and see what a professional bond clean costs.',
     keywords: [
       'end of lease cleaning geelong',
       'bond cleaning geelong checklist',
@@ -984,7 +984,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Get a Geelong bond clean quote in 60 seconds',
         body: 'Police-checked team, 72-hour bond-back guarantee, eco-friendly products. Serving Greater Geelong and the Bellarine Peninsula.',
-        href: '/end-of-lease-cleaning-geelong',
+        href: '/end-of-lease-cleaning-geelong/',
         label: 'See end of lease cleaning prices',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -1020,9 +1020,9 @@ export const posts: BlogPost[] = [
     title: 'How Much Does House Cleaning Cost in Geelong? [2026 Pricing Guide]',
     excerpt:
       'Honest 2026 pricing for regular, deep and end-of-lease cleaning across Geelong — what\'s included, what affects the price and how to compare quotes.',
-    metaTitle: 'House Cleaning Cost Geelong 2026 | Prices & Guide | Naturo Group',
+    metaTitle: 'House Cleaning Cost Geelong 2026 | Prices',
     metaDescription:
-      'How much does house cleaning cost in Geelong in 2026? Honest prices for regular, deep and bond cleans — what\'s included, what affects cost, and how to compare quotes.',
+      'House cleaning costs in Geelong for 2026. Honest prices for regular, deep and bond cleans — what affects cost and how to compare quotes.',
     keywords: [
       'house cleaning cost geelong',
       'how much does house cleaning cost geelong',
@@ -1126,7 +1126,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Get a free quote for your Geelong home',
         body: 'Answer 3 questions and see your price in 60 seconds. No phone call, no waiting. Police-checked, eco-friendly Geelong team.',
-        href: '/house-cleaning-geelong',
+        href: '/house-cleaning-geelong/',
         label: 'Get an instant Geelong price',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -1162,9 +1162,9 @@ export const posts: BlogPost[] = [
     title: 'NDIS Cleaning in Geelong: What Support Participants Need to Know',
     excerpt:
       'How NDIS cleaning funding works in Geelong, what\'s covered, how to claim it and what to look for in a provider.',
-    metaTitle: 'NDIS Cleaning Geelong Guide 2026 | Naturo Group',
+    metaTitle: 'NDIS Cleaning Geelong Guide 2026',
     metaDescription:
-      'How NDIS cleaning works in Geelong — funding types, what\'s covered, line item codes and how to choose a provider. Guide for Geelong NDIS participants and support coordinators.',
+      'How NDIS cleaning works in Geelong — funding types, what\'s covered, line item codes and how to choose a provider.',
     keywords: [
       'ndis cleaning geelong',
       'ndis cleaners geelong',
@@ -1243,7 +1243,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Naturo Group — NDIS cleaning across Greater Geelong',
         body: 'Police-checked, trained team. Plan manager invoicing. Eco-conscious, fragrance-conscious products. Serving Geelong, Newtown, Highton, Belmont, Lara, Leopold and the Bellarine Peninsula.',
-        href: '/ndis-cleaning-geelong',
+        href: '/ndis-cleaning-geelong/',
         label: 'Learn about our NDIS cleaning service',
       },
       { type: 'h2', text: 'Frequently asked questions' },
@@ -1279,9 +1279,9 @@ export const posts: BlogPost[] = [
     title: 'Eco-Friendly House Cleaning in Geelong: Why It Matters Near Corio Bay',
     excerpt:
       'Why eco-friendly cleaning products matter in Geelong homes — for your family, your pets and the Corio Bay and Bellarine waterways.',
-    metaTitle: 'Eco-Friendly Cleaning Geelong | Safe for Corio Bay | Naturo Group',
+    metaTitle: 'Eco-Friendly Cleaning Geelong',
     metaDescription:
-      'Why eco-friendly house cleaning matters in Geelong — for families, pets and the Corio Bay catchment. What to look for in a green cleaning service and why we choose non-toxic products.',
+      'Why eco-friendly house cleaning matters in Geelong — for families, pets and the Corio Bay catchment, and what to look for in a green cleaning service.',
     keywords: [
       'eco friendly cleaning geelong',
       'green cleaning service geelong',
@@ -1345,7 +1345,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Book an eco-friendly clean for your Geelong home',
         body: 'Plant-based products, police-checked team, 100% satisfaction guaranteed. Serving Greater Geelong and the Bellarine Peninsula.',
-        href: '/house-cleaning-geelong',
+        href: '/house-cleaning-geelong/',
         label: 'Book a Geelong house clean',
       },
     ],
@@ -1361,7 +1361,7 @@ export const posts: BlogPost[] = [
     title: 'End of Lease Cleaning Port Macquarie: The Complete Checklist [2026]',
     excerpt:
       'The exact room-by-room checklist Port Macquarie property managers use at final inspection — so you get your full bond back.',
-    metaTitle: 'End of Lease Cleaning Port Macquarie Checklist 2026 | Naturo Group',
+    metaTitle: 'End of Lease Checklist Port Macquarie 2026',
     metaDescription:
       'Room-by-room bond clean checklist for Port Macquarie tenants. Covers kitchen, bathroom, outdoor and what property managers inspect. Pricing from $560.',
     keywords: [
@@ -1507,7 +1507,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Ready to book your Port Macquarie bond clean?',
         body: 'Get a free quote in 60 seconds — no phone call required. Police-checked team, 72-hour bond-back guarantee.',
-        href: '/end-of-lease-cleaning-port-macquarie',
+        href: '/end-of-lease-cleaning-port-macquarie/',
         label: 'Get a free quote',
       },
     ],
@@ -1521,9 +1521,9 @@ export const posts: BlogPost[] = [
     title: 'How Much Does House Cleaning Cost in Port Macquarie? [2026 Prices]',
     excerpt:
       '2026 pricing guide for professional house cleaning in Port Macquarie — what drives the cost and how to avoid overpaying.',
-    metaTitle: 'House Cleaning Cost Port Macquarie 2026 | Naturo Group',
+    metaTitle: 'House Cleaning Cost Port Macquarie 2026',
     metaDescription:
-      'Current house cleaning prices in Port Macquarie for 2026. Hourly rates vs fixed-price packages, what affects cost, and what a professional team actually includes.',
+      'House cleaning prices in Port Macquarie for 2026. Hourly rates vs fixed-price packages, what affects cost, and what a professional team includes.',
     keywords: [
       'house cleaning cost port macquarie',
       'house cleaning port macquarie price',
@@ -1636,7 +1636,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Book a house clean in Port Macquarie',
         body: 'Police-checked team, all products and equipment supplied, eco-conscious plant-based products. Get a free quote in 60 seconds.',
-        href: '/cleaners-port-macquarie',
+        href: '/cleaners-port-macquarie/',
         label: 'Get a free quote',
       },
     ],
@@ -1650,7 +1650,7 @@ export const posts: BlogPost[] = [
     title: 'NDIS Cleaning in Port Macquarie: What Is Covered and How to Access It [2026]',
     excerpt:
       'A plain-English guide to NDIS-funded cleaning in Port Macquarie — what is covered, what to say to your coordinator, and how to switch providers.',
-    metaTitle: 'NDIS Cleaning Port Macquarie 2026 — What Is Covered | Naturo Group',
+    metaTitle: "NDIS Cleaning Port Macquarie | What's Covered",
     metaDescription:
       'NDIS cleaning in Port Macquarie explained. What support categories cover cleaning, how to access it, and what a registered NDIS cleaning provider actually does.',
     keywords: [
@@ -1778,7 +1778,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Book NDIS cleaning in Port Macquarie',
         body: 'Registered NDIS provider. Police-checked, eco-friendly team. All management types welcome.',
-        href: '/ndis-cleaning-port-macquarie',
+        href: '/ndis-cleaning-port-macquarie/',
         label: 'Learn more & book',
       },
     ],
@@ -1797,5 +1797,7 @@ export const postCards = posts.map((p) => ({
   title: p.title,
   excerpt: p.excerpt,
   readMinutes: p.readMinutes,
-  href: `/resource/${p.slug}`,
+  // Trailing slash matters: the canonical carries one, so a link without it
+  // resolves through a 301 and the link equity is diluted on every hop.
+  href: `/resource/${p.slug}/`,
 }));

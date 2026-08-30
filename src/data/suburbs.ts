@@ -2226,7 +2226,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sydney NSW | Eco-Friendly',
-      description: 'House cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West, Northern Beaches and beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'House cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West and Northern Beaches. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
     contentUpdated: '2026-08-27',
@@ -3716,11 +3716,11 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you offer NDIS and aged care cleaning in Geelong?',
-        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong">NDIS Cleaning Geelong</a> page or call 1300 876 472 to discuss your needs.',
+        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong/">NDIS Cleaning Geelong</a> page or call 1300 876 472 to discuss your needs.',
       },
       {
         q: 'Can you clean end-of-lease properties in Geelong?',
-        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
+        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong/">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
       },
       {
         q: 'Are your Geelong cleaners police-checked and insured?',
@@ -6652,7 +6652,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Breakwater VIC | Eco-Friendly',
-      description: 'House cleaning in Breakwater, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get a free online quote.',
+      description: 'House cleaning in Breakwater, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free quote.',
     },
     nearbySuburbs: ['Thomson', 'Whittington', 'Belmont', 'South Geelong', 'East Geelong', 'Newcomb', 'St Albans Park', 'Geelong'],
     contentUpdated: '2026-08-27',

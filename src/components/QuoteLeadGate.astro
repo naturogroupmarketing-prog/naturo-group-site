@@ -35,7 +35,7 @@ const lc = {
         <span>Back</span>
       </button>
       <div class="qlg-progress">
-        <span class="qlg-progress-label" id="qlgProgressLabel" aria-live="polite">Question 1 of 5</span>
+        <span class="qlg-progress-label" id="qlgProgressLabel" aria-live="polite">Question 1 of 7</span>
         <div class="qlg-progress-track"><div class="qlg-progress-fill" id="qlgProgressFill"></div></div>
       </div>
     </div>
@@ -129,18 +129,16 @@ const lc = {
         </button>
       </section>
 
-      <!-- STEP 3 · the home itself -->
+      <!-- STEP 3 · the home, part one -->
       <!--
-        What a quote actually depends on. Counts are selects rather than free
-        text so an answer is always a number we can price against — "3ish" and
-        "three" and "3 + study" all cost somebody a phone call to resolve.
-        Only bedrooms and bathrooms are required: they are the two that no
-        cleaning quote can be built without, and gating the rest would cost
-        leads for detail a person can confirm on the follow-up call.
+        Four fields, not eight. Past about five a step reads as work rather than
+        a moment, and on a 375px screen the Continue button fell below the fold —
+        which is the strongest argument of the lot, because a button you have to
+        hunt for is a step people leave.
       -->
       <section class="qlg-screen" data-step="home" hidden>
         <h2 class="qlg-q" tabindex="-1">Tell us about your home</h2>
-        <p class="qlg-sub">This is what we price the clean on — it only takes a moment.</p>
+        <p class="qlg-sub">This is what we price the clean on.</p>
 
         <div class="qlg-grid">
           <label class="qlg-field">
@@ -170,37 +168,6 @@ const lc = {
             </select>
             <span class="qlg-error" data-error-for="bathrooms"></span>
           </label>
-
-          <label class="qlg-field">
-            <span class="qlg-label">Living rooms</span>
-            <select class="qlg-input qlg-select" name="living_rooms" id="qlgLiving">
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4+">4+</option>
-            </select>
-          </label>
-
-          <label class="qlg-field">
-            <span class="qlg-label">Kitchens</span>
-            <select class="qlg-input qlg-select" name="kitchens" id="qlgKitchens">
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3+">3+</option>
-            </select>
-          </label>
-
-          <label class="qlg-field qlg-field-wide">
-            <span class="qlg-label">How many storeys?</span>
-            <select class="qlg-input qlg-select" name="storeys" id="qlgStoreys">
-              <option value="">Select</option>
-              <option value="Single storey">Single storey</option>
-              <option value="Double storey">Double storey</option>
-              <option value="Three or more">Three or more</option>
-            </select>
-          </label>
         </div>
 
         <label class="qlg-field">
@@ -212,6 +179,50 @@ const lc = {
             <option value="Yes — 2 or more">Yes &mdash; 2 or more</option>
           </select>
         </label>
+
+        <label class="qlg-field">
+          <span class="qlg-label">How many storeys?</span>
+          <select class="qlg-input qlg-select" name="storeys" id="qlgStoreys">
+            <option value="">Select</option>
+            <option value="Single storey">Single storey</option>
+            <option value="Double storey">Double storey</option>
+            <option value="Three or more">Three or more</option>
+          </select>
+        </label>
+
+        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgHomeNext">
+          <span>Continue</span>
+          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
+
+      <!-- STEP 4 · kitchen, living and laundry -->
+      <section class="qlg-screen" data-step="rooms" hidden>
+        <h2 class="qlg-q" tabindex="-1">Kitchen, living and laundry</h2>
+        <p class="qlg-sub">Almost there &mdash; four quick ones.</p>
+
+        <div class="qlg-grid">
+          <label class="qlg-field">
+            <span class="qlg-label">Kitchens</span>
+            <select class="qlg-input qlg-select" name="kitchens" id="qlgKitchens">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3+">3+</option>
+            </select>
+          </label>
+
+          <label class="qlg-field">
+            <span class="qlg-label">Living rooms</span>
+            <select class="qlg-input qlg-select" name="living_rooms" id="qlgLiving">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </select>
+          </label>
+        </div>
 
         <label class="qlg-field">
           <span class="qlg-label">Butler&rsquo;s pantry or second kitchen?</span>
@@ -231,13 +242,45 @@ const lc = {
           </select>
         </label>
 
-        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgHomeNext">
+        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgRoomsNext">
           <span>Continue</span>
           <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </button>
       </section>
 
-      <!-- STEP 4 · contact -->
+      <!-- STEP 5 · the clean itself -->
+      <!--
+        The last two answers a quote needs. Condition is the single biggest
+        driver of how long a clean takes — two identical floor plans price
+        differently on it — and without a date there is nothing to schedule.
+      -->
+      <section class="qlg-screen" data-step="clean" hidden>
+        <h2 class="qlg-q" tabindex="-1">About the clean</h2>
+        <label class="qlg-field">
+          <span class="qlg-label">How much work does it need?</span>
+          <select class="qlg-input qlg-select" name="condition" id="qlgCondition">
+            <option value="">Select</option>
+            <option value="LIGHT">Well kept &mdash; a regular tidy-up</option>
+            <option value="STANDARD">Normal &mdash; the usual lived-in state</option>
+            <option value="HEAVY">Needs work &mdash; it has been a while</option>
+          </select>
+          <span class="qlg-error" data-error-for="condition"></span>
+        </label>
+
+        <label class="qlg-field">
+          <span class="qlg-label">When would you like it?</span>
+          <input class="qlg-input" type="date" name="preferred_date" id="qlgDate" />
+          <span class="qlg-help">An approximate date is fine &mdash; we&rsquo;ll confirm it with you.</span>
+          <span class="qlg-error" data-error-for="preferred_date"></span>
+        </label>
+
+        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgCleanNext">
+          <span>Continue</span>
+          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
+
+      <!-- STEP 6 · contact -->
       <section class="qlg-screen" data-step="contact" hidden>
         <h2 class="qlg-q" tabindex="-1">Where should we send your personalised quote?</h2>
         <label class="qlg-field">
@@ -280,7 +323,7 @@ const lc = {
         </button>
       </section>
 
-      <!-- STEP 5 · notes -->
+      <!-- STEP 7 · notes -->
       <section class="qlg-screen" data-step="notes" hidden>
         <h2 class="qlg-q" tabindex="-1">Anything you'd like us to know?</h2>
         <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="3" placeholder="Pets · Parking · Preferred day · Access instructions · Special requests"></textarea>
@@ -292,7 +335,7 @@ const lc = {
         <p class="qlg-reassure">🔒 No obligation. Your details stay private. We'll usually contact you within 30–60&nbsp;minutes during business hours.</p>
       </section>
 
-      <!-- STEP 6 · done -->
+      <!-- STEP 8 · done -->
       <section class="qlg-screen" data-step="done" hidden>
         <div class="qlg-done">
           <span class="qlg-done-check" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -440,9 +483,9 @@ const lc = {
     Array.prototype.forEach.call(form.querySelectorAll('.qlg-screen'), function (s) { screens[s.getAttribute('data-step')] = s; });
 
     // ---- State (persists across Back/Forward within the session) --------
-    const STEPS = ['intro', 'service', 'location', 'home', 'contact', 'notes', 'done'];
-    const QNUM = { service: 1, location: 2, home: 3, contact: 4, notes: 5 };
-    const QTOTAL = 5;
+    const STEPS = ['intro', 'service', 'location', 'home', 'rooms', 'clean', 'contact', 'notes', 'done'];
+    const QNUM = { service: 1, location: 2, home: 3, rooms: 4, clean: 5, contact: 6, notes: 7 };
+    const QTOTAL = 7;
     const state = { service: '', serviceLabel: '', specialtyType: '', postcode: '', suburb: '', suburbState: '', name: '', phone: '', email: '', notes: '' };
     let stepIndex = 0;
     let pendingHref = null, lastFocused = null;
@@ -477,6 +520,8 @@ const lc = {
         // the visitor tap the field themselves when they're ready.
         const field = name === 'location' ? document.getElementById('qlgSearch')
           : name === 'home' ? document.getElementById('qlgBedrooms')
+          : name === 'rooms' ? document.getElementById('qlgKitchens')
+          : name === 'clean' ? document.getElementById('qlgCondition')
           : name === 'contact' ? document.getElementById('qlgName')
           : document.getElementById('qlgNotes');
         target = isTouch ? el.querySelector('.qlg-q') : field;
@@ -513,7 +558,9 @@ const lc = {
       if (name === 'service') showStep('intro', 'back');
       else if (name === 'location') showStep('service', 'back');
       else if (name === 'home') showStep('location', 'back');
-      else if (name === 'contact') showStep('home', 'back');
+      else if (name === 'rooms') showStep('home', 'back');
+      else if (name === 'clean') showStep('rooms', 'back');
+      else if (name === 'contact') showStep('clean', 'back');
       else if (name === 'notes') showStep('contact', 'back');
     }
 
@@ -549,13 +596,39 @@ const lc = {
       if (ok) {
         state.bedrooms = homeValue('bedrooms');
         state.bathrooms = homeValue('bathrooms');
-        state.livingRooms = homeValue('living_rooms');
-        state.kitchens = homeValue('kitchens');
-        state.storeys = homeValue('storeys');
         state.additionalToilet = homeValue('additional_toilet');
-        state.butlerPantry = homeValue('butler_pantry');
-        state.laundry = homeValue('laundry');
+        state.storeys = homeValue('storeys');
       }
+      return ok;
+    }
+
+    // Nothing here is required — none of it stops a quote being prepared, and
+    // gating on a butler's pantry would cost leads for a detail a person can
+    // confirm on the call.
+    function captureRooms() {
+      state.kitchens = homeValue('kitchens');
+      state.livingRooms = homeValue('living_rooms');
+      state.butlerPantry = homeValue('butler_pantry');
+      state.laundry = homeValue('laundry');
+    }
+
+    // Condition and a date ARE required: without them the enquiry arrives
+    // needing a phone call before anybody can price or schedule it, which is
+    // the whole thing these two questions exist to avoid.
+    function validateClean() {
+      let ok = true;
+      const condition = homeValue('condition');
+      const date = homeValue('preferred_date');
+      if (!condition) { setError('condition', 'Roughly what state is it in?'); ok = false; }
+      if (!date) {
+        setError('preferred_date', 'Roughly when would you like it?');
+        ok = false;
+      } else {
+        const chosen = new Date(date + 'T00:00:00');
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        if (chosen < today) { setError('preferred_date', 'Please choose a date from today onwards.'); ok = false; }
+      }
+      if (ok) { state.condition = condition; state.preferredDate = date; }
       return ok;
     }
 
@@ -658,6 +731,8 @@ const lc = {
         propertyType: payload.storeys ? 'HOUSE' : '',
         bedrooms: payload.bedrooms_n,
         bathrooms: payload.bathrooms_n,
+        condition: payload.condition || '',
+        preferredDate: payload.preferred_date || '',
         frequency: slug === 'deep' || slug === 'insurance' ? 'ONE_OFF' : '',
         name: payload.name || '',
         email: payload.email || '',
@@ -735,6 +810,8 @@ const lc = {
         living_rooms: payload.living_rooms || '',
         kitchens: payload.kitchens || '',
         storeys: payload.storeys || '',
+        condition: payload.condition || '',
+        preferred_date: payload.preferred_date || '',
         additional_toilet: payload.additional_toilet || '',
         butler_pantry: payload.butler_pantry || '',
         laundry: payload.laundry || '',
@@ -833,6 +910,8 @@ const lc = {
         // Numeric forms for the funnel, which stores them as counts.
         bedrooms_n: asCount(values.bedrooms),
         bathrooms_n: asCount(values.bathrooms),
+        condition: values.condition,
+        preferred_date: values.preferredDate,
         funnel_service: funnelServiceSlug(values),
         contact_consent: values.contactConsent === true,
         marketing_consent: values.marketingConsent === true,
@@ -1045,7 +1124,9 @@ const lc = {
       ev.preventDefault();
       const name = STEPS[stepIndex];
       if (name === 'location') { if (!locationNext.disabled) locationNext.click(); }
-      else if (name === 'home') { clearErrors(); if (validateHome()) showStep('contact', 'next'); }
+      else if (name === 'home') { clearErrors(); if (validateHome()) showStep('rooms', 'next'); }
+      else if (name === 'rooms') { captureRooms(); showStep('clean', 'next'); }
+      else if (name === 'clean') { clearErrors(); if (validateClean()) showStep('contact', 'next'); }
       else if (name === 'contact') { clearErrors(); if (validateContact()) showStep('notes', 'next'); }
       else if (name === 'notes') { submitLead(); }
     });

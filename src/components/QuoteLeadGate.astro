@@ -553,15 +553,24 @@ const lc = {
       focusStep(name);
     }
 
+    /**
+     * Move one step, in the order STEPS already declares.
+     *
+     * Every transition used to name its destination by hand, in seven places.
+     * Inserting the property questions meant updating all seven, one was
+     * missed — the Continue button on the location step still said 'contact' —
+     * and anybody who tapped it went from question 2 to question 6, skipping
+     * every question a quote is priced on. Deriving the destination from the
+     * list means adding a step is one edit, and cannot half-happen.
+     */
+    function advance() {
+      const next = STEPS[stepIndex + 1];
+      if (next) showStep(next, 'next');
+    }
+
     function goBack() {
-      const name = STEPS[stepIndex];
-      if (name === 'service') showStep('intro', 'back');
-      else if (name === 'location') showStep('service', 'back');
-      else if (name === 'home') showStep('location', 'back');
-      else if (name === 'rooms') showStep('home', 'back');
-      else if (name === 'clean') showStep('rooms', 'back');
-      else if (name === 'contact') showStep('clean', 'back');
-      else if (name === 'notes') showStep('contact', 'back');
+      const prev = STEPS[stepIndex - 1];
+      if (prev) showStep(prev, 'back');
     }
 
     // ---- Step 1: service cards (select → animate → auto-advance) ---------
@@ -575,7 +584,7 @@ const lc = {
         state.service = opt.getAttribute('data-service') || '';
         state.serviceLabel = opt.getAttribute('data-label') || '';
         state.specialtyType = opt.getAttribute('data-specialty') || '';
-        setTimeout(function () { if (STEPS[stepIndex] === 'service') showStep('location', 'next'); }, 420);
+        setTimeout(function () { if (STEPS[stepIndex] === 'service') advance(); }, 420);
       });
     });
 
@@ -1019,7 +1028,7 @@ const lc = {
       notServicedPanel.hidden = serviced;
       updateLocationNext();
       if (serviced) {
-        setTimeout(function () { if (STEPS[stepIndex] === 'location' && suburbHidden.value) showStep('home', 'next'); }, 1300);
+        setTimeout(function () { if (STEPS[stepIndex] === 'location' && suburbHidden.value) advance(); }, 1300);
       }
     }
     function selectSuburb(name, stateAbbr, pc) {
@@ -1142,11 +1151,11 @@ const lc = {
       if (locationNext.disabled) return;
       if (!state.postcode) state.postcode = pcHidden.value;
       if (!state.suburb) state.suburb = suburbHidden.value;
-      showStep('contact', 'next');
+      advance();
     });
 
     // ---- Buttons / navigation -------------------------------------------
-    document.getElementById('qlgStart').addEventListener('click', function () { showStep('service', 'next'); });
+    document.getElementById('qlgStart').addEventListener('click', advance);
     backBtn.addEventListener('click', goBack);
     document.getElementById('qlgSkip').addEventListener('click', function () { submitLead(); });
     document.getElementById('qlgDone').addEventListener('click', function () { closeModal(); });
@@ -1155,10 +1164,10 @@ const lc = {
       ev.preventDefault();
       const name = STEPS[stepIndex];
       if (name === 'location') { if (!locationNext.disabled) locationNext.click(); }
-      else if (name === 'home') { clearErrors(); if (validateHome()) showStep('rooms', 'next'); }
-      else if (name === 'rooms') { captureRooms(); showStep('clean', 'next'); }
-      else if (name === 'clean') { clearErrors(); if (validateClean()) showStep('contact', 'next'); }
-      else if (name === 'contact') { clearErrors(); if (validateContact()) showStep('notes', 'next'); }
+      else if (name === 'home') { clearErrors(); if (validateHome()) advance(); }
+      else if (name === 'rooms') { captureRooms(); advance(); }
+      else if (name === 'clean') { clearErrors(); if (validateClean()) advance(); }
+      else if (name === 'contact') { clearErrors(); if (validateContact()) advance(); }
       else if (name === 'notes') { submitLead(); }
     });
 

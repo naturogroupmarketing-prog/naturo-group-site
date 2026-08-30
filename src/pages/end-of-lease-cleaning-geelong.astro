@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import { site, ctaPrimary , aggregateRatingSchema} from '../data/site';
+import { geelongEolSuburbs } from '../data/geelongEolSuburbs';
 
 const pageUrl = `${site.url}/end-of-lease-cleaning-geelong`;
 
@@ -323,26 +324,39 @@ const schema = [
         </h2>
         <p style="font-family: 'Poppins', sans-serif; font-size: 14px; color: rgb(71, 85, 105);">Each suburb page covers local property types, pricing and what your property manager will inspect.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3" style="margin-bottom: 3rem;">
-        {[
-          { name: 'Ocean Grove', slug: 'ocean-grove' },
-          { name: 'Torquay', slug: 'torquay' },
-          { name: 'Newtown', slug: 'newtown' },
-          { name: 'Lara', slug: 'lara' },
-          { name: 'Leopold', slug: 'leopold' },
-          { name: 'Belmont', slug: 'belmont' },
-          { name: 'Highton', slug: 'highton' },
-          { name: 'Geelong West', slug: 'geelong-west' },
-          { name: 'Barwon Heads', slug: 'barwon-heads' },
-          { name: 'Grovedale', slug: 'grovedale' },
-        ].map((s) => (
+      <!-- Suburb detail. These ten suburbs had their own pages until 30 Aug 2026,
+           when they were merged here: at 79% mean pairwise similarity they read as
+           doorway pages. Each suburb's genuinely local content — its rental market,
+           housing stock and neighbouring areas — is kept below, which is the part
+           that was never boilerplate. -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3" style="margin-bottom: 2.5rem;">
+        {geelongEolSuburbs.map((s) => (
           <a
-            href={`/end-of-lease-cleaning/geelong/${s.slug}/`}
+            href={`#eol-${s.slug}`}
             class="flex items-center gap-2 px-4 py-3 rounded-[14px] border border-[rgba(15,23,42,0.08)] text-sm font-medium text-[var(--color-navy)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition-colors"
           >
             <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            EOL Cleaning {s.name}
+            {s.name}
           </a>
+        ))}
+      </div>
+
+      <div class="eol-suburb-detail" style="margin-bottom: 3rem;">
+        {geelongEolSuburbs.map((s) => (
+          <section id={`eol-${s.slug}`} class="eol-suburb">
+            <h3 class="eol-suburb-h3">End of lease cleaning in {s.name} {s.stateCode} {s.postcode}</h3>
+            <p class="eol-suburb-blurb">{s.blurb}</p>
+            <dl class="eol-suburb-facts">
+              <div>
+                <dt>Typical properties</dt>
+                <dd>{s.propertyTypes}</dd>
+              </div>
+              <div>
+                <dt>Also covered nearby</dt>
+                <dd>{s.nearbyText}</dd>
+              </div>
+            </dl>
+          </section>
         ))}
       </div>
       <div>
@@ -363,4 +377,55 @@ const schema = [
 
 <style>
   details > summary::-webkit-details-marker { display: none; }
+
+  /* Per-suburb detail, merged in from the ten retired suburb pages. */
+  .eol-suburb-detail {
+    display: grid;
+    gap: 20px;
+  }
+  .eol-suburb {
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    padding: 24px 26px;
+    scroll-margin-top: 96px;
+  }
+  .eol-suburb-h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin: 0 0 10px;
+  }
+  .eol-suburb-blurb {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-slate);
+    margin: 0 0 16px;
+  }
+  .eol-suburb-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px 28px;
+    margin: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+  }
+  .eol-suburb-facts dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent-blue);
+    margin: 0 0 4px;
+  }
+  .eol-suburb-facts dd {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--color-slate);
+    margin: 0;
+  }
+  @media (min-width: 900px) {
+    .eol-suburb-detail { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>

@@ -280,6 +280,119 @@
   to   = "/"
   status = 301
 
+
+# ── Geelong end-of-lease suburb pages, consolidated 30 Aug 2026 ─────────────
+# These ten pages averaged 1,917 words at 79% mean pairwise similarity — about
+# 1,500 shared words each with the suburb name swapped, which reads as a doorway
+# set rather than ten local pages. They are merged into the Geelong hub, which
+# now carries each suburb's own rental-market copy, housing stock and nearby
+# areas. 301 so the accumulated equity lands on the one page worth ranking.
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/ocean-grove"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/ocean-grove/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/torquay"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/torquay/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/newtown"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/newtown/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/lara"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/lara/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/leopold"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/leopold/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/belmont"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/belmont/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/highton"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/highton/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/geelong-west"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/geelong-west/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/barwon-heads"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/barwon-heads/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/grovedale"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/grovedale/"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from   = "/end-of-lease-cleaning/geelong/*"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
 # 404 fallback
 [[redirects]]
   from = "/*"

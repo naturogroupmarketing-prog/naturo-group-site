@@ -7984,6 +7984,1810 @@ export const suburbs: Suburb[] = [
       },
     ],
   },
+  {
+    slug: 'cleaners-carlton',
+    name: 'Carlton',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Carlton VIC 3053',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Carlton'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Carlton',
+      h2: 'Eco-friendly house cleaning in Carlton 3053',
+      paragraphs: [
+        'Carlton runs on single- and double-fronted Victorian terraces, many subdivided into rentals, alongside student apartment blocks serving the University of Melbourne, which means a lot of moving in and out. Student leases turn over heavily each December and February, so end-of-lease work clusters hard around those months. We clean to the standard agents actually inspect against, and if something is flagged we come back within 72 hours at no charge.',
+        'Day to day the constraint is access — almost no off-street parking, and most terraces open straight onto the footpath with a narrow hall — and original tessellated tile entries, ornate cornices, leadlight and cast-iron lacework that supermarket cleaners quietly damage. Both get factored into the quote rather than discovered on site. We also cover Carlton North, Parkville, North Melbourne across Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Carlton homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Student leases turn over heavily each December and February, so end-of-lease work clusters hard around those months.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Carlton 3053, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Bond-back guarantee', body: 'If your agent flags anything at the final inspection, we return and re-clean it within 72 hours at no charge.' },
+        { icon: 'clock', title: 'Short-notice bookings', body: 'Student leases turn over heavily each December and February, so end-of-lease work clusters hard around those months.' },
+        { icon: 'sparkle', title: 'Where the marks actually are', body: 'We concentrate on original tessellated tile entries, ornate cornices, leadlight and cast-iron lacework — the areas inspections fail on.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Carlton homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Carlton?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Carlton access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Carlton 3053 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Carlton VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Carlton 3053. Police-checked, insured cleaners for single- and double-fronted Victorian terraces. Free quote.',
+    },
+    nearbySuburbs: ['Carlton North', 'Parkville', 'North Melbourne', 'Fitzroy', 'Collingwood', 'Brunswick', 'Princes Hill', 'East Melbourne', 'Melbourne CBD', 'Fitzroy North'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you do end-of-lease cleaning in Carlton 3053?',
+        a: 'Yes, and it is a large part of our work here. Student leases turn over heavily each December and February, so end-of-lease work clusters hard around those months. We clean to the standard agents inspect against, and if anything is flagged at the final inspection we return and re-clean it within 72 hours at no charge.',
+      },
+      {
+        q: 'What does a bond clean actually include?',
+        a: 'Oven, rangehood and cooktop, inside cupboards and drawers, bathrooms including grout and shower screens, skirtings, window tracks, internal glass and the full floor. It is the detail in the tracks and the oven that inspections fail on.',
+      },
+      {
+        q: 'Can you clean at short notice?',
+        a: 'Usually. Leases in Carlton do not end tidily, so we hold capacity for short-notice bond cleans. Call 1300 876 472 and we will tell you honestly what is available rather than promising a slot we cannot staff.',
+      },
+      {
+        q: 'Is access difficult in Carlton?',
+        a: 'It can be — almost no off-street parking, and most terraces open straight onto the footpath with a narrow hall. Mention it when you book and we will plan around it.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Carlton where original tessellated tile entries, ornate cornices, leadlight and cast-iron lacework that supermarket cleaners quietly damage. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Carlton do you cover?',
+        a: 'Alongside Carlton 3053 we service Carlton North, Parkville, North Melbourne, Fitzroy, Collingwood, Brunswick and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Carlton?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Carlton, where single- and double-fronted Victorian terraces sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-carlton-north',
+    name: 'Carlton North',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Carlton North VIC 3054',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Carlton North'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Carlton North',
+      h2: 'Eco-friendly house cleaning in Carlton North 3054',
+      paragraphs: [
+        'Most of Carlton North is larger double-fronted Victorian and Edwardian family homes, most owner-occupied and many with rear extensions opening to a garden. Period homes reward method over strength: original hardwood boards, leadlight windows and period skirtings that need pH-neutral products rather than general-purpose spray. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, permit-only street parking on the Princes Hill grid, and long central halls that mean carrying equipment the length of the house. We plan for it when you book. Alongside Carlton North 3054 we service Carlton, Princes Hill, Fitzroy North and the wider Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Carlton North homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Owner-occupier households here tend to book regular fortnightly cleans rather than one-off end-of-lease work.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Carlton North 3054, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for original hardwood boards, leadlight windows and period skirtings.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Carlton North homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Carlton North?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Carlton North access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Carlton North 3054 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Carlton North | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Carlton North 3054. Police-checked, insured cleaners for larger double-fronted Victorian and Edwardian family homes. Free quote.',
+    },
+    nearbySuburbs: ['Carlton', 'Princes Hill', 'Fitzroy North', 'Brunswick East', 'Parkville', 'Fitzroy', 'Clifton Hill', 'Northcote', 'Brunswick', 'North Melbourne'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you clean original timber floors and leadlight?',
+        a: 'We do, and both need restraint. Timber is damaged by excess water and by alkaline products; leadlight is damaged by pressure on the came. We use barely-damp methods on boards and clean glass panels by hand.',
+      },
+      {
+        q: 'A Carlton North home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Larger double-fronted victorian and edwardian family homes, most owner-occupied and many with rear extensions opening to a garden means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Can you work around access in Carlton North?',
+        a: 'Yes — permit-only street parking on the Princes Hill grid, and long central halls that mean carrying equipment the length of the house. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Do you clean ornate cornices and ceiling roses?',
+        a: 'Yes, as part of a deep clean rather than a regular visit. Plaster detail holds dust and cobwebs and needs dry methods; wet cleaning plaster is how it gets stained.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Carlton North where original hardwood boards, leadlight windows and period skirtings that need pH-neutral products rather than general-purpose spray. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Carlton North do you cover?',
+        a: 'Alongside Carlton North 3054 we service Carlton, Princes Hill, Fitzroy North, Brunswick East, Parkville, Fitzroy and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Carlton North?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Carlton North, where larger double-fronted Victorian and Edwardian family homes sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-fitzroy',
+    name: 'Fitzroy',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Fitzroy VIC 3065',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Fitzroy'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Fitzroy',
+      h2: 'Eco-friendly house cleaning in Fitzroy 3065',
+      paragraphs: [
+        'Fitzroy is largely converted warehouses and former factories turned into loft apartments, mixed with tight worker cottages and share houses. Converted industrial space cleans nothing like a standard flat — exposed brick, polished concrete, black steel-framed industrial windows and high ceilings that put dust well out of normal reach — and a checklist written for a two-bedroom unit simply misses most of it.',
+        'Access is its own problem here: rear laneway entries, steep internal stairs and mezzanines, and buildings where there is no lift to a second-level loft. Telling us up front means the time is spent on the apartment instead. Our team also works across Fitzroy North, Collingwood, Carlton and the rest of Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Fitzroy homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Share-house turnover is constant rather than seasonal, and bond cleans here are usually booked at short notice.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Fitzroy 3065, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Planned for the access', body: 'In Fitzroy, rear laneway entries, steep internal stairs and mezzanines, and buildings where there is no lift to a second-level loft — so we plan the route in before the day, not on it.' },
+        { icon: 'sparkle', title: 'Built for converted space', body: 'Concrete, exposed brick, steel-framed glass and high ceilings need reach and the right product, not more pressure.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Fitzroy homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Fitzroy?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Fitzroy access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Fitzroy 3065 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Fitzroy VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Fitzroy 3065. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Fitzroy North', 'Collingwood', 'Carlton', 'Abbotsford', 'Clifton Hill', 'Brunswick', 'Richmond', 'Carlton North', 'East Melbourne', 'Northcote'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Is polished concrete cleaned differently to tile?',
+        a: 'It is. Sealed concrete is porous where the seal has worn, and acidic or heavily alkaline products will dull it. We use pH-neutral products and avoid flooding the floor, which is the usual cause of patchy finish.',
+      },
+      {
+        q: 'How do you handle access in Fitzroy?',
+        a: 'By asking first. Here rear laneway entries, steep internal stairs and mezzanines, and buildings where there is no lift to a second-level loft. Sorting it at booking means the cleaner starts on time.',
+      },
+      {
+        q: 'Do you clean mezzanines and sleeping platforms?',
+        a: 'Yes, and they get missed constantly. Mezzanines in Fitzroy conversions collect dust that falls from the roof structure above, so they need doing properly rather than a quick pass.',
+      },
+      {
+        q: 'Can you get to the Brunswick Street end of the suburb?',
+        a: 'Yes — Brunswick Street and the streets running off it are core coverage for us in Fitzroy, along with the rest of Inner North Melbourne.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Fitzroy where exposed brick, polished concrete, black steel-framed industrial windows and high ceilings that put dust well out of normal reach. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Fitzroy do you cover?',
+        a: 'Alongside Fitzroy 3065 we service Fitzroy North, Collingwood, Carlton, Abbotsford, Clifton Hill, Brunswick and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Fitzroy?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Fitzroy, where converted warehouses and former factories turned into loft apartments sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-fitzroy-north',
+    name: 'Fitzroy North',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Fitzroy North VIC 3068',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Fitzroy North'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Fitzroy North',
+      h2: 'Eco-friendly house cleaning in Fitzroy North 3068',
+      paragraphs: [
+        'Most of Fitzroy North is Edwardian and late-Victorian family homes around Edinburgh Gardens, a high proportion renovated with glazed rear extensions. Period homes reward method over strength: full-height glazing, skylights and polished timber floors, alongside untouched period rooms at the front of the same house. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, narrow side returns, and rear extensions with large expanses of glass that need reaching from both inside and out. We plan for it when you book. Alongside Fitzroy North 3068 we service Fitzroy, Carlton North, Clifton Hill and the wider Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Fitzroy North homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Family households dominate, so the pattern is regular cleaning with occasional deep cleans before or after renovation work.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Fitzroy North 3068, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for full-height glazing, skylights and polished timber floors, alongside untouched period rooms at the front of the same house.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Fitzroy North homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Fitzroy North?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Fitzroy North access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Fitzroy North 3068 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Fitzroy North | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Fitzroy North 3068. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Fitzroy', 'Carlton North', 'Clifton Hill', 'Northcote', 'Brunswick East', 'Princes Hill', 'Collingwood', 'Thornbury', 'Westgarth', 'Brunswick'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you work around access in Fitzroy North?',
+        a: 'Yes — narrow side returns, and rear extensions with large expanses of glass that need reaching from both inside and out. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Do you clean ornate cornices and ceiling roses?',
+        a: 'Yes, as part of a deep clean rather than a regular visit. Plaster detail holds dust and cobwebs and needs dry methods; wet cleaning plaster is how it gets stained.',
+      },
+      {
+        q: 'Can you clean around a renovation in Fitzroy North?',
+        a: 'We can. Post-renovation cleans are a different job to a regular visit — fine dust settles into every surface for days afterwards — so we quote them separately and allow the time they actually take.',
+      },
+      {
+        q: 'Are your products safe on period features in Fitzroy North?',
+        a: 'Yes, and it is the question we get asked most in homes like these. Full-height glazing, skylights and polished timber floors, alongside untouched period rooms at the front of the same house. We use pH-neutral, plant-based products and surface-appropriate methods so original detail is cleaned, not slowly stripped.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Fitzroy North where full-height glazing, skylights and polished timber floors, alongside untouched period rooms at the front of the same house. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Fitzroy North do you cover?',
+        a: 'Alongside Fitzroy North 3068 we service Fitzroy, Carlton North, Clifton Hill, Northcote, Brunswick East, Princes Hill and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Fitzroy North?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Fitzroy North, where Edwardian and late-Victorian family homes around Edinburgh Gardens sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-collingwood',
+    name: 'Collingwood',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Collingwood VIC 3066',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Collingwood'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Collingwood',
+      h2: 'Eco-friendly house cleaning in Collingwood 3066',
+      paragraphs: [
+        'Collingwood is largely former industrial buildings converted to loft apartments and studios, plus rows of small workers cottages on the flat. Converted industrial space cleans nothing like a standard flat — polished concrete floors, exposed ductwork and double-height voids where light shows every mark on the glass — and a checklist written for a two-bedroom unit simply misses most of it.',
+        'Access is its own problem here: goods lifts rather than passenger lifts in some converted buildings, and loading-bay access that has to be arranged with building management. Telling us up front means the time is spent on the apartment instead. Our team also works across Fitzroy, Abbotsford, Clifton Hill and the rest of Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Collingwood homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A high share of creative-industry tenants and short leases means bond cleans are a steady part of the work here.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Collingwood 3066, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Planned for the access', body: 'In Collingwood, goods lifts rather than passenger lifts in some converted buildings, and loading-bay access that has to be arranged with building management — so we plan the route in before the day, not on it.' },
+        { icon: 'sparkle', title: 'Built for converted space', body: 'Concrete, exposed brick, steel-framed glass and high ceilings need reach and the right product, not more pressure.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Collingwood homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Collingwood?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Collingwood access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Collingwood 3066 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Collingwood VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Collingwood 3066. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Fitzroy', 'Abbotsford', 'Clifton Hill', 'Richmond', 'Carlton', 'Fitzroy North', 'Cremorne', 'East Melbourne', 'Burnley', 'Northcote'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you clean mezzanines and sleeping platforms?',
+        a: 'Yes, and they get missed constantly. Mezzanines in Collingwood conversions collect dust that falls from the roof structure above, so they need doing properly rather than a quick pass.',
+      },
+      {
+        q: 'Can you get to the Smith Street end of the suburb?',
+        a: 'Yes — Smith Street and the streets running off it are core coverage for us in Collingwood, along with the rest of Inner North Melbourne.',
+      },
+      {
+        q: 'Can you clean a converted warehouse in Collingwood?',
+        a: 'That is most of what we do here. Collingwood is former industrial buildings converted to loft apartments and studios, plus rows of small workers cottages on the flat, and the reality is polished concrete floors, exposed ductwork and double-height voids where light shows every mark on the glass. A standard apartment checklist misses the voids, the ductwork and the upper glazing entirely, so we scope those in explicitly.',
+      },
+      {
+        q: 'How do you reach high windows and ceilings?',
+        a: 'With extension gear and the right cloths for glass and steel. Where a void genuinely cannot be reached safely from the floor we will tell you at quote stage rather than leaving it and hoping it is not noticed.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Collingwood where polished concrete floors, exposed ductwork and double-height voids where light shows every mark on the glass. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Collingwood do you cover?',
+        a: 'Alongside Collingwood 3066 we service Fitzroy, Abbotsford, Clifton Hill, Richmond, Carlton, Fitzroy North and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Collingwood?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Collingwood, where former industrial buildings converted to loft apartments and studios sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-richmond',
+    name: 'Richmond',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Richmond VIC 3121',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Richmond'],
+      tagline: 'Trusted, Trained and Thorough — across Inner East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Richmond',
+      h2: 'Eco-friendly house cleaning in Richmond 3121',
+      paragraphs: [
+        'Richmond is unusually mixed: Victorian workers cottages on the hill, warehouse conversions near the river and a growing band of new apartment towers along the rail corridor. Two homes a street apart can need completely different plans, so we scope the property rather than the postcode. What is consistent is a genuine split between period timber and plaster in the cottages and modern engineered stone and glass in the towers.',
+        'On the practical side, steep streets around Richmond Hill, and event-day restrictions when the MCG and AAMI Park are in use. We build that into the booking. We also service Cremorne, Burnley, Abbotsford and the surrounding Inner East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Richmond homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. The mix of long-term owners and short apartment leases means both regular cleaning and end-of-lease work run year-round.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Richmond 3121, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Scoped to the property', body: 'Richmond stock varies street to street, so the quote follows the home rather than a postcode average.' },
+        { icon: 'sparkle', title: 'Right product, right surface', body: 'Plant-based, pH-neutral products matched to a genuine split between period timber and plaster in the cottages and modern engineered stone and glass in the towers.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Richmond homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Richmond?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Richmond access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Richmond 3121 and the surrounding Inner East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Richmond VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Richmond 3121. Police-checked, insured cleaners for Victorian workers cottages on the hill. Free quote.',
+    },
+    nearbySuburbs: ['Cremorne', 'Burnley', 'Abbotsford', 'Collingwood', 'East Melbourne', 'South Yarra', 'Hawthorn', 'Kew', 'Fitzroy', 'Prahran'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Is Bridge Road part of your coverage?',
+        a: 'Yes. Bridge Road and the surrounding streets are core Richmond coverage, along with the wider Inner East Melbourne.',
+      },
+      {
+        q: 'What kinds of homes do you clean in Richmond?',
+        a: 'Victorian workers cottages on the hill, warehouse conversions near the river and a growing band of new apartment towers along the rail corridor. That range is the point — we scope each job to the property rather than applying one checklist across the postcode.',
+      },
+      {
+        q: 'How do you handle parking and access in Richmond?',
+        a: 'We ask when you book, because steep streets around Richmond Hill, and event-day restrictions when the MCG and AAMI Park are in use. Knowing in advance means the visit is spent cleaning.',
+      },
+      {
+        q: 'Do you do both regular cleaning and end-of-lease?',
+        a: 'Both. The mix of long-term owners and short apartment leases means both regular cleaning and end-of-lease work run year-round. Regular clients hold a weekly or fortnightly slot; bond cleans are quoted separately and carry a 72-hour re-clean guarantee if an agent flags anything.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Richmond where a genuine split between period timber and plaster in the cottages and modern engineered stone and glass in the towers. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Richmond do you cover?',
+        a: 'Alongside Richmond 3121 we service Cremorne, Burnley, Abbotsford, Collingwood, East Melbourne, South Yarra and the wider Inner East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Richmond?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Richmond, where Victorian workers cottages on the hill sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-cremorne',
+    name: 'Cremorne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Cremorne VIC 3121',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Cremorne'],
+      tagline: 'Trusted, Trained and Thorough — across Inner East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Cremorne',
+      h2: 'Eco-friendly house cleaning in Cremorne 3121',
+      paragraphs: [
+        'Cremorne is largely small single-fronted worker cottages sitting between converted warehouses now largely occupied by technology and design offices. Converted industrial space cleans nothing like a standard flat — compact floorplans where a cottage kitchen and bathroom carry heavy daily use in a very small footprint — and a checklist written for a two-bedroom unit simply misses most of it.',
+        'Access is its own problem here: severe weekday parking pressure from the office population, which makes mid-morning and afternoon slots far easier than early ones. Telling us up front means the time is spent on the apartment instead. Our team also works across Richmond, Burnley, South Yarra and the rest of Inner East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Cremorne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Residential stock is tightly held and small, so most work here is regular cleaning for professional households.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Cremorne 3121, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Planned for the access', body: 'In Cremorne, severe weekday parking pressure from the office population, which makes mid-morning and afternoon slots far easier than early ones — so we plan the route in before the day, not on it.' },
+        { icon: 'sparkle', title: 'Built for converted space', body: 'Concrete, exposed brick, steel-framed glass and high ceilings need reach and the right product, not more pressure.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Cremorne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Cremorne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Cremorne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Cremorne 3121 and the surrounding Inner East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Cremorne VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Cremorne 3121. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Richmond', 'Burnley', 'South Yarra', 'Prahran', 'Windsor', 'Abbotsford', 'Collingwood', 'Hawthorn', 'Toorak', 'East Melbourne'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you clean a converted warehouse in Cremorne?',
+        a: 'That is most of what we do here. Cremorne is small single-fronted worker cottages sitting between converted warehouses now largely occupied by technology and design offices, and the reality is compact floorplans where a cottage kitchen and bathroom carry heavy daily use in a very small footprint. A standard apartment checklist misses the voids, the ductwork and the upper glazing entirely, so we scope those in explicitly.',
+      },
+      {
+        q: 'How do you reach high windows and ceilings?',
+        a: 'With extension gear and the right cloths for glass and steel. Where a void genuinely cannot be reached safely from the floor we will tell you at quote stage rather than leaving it and hoping it is not noticed.',
+      },
+      {
+        q: 'Is polished concrete cleaned differently to tile?',
+        a: 'It is. Sealed concrete is porous where the seal has worn, and acidic or heavily alkaline products will dull it. We use pH-neutral products and avoid flooding the floor, which is the usual cause of patchy finish.',
+      },
+      {
+        q: 'How do you handle access in Cremorne?',
+        a: 'By asking first. Here severe weekday parking pressure from the office population, which makes mid-morning and afternoon slots far easier than early ones. Sorting it at booking means the cleaner starts on time.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Cremorne where compact floorplans where a cottage kitchen and bathroom carry heavy daily use in a very small footprint. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Cremorne do you cover?',
+        a: 'Alongside Cremorne 3121 we service Richmond, Burnley, South Yarra, Prahran, Windsor, Abbotsford and the wider Inner East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Cremorne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Cremorne, where small single-fronted worker cottages sitting between converted warehouses now largely occupied by technology and design offices sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-south-yarra',
+    name: 'South Yarra',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner South-East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in South Yarra VIC 3141',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'South Yarra'],
+      tagline: 'Trusted, Trained and Thorough — across Inner South-East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in South Yarra',
+      h2: 'Eco-friendly house cleaning in South Yarra 3141',
+      paragraphs: [
+        'Cleaning an apartment in South Yarra is a building job as much as a home one. The stock here is high-density apartment towers along Toorak Road and Chapel Street, alongside grand period homes on the Domain side, and the recurring problem is engineered stone benchtops, marble bathrooms and floor-to-ceiling glass that shows every streak in afternoon light. We bring products matched to stone, glass and engineered surfaces rather than a single all-purpose spray.',
+        'Getting in is the other half of it: concierge and fob-controlled buildings where access has to be arranged in advance, and lift bookings for anything bulky. We sort that at the time of booking, so your cleaner is not standing at a loading dock waiting on a lift. We also cover Toorak, Prahran, Windsor across Inner South-East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for South Yarra homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Apartment leases turn over frequently, and bond cleans are held to building-manager standards as well as the agent’s.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across South Yarra 3141, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Cleared for your building', body: 'Police-checked, trained and covered by $20m public liability — the paperwork most South Yarra building managers ask for before a contractor is let in.' },
+        { icon: 'clock', title: 'Booked around the service lift', body: 'We arrange access in advance, because here concierge and fob-controlled buildings where access has to be arranged in advance, and lift bookings for anything bulky.' },
+        { icon: 'sparkle', title: 'Safe on stone and glass', body: 'pH-neutral, plant-based products for engineered stone, marble and full-height glazing — no acidic supermarket cleaners.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to South Yarra homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner South-East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in South Yarra?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around South Yarra access — get a free quote in under 60 seconds.',
+      trust: 'Servicing South Yarra 3141 and the surrounding Inner South-East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning South Yarra VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in South Yarra 3141. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Toorak', 'Prahran', 'Windsor', 'Melbourne CBD', 'Richmond', 'Cremorne', 'Albert Park', 'Armadale', 'Hawksburn', 'St Kilda'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you clean floor-to-ceiling windows and balconies?',
+        a: 'Interior glass and the accessible face of balcony glazing, yes — and in South Yarra that matters, because engineered stone benchtops, marble bathrooms and floor-to-ceiling glass that shows every streak in afternoon light. Anything requiring rope access or an external swing stage is a specialist trade and we will say so rather than improvise.',
+      },
+      {
+        q: 'Do you clean engineered stone and marble safely?',
+        a: 'Yes. Acidic cleaners etch stone permanently, and it cannot be undone. We use pH-neutral products on benchtops, splashbacks and bathrooms so the finish is cleaned rather than gradually stripped.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for South Yarra apartments?',
+        a: 'Yes. Apartment leases turn over frequently, and bond cleans are held to building-manager standards as well as the agent’s. We clean to that standard and return within 72 hours at no charge if anything is flagged.',
+      },
+      {
+        q: 'Do you clean common areas or just inside the apartment?',
+        a: 'Inside the apartment. Lobbies, corridors and lifts in South Yarra towers are handled under the building\'s own contract, and cutting across that causes more problems than it solves. We clean everything inside your front door.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in South Yarra where engineered stone benchtops, marble bathrooms and floor-to-ceiling glass that shows every streak in afternoon light. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near South Yarra do you cover?',
+        a: 'Alongside South Yarra 3141 we service Toorak, Prahran, Windsor, Melbourne CBD, Richmond, Cremorne and the wider Inner South-East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in South Yarra?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in South Yarra, where high-density apartment towers along Toorak Road and Chapel Street sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-prahran',
+    name: 'Prahran',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner South-East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Prahran VIC 3181',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Prahran'],
+      tagline: 'Trusted, Trained and Thorough — across Inner South-East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Prahran',
+      h2: 'Eco-friendly house cleaning in Prahran 3181',
+      paragraphs: [
+        'Prahran runs on Victorian cottages and terraces interleaved with 1960s and 1970s walk-up flats, many of them three storeys with no lift, which means a lot of moving in and out. The walk-up flats have a high rental share, so end-of-lease cleaning is a large part of the local demand. We clean to the standard agents actually inspect against, and if something is flagged we come back within 72 hours at no charge.',
+        'Day to day the constraint is access — walk-up blocks with no lift, which matters when equipment has to go up two or three flights for every visit — and older tiled bathrooms and kitchens where grout and soap scum are the recurring problem rather than premium finishes. Both get factored into the quote rather than discovered on site. We also cover Windsor, South Yarra, Armadale across Inner South-East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Prahran homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. The walk-up flats have a high rental share, so end-of-lease cleaning is a large part of the local demand.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Prahran 3181, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Bond-back guarantee', body: 'If your agent flags anything at the final inspection, we return and re-clean it within 72 hours at no charge.' },
+        { icon: 'clock', title: 'Short-notice bookings', body: 'The walk-up flats have a high rental share, so end-of-lease cleaning is a large part of the local demand.' },
+        { icon: 'sparkle', title: 'Where the marks actually are', body: 'We concentrate on older tiled bathrooms and kitchens — the areas inspections fail on.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Prahran homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner South-East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Prahran?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Prahran access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Prahran 3181 and the surrounding Inner South-East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Prahran VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Prahran 3181. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Windsor', 'South Yarra', 'Armadale', 'Toorak', 'St Kilda', 'St Kilda East', 'Malvern', 'Hawksburn', 'Albert Park', 'Cremorne'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you clean at short notice?',
+        a: 'Usually. Leases in Prahran do not end tidily, so we hold capacity for short-notice bond cleans. Call 1300 876 472 and we will tell you honestly what is available rather than promising a slot we cannot staff.',
+      },
+      {
+        q: 'Is access difficult in Prahran?',
+        a: 'It can be — walk-up blocks with no lift, which matters when equipment has to go up two or three flights for every visit. Mention it when you book and we will plan around it.',
+      },
+      {
+        q: 'Do I need to be there for a bond clean?',
+        a: 'No, and most Prahran tenants are not. We arrange access, clean, and send photos on completion so you have a record before the final inspection.',
+      },
+      {
+        q: 'Do you clean carpets as part of an end-of-lease in Prahran?',
+        a: 'Steam cleaning is a separate specialist service and many Prahran leases require a receipt for it. We will tell you plainly whether your agreement asks for it rather than quietly leaving it off the quote.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Prahran where older tiled bathrooms and kitchens where grout and soap scum are the recurring problem rather than premium finishes. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Prahran do you cover?',
+        a: 'Alongside Prahran 3181 we service Windsor, South Yarra, Armadale, Toorak, St Kilda, St Kilda East and the wider Inner South-East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Prahran?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Prahran, where Victorian cottages and terraces interleaved with 1960s and 1970s walk-up flats sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-windsor',
+    name: 'Windsor',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner South-East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Windsor VIC 3181',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Windsor'],
+      tagline: 'Trusted, Trained and Thorough — across Inner South-East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Windsor',
+      h2: 'Eco-friendly house cleaning in Windsor 3181',
+      paragraphs: [
+        'Windsor runs on small single-fronted Victorian terraces and converted flats at the southern end of Chapel Street, heavily tenanted, which means a lot of moving in and out. A young renting population means frequent lease turnover and consistent demand for bond cleans. We clean to the standard agents actually inspect against, and if something is flagged we come back within 72 hours at no charge.',
+        'Day to day the constraint is access — narrow rear laneways and tight frontages with no parking, so gear is usually carried in from the street — and compact period bathrooms and galley kitchens where the work is concentrated into two small, hard-used rooms. Both get factored into the quote rather than discovered on site. We also cover Prahran, St Kilda, St Kilda East across Inner South-East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Windsor homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A young renting population means frequent lease turnover and consistent demand for bond cleans.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Windsor 3181, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Bond-back guarantee', body: 'If your agent flags anything at the final inspection, we return and re-clean it within 72 hours at no charge.' },
+        { icon: 'clock', title: 'Short-notice bookings', body: 'A young renting population means frequent lease turnover and consistent demand for bond cleans.' },
+        { icon: 'sparkle', title: 'Where the marks actually are', body: 'We concentrate on compact period bathrooms and galley kitchens — the areas inspections fail on.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Windsor homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner South-East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Windsor?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Windsor access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Windsor 3181 and the surrounding Inner South-East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Windsor VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Windsor 3181. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Prahran', 'St Kilda', 'St Kilda East', 'South Yarra', 'Balaclava', 'Armadale', 'Albert Park', 'Elwood', 'Toorak', 'Melbourne CBD'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Is access difficult in Windsor?',
+        a: 'It can be — narrow rear laneways and tight frontages with no parking, so gear is usually carried in from the street. Mention it when you book and we will plan around it.',
+      },
+      {
+        q: 'Do I need to be there for a bond clean?',
+        a: 'No, and most Windsor tenants are not. We arrange access, clean, and send photos on completion so you have a record before the final inspection.',
+      },
+      {
+        q: 'Do you clean carpets as part of an end-of-lease in Windsor?',
+        a: 'Steam cleaning is a separate specialist service and many Windsor leases require a receipt for it. We will tell you plainly whether your agreement asks for it rather than quietly leaving it off the quote.',
+      },
+      {
+        q: 'Do you do end-of-lease cleaning in Windsor 3181?',
+        a: 'Yes, and it is a large part of our work here. A young renting population means frequent lease turnover and consistent demand for bond cleans. We clean to the standard agents inspect against, and if anything is flagged at the final inspection we return and re-clean it within 72 hours at no charge.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Windsor where compact period bathrooms and galley kitchens where the work is concentrated into two small, hard-used rooms. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Windsor do you cover?',
+        a: 'Alongside Windsor 3181 we service Prahran, St Kilda, St Kilda East, South Yarra, Balaclava, Armadale and the wider Inner South-East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Windsor?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Windsor, where small single-fronted Victorian terraces and converted flats at the southern end of Chapel Street sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-st-kilda',
+    name: 'St Kilda',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bayside Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in St Kilda VIC 3182',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'St Kilda'],
+      tagline: 'Trusted, Trained and Thorough — across Bayside Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in St Kilda',
+      h2: 'Eco-friendly house cleaning in St Kilda 3182',
+      paragraphs: [
+        'Living near the water changes the job. St Kilda is Art Deco and interwar apartment blocks, converted mansions and a substantial short-stay and holiday-let market near the foreshore, and the difference you notice first is salt carried in off the bay, which films windows, balcony glass and external frames far faster than it does inland. Glass and frames here need attention on a shorter cycle than they would a few kilometres inland.',
+        'Access is worth flagging when you book, because shared entries and communal stairwells in older blocks, and holiday-let turnovers that need a fixed changeover window. We schedule around it. Our coverage extends to St Kilda East, Balaclava, Elwood and the rest of Bayside Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for St Kilda homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Short-stay changeovers run to a schedule set by the booking, not the tenant, so timing is fixed rather than flexible.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across St Kilda 3182, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Changeovers to the clock', body: 'In St Kilda, shared entries and communal stairwells in older blocks, and holiday-let turnovers that need a fixed changeover window — so we work to a fixed window when one is needed.' },
+        { icon: 'sparkle', title: 'Built for salt air', body: 'Glass, frames and balcony surfaces cleaned on a cycle that suits a bayside address rather than an inland one.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to St Kilda homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Bayside Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in St Kilda?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around St Kilda access — get a free quote in under 60 seconds.',
+      trust: 'Servicing St Kilda 3182 and the surrounding Bayside Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning St Kilda VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in St Kilda 3182. Police-checked, insured cleaners for Art Deco and interwar apartment blocks. Free quote.',
+    },
+    nearbySuburbs: ['St Kilda East', 'Balaclava', 'Elwood', 'Windsor', 'Albert Park', 'Middle Park', 'Prahran', 'South Melbourne', 'Ripponlea', 'Elsternwick'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you handle a same-day changeover in St Kilda?',
+        a: 'Often, with notice. Short-stay turnover in St Kilda runs to fixed check-out and check-in times, so we book the window rather than a vague slot and confirm the day before.',
+      },
+      {
+        q: 'Do you clean sand and salt off hard floors?',
+        a: 'Yes, and it needs the right approach — sand is abrasive and dragging it across floorboards or tiles does the damage. We lift it before washing rather than mopping it around.',
+      },
+      {
+        q: 'Why do windows need cleaning more often in St Kilda?',
+        a: 'Salt. Salt carried in off the bay, which films windows, balcony glass and external frames far faster than it does inland. Inland, glass can go months; near the bay the film returns noticeably faster, so most clients here put glass on a shorter cycle than the rest of the house.',
+      },
+      {
+        q: 'Do you handle holiday-let and short-stay changeovers?',
+        a: 'Yes. In St Kilda that is a real part of the market, and the constraint is that shared entries and communal stairwells in older blocks, and holiday-let turnovers that need a fixed changeover window. We work to the changeover window rather than a loose morning-or-afternoon slot.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in St Kilda where salt carried in off the bay, which films windows, balcony glass and external frames far faster than it does inland. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near St Kilda do you cover?',
+        a: 'Alongside St Kilda 3182 we service St Kilda East, Balaclava, Elwood, Windsor, Albert Park, Middle Park and the wider Bayside Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in St Kilda?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in St Kilda, where Art Deco and interwar apartment blocks sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-albert-park',
+    name: 'Albert Park',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bayside Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Albert Park VIC 3206',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Albert Park'],
+      tagline: 'Trusted, Trained and Thorough — across Bayside Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Albert Park',
+      h2: 'Eco-friendly house cleaning in Albert Park 3206',
+      paragraphs: [
+        'Most of Albert Park is Victorian and Edwardian homes on the streets around the lake, largely owner-occupied and many carefully restored. Period homes reward method over strength: original tessellated verandah tiles, cast-iron detail and restored joinery that need method rather than strength. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, road closures and restricted access around the lake circuit during the Grand Prix build-up and pack-down each autumn. We plan for it when you book. Alongside Albert Park 3206 we service Middle Park, South Melbourne, Port Melbourne and the wider Bayside Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Albert Park homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Long-tenure households here mostly book regular weekly or fortnightly cleaning rather than one-off work.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Albert Park 3206, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for original tessellated verandah tiles, cast-iron detail and restored joinery.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Albert Park homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Bayside Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Albert Park?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Albert Park access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Albert Park 3206 and the surrounding Bayside Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Albert Park VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Albert Park 3206. Police-checked, insured cleaners for Victorian and Edwardian homes on the streets around the lake. Free quote.',
+    },
+    nearbySuburbs: ['Middle Park', 'South Melbourne', 'Port Melbourne', 'St Kilda', 'Southbank', 'Melbourne CBD', 'Windsor', 'Elwood', 'Prahran', 'South Yarra'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you clean around a renovation in Albert Park?',
+        a: 'We can. Post-renovation cleans are a different job to a regular visit — fine dust settles into every surface for days afterwards — so we quote them separately and allow the time they actually take.',
+      },
+      {
+        q: 'Are your products safe on period features in Albert Park?',
+        a: 'Yes, and it is the question we get asked most in homes like these. Original tessellated verandah tiles, cast-iron detail and restored joinery that need method rather than strength. We use pH-neutral, plant-based products and surface-appropriate methods so original detail is cleaned, not slowly stripped.',
+      },
+      {
+        q: 'Do you clean original timber floors and leadlight?',
+        a: 'We do, and both need restraint. Timber is damaged by excess water and by alkaline products; leadlight is damaged by pressure on the came. We use barely-damp methods on boards and clean glass panels by hand.',
+      },
+      {
+        q: 'A Albert Park home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Victorian and edwardian homes on the streets around the lake, largely owner-occupied and many carefully restored means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Albert Park where original tessellated verandah tiles, cast-iron detail and restored joinery that need method rather than strength. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Albert Park do you cover?',
+        a: 'Alongside Albert Park 3206 we service Middle Park, South Melbourne, Port Melbourne, St Kilda, Southbank, Melbourne CBD and the wider Bayside Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Albert Park?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Albert Park, where Victorian and Edwardian homes on the streets around the lake sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-port-melbourne',
+    name: 'Port Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Bayside Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Port Melbourne VIC 3207',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Port Melbourne'],
+      tagline: 'Trusted, Trained and Thorough — across Bayside Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Port Melbourne',
+      h2: 'Eco-friendly house cleaning in Port Melbourne 3207',
+      paragraphs: [
+        'Living near the water changes the job. Port Melbourne is Beacon Cove and Bay Street new builds and townhouses beside surviving rows of workers cottages in the older streets, and the difference you notice first is sea spray off Port Phillip that leaves salt film on waterfront glass, balconies and window frames. Glass and frames here need attention on a shorter cycle than they would a few kilometres inland.',
+        'Access is worth flagging when you book, because townhouse layouts over three levels with internal stairs, and secure garage entries in the newer estates. We schedule around it. Our coverage extends to Albert Park, Middle Park, South Melbourne and the rest of Bayside Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Port Melbourne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A mix of owner-occupiers in the new estates and rental turnover in the cottages keeps both service types in demand.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Port Melbourne 3207, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Changeovers to the clock', body: 'In Port Melbourne, townhouse layouts over three levels with internal stairs, and secure garage entries in the newer estates — so we work to a fixed window when one is needed.' },
+        { icon: 'sparkle', title: 'Built for salt air', body: 'Glass, frames and balcony surfaces cleaned on a cycle that suits a bayside address rather than an inland one.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Port Melbourne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Bayside Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Port Melbourne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Port Melbourne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Port Melbourne 3207 and the surrounding Bayside Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Port Melbourne | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Port Melbourne 3207. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Albert Park', 'Middle Park', 'South Melbourne', 'Southbank', 'Docklands', 'Melbourne CBD', 'St Kilda', 'Williamstown', 'Spotswood', 'Yarraville'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Why do windows need cleaning more often in Port Melbourne?',
+        a: 'Salt. Sea spray off port phillip that leaves salt film on waterfront glass, balconies and window frames. Inland, glass can go months; near the bay the film returns noticeably faster, so most clients here put glass on a shorter cycle than the rest of the house.',
+      },
+      {
+        q: 'Do you handle holiday-let and short-stay changeovers?',
+        a: 'Yes. In Port Melbourne that is a real part of the market, and the constraint is that townhouse layouts over three levels with internal stairs, and secure garage entries in the newer estates. We work to the changeover window rather than a loose morning-or-afternoon slot.',
+      },
+      {
+        q: 'Can you clean balconies and outdoor furniture?',
+        a: 'Accessible balcony surfaces, glass and furniture, yes. Salt and sand build up on balcony tiles and railings faster than most people expect, and it is easier to keep on top of than to recover.',
+      },
+      {
+        q: 'What kind of properties do you clean in Port Melbourne?',
+        a: 'Beacon cove and bay street new builds and townhouses beside surviving rows of workers cottages in the older streets. The plan differs a great deal between them, so we scope the property rather than assuming.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Port Melbourne where sea spray off Port Phillip that leaves salt film on waterfront glass, balconies and window frames. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Port Melbourne do you cover?',
+        a: 'Alongside Port Melbourne 3207 we service Albert Park, Middle Park, South Melbourne, Southbank, Docklands, Melbourne CBD and the wider Bayside Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Port Melbourne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Port Melbourne, where Beacon Cove and Bay Street new builds and townhouses beside surviving rows of workers cottages in the older streets sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-south-melbourne',
+    name: 'South Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner South Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in South Melbourne VIC 3205',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'South Melbourne'],
+      tagline: 'Trusted, Trained and Thorough — across Inner South Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in South Melbourne',
+      h2: 'Eco-friendly house cleaning in South Melbourne 3205',
+      paragraphs: [
+        'Most of South Melbourne is Victorian terraces and converted shopfront residences around the market precinct, with newer apartments toward the Clarendon Street end. Period homes reward method over strength: converted shopfronts with large single-glazed windows and original timber floors that need a gentler approach. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, market-day congestion on Wednesdays, Saturdays and Sundays that makes parking near Coventry Street impractical. We plan for it when you book. Alongside South Melbourne 3205 we service Albert Park, Southbank, Port Melbourne and the wider Inner South Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for South Melbourne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A working mix of professional households and small share arrangements, so both regular and end-of-lease work feature.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across South Melbourne 3205, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for converted shopfronts with large single-glazed windows and original timber floors.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to South Melbourne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner South Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in South Melbourne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around South Melbourne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing South Melbourne 3205 and the surrounding Inner South Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning South Melbourne | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in South Melbourne 3205. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Albert Park', 'Southbank', 'Port Melbourne', 'Middle Park', 'Melbourne CBD', 'South Yarra', 'Windsor', 'Docklands', 'St Kilda', 'Prahran'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you clean original timber floors and leadlight?',
+        a: 'We do, and both need restraint. Timber is damaged by excess water and by alkaline products; leadlight is damaged by pressure on the came. We use barely-damp methods on boards and clean glass panels by hand.',
+      },
+      {
+        q: 'A South Melbourne home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Victorian terraces and converted shopfront residences around the market precinct, with newer apartments toward the clarendon street end means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Can you work around access in South Melbourne?',
+        a: 'Yes — market-day congestion on Wednesdays, Saturdays and Sundays that makes parking near Coventry Street impractical. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Do you clean ornate cornices and ceiling roses?',
+        a: 'Yes, as part of a deep clean rather than a regular visit. Plaster detail holds dust and cobwebs and needs dry methods; wet cleaning plaster is how it gets stained.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in South Melbourne where converted shopfronts with large single-glazed windows and original timber floors that need a gentler approach. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near South Melbourne do you cover?',
+        a: 'Alongside South Melbourne 3205 we service Albert Park, Southbank, Port Melbourne, Middle Park, Melbourne CBD, South Yarra and the wider Inner South Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in South Melbourne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in South Melbourne, where Victorian terraces and converted shopfront residences around the market precinct sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-southbank',
+    name: 'Southbank',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Melbourne CBD & Southbank',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Southbank VIC 3006',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Southbank'],
+      tagline: 'Trusted, Trained and Thorough — across Melbourne CBD & Southbank',
+    },
+    intro: {
+      kicker: 'House cleaning in Southbank',
+      h2: 'Eco-friendly house cleaning in Southbank 3006',
+      paragraphs: [
+        'Cleaning an apartment in Southbank is a building job as much as a home one. The stock here is high-density residential towers through the arts and casino precinct, dominated by one- and two-bedroom apartments, and the recurring problem is floor-to-ceiling glass and exposed balconies where wind-driven grime builds quickly at height. We bring products matched to stone, glass and engineered surfaces rather than a single all-purpose spray.',
+        'Getting in is the other half of it: building induction, loading-dock bookings and service-lift reservations that most towers require before any contractor enters. We sort that at the time of booking, so your cleaner is not standing at a loading dock waiting on a lift. We also cover Melbourne CBD, South Melbourne, Albert Park across Melbourne CBD & Southbank.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Southbank homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Investor-owned apartments turn over on short leases, and bond cleans must satisfy building management as well as the agent.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Southbank 3006, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Cleared for your building', body: 'Police-checked, trained and covered by $20m public liability — the paperwork most Southbank building managers ask for before a contractor is let in.' },
+        { icon: 'clock', title: 'Booked around the service lift', body: 'We arrange access in advance, because here building induction, loading-dock bookings and service-lift reservations that most towers require before any contractor enters.' },
+        { icon: 'sparkle', title: 'Safe on stone and glass', body: 'pH-neutral, plant-based products for engineered stone, marble and full-height glazing — no acidic supermarket cleaners.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Southbank homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Melbourne CBD & Southbank, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Southbank?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Southbank access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Southbank 3006 and the surrounding Melbourne CBD & Southbank.',
+    },
+    seo: {
+      title: 'House Cleaning Southbank VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Southbank 3006. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Melbourne CBD', 'South Melbourne', 'Albert Park', 'Docklands', 'South Yarra', 'Port Melbourne', 'West Melbourne', 'Middle Park', 'Richmond', 'Windsor'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you clean engineered stone and marble safely?',
+        a: 'Yes. Acidic cleaners etch stone permanently, and it cannot be undone. We use pH-neutral products on benchtops, splashbacks and bathrooms so the finish is cleaned rather than gradually stripped.',
+      },
+      {
+        q: 'Do you do end-of-lease cleans for Southbank apartments?',
+        a: 'Yes. Investor-owned apartments turn over on short leases, and bond cleans must satisfy building management as well as the agent. We clean to that standard and return within 72 hours at no charge if anything is flagged.',
+      },
+      {
+        q: 'Do you clean common areas or just inside the apartment?',
+        a: 'Inside the apartment. Lobbies, corridors and lifts in Southbank towers are handled under the building\'s own contract, and cutting across that causes more problems than it solves. We clean everything inside your front door.',
+      },
+      {
+        q: 'Can you work while I\'m at work?',
+        a: 'Most of our Southbank clients are not home. We arrange key or fob access through building management, keep the same cleaner on the apartment, and leave it secured exactly as we found it.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Southbank where floor-to-ceiling glass and exposed balconies where wind-driven grime builds quickly at height. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Southbank do you cover?',
+        a: 'Alongside Southbank 3006 we service Melbourne CBD, South Melbourne, Albert Park, Docklands, South Yarra, Port Melbourne and the wider Melbourne CBD & Southbank. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Southbank?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Southbank, where high-density residential towers through the arts and casino precinct sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-docklands',
+    name: 'Docklands',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Melbourne CBD & Southbank',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Docklands VIC 3008',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Docklands'],
+      tagline: 'Trusted, Trained and Thorough — across Melbourne CBD & Southbank',
+    },
+    intro: {
+      kicker: 'House cleaning in Docklands',
+      h2: 'Eco-friendly house cleaning in Docklands 3008',
+      paragraphs: [
+        'Cleaning an apartment in Docklands is a building job as much as a home one. The stock here is Melbourne’s newest high-rise stock — waterfront towers of glass-fronted apartments with balconies over the harbour, and the recurring problem is exposed waterfront glass that takes wind and salt off the harbour, so balcony doors and windows film over fast. We bring products matched to stone, glass and engineered surfaces rather than a single all-purpose spray.',
+        'Getting in is the other half of it: the strictest building protocols in the city: contractor sign-in, service-lift bookings and set delivery windows. We sort that at the time of booking, so your cleaner is not standing at a loading dock waiting on a lift. We also cover Melbourne CBD, West Melbourne, North Melbourne across Melbourne CBD & Southbank.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Docklands homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A heavily investor-owned and short-stay market, with changeover cleaning as common as regular residential work.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Docklands 3008, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Cleared for your building', body: 'Police-checked, trained and covered by $20m public liability — the paperwork most Docklands building managers ask for before a contractor is let in.' },
+        { icon: 'clock', title: 'Booked around the service lift', body: 'We arrange access in advance, because here the strictest building protocols in the city: contractor sign-in, service-lift bookings and set delivery windows.' },
+        { icon: 'sparkle', title: 'Safe on stone and glass', body: 'pH-neutral, plant-based products for engineered stone, marble and full-height glazing — no acidic supermarket cleaners.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Docklands homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Melbourne CBD & Southbank, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Docklands?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Docklands access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Docklands 3008 and the surrounding Melbourne CBD & Southbank.',
+    },
+    seo: {
+      title: 'House Cleaning Docklands VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Docklands 3008. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Melbourne CBD', 'West Melbourne', 'North Melbourne', 'Southbank', 'Port Melbourne', 'South Melbourne', 'Kensington', 'Footscray', 'Yarraville', 'Parkville'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you do end-of-lease cleans for Docklands apartments?',
+        a: 'Yes. A heavily investor-owned and short-stay market, with changeover cleaning as common as regular residential work. We clean to that standard and return within 72 hours at no charge if anything is flagged.',
+      },
+      {
+        q: 'Do you clean common areas or just inside the apartment?',
+        a: 'Inside the apartment. Lobbies, corridors and lifts in Docklands towers are handled under the building\'s own contract, and cutting across that causes more problems than it solves. We clean everything inside your front door.',
+      },
+      {
+        q: 'Can you work while I\'m at work?',
+        a: 'Most of our Docklands clients are not home. We arrange key or fob access through building management, keep the same cleaner on the apartment, and leave it secured exactly as we found it.',
+      },
+      {
+        q: 'Do you deal with building management in Docklands?',
+        a: 'We do. Towers here need the strictest building protocols in the city: contractor sign-in, service-lift bookings and set delivery windows, and we handle the sign-in and booking rather than leaving it to you. Give us the building\'s requirements when you book and we will work to them.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Docklands where exposed waterfront glass that takes wind and salt off the harbour, so balcony doors and windows film over fast. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Docklands do you cover?',
+        a: 'Alongside Docklands 3008 we service Melbourne CBD, West Melbourne, North Melbourne, Southbank, Port Melbourne, South Melbourne and the wider Melbourne CBD & Southbank. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Docklands?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Docklands, where Melbourne’s newest high-rise stock — waterfront towers of glass-fronted apartments with balconies over the harbour sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-north-melbourne',
+    name: 'North Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in North Melbourne VIC 3051',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Melbourne'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in North Melbourne',
+      h2: 'Eco-friendly house cleaning in North Melbourne 3051',
+      paragraphs: [
+        'North Melbourne is unusually mixed: Victorian terraces on the Errol Street grid, walk-up flats, and high-rise public housing towers, a genuinely mixed streetscape. Two homes a street apart can need completely different plans, so we scope the property rather than the postcode. What is consistent is period plaster and timber in the terraces against hard-wearing vinyl and tile in the flats — two different cleaning plans.',
+        'On the practical side, a mix of permit parking on the terrace streets and controlled entry at the towers, so each address is arranged differently. We build that into the booking. We also service West Melbourne, Parkville, Kensington and the surrounding Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for North Melbourne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Proximity to the CBD and the hospitals brings a steady stream of shorter professional and student leases.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across North Melbourne 3051, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Scoped to the property', body: 'North Melbourne stock varies street to street, so the quote follows the home rather than a postcode average.' },
+        { icon: 'sparkle', title: 'Right product, right surface', body: 'Plant-based, pH-neutral products matched to period plaster and timber in the terraces against hard-wearing vinyl and tile in the flats — two different cleaning plans.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to North Melbourne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in North Melbourne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around North Melbourne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing North Melbourne 3051 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning North Melbourne | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in North Melbourne 3051. Police-checked, insured cleaners for Victorian terraces on the Errol Street grid. Free quote.',
+    },
+    nearbySuburbs: ['West Melbourne', 'Parkville', 'Kensington', 'Carlton', 'Flemington', 'Melbourne CBD', 'Docklands', 'Brunswick', 'Carlton North', 'Ascot Vale'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you clean both a house and an apartment for me in North Melbourne?',
+        a: 'Yes, and it is common in North Melbourne given the mix here. One point of contact covers both addresses and you get the same cleaner standard at each.',
+      },
+      {
+        q: 'Is Errol Street part of your coverage?',
+        a: 'Yes. Errol Street and the surrounding streets are core North Melbourne coverage, along with the wider Inner North Melbourne.',
+      },
+      {
+        q: 'What kinds of homes do you clean in North Melbourne?',
+        a: 'Victorian terraces on the errol street grid, walk-up flats, and high-rise public housing towers, a genuinely mixed streetscape. That range is the point — we scope each job to the property rather than applying one checklist across the postcode.',
+      },
+      {
+        q: 'How do you handle parking and access in North Melbourne?',
+        a: 'We ask when you book, because a mix of permit parking on the terrace streets and controlled entry at the towers, so each address is arranged differently. Knowing in advance means the visit is spent cleaning.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in North Melbourne where period plaster and timber in the terraces against hard-wearing vinyl and tile in the flats — two different cleaning plans. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near North Melbourne do you cover?',
+        a: 'Alongside North Melbourne 3051 we service West Melbourne, Parkville, Kensington, Carlton, Flemington, Melbourne CBD and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in North Melbourne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in North Melbourne, where Victorian terraces on the Errol Street grid sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-west-melbourne',
+    name: 'West Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Melbourne CBD & Southbank',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in West Melbourne VIC 3003',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'West Melbourne'],
+      tagline: 'Trusted, Trained and Thorough — across Melbourne CBD & Southbank',
+    },
+    intro: {
+      kicker: 'House cleaning in West Melbourne',
+      h2: 'Eco-friendly house cleaning in West Melbourne 3003',
+      paragraphs: [
+        'West Melbourne is largely warehouse conversions and recent apartment developments on the industrial edge of the city, with a small pocket of period cottages. Converted industrial space cleans nothing like a standard flat — converted industrial spaces with high ceilings, concrete floors and large steel-framed windows — and a checklist written for a two-bedroom unit simply misses most of it.',
+        'Access is its own problem here: mixed industrial and residential streets where loading zones and truck movements dictate when a van can actually park. Telling us up front means the time is spent on the apartment instead. Our team also works across North Melbourne, Docklands, Melbourne CBD and the rest of Melbourne CBD & Southbank.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for West Melbourne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Newer apartment stock is largely rented, so end-of-lease cleaning is a regular part of the local demand.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across West Melbourne 3003, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Planned for the access', body: 'In West Melbourne, mixed industrial and residential streets where loading zones and truck movements dictate when a van can actually park — so we plan the route in before the day, not on it.' },
+        { icon: 'sparkle', title: 'Built for converted space', body: 'Concrete, exposed brick, steel-framed glass and high ceilings need reach and the right product, not more pressure.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to West Melbourne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Melbourne CBD & Southbank, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in West Melbourne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around West Melbourne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing West Melbourne 3003 and the surrounding Melbourne CBD & Southbank.',
+    },
+    seo: {
+      title: 'House Cleaning West Melbourne | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in West Melbourne 3003. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['North Melbourne', 'Docklands', 'Melbourne CBD', 'Kensington', 'Parkville', 'Footscray', 'Southbank', 'Carlton', 'Flemington', 'Seddon'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Can you get to the Spencer Street end of the suburb?',
+        a: 'Yes — Spencer Street and the streets running off it are core coverage for us in West Melbourne, along with the rest of Melbourne CBD & Southbank.',
+      },
+      {
+        q: 'Can you clean a converted warehouse in West Melbourne?',
+        a: 'That is most of what we do here. West Melbourne is warehouse conversions and recent apartment developments on the industrial edge of the city, with a small pocket of period cottages, and the reality is converted industrial spaces with high ceilings, concrete floors and large steel-framed windows. A standard apartment checklist misses the voids, the ductwork and the upper glazing entirely, so we scope those in explicitly.',
+      },
+      {
+        q: 'How do you reach high windows and ceilings?',
+        a: 'With extension gear and the right cloths for glass and steel. Where a void genuinely cannot be reached safely from the floor we will tell you at quote stage rather than leaving it and hoping it is not noticed.',
+      },
+      {
+        q: 'Is polished concrete cleaned differently to tile?',
+        a: 'It is. Sealed concrete is porous where the seal has worn, and acidic or heavily alkaline products will dull it. We use pH-neutral products and avoid flooding the floor, which is the usual cause of patchy finish.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in West Melbourne where converted industrial spaces with high ceilings, concrete floors and large steel-framed windows. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near West Melbourne do you cover?',
+        a: 'Alongside West Melbourne 3003 we service North Melbourne, Docklands, Melbourne CBD, Kensington, Parkville, Footscray and the wider Melbourne CBD & Southbank. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in West Melbourne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in West Melbourne, where warehouse conversions and recent apartment developments on the industrial edge of the city sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-parkville',
+    name: 'Parkville',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Parkville VIC 3052',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Parkville'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Parkville',
+      h2: 'Eco-friendly house cleaning in Parkville 3052',
+      paragraphs: [
+        'Most of Parkville is grand Victorian terraces on the Royal Park edge, plus academic and hospital housing serving the university and biomedical precinct. Period homes reward method over strength: large period homes with multiple formal rooms, ornate ceilings and original joinery over several levels. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, heavy weekday demand from the university and hospital precinct, so parking is far easier outside teaching hours. We plan for it when you book. Alongside Parkville 3052 we service Carlton, Carlton North, North Melbourne and the wider Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Parkville homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Academic and medical tenancies often run to the academic year, so end-of-lease work concentrates around semester boundaries.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Parkville 3052, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for large period homes with multiple formal rooms, ornate ceilings and original joinery over several levels.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Parkville homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Parkville?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Parkville access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Parkville 3052 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Parkville VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Parkville 3052. Police-checked, insured cleaners for grand Victorian terraces on the Royal Park edge. Free quote.',
+    },
+    nearbySuburbs: ['Carlton', 'Carlton North', 'North Melbourne', 'Princes Hill', 'Brunswick', 'Flemington', 'Kensington', 'Brunswick West', 'Melbourne CBD', 'Fitzroy North'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Are your products safe on period features in Parkville?',
+        a: 'Yes, and it is the question we get asked most in homes like these. Large period homes with multiple formal rooms, ornate ceilings and original joinery over several levels. We use pH-neutral, plant-based products and surface-appropriate methods so original detail is cleaned, not slowly stripped.',
+      },
+      {
+        q: 'Do you clean original timber floors and leadlight?',
+        a: 'We do, and both need restraint. Timber is damaged by excess water and by alkaline products; leadlight is damaged by pressure on the came. We use barely-damp methods on boards and clean glass panels by hand.',
+      },
+      {
+        q: 'A Parkville home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Grand victorian terraces on the royal park edge, plus academic and hospital housing serving the university and biomedical precinct means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Can you work around access in Parkville?',
+        a: 'Yes — heavy weekday demand from the university and hospital precinct, so parking is far easier outside teaching hours. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Parkville where large period homes with multiple formal rooms, ornate ceilings and original joinery over several levels. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Parkville do you cover?',
+        a: 'Alongside Parkville 3052 we service Carlton, Carlton North, North Melbourne, Princes Hill, Brunswick, Flemington and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Parkville?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Parkville, where grand Victorian terraces on the Royal Park edge sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-east-melbourne',
+    name: 'East Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Melbourne CBD & Southbank',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in East Melbourne VIC 3002',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'East Melbourne'],
+      tagline: 'Trusted, Trained and Thorough — across Melbourne CBD & Southbank',
+    },
+    intro: {
+      kicker: 'House cleaning in East Melbourne',
+      h2: 'Eco-friendly house cleaning in East Melbourne 3002',
+      paragraphs: [
+        'Most of East Melbourne is heritage terraces and mansions around the Fitzroy Gardens, together with boutique low-rise apartment conversions. Period homes reward method over strength: heritage-listed interiors — original plasterwork, marble fireplaces and joinery where the wrong product causes permanent damage. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, event-day restrictions around the MCG and tightly controlled heritage streets with very limited parking. We plan for it when you book. Alongside East Melbourne 3002 we service Melbourne CBD, Richmond, Collingwood and the wider Melbourne CBD & Southbank.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for East Melbourne homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. A settled, largely professional population, so the pattern is ongoing regular cleaning more than lease turnover.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across East Melbourne 3002, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for heritage-listed interiors — original plasterwork, marble fireplaces and joinery.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to East Melbourne homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Melbourne CBD & Southbank, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in East Melbourne?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around East Melbourne access — get a free quote in under 60 seconds.',
+      trust: 'Servicing East Melbourne 3002 and the surrounding Melbourne CBD & Southbank.',
+    },
+    seo: {
+      title: 'House Cleaning East Melbourne | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in East Melbourne 3002. Police-checked, insured cleaners for heritage terraces and mansions around the Fitzroy Gardens. Free quote.',
+    },
+    nearbySuburbs: ['Melbourne CBD', 'Richmond', 'Collingwood', 'Fitzroy', 'Carlton', 'Cremorne', 'Abbotsford', 'Southbank', 'South Yarra', 'Jolimont'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'Do you clean original timber floors and leadlight?',
+        a: 'We do, and both need restraint. Timber is damaged by excess water and by alkaline products; leadlight is damaged by pressure on the came. We use barely-damp methods on boards and clean glass panels by hand.',
+      },
+      {
+        q: 'A East Melbourne home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Heritage terraces and mansions around the fitzroy gardens, together with boutique low-rise apartment conversions means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Can you work around access in East Melbourne?',
+        a: 'Yes — event-day restrictions around the MCG and tightly controlled heritage streets with very limited parking. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Do you clean ornate cornices and ceiling roses?',
+        a: 'Yes, as part of a deep clean rather than a regular visit. Plaster detail holds dust and cobwebs and needs dry methods; wet cleaning plaster is how it gets stained.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in East Melbourne where heritage-listed interiors — original plasterwork, marble fireplaces and joinery where the wrong product causes permanent damage. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near East Melbourne do you cover?',
+        a: 'Alongside East Melbourne 3002 we service Melbourne CBD, Richmond, Collingwood, Fitzroy, Carlton, Cremorne and the wider Melbourne CBD & Southbank. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in East Melbourne?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in East Melbourne, where heritage terraces and mansions around the Fitzroy Gardens sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-hawthorn',
+    name: 'Hawthorn',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner East Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Hawthorn VIC 3122',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Hawthorn'],
+      tagline: 'Trusted, Trained and Thorough — across Inner East Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Hawthorn',
+      h2: 'Eco-friendly house cleaning in Hawthorn 3122',
+      paragraphs: [
+        'Most of Hawthorn is substantial Edwardian and Federation family homes on the north side, with 1970s brick flats and student rentals near Swinburne. Period homes reward method over strength: leadlight, picture rails, decorative ceilings and original hearths in the period homes, against dated tile and lino in the flats. We use plant-based, pH-neutral products and match them to the surface, because the damage from the wrong product shows up slowly and does not come back.',
+        'Practically, wide streets with reasonable parking, but large multi-level homes that simply take longer to work through properly. We plan for it when you book. Alongside Hawthorn 3122 we service Hawthorn East, Kew, Richmond and the wider Inner East Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Hawthorn homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. Swinburne’s intake drives student lease turnover in the flats, while the family homes book regular ongoing cleaning.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Hawthorn 3122, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Trusted in period homes', body: 'Police-checked, trained and fully insured, and we keep the same cleaner on your home so nobody is learning it from scratch each visit.' },
+        { icon: 'clock', title: 'Scheduling that fits', body: 'Weekly, fortnightly or one-off, with no lock-in contract and changes handled through the office.' },
+        { icon: 'sparkle', title: 'Gentle on original detail', body: 'pH-neutral, plant-based products chosen for leadlight, picture rails, decorative ceilings and original hearths in the period homes, against dated tile and lino in the flats.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Hawthorn homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner East Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Hawthorn?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Hawthorn access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Hawthorn 3122 and the surrounding Inner East Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Hawthorn VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Hawthorn 3122. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Hawthorn East', 'Kew', 'Richmond', 'Camberwell', 'Burnley', 'Glen Iris', 'Toorak', 'Kooyong', 'Auburn', 'Balwyn'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'A Hawthorn home has a lot of rooms — how long does it take?',
+        a: 'Longer than a flat, which is why we quote on the property. Substantial edwardian and federation family homes on the north side, with 1970s brick flats and student rentals near swinburne means multiple formal rooms and often more than one level, so we set the time to the house rather than to an hourly default.',
+      },
+      {
+        q: 'Can you work around access in Hawthorn?',
+        a: 'Yes — wide streets with reasonable parking, but large multi-level homes that simply take longer to work through properly. We factor that in when the booking is made.',
+      },
+      {
+        q: 'Do you clean ornate cornices and ceiling roses?',
+        a: 'Yes, as part of a deep clean rather than a regular visit. Plaster detail holds dust and cobwebs and needs dry methods; wet cleaning plaster is how it gets stained.',
+      },
+      {
+        q: 'Can you clean around a renovation in Hawthorn?',
+        a: 'We can. Post-renovation cleans are a different job to a regular visit — fine dust settles into every surface for days afterwards — so we quote them separately and allow the time they actually take.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Hawthorn where leadlight, picture rails, decorative ceilings and original hearths in the period homes, against dated tile and lino in the flats. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Hawthorn do you cover?',
+        a: 'Alongside Hawthorn 3122 we service Hawthorn East, Kew, Richmond, Camberwell, Burnley, Glen Iris and the wider Inner East Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Hawthorn?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Hawthorn, where substantial Edwardian and Federation family homes on the north side sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+  {
+    slug: 'cleaners-brunswick',
+    name: 'Brunswick',
+    state: 'Victoria',
+    stateCode: 'VIC',
+    region: 'Inner North Melbourne',
+    heroImage: '/images/hero-staff-bathroom.webp',
+    heroImageAlt: 'Eco-friendly house cleaning in Brunswick VIC 3056',
+    ogImage: '/og-default.jpg',
+    hero: {
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Brunswick'],
+      tagline: 'Trusted, Trained and Thorough — across Inner North Melbourne',
+    },
+    intro: {
+      kicker: 'House cleaning in Brunswick',
+      h2: 'Eco-friendly house cleaning in Brunswick 3056',
+      paragraphs: [
+        'Brunswick is largely former textile and manufacturing buildings converted to apartments, alongside Victorian cottages and a large share-house population. Converted industrial space cleans nothing like a standard flat — converted industrial interiors with concrete, exposed brick and high windows, next door to small period cottages — and a checklist written for a two-bedroom unit simply misses most of it.',
+        'Access is its own problem here: Sydney Road tram-line congestion and clearway restrictions that rule out kerbside access through much of the day. Telling us up front means the time is spent on the apartment instead. Our team also works across Brunswick East, Brunswick West, Carlton North and the rest of Inner North Melbourne.',
+      ],
+    },
+    trust: {
+      h2: 'Police-checked, insured cleaners for Brunswick homes',
+      paragraphs: [
+        'Every NATURO GROUP cleaner is police-checked, trained and covered by $20m public liability insurance. One of Melbourne’s highest share-house concentrations, so bond cleaning demand is constant rather than seasonal.',
+        'We cover regular weekly and fortnightly cleaning, one-off deep cleans and end-of-lease work across Brunswick 3056, as well as NDIS, aged care, Veterans Affairs and insurance jobs. No lock-in contracts, and every clean carries our satisfaction guarantee.',
+      ],
+      points: [
+        { icon: 'shield', title: 'Police-checked and insured', body: 'Every cleaner is police-checked, trained and covered by $20m public liability insurance.' },
+        { icon: 'clock', title: 'Planned for the access', body: 'In Brunswick, Sydney Road tram-line congestion and clearway restrictions that rule out kerbside access through much of the day — so we plan the route in before the day, not on it.' },
+        { icon: 'sparkle', title: 'Built for converted space', body: 'Concrete, exposed brick, steel-framed glass and high ceilings need reach and the right product, not more pressure.' },
+      ],
+    },
+    founderBody: [
+      'At NATURO GROUP we bring the same standard to Brunswick homes that we bring everywhere we work, shaped by a nursing background that informs how we approach being in someone\'s home.',
+      'We support NDIS participants, Veterans Affairs, Workers Compensation, Insurance and Aged Care recipients across Inner North Melbourne, with services built around comfort and independence.',
+      'Our commitment to quality, reliability and personalised care means every client feels valued in their own home. At NATURO GROUP, we don\'t just clean — we create spaces where people feel truly cared for.',
+    ],
+    finalCta: {
+      h2Pre: 'Ready for a',
+      h2Highlight: 'healthier home',
+      h2Post: 'in Brunswick?',
+      sub: 'Eco-friendly products, police-checked cleaners and scheduling built around Brunswick access — get a free quote in under 60 seconds.',
+      trust: 'Servicing Brunswick 3056 and the surrounding Inner North Melbourne.',
+    },
+    seo: {
+      title: 'House Cleaning Brunswick VIC | Eco-Friendly',
+      description: 'Eco-friendly house cleaning in Brunswick 3056. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+    },
+    nearbySuburbs: ['Brunswick East', 'Brunswick West', 'Carlton North', 'Princes Hill', 'Coburg', 'Fitzroy North', 'Parkville', 'Northcote', 'Pascoe Vale South', 'Fitzroy'],
+    contentUpdated: '2026-08-30',
+    localFaqs: [
+      {
+        q: 'How do you handle access in Brunswick?',
+        a: 'By asking first. Here Sydney Road tram-line congestion and clearway restrictions that rule out kerbside access through much of the day. Sorting it at booking means the cleaner starts on time.',
+      },
+      {
+        q: 'Do you clean mezzanines and sleeping platforms?',
+        a: 'Yes, and they get missed constantly. Mezzanines in Brunswick conversions collect dust that falls from the roof structure above, so they need doing properly rather than a quick pass.',
+      },
+      {
+        q: 'Can you get to the Sydney Road end of the suburb?',
+        a: 'Yes — Sydney Road and the streets running off it are core coverage for us in Brunswick, along with the rest of Inner North Melbourne.',
+      },
+      {
+        q: 'Can you clean a converted warehouse in Brunswick?',
+        a: 'That is most of what we do here. Brunswick is former textile and manufacturing buildings converted to apartments, alongside Victorian cottages and a large share-house population, and the reality is converted industrial interiors with concrete, exposed brick and high windows, next door to small period cottages. A standard apartment checklist misses the voids, the ductwork and the upper glazing entirely, so we scope those in explicitly.',
+      },
+      {
+        q: 'Are your products safe around children and pets?',
+        a: 'Yes. We use plant-based, pH-neutral products instead of harsh chemicals, which matters in Brunswick where converted industrial interiors with concrete, exposed brick and high windows, next door to small period cottages. Once surfaces are dry the home is safe for children and pets.',
+      },
+      {
+        q: 'Which suburbs near Brunswick do you cover?',
+        a: 'Alongside Brunswick 3056 we service Brunswick East, Brunswick West, Carlton North, Princes Hill, Coburg, Fitzroy North and the wider Inner North Melbourne. If you are not certain we reach your street, call 1300 876 472 and we will confirm it in about a minute.',
+      },
+      {
+        q: 'What does house cleaning cost in Brunswick?',
+        a: 'It depends on the size and condition of the home and how often we come. That range is wide in Brunswick, where former textile and manufacturing buildings converted to apartments sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
 ];
 
 export const suburbBySlug = (slug: string): Suburb | undefined =>

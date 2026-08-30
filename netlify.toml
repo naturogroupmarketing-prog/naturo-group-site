@@ -13,14 +13,23 @@
   to     = "/sitemap-index.xml"
   status = 200
 
-# ── /quote ─────────────────────────────────────────────────────────────────
-# A 301 /quote → /contact-us/ used to live here, from when the URL 404'd and
-# lead capture was the JS-only modal. src/pages/quote.astro now builds a real
-# page at /quote/, it is the destination of every "Get a Free Quote" CTA on the
-# site, and it is in the sitemap. The rule is deliberately gone: a non-forced
-# redirect does not shadow an existing file, but the extension-less /quote did
-# match this rule exactly, so the highest-intent URL on the site was one
-# Netlify matching order away from 301ing off its own funnel page.
+# ── /quote retired ─────────────────────────────────────────────────────────
+# The page is gone. Lead capture is the 7-step "Get a Free Quote" popup, which
+# intercepts clicks on /quote links client-side (QuoteLeadGate TARGET_PATH), so
+# ctaPrimary.href stays "/quote" and every CTA still opens the popup exactly as
+# before. Repointing those links would have silently stopped it opening.
+#
+# This rule therefore only matters where JS never runs: crawlers, no-JS
+# visitors, and old bookmarks or inbound links. A previous comment here warned
+# that this rule could shadow the real page — that no longer applies now the
+# page is deleted, which is the whole point of restoring it.
+#
+# Checked before deleting: the Google Ads landing-pages report lists ten
+# destinations and none is /quote, so no paid traffic lands here.
+[[redirects]]
+  from   = "/quote"
+  to     = "/contact-us/"
+  status = 301
 
 # Force HTTPS
 [[redirects]]

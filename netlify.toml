@@ -13,16 +13,14 @@
   to     = "/sitemap-index.xml"
   status = 200
 
-# ── /quote retired ─────────────────────────────────────────────────────────
-# The quote page is gone; lead capture is the "Get a Free Quote" modal, which
-# intercepts these links client-side. CTAs still point at /quote so that
-# interception is untouched — this redirect only matters for the cases JS never
-# runs: crawlers, no-JS visitors, and anyone with an old bookmark or inbound
-# link. 301 so whatever equity the page holds passes to the contact page.
-[[redirects]]
-  from   = "/quote"
-  to     = "/contact-us/"
-  status = 301
+# ── /quote ─────────────────────────────────────────────────────────────────
+# A 301 /quote → /contact-us/ used to live here, from when the URL 404'd and
+# lead capture was the JS-only modal. src/pages/quote.astro now builds a real
+# page at /quote/, it is the destination of every "Get a Free Quote" CTA on the
+# site, and it is in the sitemap. The rule is deliberately gone: a non-forced
+# redirect does not shadow an existing file, but the extension-less /quote did
+# match this rule exactly, so the highest-intent URL on the site was one
+# Netlify matching order away from 301ing off its own funnel page.
 
 # Force HTTPS
 [[redirects]]
@@ -211,11 +209,6 @@
   status = 301
 
 [[redirects]]
-  from = "/services/"
-  to   = "/services/"
-  status = 301
-
-[[redirects]]
   from = "/contact/"
   to   = "/contact-us/"
   status = 301
@@ -391,6 +384,329 @@
 [[redirects]]
   from   = "/end-of-lease-cleaning/geelong/*"
   to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+
+
+# ── Service × suburb matrix retired, 30 Aug 2026 ────────────────────────────
+# /services/{house-cleaning,deep-clean,end-of-lease}/<suburb> generated 369
+# pages from one template. Measured on the built HTML they averaged 1,530
+# words at 75.1% mean pairwise similarity within each service (86% at the
+# worst pair) — the same doorway signature that got the ten Geelong
+# end-of-lease pages consolidated above, and only 39.5% similar to the suburb
+# page that actually ranks for the same town. They were already half-retired:
+# excluded from the sitemap, and with zero internal links pointing at them
+# anywhere on the site. That left 369 URLs that were live and indexable but
+# unreachable by a crawler following links — cost with no path to benefit.
+#
+# The route is deleted and each URL 301s to the closest real equivalent:
+# house-cleaning and deep-clean to that suburb's own page, end-of-lease to the
+# regional end-of-lease hub where one exists (Geelong, Port Macquarie) and to
+# the suburb page otherwise. Relevance matters here — Google treats a redirect
+# to an unrelated page as a soft 404 and passes nothing.
+
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-torquay"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-ocean-grove"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-barwon-heads"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-drysdale"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-leopold"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-jan-juc"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-newtown-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-east-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-south-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-geelong-west"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-belmont-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-highton"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-wandana-heights"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-manifold-heights"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-herne-hill"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-hamlyn-heights"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-bell-park"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-bell-post-hill"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-norlane"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-north-shore-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-corio"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-lara"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-curlewis"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-armstrong-creek"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-grovedale"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-waurn-ponds"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-mount-duneed"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-newcomb"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-whittington"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-st-albans-park"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-thomson"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-moolap"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-breakwater"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-north-geelong"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-rippleside"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-fyansford"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-ceres"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-batesford"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-lovely-banks"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-marshall"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-charlemont"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-wallington"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-connewarre"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-clifton-springs"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-portarlington"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-st-leonards"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-indented-head"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-point-lonsdale"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-queenscliff"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-marcus-hill"
+  to     = "/end-of-lease-cleaning-geelong/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/cleaners-port-macquarie"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-wauchope"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-lake-cathie"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-bonny-hills"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-laurieton"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-north-haven"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-dunbogan"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-camden-head"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-telegraph-point"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-sancrox"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-kendall"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-comboyne"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-beechwood"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-bago"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-rollands-plains"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-pembrooke"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-kew-port-macquarie"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-lakewood"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-king-creek"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-settlement-point"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+[[redirects]]
+  from   = "/services/end-of-lease/house-cleaning-lighthouse-beach"
+  to     = "/end-of-lease-cleaning-port-macquarie/"
+  status = 301
+
+# Everything else in the matrix → the suburb's own landing page. Placeholder
+# rules rather than 369 literals: the suburb segment of these URLs is always a
+# slug from src/data/suburbs.ts, which is exactly what /<slug>/ serves.
+[[redirects]]
+  from   = "/services/end-of-lease/:suburb"
+  to     = "/:suburb/"
+  status = 301
+[[redirects]]
+  from   = "/services/house-cleaning/:suburb"
+  to     = "/:suburb/"
+  status = 301
+[[redirects]]
+  from   = "/services/deep-clean/:suburb"
+  to     = "/:suburb/"
   status = 301
 
 # 404 fallback

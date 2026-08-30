@@ -15,7 +15,6 @@ export type ServiceDetail = {
   };
   whatsIncluded: { group: string; items: string[] }[];
   process: { step: string; title: string; desc: string }[];
-  faqIds?: string[];
   /** Slugs from posts.ts that genuinely cover this service. Optional:
    *  services with no matching guide render no resources block. */
   relatedPosts?: string[];
@@ -25,7 +24,7 @@ export type ServiceDetail = {
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   'house-cleaning': {
-    contentUpdated: '2026-08-27',
+    contentUpdated: '2026-08-30',
     relatedPosts: [
       'house-cleaning-cost-geelong',
       'house-cleaning-cost-port-macquarie',
@@ -88,7 +87,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'deep-clean': {
-    contentUpdated: '2026-08-27',
+    contentUpdated: '2026-08-30',
     relatedPosts: [
       'how-to-clean-oven-grease-naturally',
       'shower-screen-soap-scum-removal',
@@ -150,7 +149,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'end-of-lease': {
-    contentUpdated: '2026-08-27',
+    contentUpdated: '2026-08-30',
     relatedPosts: [
       'end-of-lease-cleaning-checklist-australia',
       'end-of-lease-cleaning-geelong-checklist',
@@ -225,7 +224,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'ndis-cleaning': {
-    contentUpdated: '2026-08-27',
+    contentUpdated: '2026-08-30',
     relatedPosts: [
       'ndis-cleaning-routine-supports-independence',
       'ndis-cleaning-geelong-guide',
@@ -287,6 +286,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'aged-care-cleaning': {
+    contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Aged care cleaning',
       heading: 'Aged Care Cleaning<br />Patient<br />Trusted at home',
@@ -343,6 +343,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'insurance-cleaning': {
+    contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Insurance work',
       heading: 'Insurance Cleaning<br />Detailed scopes<br />Direct billing',
@@ -399,6 +400,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
   },
   'veterans-cleaning': {
+    contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Department of Veterans\u2019 Affairs',
       heading: 'Veterans (DVA)<br />Cleaning<br />Coordinated with your case manager',
@@ -565,4 +567,240 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { step: '4', title: 'You hear from us', desc: 'A note if anything needs your attention &mdash; before your guest arrives.' },
     ],
   },
+};
+
+// ---------------------------------------------------------------------------
+// Per-service FAQs.
+//
+// Why this exists
+// --------------
+// Every /services/<slug> page rendered the same nine site-wide FAQs from
+// site.ts, and emitted the same FAQPage schema built from that same array. On
+// nine pages that is one block of duplicated copy repeated nine times, and nine
+// pages competing for the identical FAQ rich result. Measured on the built
+// HTML the nine service pages ran 82–84% similar to one another in the
+// specialty cluster; the FAQ block was the single largest shared chunk.
+//
+// The distinguishing facts were never missing — "we are not a registered NDIS
+// provider", "DVA Gold and White card holders", "$20m public liability",
+// "72-hour free re-clean" — they were just outweighed by boilerplate. These
+// answers put those facts in front of the reader, and they make the FAQPage
+// markup honest: the schema on each page is now generated from the questions
+// that page actually displays.
+//
+// Sourcing rule
+// -------------
+// Every claim below is already published elsewhere in this repo — the service's
+// own intro/stats/process copy in this file, or site.ts. Nothing here is new.
+// If a service has no verified answer to a common question, the question is
+// left out rather than answered plausibly. Do not add a price, a response time,
+// a certification or a registration that the business has not confirmed.
+// ---------------------------------------------------------------------------
+export const serviceFaqs: Record<string, { q: string; a: string }[]> = {
+  'house-cleaning': [
+    {
+      q: 'How often should I book a regular house clean?',
+      a: 'Most households book weekly or fortnightly. We tailor each visit to your home and your priorities rather than working to a rigid checklist, so the frequency that suits a busy family is not the one that suits a couple in an apartment. Tell us how the house is used and we will suggest a schedule.',
+    },
+    {
+      q: 'Can I skip, pause or reschedule a clean?',
+      a: 'Yes — skip, pause or reschedule any time. Recurring cleaning should fit around holidays, visitors and a change of plans, not lock you in.',
+    },
+    {
+      q: 'Do I need to supply anything?',
+      a: 'No. Our cleaners bring all products and equipment, and every product we use is non-toxic. You do not need to leave anything out for us.',
+    },
+    {
+      q: 'Will I get the same cleaner each visit?',
+      a: 'We aim for consistency and send the same team where possible, so your cleaner learns your home and you are not re-explaining it every fortnight. Leave, illness and scheduling mean we cannot promise it every single visit.',
+    },
+    {
+      q: 'Are your cleaners police-checked and insured?',
+      a: 'Every NATURO GROUP cleaner is trained, police-checked and fully insured, with $20m public liability cover held by the business.',
+    },
+  ],
+
+  'deep-clean': [
+    {
+      q: 'What is the difference between a deep clean and a regular clean?',
+      a: 'A regular clean maintains a home that is already on top of things. A deep clean goes after what a regular visit does not reach — inside the oven, behind and under accessible appliances, inside cabinets and drawers, grout, exhaust fans, light fittings, skirting boards, air vents, ceiling fans, and internal windows and their tracks.',
+    },
+    {
+      q: 'When is a deep clean the right choice?',
+      a: 'It is built for homes that have not had a professional clean in 30 or more days, for the mess left after a renovation, and for the week before a special event. It is a reset rather than a routine.',
+    },
+    {
+      q: 'How many cleaners come, and how long does it take?',
+      a: 'We put two cleaners on most deep cleans to keep the day moving. How long it takes depends on the size and condition of the home, so we confirm that when we quote rather than guessing up front.',
+    },
+    {
+      q: 'Is the inside of the fridge included?',
+      a: 'Inside the fridge and freezer is done on request. Inside the oven, the racks and the range hood filter are part of the standard deep clean.',
+    },
+    {
+      q: 'Do you use non-toxic products for a deep clean?',
+      a: 'Yes. The products are the same non-toxic range we use on every job — the difference in a deep clean is the detail and the time spent, not harsher chemicals.',
+    },
+  ],
+
+  'end-of-lease': [
+    {
+      q: 'What does the bond-back guarantee actually cover?',
+      a: 'If your property manager flags anything from our scope at the exit inspection, we come back and re-clean it free of charge within a 72-hour window. That is the guarantee in full — a return visit at our cost, not a cash promise about the bond itself, which is your agent and the tenancy authority to decide.',
+    },
+    {
+      q: 'When should I book the clean relative to handover?',
+      a: 'One to two days before handover works best. It leaves the property in inspection condition without a gap long enough for dust and use to undo it, and it keeps the re-clean window open before your keys are due.',
+    },
+    {
+      q: 'Do you supply anything for my property manager?',
+      a: 'Yes — a detailed receipt and a clean report you can forward straight to your agent for sign-off. Handover disputes usually come down to what can be evidenced, so we put it in writing.',
+    },
+    {
+      q: 'Is the clean done to the real estate exit checklist?',
+      a: 'It is. The scope covers all areas, kitchen and bathrooms to the standard exit list — inside cupboards, shelves and drawers, oven exterior, range hood and filters, window interiors and tracks, skirting boards, cornices, wardrobes inside and out, and accessible light fittings.',
+    },
+    {
+      q: 'Does the property need to be empty?',
+      a: 'An empty property gets the best result, because we can reach inside and behind everything on the exit list. Tell us what will still be in place when you book so the quote reflects the job we will actually walk into.',
+    },
+  ],
+
+  'ndis-cleaning': [
+    {
+      q: 'Can I use my NDIS funding for your cleaning?',
+      a: 'Plan-managed and self-managed participants can, and we work with both every week. We are not currently a registered NDIS provider, which means agency-managed funding cannot be used for our services. We would rather tell you that up front than have an invoice rejected later.',
+    },
+    {
+      q: 'Do I have to handle the invoicing?',
+      a: 'No. We invoice your plan manager or support coordinator direct and supply detailed service notes, so the paperwork does not land on you.',
+    },
+    {
+      q: 'Can visits work around my appointments?',
+      a: 'Yes. Scheduling is flexible around therapy, medical appointments and your other supports — tell us what your week looks like and we build the visits around it.',
+    },
+    {
+      q: 'What does an NDIS clean cover?',
+      a: 'Everyday cleaning that keeps home comfortable and easy to live in: kitchen benches, splashbacks and cabinet fronts, stovetop, microwave and sink, vacuuming and mopping, bins, bathroom and toilet disinfecting, mirrors, tiles and fittings, dusting and tidying, and a linen change on request.',
+    },
+    {
+      q: 'Are the cleaners police-checked?',
+      a: 'Every cleaner is trained, police-checked and fully insured, and we aim to send the same team where possible so you are not welcoming a stranger into your home each visit.',
+    },
+  ],
+
+  'aged-care-cleaning': [
+    {
+      q: 'Will my parent see the same cleaner each time?',
+      a: 'That is what we aim for. Familiarity matters more in aged care than in any other service we run, so we send the same friendly cleaner where possible rather than whoever is free that day.',
+    },
+    {
+      q: 'What if strong smells are a problem?',
+      a: 'Our products are non-toxic and fragrance-conscious, which matters where a resident is sensitive to scent or has a respiratory condition.',
+    },
+    {
+      q: 'Can visits fit around medical appointments and care routines?',
+      a: 'Yes — the schedule is built around appointments and the rhythm of the day rather than the other way round.',
+    },
+    {
+      q: 'Can family or a care coordinator get an update?',
+      a: 'Reports are available for family or care coordinators, which helps when the person arranging the cleaning is not the person living in the home.',
+    },
+    {
+      q: 'What is included beyond a standard clean?',
+      a: 'Alongside the kitchen, bathroom and floors, our aged care visits cover washing dishes and tidying benches, stripping and remaking beds, light laundry on request, and dusting and tidying bedrooms.',
+    },
+  ],
+
+  'veterans-cleaning': [
+    {
+      q: 'Which DVA cards do you accept?',
+      a: 'We clean for DVA Gold and White card holders, and we do it every week.',
+    },
+    {
+      q: 'Do you deal with my DVA case manager?',
+      a: 'Yes. We coordinate visits in line with your case manager’s plan and send detailed visit reports through for your file, so the arrangement stays documented without you chasing it.',
+    },
+    {
+      q: 'How do I get started?',
+      a: 'A quick chat to confirm your card details and what you need, then we arrange the schedule with your case manager. Call 1300 876 472 during business hours, Monday to Friday, 8:30am to 5:00pm.',
+    },
+    {
+      q: 'Will it be the same cleaner each visit?',
+      a: 'We aim for consistency and send the same police-checked team where possible, and we schedule visits around your routine rather than expecting you to work around ours.',
+    },
+    {
+      q: 'What products do you use in the home?',
+      a: 'Non-toxic products, supplied by us. You do not need to have anything ready for the cleaner.',
+    },
+  ],
+
+  'insurance-cleaning': [
+    {
+      q: 'Do you bill the insurer directly?',
+      a: 'Direct billing is available where the insurer supports it. Where it is not, we supply an itemised invoice with the photo evidence attached so the claim can be settled without a round of questions.',
+    },
+    {
+      q: 'What types of claim work do you handle?',
+      a: 'Water, fire, storm and trauma cleans, smoke and soot remediation, carpet, hard floor and surface restoration, and general property restoration.',
+    },
+    {
+      q: 'What documentation comes with the job?',
+      a: 'On-site or remote scoping, an itemised quote written for the insurer, before and after photographs, and a final report on completion. Claims stall on missing evidence, so the reporting is part of the service rather than an extra.',
+    },
+    {
+      q: 'How does the process run from referral to invoice?',
+      a: 'The insurer or the client contacts us with the claim details. We attend, photograph and quote the works. Once approved, we complete the clean to that scope. Photos, report and invoice then go across for sign-off.',
+    },
+    {
+      q: 'What insurance do your teams carry?',
+      a: 'The business holds $20m public liability cover, and every cleaner on site is police-checked and fully insured.',
+    },
+  ],
+
+  'commercial-cleaning': [
+    {
+      q: 'Can you clean outside our trading hours?',
+      a: 'Yes — the schedule is worked around your trading hours. Commercial cleaning has to be consistent enough that nobody on your team ever has to think about it, which usually means we are not there while they are.',
+    },
+    {
+      q: 'How do you quote a commercial site?',
+      a: 'We scope every site before quoting. A quote written off a floor area misses what actually drives the work: which rooms take the traffic, when the bins need to go out, and what has to be restocked.',
+    },
+    {
+      q: 'How do you handle keys, alarms and site access?',
+      a: 'Access and security arrangements are agreed as part of the site scope and we work to them. Tell us how your building runs and the schedule is built to fit it.',
+    },
+    {
+      q: 'Is commercial cleaning just a larger house clean?',
+      a: 'No, and treating it that way is why scheduled cleaning fails. It runs to your hours, respects your access and security arrangements, and has to hold the same standard every visit regardless of who is rostered.',
+    },
+    {
+      q: 'What does the scope cover?',
+      a: 'Workspaces, amenities, and the working-with-you arrangements — the detail is set per site during scoping, because an office, a clinic and a warehouse do not need the same round.',
+    },
+  ],
+
+  'airbnb-cleaning': [
+    {
+      q: 'Can you turn a property around between checkout and check-in?',
+      a: 'That window is the job. A short-stay turnover is a deadline, not just a clean — beds, bathrooms, kitchen, bins and presentation all have to be finished inside it, and we work to that window.',
+    },
+    {
+      q: 'Do you handle more than one listing?',
+      a: 'Yes — single listings or a whole portfolio.',
+    },
+    {
+      q: 'What happens if something is damaged or missing?',
+      a: 'We tell you before your next guest finds it. Being the first to know is most of the value of having someone in the property between stays.',
+    },
+    {
+      q: 'Do you restock consumables?',
+      a: 'Restocking is part of the turnover, alongside the reset and the presentation of the property for check-in.',
+    },
+    {
+      q: 'Are your cleaners police-checked?',
+      a: 'Every cleaner is trained, police-checked and fully insured, which matters when they hold access to a property you are not living in.',
+    },
+  ],
 };

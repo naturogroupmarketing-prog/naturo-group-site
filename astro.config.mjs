@@ -73,16 +73,10 @@ export default defineConfig({
         // Always exclude utility / noindex pages.
         if (page.includes('/thank-you') || page.includes('/404')) return false;
 
-        // Exclude the auto-generated service×suburb matrix pages
-        // (/services/house-cleaning/<suburb>, /services/end-of-lease/<suburb>,
-        // /services/deep-clean/<suburb>).  These 237 template-driven pages
-        // are crawled but not indexed by Google — they signal thin content and
-        // consume crawl budget that should go to our richer suburb and
-        // dedicated-service pages.  We keep the top-level service pages
-        // (/services/house-cleaning, /services/end-of-lease, etc.) in the
-        // sitemap; only the sub-suburb variants are excluded.
-        const serviceSuburbPattern = /\/services\/(house-cleaning|end-of-lease|deep-clean)\/.+/;
-        if (serviceSuburbPattern.test(page)) return false;
+        // The service×suburb matrix pages used to be filtered out here. The
+        // route that generated them is gone (they 301 to the suburb page or
+        // the regional end-of-lease hub — see netlify.toml), so there is
+        // nothing left to exclude and the filter would be dead code.
 
         return true;
       },

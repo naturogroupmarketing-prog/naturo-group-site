@@ -12,7 +12,7 @@ import Testimonials from '../../components/Testimonials.astro';
 import AppPromo from '../../components/AppPromo.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 import { allServices, services, site, faqs } from '../../data/site';
-import { serviceDetails } from '../../data/serviceDetail';
+import { serviceDetails, serviceFaqs } from '../../data/serviceDetail';
 import { fitTitle } from '../../lib/seo';
 import FunnelBeacon from '../../components/FunnelBeacon.astro';
 
@@ -25,18 +25,24 @@ const service = allServices.find((s) => s.slug === slug)!;
 const detail = serviceDetails[slug as string];
 const isPriced = services.some((s) => s.slug === slug);
 
+// Questions specific to this service, falling back to the site-wide set only
+// if a service has none. Both the visible accordion and the FAQPage markup
+// below read from this one variable — previously the nine service pages each
+// rendered, and marked up, the identical site-wide list, which duplicated the
+// largest shared block on the page and put all nine into competition for the
+// same FAQ rich result.
+const pageFaqs = serviceFaqs[slug as string] ?? faqs;
+
 const baseSchema: any = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: service.title,
   name: service.title,
-  provider: {
-    '@type': 'LocalBusiness',
-    name: site.name,
-    telephone: site.phone,
-    email: site.email,
-    url: site.url,
-  },
+  // Reference the single Organization declared in Layout.astro rather than
+  // restating it as an inline LocalBusiness. The inline node had no `address`,
+  // which LocalBusiness requires, and duplicating the business under a second
+  // type gave the graph two conflicting descriptions of one company.
+  provider: { '@id': `${site.url}/#organization` },
   areaServed: 'Australia',
   description: service.short,
 };
@@ -57,7 +63,7 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
+    mainEntity: pageFaqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -114,7 +120,7 @@ const schema = [
   <Providers />
 
   <!-- 8. FAQ -->
-  <FAQ />
+  <FAQ items={pageFaqs} />
 
   <!-- 9. App promo -->
   <AppPromo />

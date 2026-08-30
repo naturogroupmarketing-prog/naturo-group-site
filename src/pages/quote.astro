@@ -1,0 +1,259 @@
+---
+// The quick-quote form. Every "Get a Free Quote" CTA on the site points at
+// /quote/, and until now that URL 404'd — the conversational modal intercepted
+// the click, so the link only ever worked with JavaScript running and the modal
+// mounted. A direct visit, an opened-in-new-tab, a shared link, an ad
+// destination URL or a crawler got nothing.
+//
+// This page is the real destination: a multi-step form whose questions come
+// from the AI Reception app's own service catalogue, so the two can never
+// disagree about what is offered.
+import Layout from '../layouts/Layout.astro';
+import { site, leadCapture } from '../data/site';
+import { fitTitle } from '../lib/seo';
+
+// The deployed app by default. PUBLIC_FUNNEL_BASE overrides it so a local
+// Astro dev server can post at a local AI Reception instance — otherwise
+// testing the form locally would write into production's CRM.
+const funnelBase = import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase;
+---
+
+<Layout
+  title={fitTitle('Get a Free Cleaning Quote')}
+  description="Tell us about your place and we'll send you a quote. Eco-friendly residential and commercial cleaning, with police-checked cleaners."
+>
+  <section class="qf-wrap">
+    <div class="container-site">
+      <header class="qf-head">
+        <p class="qf-eyebrow">Free quote</p>
+        <h1 class="qf-h1">Tell us about your place</h1>
+        <p class="qf-sub">
+          It takes about a minute. We&rsquo;ll come back to you with a quote &mdash; no obligation,
+          and no pressure.
+        </p>
+      </header>
+
+      <!-- Progress. aria-live so a screen-reader user is told where they are,
+           which the visual bar alone does not convey. -->
+      <div class="qf-progress">
+        <p class="qf-progress-label" id="qfProgressLabel" aria-live="polite">Step 1 of 5</p>
+        <div class="qf-progress-track"><div class="qf-progress-fill" id="qfProgressFill"></div></div>
+      </div>
+
+      <form id="qfForm" class="qf-form" novalidate data-funnel-base={funnelBase}>
+        <!-- Spam trap. Off-screen, hidden from assistive tech and skipped by
+             the keyboard (.nl-hp in global.css), so only a bot fills it. -->
+        <div class="nl-hp" aria-hidden="true">
+          <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <!-- ── Step 1 · service ── -->
+        <fieldset class="qf-step" data-step="1">
+          <legend class="qf-legend" id="qfServicesLabel">What kind of clean do you need?</legend>
+          <div class="qf-options" id="qfServices" role="radiogroup" aria-labelledby="qfServicesLabel">
+            <p class="qf-loading" id="qfServicesLoading">Loading services&hellip;</p>
+          </div>
+          <p class="qf-error" data-error-for="service"></p>
+        </fieldset>
+
+        <!-- ── Step 2 · place ── -->
+        <fieldset class="qf-step" data-step="2" hidden>
+          <legend class="qf-legend">Where is it, and what is it?</legend>
+
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qfSuburb">Suburb</label>
+              <input id="qfSuburb" name="suburb" type="text" autocomplete="address-level2" />
+              <p class="qf-error" data-error-for="suburb"></p>
+            </div>
+            <div class="qf-field qf-field-narrow">
+              <label for="qfPostcode">Postcode</label>
+              <input id="qfPostcode" name="postcode" type="text" inputmode="numeric" maxlength="4" autocomplete="postal-code" />
+              <p class="qf-error" data-error-for="postcode"></p>
+            </div>
+          </div>
+
+          <!-- Residential branch -->
+          <div data-branch="RESIDENTIAL" hidden>
+            <div class="qf-field">
+              <label for="qfPropertyType">Property type</label>
+              <select id="qfPropertyType" name="propertyType"></select>
+              <p class="qf-error" data-error-for="propertyType"></p>
+            </div>
+            <div class="qf-row">
+              <div class="qf-field qf-field-narrow">
+                <label for="qfBedrooms">Bedrooms</label>
+                <input id="qfBedrooms" name="bedrooms" type="number" min="0" max="20" inputmode="numeric" />
+                <p class="qf-error" data-error-for="bedrooms"></p>
+              </div>
+              <div class="qf-field qf-field-narrow">
+                <label for="qfBathrooms">Bathrooms</label>
+                <input id="qfBathrooms" name="bathrooms" type="number" min="0" max="20" inputmode="numeric" />
+                <p class="qf-error" data-error-for="bathrooms"></p>
+              </div>
+            </div>
+            <div class="qf-field" data-ask="size" hidden>
+              <label for="qfApproxSize">Approximate size (m&sup2;) <span class="qf-optional">optional</span></label>
+              <input id="qfApproxSize" name="approxSize" type="number" min="1" inputmode="numeric" />
+            </div>
+            <div class="qf-field" data-ask="furnished" hidden>
+              <label for="qfFurnished">Is it furnished?</label>
+              <select id="qfFurnished" name="furnished">
+                <option value="">Prefer not to say</option>
+                <option value="true">Furnished</option>
+                <option value="false">Empty</option>
+              </select>
+            </div>
+            <div class="qf-field" data-ask="condition" hidden>
+              <label for="qfCondition">How much work does it need?</label>
+              <select id="qfCondition" name="condition"></select>
+              <p class="qf-error" data-error-for="condition"></p>
+            </div>
+          </div>
+
+          <!-- Commercial branch -->
+          <div data-branch="COMMERCIAL" hidden>
+            <div class="qf-field">
+              <label for="qfPremisesType">Type of premises</label>
+              <select id="qfPremisesType" name="premisesType"></select>
+              <p class="qf-error" data-error-for="premisesType"></p>
+            </div>
+            <div class="qf-field">
+              <label for="qfFloorArea">Approximate floor area (m&sup2;)</label>
+              <input id="qfFloorArea" name="floorAreaSqm" type="number" min="1" inputmode="numeric" />
+              <p class="qf-error" data-error-for="floorAreaSqm"></p>
+            </div>
+            <div class="qf-field">
+              <label for="qfOperatingHours">When can we access the site?</label>
+              <input id="qfOperatingHours" name="operatingHours" type="text" placeholder="e.g. after 6pm weekdays" />
+              <p class="qf-error" data-error-for="operatingHours"></p>
+            </div>
+            <div class="qf-field">
+              <label for="qfAccess">Access or security constraints <span class="qf-optional">optional</span></label>
+              <textarea id="qfAccess" name="accessConstraints" rows="2"></textarea>
+            </div>
+            <label class="qf-check">
+              <input type="checkbox" id="qfInspection" name="siteInspectionRequested" />
+              <span>I&rsquo;d like someone to visit the site before quoting</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- ── Step 3 · when ── -->
+        <fieldset class="qf-step" data-step="3" hidden>
+          <legend class="qf-legend">When suits you?</legend>
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qfDate">Preferred date <span class="qf-optional">optional</span></label>
+              <input id="qfDate" name="preferredDate" type="date" />
+              <p class="qf-error" data-error-for="preferredDate"></p>
+            </div>
+            <div class="qf-field">
+              <label for="qfTimeWindow">Time of day</label>
+              <select id="qfTimeWindow" name="timeWindow"></select>
+            </div>
+          </div>
+          <div class="qf-field" data-ask="frequency" hidden>
+            <label for="qfFrequency">How often?</label>
+            <select id="qfFrequency" name="frequency"></select>
+            <p class="qf-error" data-error-for="frequency"></p>
+          </div>
+        </fieldset>
+
+        <!-- ── Step 4 · extras + photos ── -->
+        <fieldset class="qf-step" data-step="4" hidden>
+          <legend class="qf-legend">Anything else?</legend>
+          <p class="qf-hint" id="qfExtrasHint">Add any extras you&rsquo;d like included.</p>
+          <div class="qf-extras" id="qfExtras"></div>
+
+          <div class="qf-field" id="qfPhotoField" hidden>
+            <label for="qfPhotos">Photos <span class="qf-optional">optional</span></label>
+            <p class="qf-hint">
+              A couple of photos help us quote accurately. They&rsquo;re stored privately and only
+              seen by our team.
+            </p>
+            <input id="qfPhotos" name="photos" type="file" accept="image/*" multiple />
+            <ul class="qf-photolist" id="qfPhotoList"></ul>
+          </div>
+
+          <div class="qf-field">
+            <label for="qfNotes">Anything we should know? <span class="qf-optional">optional</span></label>
+            <textarea id="qfNotes" name="notes" rows="3" maxlength="2000"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ── Step 5 · contact ── -->
+        <fieldset class="qf-step" data-step="5" hidden>
+          <legend class="qf-legend">Where should we send it?</legend>
+          <div class="qf-field">
+            <label for="qfName">Your name</label>
+            <input id="qfName" name="name" type="text" autocomplete="name" required />
+            <p class="qf-error" data-error-for="name"></p>
+          </div>
+          <div class="qf-row">
+            <div class="qf-field">
+              <label for="qfPhone">Phone</label>
+              <input id="qfPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
+              <p class="qf-error" data-error-for="phone"></p>
+            </div>
+            <div class="qf-field">
+              <label for="qfEmail">Email</label>
+              <input id="qfEmail" name="email" type="email" autocomplete="email" inputmode="email" />
+              <p class="qf-error" data-error-for="email"></p>
+            </div>
+          </div>
+          <div class="qf-field">
+            <label for="qfContactMethod">How would you like us to reply?</label>
+            <select id="qfContactMethod" name="contactMethod"></select>
+            <p class="qf-error" data-error-for="contactMethod"></p>
+          </div>
+
+          <!-- Two consents, never one. Neither is pre-ticked. -->
+          <label class="qf-check">
+            <input type="checkbox" id="qfContactConsent" name="contactConsent" />
+            <span id="qfContactConsentText"></span>
+          </label>
+          <p class="qf-error" data-error-for="contactConsent"></p>
+
+          <label class="qf-check">
+            <input type="checkbox" id="qfMarketingConsent" name="marketingConsent" />
+            <span id="qfMarketingConsentText"></span>
+          </label>
+
+          <p class="qf-privacy">
+            We use your details only to answer this enquiry. See our
+            <a href="/privacy-policies/">privacy policy</a>.
+          </p>
+        </fieldset>
+
+        <!-- ── Navigation ── -->
+        <div class="qf-nav">
+          <button type="button" class="btn-secondary" id="qfBack" hidden>Back</button>
+          <button type="button" class="btn-primary" id="qfNext">Continue</button>
+          <button type="submit" class="btn-primary" id="qfSubmit" hidden>Get my quote</button>
+        </div>
+
+        <p class="qf-formerror" id="qfFormError" role="alert" hidden></p>
+      </form>
+
+      <!-- Success. Replaces the form rather than navigating, so a slow
+           connection never leaves somebody staring at a submitted form
+           wondering whether it worked. -->
+      <div class="qf-done" id="qfDone" hidden>
+        <div class="qf-done-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+        </div>
+        <h2 class="qf-done-h">Thanks &mdash; that&rsquo;s with us.</h2>
+        <p class="qf-done-p" id="qfDoneMessage">
+          We&rsquo;ll be in touch to confirm the details and send your quote.
+        </p>
+        <div class="qf-done-ctas">
+          <a class="btn-primary" href={site.phoneHref}>Call {site.phone}</a>
+          <a class="btn-secondary" href="/">Back to home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script src="/scripts/quote-form.js" is:inline defer></script>

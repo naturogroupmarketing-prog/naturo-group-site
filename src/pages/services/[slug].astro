@@ -14,6 +14,7 @@ import FinalCTA from '../../components/FinalCTA.astro';
 import { allServices, services, site, faqs } from '../../data/site';
 import { serviceDetails } from '../../data/serviceDetail';
 import { fitTitle } from '../../lib/seo';
+import FunnelBeacon from '../../components/FunnelBeacon.astro';
 
 export function getStaticPaths() {
   return allServices.map((s) => ({ params: { slug: s.slug } }));
@@ -120,4 +121,5 @@ const schema = [
 
   <!-- 10. Final CTA banner -->
   <FinalCTA />
+  <FunnelBeacon service={service.slug} />
 </Layout>

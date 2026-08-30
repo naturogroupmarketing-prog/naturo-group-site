@@ -148,6 +148,16 @@ export const leadCapture = {
   // Sophiie (Settings → widgets); if it is switched off this endpoint answers
   // 403 and the lead is dropped.
   crmUrl: 'https://sophiie-web.onrender.com/api/widget/lead',
+  // The full quote funnel in the AI Reception app. The short lead-gate modal
+  // still posts to crmUrl above; the multi-step form on /quote posts here,
+  // because it carries far more than {name, phone, email} — property answers,
+  // extras, photos and two separate consent records.
+  //
+  // Same origin, different endpoint on purpose: /api/widget/lead is the
+  // generic widget intake shared with the Google Ads lead-form webhook, and
+  // widening it to understand bedrooms and consent versions would couple those
+  // two things together for no reason.
+  funnelBase: 'https://sophiie-web.onrender.com/api/funnel',
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label
@@ -173,6 +183,8 @@ export const nav = [
       { label: 'House Cleaning', href: '/services/house-cleaning/' },
       { label: 'Deep Clean', href: '/services/deep-clean/' },
       { label: 'End of Lease Cleaning', href: '/services/end-of-lease/' },
+      { label: 'Commercial & Office', href: '/services/commercial-cleaning/' },
+      { label: 'Airbnb Turnover', href: '/services/airbnb-cleaning/' },
       { label: 'NDIS Cleaning', href: '/services/ndis-cleaning/' },
       { label: 'Aged Care Cleaning', href: '/services/aged-care-cleaning/' },
       { label: 'Insurance Cleaning', href: '/services/insurance-cleaning/' },
@@ -326,8 +338,44 @@ export const specialtyServices = [
   },
 ];
 
+// Services quoted on enquiry with their own landing page, but no pricing card.
+//
+// Kept apart from `specialtyServices` (NDIS/DVA/aged care/insurance) because
+// these are ordinary commercial offerings rather than funded-care programmes,
+// and the two groups are shown in different places. Both feed /services/[slug].
+export const funnelServices = [
+  {
+    slug: 'commercial-cleaning',
+    title: 'Commercial & Office Cleaning',
+    short:
+      'Scheduled cleaning for offices and commercial premises, worked around your trading hours.',
+    features: [
+      'Offices, consulting rooms, retail and venues',
+      'Cleaning outside your trading hours',
+      'Washrooms cleaned and consumables restocked',
+      'Waste and recycling collected',
+      'Non-toxic products supplied',
+      'Quoted after a site walk-through',
+    ],
+  },
+  {
+    slug: 'airbnb-cleaning',
+    title: 'Airbnb Turnover Cleaning',
+    short:
+      'Between-guest turnovers, presented and restocked ready for the next check-in.',
+    features: [
+      'Back-to-back bookings turned around inside the changeover window',
+      'Beds stripped and remade, bathrooms restocked',
+      'Kitchen reset and rubbish removed',
+      'Presentation check before the next guest arrives',
+      'Works for single listings or a whole portfolio',
+      'Non-toxic products supplied',
+    ],
+  },
+];
+
 // All services covered by /services/[slug] route
-export const allServices = [...services, ...specialtyServices];
+export const allServices = [...services, ...specialtyServices, ...funnelServices];
 
 export const features = [
   {

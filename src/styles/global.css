@@ -195,3 +195,172 @@ section {
   height: 1px;
   overflow: hidden;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Quick-quote form (/quote)
+
+   Mobile-first: every control is at least 44px tall so it can be hit with a
+   thumb, the layout is a single column until there is genuinely room for two,
+   and focus is always visible — most of these enquiries are filled in on a
+   phone, one-handed, somewhere other than a desk.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.qf-wrap {
+  padding: var(--s-12) 0 var(--s-20);
+  background: var(--c-surface);
+  min-height: 60vh;
+}
+
+.qf-head { max-width: 46rem; margin: 0 auto var(--s-8); text-align: center; }
+.qf-eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+}
+.qf-h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); color: var(--c-navy); margin-top: var(--s-2); }
+.qf-sub { font-size: var(--fs-body-lg); line-height: var(--lh-relaxed); color: var(--c-slate); margin-top: var(--s-3); }
+
+.qf-progress { max-width: 40rem; margin: 0 auto var(--s-5); }
+.qf-progress-label { font-size: var(--fs-body-sm); color: var(--c-slate-soft); margin-bottom: var(--s-2); }
+.qf-progress-track { height: 6px; border-radius: var(--r-pill); background: var(--c-border); overflow: hidden; }
+.qf-progress-fill {
+  height: 100%;
+  width: 20%;
+  border-radius: var(--r-pill);
+  background: var(--c-cyan);
+  transition: width 240ms ease;
+}
+
+.qf-form,
+.qf-done {
+  max-width: 40rem;
+  margin: 0 auto;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-sm);
+}
+@media (min-width: 640px) { .qf-form, .qf-done { padding: var(--s-8); } }
+
+.qf-step { border: 0; padding: 0; margin: 0; }
+.qf-legend {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  font-weight: 700;
+  color: var(--c-navy);
+  margin-bottom: var(--s-5);
+  padding: 0;
+}
+.qf-legend:focus-visible { outline: 2px solid var(--c-cyan); outline-offset: 4px; border-radius: var(--r-xs); }
+
+.qf-hint { font-size: var(--fs-body-sm); color: var(--c-slate-soft); margin-bottom: var(--s-3); }
+.qf-optional { font-weight: 400; color: var(--c-slate-soft); }
+
+/* ── Service picker ── */
+.qf-options { display: grid; gap: var(--s-3); }
+.qf-option {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  padding: var(--s-4);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-bg);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.qf-option:hover { border-color: var(--c-cyan); background: var(--c-surface); }
+.qf-option:focus-visible { outline: 2px solid var(--c-cyan); outline-offset: 2px; }
+.qf-option.is-selected { border-color: var(--c-cyan); background: rgba(36, 210, 242, 0.08); }
+.qf-option-title { display: block; font-weight: 700; color: var(--c-navy); }
+.qf-option-desc { display: block; font-size: var(--fs-body-sm); color: var(--c-slate); margin-top: 2px; }
+
+/* ── Fields ── */
+.qf-field { margin-bottom: var(--s-4); }
+.qf-field label { display: block; font-size: var(--fs-body-sm); font-weight: 600; color: var(--c-navy); margin-bottom: var(--s-2); }
+.qf-field input[type='text'],
+.qf-field input[type='tel'],
+.qf-field input[type='email'],
+.qf-field input[type='number'],
+.qf-field input[type='date'],
+.qf-field select,
+.qf-field textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--s-3);
+  font-size: 16px; /* 16px stops iOS Safari zooming the page on focus */
+  color: var(--c-navy);
+  background: var(--c-bg);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-sm);
+}
+.qf-field textarea { min-height: 88px; resize: vertical; }
+.qf-field :is(input, select, textarea):focus-visible { outline: 2px solid var(--c-cyan); outline-offset: 1px; border-color: var(--c-cyan); }
+.qf-field :is(input, select, textarea)[aria-invalid='true'] { border-color: #C0392B; }
+
+.qf-row { display: grid; gap: var(--s-4); }
+@media (min-width: 560px) { .qf-row { grid-template-columns: 1fr 1fr; } }
+
+/* ── Checkboxes ── */
+.qf-check {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) 0;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-base);
+  color: var(--c-slate);
+  cursor: pointer;
+}
+.qf-check input[type='checkbox'] { width: 22px; height: 22px; margin-top: 1px; flex-shrink: 0; accent-color: var(--c-cyan); }
+.qf-check input:focus-visible { outline: 2px solid var(--c-cyan); outline-offset: 2px; }
+.qf-extra strong { display: block; color: var(--c-navy); font-weight: 600; }
+.qf-extra em { display: block; font-style: normal; font-size: var(--fs-body-sm); color: var(--c-slate-soft); }
+.qf-extras { display: grid; gap: var(--s-1); }
+
+.qf-photolist { list-style: none; padding: 0; margin: var(--s-3) 0 0; font-size: var(--fs-body-sm); color: var(--c-slate); }
+.qf-photolist li { padding: var(--s-1) 0; }
+.qf-photolist li.is-error { color: #C0392B; }
+
+.qf-privacy { font-size: var(--fs-body-sm); color: var(--c-slate-soft); margin-top: var(--s-4); }
+.qf-privacy a { color: var(--c-slate); text-decoration: underline; }
+
+/* ── Errors ── */
+.qf-error { font-size: var(--fs-body-sm); color: #C0392B; margin-top: var(--s-2); }
+.qf-error:empty { display: none; }
+.qf-formerror {
+  margin-top: var(--s-4);
+  padding: var(--s-3);
+  border-radius: var(--r-sm);
+  background: rgba(192, 57, 43, 0.08);
+  color: #A93226;
+  font-size: var(--fs-body-sm);
+}
+
+/* ── Navigation ── */
+.qf-nav { display: flex; gap: var(--s-3); margin-top: var(--s-6); }
+.qf-nav .btn-primary, .qf-nav .btn-secondary { min-height: 48px; flex: 1; }
+
+/* ── Success ── */
+.qf-done { text-align: center; }
+.qf-done-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto var(--s-4);
+  display: grid; place-items: center;
+  border-radius: var(--r-pill);
+  background: rgba(36, 210, 242, 0.15);
+  color: var(--c-navy);
+}
+.qf-done-h { font-size: var(--fs-h3); color: var(--c-navy); }
+.qf-done-p { color: var(--c-slate); margin-top: var(--s-2); line-height: var(--lh-relaxed); }
+.qf-done-ctas { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; margin-top: var(--s-6); }
+
+.qf-loading { color: var(--c-slate-soft); font-size: var(--fs-body-sm); }
+
+@media (prefers-reduced-motion: reduce) {
+  .qf-progress-fill { transition: none; }
+}

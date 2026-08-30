@@ -1,0 +1,72 @@
+---
+// Counts a landing-page view for the funnel report.
+//
+// Without this the report's top row has no denominator, so "of the people who
+// saw the page, how many started a quote" cannot be answered — and the report
+// says "not tracked" rather than inventing a number.
+//
+// Deliberately thin: an opaque per-visitor id (the same one the quote form
+// uses, so a view and a submission can be joined), the service, and the
+// campaign. No IP, no name, nothing identifying. It also waits for cookie
+// consent the same way every other tag on this site does — this is
+// first-party and non-identifying, but the site's rule is that nothing
+// measuring behaviour runs before the visitor has said yes, and one banner
+// must govern all of it.
+import { leadCapture } from '../data/site';
+
+interface Props {
+  /** The funnel service slug this page is a landing page for. */
+  service?: string;
+}
+const { service = '' } = Astro.props;
+const funnelBase = import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase;
+---
+
+<script is:inline define:vars={{ funnelBase, service }}>
+  (function () {
+    if (!funnelBase) return;
+
+    function send() {
+      var key;
+      try {
+        key = localStorage.getItem('naturo.quote.session.v1');
+        if (!key) {
+          key = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now()) + Math.random();
+          localStorage.setItem('naturo.quote.session.v1', key);
+        }
+      } catch (e) {
+        key = null; // private browsing — the view still counts, just unjoined
+      }
+
+      var p = new URLSearchParams(location.search);
+      var ref = '';
+      try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { ref = ''; }
+
+      try {
+        fetch(funnelBase + '/event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            type: 'LANDING_VIEW',
+            sessionKey: key,
+            service: service || null,
+            landingPage: location.pathname,
+            source: p.get('utm_source') || (ref && ref.indexOf(location.hostname) === -1 ? ref : '') || null,
+            medium: p.get('utm_medium') || null,
+            campaign: p.get('utm_campaign') || null,
+          }),
+        }).catch(function () {});
+      } catch (e) { /* measurement must never break a page */ }
+    }
+
+    // The site's existing consent mechanism (CookieConsent.astro): a
+    // `window.naturoConsent` object, plus a `naturo:consent-granted` event
+    // that also fires on load for a visitor who accepted previously. Using
+    // the same signal as every other tag means one banner governs everything
+    // — a second, private notion of consent is how a site ends up honouring
+    // "decline" in one place and ignoring it in another.
+    if (window.naturoConsent && window.naturoConsent.granted) send();
+    else window.addEventListener('naturo:consent-granted', send, { once: true });
+  })();
+</script>

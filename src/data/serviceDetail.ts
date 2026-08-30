@@ -454,4 +454,115 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { step: '4', title: 'Reports filed', desc: 'Detailed visit reports sent to your case manager for the file.' },
     ],
   },
+  // ── Commercial & office ──────────────────────────────────────────────────
+  // Deliberately promises a quote, not a price: commercial work is scoped on
+  // site, and the funnel's pricing engine refuses to auto-quote it for the same
+  // reason. No claim here about response times, insurance limits or client
+  // names — those belong in funnel-config.ts once the business confirms them.
+  'commercial-cleaning': {
+    contentUpdated: '2026-08-30',
+    hero: {
+      eyebrow: 'Commercial cleaning',
+      heading: 'Office Cleaning<br />Around<br />Your Hours',
+      sub: 'Scheduled cleaning for offices and commercial premises &mdash; worked around your trading hours, with non-toxic products supplied.',
+      image: '/images/hero-kitchen.webp',
+    },
+    intro: {
+      kicker: 'About this service',
+      heading: 'A workplace your team is glad to walk into.',
+      body: [
+        'Commercial cleaning is not a bigger house clean. It runs to your hours, respects your access and security arrangements, and has to be consistent enough that nobody in your team ever has to think about it.',
+        'We scope every site before quoting, so the schedule matches how the space is actually used &mdash; which rooms take the traffic, when the bins need to go out, and what has to be restocked.',
+      ],
+    },
+    whatsIncluded: [
+      {
+        group: 'Workspaces',
+        items: [
+          'Workstations, desks and shared surfaces',
+          'Meeting rooms reset between uses',
+          'Reception and entry glass',
+          'Floors vacuumed and mopped throughout',
+        ],
+      },
+      {
+        group: 'Amenities',
+        items: [
+          'Kitchens and break rooms',
+          'Washrooms cleaned and sanitised',
+          'Consumables restocked',
+          'Waste and recycling collected',
+        ],
+      },
+      {
+        group: 'Working with you',
+        items: [
+          'Cleaning outside your trading hours',
+          'Access, key and alarm arrangements agreed up front',
+          'Police-checked, fully insured cleaners',
+          'A schedule set to how the space is actually used',
+        ],
+      },
+    ],
+    process: [
+      { step: '1', title: 'Tell us about the site', desc: 'Premises type, floor area, hours and how we get in.' },
+      { step: '2', title: 'Site walk-through', desc: 'We look at the space so the quote reflects the real job.' },
+      { step: '3', title: 'Written quote', desc: 'A scope and a schedule you can put in front of a decision-maker.' },
+      { step: '4', title: 'Regular service', desc: 'A consistent team, on the agreed schedule.' },
+    ],
+  },
+
+  // ── Airbnb turnovers ─────────────────────────────────────────────────────
+  'airbnb-cleaning': {
+    contentUpdated: '2026-08-30',
+    hero: {
+      eyebrow: 'Short-stay turnovers',
+      heading: 'Airbnb Turnovers<br />Guest-Ready<br />Every Time',
+      sub: 'Between-guest cleans presented and restocked ready for check-in &mdash; for single listings or a whole portfolio.',
+      image: '/images/hero-bathroom.webp',
+    },
+    intro: {
+      kicker: 'About this service',
+      heading: 'The changeover, handled.',
+      body: [
+        'A short-stay turnover is a deadline, not just a clean. Checkout to check-in is a fixed window, and everything &mdash; beds, bathrooms, kitchen, bins, presentation &mdash; has to be done inside it.',
+        'We work to that window, and we tell you if something is not right before your next guest finds it.',
+      ],
+    },
+    whatsIncluded: [
+      {
+        group: 'Reset',
+        items: [
+          'Whole property cleaned between guests',
+          'Beds stripped and remade',
+          'Kitchen reset &mdash; dishes, appliances and surfaces',
+          'Rubbish removed and bins put out where required',
+        ],
+      },
+      {
+        group: 'Restock',
+        items: [
+          'Bathrooms restocked',
+          'Linen change with your linen',
+          'Consumables checked',
+          'Anything left behind set aside for you',
+        ],
+      },
+      {
+        group: 'Presentation',
+        items: [
+          'Final walk-through before the next arrival',
+          'Damage or missing items reported to you',
+          'Consistent presentation across every stay',
+          'Non-toxic products supplied',
+        ],
+      },
+    ],
+    process: [
+      { step: '1', title: 'Tell us the listing', desc: 'Size, location and how tight the changeover window is.' },
+      { step: '2', title: 'Agree the turnaround', desc: 'We confirm what we can commit to between checkout and check-in.' },
+      { step: '3', title: 'Turnover', desc: 'Cleaned, reset and restocked ready for the next guest.' },
+      { step: '4', title: 'You hear from us', desc: 'A note if anything needs your attention &mdash; before your guest arrives.' },
+    ],
+  },
 };

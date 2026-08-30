@@ -710,6 +710,31 @@ const lc = {
       return m ? Number(m[0]) : null;
     }
 
+    /** "No" → 0, "Yes — 1 extra" → 1, "Yes — 2 or more" → 2. */
+    function asExtraToilets(v) {
+      if (!v) return null;
+      if (/^no$/i.test(v)) return 0;
+      var m = String(v).match(/\d+/);
+      return m ? Number(m[0]) : 1;
+    }
+
+    /** "Single storey" → 1, "Double storey" → 2, "Three or more" → 3. */
+    function asStoreys(v) {
+      if (!v) return null;
+      if (/single/i.test(v)) return 1;
+      if (/double/i.test(v)) return 2;
+      if (/three/i.test(v)) return 3;
+      var m = String(v).match(/\d+/);
+      return m ? Number(m[0]) : null;
+    }
+
+    /** "Yes"/"No" → true/false. Anything else stays unanswered. */
+    function asYesNo(v) {
+      if (/^yes/i.test(v || '')) return true;
+      if (/^no$/i.test(v || '')) return false;
+      return null;
+    }
+
     /**
      * Post the enquiry to the funnel, which is what files it properly: a Quote
      * Request with the property answers as fields, the consent wording stored
@@ -731,6 +756,17 @@ const lc = {
         propertyType: payload.storeys ? 'HOUSE' : '',
         bedrooms: payload.bedrooms_n,
         bathrooms: payload.bathrooms_n,
+        // Every remaining room, as the NUMBERS the quote engine prices from.
+        // These used to travel only inside the notes, which reads fine to a
+        // person and is invisible to a calculation — so a rate card that priced
+        // kitchens sent every popup enquiry to manual review for a kitchen the
+        // customer had already told us about.
+        extraToilets: asExtraToilets(payload.additional_toilet),
+        kitchens: asCount(payload.kitchens),
+        livingRooms: asCount(payload.living_rooms),
+        storeys: asStoreys(payload.storeys),
+        butlerPantry: asYesNo(payload.butler_pantry),
+        laundry: asYesNo(payload.laundry),
         condition: payload.condition || '',
         preferredDate: payload.preferred_date || '',
         frequency: slug === 'deep' || slug === 'insurance' ? 'ONE_OFF' : '',
@@ -741,15 +777,10 @@ const lc = {
         marketingConsent: payload.marketing_consent === true,
         // The answers that have no column of their own go in the notes, where a
         // person reads them, rather than being dropped.
-        notes: [
-          payload.notes || '',
-          payload.living_rooms ? 'Living rooms: ' + payload.living_rooms : '',
-          payload.kitchens ? 'Kitchens: ' + payload.kitchens : '',
-          payload.storeys ? 'Storeys: ' + payload.storeys : '',
-          payload.additional_toilet ? 'Separate toilet: ' + payload.additional_toilet : '',
-          payload.butler_pantry ? "Butler's pantry / second kitchen: " + payload.butler_pantry : '',
-          payload.laundry ? 'Laundry cleaned: ' + payload.laundry : '',
-        ].filter(Boolean).join('\n'),
+        // Just what the customer typed. The rooms have their own fields now and
+        // the enquiry screen shows them, so repeating them here would print
+        // every answer twice.
+        notes: payload.notes || '',
         submissionKey: payload.event_id,
         sessionKey: payload.lead_id,
         attribution: {

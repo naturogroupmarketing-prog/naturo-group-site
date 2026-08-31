@@ -23,3 +23,8 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 *.tar.gz
+
+# Strategy docs — kept locally, not published to the public repo
+docs/BACKLINK-ACTION-KIT.md
+docs/GEELONG-BACKLINK-KIT.md
+docs/SEO-STATUS.md

@@ -140,7 +140,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Coastal sunset over Town Beach with Norfolk pines, Port Macquarie NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Port Macquarie'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Port Macquarie'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Mid North Coast',
     },
@@ -218,7 +218,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Wauchope NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Wauchope'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Wauchope'],
       tagline: 'Trusted, Trained and Thorough — across the Hastings Valley',
     },
     intro: {
@@ -297,7 +297,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Lake Cathie NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lake Cathie'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lake Cathie'],
       tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
     },
     intro: {
@@ -376,7 +376,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Bonny Hills NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Bonny Hills'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Bonny Hills'],
       tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
     },
     intro: {
@@ -455,7 +455,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Laurieton NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Laurieton'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Laurieton'],
       tagline: 'Trusted, Trained and Thorough — on Camden Haven',
     },
     intro: {
@@ -534,7 +534,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in North Haven NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'North Haven'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Haven'],
       tagline: 'Trusted, Trained and Thorough — on the Camden Haven',
     },
     intro: {
@@ -613,7 +613,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Dunbogan NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Dunbogan'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Dunbogan'],
       tagline: 'Trusted, Trained and Thorough — on the Camden Haven',
     },
     intro: {
@@ -692,7 +692,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Camden Head NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Camden Head'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Camden Head'],
       tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
     },
     intro: {
@@ -771,7 +771,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Telegraph Point NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Telegraph Point'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Telegraph Point'],
       tagline: 'Trusted, Trained and Thorough — in the Hastings Valley',
     },
     intro: {
@@ -850,7 +850,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Sancrox NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Sancrox'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Sancrox'],
       tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
     },
     intro: {
@@ -929,7 +929,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Kendall NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Kendall'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Kendall'],
       tagline: 'Trusted, Trained and Thorough — in the Manning Valley',
     },
     intro: {
@@ -1008,7 +1008,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Comboyne NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Comboyne'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Comboyne'],
       tagline: 'Trusted, Trained and Thorough — on the Comboyne Plateau',
     },
     intro: {
@@ -1087,7 +1087,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Beechwood NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Beechwood'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Beechwood'],
       tagline: 'Trusted, Trained and Thorough — in the Hastings Valley',
     },
     intro: {
@@ -1166,7 +1166,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Bago NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Bago'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Bago'],
       tagline: 'Trusted, Trained and Thorough — near Wauchope NSW',
     },
     intro: {
@@ -1245,7 +1245,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Rollands Plains NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Rollands Plains'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Rollands Plains'],
       tagline: 'Trusted, Trained and Thorough — in the Hastings Hinterland',
     },
     intro: {
@@ -1324,7 +1324,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Pembrooke NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Pembrooke'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Pembrooke'],
       tagline: 'Trusted, Trained and Thorough — near Wauchope NSW',
     },
     intro: {
@@ -1403,7 +1403,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Kew near Port Macquarie NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Kew'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Kew'],
       tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
     },
     intro: {
@@ -1482,7 +1482,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Lakewood NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lakewood'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lakewood'],
       tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
     },
     intro: {
@@ -1561,7 +1561,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in King Creek NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'King Creek'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'King Creek'],
       tagline: 'Trusted, Trained and Thorough — near Port Macquarie',
     },
     intro: {
@@ -1640,7 +1640,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Settlement Point NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Settlement Point'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Settlement Point'],
       tagline: 'Trusted, Trained and Thorough — on the Hastings River',
     },
     intro: {
@@ -1719,7 +1719,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Lighthouse Beach NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lighthouse Beach'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lighthouse Beach'],
       tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
     },
     intro: {
@@ -1798,7 +1798,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Byron Bay NSW',
     ogImage: '/images/suburbs/cleaners-byron-bay.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Byron Bay'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Byron Bay'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Northern Rivers',
     },
@@ -1873,7 +1873,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning across the Central Coast NSW',
     ogImage: '/images/suburbs/cleaners-central-coast.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners on the', 'Central Coast'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners on the', 'Central Coast'],
       tagline: 'Trusted, Trained and Thorough — across the Central Coast',
     },
     intro: {
@@ -1952,7 +1952,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning in Lismore NSW',
     ogImage: '/images/suburbs/cleaners-lismore.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lismore'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lismore'],
       tagline: 'Trusted, Trained and Thorough — across the Northern Rivers',
     },
     intro: {
@@ -2031,7 +2031,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Newcastle NSW',
     ogImage: '/images/suburbs/cleaners-newcastle.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Newcastle'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Newcastle'],
       tagline: 'Trusted, Trained and Thorough — across the Hunter Region',
     },
     intro: {
@@ -2110,7 +2110,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning across the Sutherland Shire NSW',
     ogImage: '/images/suburbs/house-cleaning-sutherland.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Sutherland Shire'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Sutherland Shire'],
       tagline: 'Trusted, Trained and Thorough — across the Shire',
     },
     intro: {
@@ -2189,7 +2189,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning across Sydney NSW',
     ogImage: '/images/suburbs/cleaners-sydney.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Sydney'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Sydney'],
       tagline: 'Trusted, Trained and Thorough — across Greater Sydney',
     },
     intro: {
@@ -2264,7 +2264,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Tweed Heads NSW',
     ogImage: '/images/suburbs/house-cleaning-tweed-heads.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Tweed Heads'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Tweed Heads'],
       tagline: 'Trusted, Trained and Thorough — across the Tweed Coast',
     },
     intro: {
@@ -2343,7 +2343,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Parramatta NSW',
     ogImage: '/images/suburbs/house-cleaning-parramatta.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Parramatta'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Parramatta'],
       tagline: 'Trusted, Trained and Thorough — across Western Sydney',
     },
     intro: {
@@ -2418,7 +2418,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Wollongong NSW',
     ogImage: '/images/suburbs/cleaners-wollongong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Wollongong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Wollongong'],
       tagline: 'Trusted, Trained and Thorough — across the Illawarra',
     },
     intro: {
@@ -2497,7 +2497,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning across the Northern Beaches Sydney',
     ogImage: '/images/suburbs/house-cleaning-in-northern-beaches.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners on the', 'Northern Beaches'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners on the', 'Northern Beaches'],
       tagline: 'Trusted, Trained and Thorough — from Manly to Palm Beach',
     },
     intro: {
@@ -2572,7 +2572,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning across the Eastern Beaches Sydney',
     ogImage: '/images/suburbs/house-cleaning-in-eastern-beaches.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners on the', 'Eastern Beaches'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners on the', 'Eastern Beaches'],
       tagline: 'Trusted, Trained and Thorough — Bondi to Maroubra',
     },
     intro: {
@@ -2647,7 +2647,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Bondi NSW',
     ogImage: '/images/suburbs/cleaners-bondi.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Bondi'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Bondi'],
       tagline: 'Trusted, Trained and Thorough — at Australia\u2019s most famous beach',
     },
     intro: {
@@ -2722,7 +2722,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Manly NSW',
     ogImage: '/images/suburbs/cleaners-manly.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Manly'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Manly'],
       tagline: 'Trusted, Trained and Thorough — at the gateway to the Northern Beaches',
     },
     intro: {
@@ -2801,7 +2801,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Mosman NSW',
     ogImage: '/images/suburbs/cleaners-mosman.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Mosman'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Mosman'],
       tagline: 'Trusted, Trained and Thorough — across Sydney\u2019s Lower North Shore',
     },
     intro: {
@@ -2876,7 +2876,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Hunters Hill Sydney',
     ogImage: '/images/suburbs/cleaners-hunters-hill.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Hunters Hill'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Hunters Hill'],
       tagline: 'Trusted, Trained and Thorough — on Sydney\u2019s historic peninsula',
     },
     intro: {
@@ -2955,7 +2955,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Vaucluse and the Eastern Beaches Sydney',
     ogImage: '/images/suburbs/cleaners-vaucluse.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Vaucluse'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Vaucluse'],
       tagline: 'Trusted, Trained and Thorough — on Sydney\u2019s harbour edge',
     },
     intro: {
@@ -3033,7 +3033,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning across Brisbane QLD',
     ogImage: '/images/suburbs/cleaners-brisbane.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Brisbane'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Brisbane'],
       tagline: 'Trusted, Trained and Thorough — across Greater Brisbane',
     },
     intro: {
@@ -3112,7 +3112,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning in Cairns QLD',
     ogImage: '/images/suburbs/cleaners-cairns.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Cairns'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Cairns'],
       tagline: 'Trusted, Trained and Thorough — across Far North Queensland',
     },
     intro: {
@@ -3191,7 +3191,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning across the Gold Coast QLD',
     ogImage: '/images/suburbs/cleaners-gold-coast.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners on the', 'Gold Coast'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners on the', 'Gold Coast'],
       tagline: 'Trusted, Trained and Thorough — Coolangatta to Surfers Paradise',
     },
     intro: {
@@ -3270,7 +3270,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Ipswich QLD',
     ogImage: '/images/suburbs/house-cleaning-ipswich.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Ipswich'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Ipswich'],
       tagline: 'Trusted, Trained and Thorough — across Ipswich and the West Moreton',
     },
     intro: {
@@ -3349,7 +3349,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning across the Sunshine Coast QLD',
     ogImage: '/images/suburbs/cleaners-sunshine-coast.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners on the', 'Sunshine Coast'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners on the', 'Sunshine Coast'],
       tagline: 'Trusted, Trained and Thorough — Caloundra to Noosa',
     },
     intro: {
@@ -3428,7 +3428,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Toowoomba QLD',
     ogImage: '/images/suburbs/cleaners-toowoomba.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Toowoomba'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Toowoomba'],
       tagline: 'Trusted, Trained and Thorough — across the Darling Downs',
     },
     intro: {
@@ -3507,7 +3507,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Townsville QLD',
     ogImage: '/images/suburbs/cleaners-townsville.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Townsville'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Townsville'],
       tagline: 'Trusted, Trained and Thorough — across North Queensland',
     },
     intro: {
@@ -3589,7 +3589,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning across Melbourne VIC',
     ogImage: '/images/suburbs/cleaners-melbourne.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Melbourne'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Melbourne'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Greater Melbourne',
     },
@@ -3664,7 +3664,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Geelong'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Geelong & the Bellarine',
     },
@@ -3767,7 +3767,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Torquay VIC — Surf Coast',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Torquay'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Torquay'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
     },
@@ -3842,7 +3842,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Ocean Grove VIC — Bellarine Peninsula',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Ocean Grove'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Ocean Grove'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
@@ -3917,7 +3917,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Barwon Heads VIC — Bellarine Peninsula',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Barwon Heads'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Barwon Heads'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
@@ -3988,7 +3988,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Drysdale VIC — Bellarine Peninsula',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Drysdale'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Drysdale'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
@@ -4059,7 +4059,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Leopold VIC — Bellarine Peninsula',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Leopold'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Leopold'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across Leopold & the Bellarine',
     },
@@ -4130,7 +4130,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Jan Juc VIC — Surf Coast',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Jan Juc'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Jan Juc'],
     contentUpdated: '2026-08-27',
       tagline: 'Trusted, Trained and Thorough — across the Surf Coast',
     },
@@ -4203,7 +4203,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Newtown Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Newtown Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Newtown Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4282,7 +4282,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in East Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'East Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'East Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4361,7 +4361,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in South Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'South Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'South Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4440,7 +4440,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Geelong West VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Geelong West'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Geelong West'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4519,7 +4519,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Belmont Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Belmont Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Belmont Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4598,7 +4598,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Highton Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Highton'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Highton'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4677,7 +4677,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Wandana Heights Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Wandana Heights'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Wandana Heights'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4756,7 +4756,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Manifold Heights Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Manifold Heights'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Manifold Heights'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4831,7 +4831,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Herne Hill Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Herne Hill'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Herne Hill'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4906,7 +4906,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Hamlyn Heights Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Hamlyn Heights'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Hamlyn Heights'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -4985,7 +4985,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Bell Park Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Bell Park'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Bell Park'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -5060,7 +5060,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Bell Post Hill Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Bell Post Hill'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Bell Post Hill'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -5135,7 +5135,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Norlane Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Norlane'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Norlane'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -5214,7 +5214,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in North Shore Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'North Shore Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Shore Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -5289,7 +5289,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Corio Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Corio'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Corio'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -5368,7 +5368,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Lara VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lara'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lara'],
       tagline: 'Trusted, Trained and Thorough — between Geelong and Melbourne',
     },
     intro: {
@@ -5447,7 +5447,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Curlewis VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Curlewis'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Curlewis'],
       tagline: 'Trusted, Trained and Thorough — on the Bellarine Peninsula',
     },
     intro: {
@@ -5522,7 +5522,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Armstrong Creek VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Armstrong Creek'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Armstrong Creek'],
       tagline: 'Trusted, Trained and Thorough — Geelong\'s fastest-growing suburb',
     },
     intro: {
@@ -5601,7 +5601,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Grovedale VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Grovedale'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Grovedale'],
       tagline: 'Trusted, Trained and Thorough — south Geelong',
     },
     intro: {
@@ -5680,7 +5680,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Waurn Ponds VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Waurn Ponds'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Waurn Ponds'],
       tagline: 'Trusted, Trained and Thorough — Deakin University corridor',
     },
     intro: {
@@ -5759,7 +5759,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Mount Duneed VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Mount Duneed'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Mount Duneed'],
       tagline: 'Trusted, Trained and Thorough — Geelong\'s southern growth corridor',
     },
     intro: {
@@ -5838,7 +5838,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Ballarat VIC',
     ogImage: '/images/suburbs/cleaners-ballarat.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Ballarat'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Ballarat'],
       tagline: 'Trusted, Trained and Thorough — across the Central Highlands',
     },
     intro: {
@@ -5917,7 +5917,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Dandenong VIC',
     ogImage: '/images/suburbs/cleaners-dandenong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Dandenong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Dandenong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Dandenong',
     },
     intro: {
@@ -5996,7 +5996,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning on the Mornington Peninsula VIC',
     ogImage: '/images/suburbs/cleaners-mornington.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Mornington'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Mornington'],
       tagline: 'Trusted, Trained and Thorough — across the Mornington Peninsula',
     },
     intro: {
@@ -6075,7 +6075,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Narre Warren VIC',
     ogImage: '/images/suburbs/cleaners-narre-warren.png',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Narre Warren'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Narre Warren'],
       tagline: 'Trusted, Trained and Thorough — across the City of Casey',
     },
     intro: {
@@ -6154,7 +6154,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly cleaning in Toorak VIC',
     ogImage: '/images/suburbs/cleaners-toorak.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Toorak'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Toorak'],
       tagline: 'Trusted, Trained and Thorough — across Inner South-East Melbourne',
     },
     intro: {
@@ -6233,7 +6233,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Newcomb Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Newcomb'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Newcomb'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6311,7 +6311,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Whittington Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Whittington'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Whittington'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6385,7 +6385,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in St Albans Park Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'St Albans Park'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'St Albans Park'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6463,7 +6463,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Thomson Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Thomson'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Thomson'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6537,7 +6537,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Moolap Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Moolap'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Moolap'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6615,7 +6615,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Breakwater Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Breakwater'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Breakwater'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6694,7 +6694,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in North Geelong Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'North Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Geelong'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6768,7 +6768,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Rippleside Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Rippleside'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Rippleside'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6846,7 +6846,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Fyansford Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Fyansford'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Fyansford'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6920,7 +6920,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Ceres Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Ceres'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Ceres'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -6998,7 +6998,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Batesford Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Batesford'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Batesford'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -7072,7 +7072,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Lovely Banks Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Lovely Banks'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Lovely Banks'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -7151,7 +7151,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Marshall Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Marshall'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Marshall'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -7229,7 +7229,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Charlemont Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Charlemont'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Charlemont'],
       tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
     },
     intro: {
@@ -7303,7 +7303,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Wallington on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Wallington'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Wallington'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7381,7 +7381,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Connewarre on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Connewarre'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Connewarre'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7455,7 +7455,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Clifton Springs on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Clifton Springs'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Clifton Springs'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7534,7 +7534,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Portarlington on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Portarlington'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Portarlington'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7612,7 +7612,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in St Leonards on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'St Leonards'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'St Leonards'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7686,7 +7686,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Indented Head on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Indented Head'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Indented Head'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7760,7 +7760,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Point Lonsdale on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Point Lonsdale'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Point Lonsdale'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7838,7 +7838,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Queenscliff on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Queenscliff'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Queenscliff'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {
@@ -7916,7 +7916,7 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Marcus Hill on the Bellarine Peninsula VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Trusted', 'House Cleaners in', 'Marcus Hill'],
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Marcus Hill'],
       tagline: 'Trusted, Trained and Thorough — across the Bellarine Peninsula',
     },
     intro: {

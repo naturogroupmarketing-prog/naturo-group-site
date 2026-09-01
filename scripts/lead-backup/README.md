@@ -96,7 +96,7 @@ the CRM, because `captureLead` requires a name plus a contact — luck rather th
 design, and the new enquiry alert raises the cost of being wrong, since anything
 that gets through is now emailed to staff.
 
-`spamReason()` in `Code.gs` refuses a submission that:
+`spamReason()` in `Code.gs` refuses a submission on its **shape**:
 
 | Rule | What it catches |
 |---|---|
@@ -104,9 +104,42 @@ that gets through is now emailed to staff.
 | no `name` and no `full_name` | the three that arrived — same bar the CRM applies |
 | no `form_location` and no `lead_id` | posted straight at the URL, not through a form |
 
-The rules read the *shape*, never the message text. Judging text would
-eventually throw away a real enquiry written in a hurry, and losing one customer
-costs more than filing a hundred bot posts.
+…and, since 1 September 2026, on its **content**:
+
+| Rule | Strength |
+|---|---|
+| Cyrillic text | conclusive |
+| an `<a href>` tag | conclusive |
+| three or more links | conclusive |
+| two or more domains on `.ru .su .cc .to .top .xyz .icu .club .site .online .link .onion` | conclusive |
+| exactly two links · one such domain · two or more inline HTML tags · `#if<html>`/`#else`/`{a\|b}` spintax · over 1000 characters | weak — **two** are needed |
+
+This section used to say the rules read the shape and never the message text,
+because judging text would eventually throw away a real enquiry written in a
+hurry. That held until a bot arrived the shape rules cannot see. On **31 August
+2026 at 10:57** a marketplace-spam post came through the quote lead gate with a
+plausible Australian name, mobile and email, a real `form_location`, a real
+`lead_id` and an empty honeypot. Every shape rule passed it and it was filed on
+the **Leads** tab as a genuine enquiry.
+
+The CRM had met the same family the day before and grown a content gate, so the
+identical submission was quarantined there and filed as a lead here. This Sheet
+is meant to be an independent destination of *equal standing*, and it had
+quietly become the weaker one. The rules above are that gate, ported, so the two
+agree — keep them in step with `src/lib/lead-spam.ts` in the sophiie repo. Two
+destinations that disagree about what spam is are worse than either alone,
+because the answer then depends on which one you happen to open.
+
+The original caution is answered by keeping each rule narrow rather than by
+having none: every one is something a real Geelong cleaning enquiry cannot
+plausibly contain. No keyword lists, nothing that fires on how a sentence reads,
+and **length alone never rejects** — a customer describing a hoarding clean or an
+NDIS plan at length is the enquiry we least want to drop.
+
+One trap worth knowing: a Cloudflare Turnstile token is about a kilobyte of
+base64, so it is excluded from the scan along with the other captcha and
+plumbing fields. Scanning it would trip the length rule on every genuine
+enquiry.
 
 Refusals are answered exactly like successes — a bot that can see which rule
 caught it can tune around it — and are parked on the **Spam** tab with the
@@ -143,6 +176,53 @@ what it did.
 
 That runs the rules against the real rows — four genuine enquiries and the three
 bot posts — without touching the deployment.
+
+## Forwarding no-JavaScript enquiries to the CRM
+
+The contact page's form posts **natively to this URL** when JavaScript is off or
+broken — `action` is `webhookUrls[0]`, see `contact-us.astro`. That path cannot
+run the site's delivery code, so until 1 September 2026 those enquiries landed
+here and **nowhere else**: no Inbox conversation, no alert email, no AI capture.
+Nobody who does not open this spreadsheet knew they existed. The backup had
+quietly become the *only* copy, for the one visitor least able to work around
+it.
+
+`forwardToCrm()` now passes them on, after the row is written. Off unless both
+script properties are set — **File → Project properties → Script properties**:
+
+| Property | Value |
+|---|---|
+| `CRM_LEAD_URL` | `https://sophiie-web.onrender.com/api/widget/lead` |
+| `CRM_RELAY_SECRET` | any long random string; the same value goes in Render as `LEAD_RELAY_SECRET` |
+
+The secret lives in Script Properties and **never in `Code.gs`** — this file is
+in a public repository.
+
+Four things about it that are deliberate:
+
+- **Sheet first, CRM second.** Pointing the form at the CRM instead would mean a
+  no-JavaScript visitor gets an error page when the CRM is down, and the row
+  never reaches this Sheet at all — losing the exact redundancy this script
+  exists to provide.
+- **Native form posts only.** A submission made with JavaScript on has already
+  been posted to the CRM directly, in parallel, by `deliverLead()`. Forwarding
+  those as well would send the same enquiry twice at almost the same instant,
+  and the CRM de-duplicates by looking for an existing row before writing one —
+  which two simultaneous requests can both do before either has written.
+- **It never throws.** The lead is already saved by the time it runs. A CRM that
+  is down, slow or misconfigured must not become a 500 and an error page for
+  someone who has just typed their enquiry out.
+- **The header says who, never what.** `x-lead-relay` tells the CRM this is our
+  own relay, so it skips its captcha check — a native form post never ran
+  JavaScript, has no Turnstile token, and never could. The CRM still runs its
+  own honeypot and content rules on the payload.
+
+**This costs an OAuth scope.** `UrlFetchApp` adds `script.external_request`, so
+Google will ask to authorise the script again on the next deploy. It permits
+outbound HTTP to anywhere. That is narrower than the mail scope this script
+still refuses (which would allow sending email *as* the account owner), and
+unlike that one it buys something concrete. If the trade ever stops being worth
+it, delete `forwardToCrm()` and its call and the scope goes with them.
 
 ## What it does not do
 

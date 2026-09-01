@@ -175,7 +175,7 @@ export const leadCapture = {
    * run in dev; without that it simply no-ops there, which is usually what you
    * want.
    */
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAAEjnA_Ti9OM3LDdt',
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label

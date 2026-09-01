@@ -1,7 +1,8 @@
 ---
-// NOTE: filename intentionally matches the historical URL slug
-// (`/collection-statementment-notice`) referenced from the footer
-// so existing inbound links continue to resolve.
+// The slug used to be `/collection-statementment-notice` — "statementment",
+// a typo that shipped in the footer of every page. It is now
+// `/collection-notice-statement`, matching this page's own title. The old
+// slug 301s here from netlify.toml, so existing inbound links still resolve.
 import LegalPage from '../components/LegalPage.astro';
 import { site } from '../data/site';
 ---

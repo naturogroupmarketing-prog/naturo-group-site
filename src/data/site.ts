@@ -606,7 +606,7 @@ export const subFooterLinks = [
   { label: 'Privacy Policy', href: '/privacy-policies/' },
   { label: 'Terms of service', href: '/terms-of-service/' },
   { label: 'Cookies & Data Policy', href: '/cookies-data-policy/' },
-  { label: 'Collection Notice Statement', href: '/collection-statementment-notice/' },
+  { label: 'Collection Notice Statement', href: '/collection-notice-statement/' },
 ];
 
 // Kept for compatibility with existing pages that import it.

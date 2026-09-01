@@ -34,6 +34,16 @@
   to     = "/contact-us/"
   status = 301
 
+# ── Collection notice slug typo ────────────────────────────────────────────
+# The slug read "collection-statementment-notice" — "statementment" — and was
+# linked from the footer of all 163 pages. It is now
+# /collection-notice-statement/, matching the page's own title. This keeps the
+# old URL working for anything already pointing at it.
+[[redirects]]
+  from   = "/collection-statementment-notice"
+  to     = "/collection-notice-statement/"
+  status = 301
+
 # Force HTTPS
 [[redirects]]
   from = "http://naturogroup.com.au/*"

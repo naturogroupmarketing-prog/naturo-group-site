@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { ctaPrimary, ctaPhone } from '../data/site';
 
 const popularLinks = [
-  { label: 'Get a free quote', href: '/quote/' },
+  { label: 'Get a free quote', href: '/contact-us/' },
   { label: 'House cleaning', href: '/services/house-cleaning/' },
   { label: 'Deep clean', href: '/services/deep-clean/' },
   { label: 'End of lease', href: '/services/end-of-lease/' },
@@ -30,7 +30,7 @@ const popularLinks = [
         \u2014 or get a free quote for your home in 60 seconds.
       </p>
       <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
-        <a class="btn-primary" href={ctaPrimary.href}>{ctaPrimary.text}</a>
+        <a class="btn-primary" href={ctaPrimary.href} data-quote-cta>{ctaPrimary.text}</a>
         <a class="btn-secondary" href={ctaPhone.href}>Call {ctaPhone.text}</a>
       </div>
     </div>
@@ -47,6 +47,7 @@ const popularLinks = [
             <a
               class="block rounded-xl border border-[var(--color-border)] px-5 py-4 text-[var(--color-navy)] hover:border-[var(--color-accent-blue)] hover:text-[var(--color-accent-blue)] transition"
               href={l.href}
+              data-quote-cta={l.href === "/contact-us/" && l.label === "Get a free quote" ? "" : undefined}
             >
               {l.label} \u2192
             </a>

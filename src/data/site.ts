@@ -14,7 +14,7 @@ export const site = {
   email: 'admin@naturogroup.com.au',
   emailHref: 'mailto:admin@naturogroup.com.au',
   hours: 'Monday – Fridays  8:30am – 5:00pm',
-  bookingUrl: '/quote',
+  bookingUrl: '/contact-us/',
   // Replace with your actual Google Business Profile review link.
   // Get it from: Google Maps → search your business → Share → Copy link,
   // then append &review=1 — or use the direct short link from your GBP dashboard.
@@ -210,7 +210,7 @@ export const pricingCards = [
       'Eco-friendly, non-toxic products',
       'Experienced, police-checked cleaners',
     ],
-    cta: { text: 'Get a Free Quote', href: '/quote/' },
+    cta: { text: 'Get a Free Quote', href: '/contact-us/' },
   },
   {
     name: 'Regular Clean',
@@ -225,7 +225,7 @@ export const pricingCards = [
       'A trusted, regular cleaning team',
       'Skip, pause or reschedule anytime',
     ],
-    cta: { text: 'Get a Free Quote', href: '/quote/' },
+    cta: { text: 'Get a Free Quote', href: '/contact-us/' },
     featured: true,
   },
   {
@@ -241,7 +241,7 @@ export const pricingCards = [
       'Bond-back re-clean included if issues arise',
       'Professional, experienced cleaners',
     ],
-    cta: { text: 'Get a Free Quote', href: '/quote/' },
+    cta: { text: 'Get a Free Quote', href: '/contact-us/' },
   },
 ];
 
@@ -266,7 +266,7 @@ export const chooseYourClean = [
       'Aged Care — Home Care Packages & CHSP',
       'Insurance — claim scopes, photos & reports',
     ],
-    cta: { text: 'Get a free quote', href: '/quote/' },
+    cta: { text: 'Get a free quote', href: '/contact-us/' },
   },
 ];
 

@@ -87,7 +87,7 @@ const lc = leadCapture;
           <span>Email me my $30 code</span>
           <span class="exi-submit-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </button>
-        <a href={ctaPrimary.href} class="exi-noFmt" id="exiSkip">No thanks, I'll get my price now &rarr;</a>
+        <a href={ctaPrimary.href} data-quote-cta class="exi-noFmt" id="exiSkip">No thanks, I'll get my price now &rarr;</a>
 
         <p class="exi-fineprint">
           See our <a href="/privacy-policies/">Privacy Policy</a> for how we handle your details.
@@ -260,7 +260,7 @@ const lc = leadCapture;
           '<div class="exi-thanks">' +
             '<h2 class="exi-title">Check your phone</h2>' +
             '<p class="exi-sub">Your $30 first-clean code is on its way. Browse our services or grab an instant price whenever you\u2019re ready.</p>' +
-            '<a href="/quote/" class="exi-submit" style="display:inline-block;text-align:center;text-decoration:none;">Get my instant price</a>' +
+            '<a href="/contact-us/" data-quote-cta class="exi-submit" style="display:inline-block;text-align:center;text-decoration:none;">Get my instant price</a>' +
           '</div>';
       }
       // Promising a code that is never coming is worse here than anywhere else

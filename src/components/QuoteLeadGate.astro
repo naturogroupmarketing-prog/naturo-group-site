@@ -1261,17 +1261,26 @@ const lc = {
       if (ev.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
     });
 
-    // ---- Intercept every "Get a Free Quote" (/quote) link -----------
+    // ---- Intercept every marked "Get a Free Quote" CTA -----------------
     function isQuoteLink(a) {
       if (!a || a.tagName !== 'A') return false;
       if (a.target && a.target !== '' && a.target !== '_self') return false;
-      const raw = a.getAttribute('href');
-      if (!raw) return false;
-      try {
-        const url = new URL(a.href, window.location.href);
-        if (url.origin !== window.location.origin) return false;
-        return url.pathname === TARGET_PATH || url.pathname === TARGET_PATH + '/';
-      } catch (e) { return false; }
+      // A CTA is marked explicitly, not matched by path. The links used to
+      // point at /quote; that page is gone, so pointing them there cost every
+      // CTA on the site a 301. They now point at /contact-us/ — the same place
+      // the redirect sent them — and carry the marker below so this gate still
+      // opens the popup instead of following the link.
+      if (!a.hasAttribute('data-quote-cta') && !a.classList.contains('js-quote-cta')) {
+        // Legacy: any /quote link left in old content still opens the popup.
+        const raw = a.getAttribute('href');
+        if (!raw) return false;
+        try {
+          const url = new URL(a.href, window.location.href);
+          if (url.origin !== window.location.origin) return false;
+          return url.pathname === TARGET_PATH || url.pathname === TARGET_PATH + '/';
+        } catch (e) { return false; }
+      }
+      return true;
     }
     document.addEventListener('click', function (ev) {
       if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;

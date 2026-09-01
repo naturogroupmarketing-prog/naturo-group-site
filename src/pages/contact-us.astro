@@ -190,7 +190,7 @@ const methodCards = [
     </div>
     <div class="container-site ct-methods-inner ct-methods-grid">
       {methodCards.map((m) => (
-        <a class="ct-method-card" href={m.href}>
+        <a class="ct-method-card" href={m.href} data-quote-cta={m.href === ctaPrimary.href ? "" : undefined}>
           <span class="ct-method-label">{m.label}</span>
           <h3 class="ct-method-title">{m.title}</h3>
           <p class="ct-method-body">{m.body}</p>
@@ -1039,7 +1039,7 @@ const methodCards = [
           }
           return;
         }
-        window.location.href = '/thank-you';
+        window.location.href = '/thank-you/';
       });
     });
   })();

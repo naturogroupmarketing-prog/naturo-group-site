@@ -14,15 +14,18 @@
   status = 200
 
 # ── /quote retired ─────────────────────────────────────────────────────────
-# The page is gone. Lead capture is the 7-step "Get a Free Quote" popup, which
-# intercepts clicks on /quote links client-side (QuoteLeadGate TARGET_PATH), so
-# ctaPrimary.href stays "/quote" and every CTA still opens the popup exactly as
-# before. Repointing those links would have silently stopped it opening.
+# The page is gone. Lead capture is the 7-step "Get a Free Quote" popup.
 #
-# This rule therefore only matters where JS never runs: crawlers, no-JS
-# visitors, and old bookmarks or inbound links. A previous comment here warned
-# that this rule could shadow the real page — that no longer applies now the
-# page is deleted, which is the whole point of restoring it.
+# The CTAs no longer point here. They kept pointing at /quote so the popup
+# could recognise them by path, which cost every CTA on the site a 301 —
+# 1,980 internal links to this rule, ~12 per page. They now point straight at
+# /contact-us/ and carry a data-quote-cta marker; QuoteLeadGate matches the
+# marker instead of the path, so the popup still opens and nothing reaches
+# this rule from our own pages.
+#
+# The rule stays for what we do not control: old bookmarks, inbound links,
+# and anything still citing /quote. QuoteLeadGate also still matches /quote
+# by path as a fallback, so a stray link opens the popup rather than leaving.
 #
 # Checked before deleting: the Google Ads landing-pages report lists ten
 # destinations and none is /quote, so no paid traffic lands here.

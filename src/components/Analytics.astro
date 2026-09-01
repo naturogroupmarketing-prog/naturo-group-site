@@ -128,6 +128,9 @@ const leadDelivery = {
   phone: site.phone,
   phoneHref: site.phoneHref,
   email: site.email,
+  // Empty until a key is set, and everything below is a no-op while it is —
+  // no script loaded, no token asked for, no change to any form.
+  turnstileSiteKey: leadCapture.turnstileSiteKey,
 };
 ---
 
@@ -413,6 +416,145 @@ const leadDelivery = {
       return '';
     }
 
+    /* ---- Cloudflare Turnstile -------------------------------------------
+     *
+     * A proof that a browser, not a script, made this submission. The honeypot
+     * catches bots that fill hidden fields and the CRM's content gate catches
+     * the ones whose text gives them away; this catches the ones that do
+     * neither — the case that actually got through on 31 August 2026.
+     *
+     * Three things about how it is wired here:
+     *
+     *   1. LOADED LAZILY, AND ONLY IF CONFIGURED. With no site key the script
+     *      is never fetched and nothing on the page changes. When there is one,
+     *      the ~40KB script is still not fetched on page load — it waits until
+     *      someone actually opens a form, so a visitor who reads a suburb page
+     *      and leaves pays nothing for it.
+     *
+     *   2. INVISIBLE. `size: invisible` means no checkbox, no "select the
+     *      traffic lights", nothing added to any form's layout. In the ordinary
+     *      case the visitor never knows it ran.
+     *
+     *   3. IT CANNOT BLOCK A SUBMISSION. Every failure path — script blocked by
+     *      an ad blocker, Cloudflare down, the challenge timing out — resolves
+     *      to an empty token and the lead is posted anyway. The server decides
+     *      what an empty token means, and it is written to let it through
+     *      whenever the fault could be ours. A captcha that can silently eat a
+     *      customer is worse than the spam it stops.
+     */
+    var TURNSTILE_TIMEOUT_MS = 6000;
+    var turnstileScript = null;   // the load promise, once started
+    var turnstileWidget = null;   // the rendered widget id, once rendered
+
+    /* Who is waiting for the next token.
+     *
+     * The widget's callbacks are registered ONCE, when it is rendered, so they
+     * close over that first submission's resolver and nothing else. Routing
+     * them through this variable is what lets the second and third enquiry of a
+     * session get a token too — without it the widget answers a resolver that
+     * settled minutes ago and the later caller waits out the timeout. Cleared
+     * as it is read, so a late duplicate callback resolves nobody. */
+    var turnstilePending = null;
+    function turnstileSettle(token) {
+      var r = turnstilePending;
+      turnstilePending = null;
+      if (r) r(token || '');
+    }
+
+    function turnstileReady() {
+      var key = lead.turnstileSiteKey;
+      if (!key) return Promise.resolve(null);
+      if (turnstileScript) return turnstileScript;
+
+      turnstileScript = new Promise(function (resolve) {
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true;
+        s.defer = true;
+        s.onload = function () { resolve(window.turnstile || null); };
+        // A blocked or failed script is not an error worth surfacing — it just
+        // means no token, which the server already knows how to handle.
+        s.onerror = function () { resolve(null); };
+        document.head.appendChild(s);
+      });
+      return turnstileScript;
+    }
+
+    /* One token at a time.
+     *
+     * A token is single-use: Cloudflare accepts it for exactly one siteverify
+     * call and answers "timeout-or-duplicate" to any second. The quote lead
+     * gate posts TWO endpoints for one submission, so it needs two tokens, and
+     * there is one shared widget to mint them from. Requests are therefore
+     * queued rather than run at once — two concurrent executes on one widget
+     * would have the later one overwrite the earlier's challenge and the first
+     * caller would wait out its timeout for a token that never comes. */
+    var turnstileQueue = Promise.resolve('');
+
+    /**
+     * A fresh token, or '' if one could not be obtained.
+     *
+     * Never rejects. Minted per submission rather than held from page load:
+     * tokens expire after five minutes, so someone filling in the quote gate
+     * slowly would otherwise reach the button with one Cloudflare had retired.
+     */
+    function turnstileToken() {
+      turnstileQueue = turnstileQueue.then(mintToken, mintToken);
+      return turnstileQueue;
+    }
+
+    function mintToken() {
+      return turnstileReady()
+        .then(function (ts) {
+          if (!ts) return '';
+          return new Promise(function (resolve) {
+            var settled = false;
+            var done = function (v) { if (!settled) { settled = true; resolve(v || ''); } };
+
+            // The queue above guarantees this, but the widget's callbacks are
+            // global and a late one from a previous challenge could otherwise
+            // land on this resolver.
+            turnstilePending = done;
+
+            // The visitor is waiting on this, so it is bounded. Better to send
+            // the lead with no token than to hold someone on a spinner.
+            setTimeout(function () {
+              if (turnstilePending === done) turnstilePending = null;
+              done('');
+            }, TURNSTILE_TIMEOUT_MS);
+
+            try {
+              if (turnstileWidget === null) {
+                var host = document.createElement('div');
+                host.className = 'nl-hp'; // off-screen; the widget is invisible anyway
+                host.setAttribute('aria-hidden', 'true');
+                document.body.appendChild(host);
+                // An invisible widget runs its challenge as it renders, so this
+                // first call is answered by `callback` without an execute().
+                turnstileWidget = ts.render(host, {
+                  sitekey: lead.turnstileSiteKey,
+                  size: 'invisible',
+                  callback: turnstileSettle,
+                  'error-callback': function () { turnstileSettle(''); },
+                  'timeout-callback': function () { turnstileSettle(''); },
+                  'expired-callback': function () { turnstileSettle(''); },
+                });
+              } else {
+                // Reset before re-executing: a widget still holding the token
+                // it minted for the previous submission hands back that same
+                // one, and a token spent once is refused the second time.
+                ts.reset(turnstileWidget);
+                ts.execute(turnstileWidget);
+              }
+            } catch (e) {
+              if (turnstilePending === done) turnstilePending = null;
+              done('');
+            }
+          });
+        })
+        .catch(function () { return ''; });
+    }
+
     /**
      * Deliver one lead to every configured destination.
      *
@@ -423,8 +565,22 @@ const leadDelivery = {
      * reason for having more than one.
      */
     function deliverLead(payload) {
+      // The token is fetched here, not in each form, for the same reason the
+      // spam trap is: a form that forgets to attach one looks like it is
+      // protected and is not.
+      return turnstileToken().then(function (token) {
+        return deliverLeadWith(payload, token);
+      });
+    }
+
+    function deliverLeadWith(payload, token) {
       var trap = honeypotValue();
-      var json = JSON.stringify(trap ? Object.assign({}, payload, { _gotcha: trap }) : payload);
+      var extra = {};
+      if (trap) extra._gotcha = trap;
+      if (token) extra['cf-turnstile-response'] = token;
+      var json = JSON.stringify(
+        Object.keys(extra).length ? Object.assign({}, payload, extra) : payload,
+      );
       var backups = (lead.webhookUrls || []).filter(Boolean);
       return Promise.all(
         [postLead(lead.crmUrl, json, 'application/json')].concat(
@@ -458,6 +614,12 @@ const leadDelivery = {
 
     window.naturoLeads = {
       deliver: deliverLead,
+      /* For the quote lead gate, which posts the AI Reception funnel directly
+       * as well as delivering here. That endpoint verifies separately, so it
+       * needs a token of its own — a token is single-use and reusing one would
+       * have Cloudflare refuse the second of the two. Calls queue internally,
+       * so asking twice in a row is safe. */
+      token: turnstileToken,
       failureMessage: failureMessage,
       phone: lead.phone || '',
       phoneHref: lead.phoneHref || '',

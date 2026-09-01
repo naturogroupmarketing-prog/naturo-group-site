@@ -854,12 +854,31 @@ const lc = {
         },
       };
 
-      return fetch(base + '/quote-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-        keepalive: true,
-      })
+      /* This endpoint verifies Turnstile separately from the one the shared
+       * deliverer posts, so it needs a token of its own — they are single-use,
+       * and handing the same one to both would have Cloudflare refuse the
+       * second. The shared layer queues the two requests, so asking here costs
+       * one extra challenge and no coordination.
+       *
+       * No token is not an error: with Turnstile unconfigured, blocked, or
+       * down this resolves to '' and the enquiry is posted exactly as it was
+       * before any of this existed. */
+      var withToken =
+        window.naturoLeads && window.naturoLeads.token
+          ? window.naturoLeads.token()
+          : Promise.resolve('');
+
+      return withToken
+        .catch(function () { return ''; })
+        .then(function (token) {
+          if (token) body['cf-turnstile-response'] = token;
+          return fetch(base + '/quote-request', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            keepalive: true,
+          });
+        })
         .then(function (r) { return r.ok; })
         .catch(function () { return false; });
     }

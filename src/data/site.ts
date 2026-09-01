@@ -158,6 +158,24 @@ export const leadCapture = {
   // widening it to understand bedrooms and consent versions would couple those
   // two things together for no reason.
   funnelBase: 'https://sophiie-web.onrender.com/api/funnel',
+  /**
+   * Cloudflare Turnstile site key. Public by design — it is meant to be read
+   * from the page source; the secret half lives in the AI Reception app as
+   * TURNSTILE_SECRET_KEY and is what actually decides anything.
+   *
+   * EMPTY = SWITCHED OFF, and switched off is the current state. Nothing is
+   * loaded, no token is requested, and every form behaves exactly as it did
+   * before. Filling this in starts the site sending tokens; the app keeps
+   * accepting submissions without one until its secret is set too, so the two
+   * can be turned on in either order without an outage in between.
+   *
+   * To turn it on: Cloudflare dash → Turnstile → Add site → naturogroup.com.au
+   * (widget mode Invisible). Site key goes here, secret key goes in Render →
+   * sophiie-web → Environment. Add localhost as a hostname if you want it to
+   * run in dev; without that it simply no-ops there, which is usually what you
+   * want.
+   */
+  turnstileSiteKey: '',
   metaPixelId: '',         // e.g. '1234567890'
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label

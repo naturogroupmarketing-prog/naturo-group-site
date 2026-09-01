@@ -798,8 +798,8 @@ export const posts: BlogPost[] = [
 
       {
         type: 'cta',
-        heading: 'Want carpets that look new again?',
-        body: 'Naturo Group offers professional carpet care as part of our deep cleans, end-of-lease cleans, and ongoing residential plans. Eco-friendly, kid-safe, pet-safe.',
+        heading: 'Want a clean that is safe around kids and pets?',
+        body: 'Naturo Group deep cleans use plant-based, non-toxic products throughout, and include carpet spot-cleaning. Full carpet steam cleaning is a separate specialist service we do not provide.',
         href: '/services/deep-clean/',
         label: 'Book a deep clean',
       },
@@ -953,7 +953,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Geelong bond clean prices vary by property size, condition and whether add-ons like carpet steam cleaning are included. As a rough guide for 2026:',
+        text: 'Geelong bond clean prices vary by property size and condition. As a rough guide for 2026:',
       },
       {
         type: 'ul',
@@ -962,7 +962,7 @@ export const posts: BlogPost[] = [
           '2-bedroom unit: $560–$640',
           '3-bedroom house: $680–$800',
           '4-bedroom house: $820–$980',
-          'Carpet steam cleaning (per room): $60–$90 add-on',
+          'Carpet steam cleaning: typically $60–$90 per room, booked separately with a carpet specialist',
           'External windows: $80–$160 add-on depending on storey access',
         ],
       },
@@ -1083,7 +1083,7 @@ export const posts: BlogPost[] = [
           '3-bedroom house: $460–$580',
           '4-bedroom house: $580–$720',
           'Add oven clean: $60–$90',
-          'Add carpet steam cleaning per room: $60–$90',
+          'Carpet steam cleaning: typically $60–$90 per room, booked separately with a carpet specialist',
         ],
       },
       { type: 'h2', text: 'End of lease (bond) cleaning prices in Geelong (2026)' },
@@ -1099,7 +1099,7 @@ export const posts: BlogPost[] = [
           '3-bedroom house: $680–$800',
           '4-bedroom house: $820–$980',
           '5-bedroom house: $980–$1,280',
-          'Carpet steam cleaning add-on: $60–$90 per room',
+          'Carpet steam cleaning: typically $60–$90 per room, booked separately with a carpet specialist',
         ],
       },
       { type: 'h2', text: 'What affects house cleaning prices in Geelong?' },
@@ -1470,7 +1470,7 @@ export const posts: BlogPost[] = [
       { type: 'h2', text: 'How much does end of lease cleaning cost in Port Macquarie?' },
       {
         type: 'p',
-        text: 'Professional bond cleaning in Port Macquarie typically costs $560–$1,280 depending on property size. A 1-bedroom unit or apartment starts at $560, a 2-bedroom house around $640, a 3-bedroom home around $800. Add-ons like carpet steam cleaning, external windows and outdoor areas are priced separately. Get an exact price in 60 seconds at naturogroup.com.au/end-of-lease-cleaning-port-macquarie.',
+        text: 'Professional bond cleaning in Port Macquarie typically costs $560–$1,280 depending on property size. A 1-bedroom unit or apartment starts at $560, a 2-bedroom house around $640, a 3-bedroom home around $800. Add-ons like external windows and outdoor areas are priced separately. Carpet steam cleaning is a separate specialist service we do not provide — typically $60–$90 per room with a carpet specialist. Get an exact price in 60 seconds at naturogroup.com.au/end-of-lease-cleaning-port-macquarie.',
       },
       {
         type: 'callout',

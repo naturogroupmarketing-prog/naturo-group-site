@@ -1,0 +1,124 @@
+---
+// Related guides + sibling services for the regional hub pages.
+//
+// The four regional money pages (end-of-lease and NDIS, Geelong and Port
+// Macquarie) carried no outbound links to the guide library at all — measured
+// by grep, zero `/resource/` hrefs on any of them. Every Geelong suburb page
+// links out to both the hubs and the guides via LocalServiceLinks, but that
+// component is only mounted on `[suburb].astro`, so the hubs themselves were
+// link dead-ends.
+//
+// That matters here specifically because of a measured cannibalisation:
+// `end of lease cleaning geelong` (590/mo, KD 0, CPC $10.20) ranks at position
+// 16 with `/resource/end-of-lease-cleaning-geelong-checklist/` — the guide —
+// while `/end-of-lease-cleaning-geelong/`, the page built to sell that service,
+// does not rank for it at all. The guide is the page Google picked for a
+// commercial query. Linking hub -> guide states which page is the parent of the
+// topic instead of leaving the two to compete unconnected.
+//
+// Deliberately mirrors LocalServiceLinks' markup and styles rather than
+// introducing a second visual language for the same idea.
+import { postCards } from '../data/posts';
+
+interface Props {
+  /** Region label used in the headings, e.g. "Geelong". */
+  regionLabel: string;
+  /** Sibling service pages in the same region. Hrefs must carry a trailing slash. */
+  services?: { href: string; text: string }[];
+  /** Guide slugs from src/data/posts.ts. Unknown slugs are dropped, not rendered broken. */
+  guideSlugs: string[];
+}
+
+const { regionLabel, services = [], guideSlugs } = Astro.props;
+
+const guides = guideSlugs
+  .map((slug) => postCards.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+const hasContent = guides.length > 0 || services.length > 0;
+---
+
+{hasContent && (
+  <section class="rg-section" aria-labelledby="rg-h2">
+    <div class="container-site">
+      <h2 id="rg-h2" class="rg-h2">More for {regionLabel} households</h2>
+      <p class="rg-sub">
+        Free guides and specialist services written for the {regionLabel} area.
+      </p>
+
+      <div class="rg-grid">
+        {services.length > 0 && (
+          <div class="rg-col">
+            <h3 class="rg-h3">Specialist services</h3>
+            <ul class="rg-list">
+              {services.map((s) => (
+                <li><a href={s.href}>{s.text}</a></li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {guides.length > 0 && (
+          <div class="rg-col">
+            <h3 class="rg-h3">{regionLabel} guides</h3>
+            <ul class="rg-list">
+              {guides.map((g) => (
+                <li><a href={g.href}>{g.title}</a></li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .rg-section {
+    padding: 56px 0;
+    background: #f7f8fa;
+  }
+  .rg-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 600;
+    color: rgb(15, 23, 42);
+    margin: 0 0 8px;
+  }
+  .rg-sub {
+    font-size: 1rem;
+    color: rgb(91, 94, 102);
+    margin: 0 0 28px;
+  }
+  .rg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .rg-h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(15, 23, 42);
+    margin: 0 0 12px;
+  }
+  .rg-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rg-list a {
+    color: rgb(13, 84, 88);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .rg-list a:hover,
+  .rg-list a:focus-visible {
+    color: rgb(9, 60, 63);
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
 import ServiceHero from '../components/ServiceHero.astro';
 import ServiceIntro from '../components/ServiceIntro.astro';
 import ServiceInclusions from '../components/ServiceInclusions.astro';
@@ -239,6 +240,19 @@ const schema = [
   <AppPromo />
 
   <!-- 10. Final CTA -->
+  <RelatedGuides
+    regionLabel="Port Macquarie"
+    services={[
+      { href: '/cleaners-port-macquarie/', text: 'Regular house cleaning in Port Macquarie' },
+      { href: '/end-of-lease-cleaning-port-macquarie/', text: 'End of lease cleaning in Port Macquarie' },
+    ]}
+    guideSlugs={[
+      'ndis-cleaning-port-macquarie-guide',
+      'end-of-lease-cleaning-port-macquarie-checklist',
+      'house-cleaning-cost-port-macquarie',
+    ]}
+  />
+
   <FinalCTA />
 
   <!-- 11. Suburb links (local SEO) -->

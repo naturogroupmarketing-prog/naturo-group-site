@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
 import ServiceHero from '../components/ServiceHero.astro';
 import ServiceIntro from '../components/ServiceIntro.astro';
 import ServiceInclusions from '../components/ServiceInclusions.astro';
@@ -317,6 +318,20 @@ const schema = [
   <AppPromo />
 
   <!-- 11. Final CTA -->
+  <RelatedGuides
+    regionLabel="Geelong"
+    services={[
+      { href: '/house-cleaning-geelong/', text: 'Regular house cleaning in Geelong' },
+      { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
+    ]}
+    guideSlugs={[
+      'ndis-cleaning-geelong-guide',
+      'end-of-lease-cleaning-geelong-checklist',
+      'house-cleaning-cost-geelong',
+      'eco-friendly-cleaning-geelong',
+    ]}
+  />
+
   <FinalCTA />
 
   <!-- 12. Suburb sub-pages + area links -->

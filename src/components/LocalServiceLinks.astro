@@ -75,6 +75,13 @@ const REGION_KEY: Record<string, keyof typeof BY_REGION> = {
 const key = REGION_KEY[region];
 const links = key ? BY_REGION[key] : undefined;
 
+// When the suburb IS the region hub, "More for Port Macquarie and the Port
+// Macquarie area" reads as a bug. Collapse it to one mention in that case.
+const headingText =
+  suburbName.trim().toLowerCase() === (links?.label ?? '').trim().toLowerCase()
+    ? `More for the ${suburbName} area`
+    : `More for ${suburbName} and the ${links?.label} area`;
+
 const guides = links
   ? links.guideSlugs
       .map((slug) => postCards.find((p) => p.slug === slug))
@@ -85,7 +92,7 @@ const guides = links
 {links && (
   <section class="lsl-section" aria-labelledby="lsl-h2">
     <div class="container-site">
-      <h2 id="lsl-h2" class="lsl-h2">More for {suburbName} and the {links.label} area</h2>
+      <h2 id="lsl-h2" class="lsl-h2">{headingText}</h2>
       <p class="lsl-sub">
         Specialist services and free guides written for {links.label} households.
       </p>

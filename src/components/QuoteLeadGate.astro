@@ -149,18 +149,13 @@ const lc = {
           <span class="qlg-error" data-error-for="email"></span>
         </label>
         <!--
-          Two consents, separate, neither pre-ticked. Under the Spam Act 2003
-          agreeing to be contacted about a quote you asked for is not agreeing
-          to marketing, and bundling them is the classic failure. The exact
-          wording is stored with the enquiry, so what somebody agreed to is
-          answerable later.
+          Marketing consent only, and never pre-ticked. Consent to be contacted
+          ABOUT THE QUOTE is inferred from asking for one — that is what the
+          Spam Act calls an existing enquiry — so a tick box demanding it was
+          friction in front of permission we already had. Marketing is a
+          separate purpose and still needs its own express opt-in; bundling the
+          two is the classic failure, so this one stays on its own.
         -->
-        <label class="qlg-consent">
-          <input type="checkbox" name="contact_consent" id="qlgConsent" />
-          <span>I agree to Naturo Group contacting me about this quote request by phone, text or email.</span>
-        </label>
-        <span class="qlg-error" data-error-for="contact_consent"></span>
-
         <label class="qlg-consent">
           <input type="checkbox" name="marketing_consent" id="qlgMarketing" />
           <span>I&rsquo;d also like to hear about cleaning tips, seasonal offers and reminders. You can unsubscribe at any time.</span>
@@ -453,12 +448,10 @@ const lc = {
       if (!name || name.length < 2) { setError('name', 'What should we call you?'); ok = false; }
       if (phone.replace(/[^0-9]/g, '').length < 8) { setError('phone', 'A valid phone number, please.'); ok = false; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('email', 'Double-check your email?'); ok = false; }
-      if (!document.getElementById('qlgConsent').checked) {
-        setError('contact_consent', 'We need your permission to contact you about this quote.');
-        ok = false;
-      }
       if (ok) {
         state.name = name; state.phone = phone; state.email = email;
+        // Inferred from the enquiry, not a tick. Still recorded as true so the
+        // CRM keeps a consent basis against every lead.
         state.contactConsent = true;
         state.marketingConsent = document.getElementById('qlgMarketing').checked;
       }

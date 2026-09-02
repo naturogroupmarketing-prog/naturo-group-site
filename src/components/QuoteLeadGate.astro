@@ -129,158 +129,7 @@ const lc = {
         </button>
       </section>
 
-      <!-- STEP 3 · the home, part one -->
-      <!--
-        Four fields, not eight. Past about five a step reads as work rather than
-        a moment, and on a 375px screen the Continue button fell below the fold —
-        which is the strongest argument of the lot, because a button you have to
-        hunt for is a step people leave.
-      -->
-      <section class="qlg-screen" data-step="home" hidden>
-        <h2 class="qlg-q" tabindex="-1">Tell us about your home</h2>
-        <p class="qlg-sub">This is what we price the clean on.</p>
-
-        <div class="qlg-grid">
-          <label class="qlg-field">
-            <span class="qlg-label">Bedrooms</span>
-            <select class="qlg-input qlg-select" name="bedrooms" id="qlgBedrooms">
-              <option value="">Select</option>
-              <option value="Studio">Studio</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6+">6+</option>
-            </select>
-            <span class="qlg-error" data-error-for="bedrooms"></span>
-          </label>
-
-          <label class="qlg-field">
-            <span class="qlg-label">Bathrooms</span>
-            <select class="qlg-input qlg-select" name="bathrooms" id="qlgBathrooms">
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5+">5+</option>
-            </select>
-            <span class="qlg-error" data-error-for="bathrooms"></span>
-          </label>
-        </div>
-
-        <label class="qlg-field">
-          <span class="qlg-label">Is there a separate toilet as well?</span>
-          <select class="qlg-input qlg-select" name="additional_toilet" id="qlgToilet">
-            <option value="">Select</option>
-            <option value="No">No</option>
-            <option value="Yes — 1 extra">Yes &mdash; 1 extra</option>
-            <option value="Yes — 2 or more">Yes &mdash; 2 or more</option>
-          </select>
-        </label>
-
-        <label class="qlg-field">
-          <span class="qlg-label">How many storeys?</span>
-          <select class="qlg-input qlg-select" name="storeys" id="qlgStoreys">
-            <option value="">Select</option>
-            <option value="Single storey">Single storey</option>
-            <option value="Double storey">Double storey</option>
-            <option value="Three or more">Three or more</option>
-          </select>
-        </label>
-
-        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgHomeNext">
-          <span>Continue</span>
-          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </button>
-      </section>
-
-      <!-- STEP 4 · kitchen, living and laundry -->
-      <section class="qlg-screen" data-step="rooms" hidden>
-        <h2 class="qlg-q" tabindex="-1">Kitchen, living and laundry</h2>
-        <p class="qlg-sub">Almost there &mdash; four quick ones.</p>
-
-        <div class="qlg-grid">
-          <label class="qlg-field">
-            <span class="qlg-label">Kitchens</span>
-            <select class="qlg-input qlg-select" name="kitchens" id="qlgKitchens">
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3+">3+</option>
-            </select>
-          </label>
-
-          <label class="qlg-field">
-            <span class="qlg-label">Living rooms</span>
-            <select class="qlg-input qlg-select" name="living_rooms" id="qlgLiving">
-              <option value="">Select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4+">4+</option>
-            </select>
-          </label>
-        </div>
-
-        <label class="qlg-field">
-          <span class="qlg-label">Butler&rsquo;s pantry or second kitchen?</span>
-          <select class="qlg-input qlg-select" name="butler_pantry" id="qlgPantry">
-            <option value="">Select</option>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-          </select>
-        </label>
-
-        <label class="qlg-field">
-          <span class="qlg-label">Would you like the laundry cleaned?</span>
-          <select class="qlg-input qlg-select" name="laundry" id="qlgLaundry">
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-        </label>
-
-        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgRoomsNext">
-          <span>Continue</span>
-          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </button>
-      </section>
-
-      <!-- STEP 5 · the clean itself -->
-      <!--
-        The last two answers a quote needs. Condition is the single biggest
-        driver of how long a clean takes — two identical floor plans price
-        differently on it — and without a date there is nothing to schedule.
-      -->
-      <section class="qlg-screen" data-step="clean" hidden>
-        <h2 class="qlg-q" tabindex="-1">About the clean</h2>
-        <label class="qlg-field">
-          <span class="qlg-label">How much work does it need?</span>
-          <select class="qlg-input qlg-select" name="condition" id="qlgCondition">
-            <option value="">Select</option>
-            <option value="LIGHT">Well kept &mdash; a regular tidy-up</option>
-            <option value="STANDARD">Normal &mdash; the usual lived-in state</option>
-            <option value="HEAVY">Needs work &mdash; it has been a while</option>
-          </select>
-          <span class="qlg-error" data-error-for="condition"></span>
-        </label>
-
-        <label class="qlg-field">
-          <span class="qlg-label">When would you like it?</span>
-          <input class="qlg-input" type="date" name="preferred_date" id="qlgDate" />
-          <span class="qlg-help">An approximate date is fine &mdash; we&rsquo;ll confirm it with you.</span>
-          <span class="qlg-error" data-error-for="preferred_date"></span>
-        </label>
-
-        <button type="submit" class="qlg-btn qlg-btn-primary" id="qlgCleanNext">
-          <span>Continue</span>
-          <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </button>
-      </section>
-
-      <!-- STEP 6 · contact -->
+      <!-- STEP 3 · contact -->
       <section class="qlg-screen" data-step="contact" hidden>
         <h2 class="qlg-q" tabindex="-1">Where should we send your personalised quote?</h2>
         <label class="qlg-field">
@@ -323,7 +172,7 @@ const lc = {
         </button>
       </section>
 
-      <!-- STEP 7 · notes -->
+      <!-- STEP 4 · notes -->
       <section class="qlg-screen" data-step="notes" hidden>
         <h2 class="qlg-q" tabindex="-1">Anything you'd like us to know?</h2>
         <textarea class="qlg-input qlg-textarea" name="notes" id="qlgNotes" rows="3" placeholder="Pets · Parking · Preferred day · Access instructions · Special requests"></textarea>
@@ -335,7 +184,7 @@ const lc = {
         <p class="qlg-reassure">🔒 No obligation. Your details stay private. We'll usually contact you within 30–60&nbsp;minutes during business hours.</p>
       </section>
 
-      <!-- STEP 8 · done -->
+      <!-- STEP 5 · done -->
       <section class="qlg-screen" data-step="done" hidden>
         <div class="qlg-done">
           <span class="qlg-done-check" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -483,10 +332,20 @@ const lc = {
     Array.prototype.forEach.call(form.querySelectorAll('.qlg-screen'), function (s) { screens[s.getAttribute('data-step')] = s; });
 
     // ---- State (persists across Back/Forward within the session) --------
-    const STEPS = ['intro', 'service', 'location', 'home', 'rooms', 'clean', 'contact', 'notes', 'done'];
-    const QNUM = { service: 1, location: 2, home: 3, rooms: 4, clean: 5, contact: 6, notes: 7 };
-    const QTOTAL = 7;
-    const state = { service: '', serviceLabel: '', specialtyType: '', postcode: '', suburb: '', suburbState: '', name: '', phone: '', email: '', notes: '' };
+    const STEPS = ['intro', 'service', 'location', 'contact', 'notes', 'done'];
+    const QNUM = { service: 1, location: 2, contact: 3, notes: 4 };
+    const QTOTAL = 4;
+    // The property keys are still here, always empty. The funnel, the CRM
+    // fields and the notification email all still read them, and an absent
+    // key is not the same as an unanswered one — this keeps the payload the
+    // exact shape it had when a customer left those questions blank.
+    const state = {
+      service: '', serviceLabel: '', specialtyType: '', postcode: '', suburb: '', suburbState: '',
+      name: '', phone: '', email: '', notes: '',
+      bedrooms: '', bathrooms: '', additionalToilet: '', storeys: '',
+      kitchens: '', livingRooms: '', butlerPantry: '', laundry: '',
+      condition: '', preferredDate: '',
+    };
     let stepIndex = 0;
     let pendingHref = null, lastFocused = null;
 
@@ -519,66 +378,12 @@ const lc = {
         // on touch we move focus to the question heading (no keyboard) and let
         // the visitor tap the field themselves when they're ready.
         const field = name === 'location' ? document.getElementById('qlgSearch')
-          : name === 'home' ? document.getElementById('qlgBedrooms')
-          : name === 'rooms' ? document.getElementById('qlgKitchens')
-          : name === 'clean' ? document.getElementById('qlgCondition')
           : name === 'contact' ? document.getElementById('qlgName')
           : document.getElementById('qlgNotes');
         target = isTouch ? el.querySelector('.qlg-q') : field;
       }
       if (target) setTimeout(function () { try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); } }, 60);
     }
-
-    /**
-     * After answering one field, bring the next one into view.
-     *
-     * The property steps ask four questions in one screen, and on a phone only
-     * the first two fit. Answering "Bedrooms" left the customer looking at an
-     * unchanged screen with no sign there was more to do — so they either
-     * hunted for the scrollbar or assumed they were stuck.
-     *
-     * Scrolls only the card, only downward, and only by the amount actually
-     * needed to clear the sticky Continue button. If the next field is already
-     * visible it does nothing, so answering the last question never jumps.
-     */
-    function revealNextField(fromEl) {
-      const screen = fromEl.closest('.qlg-screen');
-      if (!screen || !card) return;
-      const fields = Array.prototype.slice.call(screen.querySelectorAll('.qlg-field'));
-      const here = fromEl.closest('.qlg-field');
-      const next = fields[fields.indexOf(here) + 1];
-      if (!here || !next) return;
-
-      const cardRect = card.getBoundingClientRect();
-      const nextRect = next.getBoundingClientRect();
-      const btn = screen.querySelector('.qlg-btn-primary');
-      // Keep the field clear of the pinned button rather than under it.
-      const reserve = (btn ? btn.getBoundingClientRect().height : 46) + 28;
-      const delta = nextRect.bottom - (cardRect.bottom - reserve);
-      if (delta <= 0) return;
-
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const from = card.scrollTop;
-      const to = from + delta;
-      card.scrollTo({ top: to, behavior: reduce ? 'auto' : 'smooth' });
-
-      // Smooth scrolling is silently ignored in some contexts — the in-app
-      // browsers inside Facebook and Instagram among them, which is a large
-      // share of this traffic. Without this the field would simply never come
-      // into view and the customer would be back to hunting for it, so confirm
-      // the scroll actually happened and jump if it did not.
-      setTimeout(function () {
-        if (Math.abs(card.scrollTop - from) < 2) card.scrollTop = to;
-      }, 400);
-    }
-
-    // Selects only. A text input fires change on blur, by which point the
-    // browser has already scrolled the next focused field into view, and
-    // scrolling again on top of that fights the customer.
-    form.addEventListener('change', function (ev) {
-      const el = ev.target;
-      if (el && el.tagName === 'SELECT' && el.value) revealNextField(el);
-    });
 
     function showStep(name, dir) {
       stepIndex = STEPS.indexOf(name);
@@ -639,60 +444,7 @@ const lc = {
       });
     });
 
-    // ---- Step 3: the home ------------------------------------------------
-    // Only bedrooms and bathrooms are enforced. They are the two numbers no
-    // cleaning quote can be built without; everything else materially affects
-    // the price but can be confirmed on the call, and gating on all eight would
-    // trade leads for detail we can ask for later.
-    function homeValue(field) {
-      const el = form.elements[field];
-      return el ? (el.value || '').trim() : '';
-    }
-
-    function validateHome() {
-      let ok = true;
-      if (!homeValue('bedrooms')) { setError('bedrooms', 'How many bedrooms?'); ok = false; }
-      if (!homeValue('bathrooms')) { setError('bathrooms', 'And how many bathrooms?'); ok = false; }
-      if (ok) {
-        state.bedrooms = homeValue('bedrooms');
-        state.bathrooms = homeValue('bathrooms');
-        state.additionalToilet = homeValue('additional_toilet');
-        state.storeys = homeValue('storeys');
-      }
-      return ok;
-    }
-
-    // Nothing here is required — none of it stops a quote being prepared, and
-    // gating on a butler's pantry would cost leads for a detail a person can
-    // confirm on the call.
-    function captureRooms() {
-      state.kitchens = homeValue('kitchens');
-      state.livingRooms = homeValue('living_rooms');
-      state.butlerPantry = homeValue('butler_pantry');
-      state.laundry = homeValue('laundry');
-    }
-
-    // Condition and a date ARE required: without them the enquiry arrives
-    // needing a phone call before anybody can price or schedule it, which is
-    // the whole thing these two questions exist to avoid.
-    function validateClean() {
-      let ok = true;
-      const condition = homeValue('condition');
-      const date = homeValue('preferred_date');
-      if (!condition) { setError('condition', 'Roughly what state is it in?'); ok = false; }
-      if (!date) {
-        setError('preferred_date', 'Roughly when would you like it?');
-        ok = false;
-      } else {
-        const chosen = new Date(date + 'T00:00:00');
-        const today = new Date(); today.setHours(0, 0, 0, 0);
-        if (chosen < today) { setError('preferred_date', 'Please choose a date from today onwards.'); ok = false; }
-      }
-      if (ok) { state.condition = condition; state.preferredDate = date; }
-      return ok;
-    }
-
-    // ---- Step 4: contact validation (friendly) --------------------------
+    // ---- Step 3: contact validation (friendly) --------------------------
     function validateContact() {
       let ok = true;
       const name = (form.elements['name'].value || '').trim();
@@ -1234,9 +986,6 @@ const lc = {
       ev.preventDefault();
       const name = STEPS[stepIndex];
       if (name === 'location') { if (!locationNext.disabled) locationNext.click(); }
-      else if (name === 'home') { clearErrors(); if (validateHome()) advance(); }
-      else if (name === 'rooms') { captureRooms(); advance(); }
-      else if (name === 'clean') { clearErrors(); if (validateClean()) advance(); }
       else if (name === 'contact') { clearErrors(); if (validateContact()) advance(); }
       else if (name === 'notes') { submitLead(); }
     });
@@ -1555,32 +1304,6 @@ const lc = {
   .qlg-input:focus { outline: none; border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16); }
   .qlg-input[aria-invalid="true"] { border-color: #f0913a; box-shadow: 0 0 0 3px rgba(240, 145, 58, 0.14); }
   .qlg-textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
-
-  /* The property step. Borrows .qlg-input wholesale so the selects are the same
-     control as every other field — only the things a <select> needs are added:
-     the native arrow is replaced (browsers style it inconsistently) and room is
-     left for it on the right. */
-  .qlg-select {
-    appearance: none;
-    -webkit-appearance: none;
-    padding-right: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    cursor: pointer;
-  }
-  /* Grey until answered, so an unchosen field reads as a prompt rather than as
-     an answer somebody gave. */
-  .qlg-select:invalid,
-  .qlg-select option[value=""] { color: rgba(15, 23, 42, 0.34); }
-
-  /* Two across where there is room; one per row on a phone. */
-  .qlg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .qlg-grid .qlg-field { margin: 0; }
-  .qlg-field-wide { grid-column: 1 / -1; }
-  @media (max-width: 400px) {
-    .qlg-grid { grid-template-columns: 1fr; }
-  }
 
   /* Consent rows. Deliberately plain and full-size: a checkbox somebody has to
      hunt for is not a checkbox they meaningfully ticked. */

@@ -252,7 +252,10 @@ const methodCards = [
       <form
         class="ct-form"
         id="ct-contact-form"
-        action={leadCapture.webhookUrls[0]}
+        {/* Undefined when the backups are switched off locally, which drops the
+            attribute and posts to this page — inert, and only ever the case on a
+            dev server. In production the list is never empty. */}
+        action={leadCapture.webhookUrls[0] || undefined}
         method="post"
         aria-describedby="ct-form-note"
       >

@@ -127,7 +127,14 @@ export const leadCapture = {
   // Apps Script gets text/plain because it does not answer CORS preflight and
   // would reject application/json before the request was even sent; everything
   // else gets JSON. Do not "simplify" that to one content type.
-  webhookUrls: [
+  // PUBLIC_WEBHOOK_URLS (comma-separated) replaces this list; setting it to an
+  // empty string switches the backups off, which is what local work wants.
+  // Checked against undefined, not falsiness, so an intentional empty value
+  // is honoured rather than falling back to production.
+  webhookUrls:
+    import.meta.env.PUBLIC_WEBHOOK_URLS !== undefined
+      ? import.meta.env.PUBLIC_WEBHOOK_URLS.split(',').map((u: string) => u.trim()).filter(Boolean)
+      : [
     // Appends every lead to the "NATURO — Website leads (backup)" sheet.
     // Source and deployment notes in scripts/lead-backup/.
     'https://script.google.com/macros/s/AKfycbx3d4tNS99N9ZQQBLmz476_rfZGEfncX9ubNp3TV2dWdGf9b3vuat1ap1vyds_Zt7Y/exec',
@@ -147,7 +154,11 @@ export const leadCapture = {
   // runs the CRM's AI auto-capture. Requires the webform widget enabled in
   // Sophiie (Settings → widgets); if it is switched off this endpoint answers
   // 403 and the lead is dropped.
-  crmUrl: 'https://sophiie-web.onrender.com/api/widget/lead',
+  // PUBLIC_CRM_URL overrides this for local work, the same way
+  // PUBLIC_FUNNEL_BASE does below. Without it every test submission from a
+  // dev server creates a real LEAD in the live CRM, because this address is
+  // baked in regardless of environment.
+  crmUrl: import.meta.env.PUBLIC_CRM_URL ?? 'https://sophiie-web.onrender.com/api/widget/lead',
   // The full quote funnel in the AI Reception app. The short lead-gate modal
   // still posts to crmUrl above; the multi-step form on /quote posts here,
   // because it carries far more than {name, phone, email} — property answers,

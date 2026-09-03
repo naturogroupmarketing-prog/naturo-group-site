@@ -314,58 +314,6 @@ const schema = [
     </div>
   </nav>
 
-  <!-- Direct-answer block.
-       AI search engines (Google AI Overviews, ChatGPT Search, Perplexity)
-       quote the first substantive paragraph they find. Previously that was
-       the hero tagline — "Trusted, Trained and Thorough" — which answers
-       nothing. This gives them a factual 50-word summary plus a scannable
-       fact table, both of which are also genuinely useful to a reader
-       deciding whether to call. -->
-  <section class="answer" aria-labelledby="answer-heading">
-    <div class="container-site">
-      <h2 id="answer-heading" class="answer-heading">
-        House cleaning in {suburb.name} at a glance
-      </h2>
-      <p class="answer-lead">
-        NATURO GROUP provides eco-friendly house cleaning in {placePhrase}.
-        Every cleaner is police-checked and insured for $20m
-        public liability, and we bring plant-based, non-toxic products to every
-        job. We offer regular, deep and end-of-lease cleaning, and support NDIS,
-        aged care, DVA and insurance clients. Book online in about 60 seconds.
-      </p>
-      <dl class="answer-facts">
-        <div class="answer-fact">
-          <dt>Service area</dt>
-          <dd>{areaPhrase}{suburb.nearbySuburbs.length ? `, including ${suburb.nearbySuburbs.slice(0, 4).join(', ')}` : ''}</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Services</dt>
-          <dd>Regular weekly or fortnightly cleaning, one-off deep cleans, end-of-lease bond cleans</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Cleaners</dt>
-          <dd>Police-checked and fully insured for $20m public liability</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Products</dt>
-          <dd>Plant-based, biodegradable and non-toxic — safe around children, pets and asthma</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Funded work</dt>
-          <dd>NDIS (plan-managed and self-managed), Home Care Packages, DVA Gold and White card, insurance and workers compensation</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Hours</dt>
-          <dd>Monday to Friday, 8:30am – 5:00pm</dd>
-        </div>
-        <div class="answer-fact">
-          <dt>Bookings</dt>
-          <dd>Online in about 60 seconds, or call {suburb.phone ?? site.phone}</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
   <PricingCards />
   <ExperienceBanner />
   <Features />
@@ -460,6 +408,63 @@ const schema = [
   <Testimonials location={suburb.name} items={localTestimonials} />
   <LocalServiceLinks suburbName={suburb.name} region={suburb.region} />
   <AppPromo />
+
+  <!-- Direct-answer block.
+       AI search engines (Google AI Overviews, ChatGPT Search, Perplexity)
+       quote the first substantive paragraph they find. Previously that was
+       the hero tagline — "Trusted, Trained and Thorough" — which answers
+       nothing. This gives them a factual 50-word summary plus a scannable
+       fact table, both of which are also genuinely useful to a reader
+       deciding whether to call.
+
+       Sits low on the page by choice. It reads as a summary, and a summary
+       placed before the thing it summarises is odd for someone who has just
+       landed. Extractors key on it being self-contained and structured rather
+       than on how high it sits, so the move costs little of what it is for. -->
+  <section class="answer" aria-labelledby="answer-heading">
+    <div class="container-site">
+      <h2 id="answer-heading" class="answer-heading">
+        House cleaning in {suburb.name} at a glance
+      </h2>
+      <p class="answer-lead">
+        NATURO GROUP provides eco-friendly house cleaning in {placePhrase}.
+        Every cleaner is police-checked and insured for $20m
+        public liability, and we bring plant-based, non-toxic products to every
+        job. We offer regular, deep and end-of-lease cleaning, and support NDIS,
+        aged care, DVA and insurance clients. Book online in about 60 seconds.
+      </p>
+      <dl class="answer-facts">
+        <div class="answer-fact">
+          <dt>Service area</dt>
+          <dd>{areaPhrase}{suburb.nearbySuburbs.length ? `, including ${suburb.nearbySuburbs.slice(0, 4).join(', ')}` : ''}</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Services</dt>
+          <dd>Regular weekly or fortnightly cleaning, one-off deep cleans, end-of-lease bond cleans</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Cleaners</dt>
+          <dd>Police-checked and fully insured for $20m public liability</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Products</dt>
+          <dd>Plant-based, biodegradable and non-toxic — safe around children, pets and asthma</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Funded work</dt>
+          <dd>NDIS (plan-managed and self-managed), Home Care Packages, DVA Gold and White card, insurance and workers compensation</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Hours</dt>
+          <dd>Monday to Friday, 8:30am – 5:00pm</dd>
+        </div>
+        <div class="answer-fact">
+          <dt>Bookings</dt>
+          <dd>Online in about 60 seconds, or call {suburb.phone ?? site.phone}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
   <!-- ───── Service Area Map (matches the original site's "Locations" block) ───── -->
   <section class="map-section">

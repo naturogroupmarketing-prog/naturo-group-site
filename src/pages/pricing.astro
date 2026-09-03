@@ -1,0 +1,294 @@
+---
+// Canonical pricing page.
+//
+// Two jobs, and the second is the reason it exists at all:
+//   1. posts.ts has publicly said "see our pricing page for current rates" while
+//      /pricing returned 404.
+//   2. Every price in Layout's OfferCatalog must also be VISIBLE somewhere, or the
+//      markup is unsupported. `chooseYourClean` only surfaces two of the three
+//      cards, so End of Lease ($560) had a minPrice in the schema and no price on
+//      the site. The table below is where all three are shown.
+//
+// Figures come from `pricingCards` — never retype them here. One source, so the
+// rendered number and the marked-up number cannot drift.
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site, pricingCards } from '../data/site';
+
+const priceFaqs = [
+  {
+    q: 'How much does a house clean cost with Naturo Group?',
+    a: `A recurring regular clean starts from $${pricingCards[1].priceFrom}, a one-off deep clean from $${pricingCards[0].priceFrom}, and a full end-of-lease bond clean from $${pricingCards[2].priceFrom}. These are starting prices for a standard home; the final quote depends on the size and condition of the property. Quotes are free and carry no obligation.`,
+  },
+  {
+    q: 'What changes the price?',
+    a: 'Bedrooms and bathrooms first, then condition. A home that has been cleaned regularly takes materially less time than one that has not been touched in a year. Add-ons such as interior windows, inside the fridge, inside cupboards, balconies and garages are quoted on top.',
+  },
+  {
+    q: 'Do you charge hourly or per job?',
+    a: 'Either. Regular cleans can be booked at a job rate so you know the figure before we arrive, or at an hourly rate if you would rather cap the time and prioritise particular rooms. Deep cleans and bond cleans are quoted per job.',
+  },
+  {
+    q: 'Is carpet steam cleaning included in the price?',
+    a: 'No. Vacuuming carpets is included in every clean, but carpet steam cleaning and hot-water extraction are a separate specialist trade that we do not provide. If your lease requires it we will tell you plainly rather than quietly leaving it off the quote.',
+  },
+  {
+    q: 'What does it cost if my cleaning is funded?',
+    a: 'NDIS, Home Care Package, CHSP and DVA cleaning are billed to the plan or package rather than to you, so the out-of-pocket cost is usually nil. We invoice plan managers and self-managed participants directly and supply itemised invoices. Tell us how your funding is managed when you enquire and we will quote against it.',
+  },
+  {
+    q: 'Are there lock-in contracts or cancellation fees?',
+    a: 'No lock-in contracts. You can skip, pause or reschedule a recurring clean at any time, and there is no exit fee for stopping.',
+  },
+  {
+    q: 'Do your prices include GST and cleaning products?',
+    a: 'Yes. Quoted prices are GST inclusive, and we supply all plant-based, non-toxic cleaning products and equipment. There is no separate materials charge.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Cleaning Prices',
+    url: `${site.url}/pricing/`,
+    description:
+      `House cleaning prices for Naturo Group. Regular cleans from $${pricingCards[1].priceFrom}, deep cleans from $${pricingCards[0].priceFrom}, end-of-lease bond cleans from $${pricingCards[2].priceFrom}. GST and eco-friendly products included, no lock-in contracts.`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Pricing', item: `${site.url}/pricing/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: priceFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Cleaning Prices | Regular, Deep & End of Lease | Naturo Group"
+  description={`Transparent cleaning prices. Regular cleans from $${pricingCards[1].priceFrom}, deep cleans from $${pricingCards[0].priceFrom}, end-of-lease bond cleans from $${pricingCards[2].priceFrom}. GST, products and equipment included. NDIS, aged care and DVA billed to your plan.`}
+  schema={schema}
+>
+  <ServiceHero
+    eyebrow="Pricing"
+    heading="Clear prices,<br />before we start"
+    tagline="Starting prices for every service, what moves them, and what is never charged extra."
+  />
+
+  <section class="pr-wrap">
+    <div class="container-site">
+      <p class="pr-lede">
+        Every figure below is a starting price for a standard home, GST inclusive, with all
+        plant-based products and equipment supplied. Your quote is free, takes about 60
+        seconds, and carries no obligation.
+      </p>
+
+      <div class="pr-table-scroll">
+        <table class="pr-table">
+          <caption class="pr-caption">Naturo Group starting prices (AUD, GST inclusive)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Starting from</th>
+              <th scope="col">Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingCards.map((c) => (
+              <tr>
+                <th scope="row"><a href={`/services/${c.slug}/`}>{c.name}</a></th>
+                <td class="pr-price">${c.priceFrom}</td>
+                <td>{c.bullets[0]}</td>
+              </tr>
+            ))}
+            <tr>
+              <th scope="row">NDIS, aged care, DVA &amp; insurance</th>
+              <td class="pr-price pr-price-quoted">Billed to your plan</td>
+              <td>Usually no out-of-pocket cost. Invoiced to the plan, package or insurer.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pr-cols">
+        <div class="pr-col">
+          <h2 class="pr-h2">Included in every price</h2>
+          <ul class="pr-list">
+            <li>All plant-based, non-toxic products and equipment</li>
+            <li>GST</li>
+            <li>Police-checked, identity-verified cleaners — never subcontracted</li>
+            <li>$20m public liability insurance</li>
+            <li>Satisfaction guarantee, and a bond-back re-clean on end-of-lease jobs</li>
+            <li>No lock-in contract, no cancellation fee</li>
+          </ul>
+        </div>
+        <div class="pr-col">
+          <h2 class="pr-h2">Not included</h2>
+          <ul class="pr-list pr-list-neg">
+            <li>Carpet steam cleaning and hot-water extraction — a separate specialist trade we do not provide. Vacuuming carpets <em>is</em> included.</li>
+            <li>Pest control and flea treatment</li>
+            <li>Gardening, lawn mowing and outdoor landscaping</li>
+          </ul>
+          <p class="pr-note">
+            If your lease or plan requires something we do not do, we will say so up front
+            rather than leaving it off the quote quietly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={priceFaqs} eyebrow="Pricing" subheading="Pricing&nbsp;questions,<br />answered" />
+  <FinalCTA />
+</Layout>
+
+<style>
+  .pr-wrap {
+    padding: 64px 0 8px;
+  }
+  .pr-lede {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+    max-width: 760px;
+    margin: 0 0 36px;
+  }
+  /* Wide content scrolls inside its own box rather than the page body. */
+  .pr-table-scroll {
+    overflow-x: auto;
+    margin: 0 0 56px;
+  }
+  .pr-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-family: "Poppins", sans-serif;
+  }
+  .pr-caption {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgb(100, 116, 139);
+    padding: 0 0 12px;
+  }
+  .pr-table th,
+  .pr-table td {
+    text-align: left;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgb(226, 232, 240);
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(51, 65, 85);
+    vertical-align: top;
+  }
+  .pr-table thead th {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgb(100, 116, 139);
+    border-bottom-width: 2px;
+  }
+  .pr-table tbody th {
+    font-weight: 500;
+    color: rgb(15, 23, 42);
+    white-space: nowrap;
+  }
+  .pr-table tbody th a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(203, 213, 225);
+  }
+  .pr-table tbody th a:hover {
+    color: #3a5dff;
+    border-bottom-color: #3a5dff;
+  }
+  .pr-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3a5dff;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .pr-price-quoted {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .pr-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 0 0 64px;
+  }
+  .pr-h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: rgb(15, 23, 42);
+    margin: 0 0 18px;
+  }
+  .pr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pr-list li {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(71, 85, 105);
+    padding-left: 26px;
+    position: relative;
+  }
+  .pr-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 14px;
+    height: 8px;
+    border-left: 2px solid #16a34a;
+    border-bottom: 2px solid #16a34a;
+    transform: rotate(-45deg);
+  }
+  .pr-list-neg li::before {
+    top: 10px;
+    width: 13px;
+    height: 0;
+    border-left: none;
+    border-bottom: 2px solid rgb(148, 163, 184);
+    transform: none;
+  }
+  .pr-note {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgb(100, 116, 139);
+    margin: 20px 0 0;
+  }
+  @media (max-width: 640px) {
+    .pr-wrap {
+      padding-top: 44px;
+    }
+  }
+</style>

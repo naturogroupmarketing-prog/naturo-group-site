@@ -3641,7 +3641,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you offer end-of-lease cleaning in Melbourne?',
-        a: 'Yes \u2014 end-of-lease bond cleans are one of our most popular Melbourne services. We cover everything on the standard rental inspection checklist: oven, stovetop, range hood, bathrooms, windows, walls, skirting boards and carpets. We provide a detailed receipt and a bond-back re-clean guarantee if your property manager raises any issue.',
+        a: 'Yes \u2014 end-of-lease bond cleans are one of our most popular Melbourne services. We cover everything on the standard rental inspection checklist: oven, stovetop, range hood, bathrooms, windows, walls and skirting boards. Carpet steam cleaning is a separate specialist service we do not provide. We provide a detailed receipt and a bond-back re-clean guarantee if your property manager raises any issue.',
       },
       {
         q: 'Do you offer NDIS and aged care cleaning in Melbourne?',
@@ -3720,7 +3720,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you clean end-of-lease properties in Geelong?',
-        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards, walls and carpets. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong/">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
+        a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards and walls. Carpet steam cleaning is a separate specialist service we do not provide. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong/">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
       },
       {
         q: 'Are your Geelong cleaners police-checked and insured?',
@@ -7668,7 +7668,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you do end-of-lease cleans in St Leonards?',
-        a: 'We do, for permanent rentals and for longer-term lets alike. The clean covers the areas agents check, including oven, bathrooms, skirtings, tracks and interior glass, and it comes with our bond-back re-clean guarantee when you hold the receipt. Tell us at booking whether carpets and blinds are included so nothing is missed.',
+        a: 'We do, for permanent rentals and for longer-term lets alike. The clean covers the areas agents check, including oven, bathrooms, skirtings, tracks and interior glass, and it comes with our bond-back re-clean guarantee when you hold the receipt. Tell us at booking whether blinds are included so nothing is missed. Carpet steam cleaning is a separate specialist service we do not provide.',
       },
       {
         q: 'What does a St Leonards clean cost?',

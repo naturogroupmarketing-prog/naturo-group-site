@@ -379,7 +379,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
           'Water and storm damage cleaning',
           'Smoke and soot remediation',
           'Trauma and biohazard cleans',
-          'Carpet, hard floor and surface restoration',
+          'Hard floor and surface restoration',
         ],
       },
       {
@@ -742,7 +742,7 @@ export const serviceFaqs: Record<string, { q: string; a: string }[]> = {
     },
     {
       q: 'What types of claim work do you handle?',
-      a: 'Water, fire, storm and trauma cleans, smoke and soot remediation, carpet, hard floor and surface restoration, and general property restoration.',
+      a: 'Water, fire, storm and trauma cleans, smoke and soot remediation, hard floor and surface restoration, and general property restoration.',
     },
     {
       q: 'What documentation comes with the job?',

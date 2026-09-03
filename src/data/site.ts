@@ -265,7 +265,7 @@ export const pricingCards = [
     bullets: [
       'Full bond clean for landlords and tenants at handover.',
       'Covers all agency inspection criteria',
-      'Oven, carpet spot-clean, walls & windows',
+      'Oven, walls, windows & window tracks',
       'Detailed receipt for your property manager',
       'Bond-back re-clean included if issues arise',
       'Professional, experienced cleaners',

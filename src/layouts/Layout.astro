@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
 import QuoteLeadGate from '../components/QuoteLeadGate.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import Analytics from '../components/Analytics.astro';
-import { site, founder } from '../data/site';
+import { site, founder, pricingCards } from '../data/site';
 
 interface Props {
   title?: string;
@@ -85,6 +85,30 @@ const organizationSchema = {
     jobTitle: founder.role,
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
+  // Published so an assistant can quote a real figure instead of sourcing a
+  // competitor's rate. Every value comes from pricingCards, so the number in the
+  // markup and the number rendered on the card can never drift apart.
+  priceRange: `$${Math.min(...pricingCards.map((c) => c.priceFrom))}-$${Math.max(
+    ...pricingCards.map((c) => c.priceFrom),
+  )}`,
+  currenciesAccepted: 'AUD',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Cleaning services',
+    itemListElement: pricingCards.map((c) => ({
+      '@type': 'Offer',
+      name: c.name,
+      url: `${site.url}/services/${c.slug}/`,
+      priceCurrency: 'AUD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: c.priceFrom,
+        priceCurrency: 'AUD',
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: { '@type': 'Service', name: c.name, description: c.bullets[0] },
+    })),
+  },
   sameAs: [site.social.facebook, site.social.instagram, site.social.youtube],
   contactPoint: {
     '@type': 'ContactPoint',

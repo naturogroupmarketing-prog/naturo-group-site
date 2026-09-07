@@ -300,9 +300,18 @@ export const chooseYourClean = [
 ];
 
 // For service-detail page generation
+// Display name and <title> are deliberately separate: the card says "Regular
+// Clean", but nobody searches that. "domestic cleaning <place>" alone accounts
+// for a large share of the 99 recurring queries GSC records at an average
+// position of 24.7, and the word appears in no title or H1 on the site.
+const SERVICE_SEO_TITLES: Record<string, string> = {
+  'house-cleaning': 'House & Domestic Cleaning',
+};
+
 export const services = pricingCards.map((c) => ({
   slug: c.slug,
   title: c.name,
+  seoTitle: SERVICE_SEO_TITLES[c.slug],
   short: c.bullets[0],
   priceFrom: c.priceFrom,
   features: c.bullets,
@@ -354,6 +363,11 @@ export const specialtyServices = [
   {
     slug: 'veterans-cleaning',
     title: 'Veterans (DVA) Cleaning',
+    // Display label stays "Veterans (DVA) Cleaning"; the <title> leads with the
+    // term people actually search. GSC 90d: "dva cleaning" 124 impressions and
+    // "dva cleaning services" 120, both ranking 28-34 — the page buried DVA
+    // behind "Veterans". Same trade as 10eb4a8 on the suburb titles.
+    seoTitle: 'DVA Cleaning for Veterans',
     short:
       'Respectful, reliable in-home cleaning for DVA cardholders &mdash; we work alongside your case manager.',
     features: [

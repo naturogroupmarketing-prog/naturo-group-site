@@ -440,7 +440,13 @@ const schema = [
         </div>
         <div class="answer-fact">
           <dt>Services</dt>
-          <dd>Regular weekly or fortnightly cleaning, one-off deep cleans, end-of-lease bond cleans</dd>
+          {/* Order is deliberate: recurring and funded work first, one-off last.
+              "domestic cleaning" is the synonym GSC records across a large share
+              of the 99 recurring queries (avg position 24.7) and it appeared in
+              no title, H1 or body copy anywhere on the site. NDIS, DVA and aged
+              care were absent from this row entirely despite each having its own
+              service page. */}
+          <dd>Regular weekly, fortnightly or monthly domestic cleaning, NDIS, DVA and aged care support, one-off deep cleans, end-of-lease bond cleans</dd>
         </div>
         <div class="answer-fact">
           <dt>Cleaners</dt>

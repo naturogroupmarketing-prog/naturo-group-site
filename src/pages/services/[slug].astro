@@ -77,7 +77,7 @@ const schema = [
       for, so every fallback keeps it and it is "police-checked" that gives way
       as the service name gets longer. An earlier ordering dropped it from all
       seven service titles, which is the opposite of the intended trade. */}
-  title={fitTitle(service.title, [
+  title={fitTitle((service as { seoTitle?: string }).seoTitle ?? service.title, [
     'Eco-Friendly, Police-Checked Cleaners',
     'Eco-Friendly & Police-Checked',
     'Eco-Friendly Cleaners',

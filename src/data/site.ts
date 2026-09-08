@@ -229,7 +229,7 @@ export const pricingCards = [
   {
     name: 'Deep Clean',
     slug: 'deep-clean',
-    priceFrom: 371,
+    priceFrom: 0,
     label: 'Starting from',
     bullets: [
       'For homes not professionally cleaned in over 30 days.',
@@ -244,7 +244,7 @@ export const pricingCards = [
   {
     name: 'Regular Clean',
     slug: 'house-cleaning',
-    priceFrom: 153,
+    priceFrom: 0,
     label: 'Starting from',
     bullets: [
       'Recurring weekly or fortnightly clean for everyday homes.',
@@ -260,7 +260,7 @@ export const pricingCards = [
   {
     name: 'End of Lease',
     slug: 'end-of-lease',
-    priceFrom: 560,
+    priceFrom: 0,
     label: 'Starting from',
     bullets: [
       'Full bond clean for landlords and tenants at handover.',

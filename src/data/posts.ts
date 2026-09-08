@@ -1613,7 +1613,7 @@ export const posts: BlogPost[] = [
       { type: 'h2', text: 'NDIS and aged care cleaning in Port Macquarie' },
       {
         type: 'p',
-        text: 'Naturo Group is a registered NDIS cleaning provider in Port Macquarie. We work with self-managed, plan-managed and agency-managed participants. NDIS cleaning is funded under Assistance with Daily Life (SIL) or Assistance with Daily Activities support categories. We handle all documentation and invoicing to your NDIS plan directly.',
+        text: 'Naturo Group works with self-managed and plan-managed NDIS participants in Port Macquarie. We are not currently a registered NDIS provider, so agency-managed (NDIA-managed) funding cannot be used. NDIS cleaning is funded under Assistance with Daily Life (SIL) or Assistance with Daily Activities support categories. We handle all documentation and invoicing to your NDIS plan directly.',
       },
       {
         type: 'faq',
@@ -1652,7 +1652,7 @@ export const posts: BlogPost[] = [
       'A plain-English guide to NDIS-funded cleaning in Port Macquarie — what is covered, what to say to your coordinator, and how to switch providers.',
     metaTitle: "NDIS Cleaning Port Macquarie | What's Covered",
     metaDescription:
-      'NDIS cleaning in Port Macquarie explained. What support categories cover cleaning, how to access it, and what a registered NDIS cleaning provider actually does.',
+      'NDIS cleaning in Port Macquarie explained. What support categories cover cleaning, how to access it, and what an NDIS cleaning provider actually does.',
     keywords: [
       'ndis cleaning port macquarie',
       'ndis cleaning provider port macquarie',
@@ -1709,7 +1709,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Naturo Group is a registered NDIS cleaning provider in Port Macquarie, which means we can work with participants under all three management types. We handle documentation, service agreements and invoicing according to NDIS requirements.',
+        text: 'Naturo Group works with self-managed and plan-managed participants in Port Macquarie. We are not currently a registered NDIS provider, so agency-managed funding cannot be used. We handle documentation, service agreements and invoicing according to NDIS requirements.',
       },
       { type: 'h2', text: 'What does Naturo Group\'s NDIS cleaning include in Port Macquarie?' },
       {

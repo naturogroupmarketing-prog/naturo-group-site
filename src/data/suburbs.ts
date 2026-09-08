@@ -177,8 +177,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Port Macquarie families, retirees and holiday-let owners.',
     },
     seo: {
-      title: 'House Cleaners Port Macquarie | Eco-Friendly',
-      description: 'House cleaning in Port Macquarie & the Mid North Coast. Eco-friendly, police-checked cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
+      title: 'House Cleaners Port Macquarie | 1300 876 472',
+      description: 'Need house cleaners in Port Macquarie? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked team. NDIS, aged care, DVA & insurance welcome.',
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
@@ -3701,8 +3701,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Geelong families, students and Bellarine homeowners.',
     },
     seo: {
-      title: 'House Cleaning Services Geelong | Eco-Friendly',
-      description: 'Eco-friendly house cleaning services across Geelong, Newtown, Highton, Belmont & the Bellarine. Police-checked cleaners, non-toxic products, $20m insured. Instant online price.',
+      title: 'House Cleaning Services Geelong | 1300 876 472',
+      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products supplied. Instant online price.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
     localFaqs: [

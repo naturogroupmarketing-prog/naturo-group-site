@@ -666,7 +666,7 @@ export const posts: BlogPost[] = [
         items: [
           {
             q: 'How much does end-of-lease cleaning cost in Australia?',
-            a: 'Typical pricing starts around $250 for a 1-bedroom apartment and rises with bedrooms, bathrooms and add-ons (carpets, windows, garage). Naturo Group quotes start from $371 — see our pricing page for current rates.',
+            a: 'Typical pricing starts around $250 for a 1-bedroom apartment and rises with bedrooms, bathrooms and add-ons (carpets, windows, garage). Naturo Group quotes start from $371 — call 1300 876 472 or book online for a current quote.',
           },
           {
             q: 'What happens if my agent isn’t happy with the clean?',

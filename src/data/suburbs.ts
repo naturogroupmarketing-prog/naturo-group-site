@@ -142,7 +142,7 @@ export const suburbs: Suburb[] = [
     hero: {
       h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Port Macquarie'],
     contentUpdated: '2026-08-27',
-      tagline: 'Trusted, Trained and Thorough — across the Mid North Coast',
+      tagline: 'House cleaners in Port Macquarie — trusted, trained and thorough across the Mid North Coast',
     },
     intro: {
       kicker: 'House cleaning in Port Macquarie',
@@ -177,7 +177,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Port Macquarie families, retirees and holiday-let owners.',
     },
     seo: {
-      title: 'House Cleaning Port Macquarie | Eco-Friendly',
+      title: 'House Cleaners Port Macquarie | Eco-Friendly',
       description: 'House cleaning in Port Macquarie & the Mid North Coast. Eco-friendly, police-checked cleaners. NDIS, aged care, DVA & insurance jobs welcome.',
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
@@ -1403,8 +1403,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Kew near Port Macquarie NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Kew'],
-      tagline: 'Trusted, Trained and Thorough — on the Mid North Coast',
+      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Kew Port Macquarie'],
+      tagline: 'House cleaners in Kew Port Macquarie — trusted, trained and thorough on the Mid North Coast',
     },
     intro: {
       kicker: 'House cleaning in Kew NSW',
@@ -1439,7 +1439,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Kew waterfront residents and Mid North Coast homeowners.',
     },
     seo: {
-      title: 'House Cleaning Kew NSW | Eco-Friendly',
+      title: 'House Cleaners Kew, Port Macquarie',
       description: 'House cleaning in Kew on the Mid North Coast NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
@@ -3664,9 +3664,9 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Geelong'],
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Geelong'],
     contentUpdated: '2026-08-27',
-      tagline: 'Trusted, Trained and Thorough — across Geelong & the Bellarine',
+      tagline: 'House cleaning in Geelong — trusted, trained and thorough across Geelong & the Bellarine',
     },
     intro: {
       kicker: 'House cleaning in Geelong',
@@ -3701,8 +3701,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Geelong families, students and Bellarine homeowners.',
     },
     seo: {
-      title: 'House Cleaning Geelong VIC | Eco-Friendly',
-      description: 'House cleaning in Geelong. Police-checked, eco-friendly team across Newtown, Highton, Belmont, Ocean Grove & Torquay. Instant online price.',
+      title: 'House Cleaning Services Geelong | Eco-Friendly',
+      description: 'Eco-friendly house cleaning services across Geelong, Newtown, Highton, Belmont & the Bellarine. Police-checked cleaners, non-toxic products, $20m insured. Instant online price.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
     localFaqs: [
@@ -4203,8 +4203,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Newtown Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Newtown Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Newtown Geelong'],
+      tagline: 'House cleaning in Newtown Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in Newtown Geelong',
@@ -4239,7 +4239,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Newtown families, heritage homeowners and Geelong professionals.',
     },
     seo: {
-      title: 'House Cleaning Newtown VIC | Eco-Friendly',
+      title: 'House Cleaning Newtown, Geelong | Eco-Friendly',
       description: 'House cleaning in Newtown Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
@@ -4282,8 +4282,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in East Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'East Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'East Geelong'],
+      tagline: 'House cleaning in East Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in East Geelong',
@@ -4361,8 +4361,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in South Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'South Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'South Geelong'],
+      tagline: 'House cleaning in South Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in South Geelong',
@@ -4440,8 +4440,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Geelong West VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Geelong West'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Geelong West'],
+      tagline: 'House cleaning in Geelong West — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in Geelong West',
@@ -4519,8 +4519,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in Belmont Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Belmont Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Belmont Geelong'],
+      tagline: 'House cleaning in Belmont Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in Belmont Geelong',
@@ -4555,7 +4555,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by hundreds of Belmont families, retirees and homeowners across Greater Geelong.',
     },
     seo: {
-      title: 'House Cleaning Belmont VIC | Eco-Friendly',
+      title: 'House Cleaning Belmont, Geelong | Eco-Friendly',
       description: 'House cleaning in Belmont Geelong VIC. Eco-friendly, family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
@@ -5214,8 +5214,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in North Shore Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Shore Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'North Shore Geelong'],
+      tagline: 'House cleaning in North Shore Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in North Shore Geelong',
@@ -5250,7 +5250,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by North Shore families and homeowners across northern Geelong.',
     },
     seo: {
-      title: 'House Cleaning North Shore VIC | Eco-Friendly',
+      title: 'House Cleaning North Shore, Geelong',
       description: 'House cleaning in North Shore Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
@@ -6694,8 +6694,8 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Eco-friendly house cleaning in North Geelong Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'North Geelong'],
-      tagline: 'Trusted, Trained and Thorough — across Greater Geelong',
+      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'North Geelong'],
+      tagline: 'House cleaning in North Geelong — trusted, trained and thorough across Greater Geelong',
     },
     intro: {
       kicker: 'House cleaning in North Geelong',

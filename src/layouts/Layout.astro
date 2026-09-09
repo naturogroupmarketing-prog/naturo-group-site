@@ -22,6 +22,11 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   schema?: Record<string, any> | Record<string, any>[];
+  /** Send every "Get a Free Quote" CTA on this page to a URL instead of
+   *  opening the instant-price popup. For services the funnel cannot price —
+   *  commercial is scoped on site, so its questions (bedrooms, bathrooms) are
+   *  the wrong ones. QuoteLeadGate reads this off <html>. */
+  quoteRedirect?: string;
 }
 
 const {
@@ -30,6 +35,7 @@ const {
   ogImage = '/og-default.jpg',
   noindex = false,
   schema,
+  quoteRedirect,
 } = Astro.props;
 
 // Append the brand once, and only when the supplied title does not already
@@ -122,7 +128,7 @@ const organizationSchema = {
 ---
 
 <!doctype html>
-<html lang="en-AU">
+<html lang="en-AU" data-quote-redirect={quoteRedirect}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

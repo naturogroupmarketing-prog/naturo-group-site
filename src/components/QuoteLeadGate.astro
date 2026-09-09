@@ -1049,6 +1049,16 @@ const lc = {
       const a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
       if (!isQuoteLink(a)) return;
       if (window.location.pathname === TARGET_PATH || window.location.pathname === TARGET_PATH + '/') return;
+      // A page can opt out of the popup entirely (Layout's quoteRedirect prop).
+      // The funnel prices residential work off bedrooms and bathrooms; for a
+      // service it cannot price, asking those questions is worse than not
+      // asking. Send the visitor to the enquiry form instead.
+      var redirect = document.documentElement.getAttribute('data-quote-redirect');
+      if (redirect) {
+        ev.preventDefault();
+        window.location.href = redirect;
+        return;
+      }
       ev.preventDefault();
       openModal(a.href);
     }, true);

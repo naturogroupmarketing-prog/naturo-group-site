@@ -11,6 +11,7 @@ const services = [
   'House cleaning (regular or once-off)',
   'Deep clean / spring clean',
   'End of lease / bond clean',
+  'Commercial / office cleaning',
   'NDIS cleaning',
   'Aged care cleaning',
   'Veterans (DVA) cleaning',
@@ -305,7 +306,7 @@ const methodCards = [
 
           <label class="ct-field">
             <span class="ct-field-label">Service<span aria-hidden="true">*</span></span>
-            <select class="ct-input" name="service" required>
+            <select class="ct-input" id="ct-service" name="service" required>
               <option value="" disabled selected>Choose a service</option>
               {services.map((s) => <option value={s}>{s}</option>)}
             </select>
@@ -319,7 +320,7 @@ const methodCards = [
             name="message"
             rows="5"
             required
-            placeholder="Bedrooms, bathrooms, preferred date, NDIS reference, anything else we should know…"
+            placeholder="Bedrooms and bathrooms, or for a commercial site: premises type, floor area and your trading hours. Preferred date, NDIS reference, anything else we should know…"
           ></textarea>
         </label>
 
@@ -1058,3 +1059,24 @@ const methodCards = [
     color: rgb(185, 28, 28);
   }
 </style>
+
+<script is:inline>
+  // Preselect the Service dropdown from ?service= so a visitor arriving from a
+  // service page (e.g. commercial) is not left picking a house-cleaning option.
+  // Matches on a substring of the option text, so the option wording can change
+  // without breaking the links that point here.
+  (function () {
+    var want = new URLSearchParams(window.location.search).get('service');
+    if (!want) return;
+    var sel = document.getElementById('ct-service');
+    if (!sel) return;
+    var needle = want.toLowerCase();
+    for (var i = 0; i < sel.options.length; i++) {
+      var opt = sel.options[i];
+      if (opt.value && opt.value.toLowerCase().indexOf(needle) !== -1) {
+        sel.value = opt.value;
+        break;
+      }
+    }
+  })();
+</script>

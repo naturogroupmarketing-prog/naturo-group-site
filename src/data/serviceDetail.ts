@@ -486,7 +486,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       fineprint: 'Cleaned around your trading hours. Police-checked, fully insured cleaners. Non-toxic products supplied.',
       trust: '',
       ctaText: 'Request a Site Quote',
-      ctaHref: '/contact-us/',
+      ctaHref: '/contact-us/?service=commercial#contact-form',
     },
     hero: {
       eyebrow: 'Commercial cleaning',

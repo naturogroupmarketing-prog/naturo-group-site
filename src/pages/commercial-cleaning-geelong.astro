@@ -1,0 +1,246 @@
+---
+// Commercial & office cleaning, Geelong.
+//
+// Built 2026-09-09 because Keyword Planner showed `commercial cleaning geelong`
+// at ~170 searches/month, +55% over three months, LOW competition — and NATURO
+// held 1% impression share with no page to send that traffic to. The national
+// /services/commercial-cleaning/ page exists; this is the Geelong landing page
+// the ad group needs for message match.
+//
+// Every claim below is lifted from copy already verified in
+// src/data/serviceDetail.ts ('commercial-cleaning') or site.ts. Deliberately NO
+// price: commercial work is scoped on site and the funnel's pricing engine
+// refuses to auto-quote it. Do not add a price, a response time, a client name
+// or an insurance figure the business has not confirmed.
+import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import ServiceInclusions from '../components/ServiceInclusions.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Providers from '../components/Providers.astro';
+import FAQ from '../components/FAQ.astro';
+import AppPromo from '../components/AppPromo.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site } from '../data/site';
+
+const pageUrl = `${site.url}/commercial-cleaning-geelong`;
+
+const introBody = [
+  'NATURO GROUP cleans offices and commercial premises across Greater Geelong and the Bellarine Peninsula. Commercial cleaning is not a bigger house clean. It runs to your hours, respects your access and security arrangements, and has to be consistent enough that nobody in your team ever has to think about it.',
+  'We scope every Geelong site before quoting, so the schedule matches how the space is actually used — which rooms take the traffic, when the bins need to go out, and what has to be restocked.',
+  'Our products are plant-based and non-toxic, which matters in a shared workplace where people sit at the same desks all day. Every cleaner on site is police-checked and fully insured.',
+];
+
+const introStats = [
+  { num: 'Your hours', label: 'Cleaned around trading' },
+  { num: '$20M', label: 'Public liability cover' },
+  { num: '100%', label: 'Police-checked team' },
+];
+
+const inclusions = [
+  {
+    group: 'Workspaces',
+    items: [
+      'Workstations, desks and shared surfaces',
+      'Meeting rooms reset between uses',
+      'Reception and entry glass',
+      'Floors vacuumed and mopped throughout',
+    ],
+  },
+  {
+    group: 'Amenities',
+    items: [
+      'Kitchens and break rooms',
+      'Washrooms cleaned and sanitised',
+      'Consumables restocked',
+      'Waste and recycling collected',
+    ],
+  },
+  {
+    group: 'Working with you',
+    items: [
+      'Cleaning outside your trading hours',
+      'Access, key and alarm arrangements agreed up front',
+      'Police-checked, fully insured cleaners',
+      'A schedule set to how the space is actually used',
+    ],
+  },
+];
+
+const geelongFaqs = [
+  {
+    q: 'Do you clean commercial premises in Geelong?',
+    a: 'Yes. We clean offices and commercial premises across Greater Geelong and the Bellarine Peninsula, including the CBD, Newtown, Highton, Geelong West, Belmont, Torquay and Ocean Grove.',
+  },
+  {
+    q: 'Can you clean outside our trading hours?',
+    a: 'Yes — the schedule is worked around your trading hours. Commercial cleaning has to be consistent enough that nobody on your team ever has to think about it, which usually means we are not there while they are.',
+  },
+  {
+    q: 'How do you quote a commercial site in Geelong?',
+    a: 'We scope every site before quoting. A quote written off a floor area misses what actually drives the work: which rooms take the traffic, when the bins need to go out, and what has to be restocked. We walk the site, then put a scope and schedule in writing.',
+  },
+  {
+    q: 'How do you handle keys, alarms and site access?',
+    a: 'Access and security arrangements are agreed as part of the site scope and we work to them. Tell us how your building runs and the schedule is built to fit it.',
+  },
+  {
+    q: 'Is commercial cleaning just a larger house clean?',
+    a: 'No, and treating it that way is why scheduled cleaning fails. It runs to your hours, respects your access and security arrangements, and has to hold the same standard every visit regardless of who is rostered.',
+  },
+  {
+    q: 'What does the scope cover?',
+    a: 'Workspaces, amenities, and the working-with-you arrangements — the detail is set per site during scoping, because an office, a clinic and a warehouse do not need the same round.',
+  },
+  {
+    q: 'Are your products safe for a shared workplace?',
+    a: 'We use plant-based, non-toxic products. In an office where people sit at the same desks all day, that matters more than it does in a one-off clean.',
+  },
+];
+
+const scopingSteps = [
+  { step: '1', title: 'Tell us about the site', desc: 'Premises type, floor area, hours and how we get in.' },
+  { step: '2', title: 'Site walk-through', desc: 'We look at the space so the quote reflects the real job.' },
+  { step: '3', title: 'Written quote', desc: 'A scope and a schedule you can put in front of a decision-maker.' },
+  { step: '4', title: 'Regular service', desc: 'A consistent team, on the agreed schedule.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Geelong Cleaning', item: `${site.url}/house-cleaning-geelong` },
+      { '@type': 'ListItem', position: 3, name: 'Commercial Cleaning Geelong', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: geelongFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Commercial Cleaning Geelong | 1300 876 472"
+  description="Office and commercial cleaning in Geelong. Worked around your trading hours. Police-checked, fully insured, non-toxic products. Call NATURO GROUP on 1300 876 472."
+  schema={schema}
+>
+  <ServiceHero
+    eyebrow="Commercial cleaning · Geelong"
+    heading="Office Cleaning in Geelong<br />Around Your Hours"
+    tagline="Scheduled cleaning for Geelong offices and commercial premises. Police-checked. Fully insured. Non-toxic products supplied."
+    bg="/images/hero-kitchen.webp"
+  />
+
+  <ServiceIntro
+    kicker="About this service"
+    heading="A workplace your team is glad to walk into."
+    body={introBody}
+    stats={introStats}
+  />
+
+  <ServiceInclusions
+    heading="Scoped to your site, not to a floor area."
+    sub="What a Geelong commercial round covers — the detail is set per site during scoping."
+    groups={inclusions}
+  />
+
+  <!-- How we scope and quote a site -->
+  <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 16px;">
+          How we quote a Geelong site
+        </h2>
+        <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
+          Commercial work is scoped on site, not priced off a floor plan. Here is how it runs.
+        </p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        {scopingSteps.map((f) => (
+          <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.2; color: #0f172a; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(15,23,42,0.08);">{f.step}. {f.title}</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Features />
+
+  <Testimonials />
+
+  <Providers />
+
+  <FAQ
+    items={geelongFaqs}
+    eyebrow="Commercial cleaning Geelong — common questions"
+    subheading="Everything you need to know about office and commercial cleaning in Geelong and the Bellarine."
+  />
+
+  <AppPromo />
+
+  <RelatedGuides
+    regionLabel="Geelong"
+    services={[
+      { href: '/house-cleaning-geelong/', text: 'Regular house cleaning in Geelong' },
+      { href: '/services/commercial-cleaning/', text: 'Commercial cleaning across Australia' },
+    ]}
+    guideSlugs={[
+      'house-cleaning-cost-geelong',
+      'eco-friendly-cleaning-geelong',
+    ]}
+  />
+
+  <FinalCTA />
+
+  <!-- Suburb links (local SEO) -->
+  <section style="background: #ffffff; padding: clamp(64px, 8vw, 96px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; color: #0f172a; margin: 0;">
+          Commercial cleaning across Greater Geelong
+        </h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px;">
+        {[
+          { name: 'Geelong CBD', slug: 'house-cleaning-geelong' },
+          { name: 'Newtown', slug: 'house-cleaning-newtown-geelong' },
+          { name: 'Highton', slug: 'house-cleaning-highton' },
+          { name: 'Geelong West', slug: 'house-cleaning-geelong-west' },
+          { name: 'Ocean Grove', slug: 'house-cleaning-ocean-grove' },
+          { name: 'Torquay', slug: 'house-cleaning-torquay' },
+        ].map((s) => (
+          <a
+            href={`/${s.slug}/`}
+            style="display: inline-block; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(15,23,42,0.12); font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71, 85, 105); text-decoration: none; transition: border-color 0.2s, color 0.2s;"
+          >
+            {s.name}
+          </a>
+        ))}
+      </div>
+      <div style="text-align: center;">
+        <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(100, 116, 139); margin: 0 0 12px;">
+          Also see our other specialist services in Geelong:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center;">
+          <a href="/ndis-cleaning-geelong/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">NDIS Cleaning Geelong &rarr;</a>
+          <span style="color: rgba(15,23,42,0.15);">·</span>
+          <a href="/services/aged-care-cleaning/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">Aged Care Cleaning &rarr;</a>
+          <span style="color: rgba(15,23,42,0.15);">·</span>
+          <a href="/services/veterans-cleaning/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">Veterans (DVA) Cleaning &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

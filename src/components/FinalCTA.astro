@@ -1,23 +1,56 @@
 ---
+// Shared closing CTA. Copy is overridable so a service page can speak to its own
+// audience: the defaults below are the residential wording every page carried
+// before 2026-09-09, so the ten pages that pass nothing are byte-identical.
+//
+// The commercial-cleaning page needs this because "healthier home",
+// "10,000+ households" and "book your first clean in under 60 seconds" are all
+// wrong for an office — and the last one contradicts the rest of that page,
+// where commercial work is scoped on site rather than auto-quoted.
+//
+// `trust` renders only when non-empty. There is no verified commercial client
+// count, so that page passes '' rather than inventing one.
 import { ctaPrimary, ctaPhone, site } from '../data/site';
+
+interface Props {
+  headingLead?: string;
+  headingAccent?: string;
+  headingTail?: string;
+  sub?: string;
+  fineprint?: string;
+  trust?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  headingLead = 'Ready for a ',
+  headingAccent = 'healthier home',
+  headingTail = ' this week?',
+  sub = 'Eco-friendly products, police-checked cleaners and flexible scheduling — book your first clean in under 60 seconds.',
+  fineprint = 'Satisfaction guaranteed. No lock-in contracts. Cancel anytime.',
+  trust = 'Trusted by 10,000+ Australian households.',
+  ctaText = ctaPrimary.text,
+  ctaHref = ctaPrimary.href,
+} = Astro.props;
 ---
 
 <section class="finalcta-wrap">
   <div class="container-site">
     <div class="finalcta-card">
       <div class="finalcta-inner">
-        <h2 class="finalcta-h2">Ready for a <span class="finalcta-accent">healthier home</span> this week?</h2>
-        <p class="finalcta-sub">Eco-friendly products, police-checked cleaners and flexible scheduling &mdash; book your first clean in under 60 seconds.</p>
+        <h2 class="finalcta-h2">{headingLead}<span class="finalcta-accent">{headingAccent}</span>{headingTail}</h2>
+        <p class="finalcta-sub">{sub}</p>
         <div class="finalcta-ctas">
-          <a href={ctaPrimary.href} data-quote-cta class="finalcta-btn-primary"><span>{ctaPrimary.text}</span><span class="finalcta-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+          <a href={ctaHref} data-quote-cta class="finalcta-btn-primary"><span>{ctaText}</span><span class="finalcta-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <a href={site.phoneHref} class="finalcta-btn-secondary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span>{ctaPhone.text}</span>
             <span class="finalcta-btn-sec-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
         </div>
-        <p class="finalcta-fineprint">Satisfaction guaranteed. No lock-in contracts. Cancel anytime.</p>
-        <p class="finalcta-trust">Trusted by 10,000+ Australian households.</p>
+        <p class="finalcta-fineprint">{fineprint}</p>
+        {trust && <p class="finalcta-trust">{trust}</p>}
       </div>
     </div>
   </div>

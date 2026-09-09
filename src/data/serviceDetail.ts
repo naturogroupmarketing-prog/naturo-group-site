@@ -465,7 +465,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Commercial cleaning',
-      heading: 'Office Cleaning<br />Around<br />Your Hours',
+      heading: 'Office Cleaning<br />Around Your Hours',
       sub: 'Scheduled cleaning for offices and commercial premises &mdash; worked around your trading hours, with non-toxic products supplied.',
       image: '/images/hero-kitchen.webp',
     },

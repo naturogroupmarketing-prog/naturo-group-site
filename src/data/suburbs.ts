@@ -255,7 +255,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wauchope NSW | 1300 876 472',
-      description: 'House cleaning in Wauchope & Hastings Valley NSW. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Wauchope? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
     contentUpdated: '2026-08-27',
@@ -334,7 +334,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lake Cathie NSW | 1300 876 472',
-      description: 'House cleaning in Lake Cathie & Mid North Coast NSW. Eco-friendly, police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
+      description: 'Need house cleaning in Lake Cathie? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
     contentUpdated: '2026-08-27',
@@ -413,7 +413,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bonny Hills NSW | 1300 876 472',
-      description: 'House cleaning in Bonny Hills & Rainbow Beach NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'Need house cleaning in Bonny Hills? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
     contentUpdated: '2026-08-27',
@@ -492,7 +492,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Laurieton NSW | 1300 876 472',
-      description: 'House cleaning in Laurieton & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Laurieton? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
     contentUpdated: '2026-08-27',
@@ -571,7 +571,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Haven NSW | 1300 876 472',
-      description: 'House cleaning in North Haven & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'Need house cleaning in North Haven? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
     contentUpdated: '2026-08-27',
@@ -650,7 +650,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Dunbogan NSW | 1300 876 472',
-      description: 'House cleaning in Dunbogan & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Dunbogan? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
     contentUpdated: '2026-08-27',
@@ -729,7 +729,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Camden Head NSW | 1300 876 472',
-      description: 'House cleaning in Camden Head & Camden Haven NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'Need house cleaning in Camden Head? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
     contentUpdated: '2026-08-27',
@@ -808,7 +808,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Telegraph Point | 1300 876 472',
-      description: 'House cleaning in Telegraph Point & Hastings Valley NSW. Eco-friendly, police-checked, insured. Suitable for rural and hobby-farm homes.',
+      description: 'Need house cleaning in Telegraph Point? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Suitable for rural and hobby-farm homes.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
     contentUpdated: '2026-08-27',
@@ -887,7 +887,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sancrox NSW | 1300 876 472',
-      description: 'House cleaning in Sancrox near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Sancrox? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
     contentUpdated: '2026-08-27',
@@ -966,7 +966,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Kendall NSW | 1300 876 472',
-      description: 'House cleaning in Kendall & Manning Valley NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Kendall? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
     contentUpdated: '2026-08-27',
@@ -1045,7 +1045,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Comboyne NSW | 1300 876 472',
-      description: 'House cleaning in Comboyne & Comboyne Plateau NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property cleaning.',
+      description: 'Need house cleaning in Comboyne? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property cleaning.',
     },
     nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
     contentUpdated: '2026-08-27',
@@ -1124,7 +1124,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Beechwood NSW | 1300 876 472',
-      description: 'House cleaning in Beechwood & Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'Need house cleaning in Beechwood? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
     contentUpdated: '2026-08-27',
@@ -1203,7 +1203,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bago NSW | 1300 876 472',
-      description: 'House cleaning in Bago near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'Need house cleaning in Bago? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
     contentUpdated: '2026-08-27',
@@ -1282,7 +1282,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Rollands Plains | 1300 876 472',
-      description: 'House cleaning in Rollands Plains & Hastings hinterland NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural services.',
+      description: 'Need house cleaning in Rollands Plains? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural services.',
     },
     nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
     contentUpdated: '2026-08-27',
@@ -1361,7 +1361,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Pembrooke NSW | 1300 876 472',
-      description: 'House cleaning in Pembrooke near Wauchope NSW. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
+      description: 'Need house cleaning in Pembrooke? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
     contentUpdated: '2026-08-27',
@@ -1440,7 +1440,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaners Kew, Port Macquarie',
-      description: 'House cleaning in Kew on the Mid North Coast NSW. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Kew? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Dunbogan', 'Port Macquarie', 'Camden Head', 'Bonny Hills'],
     contentUpdated: '2026-08-27',
@@ -1519,7 +1519,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lakewood NSW | 1300 876 472',
-      description: 'House cleaning in Lakewood near Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & new-home services.',
+      description: 'Need house cleaning in Lakewood? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & new-home services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
     contentUpdated: '2026-08-27',
@@ -1598,7 +1598,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning King Creek NSW | 1300 876 472',
-      description: 'House cleaning in King Creek near Port Macquarie NSW. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
+      description: 'Need house cleaning in King Creek? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
     contentUpdated: '2026-08-27',
@@ -1677,7 +1677,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Settlement Point NSW',
-      description: 'House cleaning in Settlement Point on the Hastings River NSW. Eco-friendly, police-checked, insured. Waterfront, holiday-let & regular cleans.',
+      description: 'Need house cleaning in Settlement Point? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Waterfront, holiday-let & regular cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
     contentUpdated: '2026-08-27',
@@ -1756,7 +1756,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lighthouse Beach NSW',
-      description: 'House cleaning in Lighthouse Beach Port Macquarie NSW. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
+      description: 'Need house cleaning in Lighthouse Beach? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],
     contentUpdated: '2026-08-27',
@@ -1836,7 +1836,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Byron Bay NSW | 1300 876 472',
-      description: 'House cleaning in Byron Bay & the Northern Rivers. Eco-friendly, holiday-let turnovers, regular cleans, police-checked and fully insured. Get a free quote.',
+      description: 'Need house cleaning in Byron Bay? Call NATURO GROUP on 1300 876 472. Eco-friendly, holiday-let turnovers, regular cleans, police-checked and fully insured.',
     },
     nearbySuburbs: ['Suffolk Park', 'Lennox Head', 'Ballina', 'Mullumbimby', 'Bangalow', 'Brunswick Heads', 'Ocean Shores', 'Tyagarah', 'Newrybar', 'Federal', 'Possum Creek', 'Eureka', 'Coopers Shoot', 'Skennars Head', 'Wategos', 'Tallow Beach', 'Myocum', 'Ewingsdale'],
     localFaqs: [
@@ -1910,7 +1910,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Central Coast | 1300 876 472',
-      description: 'House cleaning across the Central Coast \u2014 Gosford, Terrigal, Avoca, Woy Woy & The Entrance. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning on the Central Coast? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Gosford', 'Terrigal', 'Avoca Beach', 'Erina', 'Wyong', 'Tuggerah', 'The Entrance', 'Long Jetty', 'Woy Woy', 'Ettalong Beach', 'Umina Beach', 'Killarney Vale', 'Bateau Bay', 'Forresters Beach', 'Kincumber', 'Saratoga', 'Davistown', 'Berkeley Vale', 'Lake Munmorah', 'Toukley'],
     contentUpdated: '2026-08-27',
@@ -1989,7 +1989,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lismore NSW | 1300 876 472',
-      description: 'House cleaning in Lismore & the Northern Rivers. Eco-friendly, insurance, post-flood and regular cleans. Police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Lismore? Call NATURO GROUP on 1300 876 472. Eco-friendly, insurance, post-flood and regular cleans. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Goonellabah', 'Wollongbar', 'Alstonville', 'Casino', 'Nimbin', 'Clunes', 'Dunoon', 'Bexhill', 'Modanville', 'Ruthven', 'Caniaba', 'Tregeagle', 'Wyrallah', 'North Lismore', 'East Lismore', 'South Lismore', 'Girards Hill', 'Loftville', 'Eltham'],
     contentUpdated: '2026-08-27',
@@ -2068,7 +2068,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newcastle NSW | 1300 876 472',
-      description: 'House cleaning in Newcastle & the Hunter \u2014 Merewether, Hamilton, Mayfield, Charlestown. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Newcastle? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Hamilton', 'Merewether', 'The Junction', 'Cooks Hill', 'New Lambton', 'Adamstown', 'Bar Beach', 'Stockton', 'Mayfield', 'Wickham', 'Islington', 'Hamilton East', 'Tighes Hill', 'Carrington', 'Waratah', 'Lambton', 'Charlestown', 'Kahibah', 'Newcastle East', 'Newcastle West'],
     contentUpdated: '2026-08-27',
@@ -2147,7 +2147,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sutherland NSW | 1300 876 472',
-      description: 'House cleaning across Sutherland Shire \u2014 Cronulla, Miranda, Caringbah, Engadine. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Sutherland? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Cronulla', 'Caringbah', 'Miranda', 'Gymea', 'Engadine', 'Heathcote', 'Sylvania', 'Kirrawee', 'Jannali', 'Como', 'Oyster Bay', 'Bonnet Bay', 'Sylvania Waters', 'Yowie Bay', 'Grays Point', 'Loftus', 'Woronora', 'Menai', 'Illawong', 'Bangor'],
     contentUpdated: '2026-08-27',
@@ -2226,7 +2226,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sydney NSW | 1300 876 472',
-      description: 'House cleaning across Sydney \u2014 CBD, Eastern Suburbs, Inner West and Northern Beaches. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Sydney? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Surry Hills', 'Darlinghurst', 'Newtown', 'Chippendale', 'Pyrmont', 'Ultimo', 'Glebe', 'Redfern', 'Alexandria', 'Waterloo', 'Zetland', 'Potts Point', 'Elizabeth Bay', 'Rushcutters Bay', 'Paddington', 'Woollahra', 'Edgecliff', 'Millers Point', 'The Rocks', 'Barangaroo'],
     contentUpdated: '2026-08-27',
@@ -2301,7 +2301,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Tweed Heads NSW | 1300 876 472',
-      description: 'House cleaning in Tweed Heads, Kingscliff, Cabarita & the Tweed Coast. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Tweed Heads? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Banora Point', 'Tweed Heads South', 'Tweed Heads West', 'Bilambil', 'Terranora', 'Cobaki Lakes', 'Kingscliff', 'Casuarina', 'Pottsville', 'Cabarita Beach', 'Hastings Point', 'Bogangar', 'Murwillumbah', 'Chinderah', 'Fingal Head', 'Bilambil Heights', 'Piggabeen'],
     contentUpdated: '2026-08-27',
@@ -2380,7 +2380,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Parramatta NSW | 1300 876 472',
-      description: 'House cleaning in Parramatta & Western Sydney \u2014 CBD apartments, Westmead, Harris Park, North Parramatta. Eco-friendly, police-checked, fully insured.',
+      description: 'Need house cleaning in Parramatta? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Harris Park', 'Westmead', 'North Parramatta', 'Northmead', 'Wentworthville', 'Granville', 'Merrylands', 'Rosehill', 'Camellia', 'Carlingford', 'Telopea', 'Rydalmere', 'Dundas', 'Ermington', 'Oatlands', 'Old Toongabbie', 'South Granville', 'Holroyd'],
     contentUpdated: '2026-08-27',
@@ -2455,7 +2455,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wollongong NSW | 1300 876 472',
-      description: 'House cleaning in Wollongong & the Illawarra \u2014 Thirroul, Bulli, Corrimal, Shellharbour. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Wollongong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Fairy Meadow', 'North Wollongong', 'Coniston', 'Mangerton', 'Mount Pleasant', 'Mount Ousley', 'Keiraville', 'Gwynneville', 'Figtree', 'West Wollongong', 'Mount Saint Thomas', 'Cordeaux Heights', 'Unanderra', 'Berkeley', 'Corrimal', 'Bellambi', 'Thirroul', 'Bulli', 'Woonona', 'Austinmer'],
     contentUpdated: '2026-08-27',
@@ -2534,7 +2534,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Northern Beaches NSW',
-      description: 'House cleaning across the Northern Beaches \u2014 Manly to Palm Beach. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning on the Northern Beaches? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Manly', 'Dee Why', 'Brookvale', 'Collaroy', 'Narrabeen', 'Mona Vale', 'Avalon Beach', 'Newport', 'Palm Beach', 'Whale Beach', 'Freshwater', 'Curl Curl', 'Queenscliff', 'Balgowlah', 'Seaforth', 'Forestville', 'Frenchs Forest', 'Beacon Hill', 'Cromer', 'Warriewood', 'Bayview', 'Church Point'],
     contentUpdated: '2026-08-27',
@@ -2609,7 +2609,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Eastern Beaches | 1300 876 472',
-      description: 'House cleaning across Sydney\u2019s Eastern Beaches \u2014 Bondi, Bronte, Coogee, Maroubra. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning on the Eastern Beaches? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Bondi', 'Bondi Beach', 'Bronte', 'Coogee', 'Tamarama', 'Clovelly', 'Maroubra', 'Randwick', 'Waverley', 'Bondi Junction', 'Queens Park', 'Kensington', 'Kingsford', 'North Bondi', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Little Bay', 'Malabar'],
     contentUpdated: '2026-08-27',
@@ -2684,7 +2684,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bondi NSW | 1300 876 472',
-      description: 'House cleaning in Bondi & the Eastern Suburbs. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
+      description: 'Need house cleaning in Bondi? Call NATURO GROUP on 1300 876 472. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease.',
     },
     nearbySuburbs: ['Bondi Beach', 'North Bondi', 'Bondi Junction', 'Tamarama', 'Bronte', 'Waverley', 'Queens Park', 'Dover Heights', 'Vaucluse', 'Rose Bay', 'Watsons Bay', 'Double Bay', 'Bellevue Hill', 'Woollahra', 'Paddington', 'Centennial Park', 'Clovelly', 'Coogee'],
     contentUpdated: '2026-08-27',
@@ -2759,7 +2759,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Manly NSW | 1300 876 472',
-      description: 'House cleaning in Manly, Fairlight, Balgowlah & Freshwater. Eco-friendly, holiday-let turnovers, regular cleans. Police-checked, fully insured.',
+      description: 'Need house cleaning in Manly? Call NATURO GROUP on 1300 876 472. Eco-friendly, holiday-let turnovers, regular cleans. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Fairlight', 'Balgowlah', 'Balgowlah Heights', 'Clontarf', 'Seaforth', 'North Balgowlah', 'Queenscliff', 'Freshwater', 'Curl Curl', 'North Manly', 'Brookvale', 'Allambie Heights', 'Beacon Hill', 'Frenchs Forest', 'Killarney Heights', 'Manly Vale', 'Dee Why'],
     contentUpdated: '2026-08-27',
@@ -2838,7 +2838,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mosman NSW | 1300 876 472',
-      description: 'House cleaning in Mosman, Cremorne & Balmoral. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked and fully insured.',
+      description: 'Need house cleaning in Mosman? Call NATURO GROUP on 1300 876 472. Eco-friendly, premium harbourside homes, gentle on stone & marble.',
     },
     nearbySuburbs: ['Beauty Point', 'Clifton Gardens', 'Balmoral', 'The Spit', 'Cremorne', 'Cremorne Point', 'Neutral Bay', 'Cammeray', 'Northbridge', 'Castlecrag', 'Castle Cove', 'Willoughby', 'Naremburn', 'Wollstonecraft', 'McMahons Point', 'Kirribilli', 'Lavender Bay', 'Crows Nest'],
     contentUpdated: '2026-08-27',
@@ -2913,7 +2913,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hunters Hill | 1300 876 472',
-      description: 'House cleaning in Hunters Hill, Woolwich, Henley & Gladesville. Eco-friendly, heritage-home friendly. Police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Hunters Hill? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home friendly. Police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Woolwich', 'Henley', 'Gladesville', 'Boronia Park', 'Putney', 'Tennyson Point', 'Mortlake', 'Concord', 'Drummoyne', 'Russell Lea', 'Five Dock', 'Abbotsford', 'Chiswick', 'Wareemba', 'Lane Cove', 'Riverview', 'Linley Point', 'Longueville', 'Northwood'],
     contentUpdated: '2026-08-27',
@@ -2992,7 +2992,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Vaucluse NSW | 1300 876 472',
-      description: 'House cleaning in Vaucluse, Watsons Bay, Rose Bay & Bellevue Hill. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked.',
+      description: 'Need house cleaning in Vaucluse? Call NATURO GROUP on 1300 876 472. Eco-friendly, premium harbourside homes, gentle on stone & marble. Police-checked.',
     },
     nearbySuburbs: ['Watsons Bay', 'Dover Heights', 'Rose Bay', 'Point Piper', 'Bellevue Hill', 'Double Bay', 'Darling Point', 'Edgecliff', 'Woollahra', 'Paddington', 'Bondi', 'North Bondi', 'Bondi Junction', 'Diamond Bay', 'Hermit Point', 'Parsley Bay'],
     contentUpdated: '2026-08-27',
@@ -3070,7 +3070,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Brisbane QLD | 1300 876 472',
-      description: 'House cleaning across Brisbane \u2014 New Farm, West End, Paddington, Bulimba & beyond. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Brisbane? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['New Farm', 'Fortitude Valley', 'Newstead', 'Teneriffe', 'West End', 'South Brisbane', 'Highgate Hill', 'Paddington', 'Milton', 'Toowong', 'Auchenflower', 'Spring Hill', 'Kelvin Grove', 'Red Hill', 'Bardon', 'Ascot', 'Hamilton', 'Bulimba', 'Hawthorne', 'Norman Park', 'Camp Hill', 'Coorparoo', 'Greenslopes'],
     contentUpdated: '2026-08-27',
@@ -3149,7 +3149,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Cairns QLD | 1300 876 472',
-      description: 'House cleaning in Cairns, Trinity Beach, Palm Cove & the Northern Beaches. Eco-friendly, reef-safe products. Police-checked, fully insured.',
+      description: 'Need house cleaning in Cairns? Call NATURO GROUP on 1300 876 472. Eco-friendly, reef-safe products. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Edge Hill', 'Whitfield', 'Manunda', 'Manoora', 'Mooroobool', 'Westcourt', 'Earlville', 'Bungalow', 'Parramatta Park', 'Trinity Beach', 'Palm Cove', 'Clifton Beach', 'Kewarra Beach', 'Smithfield', 'Yorkeys Knob', 'Holloways Beach', 'Machans Beach', 'Redlynch', 'Stratford', 'Freshwater', 'Brinsmead'],
     contentUpdated: '2026-08-27',
@@ -3228,7 +3228,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Gold Coast QLD | 1300 876 472',
-      description: 'House cleaning across the Gold Coast \u2014 Surfers, Broadbeach, Burleigh, Palm Beach, Coolangatta. Eco-friendly, police-checked, fully insured.',
+      description: 'Need house cleaning on the Gold Coast? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Surfers Paradise', 'Broadbeach', 'Mermaid Beach', 'Burleigh Heads', 'Palm Beach', 'Currumbin', 'Coolangatta', 'Tugun', 'Miami', 'Nobby Beach', 'Bilinga', 'Kirra', 'Robina', 'Varsity Lakes', 'Mudgeeraba', 'Reedy Creek', 'Helensvale', 'Hope Island', 'Southport', 'Main Beach', 'Labrador', 'Biggera Waters', 'Runaway Bay'],
     contentUpdated: '2026-08-27',
@@ -3307,7 +3307,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ipswich QLD | 1300 876 472',
-      description: 'House cleaning in Ipswich, Booval, Karalee, Ripley & Springfield Lakes. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Ipswich? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Brassall', 'Booval', 'Bundamba', 'Eastern Heights', 'Newtown', 'Raceview', 'Silkstone', 'Sadliers Crossing', 'North Ipswich', 'Wulkuraka', 'One Mile', 'Goodna', 'Redbank', 'Springfield', 'Springfield Lakes', 'Augustine Heights', 'Karalee', 'Karana Downs', 'Rosewood', 'Walloon', 'Marburg', 'Yamanto'],
     contentUpdated: '2026-08-27',
@@ -3386,7 +3386,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Sunshine Coast | 1300 876 472',
-      description: 'House cleaning across the Sunshine Coast \u2014 Caloundra, Mooloolaba, Noosa, Coolum. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning on the Sunshine Coast? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
     contentUpdated: '2026-08-27',
@@ -3465,7 +3465,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Toowoomba QLD | 1300 876 472',
-      description: 'House cleaning in Toowoomba, East Toowoomba, Rangeville & Highfields. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
+      description: 'Need house cleaning in Toowoomba? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['East Toowoomba', 'North Toowoomba', 'South Toowoomba', 'Newtown', 'Rangeville', 'Mount Lofty', 'Centenary Heights', 'Middle Ridge', 'Kearneys Spring', 'Glenvale', 'Wilsonton', 'Harristown', 'Drayton', 'Westbrook', 'Highfields', 'Cabarlah', 'Crows Nest', 'Withcott', 'Helidon', 'Hodgson Vale'],
     contentUpdated: '2026-08-27',
@@ -3544,7 +3544,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Townsville QLD | 1300 876 472',
-      description: 'House cleaning in Townsville, North Ward, Annandale, Kirwan & Magnetic Island. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Townsville? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['North Ward', 'Belgian Gardens', 'Castle Hill', 'South Townsville', 'Railway Estate', 'Hyde Park', 'Mundingburra', 'Hermit Park', 'Aitkenvale', 'Currajong', 'Gulliver', 'Pimlico', 'Rosslea', 'Cranbrook', 'Vincent', 'Heatley', 'Kirwan', 'Thuringowa Central', 'Annandale', 'Douglas', 'Idalia', 'Pallarenda'],
     contentUpdated: '2026-08-27',
@@ -3627,7 +3627,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Melbourne VIC | 1300 876 472',
-      description: 'House cleaning across Melbourne \u2014 CBD, South Yarra, Richmond, Brighton, Hawthorn, St Kilda. Eco-friendly, police-checked, fully insured.',
+      description: 'Need house cleaning in Melbourne? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured.',
     },
     nearbySuburbs: ['Carlton', 'Fitzroy', 'Collingwood', 'Richmond', 'South Yarra', 'Prahran', 'Windsor', 'St Kilda', 'Albert Park', 'Port Melbourne', 'Southbank', 'Docklands', 'North Melbourne', 'West Melbourne', 'Parkville', 'East Melbourne', 'South Melbourne', 'Hawthorn', 'Toorak', 'Brunswick', 'Cremorne', 'Carlton North', 'Fitzroy North'],
     localFaqs: [
@@ -3805,7 +3805,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Torquay VIC | 1300 876 472',
-      description: 'House cleaning in Torquay & the Surf Coast. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked and fully insured.',
+      description: 'Need house cleaning in Torquay? Call NATURO GROUP on 1300 876 472. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease.',
     },
     nearbySuburbs: ['Jan Juc', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Lorne', 'Ocean Grove', 'Barwon Heads', 'Geelong', 'Belmont', 'Highton'],
     localFaqs: [
@@ -3880,7 +3880,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ocean Grove VIC | 1300 876 472',
-      description: 'House cleaning in Ocean Grove & the Bellarine Peninsula. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'Need house cleaning in Ocean Grove? Call NATURO GROUP on 1300 876 472. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Barwon Heads', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Collendina', 'Geelong', 'Torquay', 'Jan Juc'],
     localFaqs: [
@@ -3955,7 +3955,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Barwon Heads | 1300 876 472',
-      description: 'House cleaning in Barwon Heads & the Bellarine Peninsula. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease. Police-checked, fully insured.',
+      description: 'Need house cleaning in Barwon Heads? Call NATURO GROUP on 1300 876 472. Eco-friendly, holiday-let turnovers, regular cleans, end-of-lease.',
     },
     nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Leopold', 'Queenscliff', 'Point Lonsdale', 'Wallington', 'Geelong', 'Torquay'],
     localFaqs: [
@@ -4026,7 +4026,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Drysdale VIC | 1300 876 472',
-      description: 'House cleaning in Drysdale, Clifton Springs & the Bellarine. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
+      description: 'Need house cleaning in Drysdale? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
     },
     nearbySuburbs: ['Clifton Springs', 'Portarlington', 'Leopold', 'Ocean Grove', 'Barwon Heads', 'Queenscliff', 'Point Lonsdale', 'Geelong', 'Lara'],
     localFaqs: [
@@ -4097,7 +4097,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Leopold VIC | 1300 876 472',
-      description: 'House cleaning in Leopold, Wallington & the Bellarine Peninsula. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
+      description: 'Need house cleaning in Leopold? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Regular cleans & end-of-lease.',
     },
     nearbySuburbs: ['Wallington', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Clifton Springs', 'Geelong', 'Belmont', 'Highton', 'Lara'],
     localFaqs: [
@@ -4168,7 +4168,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Jan Juc VIC | 1300 876 472',
-      description: 'House cleaning in Jan Juc & Torquay on the Surf Coast. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
+      description: 'Need house cleaning in Jan Juc? Call NATURO GROUP on 1300 876 472. Eco-friendly and police-checked. Regular cleans, end-of-lease & holiday-let turnovers.',
     },
     nearbySuburbs: ['Torquay', 'Bells Beach', 'Anglesea', 'Aireys Inlet', 'Ocean Grove', 'Barwon Heads', 'Geelong'],
     localFaqs: [
@@ -4240,7 +4240,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newtown, Geelong | 1300 876 472',
-      description: 'House cleaning in Newtown Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'Need house cleaning in Newtown? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home specialists, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
     contentUpdated: '2026-08-27',
@@ -4319,7 +4319,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning East Geelong | 1300 876 472',
-      description: 'House cleaning in East Geelong VIC. Eco-friendly, heritage-aware, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in East Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-aware, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Newtown', 'South Geelong', 'Belmont', 'Highton', 'Wandana Heights', 'Manifold Heights'],
     contentUpdated: '2026-08-27',
@@ -4398,7 +4398,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning South Geelong | 1300 876 472',
-      description: 'House cleaning in South Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean, apartments, cottages & end-of-lease.',
+      description: 'Need house cleaning in South Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'East Geelong', 'Newtown', 'Manifold Heights', 'Geelong West', 'Belmont', 'Herne Hill'],
     contentUpdated: '2026-08-27',
@@ -4477,7 +4477,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Geelong West | 1300 876 472',
-      description: 'House cleaning in Geelong West VIC. Eco-friendly, plant-based products, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'Need house cleaning in Geelong West? Call NATURO GROUP on 1300 876 472. Eco-friendly, plant-based products, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Herne Hill', 'Newtown', 'South Geelong', 'Hamlyn Heights', 'Bell Park'],
     contentUpdated: '2026-08-27',
@@ -4556,7 +4556,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Belmont, Geelong | 1300 876 472',
-      description: 'House cleaning in Belmont Geelong VIC. Eco-friendly, family-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Belmont? Call NATURO GROUP on 1300 876 472. Eco-friendly, family-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],
     contentUpdated: '2026-08-27',
@@ -4635,7 +4635,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Highton VIC | 1300 876 472',
-      description: 'House cleaning in Highton Geelong VIC. Eco-friendly, premium-home specialists, police-checked & insured. Regular, deep clean & end-of-lease.',
+      description: 'Need house cleaning in Highton? Call NATURO GROUP on 1300 876 472. Eco-friendly, premium-home specialists, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Belmont', 'Wandana Heights', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Newtown'],
     contentUpdated: '2026-08-27',
@@ -4714,7 +4714,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wandana Heights | 1300 876 472',
-      description: 'House cleaning in Wandana Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Wandana Heights? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Highton', 'Belmont', 'East Geelong', 'Waurn Ponds', 'Grovedale', 'Geelong', 'Newtown'],
     contentUpdated: '2026-08-27',
@@ -4793,7 +4793,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Manifold Heights VIC',
-      description: 'House cleaning in Manifold Heights Geelong VIC. Eco-friendly, heritage-home specialists, police-checked & insured. Regular, deep clean & more.',
+      description: 'Need house cleaning in Manifold Heights? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home specialists, police-checked & insured.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'Herne Hill', 'South Geelong', 'Geelong', 'Hamlyn Heights', 'Bell Park'],
     contentUpdated: '2026-08-27',
@@ -4868,7 +4868,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Herne Hill VIC | 1300 876 472',
-      description: 'House cleaning in Herne Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Herne Hill? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Geelong West', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Geelong', 'Newtown', 'Bell Post Hill'],
     contentUpdated: '2026-08-27',
@@ -4943,7 +4943,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hamlyn Heights | 1300 876 472',
-      description: 'House cleaning in Hamlyn Heights Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Hamlyn Heights? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Herne Hill', 'Geelong West', 'Bell Park', 'Bell Post Hill', 'Norlane', 'Geelong', 'Manifold Heights'],
     contentUpdated: '2026-08-27',
@@ -5022,7 +5022,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bell Park VIC | 1300 876 472',
-      description: 'House cleaning in Bell Park Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Bell Park? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Norlane', 'Geelong West', 'Herne Hill', 'Bell Post Hill', 'Corio', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5097,7 +5097,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Bell Post Hill | 1300 876 472',
-      description: 'House cleaning in Bell Post Hill Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Bell Post Hill? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Hamlyn Heights', 'Herne Hill', 'Bell Park', 'North Shore', 'Corio', 'Geelong West', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5172,7 +5172,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Norlane VIC | 1300 876 472',
-      description: 'House cleaning in Norlane Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Norlane? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Corio', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Geelong West', 'Bell Post Hill', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5251,7 +5251,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Shore, Geelong',
-      description: 'House cleaning in North Shore Geelong VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in North Shore? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Norlane', 'Corio', 'Bell Park', 'Hamlyn Heights', 'Bell Post Hill', 'Lara', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5326,7 +5326,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Corio VIC | 1300 876 472',
-      description: 'House cleaning in Corio Geelong VIC. Eco-friendly, police-checked & insured. Affordable regular, deep clean, NDIS & end-of-lease services.',
+      description: 'Need house cleaning in Corio? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Norlane', 'North Shore', 'Bell Park', 'Hamlyn Heights', 'Lara', 'Bell Post Hill', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5405,7 +5405,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lara VIC | 1300 876 472',
-      description: 'House cleaning in Lara VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Lara\'s growing community.',
+      description: 'Need house cleaning in Lara? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured \u2014 for Lara\'s growing community.',
     },
     nearbySuburbs: ['Geelong', 'Corio', 'North Shore', 'Norlane', 'Ocean Grove', 'Werribee', 'Little River'],
     contentUpdated: '2026-08-27',
@@ -5484,7 +5484,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Curlewis VIC | 1300 876 472',
-      description: 'House cleaning in Curlewis on the Bellarine Peninsula VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Curlewis? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Drysdale', 'Clifton Springs', 'Portarlington', 'Ocean Grove', 'Barwon Heads', 'Leopold', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5559,7 +5559,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Armstrong Creek | 1300 876 472',
-      description: 'House cleaning in Armstrong Creek VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s fastest-growing suburb.',
+      description: 'Need house cleaning in Armstrong Creek? Call NATURO GROUP on 1300 876 472. Eco-friendly & police-checked, for Geelong\'s fastest-growing suburb.',
     },
     nearbySuburbs: ['Grovedale', 'Waurn Ponds', 'Mount Duneed', 'Highton', 'Belmont', 'Ocean Grove', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5638,7 +5638,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Grovedale VIC | 1300 876 472',
-      description: 'House cleaning in Grovedale VIC. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services for south Geelong families.',
+      description: 'Need house cleaning in Grovedale? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Waurn Ponds', 'Highton', 'Belmont', 'Armstrong Creek', 'Mount Duneed', 'Geelong', 'Torquay'],
     contentUpdated: '2026-08-27',
@@ -5717,7 +5717,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Waurn Ponds VIC | 1300 876 472',
-      description: 'House cleaning in Waurn Ponds VIC near Deakin University. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
+      description: 'Need house cleaning in Waurn Ponds? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Grovedale', 'Highton', 'Armstrong Creek', 'Mount Duneed', 'Belmont', 'Geelong', 'Torquay'],
     contentUpdated: '2026-08-27',
@@ -5796,7 +5796,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mount Duneed | 1300 876 472',
-      description: 'House cleaning in Mount Duneed VIC near Torquay. Eco-friendly, police-checked & insured. Regular, deep clean & end-of-lease for Geelong\'s south.',
+      description: 'Need house cleaning in Mount Duneed? Call NATURO GROUP on 1300 876 472. Eco-friendly & police-checked, for Geelong\'s south near Torquay.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Grovedale', 'Waurn Ponds', 'Highton', 'Torquay', 'Jan Juc', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -5875,7 +5875,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ballarat VIC | 1300 876 472',
-      description: 'House cleaning in Ballarat, Lake Wendouree, Alfredton, Lucas & Sebastopol. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
+      description: 'Need house cleaning in Ballarat? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home friendly. Police-checked, fully insured.',
     },
     nearbySuburbs: ['Ballarat Central', 'Ballarat East', 'Ballarat North', 'Lake Wendouree', 'Wendouree', 'Soldiers Hill', 'Black Hill', 'Nerrina', 'Brown Hill', 'Mount Pleasant', 'Mount Clear', 'Mount Helen', 'Sebastopol', 'Delacombe', 'Alfredton', 'Lucas', 'Buninyong', 'Cardigan', 'Smythes Creek', 'Miners Rest', 'Invermay', 'Warrenheip'],
     contentUpdated: '2026-08-27',
@@ -5954,7 +5954,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Dandenong VIC | 1300 876 472',
-      description: 'House cleaning in Dandenong, Noble Park, Springvale, Keysborough & Endeavour Hills. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Dandenong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Dandenong North', 'Dandenong South', 'Springvale', 'Springvale South', 'Noble Park', 'Noble Park North', 'Keysborough', 'Bangholme', 'Endeavour Hills', 'Hallam', 'Lyndhurst', 'Doveton', 'Lynbrook', 'Eumemmerring', 'Berwick', 'Narre Warren', 'Hampton Park', 'Cranbourne'],
     contentUpdated: '2026-08-27',
@@ -6033,7 +6033,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Mornington VIC | 1300 876 472',
-      description: 'House cleaning in Mornington, Mount Martha, Mount Eliza, Safety Beach & Dromana. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Mornington? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Mount Eliza', 'Mount Martha', 'Moorooduc', 'Tuerong', 'Somerville', 'Tyabb', 'Hastings', 'Bittern', 'Crib Point', 'Balnarring', 'Merricks', 'Red Hill', 'Red Hill South', 'Main Ridge', 'Arthurs Seat', 'Dromana', 'Safety Beach', 'Rosebud', 'McCrae', 'Capel Sound', 'Rye', 'Sorrento', 'Portsea', 'Blairgowrie'],
     contentUpdated: '2026-08-27',
@@ -6112,7 +6112,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Narre Warren | 1300 876 472',
-      description: 'House cleaning in Narre Warren, Berwick, Cranbourne, Hampton Park & Pakenham. Eco-friendly, police-checked, fully insured. Get a free quote.',
+      description: 'Need house cleaning in Narre Warren? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
     nearbySuburbs: ['Narre Warren North', 'Narre Warren South', 'Berwick', 'Beaconsfield', 'Beaconsfield Upper', 'Officer', 'Cranbourne', 'Cranbourne North', 'Cranbourne West', 'Cranbourne East', 'Hampton Park', 'Lynbrook', 'Lyndhurst', 'Lysterfield', 'Lysterfield South', 'Hallam', 'Endeavour Hills', 'Doveton', 'Pakenham'],
     contentUpdated: '2026-08-27',
@@ -6191,7 +6191,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Toorak VIC | 1300 876 472',
-      description: 'House cleaning in Toorak, South Yarra, Armadale & Malvern. Eco-friendly, premium period homes, gentle on stone & marble. Police-checked, fully insured.',
+      description: 'Need house cleaning in Toorak? Call NATURO GROUP on 1300 876 472. Eco-friendly, premium period homes, gentle on stone & marble. Police-checked, fully insured.',
     },
     nearbySuburbs: ['South Yarra', 'Armadale', 'Malvern', 'Malvern East', 'Prahran', 'Windsor', 'Hawthorn', 'Hawthorn East', 'Camberwell', 'Caulfield', 'Caulfield North', 'Caulfield South', 'Caulfield East', 'Glen Iris', 'St Kilda East', 'Elsternwick', 'Kooyong', 'Burnley', 'Cremorne', 'Richmond'],
     contentUpdated: '2026-08-27',
@@ -6270,7 +6270,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Newcomb VIC | 1300 876 472',
-      description: 'House cleaning in Newcomb, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'Need house cleaning in Newcomb? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Whittington', 'St Albans Park', 'Moolap', 'Thomson', 'East Geelong', 'Leopold', 'Breakwater', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6348,7 +6348,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Whittington VIC | 1300 876 472',
-      description: 'House cleaning in Whittington, eastern Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease cleans. Book online.',
+      description: 'Need house cleaning in Whittington? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease cleans.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Thomson', 'Breakwater', 'Moolap', 'East Geelong', 'Belmont', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6422,7 +6422,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning St Albans Park | 1300 876 472',
-      description: 'House cleaning in St Albans Park, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'Need house cleaning in St Albans Park? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Newcomb', 'Whittington', 'Moolap', 'Leopold', 'Thomson', 'Breakwater', 'Belmont', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6500,7 +6500,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Thomson VIC | 1300 876 472',
-      description: 'House cleaning in Thomson, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Get an online quote.',
+      description: 'Need house cleaning in Thomson? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Breakwater', 'Whittington', 'Newcomb', 'East Geelong', 'South Geelong', 'Belmont', 'St Albans Park', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6574,7 +6574,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Moolap VIC | 1300 876 472',
-      description: 'House cleaning in Moolap, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Free online quote.',
+      description: 'Need house cleaning in Moolap? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work.',
     },
     nearbySuburbs: ['Newcomb', 'St Albans Park', 'Whittington', 'Leopold', 'Thomson', 'Curlewis', 'East Geelong', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6652,7 +6652,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Breakwater VIC | 1300 876 472',
-      description: 'House cleaning in Breakwater, Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free quote.',
+      description: 'Need house cleaning in Breakwater? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Thomson', 'Whittington', 'Belmont', 'South Geelong', 'East Geelong', 'Newcomb', 'St Albans Park', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6731,7 +6731,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Geelong | 1300 876 472',
-      description: 'House cleaning in North Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs. Free instant online quote.',
+      description: 'Need house cleaning in North Geelong? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Rippleside', 'Herne Hill', 'Bell Park', 'Geelong West', 'North Shore', 'Norlane', 'Geelong', 'Hamlyn Heights'],
     contentUpdated: '2026-08-27',
@@ -6805,7 +6805,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Rippleside VIC | 1300 876 472',
-      description: 'House cleaning in bayside Rippleside Geelong VIC. Eco-friendly, police-checked, insured cleaners, careful with period homes. Free instant online quote.',
+      description: 'Need house cleaning in Rippleside? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners, careful with period homes.',
     },
     nearbySuburbs: ['North Geelong', 'Geelong West', 'Herne Hill', 'Manifold Heights', 'Bell Park', 'North Shore', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -6883,7 +6883,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Fyansford VIC | 1300 876 472',
-      description: 'House cleaning in Fyansford Geelong VIC. Eco-friendly, police-checked, insured cleaners for new homes and heritage cottages alike. Free instant online quote.',
+      description: 'Need house cleaning in Fyansford? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for new homes and heritage cottages alike.',
     },
     nearbySuburbs: ['Herne Hill', 'Hamlyn Heights', 'Manifold Heights', 'Newtown', 'Highton', 'Ceres', 'Batesford', 'Geelong West'],
     contentUpdated: '2026-08-27',
@@ -6957,7 +6957,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Ceres VIC | 1300 876 472',
-      description: 'House cleaning in Ceres near Geelong VIC. Eco-friendly, police-checked, insured cleaners for acreage and lifestyle properties. Free instant online quote.',
+      description: 'Need house cleaning in Ceres? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for acreage and lifestyle properties.',
     },
     nearbySuburbs: ['Fyansford', 'Batesford', 'Highton', 'Wandana Heights', 'Newtown', 'Waurn Ponds', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7035,7 +7035,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Batesford VIC | 1300 876 472',
-      description: 'House cleaning in Batesford near Geelong VIC. Eco-friendly, police-checked, insured cleaners for township and semi-rural homes. Free instant online quote.',
+      description: 'Need house cleaning in Batesford? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for township and semi-rural homes.',
     },
     nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7109,7 +7109,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Lovely Banks | 1300 876 472',
-      description: 'House cleaning in Lovely Banks Geelong VIC. Eco-friendly, police-checked, insured cleaners for new estate and acreage homes. Free instant online quote.',
+      description: 'Need house cleaning in Lovely Banks? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for new estate and acreage homes.',
     },
     nearbySuburbs: ['Bell Post Hill', 'Corio', 'Norlane', 'Lara', 'Batesford', 'Hamlyn Heights', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7188,7 +7188,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Marshall VIC | 1300 876 472',
-      description: 'House cleaning in Marshall, south Geelong VIC. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease work. Book online.',
+      description: 'Need house cleaning in Marshall? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Belmont', 'Grovedale', 'Charlemont', 'Armstrong Creek', 'Waurn Ponds', 'Highton', 'Leopold', 'South Geelong'],
     contentUpdated: '2026-08-27',
@@ -7266,7 +7266,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Charlemont VIC | 1300 876 472',
-      description: 'House cleaning in Charlemont, Armstrong Creek growth area VIC. Eco-friendly, new-build first cleans, regular and deep cleans by police-checked cleaners.',
+      description: 'Need house cleaning in Charlemont? Call NATURO GROUP on 1300 876 472. Eco-friendly, new-build first cleans, regular and deep cleans by police-checked cleaners.',
     },
     nearbySuburbs: ['Armstrong Creek', 'Mount Duneed', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Belmont', 'Connewarre', 'Torquay'],
     contentUpdated: '2026-08-27',
@@ -7340,7 +7340,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Wallington VIC | 1300 876 472',
-      description: 'House cleaning in Wallington on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes cleaned by police-checked, insured cleaners. Book online.',
+      description: 'Need house cleaning in Wallington? Call NATURO GROUP on 1300 876 472. Eco-friendly, acreage and lifestyle homes cleaned by police-checked, insured cleaners.',
     },
     nearbySuburbs: ['Ocean Grove', 'Drysdale', 'Curlewis', 'Barwon Heads', 'Leopold', 'Connewarre', 'Clifton Springs', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7418,7 +7418,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Connewarre VIC | 1300 876 472',
-      description: 'House cleaning in Connewarre on the Bellarine Peninsula VIC. Eco-friendly, acreage and lifestyle homes, police-checked and insured cleaners, book online.',
+      description: 'Need house cleaning in Connewarre? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Barwon Heads', 'Ocean Grove', 'Wallington', 'Armstrong Creek', 'Mount Duneed', 'Marshall', 'Leopold', 'Torquay'],
     contentUpdated: '2026-08-27',
@@ -7492,7 +7492,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Clifton Springs | 1300 876 472',
-      description: 'House cleaning in Clifton Springs on the Bellarine Peninsula VIC. Eco-friendly, home Care Package and NDIS friendly cleans, police-checked, insured cleaners.',
+      description: 'Need house cleaning in Clifton Springs? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Drysdale', 'Curlewis', 'Portarlington', 'Leopold', 'Wallington', 'Ocean Grove', 'St Leonards', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7571,7 +7571,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Portarlington | 1300 876 472',
-      description: 'House cleaning in Portarlington VIC. Eco-friendly, police-checked, insured cleaners for homes, holiday houses, regular, deep clean and end-of-lease work.',
+      description: 'Need house cleaning in Portarlington? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Indented Head', 'St Leonards', 'Drysdale', 'Curlewis', 'Leopold', 'Ocean Grove', 'Marcus Hill', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7649,7 +7649,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning St Leonards VIC | 1300 876 472',
-      description: 'House cleaning in St Leonards VIC on the Bellarine Peninsula. Eco-friendly, police-checked, insured cleaners for regular, deep clean and end-of-lease jobs.',
+      description: 'Need house cleaning in St Leonards? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Indented Head', 'Portarlington', 'Drysdale', 'Marcus Hill', 'Queenscliff', 'Curlewis', 'Ocean Grove', 'Leopold'],
     contentUpdated: '2026-08-27',
@@ -7723,7 +7723,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Indented Head | 1300 876 472',
-      description: 'House cleaning in Indented Head VIC. Eco-friendly, police-checked, insured cleaners for beach houses, regular cleans, deep cleans and end-of-lease work.',
+      description: 'Need house cleaning in Indented Head? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['St Leonards', 'Portarlington', 'Drysdale', 'Curlewis', 'Marcus Hill', 'Leopold', 'Ocean Grove', 'Queenscliff'],
     contentUpdated: '2026-08-27',
@@ -7797,7 +7797,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Point Lonsdale | 1300 876 472',
-      description: 'House cleaning in Point Lonsdale VIC. Eco-friendly, police-checked, insured cleaners for coastal homes, regular cleans, deep cleans and end-of-lease work.',
+      description: 'Need house cleaning in Point Lonsdale? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Queenscliff', 'Ocean Grove', 'Barwon Heads', 'Marcus Hill', 'Drysdale', 'St Leonards', 'Indented Head', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7875,7 +7875,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Queenscliff VIC | 1300 876 472',
-      description: 'House cleaning in Queenscliff VIC. Eco-friendly, police-checked, insured cleaners, gentle on heritage finishes. Regular, deep clean and end-of-lease work.',
+      description: 'Need house cleaning in Queenscliff? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners, gentle on heritage finishes.',
     },
     nearbySuburbs: ['Point Lonsdale', 'Marcus Hill', 'St Leonards', 'Ocean Grove', 'Barwon Heads', 'Drysdale', 'Indented Head', 'Geelong'],
     contentUpdated: '2026-08-27',
@@ -7953,7 +7953,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Marcus Hill VIC | 1300 876 472',
-      description: 'House cleaning in Marcus Hill VIC on the Bellarine. Eco-friendly, police-checked, insured cleaners for rural and acreage homes, regular and deep cleans.',
+      description: 'Need house cleaning in Marcus Hill? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Drysdale', 'Point Lonsdale', 'Queenscliff', 'Ocean Grove', 'Curlewis', 'Leopold', 'St Leonards', 'Barwon Heads'],
     contentUpdated: '2026-08-27',
@@ -8031,7 +8031,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Carlton VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Carlton 3053. Police-checked, insured cleaners for single- and double-fronted Victorian terraces. Free quote.',
+      description: 'Need house cleaning in Carlton? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for single- and double-fronted Victorian terraces.',
     },
     nearbySuburbs: ['Carlton North', 'Parkville', 'North Melbourne', 'Fitzroy', 'Collingwood', 'Brunswick', 'Princes Hill', 'East Melbourne', 'Melbourne CBD', 'Fitzroy North'],
     contentUpdated: '2026-08-30',
@@ -8113,7 +8113,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Carlton North | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Carlton North 3054. Police-checked, insured cleaners for larger double-fronted Victorian and Edwardian family homes. Free quote.',
+      description: 'Need house cleaning in Carlton North? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Carlton', 'Princes Hill', 'Fitzroy North', 'Brunswick East', 'Parkville', 'Fitzroy', 'Clifton Hill', 'Northcote', 'Brunswick', 'North Melbourne'],
     contentUpdated: '2026-08-30',
@@ -8195,7 +8195,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Fitzroy VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Fitzroy 3065. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Fitzroy? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Fitzroy North', 'Collingwood', 'Carlton', 'Abbotsford', 'Clifton Hill', 'Brunswick', 'Richmond', 'Carlton North', 'East Melbourne', 'Northcote'],
     contentUpdated: '2026-08-30',
@@ -8277,7 +8277,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Fitzroy North | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Fitzroy North 3068. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Fitzroy North? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Fitzroy', 'Carlton North', 'Clifton Hill', 'Northcote', 'Brunswick East', 'Princes Hill', 'Collingwood', 'Thornbury', 'Westgarth', 'Brunswick'],
     contentUpdated: '2026-08-30',
@@ -8359,7 +8359,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Collingwood VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Collingwood 3066. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Collingwood? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Fitzroy', 'Abbotsford', 'Clifton Hill', 'Richmond', 'Carlton', 'Fitzroy North', 'Cremorne', 'East Melbourne', 'Burnley', 'Northcote'],
     contentUpdated: '2026-08-30',
@@ -8441,7 +8441,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Richmond VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Richmond 3121. Police-checked, insured cleaners for Victorian workers cottages on the hill. Free quote.',
+      description: 'Need house cleaning in Richmond? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for Victorian workers cottages on the hill. Free quote.',
     },
     nearbySuburbs: ['Cremorne', 'Burnley', 'Abbotsford', 'Collingwood', 'East Melbourne', 'South Yarra', 'Hawthorn', 'Kew', 'Fitzroy', 'Prahran'],
     contentUpdated: '2026-08-30',
@@ -8523,7 +8523,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Cremorne VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Cremorne 3121. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Cremorne? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Richmond', 'Burnley', 'South Yarra', 'Prahran', 'Windsor', 'Abbotsford', 'Collingwood', 'Hawthorn', 'Toorak', 'East Melbourne'],
     contentUpdated: '2026-08-30',
@@ -8605,7 +8605,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning South Yarra VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in South Yarra 3141. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in South Yarra? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Toorak', 'Prahran', 'Windsor', 'Melbourne CBD', 'Richmond', 'Cremorne', 'Albert Park', 'Armadale', 'Hawksburn', 'St Kilda'],
     contentUpdated: '2026-08-30',
@@ -8687,7 +8687,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Prahran VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Prahran 3181. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Prahran? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Windsor', 'South Yarra', 'Armadale', 'Toorak', 'St Kilda', 'St Kilda East', 'Malvern', 'Hawksburn', 'Albert Park', 'Cremorne'],
     contentUpdated: '2026-08-30',
@@ -8769,7 +8769,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Windsor VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Windsor 3181. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Windsor? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Prahran', 'St Kilda', 'St Kilda East', 'South Yarra', 'Balaclava', 'Armadale', 'Albert Park', 'Elwood', 'Toorak', 'Melbourne CBD'],
     contentUpdated: '2026-08-30',
@@ -8851,7 +8851,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning St Kilda VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in St Kilda 3182. Police-checked, insured cleaners for Art Deco and interwar apartment blocks. Free quote.',
+      description: 'Need house cleaning in St Kilda? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for Art Deco and interwar apartment blocks. Free quote.',
     },
     nearbySuburbs: ['St Kilda East', 'Balaclava', 'Elwood', 'Windsor', 'Albert Park', 'Middle Park', 'Prahran', 'South Melbourne', 'Ripponlea', 'Elsternwick'],
     contentUpdated: '2026-08-30',
@@ -8933,7 +8933,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Albert Park VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Albert Park 3206. Police-checked, insured cleaners for Victorian and Edwardian homes on the streets around the lake. Free quote.',
+      description: 'Need house cleaning in Albert Park? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Middle Park', 'South Melbourne', 'Port Melbourne', 'St Kilda', 'Southbank', 'Melbourne CBD', 'Windsor', 'Elwood', 'Prahran', 'South Yarra'],
     contentUpdated: '2026-08-30',
@@ -9015,7 +9015,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Port Melbourne | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Port Melbourne 3207. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Port Melbourne? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Albert Park', 'Middle Park', 'South Melbourne', 'Southbank', 'Docklands', 'Melbourne CBD', 'St Kilda', 'Williamstown', 'Spotswood', 'Yarraville'],
     contentUpdated: '2026-08-30',
@@ -9097,7 +9097,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning South Melbourne | 1300 876 472',
-      description: 'Eco-friendly house cleaning in South Melbourne 3205. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in South Melbourne? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Albert Park', 'Southbank', 'Port Melbourne', 'Middle Park', 'Melbourne CBD', 'South Yarra', 'Windsor', 'Docklands', 'St Kilda', 'Prahran'],
     contentUpdated: '2026-08-30',
@@ -9179,7 +9179,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Southbank VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Southbank 3006. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Southbank? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Melbourne CBD', 'South Melbourne', 'Albert Park', 'Docklands', 'South Yarra', 'Port Melbourne', 'West Melbourne', 'Middle Park', 'Richmond', 'Windsor'],
     contentUpdated: '2026-08-30',
@@ -9261,7 +9261,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Docklands VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Docklands 3008. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Docklands? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Melbourne CBD', 'West Melbourne', 'North Melbourne', 'Southbank', 'Port Melbourne', 'South Melbourne', 'Kensington', 'Footscray', 'Yarraville', 'Parkville'],
     contentUpdated: '2026-08-30',
@@ -9343,7 +9343,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning North Melbourne | 1300 876 472',
-      description: 'Eco-friendly house cleaning in North Melbourne 3051. Police-checked, insured cleaners for Victorian terraces on the Errol Street grid. Free quote.',
+      description: 'Need house cleaning in North Melbourne? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for Victorian terraces on the Errol Street grid.',
     },
     nearbySuburbs: ['West Melbourne', 'Parkville', 'Kensington', 'Carlton', 'Flemington', 'Melbourne CBD', 'Docklands', 'Brunswick', 'Carlton North', 'Ascot Vale'],
     contentUpdated: '2026-08-30',
@@ -9425,7 +9425,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning West Melbourne | 1300 876 472',
-      description: 'Eco-friendly house cleaning in West Melbourne 3003. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in West Melbourne? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['North Melbourne', 'Docklands', 'Melbourne CBD', 'Kensington', 'Parkville', 'Footscray', 'Southbank', 'Carlton', 'Flemington', 'Seddon'],
     contentUpdated: '2026-08-30',
@@ -9507,7 +9507,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Parkville VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Parkville 3052. Police-checked, insured cleaners for grand Victorian terraces on the Royal Park edge. Free quote.',
+      description: 'Need house cleaning in Parkville? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for grand Victorian terraces on the Royal Park edge.',
     },
     nearbySuburbs: ['Carlton', 'Carlton North', 'North Melbourne', 'Princes Hill', 'Brunswick', 'Flemington', 'Kensington', 'Brunswick West', 'Melbourne CBD', 'Fitzroy North'],
     contentUpdated: '2026-08-30',
@@ -9589,7 +9589,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning East Melbourne | 1300 876 472',
-      description: 'Eco-friendly house cleaning in East Melbourne 3002. Police-checked, insured cleaners for heritage terraces and mansions around the Fitzroy Gardens. Free quote.',
+      description: 'Need house cleaning in East Melbourne? Call NATURO GROUP on 1300 876 472.',
     },
     nearbySuburbs: ['Melbourne CBD', 'Richmond', 'Collingwood', 'Fitzroy', 'Carlton', 'Cremorne', 'Abbotsford', 'Southbank', 'South Yarra', 'Jolimont'],
     contentUpdated: '2026-08-30',
@@ -9671,7 +9671,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Hawthorn VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Hawthorn 3122. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Hawthorn? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Hawthorn East', 'Kew', 'Richmond', 'Camberwell', 'Burnley', 'Glen Iris', 'Toorak', 'Kooyong', 'Auburn', 'Balwyn'],
     contentUpdated: '2026-08-30',
@@ -9753,7 +9753,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Brunswick VIC | 1300 876 472',
-      description: 'Eco-friendly house cleaning in Brunswick 3056. Police-checked, insured cleaners for regular, deep and end-of-lease work. Get a free online quote.',
+      description: 'Need house cleaning in Brunswick? Call NATURO GROUP on 1300 876 472. Police-checked, insured cleaners for regular, deep and end-of-lease work.',
     },
     nearbySuburbs: ['Brunswick East', 'Brunswick West', 'Carlton North', 'Princes Hill', 'Coburg', 'Fitzroy North', 'Parkville', 'Northcote', 'Pascoe Vale South', 'Fitzroy'],
     contentUpdated: '2026-08-30',

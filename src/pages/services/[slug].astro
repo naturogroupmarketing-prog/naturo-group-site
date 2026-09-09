@@ -126,6 +126,6 @@ const schema = [
   <AppPromo />
 
   <!-- 10. Final CTA banner -->
-  <FinalCTA />
+  <FinalCTA {...(detail?.finalCta ?? {})} />
   <FunnelBeacon service={service.slug} />
 </Layout>

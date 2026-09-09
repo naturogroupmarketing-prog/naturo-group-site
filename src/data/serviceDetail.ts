@@ -20,6 +20,19 @@ export type ServiceDetail = {
   relatedPosts?: string[];
   /** ISO date this page's copy last genuinely changed; feeds sitemap lastmod. */
   contentUpdated?: string;
+  /** Overrides for the closing CTA banner. Omit and the page keeps the
+   *  residential defaults in FinalCTA.astro. Only set the keys that differ. */
+  finalCta?: {
+    headingLead?: string;
+    headingAccent?: string;
+    headingTail?: string;
+    sub?: string;
+    fineprint?: string;
+    /** Pass '' to hide the household trust line on non-residential services. */
+    trust?: string;
+    ctaText?: string;
+    ctaHref?: string;
+  };
 };
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -462,7 +475,19 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   // reason. No claim here about response times, insurance limits or client
   // names — those belong in funnel-config.ts once the business confirms them.
   'commercial-cleaning': {
-    contentUpdated: '2026-08-30',
+    contentUpdated: '2026-09-09',
+    // Closing banner must talk about premises, not households: this page's
+    // visitors are scoping a site, and the funnel books a walk-through, not a clean.
+    finalCta: {
+      headingLead: 'Ready to scope your ',
+      headingAccent: 'site',
+      headingTail: '?',
+      sub: 'Tell us the premises type, your hours and how we get in. We walk the site, then put a scope and schedule in writing.',
+      fineprint: 'Cleaned around your trading hours. Police-checked, fully insured cleaners. Non-toxic products supplied.',
+      trust: '',
+      ctaText: 'Request a Site Quote',
+      ctaHref: '/contact-us/',
+    },
     hero: {
       eyebrow: 'Commercial cleaning',
       heading: 'Office Cleaning<br />Around Your Hours',

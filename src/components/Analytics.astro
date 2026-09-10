@@ -231,15 +231,27 @@ const leadDelivery = {
      * us through an Ads campaign keeps that credit even if they later return
      * via a bookmark. Last-touch updates whenever a new campaign appears.
      */
+    /** A paid click id says more than the referrer does. Google auto-tagging
+     *  sends gclid (or gbraid/wbraid) with NO utm_* params, and the referrer is
+     *  google.com — so without this every Google Ads lead was being filed as
+     *  "google / organic". Explicit UTMs still win when present. */
+    function fromClickId(p) {
+      if (p.gclid || p.gbraid || p.wbraid) return { utm_source: 'google', utm_medium: 'cpc' };
+      if (p.msclkid) return { utm_source: 'bing', utm_medium: 'cpc' };
+      if (p.fbclid) return { utm_source: 'facebook', utm_medium: 'paid_social' };
+      return { utm_source: '', utm_medium: '' };
+    }
+
     function resolveAttribution() {
       var params = readParams();
+      var paid = fromClickId(params);
       var ref = fromReferrer(document.referrer);
       var now = new Date().toISOString();
       var landing = window.location.origin + window.location.pathname; // no query string: avoids leaking PII in params
 
       var touch = {
-        utm_source: params.utm_source || ref.utm_source,
-        utm_medium: params.utm_medium || ref.utm_medium,
+        utm_source: params.utm_source || paid.utm_source || ref.utm_source,
+        utm_medium: params.utm_medium || paid.utm_medium || ref.utm_medium,
         utm_campaign: params.utm_campaign,
         utm_term: params.utm_term,
         utm_content: params.utm_content,

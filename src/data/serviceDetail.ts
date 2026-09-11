@@ -46,7 +46,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     hero: {
       eyebrow: 'Regular cleaning',
-      heading: 'House Cleaning<br />Reliable<br />Every visit',
+      heading: 'House Cleaning<br />Reliable, every visit',
       sub: 'Reliable, recurring house cleaning from a friendly, trained team &mdash; with non-toxic products supplied.',
       image: '/images/hero-bathroom.webp',
     },
@@ -108,7 +108,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     hero: {
       eyebrow: 'One-off deep clean',
-      heading: 'Deep Cleaning<br />Top-to-bottom<br />Sparkle',
+      heading: 'Deep Cleaning<br />Top-to-bottom sparkle',
       sub: "A top-to-bottom clean for the rooms, corners and surfaces a regular clean doesn't reach. Perfect after renovations, before guests, or just because.",
       image: '/images/hero-kitchen.webp',
     },
@@ -170,7 +170,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     hero: {
       eyebrow: 'Bond clean',
-      heading: 'End of Lease<br />Bond-back<br />Guaranteed',
+      heading: 'End of Lease Cleaning<br />Bond-back guaranteed',
       sub: 'A 100% bond-back guaranteed end-of-lease clean, done to the real estate exit checklist. Receipt and report supplied for your agent.',
       image: '/images/team-staff.webp',
     },
@@ -245,7 +245,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     hero: {
       eyebrow: 'NDIS-friendly cleaning',
-      heading: 'NDIS Cleaning<br />Compassionate<br />In-home support',
+      heading: 'NDIS Cleaning<br />Compassionate support',
       sub: 'Compassionate, in-home cleaning for NDIS participants from a trusted, trained team &mdash; with non-toxic products supplied.',
       image: '/images/hero-ocean.webp',
     },
@@ -302,7 +302,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Aged care cleaning',
-      heading: 'Aged Care Cleaning<br />Patient<br />Trusted at home',
+      heading: 'Aged Care Cleaning<br />Patient, trusted at home',
       sub: 'Patient, friendly cleaners helping older Australians stay independent and comfortable in their own home.',
       image: '/images/phone-woman.webp',
     },
@@ -359,7 +359,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Insurance work',
-      heading: 'Insurance Cleaning<br />Detailed scopes<br />Direct billing',
+      heading: 'Insurance Cleaning<br />Scopes and direct billing',
       sub: 'Detailed scopes, photo reporting and direct billing for insurance claim work &mdash; from water and storm damage to trauma cleans.',
       image: '/images/banner-staff.webp',
     },
@@ -416,7 +416,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Department of Veterans\u2019 Affairs',
-      heading: 'Veterans (DVA)<br />Cleaning<br />Coordinated with your case manager',
+      heading: 'Veterans (DVA) Cleaning<br />With your case manager',
       sub: 'Respectful, reliable in-home cleaning for DVA Gold and White card holders &mdash; we work alongside your DVA case manager.',
       image: '/images/team-staff.webp',
     },
@@ -544,7 +544,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Short-stay turnovers',
-      heading: 'Airbnb Turnovers<br />Guest-Ready<br />Every Time',
+      heading: 'Airbnb Turnovers<br />Guest-ready, every time',
       sub: 'Between-guest cleans presented and restocked ready for check-in &mdash; for single listings or a whole portfolio.',
       image: '/images/hero-bathroom.webp',
     },

@@ -49,6 +49,7 @@ const STANDALONE: Record<string, { service: string; location: string }> = {
   'end-of-lease-cleaning-port-macquarie': { service: 'end_of_lease_cleaning', location: 'port_macquarie' },
   'ndis-cleaning-geelong': { service: 'ndis_cleaning', location: 'geelong' },
   'ndis-cleaning-port-macquarie': { service: 'ndis_cleaning', location: 'port_macquarie' },
+  'dva-cleaning-port-macquarie': { service: 'veterans_cleaning', location: 'port_macquarie' },
 };
 
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');

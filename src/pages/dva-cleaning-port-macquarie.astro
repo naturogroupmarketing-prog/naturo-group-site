@@ -1,4 +1,15 @@
 ---
+// Local DVA page for Port Macquarie.
+//
+// Why it exists: the query "dva cleaning port macquarie" was being answered by
+// the national /services/veterans-cleaning/ page, which never names the town,
+// and a competitor with a Port Macquarie-specific DVA page outranked it. This
+// mirrors the NDIS Port Macquarie page, which already ranks locally.
+//
+// Every claim here is lifted from serviceDetail.ts (veterans-cleaning) and the
+// Port Macquarie data that already ships. Nothing about DVA eligibility,
+// programme rates, or provider-approval status is asserted — the case manager
+// confirms entitlement; we coordinate with them. Keep it that way.
 import Layout from '../layouts/Layout.astro';
 import RelatedGuides from '../components/RelatedGuides.astro';
 import ServiceHero from '../components/ServiceHero.astro';
@@ -10,18 +21,18 @@ import Providers from '../components/Providers.astro';
 import FAQ from '../components/FAQ.astro';
 import AppPromo from '../components/AppPromo.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import { site, ctaPrimary  } from '../data/site';
+import { site } from '../data/site';
 
-const pageUrl = `${site.url}/ndis-cleaning-port-macquarie`;
+const pageUrl = `${site.url}/dva-cleaning-port-macquarie`;
 
 const introBody = [
-  'NATURO GROUP supports NDIS participants across Port Macquarie and the wider Hastings region with everyday cleaning so home stays comfortable, safe and easy to live in. We work with plan-managed and self-managed participants every week, with a trained team that aims for consistency — because familiar faces matter.',
-  'We handle invoicing and reporting direct to your plan manager or support coordinator so you don\'t have the paperwork. Note: we are not currently a registered NDIS provider, so agency-managed (NDIA-managed) funding cannot be used.',
-  'Our plant-based, fragrance-conscious products are chosen specifically for participants with sensory sensitivities, respiratory conditions, allergies or compromised immune systems. We never use harsh chemical cleaners in our participants\' homes.',
+  'NATURO GROUP cleans for DVA Gold and White card holders across Port Macquarie and the wider Hastings region every week. We coordinate directly with your DVA case manager and supply detailed visit reports for your file, so the paperwork is handled and your home is looked after by people who take the role seriously.',
+  'Our team is police-checked and aims for consistency — the same friendly cleaner wherever possible, because familiar faces matter when someone is coming into your home. Visits are scheduled around your routine, medical appointments and care arrangements, not the other way round.',
+  'We use plant-based, fragrance-conscious products throughout. They are chosen for people with respiratory conditions, allergies, sensory sensitivities or compromised immune systems, and we never bring harsh chemical cleaners into a client\'s home.',
 ];
 
 const introStats = [
-  { num: 'NDIS', label: 'Plan & self-managed welcome' },
+  { num: 'DVA', label: 'Gold & White card holders welcome' },
   { num: '100%', label: 'Non-toxic products' },
   { num: '100%', label: 'Police-checked team' },
 ];
@@ -41,16 +52,16 @@ const inclusions = [
     items: [
       'Disinfect basins, showers and toilets',
       'Wipe mirrors, tiles and fittings',
-      'Change linen on request',
+      'Make beds, with a sheet change on request',
       'Dust surfaces and tidy rooms',
     ],
   },
   {
-    group: 'Plan support',
+    group: 'Working with DVA',
     items: [
-      'Direct invoicing to plan managers',
-      'Detailed service notes on request',
-      'Flexible scheduling around appointments',
+      'Coordinate with your DVA case manager',
+      'Detailed visit reports for your file',
+      'Consistent cleaning team where possible',
       'Police-checked, fully insured cleaners',
     ],
   },
@@ -58,53 +69,50 @@ const inclusions = [
 
 const portMacFaqs = [
   {
-    q: 'Does Naturo Group work with NDIS plan managers in Port Macquarie?',
-    a: 'Yes. We work with plan-managed and self-managed NDIS participants across Port Macquarie and the Hastings region. We provide detailed invoices and reports in the format your plan manager requires.',
+    q: 'Do you clean for DVA card holders in Port Macquarie?',
+    a: 'Yes. NATURO GROUP cleans for DVA Gold and White card holders across Port Macquarie and the Hastings region every week, and we coordinate with your DVA case manager throughout.',
   },
   {
-    q: 'How do I fund NDIS cleaning in Port Macquarie through my plan?',
-    a: 'NDIS cleaning falls under Core Supports — Assistance with Daily Life (line item 01). If you are self-managed, you pay us directly and we provide a receipt for your records. If you are plan-managed, we invoice your plan manager directly. Note: we are not a registered NDIS provider, so agency-managed (NDIA-managed) funding cannot currently be used.',
+    q: 'How do I arrange DVA-funded cleaning in Port Macquarie?',
+    a: 'Call 1300 876 472 or send an enquiry. We confirm your DVA card details and what help you need, then arrange visits in line with the plan your case manager has set. Your case manager confirms what you are eligible for — we handle the cleaning and the reporting.',
   },
   {
-    q: 'What areas around Port Macquarie do you cover for NDIS cleaning?',
+    q: 'What areas around Port Macquarie do you cover for DVA cleaning?',
     a: 'We service Port Macquarie and the wider Hastings region — including Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Lighthouse Beach, Settlement Point, Thrumster and surrounding areas.',
   },
   {
     q: 'Will I have the same cleaner each visit?',
-    a: 'We match you with a regular Port Macquarie team member wherever possible. Consistency matters enormously for participants who benefit from familiar routines and faces. If your regular cleaner is unavailable, we always notify you in advance.',
+    a: 'We match you with a regular Port Macquarie team member wherever possible. Consistency matters a great deal for clients who prefer familiar routines and faces. If your regular cleaner is unavailable, we always let you know in advance.',
   },
   {
-    q: 'Are your cleaners trained to work with people with disability?',
-    a: "Yes. Our approach is shaped by founder Anna Biram's registered nursing background — our team is trained in dignity of care, patient communication, infection control and adapting to the specific needs of each participant.",
+    q: 'Do you report back to my DVA case manager?',
+    a: 'Yes. We supply detailed visit reports for your case manager’s file, so there is a clear record of what was done and when without you having to chase it.',
   },
   {
-    q: "What eco-friendly products do you use in NDIS participants' homes?",
-    a: 'All our products are plant-based, non-toxic and fragrance-conscious — safe for participants with sensory sensitivities, respiratory conditions, allergies or compromised immune systems. We never use harsh chemical cleaners.',
+    q: 'Are your cleaners trained to work with older Australians and veterans?',
+    a: "Yes. Our approach is shaped by founder Anna Biram's registered nursing background — the team is trained in dignity of care, patient communication, infection control and adapting to each client's needs and routine.",
   },
   {
-    q: 'Can you also help with aged care cleaning in Port Macquarie?',
-    a: 'Yes. We work with My Aged Care providers and Home Care Package recipients across the Port Macquarie area. Aged care and NDIS cleaning can often be combined under a single service agreement.',
+    q: 'What products do you use in a DVA client’s home?',
+    a: 'All our products are plant-based, non-toxic and fragrance-conscious — chosen for people with respiratory conditions, allergies, sensory sensitivities or compromised immune systems. We never use harsh chemical cleaners.',
   },
   {
-    q: 'How do I get started with NDIS cleaning in Port Macquarie?',
-    a: "Call 1300 876 472 or complete our online enquiry. We'll confirm your funding type, agree on a cleaning schedule and frequency that suits your plan, and send a service agreement for you or your plan manager to sign.",
+    q: 'Can you also help with aged care or NDIS cleaning in Port Macquarie?',
+    a: 'Yes. We work with Home Care Package recipients and with plan-managed and self-managed NDIS participants across the Port Macquarie area. Where a household has more than one arrangement in place, we can usually run them under a single service agreement.',
   },
 ];
 
 const schema = [
   {
     '@context': 'https://schema.org',
-    // Service, not LocalBusiness: Google requires `address` on
-    // LocalBusiness, and NATURO GROUP has no premises to name here.
-    // `provider` joins this page to the single Organization entity in
-    // Layout.astro, which is what the old parentOrganization did.
+    // Service, not LocalBusiness: see the NDIS Port Macquarie page for why.
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
-    serviceType: 'NDIS cleaning',
+    serviceType: 'DVA cleaning',
     provider: { '@id': `${site.url}/#organization` },
-    name: 'NDIS Cleaning in Port Macquarie',
+    name: 'DVA Cleaning in Port Macquarie',
     description:
-      'NDIS cleaning services in Port Macquarie for plan-managed and self-managed participants. Police-checked, trained team using eco-conscious products. Serving Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
+      'In-home cleaning for DVA Gold and White card holders in Port Macquarie, coordinated with your DVA case manager. Police-checked, trained team using eco-conscious products. Serving Port Macquarie, Wauchope, Lake Cathie and the Hastings region.',
     url: pageUrl,
     image: {
       '@type': 'ImageObject',
@@ -114,6 +122,10 @@ const schema = [
       copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
       license: `${site.url}/terms-of-service`,
       acquireLicensePage: `${site.url}/privacy-policies`,
+    },
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'DVA Gold and White card holders',
     },
     areaServed: [
       { '@type': 'City', name: 'Port Macquarie', containedInPlace: { '@type': 'State', name: 'New South Wales' } },
@@ -129,12 +141,8 @@ const schema = [
       opens: '08:30',
       closes: '17:00',
     },
-    // No aggregateRating. The 4.7 / 48 figure is genuine and verified against
-    // the Google Business Profile — but a rating about the business, published
-    // on the business's own site, is self-serving and not eligible for a review
-    // snippet under Google's Review snippet policy for LocalBusiness and
-    // Organization. It cannot win stars in the SERP and it can attract a
-    // structured-data manual action. The stars come from the GBP itself.
+    // No aggregateRating — self-serving on the business's own site; the stars
+    // come from the Google Business Profile.
   },
   {
     '@context': 'https://schema.org',
@@ -142,7 +150,7 @@ const schema = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
       { '@type': 'ListItem', position: 2, name: 'Port Macquarie Cleaning', item: `${site.url}/cleaners-port-macquarie` },
-      { '@type': 'ListItem', position: 3, name: 'NDIS Cleaning Port Macquarie', item: pageUrl },
+      { '@type': 'ListItem', position: 3, name: 'DVA Cleaning Port Macquarie', item: pageUrl },
     ],
   },
   {
@@ -158,22 +166,22 @@ const schema = [
 ---
 
 <Layout
-  title="NDIS Cleaning Port Macquarie | 1300 876 472"
-  description="Need NDIS cleaning in Port Macquarie? Call NATURO GROUP on 1300 876 472. Plan- and self-managed welcome. Police-checked, eco-conscious team."
+  title="DVA Cleaning Port Macquarie | 1300 876 472"
+  description="Need DVA cleaning in Port Macquarie? Call NATURO GROUP on 1300 876 472. Gold & White card holders welcome. Police-checked, eco-conscious team."
   schema={schema}
 >
   <!-- 1. Hero -->
   <ServiceHero
-    eyebrow="NDIS cleaning · Port Macquarie"
-    heading="NDIS Cleaning Services<br />in Port Macquarie"
-    tagline="NDIS cleaning in Port Macquarie for plan-managed and self-managed participants. Police-checked. Eco-conscious. Fully insured."
+    eyebrow="DVA cleaning · Port Macquarie"
+    heading="DVA Cleaning Services<br />in Port Macquarie"
+    tagline="Respectful in-home cleaning for DVA Gold and White card holders in Port Macquarie, coordinated with your case manager. Police-checked. Eco-conscious. Fully insured."
     bg="/images/hero-staff-bathroom.webp"
   />
 
   <!-- 2. Intro -->
   <ServiceIntro
     kicker="About this service"
-    heading="Cleaning that supports your independence in Port Macquarie."
+    heading="A clean home, with the respect you’ve earned."
     body={introBody}
     stats={introStats}
   />
@@ -181,34 +189,34 @@ const schema = [
   <!-- 3. What's included -->
   <ServiceInclusions
     heading="Everything your home needs, every visit."
-    sub="Our Port Macquarie NDIS cleaning covers all the essentials — tailored to your plan goals and your home."
+    sub="Our Port Macquarie DVA cleaning covers the essentials — arranged around the plan your case manager has set and the way you like your home kept."
     groups={inclusions}
   />
 
-  <!-- 4. Funding types -->
+  <!-- 4. How it works -->
   <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
     <div class="container-site" style="max-width: 1160px;">
       <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
         <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 16px;">
-          How NDIS funding works for cleaning
+          How DVA cleaning works with us
         </h2>
         <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
-          NDIS cleaning is funded under <strong>Core Supports — Assistance with Daily Life</strong>. Here's how each plan type works.
+          Your DVA case manager confirms what you are entitled to. We take it from there.
         </p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
         {[
           {
-            type: 'Plan-managed',
-            desc: "We invoice your plan manager directly. You don't handle the money — just let us know who your plan manager is and we take care of the rest.",
+            type: '1. Confirm your details',
+            desc: 'Call us or send an enquiry. We confirm your DVA Gold or White card details and what help you need at home.',
           },
           {
-            type: 'Self-managed',
-            desc: 'You pay us directly and we provide a detailed receipt and tax invoice for your NDIS records. Simple and flexible.',
+            type: '2. Visits set to your plan',
+            desc: 'We arrange visits in line with the plan your case manager has set, scheduled around your routine and appointments.',
           },
           {
-            type: 'Agency-managed',
-            desc: 'We are not currently a registered NDIS provider, so NDIA-managed funding cannot be used. Plan-managed and self-managed participants are very welcome.',
+            type: '3. Reports for your file',
+            desc: 'After each visit we supply a detailed report to your case manager, so the record is kept without you having to chase it.',
           },
         ].map((f) => (
           <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);">
@@ -232,25 +240,24 @@ const schema = [
   <!-- 8. FAQ (Port Macquarie-specific) -->
   <FAQ
     items={portMacFaqs}
-    eyebrow="NDIS cleaning Port Macquarie — common questions"
-    subheading="Everything you need to know about NDIS cleaning in Port Macquarie and the Hastings region."
+    eyebrow="DVA cleaning Port Macquarie — common questions"
+    subheading="Everything you need to know about DVA cleaning in Port Macquarie and the Hastings region."
   />
 
   <!-- 9. App promo -->
   <AppPromo />
 
-  <!-- 10. Final CTA -->
+  <!-- 10. Related -->
   <RelatedGuides
     regionLabel="Port Macquarie"
     services={[
       { href: '/cleaners-port-macquarie/', text: 'Regular house cleaning in Port Macquarie' },
-      { href: '/dva-cleaning-port-macquarie/', text: 'DVA cleaning in Port Macquarie' },
-      { href: '/end-of-lease-cleaning-port-macquarie/', text: 'End of lease cleaning in Port Macquarie' },
+      { href: '/ndis-cleaning-port-macquarie/', text: 'NDIS cleaning in Port Macquarie' },
+      { href: '/services/aged-care-cleaning/', text: 'Aged care cleaning' },
     ]}
     guideSlugs={[
-      'ndis-cleaning-port-macquarie-guide',
-      'end-of-lease-cleaning-port-macquarie-checklist',
       'house-cleaning-cost-port-macquarie',
+      'ndis-cleaning-port-macquarie-guide',
     ]}
   />
 
@@ -261,7 +268,7 @@ const schema = [
     <div class="container-site" style="max-width: 1160px;">
       <div style="text-align: center; margin-bottom: 40px;">
         <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; color: #0f172a; margin: 0;">
-          NDIS cleaning across Port Macquarie and the Hastings
+          DVA cleaning across Port Macquarie and the Hastings
         </h2>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px;">
@@ -285,10 +292,10 @@ const schema = [
       </div>
       <div style="text-align: center;">
         <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(100, 116, 139); margin: 0 0 12px;">
-          Moving out of your rental in Port Macquarie? We also offer bond cleaning.
+          Living with disability in Port Macquarie? We also clean for NDIS participants.
         </p>
-        <a href="/end-of-lease-cleaning-port-macquarie/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
-          End of Lease Cleaning Port Macquarie &rarr;
+        <a href="/ndis-cleaning-port-macquarie/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
+          NDIS Cleaning Port Macquarie &rarr;
         </a>
       </div>
     </div>

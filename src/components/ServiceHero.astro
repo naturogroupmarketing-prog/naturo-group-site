@@ -37,7 +37,14 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
 
   <div class="relative container-site svc-hero-inner flex items-center">
     <div class="w-full max-w-[800px]">
-      <h1 class="svc-hero-h1" set:html={heading} />
+      {/* Same structure as the homepage and location heroes: a small kicker
+          line inside the <h1>, then two lines of heading. The eyebrow prop was
+          accepted and styled but never rendered, so every ServiceHero page
+          silently lost its label. */}
+      <h1 class="svc-hero-h1">
+        {eyebrow && <span class="svc-hero-kicker">{eyebrow}</span>}
+        <Fragment set:html={heading} />
+      </h1>
       <p class="svc-hero-tagline">{tagline}</p>
       <div class="svc-hero-cta-stack">
         <a href={ctaPrimary.href} data-quote-cta class="svc-hero-btn-primary">
@@ -103,14 +110,14 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
     opacity: 0.91;
     pointer-events: none;
   }
-  .svc-hero-eyebrow {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #FEB91C;
-    margin: 0 0 14px;
+  /* Matches .hero-h1-kicker on the homepage and location pages. */
+  .svc-hero-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .svc-hero-h1 {
     font-family: "Montserrat", "Poppins", sans-serif;

@@ -131,7 +131,7 @@ const methodCards = [
     <div class="ct-hero-overlay" aria-hidden="true"></div>
     <div class="container-site ct-hero-inner">
       <div class="ct-hero-content">
-        <h1 class="ct-hero-h1">Talk to a real<br />human, fast.</h1>
+        <h1 class="ct-hero-h1"><span class="ct-hero-h1-kicker">Contact us</span>Talk to a real<br />human, fast.</h1>
         <p class="ct-hero-tagline">Phones answered live. Emails replied within the hour.</p>
         <div class="ct-hero-ctas">
           <a href={ctaPhone.href} class="ct-hero-btn-primary">
@@ -420,6 +420,15 @@ const methodCards = [
     letter-spacing: -0.015em;
     color: #ffffff;
     margin: 0;
+  }
+  /* Matches .hero-h1-kicker on the homepage and location pages. */
+  .ct-hero-h1-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .ct-hero-tagline {
     font-family: "Poppins", sans-serif;

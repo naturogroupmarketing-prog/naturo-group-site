@@ -241,7 +241,7 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
     <div class="cr-hero-overlay" aria-hidden="true"></div>
     <div class="container-site cr-hero-inner">
       <div class="cr-hero-content">
-        <h1 class="cr-hero-h1">Cleaning, on better terms.<br />Join the team.</h1>
+        <h1 class="cr-hero-h1"><span class="cr-hero-h1-kicker">Careers</span>Cleaning, on better terms.<br />Join the team.</h1>
         <p class="cr-hero-tagline">Above-award pay, flexible hours and clients who know your name.</p>
         <div class="cr-hero-ctas">
           <a href="#apply" class="cr-hero-btn-primary">
@@ -588,6 +588,15 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
     letter-spacing: -0.023em;
     color: #ffffff;
     margin: 0;
+  }
+  /* Matches .hero-h1-kicker on the homepage and location pages. */
+  .cr-hero-h1-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .cr-hero-tagline {
     font-family: "Poppins", sans-serif;

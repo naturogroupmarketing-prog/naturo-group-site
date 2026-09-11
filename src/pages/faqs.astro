@@ -37,7 +37,7 @@ const schema = [
     <div class="ph-overlay" aria-hidden="true"></div>
     <div class="container-site ph-inner">
       <div class="ph-content">
-        <h1 class="ph-h1">Frequently asked<br />questions.</h1>
+        <h1 class="ph-h1"><span class="ph-h1-kicker">FAQs</span>Frequently asked<br />questions.</h1>
         <p class="ph-tagline">Everything you need to know about Naturo Group cleaning.</p>
         <div class="ph-ctas">
           <a href={ctaPrimary.href} data-quote-cta class="ph-btn-primary">
@@ -120,6 +120,15 @@ const schema = [
     font-family: "Poppins", sans-serif; font-weight: 300;
     font-size: clamp(30px, 5.2vw, 66px); line-height: 1.08;
     letter-spacing: -0.015em; color: #ffffff; margin: 0;
+  }
+  /* Matches .hero-h1-kicker on the homepage and location pages. */
+  .ph-h1-kicker {
+    display: block;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 6px;
   }
   .ph-tagline {
     font-family: "Poppins", sans-serif; font-weight: 400;

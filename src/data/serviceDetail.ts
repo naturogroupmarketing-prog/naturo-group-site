@@ -416,7 +416,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     contentUpdated: '2026-08-30',
     hero: {
       eyebrow: 'Department of Veterans\u2019 Affairs',
-      heading: 'Veterans (DVA) Cleaning<br />With your case manager',
+      heading: 'DVA Cleaning<br />With your case manager',
       sub: 'Respectful, reliable in-home cleaning for DVA Gold and White card holders &mdash; we work alongside your DVA case manager.',
       image: '/images/team-staff.webp',
     },

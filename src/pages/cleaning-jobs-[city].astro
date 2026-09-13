@@ -1,0 +1,240 @@
+---
+// Per-city hiring page: /cleaning-jobs-port-macquarie/, /cleaning-jobs-geelong/
+//
+// Exists because "cleaning jobs <city>" searches had nothing on the site to
+// land on — only the national /career/ page, whose single JobPosting spans
+// eight cities. Google for Jobs ranks one-job-one-place listings; that is how
+// Indeed and Seek show up for these searches. Each city here gets its own
+// posting with a single jobLocation.
+//
+// All pay, requirement and process copy comes from src/data/career.ts, the
+// same source the national page uses. Nothing here is city-specific except
+// the suburbs served and the kind of work — both taken from pages the site
+// already publishes.
+import Layout from '../layouts/Layout.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import FAQ from '../components/FAQ.astro';
+import { site } from '../data/site';
+import { benefits, wellLook, niceToHave, steps, careerCities, payRange, type CareerCity } from '../data/career';
+
+export function getStaticPaths() {
+  return careerCities.map((c) => ({ params: { city: c.slug }, props: { c } }));
+}
+
+const { c } = Astro.props as { c: CareerCity };
+const pageUrl = `${site.url}/cleaning-jobs-${c.slug}`;
+const applyHref = '/career/#apply';
+
+// Same posting window the national page uses.
+const today = new Date();
+const validThrough = new Date(today);
+validThrough.setFullYear(validThrough.getFullYear() + 1);
+const isoToday = today.toISOString().split('T')[0];
+const isoValidThrough = validThrough.toISOString().split('T')[0];
+
+const introStats = [
+  { num: `$${payRange.min}–$${payRange.max}`, label: 'Per hour, above award' },
+  { num: '7–14', label: 'Days from apply to first shift' },
+  { num: '100%', label: 'Products & equipment supplied' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: `Cleaner — ${c.city}`,
+    description: c.intro.join(' '),
+    datePosted: isoToday,
+    validThrough: isoValidThrough,
+    employmentType: ['PART_TIME', 'FULL_TIME', 'CONTRACTOR'],
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: site.name,
+      sameAs: site.url,
+      logo: `${site.url}/images/logo.png`,
+    },
+    // One place, on purpose. streetAddress deliberately omitted: cleaners work
+    // in clients' homes, and there is no site address to give.
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: c.city,
+        addressRegion: c.state,
+        postalCode: c.postcode,
+        addressCountry: 'AU',
+      },
+    },
+    applicantLocationRequirements: { '@type': 'Country', name: 'Australia' },
+    baseSalary: {
+      '@type': 'MonetaryAmount',
+      currency: payRange.currency,
+      value: {
+        '@type': 'QuantitativeValue',
+        minValue: payRange.min,
+        maxValue: payRange.max,
+        unitText: payRange.unit,
+      },
+    },
+    industry: 'Residential & Disability Support Cleaning',
+    qualifications:
+      'Reliable transport in most areas, working rights in Australia, willingness to undergo a Police Check (and WWCC for NDIS work).',
+    url: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Careers', item: `${site.url}/career` },
+      { '@type': 'ListItem', position: 3, name: `Cleaning Jobs ${c.city}`, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+
+const h2 = "font-family: 'Poppins', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 300; line-height: 1.12; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 14px;";
+const lede = "font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;";
+const card = "background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 26px 24px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);";
+const cardH3 = "font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 500; line-height: 1.25; color: #0f172a; margin: 0 0 10px;";
+const cardP = "font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;";
+const listItem = "font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300; line-height: 1.55; color: rgb(51, 65, 85); padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid rgba(15,23,42,0.06);";
+const tick = "position: absolute; left: 0; top: 13px; width: 16px; height: 16px; border-radius: 50%; background: #467FF7; color: #fff; font-size: 11px; line-height: 16px; text-align: center;";
+const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 999px; background: #467FF7; color: #fff; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; text-decoration: none;";
+---
+
+<Layout
+  title={`Cleaning Jobs ${c.city} | Cleaner Vacancies`}
+  description={`Cleaning jobs in ${c.city}? NATURO GROUP is hiring. $${payRange.min}–$${payRange.max}/hr above award, flexible hours, products supplied. Apply in two minutes.`}
+  schema={schema}
+>
+  <!-- 1. Hero -->
+  <ServiceHero
+    eyebrow={`Cleaning jobs · ${c.city}`}
+    heading={`Cleaning Jobs<br />in ${c.city}`}
+    tagline={`Above-award pay, flexible hours and repeat clients across ${c.region}.`}
+    bg="/images/hero-staff-bathroom.webp"
+    primaryCta={{ href: applyHref, text: 'Apply now' }}
+  />
+
+  <!-- 2. Intro -->
+  <ServiceIntro
+    kicker="Now hiring"
+    heading={`Join the NATURO GROUP team in ${c.city}.`}
+    body={c.intro}
+    stats={introStats}
+  />
+
+  <!-- 3. Pay & benefits -->
+  <section style="background: #f8fafc; padding: clamp(72px, 9vw, 112px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
+        <h2 style={h2}>What the job pays, and what comes with it</h2>
+        <p style={lede}>The same terms for every cleaner on the team, wherever you are based.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+        {benefits.map((b) => (
+          <div style={card}>
+            <h3 style={cardH3}>{b.title}</h3>
+            <p style={cardP}>{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Who we're looking for -->
+  <section style="background: #ffffff; padding: clamp(72px, 9vw, 112px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
+        <h2 style={h2}>Who we’re looking for in {c.city}</h2>
+        <p style={lede}>Experience helps but isn’t required — attitude and reliability are what we hire on.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+        <div>
+          <h3 style={cardH3}>What we look for</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            {wellLook.map((t) => (<li style={listItem}><span style={tick} aria-hidden="true">✓</span>{t}</li>))}
+          </ul>
+        </div>
+        <div>
+          <h3 style={cardH3}>Nice to have</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            {niceToHave.map((t) => (<li style={listItem}><span style={tick} aria-hidden="true">+</span>{t}</li>))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How to apply -->
+  <section style="background: #f8fafc; padding: clamp(72px, 9vw, 112px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
+        <h2 style={h2}>From application to first shift</h2>
+        <p style={lede}>Typically 7–14 days, start to finish.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 40px;">
+        {steps.map((s) => (
+          <div style={card}>
+            <div style="font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #467FF7; margin-bottom: 10px;">{s.n}</div>
+            <h3 style={cardH3}>{s.title}</h3>
+            <p style={cardP}>{s.body}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align: center;">
+        <a href={applyHref} style={btn}>
+          <span>Apply for cleaning jobs in {c.city}</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <p style={`${cardP} margin-top: 14px;`}>Two-minute form. Your local coordinator calls within 48 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <FAQ
+    items={c.faqs}
+    eyebrow={`Cleaning jobs ${c.city} — common questions`}
+    subheading={`What cleaners ask before joining the ${c.city} team.`}
+  />
+
+  <!-- 7. Where the work is -->
+  <section style="background: #ffffff; padding: clamp(56px, 7vw, 88px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 style={`${h2} font-size: clamp(24px, 3vw, 34px);`}>Where our {c.city} cleaners work</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px;">
+        {c.suburbs.map((s) => (
+          <a
+            href={`/${s.slug}/`}
+            style="display: inline-block; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(15,23,42,0.12); font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71, 85, 105); text-decoration: none;"
+          >
+            {s.name}
+          </a>
+        ))}
+      </div>
+      <div style="text-align: center;">
+        <p style={`${cardP} margin-bottom: 10px;`}>Looking for a cleaner rather than a job?</p>
+        <a href={c.hubHref} style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
+          {c.hubLabel} &rarr;
+        </a>
+        <span style="margin: 0 10px; color: rgba(15,23,42,0.3);">·</span>
+        <a href="/career/" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">
+          All cleaning jobs &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

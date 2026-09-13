@@ -8,6 +8,10 @@ interface Props {
   bg?: string;
   /** Optional slideshow — when provided, overrides `bg` and rotates through images. */
   slides?: string[];
+  /** Replace the default "Get a Free Quote" button. The default carries the
+   *  data-quote-cta marker that opens the residential quote popup, which is
+   *  wrong on a hiring page — a job-seeker is not asking for a quote. */
+  primaryCta?: { href: string; text: string };
 }
 
 const {
@@ -16,6 +20,7 @@ const {
   tagline = site.tagline,
   bg = '/images/hero-staff-bathroom.webp',
   slides,
+  primaryCta,
 } = Astro.props;
 const useSlideshow = Array.isArray(slides) && slides.length > 1;
 ---
@@ -47,12 +52,21 @@ const useSlideshow = Array.isArray(slides) && slides.length > 1;
       </h1>
       <p class="svc-hero-tagline">{tagline}</p>
       <div class="svc-hero-cta-stack">
+        {primaryCta ? (
+          <a href={primaryCta.href} class="svc-hero-btn-primary">
+            <span>{primaryCta.text}</span>
+            <span class="svc-hero-btn-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+        ) : (
         <a href={ctaPrimary.href} data-quote-cta class="svc-hero-btn-primary">
           <span>{ctaPrimary.text}</span>
           <span class="svc-hero-btn-icon" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </span>
         </a>
+        )}
         <a href={ctaPhone.href} class="svc-hero-btn-secondary">
           <span>{ctaPhone.text}</span>
           <span class="svc-hero-btn-icon" aria-hidden="true">

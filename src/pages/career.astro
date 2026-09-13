@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { site, ctaPrimary, ctaPhone } from '../data/site';
+import { benefits, wellLook, niceToHave, steps, careerCities, payRange } from '../data/career';
 
 const heroSlides = [
   '/images/hero-staff-bathroom.webp',
@@ -98,8 +99,8 @@ const schema = [
       currency: 'AUD',
       value: {
         '@type': 'QuantitativeValue',
-        minValue: 32,
-        maxValue: 42,
+        minValue: payRange.min,
+        maxValue: payRange.max,
         unitText: 'HOUR',
       },
     },
@@ -123,74 +124,6 @@ const schema = [
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
-  },
-];
-
-const benefits = [
-  {
-    title: 'Above-award pay',
-    body: 'Top performers earn $32–$42 per hour all-in, paid weekly. Travel reimbursed for employees between jobs.',
-  },
-  {
-    title: 'Pick your hours',
-    body: 'You set your availability. School-hours-only, three days a week, full-time — we build a schedule around your life.',
-  },
-  {
-    title: 'Local clients near you',
-    body: 'We route you to repeat clients in your suburb. Less driving, more productive hours, real relationships.',
-  },
-  {
-    title: 'Eco products supplied',
-    body: 'All non-toxic products, microfibre cloths and equipment provided. No buying or carrying chemicals around.',
-  },
-  {
-    title: 'Paid induction',
-    body: 'A senior cleaner trains you on your first shift — paid. Ongoing upskilling for end-of-lease, NDIS and insurance work.',
-  },
-  {
-    title: 'Real coordinator support',
-    body: 'Your area coordinator is one phone call away. Shift swaps, client questions, awkward situations — you are never on your own.',
-  },
-];
-
-const wellLook = [
-  'Reliable, on time, and you do what you say you\u2019ll do',
-  'Eye for detail — you notice the smudge on the tap',
-  'Respectful of clients, their homes and their privacy',
-  'Working rights in Australia',
-  'Willing to undergo a Police Check (we help with the cost)',
-  'Conversational English to read instructions and chat with clients',
-];
-
-const niceToHave = [
-  'Cleaning, hospitality, hotel housekeeping or aged-care experience',
-  'Driver\u2019s licence and reliable transport',
-  'Working with Children Check (or willing to apply for one)',
-  'First Aid certificate',
-  'Experience with NDIS or aged care participants',
-  'Bond/end-of-lease cleaning experience',
-];
-
-const steps = [
-  {
-    n: '01',
-    title: 'Apply online',
-    body: 'Two-minute form below. Tell us where you\u2019re based, your availability and a little about you.',
-  },
-  {
-    n: '02',
-    title: 'Phone chat',
-    body: 'Quick 10-minute call with your local coordinator within 48 hours of a successful application.',
-  },
-  {
-    n: '03',
-    title: 'Meet the team',
-    body: 'In-person interview at a local cafe. Bring ID, references and your availability calendar.',
-  },
-  {
-    n: '04',
-    title: 'Paid induction',
-    body: 'Shadow a senior cleaner for your first shift — paid from minute one. You\u2019re on the team.',
   },
 ];
 
@@ -365,6 +298,25 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  <!-- 5b. Hiring locally — links the per-city job pages so they are not
+       orphans. These are the pages a "cleaning jobs <city>" search lands on. -->
+  <section class="cr-local-section" aria-labelledby="cr-local-h2">
+    <div class="container-site cr-local-inner">
+      <h2 id="cr-local-h2" class="cr-local-h2">Hiring now in these areas</h2>
+      <p class="cr-local-lede">Local pages with the suburbs we cover, the kind of work on offer and what it pays.</p>
+      <div class="cr-local-grid">
+        {careerCities.map((c) => (
+          <a class="cr-local-card" href={`/cleaning-jobs-${c.slug}/`}>
+            <span class="cr-local-kicker">Cleaning jobs</span>
+            <span class="cr-local-city">{c.city}</span>
+            <span class="cr-local-region">{c.region}</span>
+            <span class="cr-local-arrow" aria-hidden="true">View local jobs &rarr;</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -1337,4 +1289,17 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
     border-color: rgba(255, 255, 255, 0.6);
     color: #ffffff;
   }
+
+  /* ---- 5b. Hiring locally ---- */
+  .cr-local-section { background: #ffffff; padding: clamp(64px, 8vw, 96px) 0; border-top: 1px solid rgba(15,23,42,0.06); }
+  .cr-local-inner { max-width: 1160px; }
+  .cr-local-h2 { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3.6vw, 42px); font-weight: 300; line-height: 1.15; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 10px; text-align: center; }
+  .cr-local-lede { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 300; line-height: 1.6; color: rgb(71,85,105); margin: 0 auto 36px; max-width: 640px; text-align: center; }
+  .cr-local-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; max-width: 760px; margin: 0 auto; }
+  .cr-local-card { display: flex; flex-direction: column; gap: 4px; padding: 26px 26px 22px; background: #fff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; text-decoration: none; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05); transition: box-shadow .2s, transform .2s; }
+  .cr-local-card:hover { box-shadow: 0 8px 28px rgba(15,23,42,0.10); transform: translateY(-2px); }
+  .cr-local-kicker { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #467FF7; }
+  .cr-local-city { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 500; color: #0f172a; line-height: 1.2; }
+  .cr-local-region { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71,85,105); }
+  .cr-local-arrow { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; margin-top: 10px; }
 </style>

@@ -30,6 +30,9 @@ interface RegionLinks {
   label: string;
   services: { href: string; text: string }[];
   guideSlugs: string[];
+  /** The region's hiring page, where one exists. Rendered as a one-line
+   *  aside so job-seekers who land on a service page can find it. */
+  hiring?: { href: string; text: string };
 }
 
 // Keyed by the region strings used in src/data/suburbs.ts. Geelong is spread
@@ -39,6 +42,7 @@ interface RegionLinks {
 const BY_REGION: Record<string, RegionLinks> = {
   geelong: {
     label: 'Geelong',
+    hiring: { href: '/cleaning-jobs-geelong/', text: 'cleaning jobs in Geelong' },
     services: [
       { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
       { href: '/end-of-lease-cleaning-geelong/', text: 'end of lease cleaning in Geelong' },
@@ -52,6 +56,7 @@ const BY_REGION: Record<string, RegionLinks> = {
   },
   portMacquarie: {
     label: 'Port Macquarie',
+    hiring: { href: '/cleaning-jobs-port-macquarie/', text: 'cleaning jobs in Port Macquarie' },
     services: [
       { href: '/ndis-cleaning-port-macquarie/', text: 'NDIS cleaning in Port Macquarie' },
       { href: '/dva-cleaning-port-macquarie/', text: 'DVA cleaning in Port Macquarie' },
@@ -119,6 +124,12 @@ const guides = links
           </div>
         )}
       </div>
+
+      {links.hiring && (
+        <p class="lsl-hiring">
+          Want to work with us? We’re hiring — see <a href={links.hiring.href}>{links.hiring.text}</a>.
+        </p>
+      )}
     </div>
   </section>
 )}
@@ -135,6 +146,15 @@ const guides = links
     color: rgb(15, 23, 42);
     margin: 0 0 8px;
   }
+  .lsl-hiring {
+    margin: 22px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    font-size: 0.95rem;
+    color: rgb(91, 94, 102);
+  }
+  .lsl-hiring a { color: #467FF7; font-weight: 500; text-decoration: none; }
+  .lsl-hiring a:hover { text-decoration: underline; }
   .lsl-sub {
     font-size: 1rem;
     color: rgb(91, 94, 102);

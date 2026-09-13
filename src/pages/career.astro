@@ -371,13 +371,20 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
         </p>
       </div>
 
+      {/* action= is the no-JS fallback only. With JS the submit is intercepted
+          below and delivered to the CRM the same way the quote form is, so an
+          application lands in the Inbox instead of depending on the applicant
+          having a configured mail client. */}
       <form
         class="cr-form"
+        id="cr-apply-form"
         action={`mailto:${site.email}`}
         method="post"
         enctype="text/plain"
         aria-describedby="cr-form-note"
+        novalidate
       >
+        <label class="cr-trap" aria-hidden="true">Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
         <div class="cr-form-grid">
           <label class="cr-field">
             <span class="cr-field-label">Full name<span aria-hidden="true">*</span></span>
@@ -455,15 +462,121 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
         </label>
 
         <p id="cr-form-note" class="cr-form-note">
-          Submitting opens your email client with the details ready to send. We&rsquo;ll review every application
-          and reply within 48 hours.
+          We&rsquo;ll review every application and your local coordinator will call within 48 hours.
         </p>
+        <p class="cr-form-status" id="cr-form-status" role="status" aria-live="polite" hidden></p>
 
         <button type="submit" class="cr-submit"><span>Send my application</span><span class="cr-submit-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
       </form>
+
+      <div class="cr-apply-done" id="cr-apply-done" hidden tabindex="-1">
+        <h3 class="cr-apply-done-h3">Application received.</h3>
+        <p class="cr-apply-done-p">
+          Thanks &mdash; it&rsquo;s with your local coordinator now. Expect a call within 48 hours.
+          If you don&rsquo;t hear from us, ring <a href={site.phoneHref} class="cr-apply-link">{site.phone}</a>.
+        </p>
+      </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  // Deliver the application to the CRM via the shared lead helper. Falls back
+  // to the form's own mailto action if the helper is missing.
+  (function () {
+    var form = document.getElementById('cr-apply-form');
+    var status = document.getElementById('cr-form-status');
+    var done = document.getElementById('cr-apply-done');
+    if (!form || !status || !done) return;
+
+    function uuid() {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (Math.random() * 16) | 0;
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      });
+    }
+    function val(name) {
+      var el = form.elements[name];
+      if (!el) return '';
+      if (el.length && el[0] && el[0].type === 'radio') {
+        for (var i = 0; i < el.length; i++) if (el[i].checked) return el[i].value;
+        return '';
+      }
+      return String(el.value || '').trim();
+    }
+    function checked(name) {
+      var out = [];
+      var els = form.querySelectorAll('input[name="' + name + '"]:checked');
+      for (var i = 0; i < els.length; i++) out.push(els[i].value);
+      return out;
+    }
+    function showStatus(text, isError) {
+      status.textContent = text;
+      status.hidden = false;
+      status.classList.toggle('is-error', !!isError);
+    }
+
+    var submitting = false;
+    form.addEventListener('submit', function (ev) {
+      if (!window.naturoLeads || typeof window.naturoLeads.deliver !== 'function') return; // no-JS path: mailto
+      ev.preventDefault();
+      if (submitting) return;
+
+      // Native validation, since the form is novalidate for the JS path.
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitting = true;
+      var btn = form.querySelector('.cr-submit');
+      if (btn) btn.disabled = true;
+      showStatus('Sending your application…', false);
+
+      var payload = {
+        name: val('full_name'),
+        email: val('email'),
+        phone: val('mobile'),
+        message: val('message'),
+        // Labelled into the Inbox message by the CRM's intake.
+        suburb_postcode: val('suburb_postcode'),
+        state: val('state'),
+        experience: val('experience'),
+        transport: val('transport'),
+        availability: checked('availability'),
+        // Subject becomes "Website enquiry — Job application", so it is never
+        // mistaken for a cleaning quote in the Inbox.
+        service: 'Job application',
+        lead_type: 'job_application',
+        form_location: 'career-application',
+        lead_id: uuid(),
+        page: window.location.pathname,
+      };
+
+      window.naturoLeads.deliver(payload).then(function (r) {
+        if (r && r.delivered) {
+          form.hidden = true;
+          done.hidden = false;
+          done.focus();
+          try {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.lead_id, lead_type: 'job_application' });
+            }
+          } catch (e) {}
+        } else {
+          submitting = false;
+          if (btn) btn.disabled = false;
+          showStatus(window.naturoLeads.failureMessage(), true);
+        }
+      }).catch(function () {
+        submitting = false;
+        if (btn) btn.disabled = false;
+        showStatus(window.naturoLeads.failureMessage(), true);
+      });
+    });
+  })();
+</script>
 
 <style>
   /* ---------- Hero — same composition as homepage ExperienceBanner
@@ -1302,4 +1415,13 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   .cr-local-city { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 500; color: #0f172a; line-height: 1.2; }
   .cr-local-region { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71,85,105); }
   .cr-local-arrow { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; margin-top: 10px; }
+
+  /* ---- application delivery states ---- */
+  .cr-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .cr-form-status { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: rgb(71,85,105); margin: 0 0 14px; }
+  .cr-form-status.is-error { color: #b42318; }
+  .cr-submit:disabled { opacity: .6; cursor: default; }
+  .cr-apply-done { background: #fff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 32px 30px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05); outline: none; }
+  .cr-apply-done-h3 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 500; color: #0f172a; margin: 0 0 10px; }
+  .cr-apply-done-p { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300; line-height: 1.65; color: rgb(71,85,105); margin: 0; }
 </style>

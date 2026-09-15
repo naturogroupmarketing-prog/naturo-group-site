@@ -18,7 +18,17 @@ export const site = {
   // Replace with your actual Google Business Profile review link.
   // Get it from: Google Maps → search your business → Share → Copy link,
   // then append &review=1 — or use the direct short link from your GBP dashboard.
-  googleReviewUrl: 'https://g.page/r/CZxUFyLhnHLbEAE/review',
+  // This is the GEELONG profile's link, kept for pages that have not been
+  // taught regions yet. Prefer googleReviewUrls below — a Port Macquarie
+  // customer sent here reviews the wrong business.
+  googleReviewUrl: 'https://g.page/r/CZxUFyLhnHLbEBM/review',
+  // One link per Google Business Profile, taken from each profile's own
+  // "Ask for reviews" dialog on 2026-09-15. Verify there before changing.
+  googleReviewUrls: [
+    { label: 'Port Macquarie', href: 'https://g.page/r/CQKek-fscp3mEBM/review' },
+    { label: 'Geelong', href: 'https://g.page/r/CZxUFyLhnHLbEBM/review' },
+    { label: 'Casey / Berwick', href: 'https://g.page/r/CUoitTStKa4KEBM/review' },
+  ],
   social: {
     facebook: 'https://www.facebook.com/naturogroup',
     instagram: 'https://www.instagram.com/naturogroup/',

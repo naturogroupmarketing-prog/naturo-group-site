@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { ctaPhone, site } from '../data/site';
-const reviewUrl = site.googleReviewUrl;
 ---
 
 <Layout
@@ -60,9 +59,13 @@ const reviewUrl = site.googleReviewUrl;
       <p class="ty-review-body">
         Reviews help local families find a cleaner they can trust &mdash; and our small team really appreciates every one. Takes under a minute.
       </p>
-      <a class="ty-review-btn" href={reviewUrl} target="_blank" rel="noopener noreferrer">
-        Leave us a Google review &#8599;
-      </a>
+      <div class="ty-review-btns">
+        {site.googleReviewUrls.map((r) => (
+          <a class="ty-review-btn" href={r.href} target="_blank" rel="noopener noreferrer">
+            Review {r.label} &#8599;
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -249,6 +252,12 @@ const reviewUrl = site.googleReviewUrl;
     line-height: 1.7;
     color: #324A6D;
     margin: 0 0 28px;
+  }
+  .ty-review-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
   .ty-review-btn {
     display: inline-block;

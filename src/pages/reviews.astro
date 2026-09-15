@@ -136,9 +136,14 @@ const stats = [
         Google reviews help local families find a cleaner they can trust. It takes under a minute
         and makes a real difference to our small team.
       </p>
-      <a class="review-cta-btn" href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer">
-        Leave us a Google review &#8599;
-      </a>
+      <p class="review-cta-body">Which team looked after you?</p>
+      <div class="review-cta-btns">
+        {site.googleReviewUrls.map((r) => (
+          <a class="review-cta-btn" href={r.href} target="_blank" rel="noopener noreferrer">
+            Review {r.label} &#8599;
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -197,6 +202,12 @@ const stats = [
     line-height: 1.7;
     color: #324A6D;
     margin: 0 0 28px;
+  }
+  .review-cta-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
   .review-cta-btn {
     display: inline-block;

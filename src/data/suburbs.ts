@@ -1,3 +1,4 @@
+import { verifiedRatings } from './site';
 // Single source of truth for every suburb / location landing page.
 // Each entry powers /src/pages/[suburb].astro via getStaticPaths().
 // Slugs MUST match those in src/data/site.ts → footerLocations so the footer
@@ -142,7 +143,9 @@ export const suburbs: Suburb[] = [
     hero: {
       h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Port Macquarie'],
     contentUpdated: '2026-08-27',
-      tagline: 'House cleaners in Port Macquarie — trusted, trained and thorough across the Mid North Coast',
+      // The one line an ad-clicker reads under the H1. The PMQ ads promise this
+      // rating, so it must be on the page — and it must be the verified figure.
+      tagline: `Rated ${verifiedRatings.portMacquarie!.ratingValue}/5 from ${verifiedRatings.portMacquarie!.reviewCount} local reviews`,
     },
     intro: {
       kicker: 'House cleaning in Port Macquarie',

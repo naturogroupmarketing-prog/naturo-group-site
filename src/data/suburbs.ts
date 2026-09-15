@@ -254,7 +254,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Wauchope families, retirees and rural homeowners across the Hastings Valley.',
     },
     seo: {
-      title: 'House Cleaning Wauchope NSW | 1300 876 472',
+      title: 'House Cleaners Wauchope NSW | 1300 876 472',
       description: 'Need house cleaning in Wauchope? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
@@ -333,7 +333,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Lake Cathie families, holiday homeowners and retirees on the Mid North Coast.',
     },
     seo: {
-      title: 'House Cleaning Lake Cathie NSW | 1300 876 472',
+      title: 'House Cleaners Lake Cathie NSW | 1300 876 472',
       description: 'Need house cleaning in Lake Cathie? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Holiday-let turnovers, regular & deep cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Bonny Hills', 'Lakewood', 'King Creek', 'Settlement Point', 'North Haven', 'Dunbogan', 'Wauchope'],
@@ -412,7 +412,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Bonny Hills families, holiday homeowners and the Rainbow Beach community.',
     },
     seo: {
-      title: 'House Cleaning Bonny Hills NSW | 1300 876 472',
+      title: 'House Cleaners Bonny Hills NSW | 1300 876 472',
       description: 'Need house cleaning in Bonny Hills? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'North Haven', 'Dunbogan', 'Laurieton', 'Wauchope', 'King Creek', 'Settlement Point'],
@@ -491,7 +491,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Laurieton families, retirees and Camden Haven holiday homeowners.',
     },
     seo: {
-      title: 'House Cleaning Laurieton NSW | 1300 876 472',
+      title: 'House Cleaners Laurieton NSW | 1300 876 472',
       description: 'Need house cleaning in Laurieton? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'North Haven', 'Dunbogan', 'Bonny Hills', 'Lake Cathie', 'Camden Head', 'Wauchope', 'Kew'],
@@ -570,7 +570,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by North Haven families, retirees and holiday homeowners on the Camden Haven.',
     },
     seo: {
-      title: 'House Cleaning North Haven NSW | 1300 876 472',
+      title: 'House Cleaners North Haven NSW | 1300 876 472',
       description: 'Need house cleaning in North Haven? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Laurieton', 'Dunbogan', 'Camden Head', 'Bonny Hills', 'Lake Cathie', 'Wauchope'],
@@ -649,7 +649,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Dunbogan waterfront residents, holiday homeowners and the Camden Haven community.',
     },
     seo: {
-      title: 'House Cleaning Dunbogan NSW | 1300 876 472',
+      title: 'House Cleaners Dunbogan NSW | 1300 876 472',
       description: 'Need house cleaning in Dunbogan? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Laurieton', 'North Haven', 'Camden Head', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
@@ -728,7 +728,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Camden Head residents and holiday homeowners on the Mid North Coast.',
     },
     seo: {
-      title: 'House Cleaning Camden Head NSW | 1300 876 472',
+      title: 'House Cleaners Camden Head NSW | 1300 876 472',
       description: 'Need house cleaning in Camden Head? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Dunbogan', 'North Haven', 'Laurieton', 'Bonny Hills', 'Port Macquarie', 'Lake Cathie'],
@@ -807,7 +807,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Telegraph Point farming families and rural homeowners across the Hastings Valley.',
     },
     seo: {
-      title: 'House Cleaning Telegraph Point | 1300 876 472',
+      title: 'House Cleaners Telegraph Point | 1300 876 472',
       description: 'Need house cleaning in Telegraph Point? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Suitable for rural and hobby-farm homes.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Beechwood', 'Bago', 'Kendall', 'Comboyne', 'Rollands Plains'],
@@ -886,7 +886,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Sancrox families and semi-rural homeowners near Port Macquarie.',
     },
     seo: {
-      title: 'House Cleaning Sancrox NSW | 1300 876 472',
+      title: 'House Cleaners Sancrox NSW | 1300 876 472',
       description: 'Need house cleaning in Sancrox? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Wauchope', 'King Creek', 'Lakewood', 'Telegraph Point', 'Beechwood', 'Settlement Point'],
@@ -965,7 +965,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Kendall families, artists and the Manning Valley community.',
     },
     seo: {
-      title: 'House Cleaning Kendall NSW | 1300 876 472',
+      title: 'House Cleaners Kendall NSW | 1300 876 472',
       description: 'Need house cleaning in Kendall? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & end-of-lease services.',
     },
     nearbySuburbs: ['Wauchope', 'Comboyne', 'Port Macquarie', 'Telegraph Point', 'Rollands Plains', 'Beechwood', 'Laurieton'],
@@ -1044,7 +1044,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Comboyne farming families and plateau homeowners.',
     },
     seo: {
-      title: 'House Cleaning Comboyne NSW | 1300 876 472',
+      title: 'House Cleaners Comboyne NSW | 1300 876 472',
       description: 'Need house cleaning in Comboyne? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property cleaning.',
     },
     nearbySuburbs: ['Kendall', 'Wauchope', 'Port Macquarie', 'Telegraph Point', 'Beechwood', 'Rollands Plains'],
@@ -1123,7 +1123,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Beechwood families, horse-property owners and Hastings Valley residents.',
     },
     seo: {
-      title: 'House Cleaning Beechwood NSW | 1300 876 472',
+      title: 'House Cleaners Beechwood NSW | 1300 876 472',
       description: 'Need house cleaning in Beechwood? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Port Macquarie', 'Sancrox', 'Telegraph Point', 'Bago', 'Pembrooke', 'King Creek'],
@@ -1202,7 +1202,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Bago farming families and bush-block homeowners near Wauchope.',
     },
     seo: {
-      title: 'House Cleaning Bago NSW | 1300 876 472',
+      title: 'House Cleaners Bago NSW | 1300 876 472',
       description: 'Need house cleaning in Bago? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Beechwood', 'Pembrooke', 'Telegraph Point', 'Port Macquarie', 'Sancrox', 'Rollands Plains'],
@@ -1281,7 +1281,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Rollands Plains farming families and rural homeowners in the Hastings hinterland.',
     },
     seo: {
-      title: 'House Cleaning Rollands Plains | 1300 876 472',
+      title: 'House Cleaners Rollands Plains | 1300 876 472',
       description: 'Need house cleaning in Rollands Plains? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural services.',
     },
     nearbySuburbs: ['Wauchope', 'Telegraph Point', 'Bago', 'Beechwood', 'Pembrooke', 'Port Macquarie', 'Kendall'],
@@ -1360,7 +1360,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Pembrooke farming families and rural homeowners near Wauchope.',
     },
     seo: {
-      title: 'House Cleaning Pembrooke NSW | 1300 876 472',
+      title: 'House Cleaners Pembrooke NSW | 1300 876 472',
       description: 'Need house cleaning in Pembrooke? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & rural property services.',
     },
     nearbySuburbs: ['Wauchope', 'Bago', 'Beechwood', 'Rollands Plains', 'Telegraph Point', 'Port Macquarie'],
@@ -1518,7 +1518,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Lakewood families and new-home owners near Port Macquarie.',
     },
     seo: {
-      title: 'House Cleaning Lakewood NSW | 1300 876 472',
+      title: 'House Cleaners Lakewood NSW | 1300 876 472',
       description: 'Need house cleaning in Lakewood? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & new-home services.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'King Creek', 'Settlement Point', 'Wauchope', 'Lake Cathie', 'Bonny Hills'],
@@ -1597,7 +1597,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by King Creek acreage owners and semi-rural families near Port Macquarie.',
     },
     seo: {
-      title: 'House Cleaning King Creek NSW | 1300 876 472',
+      title: 'House Cleaners King Creek NSW | 1300 876 472',
       description: 'Need house cleaning in King Creek? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
     },
     nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
@@ -1676,7 +1676,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Settlement Point waterfront residents and holiday homeowners on the Hastings River.',
     },
     seo: {
-      title: 'House Cleaning Settlement Point NSW',
+      title: 'House Cleaners Settlement Point NSW',
       description: 'Need house cleaning in Settlement Point? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Waterfront, holiday-let & regular cleans.',
     },
     nearbySuburbs: ['Port Macquarie', 'Lake Cathie', 'King Creek', 'Sancrox', 'Lakewood', 'Lighthouse Beach', 'Bonny Hills'],
@@ -1755,7 +1755,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Lighthouse Beach homeowners, holiday-let managers and Port Macquarie residents.',
     },
     seo: {
-      title: 'House Cleaning Lighthouse Beach NSW',
+      title: 'House Cleaners Lighthouse Beach NSW',
       description: 'Need house cleaning in Lighthouse Beach? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Regular, deep clean & holiday-let turnovers.',
     },
     nearbySuburbs: ['Port Macquarie', 'Settlement Point', 'Lake Cathie', 'Bonny Hills', 'King Creek', 'Sancrox'],

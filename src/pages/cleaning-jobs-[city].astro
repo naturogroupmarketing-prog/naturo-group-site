@@ -16,7 +16,7 @@ import ServiceHero from '../components/ServiceHero.astro';
 import ServiceIntro from '../components/ServiceIntro.astro';
 import FAQ from '../components/FAQ.astro';
 import { site } from '../data/site';
-import { benefits, wellLook, niceToHave, steps, careerCities, payRange, type CareerCity } from '../data/career';
+import { benefits, wellLook, niceToHave, steps, dailyWork, careerCities, payRange, payLine, jobTitle, type CareerCity } from '../data/career';
 
 export function getStaticPaths() {
   return careerCities.map((c) => ({ params: { city: c.slug }, props: { c } }));
@@ -34,8 +34,8 @@ const isoToday = today.toISOString().split('T')[0];
 const isoValidThrough = validThrough.toISOString().split('T')[0];
 
 const introStats = [
-  { num: `$${payRange.min}–$${payRange.max}`, label: 'Per hour, above award' },
-  { num: '7–14', label: 'Days from apply to first shift' },
+  { num: `$${payRange.min}`, label: 'Per hour incl. super & vehicle allowance' },
+  { num: 'Mon–Fri', label: 'No nights, no weekends' },
   { num: '100%', label: 'Products & equipment supplied' },
 ];
 
@@ -43,11 +43,13 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: `Cleaner — ${c.city}`,
+    title: `${jobTitle} | ${c.city}`,
     description: c.intro.join(' '),
     datePosted: isoToday,
     validThrough: isoValidThrough,
-    employmentType: ['PART_TIME', 'FULL_TIME', 'CONTRACTOR'],
+    // Employee roles only — the listing is explicit that this is not ABN or
+    // contractor work. Casual has no schema.org value; PART_TIME covers it.
+    employmentType: ['FULL_TIME', 'PART_TIME'],
     hiringOrganization: {
       '@type': 'Organization',
       name: site.name,
@@ -79,7 +81,11 @@ const schema = [
     },
     industry: 'Residential & Disability Support Cleaning',
     qualifications:
-      'Reliable transport in most areas, working rights in Australia, willingness to undergo a Police Check (and WWCC for NDIS work).',
+      'A reliable car and current Australian driver’s licence; living within about 25 minutes of the town centre; available at least two weekdays between 8am and 4pm; willing to complete a National Police Check and NDIS Worker Screening Check; working rights in Australia.',
+    responsibilities: dailyWork.join('; '),
+    jobBenefits:
+      'Superannuation and vehicle allowance included; paid induction and training; paid travel between jobs; all equipment, uniforms and products supplied; career progression to Team Leader and Management.',
+    workHours: 'Monday to Friday, 8am–4pm. No nights or weekends. School-hours shifts available.',
     url: pageUrl,
   },
   {
@@ -113,15 +119,15 @@ const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px
 ---
 
 <Layout
-  title={`Cleaning Jobs ${c.city} | Cleaner Vacancies`}
-  description={`Cleaning jobs in ${c.city}? NATURO GROUP is hiring. $${payRange.min}–$${payRange.max}/hr above award, flexible hours, products supplied. Apply in two minutes.`}
+  title={`Cleaning Jobs in ${c.city} ${c.state} ${c.postcode}`}
+  description={`Cleaner jobs in ${c.city} ${c.state}. Permanent & casual employee roles, $${payRange.min}/hr incl. super. No nights or weekends, paid training. Apply now.`}
   schema={schema}
 >
   <!-- 1. Hero -->
   <ServiceHero
-    eyebrow={`Cleaning jobs · ${c.city}`}
-    heading={`Cleaning Jobs<br />in ${c.city}`}
-    tagline={`Above-award pay, flexible hours and repeat clients across ${c.region}.`}
+    eyebrow="Domestic Cleaner · Permanent & Casual"
+    heading={`Cleaner & Cleaning Jobs<br />in ${c.city} ${c.state}`}
+    tagline={`${payLine}. No nights, no weekends. Employee roles across ${c.region}.`}
     bg="/images/hero-staff-bathroom.webp"
     primaryCta={{ href: applyHref, text: 'Apply now' }}
   />
@@ -138,8 +144,8 @@ const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px
   <section style="background: #f8fafc; padding: clamp(72px, 9vw, 112px) 0;">
     <div class="container-site" style="max-width: 1160px;">
       <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
-        <h2 style={h2}>What the job pays, and what comes with it</h2>
-        <p style={lede}>The same terms for every cleaner on the team, wherever you are based.</p>
+        <h2 style={h2}>Why work with us</h2>
+        <p style={lede}>Employee roles, not gig work. The same terms for every cleaner on the team.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
         {benefits.map((b) => (
@@ -152,22 +158,37 @@ const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px
     </div>
   </section>
 
+  <!-- 3b. Your daily work -->
+  <section style="background: #ffffff; padding: clamp(56px, 7vw, 88px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(28px, 4vw, 40px);">
+        <h2 style={h2}>Your daily work in {c.city}</h2>
+        <p style={lede}>The kinds of jobs you’ll be rostered onto.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        {dailyWork.map((w) => (
+          <span style="display: inline-block; padding: 12px 22px; border-radius: 999px; background: #f1f5f9; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: #0f172a;">{w}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- 4. Who we're looking for -->
   <section style="background: #ffffff; padding: clamp(72px, 9vw, 112px) 0;">
     <div class="container-site" style="max-width: 1160px;">
       <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
-        <h2 style={h2}>Who we’re looking for in {c.city}</h2>
-        <p style={lede}>Experience helps but isn’t required — attitude and reliability are what we hire on.</p>
+        <h2 style={h2}>Please read this before applying</h2>
+        <p style={lede}>The first list is required — applications that don’t meet it can’t be considered. Experience is preferred but not essential.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
         <div>
-          <h3 style={cardH3}>What we look for</h3>
+          <h3 style={cardH3}>You must have</h3>
           <ul style="list-style: none; margin: 0; padding: 0;">
             {wellLook.map((t) => (<li style={listItem}><span style={tick} aria-hidden="true">✓</span>{t}</li>))}
           </ul>
         </div>
         <div>
-          <h3 style={cardH3}>Nice to have</h3>
+          <h3 style={cardH3}>What we look for</h3>
           <ul style="list-style: none; margin: 0; padding: 0;">
             {niceToHave.map((t) => (<li style={listItem}><span style={tick} aria-hidden="true">+</span>{t}</li>))}
           </ul>
@@ -180,8 +201,8 @@ const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px
   <section style="background: #f8fafc; padding: clamp(72px, 9vw, 112px) 0;">
     <div class="container-site" style="max-width: 1160px;">
       <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(36px, 5vw, 52px);">
-        <h2 style={h2}>From application to first shift</h2>
-        <p style={lede}>Typically 7–14 days, start to finish.</p>
+        <h2 style={h2}>How to apply</h2>
+        <p style={lede}>Immediate start available for the right candidates.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 40px;">
         {steps.map((s) => (
@@ -197,7 +218,7 @@ const btn = "display: inline-flex; align-items: center; gap: 10px; padding: 16px
           <span>Apply for cleaning jobs in {c.city}</span>
           <span aria-hidden="true">→</span>
         </a>
-        <p style={`${cardP} margin-top: 14px;`}>Two-minute form. Your local coordinator calls within 48 hours.</p>
+        <p style={`${cardP} margin-top: 14px;`}>Tell us whether you want permanent or casual hours. Questions? Call 1300 876 472.</p>
       </div>
     </div>
   </section>

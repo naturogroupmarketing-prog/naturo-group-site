@@ -24,23 +24,23 @@ const careerFaqs = [
   },
   {
     q: 'Will I be an employee or a contractor?',
-    a: 'Both options are available depending on the role and your preference. We offer PAYG employment for ongoing residential and aged-care work, and ABN/contractor arrangements for one-off and end-of-lease teams. We will discuss what fits you at interview.',
+    a: 'An employee, always. We hire both permanent part-time and casual cleaners — tell us which suits you. Either way superannuation is paid, your training is paid and your travel between jobs is paid. We do not do ABN, contractor or gig arrangements.',
   },
   {
     q: 'How is pay calculated?',
-    a: 'You are paid above the Cleaning Services Award 2020. Pay rates depend on role, experience and shift type. Travel between jobs is reimbursed for employees, and our top performers consistently earn $32–$42 per hour all-in.',
+    a: '$36.21 per hour including superannuation and vehicle allowance, with a range up to $45.00 depending on role and experience. Casual staff receive the casual loading. Travel between jobs is paid.',
   },
   {
     q: 'Do I need my own car?',
-    a: 'A licence and reliable transport make scheduling far easier and unlock more shifts in your area. In high-density suburbs (Sydney CBD, Bondi, Manly, inner Melbourne) public transport is fine — let us know in your application.',
+    a: 'Yes. You must have a reliable car and a current Australian driver\'s licence, because you drive between client homes every shift. Applications without a car cannot be considered.',
   },
   {
     q: 'How flexible are the hours?',
-    a: 'You set your availability. Most cleaners work weekday daytime shifts (between 8:30am and 5:00pm) and choose 3–5 days a week. School-hours-only and weekend availability are both welcome.',
+    a: 'Shifts run Monday to Friday between 8am and 4pm — no nights and no weekends. School-hours shifts (9am–3pm) are available. We ask for a minimum of two weekdays, and you choose permanent or casual.',
   },
   {
-    q: 'Do I need a Police Check or Working with Children Check?',
-    a: 'Yes — every cleaner is police-checked before their first shift. We help cover the cost of your check. A WWCC is required for any role visiting NDIS or aged-care participants and we walk you through the application.',
+    q: 'Do I need a Police Check or NDIS Worker Screening Check?',
+    a: 'Yes — both. Every cleaner completes a National Police Check and an NDIS Worker Screening Check, because the role includes NDIS and DVA client work. We help cover the cost and walk you through applying.',
   },
   {
     q: 'How long does the application process take?',
@@ -57,7 +57,7 @@ const schema = [
       'Join NATURO GROUP — Australia\u2019s eco-friendly residential and NDIS cleaning team. We are hiring reliable, detail-focused cleaners across NSW, Queensland and Victoria. Above-award pay, flexible hours, all eco-friendly products and equipment supplied, paid training and a supportive area coordinator.',
     datePosted: isoToday,
     validThrough: isoValidThrough,
-    employmentType: ['PART_TIME', 'FULL_TIME', 'CONTRACTOR'],
+    employmentType: ['FULL_TIME', 'PART_TIME'],
     hiringOrganization: {
       '@type': 'Organization',
       name: site.name,
@@ -106,7 +106,7 @@ const schema = [
     },
     industry: 'Residential & Disability Support Cleaning',
     qualifications:
-      'Reliable transport in most areas, working rights in Australia, willingness to undergo a Police Check (and WWCC for NDIS work).',
+      'A reliable car and current Australian driver’s licence; available at least two weekdays between 8am and 4pm; willing to complete a National Police Check and NDIS Worker Screening Check; working rights in Australia.',
   },
   {
     '@context': 'https://schema.org',
@@ -213,8 +213,8 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
         </p>
         <div class="cr-intro-stats">
           <div class="cr-intro-stat">
-            <span class="cr-intro-stat-num">$32&ndash;$42</span>
-            <span class="cr-intro-stat-label">/hr all-in for top performers</span>
+            <span class="cr-intro-stat-num">$36.21</span>
+            <span class="cr-intro-stat-label">/hr incl. super &amp; vehicle allowance</span>
           </div>
           <div class="cr-intro-stat">
             <span class="cr-intro-stat-num">3+&nbsp;yrs</span>
@@ -458,7 +458,7 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
 
         <label class="cr-field">
           <span class="cr-field-label">Anything else we should know?</span>
-          <textarea class="cr-input cr-textarea" name="message" rows="4" placeholder="Languages, NDIS / WWCC status, when you can start, references…"></textarea>
+          <textarea class="cr-input cr-textarea" name="message" rows="4" placeholder="Permanent or casual? Your suburb, which weekdays you can work, Police Check / NDIS Worker Screening status, when you can start…"></textarea>
         </label>
 
         <p id="cr-form-note" class="cr-form-note">

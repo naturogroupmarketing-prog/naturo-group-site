@@ -2,75 +2,95 @@
 // /cleaning-jobs-<city>/ pages all read from here, so pay, requirements and
 // the hiring process are stated once and cannot drift apart.
 //
-// Every figure here is a business fact. Change it here, not on a page.
+// SOURCE OF TRUTH: the live Indeed listing "Domestic Cleaner – Permanent &
+// Casual Roles | Paid Training | No Nights or Weekends" (NATURO GROUP PTY LTD,
+// Port Macquarie NSW, read 15 Sep 2026). Every figure and requirement below
+// is taken from it. Where the site previously said something different —
+// $32–$42/hr, contractor roles offered, car "nice to have", WWCC — Indeed is
+// the version the business is actually hiring on, and the site now matches.
+// Change it here, not on a page, and keep it in step with the listing.
 
-export const payRange = { min: 32, max: 42, currency: 'AUD', unit: 'HOUR' as const };
+export const payRange = { min: 36.21, max: 45, currency: 'AUD', unit: 'HOUR' as const };
+export const payLine = '$36.21 per hour including superannuation and vehicle allowance';
+
+// Indeed's own posting title. Used as the JobPosting title so the site's
+// listing and the Indeed listing read as the same job in Google for Jobs.
+export const jobTitle = 'Domestic Cleaner – Permanent & Casual Roles';
 
 export const benefits = [
   {
-    title: 'Above-award pay',
-    body: 'Top performers earn $32–$42 per hour all-in, paid weekly. Travel reimbursed for employees between jobs.',
+    title: '$36.21/hr incl. super & vehicle allowance',
+    body: 'Paid as an employee, with superannuation and a vehicle allowance built into the rate. Casual staff receive the casual loading on top.',
   },
   {
-    title: 'Pick your hours',
-    body: 'You set your availability. School-hours-only, three days a week, full-time — we build a schedule around your life.',
+    title: 'Employee roles — no ABN, no gig work',
+    body: 'Permanent part-time, full-time or casual: you choose, and either way you are our employee. We do not do ABN, contractor or gig arrangements.',
   },
   {
-    title: 'Local clients near you',
-    body: 'We route you to repeat clients in your suburb. Less driving, more productive hours, real relationships.',
+    title: 'No nights. No weekends.',
+    body: 'Monday to Friday between 8am and 4pm, with school-hours shifts (9am–3pm) available. You know what your week looks like.',
   },
   {
-    title: 'Eco products supplied',
-    body: 'All non-toxic products, microfibre cloths and equipment provided. No buying or carrying chemicals around.',
+    title: 'Paid induction and ongoing training',
+    body: 'Your training is paid from the first day. We hire in small intakes so every new cleaner gets a proper induction and hands-on support.',
   },
   {
-    title: 'Paid induction',
-    body: 'A senior cleaner trains you on your first shift — paid. Ongoing upskilling for end-of-lease, NDIS and insurance work.',
+    title: 'A path up: Cleaner → Team Leader → Management',
+    body: 'Career progression is real here. Regular one-on-ones with your local Team Leader, and recognition for great work.',
   },
   {
-    title: 'Real coordinator support',
-    body: 'Your area coordinator is one phone call away. Shift swaps, client questions, awkward situations — you are never on your own.',
+    title: 'Everything supplied. Travel paid.',
+    body: 'All equipment, uniforms and cleaning products are provided, and your travel time between client homes is paid.',
   },
 ];
 
+// The hard requirements, exactly as the listing states them. Applications
+// that do not meet these are not considered — say so plainly.
 export const wellLook = [
-  'Reliable, on time, and you do what you say you’ll do',
-  'Eye for detail — you notice the smudge on the tap',
-  'Respectful of clients, their homes and their privacy',
+  'A reliable car and a current Australian driver’s licence — you drive between client homes every shift',
+  'Living locally — within about 25 minutes’ drive of the town centre. We roster locally and do not relocate staff',
+  'Available at least two weekdays, Monday to Friday, between 8am and 4pm',
+  'Willing to complete a National Police Check and an NDIS Worker Screening Check',
   'Working rights in Australia',
-  'Willing to undergo a Police Check (we help with the cost)',
-  'Conversational English to read instructions and chat with clients',
+  'Reliable — the person your friends and family know they can count on',
 ];
 
 export const niceToHave = [
-  'Cleaning, hospitality, hotel housekeeping or aged-care experience',
-  'Driver’s licence and reliable transport',
-  'Working with Children Check (or willing to apply for one)',
-  'First Aid certificate',
-  'Experience with NDIS or aged care participants',
-  'Bond/end-of-lease cleaning experience',
+  'Cleaning experience — preferred, but not essential for the right person',
+  'Strong attention to detail',
+  'Good communication with clients and your team',
+  'Willingness to complete paid training (length depends on your experience)',
+];
+
+// What a shift actually involves, from the listing's "Your Daily Work".
+export const dailyWork = [
+  'Residential house cleaning',
+  'NDIS disability support cleaning',
+  'DVA client services',
+  'Deep and spring cleans',
+  'Optional bond cleans',
 ];
 
 export const steps = [
   {
     n: '01',
-    title: 'Apply online',
-    body: 'Two-minute form. Tell us where you’re based, your availability and a little about you.',
+    title: 'Apply and answer the screening questions',
+    body: 'A short form. Tell us whether you want permanent or casual hours, which suburb you live in, and which weekdays you can work.',
   },
   {
     n: '02',
-    title: 'Phone chat',
-    body: 'Quick 10-minute call with your local coordinator within 48 hours of a successful application.',
+    title: 'We read every application',
+    body: 'We hire in small intakes and review every application from local candidates with a reliable car. Your local Team Leader will be in touch.',
   },
   {
     n: '03',
-    title: 'Meet the team',
-    body: 'In-person interview at a local cafe. Bring ID, references and your availability calendar.',
+    title: 'Checks',
+    body: 'National Police Check and NDIS Worker Screening Check, so you are cleared for NDIS and DVA client work.',
   },
   {
     n: '04',
     title: 'Paid induction',
-    body: 'Shadow a senior cleaner for your first shift — paid from minute one. You’re on the team.',
+    body: 'Hands-on training alongside the team — paid from minute one. Immediate start available for the right candidates.',
   },
 ];
 
@@ -79,6 +99,10 @@ export const steps = [
 // for Jobs treats a single posting spread across eight cities poorly, and a
 // search for "cleaning jobs port macquarie" had nothing on the site targeting
 // it. Indeed and Seek win those results one listing, one place at a time.
+//
+// Titles follow the pattern both Seek and Indeed rank with for these
+// searches — "Cleaning Jobs in <City> <STATE> <postcode>" — measured on the
+// live SERP 15 Sep 2026.
 //
 // Suburb lists are the ones the matching NDIS pages already publish. No
 // street address on either: cleaners work in clients' homes, and the Geelong
@@ -96,6 +120,37 @@ export interface CareerCity {
   intro: string[];
   faqs: { q: string; a: string }[];
 }
+
+const sharedFaqs = (city: string, region: string) => [
+  {
+    q: `How much do cleaners earn in ${city}?`,
+    a: '$36.21 per hour including superannuation and vehicle allowance, with a range up to $45.00. You are paid as an employee — permanent or casual — with your training and your travel between jobs paid too. Casual staff receive the casual loading.',
+  },
+  {
+    q: 'Is this an employee role or a contractor role?',
+    a: 'Employee, always. We hire both permanent part-time and casual cleaners, and either way superannuation is paid, training is paid and travel between jobs is paid. We do not do ABN, contractor or gig arrangements.',
+  },
+  {
+    q: 'Do I need a car?',
+    a: 'Yes. You must have a reliable car and a current Australian driver’s licence, because you drive between client homes every shift. Applications without a car cannot be considered.',
+  },
+  {
+    q: 'What hours are the shifts?',
+    a: 'Monday to Friday between 8am and 4pm — no nights and no weekends. School-hours shifts (9am–3pm) are available. We ask for a minimum of two weekdays.',
+  },
+  {
+    q: 'What checks do I need?',
+    a: 'A National Police Check and an NDIS Worker Screening Check, because the role includes NDIS and DVA client work. We help cover the cost and walk you through applying.',
+  },
+  {
+    q: `Where in ${city} do you need to live?`,
+    a: `Within about 25 minutes’ drive of the town centre. We roster locally across ${region} and do not relocate staff, so we can only consider applications from people already living in the area.`,
+  },
+  {
+    q: 'Do I need cleaning experience?',
+    a: 'It is preferred but not essential for the right person. Your training is paid, and how long it runs depends on the experience you bring.',
+  },
+];
 
 export const careerCities: CareerCity[] = [
   {
@@ -117,36 +172,11 @@ export const careerCities: CareerCity[] = [
       { name: 'Settlement Point', slug: 'house-cleaning-settlement-point' },
     ],
     intro: [
-      'NATURO GROUP is hiring cleaners in Port Macquarie and across the Hastings. Our Port Macquarie team looks after regular household cleans, NDIS participants, DVA card holders and Home Care Package clients — steady, repeat work with people who get to know you by name.',
-      'Work is routed to clients near you, so a cleaner based in Wauchope is not sent to Laurieton and back. Holiday-let turnovers at Lake Cathie and Bonny Hills add flexible one-off shifts around the regular runs.',
-      'You are paid above the Cleaning Services Award, weekly, with every product and piece of equipment supplied. A local coordinator handles the scheduling and is a phone call away on every shift.',
+      'NATURO GROUP is hiring domestic cleaners in Port Macquarie — permanent and casual employee roles, $36.21 per hour including superannuation and vehicle allowance. Not ABN or contractor work. Your daily work is residential house cleaning, NDIS disability support cleaning and DVA client services, with deep and spring cleans and optional bond cleans on top.',
+      'No nights and no weekends: shifts run Monday to Friday between 8am and 4pm, with school-hours shifts available. We roster locally across the Hastings, so you need to live within about 25 minutes of the town centre and have a reliable car to drive between client homes.',
+      'We hire in small intakes so every new cleaner gets paid induction, hands-on training and regular support from a local Team Leader. There is a real path up — Cleaner to Team Leader to Management — and we supply every piece of equipment, uniform and product you need.',
     ],
-    faqs: [
-      {
-        q: 'Where in Port Macquarie are the cleaning jobs?',
-        a: 'Across Port Macquarie and the Hastings region — Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Lighthouse Beach, Settlement Point and surrounding areas. We route you to clients close to where you live.',
-      },
-      {
-        q: 'What kind of cleaning work is it?',
-        a: 'Mostly regular household cleans for repeat clients, plus NDIS, DVA and aged-care work for participants and card holders. Holiday-let turnovers along the coast add one-off shifts. You can tell us which of these you prefer.',
-      },
-      {
-        q: 'How much do cleaners earn in Port Macquarie?',
-        a: 'You are paid above the Cleaning Services Award 2020. Top performers earn $32–$42 per hour all-in, paid weekly. Travel between jobs is reimbursed for employees.',
-      },
-      {
-        q: 'Do I need a car?',
-        a: 'A licence and reliable transport make scheduling far easier across the Hastings and unlock more shifts. Tell us your transport situation on the form and we will be honest about what we can offer.',
-      },
-      {
-        q: 'Do I need a Police Check or Working with Children Check?',
-        a: 'Every cleaner is police-checked before their first shift, and we help cover the cost. A WWCC is required for NDIS work, and we can guide you through applying for one.',
-      },
-      {
-        q: 'How long does it take to start?',
-        a: 'From application to first shift typically takes 7–14 days: a phone chat with your local coordinator, an in-person interview, reference checks and your police check, then a paid induction shift alongside a senior cleaner.',
-      },
-    ],
+    faqs: sharedFaqs('Port Macquarie', 'Port Macquarie and the Hastings'),
   },
   {
     slug: 'geelong',
@@ -171,35 +201,10 @@ export const careerCities: CareerCity[] = [
       { name: 'Grovedale', slug: 'house-cleaning-grovedale' },
     ],
     intro: [
-      'NATURO GROUP is hiring cleaners across Greater Geelong, the Bellarine Peninsula and the Surf Coast. Our Geelong team looks after regular household cleans and NDIS participants — repeat clients, familiar homes, and a schedule built around where you live.',
-      'Work is routed by suburb, so a cleaner in Highton stays on the southern side and a cleaner in Lara stays north. Holiday-let turnovers at Ocean Grove, Barwon Heads and Torquay add flexible one-off shifts on top of the regular runs.',
-      'You are paid above the Cleaning Services Award, weekly, with every product and piece of equipment supplied. A local coordinator handles the scheduling and is a phone call away on every shift.',
+      'NATURO GROUP is hiring domestic cleaners in Geelong — permanent and casual employee roles, $36.21 per hour including superannuation and vehicle allowance. Not ABN or contractor work. Your daily work is residential house cleaning and NDIS disability support cleaning, with deep and spring cleans and optional bond cleans on top.',
+      'No nights and no weekends: shifts run Monday to Friday between 8am and 4pm, with school-hours shifts available. We roster locally across Greater Geelong, the Bellarine and the Surf Coast, so you need to live within about 25 minutes of the town centre and have a reliable car to drive between client homes.',
+      'We hire in small intakes so every new cleaner gets paid induction, hands-on training and regular support from a local Team Leader. There is a real path up — Cleaner to Team Leader to Management — and we supply every piece of equipment, uniform and product you need.',
     ],
-    faqs: [
-      {
-        q: 'Where in Geelong are the cleaning jobs?',
-        a: 'Across Greater Geelong, the Bellarine and the Surf Coast — Newtown, Highton, Belmont, Geelong West, Lara, Leopold, Grovedale, Armstrong Creek, Ocean Grove, Barwon Heads, Torquay and surrounding suburbs. We route you to clients close to where you live.',
-      },
-      {
-        q: 'What kind of cleaning work is it?',
-        a: 'Mostly regular household cleans for repeat clients, plus NDIS work for participants. Holiday-let turnovers on the Bellarine and Surf Coast add one-off shifts. You can tell us which of these you prefer.',
-      },
-      {
-        q: 'How much do cleaners earn in Geelong?',
-        a: 'You are paid above the Cleaning Services Award 2020. Top performers earn $32–$42 per hour all-in, paid weekly. Travel between jobs is reimbursed for employees.',
-      },
-      {
-        q: 'Do I need a car?',
-        a: 'A licence and reliable transport make scheduling far easier across Geelong and the Bellarine and unlock more shifts. Tell us your transport situation on the form and we will be honest about what we can offer.',
-      },
-      {
-        q: 'Do I need a Police Check or Working with Children Check?',
-        a: 'Every cleaner is police-checked before their first shift, and we help cover the cost. A WWCC is required for NDIS work, and we can guide you through applying for one.',
-      },
-      {
-        q: 'How long does it take to start?',
-        a: 'From application to first shift typically takes 7–14 days: a phone chat with your local coordinator, an in-person interview, reference checks and your police check, then a paid induction shift alongside a senior cleaner.',
-      },
-    ],
+    faqs: sharedFaqs('Geelong', 'Greater Geelong, the Bellarine and the Surf Coast'),
   },
 ];

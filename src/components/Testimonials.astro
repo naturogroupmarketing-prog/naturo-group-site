@@ -1,17 +1,29 @@
 ---
-import { testimonials as defaultTestimonials } from '../data/site';
+import { testimonials as defaultTestimonials, verifiedRatings } from '../data/site';
 
 interface TestimonialItem { name: string; text: string }
 interface Props {
   location?: string;
   items?: TestimonialItem[];
+  /**
+   * Which verified Google Business Profile backs this section. Defaults to
+   * the site-wide figure for pages that are not about one area (home,
+   * services). Pass `null` — or a key whose entry in `verifiedRatings` is
+   * null — for an area whose profile holds no reviews, and the whole section
+   * is left out: no rating line, no review cards. The cards are real Port
+   * Macquarie reviews, so they only belong where that attribution is honest.
+   */
+  ratingKey?: keyof typeof verifiedRatings | null;
 }
 
-const { location, items } = Astro.props;
+const { location, items, ratingKey = 'siteWide' } = Astro.props;
+const rating = ratingKey ? verifiedRatings[ratingKey] : null;
 const ratingAudience = location ? `${location} households` : 'Australian households';
 const source = items && items.length ? items : defaultTestimonials;
 ---
 
+
+{rating && (
 <section class="testi-section">
   <div class="container-site testi-top">
     <div class="testi-head-left">
@@ -25,7 +37,7 @@ const source = items && items.length ? items : defaultTestimonials;
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0c30b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           ))}
         </div>
-        <span class="testi-rating-text">Rated <strong>4.7 / 5</strong> by {ratingAudience}</span>
+        <span class="testi-rating-text">Rated <strong>{rating.ratingValue} / 5</strong> from {rating.reviewCount} Google reviews by {ratingAudience}</span>
       </div>
     </div>
   </div>
@@ -50,6 +62,7 @@ const source = items && items.length ? items : defaultTestimonials;
     ))}
   </div>
 </section>
+)}
 
 <style>
   .testi-section {

@@ -44,6 +44,21 @@
   to     = "/collection-notice-statement/"
   status = 301
 
+# ── /pricing retired ───────────────────────────────────────────────────────
+# The page was never built on this site, but Google still had the old URL
+# indexed (GSC, 2026-09-22) and was serving a 404. Prices are not published
+# yet — `pricingCards` in src/data/site.ts is written but not rendered — so
+# the closest live answer is the services comparison page. 301 keeps equity.
+[[redirects]]
+  from   = "/pricing"
+  to     = "/services/"
+  status = 301
+
+[[redirects]]
+  from   = "/pricing/"
+  to     = "/services/"
+  status = 301
+
 # Force HTTPS
 [[redirects]]
   from = "http://naturogroup.com.au/*"

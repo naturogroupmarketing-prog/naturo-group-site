@@ -11,7 +11,7 @@ import BookCTA from '../components/BookCTA.astro';
 import SixtySecondsAway from '../components/SixtySecondsAway.astro';
 import Testimonials from '../components/Testimonials.astro';
 import AppPromo from '../components/AppPromo.astro';
-import { site, ctaPrimary, ctaPhone, testimonials } from '../data/site';
+import { site, ctaPrimary, ctaPhone, testimonials, ratingKeyForRegion } from '../data/site';
 import { suburbs, type Suburb } from '../data/suburbs';
 import LocalServiceLinks from '../components/LocalServiceLinks.astro';
 
@@ -405,7 +405,7 @@ const schema = [
   </section>
 
   <SixtySecondsAway />
-  <Testimonials location={suburb.name} items={localTestimonials} />
+  <Testimonials location={suburb.name} items={localTestimonials} ratingKey={ratingKeyForRegion(suburb.region)} />
   <LocalServiceLinks suburbName={suburb.name} region={suburb.region} />
   <AppPromo />
 

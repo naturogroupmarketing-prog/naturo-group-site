@@ -79,6 +79,29 @@ export const verifiedRatings: Record<string, VerifiedRating | null> = {
   siteWide: { ratingValue: '4.7', reviewCount: '49' },
 };
 
+// Which verified profile, if any, stands behind review claims on a page for
+// a given suburb region. Hubert's rule (2026-09-22): a page may show Google
+// reviews and a rating only for an area whose own Business Profile actually
+// holds reviews; an area with none shows no reviews at all. So Mid North
+// Coast pages draw on the Port Macquarie profile, Geelong/Bellarine/Surf Coast
+// pages on the Geelong profile (currently null — one review), and every other
+// region (Melbourne, Sydney, Brisbane...) has no profile and gets `null`.
+// The testimonials in `testimonials` below are Port Macquarie customers, so
+// showing them under a "Geelong households" heading was the exact
+// misattribution this prevents.
+const geelongRegions = new Set([
+  'Greater Geelong',
+  'Bellarine Peninsula',
+  'Geelong & Bellarine',
+  'Surf Coast',
+]);
+
+export function ratingKeyForRegion(region: string): keyof typeof verifiedRatings | null {
+  if (region === 'Mid North Coast') return 'portMacquarie';
+  if (geelongRegions.has(region)) return 'geelong';
+  return null;
+}
+
 /** Returns an AggregateRating fragment to spread, or `{}` when unverified. */
 export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
   const r = verifiedRatings[key];

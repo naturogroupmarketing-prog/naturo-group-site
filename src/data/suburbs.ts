@@ -3668,7 +3668,7 @@ export const suburbs: Suburb[] = [
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
       h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Geelong'],
-    contentUpdated: '2026-08-27',
+    contentUpdated: '2026-10-08',
       tagline: 'House cleaning in Geelong — trusted, trained and thorough across Geelong & the Bellarine',
     },
     intro: {
@@ -3676,7 +3676,7 @@ export const suburbs: Suburb[] = [
       h2: 'Best house cleaning in Geelong & the Bellarine',
       paragraphs: [
         'Geelong is Victoria\u2019s second-largest city \u2014 a coastal city of waterfront terraces, restored Edwardian homes and modern family suburbs through Armstrong Creek and the growth corridor. NATURO GROUP\u2019s Geelong cleaners use eco-friendly products that suit period detail and the bay catchment.',
-        'From the Geelong CBD and Eastern Beach to Newtown, Highton, Belmont, Ocean Grove, Barwon Heads and Torquay, our trained, police-checked team services family homes, holiday lets and end-of-lease properties \u2014 with the reliability locals expect.',
+        'From the Geelong CBD and Eastern Beach to Newtown, Highton, Belmont, Ocean Grove, Barwon Heads and Torquay, our local cleaning company\u2019s trained, police-checked team services family homes, holiday lets and end-of-lease properties \u2014 with the reliability locals expect.',
       ],
     },
     trust: {
@@ -3711,7 +3711,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Geelong?',
-        a: 'The cost of house cleaning in Geelong depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. The final price depends on the size of your home and the service type — Get a free quote, no phone call required.',
+        a: 'As an indicative guide for Geelong in 2026: a regular flat-rate clean of a 3-bedroom house is $153\u2013$220 per visit, a <a href="/deep-cleaning-geelong/">deep clean</a> is $371\u2013$460 for a 2-bedroom unit, and an <a href="/end-of-lease-cleaning-geelong/">end of lease clean</a> is $478\u2013$560 for a 1-bedroom unit. These are ranges, not a quote \u2014 every home is priced on its size, condition and any extras. See our <a href="/resource/house-cleaning-cost-geelong/">Geelong cleaning price guide</a> for the full breakdown, or get a free quote with no phone call required.',
       },
       {
         q: 'Which Geelong suburbs do you service?',
@@ -3724,6 +3724,10 @@ export const suburbs: Suburb[] = [
       {
         q: 'Can you clean end-of-lease properties in Geelong?',
         a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards and walls. Carpet steam cleaning is a separate specialist service we do not provide. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong/">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
+      },
+      {
+        q: 'Do you do deep cleaning in Geelong?',
+        a: 'Yes. A deep clean is a once-off reset for homes that have not had a professional clean in 30 or more days, after a renovation, or before an event or sale \u2014 inside the oven, cabinets and drawers, behind accessible appliances, grout, exhaust fans, skirting boards, vents and window tracks. We put two cleaners on most deep cleans. See our <a href="/deep-cleaning-geelong/">Deep Cleaning Geelong</a> page for what is included.',
       },
       {
         q: 'Are your Geelong cleaners police-checked and insured?',

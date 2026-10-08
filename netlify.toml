@@ -159,6 +159,37 @@
   to   = "/"
   status = 301
 
+# ── Legacy-site URLs GSC still lists as "Crawled - currently not indexed" ────
+[[redirects]]
+  from = "/terms-conditions"
+  to   = "/terms-of-service/"
+  status = 301
+
+[[redirects]]
+  from = "/terms-conditions/"
+  to   = "/terms-of-service/"
+  status = 301
+
+[[redirects]]
+  from = "/NDIS"
+  to   = "/ndis-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from = "/NDIS/"
+  to   = "/ndis-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from = "/ndis"
+  to   = "/ndis-cleaning-geelong/"
+  status = 301
+
+[[redirects]]
+  from = "/ndis/"
+  to   = "/ndis-cleaning-geelong/"
+  status = 301
+
 # ── Geelong URL renames — old slugs that Google may have indexed ─────────────
 [[redirects]]
   from = "/cleaners-ocean-grove"

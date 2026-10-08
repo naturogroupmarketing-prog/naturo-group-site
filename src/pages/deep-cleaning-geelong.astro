@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import ServiceInclusions from '../components/ServiceInclusions.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Providers from '../components/Providers.astro';
+import FAQ from '../components/FAQ.astro';
+import AppPromo from '../components/AppPromo.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site } from '../data/site';
+import { fitTitle } from '../lib/seo';
+
+// Built 8 Oct 2026 for `deep cleaning geelong` — 463 impressions a quarter in
+// GSC, ranking ~8.8 with /house-cleaning-geelong/ because no Geelong deep-clean
+// page existed. Every operational claim below is already published elsewhere on
+// the site (serviceDetail.ts `deep-clean`, the Geelong hub FAQs, posts.ts).
+// Do not add prices here: the figures in the Geelong cost guide are unconfirmed
+// as current, so this page links to the guide instead of repeating them.
+const pageUrl = `${site.url}/deep-cleaning-geelong`;
+
+const introBody = [
+  'A deep clean is the reset a regular visit is not built for. Our Geelong team goes inside the oven, inside cabinets and drawers, behind and under accessible appliances, and through the grout, exhaust fans, skirting boards, air vents and window tracks that build up quietly between cleans.',
+  'It suits Geelong homes that have not had a professional clean in 30 or more days, homes left dusty after a renovation, and the week before guests, a special event or a sale. We put two cleaners on most deep cleans so the day keeps moving, and we bring every product and piece of equipment with us.',
+  'The products are the same plant-based, non-toxic range we use on every job across Greater Geelong, the Bellarine and the Surf Coast. A deep clean takes more time and more detail, not harsher chemicals.',
+];
+
+const introStats = [
+  { num: '30+', label: 'Detail tasks per home' },
+  { num: '2&nbsp;cleaners', label: 'On most deep cleans' },
+  { num: '100%', label: 'Non-toxic products' },
+];
+
+const inclusions = [
+  {
+    group: 'Kitchen — deep',
+    items: [
+      'Inside oven, racks and range hood filter',
+      'Inside fridge and freezer (on request)',
+      'Inside cabinets and drawers',
+      'Behind and under appliances where accessible',
+    ],
+  },
+  {
+    group: 'Bathrooms — deep',
+    items: [
+      'Grout scrub and tile descale',
+      'Showerheads and screens',
+      'Exhaust fans and light fittings',
+      'Cabinet interiors',
+    ],
+  },
+  {
+    group: 'Whole home detail',
+    items: [
+      'Skirting boards, door frames, light switches',
+      'Internal windows and tracks',
+      'Air vents and ceiling fans',
+      'Spot-cleaning walls, marks and carpet spots',
+    ],
+  },
+];
+
+// Which clean fits — the comparison Geelong searchers are actually making.
+// Each card links to the page that sells that service.
+const choices = [
+  {
+    type: 'Deep clean',
+    when: 'Your home is lived in and overdue — 30+ days since a professional clean, post-renovation dust, or an event or sale coming up.',
+    note: 'Once-off reset, two cleaners on most jobs.',
+  },
+  {
+    type: 'Regular clean',
+    when: 'Your home is already on top of things and you want it to stay that way, weekly or fortnightly.',
+    note: 'Ongoing upkeep with the same team where possible.',
+    href: '/house-cleaning-geelong/',
+    link: 'Regular house cleaning in Geelong',
+  },
+  {
+    type: 'End of lease clean',
+    when: 'You are moving out of a rental and the clean has to pass the agent’s exit inspection.',
+    note: 'Built to the exit checklist, with a 72-hour free re-clean window.',
+    href: '/end-of-lease-cleaning-geelong/',
+    link: 'End of lease cleaning in Geelong',
+  },
+];
+
+const steps = [
+  { step: '1', title: 'Walk-through quote', desc: 'Send a few photos or jump on a quick video call so we can size the job accurately.' },
+  { step: '2', title: 'Lock in the day', desc: 'We block out the time the home needs — no rushed jobs.' },
+  { step: '3', title: 'Two-cleaner team', desc: 'Most deep cleans are done by a pair, with all products and equipment supplied.' },
+  { step: '4', title: 'Final check', desc: 'We walk the home with you, or send photos, before signing off.' },
+];
+
+const geelongFaqs = [
+  {
+    q: 'What does a deep clean in Geelong include?',
+    a: 'Everything in a regular clean, plus the detail it does not reach: inside the oven, racks and range hood filter; inside cabinets and drawers; behind and under accessible appliances; grout scrub and tile descale; showerheads, screens, exhaust fans and light fittings; skirting boards, door frames and light switches; internal windows and tracks; air vents and ceiling fans; and spot-cleaning of walls and marks. Inside the fridge and freezer is done on request.',
+  },
+  {
+    q: 'What is the difference between a deep clean and a regular clean?',
+    a: 'A regular clean maintains a home that is already on top of things. A deep clean is a reset for a home that is overdue — it goes inside, behind and underneath, where a weekly or fortnightly visit does not. If you want it kept that way afterwards, we also offer regular house cleaning across Geelong.',
+  },
+  {
+    q: 'Is a deep clean the same as an end of lease clean?',
+    a: 'No. A deep clean is for a home you are living in. An end of lease clean is built to the real estate exit checklist for a property you are leaving, and comes with a 72-hour free re-clean window if your property manager flags anything in scope. If you are moving out of a rental, book an end of lease clean instead.',
+  },
+  {
+    q: 'How long does a deep clean take, and how many cleaners come?',
+    a: 'We put two cleaners on most deep cleans. How long it takes depends on the size and condition of the home, so we confirm that when we quote rather than guessing up front.',
+  },
+  {
+    q: 'How much does a deep clean cost in Geelong?',
+    a: 'It depends on the size and condition of the home and what is included, such as the inside of the fridge. Our Geelong house cleaning cost guide explains what drives the price, or request a free quote and we will size the job from photos.',
+  },
+  {
+    q: 'Which areas do you cover for deep cleaning?',
+    a: 'All of Greater Geelong, the Bellarine Peninsula and the Surf Coast — including Geelong, Newtown, Highton, Belmont, Geelong West, Grovedale, Waurn Ponds, Armstrong Creek, Lara, Leopold, Drysdale, Ocean Grove, Barwon Heads, Torquay and Jan Juc. If you are unsure whether we cover your street, call 1300 876 472.',
+  },
+  {
+    q: 'Do you steam clean carpets as part of a deep clean?',
+    a: 'No. A deep clean includes spot-cleaning of carpet marks, but full carpet steam cleaning is a separate specialist service we do not provide.',
+  },
+  {
+    q: 'Are your Geelong cleaners police-checked and insured?',
+    a: 'Yes. Every NATURO GROUP cleaner is trained, police-checked and fully insured, with $20m public liability cover held by the business. We bring all eco-friendly, non-toxic products and equipment — you do not need to supply anything.',
+  },
+];
+
+const areaLinks = [
+  { name: 'Geelong', slug: 'house-cleaning-geelong' },
+  { name: 'Newtown', slug: 'house-cleaning-newtown-geelong' },
+  { name: 'Highton', slug: 'house-cleaning-highton' },
+  { name: 'Belmont', slug: 'house-cleaning-belmont-geelong' },
+  { name: 'Geelong West', slug: 'house-cleaning-geelong-west' },
+  { name: 'Grovedale', slug: 'house-cleaning-grovedale' },
+  { name: 'Waurn Ponds', slug: 'house-cleaning-waurn-ponds' },
+  { name: 'Armstrong Creek', slug: 'house-cleaning-armstrong-creek' },
+  { name: 'Lara', slug: 'house-cleaning-lara' },
+  { name: 'Leopold', slug: 'house-cleaning-leopold' },
+  { name: 'Drysdale', slug: 'house-cleaning-drysdale' },
+  { name: 'Ocean Grove', slug: 'house-cleaning-ocean-grove' },
+  { name: 'Barwon Heads', slug: 'house-cleaning-barwon-heads' },
+  { name: 'Torquay', slug: 'house-cleaning-torquay' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    // Service, not LocalBusiness — see ndis-cleaning-geelong.astro and `fa53bde`.
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'Deep cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'Deep Cleaning in Geelong',
+    description:
+      'Once-off deep cleaning for Geelong homes: inside ovens, cabinets and drawers, behind appliances, grout, exhaust fans, skirting boards, vents and window tracks. Two cleaners on most jobs, non-toxic products supplied.',
+    url: pageUrl,
+    image: {
+      '@type': 'ImageObject',
+      url: `${site.url}/images/hero-staff-bathroom.jpg`,
+      creator: { '@type': 'Organization', name: site.name },
+      creditText: site.name,
+      copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
+      license: `${site.url}/terms-of-service`,
+      acquireLicensePage: `${site.url}/privacy-policies`,
+    },
+    areaServed: [
+      'Geelong', 'Newtown', 'Highton', 'Belmont', 'Geelong West', 'Grovedale',
+      'Waurn Ponds', 'Armstrong Creek', 'Lara', 'Leopold', 'Drysdale',
+      'Ocean Grove', 'Barwon Heads', 'Torquay',
+    ].map((name) => ({ '@type': 'City', name, containedInPlace: { '@type': 'State', name: 'Victoria' } })),
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+    // No aggregateRating — same reasoning as ndis-cleaning-geelong.astro.
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Geelong Cleaning', item: `${site.url}/house-cleaning-geelong` },
+      { '@type': 'ListItem', position: 3, name: 'Deep Cleaning Geelong', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: geelongFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title={fitTitle('Deep Cleaning Geelong', ['Eco-Friendly | 1300 876 472', 'Eco-Friendly'], ' | ')}
+  description="Deep cleaning in Geelong: inside ovens, cabinets, grout, vents and window tracks. Non-toxic products, two cleaners on most jobs. Call 1300 876 472."
+  schema={schema}
+>
+  <!-- 1. Hero -->
+  <ServiceHero
+    eyebrow="Deep cleaning · Geelong"
+    heading="Deep Cleaning Services<br />in Geelong"
+    tagline="A top-to-bottom reset for Geelong, Bellarine and Surf Coast homes. Two cleaners on most jobs. Non-toxic products supplied."
+    bg="/images/hero-staff-bathroom.webp"
+  />
+
+  <!-- 2. Intro -->
+  <ServiceIntro
+    kicker="About this service"
+    heading="A complete reset for your Geelong home."
+    body={introBody}
+    stats={introStats}
+  />
+
+  <!-- 3. What's included -->
+  <ServiceInclusions
+    heading="What a Geelong deep clean covers."
+    sub="Everything in a regular clean, plus the detail it does not reach. Tell us what matters most and we tailor the list to your home."
+    groups={inclusions}
+  />
+
+  <!-- 4. Which clean do you need? -->
+  <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 16px;">
+          Deep, regular or end of lease?
+        </h2>
+        <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
+          Three different jobs. Here is how to tell which one your home needs.
+        </p>
+      </div>
+      <div class="dc-choices" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        {choices.map((c) => (
+          <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05); display: flex; flex-direction: column;">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.2; color: #0f172a; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(15,23,42,0.08);">{c.type}</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0 0 12px;">{c.when}</p>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; color: #0f172a; margin: 0 0 16px;">{c.note}</p>
+            {c.href && (
+              <a href={c.href} style="margin-top: auto; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #467FF7; text-decoration: none;">{c.link} &rarr;</a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How it works -->
+  <section style="background: #f8fafc; padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0;">
+          How a deep clean works
+        </h2>
+      </div>
+      <ol class="dc-steps" style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        {steps.map((s) => (
+          <li style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 26px 24px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: #467FF7; color: #ffffff; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; margin-bottom: 14px;">{s.step}</span>
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.25; color: #0f172a; margin: 0 0 8px;">{s.title}</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgb(71, 85, 105); margin: 0;">{s.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. Why choose Naturo -->
+  <Features />
+
+  <!-- 7. Social proof -->
+  <Testimonials ratingKey="geelong" location="Geelong" />
+
+  <!-- 8. Trusted-by logos -->
+  <Providers />
+
+  <!-- 9. FAQ (Geelong-specific) -->
+  <FAQ
+    items={geelongFaqs}
+    eyebrow="Deep cleaning Geelong — common questions"
+    subheading="What to know before booking a deep clean in Geelong, the Bellarine or the Surf Coast."
+  />
+
+  <!-- 10. App promo -->
+  <AppPromo />
+
+  <!-- 11. Related services and guides -->
+  <RelatedGuides
+    regionLabel="Geelong"
+    services={[
+      { href: '/house-cleaning-geelong/', text: 'Regular house cleaning in Geelong' },
+      { href: '/end-of-lease-cleaning-geelong/', text: 'End of lease cleaning in Geelong' },
+      { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
+    ]}
+    guideSlugs={[
+      'house-cleaning-cost-geelong',
+      'how-to-clean-oven-grease-naturally',
+      'shower-screen-soap-scum-removal',
+      'eco-friendly-cleaning-geelong',
+    ]}
+  />
+
+  <FinalCTA />
+
+  <!-- 12. Area links (local SEO) -->
+  <section style="background: #ffffff; padding: clamp(64px, 8vw, 96px) 0; border-top: 1px solid rgba(15,23,42,0.06);">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; color: #0f172a; margin: 0;">
+          Deep cleaning across Greater Geelong
+        </h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+        {areaLinks.map((s) => (
+          <a
+            href={`/${s.slug}/`}
+            style="display: inline-block; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(15,23,42,0.12); font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; color: rgb(71, 85, 105); text-decoration: none; transition: border-color 0.2s, color 0.2s;"
+          >
+            {s.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 900px) {
+    .dc-choices { grid-template-columns: 1fr !important; }
+    .dc-steps { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 560px) {
+    .dc-steps { grid-template-columns: 1fr !important; }
+  }
+</style>

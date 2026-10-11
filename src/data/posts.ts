@@ -1152,7 +1152,7 @@ export const posts: BlogPost[] = [
         ],
       },
     ],
-    related: ['end-of-lease-cleaning-geelong-checklist', 'how-to-clean-oven-grease-naturally'],
+    related: ['how-to-choose-a-house-cleaner-geelong', 'end-of-lease-cleaning-geelong-checklist'],
   },
 
   // 9. Geelong — NDIS cleaning guide
@@ -1777,12 +1777,152 @@ export const posts: BlogPost[] = [
       {
         type: 'cta',
         heading: 'Book NDIS cleaning in Port Macquarie',
-        body: 'Registered NDIS provider. Police-checked, eco-friendly team. All management types welcome.',
+        body: 'Police-checked, eco-friendly team. Plan-managed and self-managed participants welcome.',
         href: '/ndis-cleaning-port-macquarie/',
         label: 'Learn more & book',
       },
     ],
     related: ['ndis-cleaning-routine-supports-independence', 'house-cleaning-cost-port-macquarie'],
+  },
+
+  // Geelong — choosing a cleaner. Written as Naturo's own guide, and says so:
+  // a "best cleaners" list that looks independent but is ours would be
+  // misleading conduct under the ACL, so this compares checks, not companies.
+  {
+    slug: 'how-to-choose-a-house-cleaner-geelong',
+    category: 'Guides',
+    title: 'How to Choose a House Cleaner in Geelong: 10 Questions to Ask (2026)',
+    excerpt:
+      'The ten checks that separate a reliable Geelong cleaner from a risky one — insurance, police checks, pricing, NDIS status and what a fair quote includes.',
+    metaTitle: 'How to Choose a House Cleaner in Geelong',
+    metaDescription:
+      'Choosing a house cleaner in Geelong? Ten questions to ask about insurance, police checks, pricing, products and NDIS status before you book anyone.',
+    keywords: [
+      'how to choose a cleaner geelong',
+      'best house cleaner geelong',
+      'house cleaners geelong',
+      'questions to ask a cleaner',
+      'hiring a cleaner geelong',
+      'reliable cleaners geelong',
+    ],
+    publishedDate: '2026-10-11',
+    readMinutes: 6,
+    heroImage: '/images/hero-kitchen.webp',
+    intro:
+      'Most bad cleaning experiences in Geelong come down to something you could have asked before booking: who is liable if something breaks, who actually comes into your home, and what the quote really covers. These are the ten questions worth asking any cleaner — including us.',
+    toc: [
+      { id: 'trust-and-safety', label: 'Trust and safety' },
+      { id: 'price-and-scope', label: 'Price and scope' },
+      { id: 'fit-for-your-home', label: 'Fit for your home' },
+      { id: 'red-flags', label: 'Red flags' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      {
+        type: 'callout',
+        title: 'Who wrote this',
+        body:
+          'This guide is written by Naturo Group, a cleaning company serving Geelong. We have not ranked other businesses — the questions below work for any cleaner you are considering, and you should ask them of us too.',
+      },
+      { type: 'h2', text: 'Trust and safety' },
+      { type: 'h3', text: '1. Are you insured, and can I see the certificate?' },
+      {
+        type: 'p',
+        text: 'Public liability insurance covers damage to your home or belongings during a clean. Ask for the certificate of currency, not just a yes. If a cleaner is uninsured, a broken stone benchtop or a flooded laundry may end up as your problem.',
+      },
+      { type: 'h3', text: '2. Is everyone who comes to my home police-checked?' },
+      {
+        type: 'p',
+        text: 'A business can be police-checked while the person at your door is not. Ask whether every cleaner has a current National Police Check, and whether the same cleaner comes each visit.',
+      },
+      { type: 'h3', text: '3. Do you have a real ABN and a business address?' },
+      {
+        type: 'p',
+        text: 'Search the business name on the Australian Business Register (abr.business.gov.au). An active ABN in the trading name you were given is a basic sign the business is accountable if something goes wrong.',
+      },
+      { type: 'h2', text: 'Price and scope' },
+      { type: 'h3', text: '4. Is the price a fixed quote or an hourly estimate?' },
+      {
+        type: 'p',
+        text: 'Hourly rates look cheaper but can run long. A flat-rate quote for your home’s size and condition gives you certainty. Either is fine — just know which one you are getting, and whether GST is included.',
+      },
+      { type: 'h3', text: '5. What exactly is included?' },
+      {
+        type: 'p',
+        text: 'Ask for the checklist. Ovens, inside cupboards, windows and walls are often extras on a regular clean and included in a deep or end-of-lease clean. Comparing two quotes is only fair if they cover the same work.',
+      },
+      { type: 'h3', text: '6. Do you bring the products and equipment?' },
+      {
+        type: 'p',
+        text: 'Some cleaners expect you to supply a vacuum and products. If anyone in your home has asthma, allergies or chemical sensitivities, ask what products are used and whether non-toxic options are standard.',
+      },
+      { type: 'h3', text: '7. What happens if I’m not happy?' },
+      {
+        type: 'p',
+        text: 'A good cleaner will come back and fix what was missed. Ask how long you have to raise it, and whether a re-clean costs anything. For end-of-lease cleans, ask whether they return if the property manager flags something at inspection.',
+      },
+      {
+        type: 'cta',
+        heading: 'See what a Geelong clean actually costs',
+        body: 'Our 2026 Geelong pricing guide sets out typical ranges for regular, deep and end-of-lease cleans, and what pushes a price up or down.',
+        href: '/resource/house-cleaning-cost-geelong/',
+        label: 'Read the Geelong cost guide',
+      },
+      { type: 'h2', text: 'Fit for your home' },
+      { type: 'h3', text: '8. Are you a registered NDIS provider?' },
+      {
+        type: 'p',
+        text: 'This only matters if you use NDIS funding. Agency-managed (NDIA-managed) participants must use a registered provider. Plan-managed and self-managed participants can use registered or unregistered providers. Naturo Group is not currently a registered NDIS provider, so we work with plan-managed and self-managed participants only.',
+      },
+      { type: 'h3', text: '9. Do you actually service my suburb?' },
+      {
+        type: 'p',
+        text: 'Some businesses list every suburb from Lara to Torquay but only have cleaners in one part of Geelong. Ask how often they work in your area — it affects how easy it is to get a regular time slot.',
+      },
+      { type: 'h3', text: '10. What do recent local reviews say?' },
+      {
+        type: 'p',
+        text: 'Read the Google reviews for the location that would actually send the cleaner, not a head office in another city. Recent reviews that mention specific cleaners and specific jobs tell you more than a high star average.',
+      },
+      { type: 'h2', text: 'Red flags when hiring a cleaner' },
+      {
+        type: 'ul',
+        items: [
+          'Cash only, with no invoice or receipt',
+          'No ABN, or an ABN under a different name to the one you were given',
+          'Reluctance to show an insurance certificate',
+          'A price given without asking about your home’s size or condition',
+          'A different stranger every visit with no explanation',
+          'Pressure to book or pay in full on the spot',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'How much should a house cleaner cost in Geelong?',
+            a: 'It depends on home size, condition and the type of clean. Naturo Group’s regular cleans in Geelong start from $153 and deep cleans from $371 for a 2-bedroom home. Our Geelong cost guide sets out typical ranges in more detail.',
+          },
+          {
+            q: 'Is it better to hire an independent cleaner or a company?',
+            a: 'An independent cleaner can be excellent and often cheaper. A company usually adds insurance, replacement cleaners when someone is sick, and a business to complain to. Either way, ask the same ten questions.',
+          },
+          {
+            q: 'Do Naturo Group cleaners bring their own products?',
+            a: 'Yes. We supply eco-friendly, non-toxic products and all equipment for every job, and every cleaner is police-checked.',
+          },
+        ],
+      },
+      {
+        type: 'cta',
+        heading: 'Ask us the ten questions',
+        body: 'Police-checked, fully insured and eco-friendly. Get a free, no-obligation quote for your Geelong home.',
+        href: '/house-cleaning-geelong/',
+        label: 'Get a Geelong quote',
+      },
+    ],
+    related: ['house-cleaning-cost-geelong', 'end-of-lease-cleaning-geelong-checklist'],
   },
 ];
 

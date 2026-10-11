@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import ServiceInclusions from '../components/ServiceInclusions.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site } from '../data/site';
+
+// Landing page for CHSP cleaning searches ("chsp cleaning", "chsp for house
+// cleaning"). Program facts checked against health.gov.au on 2026-10-11:
+// CHSP moves into Support at Home no earlier than 1 July 2027, and CHSP
+// services are delivered by CHSP-funded organisations. NATURO is not
+// described as one — CHSP clients either ask their CHSP provider to arrange
+// cleaning with us, or book extra visits privately.
+const pageUrl = `${site.url}/chsp-cleaning-geelong`;
+
+const introBody = [
+  'The Commonwealth Home Support Programme (CHSP) gives older people entry-level help at home, including domestic assistance. NATURO GROUP cleans homes for older people across Greater Geelong, the Bellarine and the Surf Coast.',
+  'CHSP services are arranged by your CHSP provider. If they arrange cleaning with us, we work to their schedule and send them the paperwork. If your CHSP hours do not cover everything the home needs, you can also book extra visits with us privately — many families use us to fill the gaps.',
+];
+
+const introStats = [
+  { num: 'Mon–Fri', label: 'Weekday visits' },
+  { num: '100%', label: 'Police-checked team' },
+  { num: 'No', label: 'Lock-in contracts' },
+];
+
+const inclusions = [
+  {
+    group: 'Kitchen & living',
+    items: [
+      'Wipe benches, stovetop and sink',
+      'Wash up and tidy the kitchen',
+      'Vacuum and mop floors',
+      'Empty bins and replace liners',
+    ],
+  },
+  {
+    group: 'Bathrooms & bedrooms',
+    items: [
+      'Clean showers, basins and toilets',
+      'Wipe mirrors, tiles and rails',
+      'Change bed linen on request',
+      'Dust surfaces and tidy rooms',
+    ],
+  },
+  {
+    group: 'Extras when needed',
+    items: [
+      'One-off spring or deep cleans',
+      'Cleans before or after a hospital stay',
+      'Visit notes for family',
+      'Fragrance-conscious products',
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: 'Can I use CHSP for house cleaning in Geelong?',
+    a: 'Yes — domestic assistance is one of the services CHSP covers. CHSP services are arranged through a CHSP provider after a My Aged Care assessment. Ask your provider whether they can arrange cleaning with NATURO GROUP; if they can, we quote the job for them and work to their schedule.',
+  },
+  {
+    q: 'My CHSP cleaning hours are not enough. Can I book extra?',
+    a: 'Yes. You can book extra cleans with us privately, weekly, fortnightly or one-off, with no lock-in contract. As an indicative guide for Geelong in 2026, a regular clean of a 3-bedroom house is $153–$220 per visit.',
+  },
+  {
+    q: 'Is CHSP changing to Support at Home?',
+    a: 'Yes, but not yet. The government says CHSP will move into the Support at Home program no earlier than 1 July 2027. Until then, CHSP services continue as they are. If you already have a Support at Home plan, see our Support at Home cleaning page.',
+  },
+  {
+    q: 'How do I get CHSP help in the first place?',
+    a: 'Contact My Aged Care on 1800 200 422 or at myagedcare.gov.au to arrange an assessment. Once you are approved for CHSP domestic assistance, you can ask your provider about using us.',
+  },
+  {
+    q: 'Which areas do you cover?',
+    a: 'Greater Geelong, the Bellarine and the Surf Coast — including Geelong, Newtown, Highton, Belmont, Grovedale, Waurn Ponds, Armstrong Creek, Mount Duneed, Lara, Leopold, Ocean Grove, Barwon Heads and Torquay.',
+  },
+  {
+    q: 'How do I get started?',
+    a: "Call 1300 876 472 or request a quote online. Let us know you're on CHSP and who your provider is, and we'll take it from there.",
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'Aged care house cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'CHSP Cleaning in Geelong',
+    description:
+      'House cleaning for older people in Geelong receiving Commonwealth Home Support Programme (CHSP) services, arranged through their CHSP provider or booked privately.',
+    url: pageUrl,
+    areaServed: [
+      { '@type': 'City', name: 'Geelong', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Torquay', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Ocean Grove', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Armstrong Creek', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+    ],
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Geelong Cleaning', item: `${site.url}/house-cleaning-geelong` },
+      { '@type': 'ListItem', position: 3, name: 'CHSP Cleaning Geelong', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="CHSP House Cleaning Geelong | Cleaning for Seniors"
+  description="House cleaning for seniors in Geelong on CHSP. Arranged through your CHSP provider, or book extra visits privately. Call 1300 876 472."
+  schema={schema}
+>
+  <ServiceHero
+    eyebrow="Aged care cleaning · Geelong"
+    heading="CHSP House Cleaning<br />in Geelong"
+    tagline="Patient, police-checked cleaners for older people across Geelong, the Bellarine and the Surf Coast."
+    bg="/images/hero-staff-bathroom.webp"
+  />
+
+  <ServiceIntro
+    kicker="About this service"
+    heading="Cleaning help that fits around CHSP."
+    body={introBody}
+    stats={introStats}
+  />
+
+  <ServiceInclusions
+    heading="What a visit covers."
+    sub="Every clean is tailored to the home and the person living there."
+    groups={inclusions}
+  />
+
+  <section style="background: #ffffff; padding: clamp(64px, 8vw, 96px) 0;">
+    <div class="container-site" style="max-width: 720px; text-align: center;">
+      <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
+        Have a Support at Home plan or Home Care Package instead? See
+        <a href="/support-at-home-cleaning-geelong/" style="color: #467FF7; font-weight: 500; text-decoration: none;">Support at Home cleaning in Geelong &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <Features />
+
+  <Testimonials ratingKey="geelong" location="Geelong" />
+
+  <FAQ
+    items={faqs}
+    eyebrow="CHSP cleaning — common questions"
+    subheading="What older people and their families ask us most."
+  />
+
+  <RelatedGuides
+    regionLabel="Geelong"
+    services={[
+      { href: '/support-at-home-cleaning-geelong/', text: 'Support at Home cleaning in Geelong' },
+      { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
+      { href: '/house-cleaning-geelong/', text: 'Regular house cleaning in Geelong' },
+    ]}
+    guideSlugs={['house-cleaning-cost-geelong', 'ndis-cleaning-geelong-guide']}
+  />
+
+  <FinalCTA />
+</Layout>

@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceIntro from '../components/ServiceIntro.astro';
+import ServiceInclusions from '../components/ServiceInclusions.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { site } from '../data/site';
+
+// Landing page for the "Aged Care & Seniors | Geelong" Google Ads ad group
+// and for Support at Home / Home Care Package searches. Program facts were
+// checked against health.gov.au on 2026-10-11 — re-check them before editing:
+// Support at Home replaced Home Care Packages from 1 Nov 2025; cleaning is an
+// "everyday living" service, which carries the highest participant
+// contribution (17.5% for a full pensioner). Do NOT describe NATURO as a
+// registered aged care provider — the provider manages the budget, we clean.
+const pageUrl = `${site.url}/support-at-home-cleaning-geelong`;
+
+const introBody = [
+  'NATURO GROUP helps older people across Greater Geelong, the Bellarine and the Surf Coast keep home clean, safe and comfortable — so they can keep living independently in the place they know.',
+  'If you have a Support at Home plan or an existing Home Care Package, your aged care provider manages the budget and arranges services. We are the cleaning team: your provider books the visits with us, we invoice them, and you or your family get notes after each clean if you want them.',
+  'Not on a package yet, or waiting for one? You can book us privately in the meantime, with no lock-in contract.',
+];
+
+const introStats = [
+  { num: 'Mon–Fri', label: 'Weekday visits' },
+  { num: '100%', label: 'Police-checked team' },
+  { num: 'No', label: 'Lock-in contracts' },
+];
+
+const inclusions = [
+  {
+    group: 'Kitchen & living',
+    items: [
+      'Wipe benches, stovetop and sink',
+      'Wash up and tidy the kitchen',
+      'Vacuum and mop floors',
+      'Empty bins and replace liners',
+    ],
+  },
+  {
+    group: 'Bathrooms & bedrooms',
+    items: [
+      'Clean showers, basins and toilets',
+      'Wipe mirrors, tiles and rails',
+      'Change bed linen on request',
+      'Dust surfaces and tidy rooms',
+    ],
+  },
+  {
+    group: 'Working with your provider',
+    items: [
+      'Invoices sent to your aged care provider',
+      'Visit notes for family or care coordinators',
+      'Visits planned around appointments',
+      'Fragrance-conscious products',
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: 'Can I use my Support at Home budget for cleaning in Geelong?',
+    a: 'Yes. Domestic assistance such as house cleaning is one of the everyday living services Support at Home can fund. Your aged care provider manages your budget, so ask them to arrange cleaning with NATURO GROUP and we will work out the visit schedule with them.',
+  },
+  {
+    q: 'I still have a Home Care Package. Does that change anything?',
+    a: 'Home Care Packages moved into the Support at Home program on 1 November 2025. If you were already receiving or approved for a package, your provider will explain how your budget carries over. Cleaning is arranged the same way — through your provider.',
+  },
+  {
+    q: 'Will I have to pay a contribution for cleaning?',
+    a: 'Usually, yes. Under Support at Home, cleaning is an "everyday living" service, which has the highest participant contribution — for example 17.5% of the service price for a full pensioner. Your rate depends on your income and assets, and some people who were on a Home Care Package before 12 September 2024 pay less or nothing. Your provider or My Aged Care (1800 200 422) can confirm your rate.',
+  },
+  {
+    q: 'Are you my aged care provider?',
+    a: 'No — we are the cleaning service. Your aged care provider holds your plan and budget and arranges services for you. We work alongside them so you get a reliable cleaner without extra paperwork.',
+  },
+  {
+    q: 'How much does cleaning cost?',
+    a: 'When your aged care provider arranges the cleaning, we quote each job for them based on the home and what your care plan needs, so the provider can check it against your budget before visits start. If you pay privately, a regular clean of a 3-bedroom house in Geelong is $153–$220 per visit as an indicative 2026 guide.',
+  },
+  {
+    q: 'Which areas do you cover?',
+    a: 'Greater Geelong, the Bellarine and the Surf Coast — including Geelong, Newtown, Highton, Belmont, Grovedale, Waurn Ponds, Armstrong Creek, Mount Duneed, Lara, Leopold, Ocean Grove, Barwon Heads and Torquay.',
+  },
+  {
+    q: 'Can family members organise cleaning for a parent?',
+    a: 'Yes. Many of our aged care clients are set up by a son, daughter or carer. We can send visit notes to a family member as well as the provider, so everyone knows the clean was done.',
+  },
+  {
+    q: 'How do I get started?',
+    a: "Call 1300 876 472 or request a quote online. Tell us whether you have a Support at Home plan, a Home Care Package, CHSP services or want to pay privately, and we'll take it from there.",
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    serviceType: 'Aged care house cleaning',
+    provider: { '@id': `${site.url}/#organization` },
+    name: 'Support at Home & Home Care Package Cleaning in Geelong',
+    description:
+      'House cleaning for older people in Geelong with a Support at Home plan or Home Care Package, arranged through their aged care provider, or booked privately.',
+    url: pageUrl,
+    areaServed: [
+      { '@type': 'City', name: 'Geelong', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Torquay', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Ocean Grove', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+      { '@type': 'City', name: 'Armstrong Creek', containedInPlace: { '@type': 'State', name: 'Victoria' } },
+    ],
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:00',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Geelong Cleaning', item: `${site.url}/house-cleaning-geelong` },
+      { '@type': 'ListItem', position: 3, name: 'Support at Home Cleaning Geelong', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Support at Home & Home Care Package Cleaning Geelong"
+  description="Home cleaning for seniors in Geelong with a Support at Home plan or Home Care Package. We work with your aged care provider. Call 1300 876 472."
+  schema={schema}
+>
+  <ServiceHero
+    eyebrow="Aged care cleaning · Geelong"
+    heading="Support at Home Cleaning<br />in Geelong"
+    tagline="For Support at Home and Home Care Package clients. Patient, police-checked cleaners, arranged through your aged care provider."
+    bg="/images/hero-staff-bathroom.webp"
+  />
+
+  <ServiceIntro
+    kicker="About this service"
+    heading="Help at home, without the paperwork."
+    body={introBody}
+    stats={introStats}
+  />
+
+  <ServiceInclusions
+    heading="What a visit covers."
+    sub="Every clean is tailored to the home and to what your care plan allows."
+    groups={inclusions}
+  />
+
+  <!-- How funding works -->
+  <section style="background: #ffffff; padding: clamp(88px, 10vw, 128px) 0;">
+    <div class="container-site" style="max-width: 1160px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 5vw, 56px);">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; color: #0f172a; margin: 0 0 16px;">
+          How aged care funding works for cleaning
+        </h2>
+        <p style="font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px); font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">
+          Cleaning is an <strong>everyday living</strong> service. Here's how each option works with us.
+        </p>
+      </div>
+      <div class="funding-grid">
+        {[
+          {
+            type: 'Support at Home',
+            desc: 'Your aged care provider manages your budget. Ask them to arrange cleaning with NATURO GROUP — we quote the job for them, agree the schedule and invoice them.',
+          },
+          {
+            type: 'Home Care Package',
+            desc: 'Packages moved into Support at Home on 1 November 2025. Your provider will explain how your budget carries over; cleaning is arranged the same way.',
+          },
+          {
+            type: 'Paying privately',
+            desc: 'Waiting for a package, or want extra visits? Book us directly. Weekly, fortnightly or one-off, with no lock-in contract.',
+          },
+        ].map((f) => (
+          <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.05);">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.2; color: #0f172a; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(15,23,42,0.08);">{f.type}</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.65; color: rgb(71, 85, 105); margin: 0;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; text-align: center; color: rgb(100, 116, 139); margin: 32px 0 0;">
+        On CHSP instead? See <a href="/chsp-cleaning-geelong/" style="color: #467FF7; font-weight: 500; text-decoration: none;">CHSP cleaning in Geelong &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <Features />
+
+  <Testimonials ratingKey="geelong" location="Geelong" />
+
+  <FAQ
+    items={faqs}
+    eyebrow="Support at Home cleaning — common questions"
+    subheading="What older people and their families ask us most."
+  />
+
+  <RelatedGuides
+    regionLabel="Geelong"
+    services={[
+      { href: '/chsp-cleaning-geelong/', text: 'CHSP cleaning in Geelong' },
+      { href: '/ndis-cleaning-geelong/', text: 'NDIS cleaning in Geelong' },
+      { href: '/house-cleaning-geelong/', text: 'Regular house cleaning in Geelong' },
+    ]}
+    guideSlugs={['house-cleaning-cost-geelong', 'ndis-cleaning-geelong-guide']}
+  />
+
+  <FinalCTA />
+</Layout>
+
+<style>
+  .funding-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 860px) {
+    .funding-grid { grid-template-columns: 1fr; }
+  }
+</style>

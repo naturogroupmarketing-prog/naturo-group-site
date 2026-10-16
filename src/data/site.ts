@@ -191,7 +191,12 @@ export const leadCapture = {
   // PUBLIC_FUNNEL_BASE does below. Without it every test submission from a
   // dev server creates a real LEAD in the live CRM, because this address is
   // baked in regardless of environment.
-  crmUrl: import.meta.env.PUBLIC_CRM_URL ?? 'https://sophiie-web.onrender.com/api/widget/lead',
+  //
+  // 16 Oct 2026: moved from the old app (sophiie-web.onrender.com) to NATURO's
+  // account on the new AI Reception, reception.trackio.au. The new app serves
+  // many businesses, so every request names NATURO's account (?org=…, see
+  // funnelOrg below); without it the app answers 403 and nothing is filed.
+  crmUrl: import.meta.env.PUBLIC_CRM_URL ?? 'https://reception.trackio.au/api/widget/lead?org=cmv3ntnfr00002an159zp8pxa',
   // The full quote funnel in the AI Reception app. The short lead-gate modal
   // still posts to crmUrl above; the multi-step form on /quote posts here,
   // because it carries far more than {name, phone, email} — property answers,
@@ -201,7 +206,10 @@ export const leadCapture = {
   // generic widget intake shared with the Google Ads lead-form webhook, and
   // widening it to understand bedrooms and consent versions would couple those
   // two things together for no reason.
-  funnelBase: 'https://sophiie-web.onrender.com/api/funnel',
+  funnelBase: 'https://reception.trackio.au/api/funnel',
+  // NATURO's account on reception.trackio.au. Added as ?org=… to every
+  // funnel request (QuoteLeadGate, FunnelBeacon) — see crmUrl above.
+  funnelOrg: 'cmv3ntnfr00002an159zp8pxa',
   /**
    * Cloudflare Turnstile site key. Public by design — it is meant to be read
    * from the page source; the secret half lives in the AI Reception app as

@@ -20,9 +20,11 @@ interface Props {
 }
 const { service = '' } = Astro.props;
 const funnelBase = import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase;
+// The business on reception.trackio.au these events belong to (site.ts funnelOrg).
+const funnelOrg = leadCapture.funnelOrg || '';
 ---
 
-<script is:inline define:vars={{ funnelBase, service }}>
+<script is:inline define:vars={{ funnelBase, funnelOrg, service }}>
   (function () {
     if (!funnelBase) return;
 
@@ -43,7 +45,7 @@ const funnelBase = import.meta.env.PUBLIC_FUNNEL_BASE || leadCapture.funnelBase;
       try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { ref = ''; }
 
       try {
-        fetch(funnelBase + '/event', {
+        fetch(funnelBase + '/event' + (funnelOrg ? '?org=' + encodeURIComponent(funnelOrg) : ''), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           keepalive: true,

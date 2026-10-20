@@ -407,6 +407,10 @@ const icons: Record<string, string> = {
     --ij-link: #2557a7;
     --ij-blue: #3a5dff;
     background: #f3f2f1;
+    /* global.css gives every <section> a top padding; here it showed as a
+       cream band between the site header and the search bar. A job board's
+       search sits directly under the header. */
+    padding-top: 0;
     padding-bottom: clamp(36px, 5vw, 56px);
     font-family: var(--ij-font);
   }

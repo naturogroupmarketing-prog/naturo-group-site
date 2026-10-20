@@ -178,7 +178,7 @@ const icons: Record<string, string> = {
         </ul>
 
         <div class="jb-actions">
-          <a href={applyHref} class="jb-apply">Apply now</a>
+          <a href={applyHref} class="jb-apply"><span>Apply now</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <a href={site.phoneHref} class="jb-call">Or call {site.phone}</a>
         </div>
       </div>
@@ -234,7 +234,7 @@ const icons: Record<string, string> = {
         </ol>
 
         <div class="jb-inline-cta">
-          <a href={applyHref} class="jb-apply">Apply for this job</a>
+          <a href={applyHref} class="jb-apply"><span>Apply for this job</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <p class="jb-inline-note">Two minutes. Tell us whether you want permanent or casual hours — your local Team Leader calls within 48 hours.</p>
         </div>
       </article>
@@ -250,7 +250,7 @@ const icons: Record<string, string> = {
               </div>
             ))}
           </dl>
-          <a href={applyHref} class="jb-apply jb-apply-block">Apply now</a>
+          <a href={applyHref} class="jb-apply jb-apply-block"><span>Apply now</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           <p class="jb-panel-note">{payLine}. Questions? Call <a href={site.phoneHref}>{site.phone}</a>.</p>
         </div>
       </aside>
@@ -296,9 +296,10 @@ const icons: Record<string, string> = {
      things Seek and Indeed lead with — and the page gives them in that order.
      --------------------------------------------------------------------- */
   .jb-top {
-    background: #f1f5f9;
-    padding: clamp(28px, 4vw, 48px) 0 clamp(32px, 4vw, 52px);
+    background: linear-gradient(150deg, #e8eeff 0%, #f0f4ff 60%, #edf2ff 100%);
+    padding: clamp(28px, 4vw, 48px) 0 clamp(40px, 5vw, 64px);
     border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    scroll-margin-top: 100px;
   }
   .jb-top-inner { max-width: 1160px; }
 
@@ -313,7 +314,7 @@ const icons: Record<string, string> = {
     gap: 8px;
   }
   .jb-crumbs a { color: rgb(100, 116, 139); text-decoration: none; }
-  .jb-crumbs a:hover { color: #467FF7; text-decoration: underline; }
+  .jb-crumbs a:hover { color: #3a5dff; text-decoration: underline; }
 
   .jb-card {
     background: #ffffff;
@@ -328,13 +329,13 @@ const icons: Record<string, string> = {
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #467FF7;
+    color: #3a5dff;
     margin: 0 0 12px;
   }
   .jb-title {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(28px, 3.6vw, 42px);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.14;
     letter-spacing: -0.015em;
     color: #0f172a;
@@ -361,27 +362,46 @@ const icons: Record<string, string> = {
     line-height: 1.5;
     color: rgb(51, 65, 85);
   }
-  .jb-ico { flex: none; width: 20px; height: 20px; color: #467FF7; margin-top: 1px; }
+  .jb-ico { flex: none; width: 20px; height: 20px; color: #3a5dff; margin-top: 1px; }
   .jb-ico :global(svg) { width: 20px; height: 20px; display: block; }
 
   .jb-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+  /* The site's form submit button, to the pixel: same gradient pill, same
+     white icon disc, same lift on hover as .cr-submit / .ct-submit. */
   .jb-apply {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    padding: 15px 34px;
-    border-radius: 999px;
-    background: #467FF7;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
     color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
+    line-height: 1;
+    min-height: 44px;
     text-decoration: none;
-    min-height: 48px;
-    transition: background 0.2s ease;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .jb-apply:hover { background: #2f68df; }
+  .jb-apply:hover { box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px); }
+  .jb-apply-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #1C244B;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .jb-apply-icon svg { display: block; width: 14px; height: 14px; }
   .jb-apply-block { display: flex; width: 100%; margin-top: 20px; }
   .jb-call {
     font-family: 'Poppins', sans-serif;
@@ -390,7 +410,7 @@ const icons: Record<string, string> = {
     color: rgb(71, 85, 105);
     text-decoration: none;
   }
-  .jb-call:hover { color: #467FF7; text-decoration: underline; }
+  .jb-call:hover { color: #3a5dff; text-decoration: underline; }
 
   /* ---------- Body: description + pinned details panel ---------- */
   .jb-body { background: #ffffff; padding: clamp(40px, 5vw, 64px) 0 clamp(56px, 7vw, 88px); }
@@ -409,7 +429,7 @@ const icons: Record<string, string> = {
   .jb-h2 {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(22px, 2.4vw, 28px);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: #0f172a;
@@ -444,17 +464,17 @@ const icons: Record<string, string> = {
     width: 17px;
     height: 17px;
     border-radius: 50%;
-    background: #467FF7;
+    background: #3a5dff;
     color: #fff;
     font-size: 11px;
     line-height: 17px;
     text-align: center;
   }
-  .jb-list-plus li::before { content: '+'; background: rgba(70, 127, 247, 0.14); color: #467FF7; }
+  .jb-list-plus li::before { content: '+'; background: rgba(58, 93, 255, 0.14); color: #3a5dff; }
 
   .jb-benefits { margin: 0; display: grid; gap: 16px; }
   .jb-benefit {
-    border-left: 2px solid rgba(70, 127, 247, 0.3);
+    border-left: 2px solid rgba(58, 93, 255, 0.3);
     padding-left: 16px;
   }
   .jb-benefit dt {
@@ -481,7 +501,7 @@ const icons: Record<string, string> = {
     height: 30px;
     border-radius: 50%;
     background: #f1f5f9;
-    color: #467FF7;
+    color: #3a5dff;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -518,10 +538,11 @@ const icons: Record<string, string> = {
   .jb-side { position: sticky; top: 24px; }
   @media (max-width: 900px) { .jb-side { position: static; } }
   .jb-panel {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 26px 24px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 18px rgba(15, 23, 42, 0.05);
   }
   .jb-panel-h {
     font-family: 'Poppins', sans-serif;
@@ -533,20 +554,19 @@ const icons: Record<string, string> = {
   .jb-details { margin: 0; display: grid; gap: 14px; }
   .jb-detail dt {
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgb(100, 116, 139);
-    margin-bottom: 3px;
+    letter-spacing: 0.01em;
+    color: #0f172a;
+    margin-bottom: 4px;
   }
   .jb-detail dd {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #0f172a;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgb(71, 85, 105);
   }
   .jb-panel-note {
     font-family: 'Poppins', sans-serif;
@@ -556,7 +576,7 @@ const icons: Record<string, string> = {
     color: rgb(100, 116, 139);
     margin: 14px 0 0;
   }
-  .jb-panel-note a { color: #467FF7; text-decoration: none; }
+  .jb-panel-note a { color: #3a5dff; text-decoration: none; }
   .jb-panel-note a:hover { text-decoration: underline; }
 
   /* ---------- Where the work is ---------- */
@@ -587,7 +607,7 @@ const icons: Record<string, string> = {
     color: rgb(71, 85, 105);
     text-decoration: none;
   }
-  .jb-suburbs a:hover { border-color: #467FF7; color: #467FF7; }
+  .jb-suburbs a:hover { border-color: #3a5dff; color: #3a5dff; }
   .jb-where-note {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
@@ -600,7 +620,7 @@ const icons: Record<string, string> = {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #467FF7;
+    color: #3a5dff;
     text-decoration: none;
   }
   .jb-where-links a:hover { text-decoration: underline; }

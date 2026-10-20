@@ -291,9 +291,10 @@ const icons: Record<string, string> = {
 <style>
   /* ---------------------------------------------------------------------
      Indeed's job page, rebuilt with our content. Its own type stack (Indeed
-     runs Noto Sans over the system fonts), its own greys — #f3f2f1 page,
-     #d4d2d0 card borders, #2d2d2d text, #595959 secondary — its card radii
-     and its square blue Apply button. The one thing kept from the site is
+     runs Noto Sans over the system fonts), its text greys (#2d2d2d and
+     #595959), its card radii and its square blue Apply button. Indeed's own
+     page grey is warm and read as cream here, so the board sits on white and
+     the cards carry the structure. The one thing kept from the site is
      the brand blue on the button: a candidate should still know whose
      listing this is. Everything on the page is real; nothing is a mock
      control that does nothing.
@@ -302,10 +303,10 @@ const icons: Record<string, string> = {
     --ij-font: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     --ij-text: #2d2d2d;
     --ij-muted: #595959;
-    --ij-line: #d4d2d0;
+    --ij-line: #dcdcde;
     --ij-link: #2557a7;
     --ij-blue: #3a5dff;
-    background: #f3f2f1;
+    background: #ffffff;
     /* global.css gives every <section> a top padding; here it showed as a
        cream band between the site header and the search bar. A job board's
        search sits directly under the header. */
@@ -395,7 +396,7 @@ const icons: Record<string, string> = {
     text-decoration: none;
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
-  a.ij-result:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); border-color: #a1a09f; }
+  a.ij-result:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14); border-color: #a9a9ad; }
   .ij-result.is-active { border: 2px solid var(--ij-blue); padding: 15px; box-shadow: 0 2px 10px rgba(58, 93, 255, 0.12); }
   .ij-badge {
     display: inline-block;
@@ -417,7 +418,7 @@ const icons: Record<string, string> = {
   .ij-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .ij-chip {
     font-size: 12px; font-weight: 400; color: var(--ij-text);
-    background: #f3f2f1; border-radius: 4px; padding: 5px 8px;
+    background: #f1f2f4; border-radius: 4px; padding: 5px 8px;
   }
   .ij-results-note { font-size: 13px; line-height: 1.5; color: var(--ij-muted); margin: 4px 0 0; padding: 0 2px; }
   .ij-results-note a { font-family: var(--ij-font); color: var(--ij-link); text-decoration: underline; }
@@ -452,7 +453,7 @@ const icons: Record<string, string> = {
     border: 1px solid var(--ij-line); border-radius: 8px; cursor: pointer;
     transition: background-color 0.15s ease;
   }
-  .ij-iconbtn:hover { background: #f3f2f1; }
+  .ij-iconbtn:hover { background: #f1f2f4; }
   .ij-iconbtn svg { width: 20px; height: 20px; display: block; }
   .ij-share-said { font-size: 13px; color: var(--ij-muted); }
   .ij-call { font-family: var(--ij-font); font-size: 15px; color: var(--ij-text); text-decoration: none; }
@@ -500,7 +501,7 @@ const icons: Record<string, string> = {
     margin-bottom: 0;
   }
 
-  .ij-foot { background: #f3f2f1; padding: clamp(32px, 4vw, 48px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
+  .ij-foot { background: #ffffff; padding: clamp(32px, 4vw, 48px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
   .ij-foot-note { font-family: 'Poppins', sans-serif; font-size: 15px; color: #595959; margin: 0 0 8px; }
   .ij-foot-links { margin: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .ij-foot-links a { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2557a7; text-decoration: none; }

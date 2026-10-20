@@ -175,7 +175,6 @@ const lc = {
           <span>Get My Free Personalised Quote</span>
           <span class="qlg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </button>
-        <button type="button" class="qlg-skip" id="qlgSkip">Skip</button>
         <p class="qlg-reassure">🔒 No obligation. Your details stay private. We'll usually contact you within 30–60&nbsp;minutes during business hours.</p>
       </section>
 
@@ -973,7 +972,6 @@ const lc = {
     // ---- Buttons / navigation -------------------------------------------
     document.getElementById('qlgStart').addEventListener('click', advance);
     backBtn.addEventListener('click', goBack);
-    document.getElementById('qlgSkip').addEventListener('click', function () { submitLead(); });
     document.getElementById('qlgDone').addEventListener('click', function () { closeModal(); });
 
     form.addEventListener('submit', function (ev) {
@@ -1231,24 +1229,6 @@ const lc = {
   .qlg-screen > .qlg-btn-primary[disabled] {
     box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff;
   }
-  /* Skip sits under the submit button on the notes step; keep the pair together
-     so the sticky button never covers it. */
-  .qlg-screen > .qlg-btn-final ~ .qlg-skip {
-    position: sticky;
-    bottom: 0;
-    z-index: 2;
-    background: #ffffff;
-    box-shadow: 0 0 0 12px #ffffff;
-  }
-
-  .qlg-skip {
-    align-self: center;
-    background: transparent; border: 0;
-    font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #94a3b8;
-    padding: 6px 16px; border-radius: 8px; cursor: pointer;
-    transition: color 150ms, background-color 150ms;
-  }
-  .qlg-skip:hover { color: #475569; background: rgba(15, 23, 42, 0.04); }
 
   /* ============================ Option cards ========================= */
   .qlg-options { display: flex; flex-direction: column; gap: 12px; }

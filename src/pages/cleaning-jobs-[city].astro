@@ -12,13 +12,15 @@
 // the suburbs served and the kind of work — both taken from pages the site
 // already publishes.
 //
-// The layout is a job-board listing, not a marketing page: header card with
-// title, employer, pay, work type, location and hours; description on the
-// left; a pinned job-details panel on the right; and the application form at
-// the bottom of the same page. Candidates arriving from a job search expect
-// Seek's shape, and bouncing them to /career/ to apply lost them.
+// The layout is Indeed's: the results column on the left lists every city we
+// advertise in, with the current one selected, and the pane on the right is
+// the chosen job. Type scale and weights follow Indeed too — 16px body at
+// weight 400, bold section rules — because that is what a candidate coming
+// off a job search is reading against. Applying opens the pop-up; nothing
+// sends them to another page.
 import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
+import ApplyLeadGate from '../components/ApplyLeadGate.astro';
 import ApplyForm from '../components/ApplyForm.astro';
 import { site } from '../data/site';
 import { benefits, wellLook, niceToHave, steps, dailyWork, careerCities, payRange, payLine, jobTitle, type CareerCity } from '../data/career';
@@ -29,10 +31,14 @@ export function getStaticPaths() {
 
 const { c } = Astro.props as { c: CareerCity };
 const pageUrl = `${site.url}/cleaning-jobs-${c.slug}`;
-// Applicants apply on this page now, the way a Seek or Indeed listing works.
-// The form is the same component /career/ uses, so the fields and the CRM
-// delivery are identical — only form_location and job_city differ.
-const applyHref = '#apply';
+// Applying opens the conversational pop-up (ApplyLeadGate), the hiring twin
+// of the quote funnel. The href is the no-JS fallback only.
+const applyHref = `mailto:${site.email}?subject=${encodeURIComponent(`Application — cleaning jobs ${c.city}`)}`;
+
+// Every city we advertise in, for the results column. The one being viewed is
+// marked active; the others are links, which is how a job board switches
+// between listings on a static site.
+const otherCities = careerCities;
 
 // Same posting window the national page uses.
 const today = new Date();
@@ -147,132 +153,148 @@ const icons: Record<string, string> = {
   description={`Cleaner jobs in ${c.city} ${c.state}. Permanent & casual employee roles, $${payRange.min}/hr incl. super. No nights or weekends, paid training. Apply now.`}
   schema={schema}
 >
-  <!-- 1. Listing header — the job-board pattern: title, employer, the four
-       facts candidates scan for, and Apply in reach without scrolling. -->
-  <section class="jb-top">
-    <div class="container-site jb-top-inner">
-      <nav class="jb-crumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">/</span>
-        <a href="/career/">Cleaning jobs</a>
-        <span aria-hidden="true">/</span>
+  <section class="ij">
+    <div class="container-site ij-inner">
+      <nav class="ij-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/career/">Cleaning jobs</a><span aria-hidden="true">/</span>
         <span aria-current="page">{c.city}</span>
       </nav>
 
-      <div class="jb-card">
-        <p class="jb-listed">Listed {listedOn} · Immediate start available</p>
-        <h1 class="jb-title">{jobTitle}</h1>
-        <p class="jb-org">
-          <span class="jb-org-name">{site.name}</span>
-          <span class="jb-dot" aria-hidden="true">·</span>
-          <span>{c.city} {c.state} {c.postcode}</span>
-        </p>
+      <p class="ij-count">
+        <strong>{otherCities.length} location{otherCities.length === 1 ? '' : 's'}</strong> hiring cleaners · listed {listedOn}
+      </p>
 
-        <ul class="jb-meta">
-          {jobMeta.map((m) => (
-            <li class="jb-meta-row">
-              <span class="jb-ico" aria-hidden="true" set:html={icons[m.icon]} />
-              <span>{m.text}</span>
-            </li>
+      <div class="ij-split">
+        <!-- LEFT · every area we advertise in. Selecting one loads its listing,
+             which on a static site means following the link. -->
+        <div class="ij-results" aria-label="Open positions">
+          {otherCities.map((o) => (
+            o.slug === c.slug ? (
+              <div class="ij-result is-active" aria-current="true">
+                <h2 class="ij-result-title">{jobTitle}</h2>
+                <p class="ij-result-org">{site.name}</p>
+                <p class="ij-result-place">{o.city} {o.state} {o.postcode}</p>
+                <p class="ij-result-pay">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour</p>
+                <div class="ij-chips">
+                  <span class="ij-chip">Permanent</span>
+                  <span class="ij-chip">Casual</span>
+                  <span class="ij-chip">No weekends</span>
+                </div>
+                <p class="ij-result-current">Showing this job</p>
+              </div>
+            ) : (
+              <a class="ij-result" href={`/cleaning-jobs-${o.slug}/`}>
+                <h2 class="ij-result-title">{jobTitle}</h2>
+                <p class="ij-result-org">{site.name}</p>
+                <p class="ij-result-place">{o.city} {o.state} {o.postcode}</p>
+                <p class="ij-result-pay">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour</p>
+                <div class="ij-chips">
+                  <span class="ij-chip">Permanent</span>
+                  <span class="ij-chip">Casual</span>
+                  <span class="ij-chip">No weekends</span>
+                </div>
+              </a>
+            )
           ))}
-        </ul>
+          <p class="ij-results-note">
+            Hiring in other areas soon. Can't see your town? <a href="/contact-us/">Tell us where you are</a>.
+          </p>
+        </div>
 
-        <div class="jb-actions">
-          <a href={applyHref} class="jb-apply"><span>Apply now</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-          <a href={site.phoneHref} class="jb-call">Or call {site.phone}</a>
+        <!-- RIGHT · the selected job -->
+        <div class="ij-pane">
+          <div class="ij-pane-head">
+            <h1 class="ij-title">{jobTitle}</h1>
+            <p class="ij-org"><a href="/">{site.name}</a></p>
+            <p class="ij-place">{c.city} {c.state} {c.postcode}</p>
+            <p class="ij-headline">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour · Part-time, Casual, Full-time</p>
+            <div class="ij-actions">
+              <button type="button" class="ij-apply" data-apply-cta data-job-city={c.city} data-form-location={`cleaning-jobs-${c.slug}`}>
+                <span>Apply now</span>
+                <span class="ij-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </button>
+              <a class="ij-call" href={site.phoneHref}>Or call {site.phone}</a>
+              <a class="ij-fallback" href={applyHref}>Email your application</a>
+            </div>
+          </div>
+
+          <div class="ij-section">
+            <h2 class="ij-h2">Job details</h2>
+            {jobMeta.map((m) => (
+              <div class="ij-detail">
+                <span class="ij-detail-icon" aria-hidden="true" set:html={icons[m.icon]} />
+                <span class="ij-detail-text">{m.text}</span>
+              </div>
+            ))}
+            <div class="ij-detail">
+              <span class="ij-detail-icon" aria-hidden="true" set:html={icons.type} />
+              <span class="ij-detail-text">
+                <strong>Benefits</strong>
+                <span>Paid induction and training, paid travel between jobs, superannuation, vehicle allowance, all equipment and uniforms supplied, progression to Team Leader.</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="ij-section">
+            <h2 class="ij-h2">Full job description</h2>
+
+            <p class="ij-lead"><strong>{jobTitle}</strong><br />{site.name} · {c.city} {c.state} {c.postcode}</p>
+            {c.intro.map((p) => <p class="ij-p">{p}</p>)}
+
+            <h3 class="ij-h3">Your daily work</h3>
+            <ul class="ij-ul">{dailyWork.map((w) => <li>{w}</li>)}</ul>
+
+            <h3 class="ij-h3">What you must have</h3>
+            <p class="ij-p">These are the hard requirements. Applications that don't meet them can't be considered.</p>
+            <ul class="ij-ul">{wellLook.map((t) => <li>{t}</li>)}</ul>
+
+            <h3 class="ij-h3">What we look for</h3>
+            <p class="ij-p">Preferred, not essential — we'll train the right person.</p>
+            <ul class="ij-ul">{niceToHave.map((t) => <li>{t}</li>)}</ul>
+
+            <h3 class="ij-h3">What we offer</h3>
+            <ul class="ij-ul">
+              {benefits.map((b) => <li><strong>{b.title}.</strong> {b.body}</li>)}
+            </ul>
+
+            <h3 class="ij-h3">How the application process works</h3>
+            <ol class="ij-ol">
+              {steps.map((s) => <li><strong>{s.title}.</strong> {s.body}</li>)}
+            </ol>
+
+            <h3 class="ij-h3">Where our {c.city} cleaners work</h3>
+            <p class="ij-p">We roster locally across {c.region}:</p>
+            <div class="ij-suburbs">
+              {c.suburbs.map((s) => <a href={`/${s.slug}/`}>{s.name}</a>)}
+            </div>
+
+            <div class="ij-cta">
+              <button type="button" class="ij-apply" data-apply-cta data-job-city={c.city} data-form-location={`cleaning-jobs-${c.slug}`}>
+                <span>Apply for this job</span>
+                <span class="ij-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </button>
+              <p class="ij-cta-note">
+                Six quick questions, about a minute. Your local Team Leader calls within 48 hours.
+                Prefer one long form? <a href="#apply">Fill it in below</a>.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. The listing body: description on the left, the job-details panel
-       pinned on the right, exactly as a job board lays it out. -->
-  <section class="jb-body">
-    <div class="container-site jb-body-inner">
-      <article class="jb-desc">
-        <h2 class="jb-h2">About the role</h2>
-        {c.intro.map((p) => <p class="jb-p">{p}</p>)}
-
-        <h2 class="jb-h2">Your daily work</h2>
-        <ul class="jb-list">
-          {dailyWork.map((w) => <li>{w}</li>)}
-        </ul>
-
-        <h2 class="jb-h2">What you must have</h2>
-        <p class="jb-p jb-p-tight">These are the hard requirements. Applications that don’t meet them can’t be considered.</p>
-        <ul class="jb-list">
-          {wellLook.map((t) => <li>{t}</li>)}
-        </ul>
-
-        <h2 class="jb-h2">What we look for</h2>
-        <p class="jb-p jb-p-tight">Preferred, not essential — we’ll train the right person.</p>
-        <ul class="jb-list jb-list-plus">
-          {niceToHave.map((t) => <li>{t}</li>)}
-        </ul>
-
-        <h2 class="jb-h2">What we offer</h2>
-        <dl class="jb-benefits">
-          {benefits.map((b) => (
-            <div class="jb-benefit">
-              <dt>{b.title}</dt>
-              <dd>{b.body}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <h2 class="jb-h2">How the application process works</h2>
-        <ol class="jb-steps">
-          {steps.map((s) => (
-            <li>
-              <span class="jb-step-n">{s.n}</span>
-              <span class="jb-step-body">
-                <strong>{s.title}</strong>
-                <span>{s.body}</span>
-              </span>
-            </li>
-          ))}
-        </ol>
-
-        <div class="jb-inline-cta">
-          <a href={applyHref} class="jb-apply"><span>Apply for this job</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-          <p class="jb-inline-note">Two minutes. Tell us whether you want permanent or casual hours — your local Team Leader calls within 48 hours.</p>
-        </div>
-      </article>
-
-      <aside class="jb-side" aria-label="Job details">
-        <div class="jb-panel">
-          <h2 class="jb-panel-h">Job details</h2>
-          <dl class="jb-details">
-            {jobDetails.map((d) => (
-              <div class="jb-detail">
-                <dt>{d.label}</dt>
-                <dd>{d.value}</dd>
-              </div>
-            ))}
-          </dl>
-          <a href={applyHref} class="jb-apply jb-apply-block"><span>Apply now</span><span class="jb-apply-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-          <p class="jb-panel-note">{payLine}. Questions? Call <a href={site.phoneHref}>{site.phone}</a>.</p>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- 3. FAQ -->
   <FAQ
     items={c.faqs}
     eyebrow={`Cleaning jobs ${c.city} — common questions`}
     subheading={`What cleaners ask before joining the ${c.city} team.`}
   />
 
-  <!-- 4. Where the work is -->
-  <section class="jb-where">
-    <div class="container-site" style="max-width: 1160px;">
-      <h2 class="jb-where-h">Where our {c.city} cleaners work</h2>
-      <div class="jb-suburbs">
-        {c.suburbs.map((s) => <a href={`/${s.slug}/`}>{s.name}</a>)}
-      </div>
-      <p class="jb-where-note">Looking for a cleaner rather than a job?</p>
-      <p class="jb-where-links">
+  <section class="ij-foot">
+    <div class="container-site">
+      <p class="ij-foot-note">Looking for a cleaner rather than a job?</p>
+      <p class="ij-foot-links">
         <a href={c.hubHref}>{c.hubLabel} &rarr;</a>
         <span aria-hidden="true">·</span>
         <a href="/career/">All cleaning jobs &rarr;</a>
@@ -280,349 +302,212 @@ const icons: Record<string, string> = {
     </div>
   </section>
 
-  <!-- 5. Apply — the same form, the same CRM path, as /career/ -->
+  <!-- The same application, as a single form, for anyone who would rather
+       see every question at once. Both paths deliver the same payload. -->
   <ApplyForm
     heading={`Apply for cleaning jobs in ${c.city}`}
     formLocation={`cleaning-jobs-${c.slug}`}
     jobCity={c.city}
   />
+
+  <ApplyLeadGate />
 </Layout>
 
 <style>
   /* ---------------------------------------------------------------------
-     Job-board listing layout. Deliberately plain: no photo hero, no marketing
-     furniture above the fold. A candidate arriving from a "cleaning jobs
-     <city>" search wants pay, hours, location and Apply — the same four
-     things Seek and Indeed lead with — and the page gives them in that order.
+     Indeed's results layout: the areas we advertise in down the left, the
+     selected job in the pane on the right. Type follows Indeed's scale and
+     weights — 16px body at 400, bold headings, bold rules between blocks —
+     rather than the site's marketing 300-weight display type, because this
+     page is read the way a job board is read. Colour, buttons and the
+     pop-up stay NATURO's.
      --------------------------------------------------------------------- */
-  .jb-top {
-    background: linear-gradient(150deg, #e8eeff 0%, #f0f4ff 60%, #edf2ff 100%);
-    padding: clamp(28px, 4vw, 48px) 0 clamp(40px, 5vw, 64px);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
-    scroll-margin-top: 100px;
-  }
-  .jb-top-inner { max-width: 1160px; }
+  .ij { background: #f3f2f1; padding: 20px 0 clamp(40px, 5vw, 64px); }
+  .ij-inner { max-width: 1240px; }
 
-  .jb-crumbs {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: rgb(100, 116, 139);
-    margin-bottom: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  .ij-crumbs {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400;
+    color: #595959; margin: 0 0 12px;
   }
-  .jb-crumbs a { color: rgb(100, 116, 139); text-decoration: none; }
-  .jb-crumbs a:hover { color: #3a5dff; text-decoration: underline; }
+  .ij-crumbs a { color: #595959; text-decoration: none; }
+  .ij-crumbs a:hover { color: #3a5dff; text-decoration: underline; }
 
-  .jb-card {
+  .ij-count {
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400;
+    color: #595959; margin: 0 0 14px;
+  }
+  .ij-count strong { font-weight: 700; color: #2d2d2d; }
+
+  .ij-split {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 1000px) {
+    .ij-split { grid-template-columns: minmax(0, 1fr); }
+    /* On a phone the job comes first; the other areas sit underneath it. */
+    .ij-results { order: 2; }
+    .ij-pane { order: 1; }
+  }
+
+  /* ---------- Left: the results column ---------- */
+  .ij-results { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 16px; }
+  @media (max-width: 1000px) { .ij-results { position: static; } }
+
+  .ij-result {
+    display: block;
     background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 16px;
-    padding: clamp(26px, 3.4vw, 40px);
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 18px rgba(15, 23, 42, 0.05);
-  }
-  .jb-listed {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #3a5dff;
-    margin: 0 0 12px;
-  }
-  .jb-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(28px, 3.6vw, 42px);
-    font-weight: 300;
-    line-height: 1.14;
-    letter-spacing: -0.015em;
-    color: #0f172a;
-    margin: 0 0 10px;
-  }
-  .jb-org {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: rgb(71, 85, 105);
-    margin: 0 0 22px;
-  }
-  .jb-org-name { font-weight: 500; color: #0f172a; }
-  .jb-dot { margin: 0 8px; color: rgba(15, 23, 42, 0.3); }
-
-  .jb-meta { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 12px; }
-  .jb-meta-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.5;
-    color: rgb(51, 65, 85);
-  }
-  .jb-ico { flex: none; width: 20px; height: 20px; color: #3a5dff; margin-top: 1px; }
-  .jb-ico :global(svg) { width: 20px; height: 20px; display: block; }
-
-  .jb-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
-  /* The site's form submit button, to the pixel: same gradient pill, same
-     white icon disc, same lift on hover as .cr-submit / .ct-submit. */
-  .jb-apply {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
-    color: #ffffff;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 6px 6px 6px 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-    min-height: 44px;
+    border: 1px solid #d4d2d0;
+    border-radius: 8px;
+    padding: 16px;
     text-decoration: none;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  a.ij-result:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14); border-color: #a1a09f; }
+  .ij-result.is-active {
+    border: 2px solid #3a5dff;
+    box-shadow: 0 2px 10px rgba(58, 93, 255, 0.14);
+    padding: 15px;
+  }
+  .ij-result-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; font-weight: 600; line-height: 1.3;
+    color: #2557a7; margin: 0 0 6px;
+  }
+  .ij-result.is-active .ij-result-title { color: #2d2d2d; }
+  a.ij-result:hover .ij-result-title { text-decoration: underline; }
+  .ij-result-org,
+  .ij-result-place,
+  .ij-result-pay {
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400;
+    line-height: 1.45; color: #595959; margin: 0;
+  }
+  .ij-result-org { color: #2d2d2d; }
+  .ij-result-pay { font-weight: 600; color: #2d2d2d; margin-top: 8px; }
+  .ij-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .ij-chip {
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500;
+    color: #2d2d2d; background: #f3f2f1; border-radius: 4px; padding: 4px 8px;
+  }
+  .ij-result-current {
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase; color: #3a5dff;
+    margin: 12px 0 0;
+  }
+  .ij-results-note {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400;
+    line-height: 1.5; color: #595959; margin: 4px 0 0; padding: 0 4px;
+  }
+  .ij-results-note a { color: #2557a7; }
+
+  /* ---------- Right: the selected job ---------- */
+  .ij-pane {
+    background: #ffffff;
+    border: 1px solid #d4d2d0;
+    border-radius: 8px;
+    padding: clamp(20px, 2.4vw, 32px);
+  }
+  .ij-pane-head { padding-bottom: 20px; }
+  .ij-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(22px, 2.3vw, 26px); font-weight: 700; line-height: 1.25;
+    color: #2d2d2d; margin: 0 0 10px;
+  }
+  .ij-org { margin: 0 0 2px; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 400; }
+  .ij-org a { color: #2557a7; text-decoration: underline; }
+  .ij-place {
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 400;
+    color: #2d2d2d; margin: 0 0 12px;
+  }
+  .ij-headline {
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
+    color: #2d2d2d; margin: 0 0 18px;
+  }
+
+  .ij-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  /* The site's own CTA, unchanged: gradient pill, white arrow disc. */
+  .ij-apply {
+    display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff; border: 1px solid transparent; border-radius: 999px;
+    padding: 6px 6px 6px 22px;
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; line-height: 1;
+    min-height: 46px; cursor: pointer;
     box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .jb-apply:hover { box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px); }
-  .jb-apply-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    color: #1C244B;
+  .ij-apply:hover { box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px); }
+  .ij-apply-icon {
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #ffffff; border: 1px solid #ffffff; color: #1C244B;
     transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   }
-  .jb-apply-icon svg { display: block; width: 14px; height: 14px; }
-  .jb-apply-block { display: flex; width: 100%; margin-top: 20px; }
-  .jb-call {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(71, 85, 105);
-    text-decoration: none;
+  .ij-apply:hover .ij-apply-icon { background: transparent; border-color: rgba(255,255,255,0.6); color: #ffffff; }
+  .ij-apply-icon svg { display: block; width: 14px; height: 14px; }
+  .ij-call {
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500;
+    color: #2d2d2d; text-decoration: none;
   }
-  .jb-call:hover { color: #3a5dff; text-decoration: underline; }
-
-  /* ---------- Body: description + pinned details panel ---------- */
-  .jb-body { background: #ffffff; padding: clamp(40px, 5vw, 64px) 0 clamp(56px, 7vw, 88px); }
-  .jb-body-inner {
-    max-width: 1160px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 340px;
-    gap: clamp(28px, 4vw, 56px);
-    align-items: start;
-  }
-  @media (max-width: 900px) {
-    .jb-body-inner { grid-template-columns: minmax(0, 1fr); }
-    .jb-side { order: -1; }
+  .ij-call:hover { color: #3a5dff; text-decoration: underline; }
+  /* Only useful without JavaScript, where the pop-up cannot open. */
+  .ij-fallback {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400;
+    color: #595959; text-decoration: underline;
   }
 
-  .jb-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(22px, 2.4vw, 28px);
-    font-weight: 300;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: #0f172a;
-    margin: 40px 0 14px;
+  .ij-section { border-top: 1px solid #e4e2e0; padding: 22px 0 4px; }
+  .ij-h2 {
+    font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700;
+    line-height: 1.3; color: #2d2d2d; margin: 0 0 16px;
   }
-  .jb-desc > .jb-h2:first-child { margin-top: 0; }
-  .jb-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: rgb(71, 85, 105);
-    margin: 0 0 16px;
+  .ij-h3 {
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700;
+    line-height: 1.4; color: #2d2d2d; margin: 26px 0 8px;
   }
-  .jb-p-tight { margin-bottom: 10px; }
+  .ij-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .ij-detail-icon { flex: none; width: 20px; height: 20px; color: #2d2d2d; margin-top: 2px; }
+  .ij-detail-icon :global(svg) { width: 20px; height: 20px; display: block; }
+  .ij-detail-text {
+    display: block;
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
+    line-height: 1.5; color: #2d2d2d;
+  }
+  .ij-detail-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  .ij-detail-text span { display: block; font-weight: 400; color: #595959; }
 
-  .jb-list { list-style: none; margin: 0; padding: 0; }
-  .jb-list li {
-    position: relative;
-    padding: 9px 0 9px 28px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.55;
-    color: rgb(51, 65, 85);
+  .ij-lead, .ij-p {
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 400;
+    line-height: 1.6; color: #2d2d2d; margin: 0 0 14px;
   }
-  .jb-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    background: #3a5dff;
-    color: #fff;
-    font-size: 11px;
-    line-height: 17px;
-    text-align: center;
+  .ij-lead strong { font-weight: 700; }
+  .ij-ul, .ij-ol {
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 400;
+    line-height: 1.6; color: #2d2d2d; margin: 0 0 14px; padding-left: 22px;
   }
-  .jb-list-plus li::before { content: '+'; background: rgba(58, 93, 255, 0.14); color: #3a5dff; }
+  .ij-ul li, .ij-ol li { margin-bottom: 7px; }
+  .ij-ul li strong, .ij-ol li strong { font-weight: 700; }
 
-  .jb-benefits { margin: 0; display: grid; gap: 16px; }
-  .jb-benefit {
-    border-left: 2px solid rgba(58, 93, 255, 0.3);
-    padding-left: 16px;
+  .ij-suburbs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+  .ij-suburbs a {
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400;
+    color: #2557a7; text-decoration: none;
+    border: 1px solid #d4d2d0; border-radius: 999px; padding: 6px 14px;
   }
-  .jb-benefit dt {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #0f172a;
-    margin-bottom: 4px;
-  }
-  .jb-benefit dd {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgb(71, 85, 105);
+  .ij-suburbs a:hover { border-color: #2557a7; text-decoration: underline; }
+
+  .ij-cta { margin-top: 28px; padding-top: 22px; border-top: 1px solid #e4e2e0; }
+  .ij-cta-note {
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400;
+    line-height: 1.55; color: #595959; margin: 12px 0 0; max-width: 480px;
   }
 
-  .jb-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-  .jb-steps li { display: flex; gap: 14px; align-items: flex-start; }
-  .jb-step-n {
-    flex: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #f1f5f9;
-    color: #3a5dff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: center;
-  }
-  .jb-step-body { display: grid; gap: 3px; }
-  .jb-step-body strong {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #0f172a;
-  }
-  .jb-step-body span {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgb(71, 85, 105);
-  }
-
-  .jb-inline-cta { margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(15, 23, 42, 0.08); }
-  .jb-inline-note {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgb(71, 85, 105);
-    margin: 14px 0 0;
-    max-width: 520px;
-  }
-
-  /* ---------- The pinned job-details panel ---------- */
-  .jb-side { position: sticky; top: 24px; }
-  @media (max-width: 900px) { .jb-side { position: static; } }
-  .jb-panel {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 16px;
-    padding: 26px 24px;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 18px rgba(15, 23, 42, 0.05);
-  }
-  .jb-panel-h {
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    color: #0f172a;
-    margin: 0 0 16px;
-  }
-  .jb-details { margin: 0; display: grid; gap: 14px; }
-  .jb-detail dt {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    color: #0f172a;
-    margin-bottom: 4px;
-  }
-  .jb-detail dd {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.55;
-    color: rgb(71, 85, 105);
-  }
-  .jb-panel-note {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: rgb(100, 116, 139);
-    margin: 14px 0 0;
-  }
-  .jb-panel-note a { color: #3a5dff; text-decoration: none; }
-  .jb-panel-note a:hover { text-decoration: underline; }
-
-  /* ---------- Where the work is ---------- */
-  .jb-where {
-    background: #ffffff;
-    padding: clamp(48px, 6vw, 80px) 0;
-    border-top: 1px solid rgba(15, 23, 42, 0.06);
-    text-align: center;
-  }
-  .jb-where-h {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(24px, 3vw, 34px);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: #0f172a;
-    margin: 0 0 28px;
-  }
-  .jb-suburbs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 32px; }
-  .jb-suburbs a {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 999px;
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: rgb(71, 85, 105);
-    text-decoration: none;
-  }
-  .jb-suburbs a:hover { border-color: #3a5dff; color: #3a5dff; }
-  .jb-where-note {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    color: rgb(71, 85, 105);
-    margin: 0 0 10px;
-  }
-  .jb-where-links { margin: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .jb-where-links a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #3a5dff;
-    text-decoration: none;
-  }
-  .jb-where-links a:hover { text-decoration: underline; }
-  .jb-where-links span { color: rgba(15, 23, 42, 0.3); }
+  .ij-foot { background: #ffffff; padding: clamp(36px, 5vw, 56px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
+  .ij-foot-note { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: #595959; margin: 0 0 8px; }
+  .ij-foot-links { margin: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .ij-foot-links a { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2557a7; text-decoration: none; }
+  .ij-foot-links a:hover { text-decoration: underline; }
+  .ij-foot-links span { color: #a1a09f; }
 </style>

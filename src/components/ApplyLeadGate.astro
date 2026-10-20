@@ -1,0 +1,789 @@
+---
+// Conversational job application — the hiring twin of QuoteLeadGate.
+//
+// Candidates arrive from a job search on a phone. A sixteen-field form is the
+// wrong thing to put in front of them, so the application is asked one
+// question at a time in the same pop-up the quote funnel uses: same card,
+// same progress chrome, same option tiles, same gradient pill.
+//
+// Anything on the page carrying `data-apply-cta` opens it. The button may also
+// carry `data-job-city` and `data-form-location`, which ride along in the
+// payload so the Inbox shows which listing was answered.
+//
+// Delivery is the shared CRM helper (window.naturoLeads), with the same
+// `service` / `lead_type` values the application form has always sent — the
+// Inbox filters on those, so they must not change. Without JavaScript the
+// trigger keeps its own href, which is a mailto to the office.
+import { site } from '../data/site';
+
+const weekdays = ['Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays'];
+---
+
+<div class="alg-overlay" id="algOverlay" aria-labelledby="algHeading" hidden>
+  <div class="alg-card" role="document">
+    <button type="button" class="alg-close" id="algClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="alg-chrome" id="algChrome" hidden>
+      <button type="button" class="alg-back" id="algBack" aria-label="Go back">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Back</span>
+      </button>
+      <div class="alg-progress">
+        <span class="alg-progress-label" id="algProgressLabel" aria-live="polite">Question 1 of 6</span>
+        <div class="alg-progress-track"><div class="alg-progress-fill" id="algProgressFill"></div></div>
+      </div>
+    </div>
+
+    <form class="alg-stage" id="algForm" novalidate>
+      <div class="nl-hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <!-- STEP 0 · intro -->
+      <section class="alg-screen" data-step="intro">
+        <div class="alg-intro">
+          <h2 class="alg-heading" id="algHeading"><span class="alg-wave" aria-hidden="true">👋</span> Hi, I'm Naturo.</h2>
+          <p class="alg-lede" id="algLede">Let's get your application in — about 60&nbsp;seconds, six quick questions.</p>
+          <button type="button" class="alg-btn alg-btn-primary" id="algStart">
+            <span>Start My Application</span>
+            <span class="alg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 1 · hours -->
+      <section class="alg-screen" data-step="hours" hidden>
+        <h2 class="alg-q" tabindex="-1">What hours are you after?</h2>
+        <div class="alg-options" data-single="hours">
+          <button type="button" class="alg-option" data-value="Permanent part time">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 4" stroke="#ff5f1f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Permanent part time</span>
+              <span class="alg-option-desc">Set weekdays, school hours available</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="alg-option" data-value="Full time">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="7" y="14" width="34" height="26" rx="4" stroke="currentColor" stroke-width="2"/><path d="M18 14v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7" y1="25" x2="41" y2="25" stroke="#ff5f1f" stroke-width="2.6"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Full time</span>
+              <span class="alg-option-desc">Monday to Friday, 8am–4pm</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="alg-option" data-value="Casual">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="8" y="11" width="32" height="30" rx="4" stroke="currentColor" stroke-width="2"/><line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/><rect x="14" y="26" width="7" height="7" rx="1.5" fill="#ff5f1f"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Casual</span>
+              <span class="alg-option-desc">Flexible days, casual loading paid</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 2 · transport. A car is a hard requirement, so it is asked early
+           rather than buried at the bottom of a form. -->
+      <section class="alg-screen" data-step="transport" hidden>
+        <h2 class="alg-q" tabindex="-1">Do you have a car and licence?</h2>
+        <div class="alg-options" data-single="transport">
+          <button type="button" class="alg-option" data-value="car_and_licence">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><path d="M9 30v-5l4-9a3 3 0 0 1 2.8-2h16.4A3 3 0 0 1 35 16l4 9v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="7" y="30" width="34" height="8" rx="2.5" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="38" r="2.6" fill="#ff5f1f"/><circle cx="33" cy="38" r="2.6" fill="#ff5f1f"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Yes — car and licence</span>
+              <span class="alg-option-desc">You'll drive between client homes</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="alg-option" data-value="licence_only">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="7" y="13" width="34" height="22" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="23" r="3.5" stroke="currentColor" stroke-width="2"/><line x1="26" y1="21" x2="36" y2="21" stroke="#ff5f1f" stroke-width="2.4" stroke-linecap="round"/><line x1="26" y1="27" x2="33" y2="27" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Licence, no car</span>
+              <span class="alg-option-desc">Tell us more at the end</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+          <button type="button" class="alg-option" data-value="public_transport">
+            <span class="alg-option-icon" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="28" rx="4" stroke="currentColor" stroke-width="2"/><line x1="12" y1="26" x2="36" y2="26" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="31" r="2" fill="#ff5f1f"/><circle cx="31" cy="31" r="2" fill="#ff5f1f"/><line x1="17" y1="40" x2="17" y2="36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="31" y1="40" x2="31" y2="36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span class="alg-option-text">
+              <span class="alg-option-title">Public transport only</span>
+              <span class="alg-option-desc">Roles are limited without a car</span>
+            </span>
+            <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 3 · availability (multi-select) -->
+      <section class="alg-screen" data-step="availability" hidden>
+        <h2 class="alg-q" tabindex="-1">Which weekdays can you work?</h2>
+        <p class="alg-help">Pick every day that suits. We ask for a minimum of two.</p>
+        <div class="alg-options alg-options-compact" data-multi="availability">
+          {weekdays.map((d) => (
+            <button type="button" class="alg-option alg-option-compact" data-value={d}>
+              <span class="alg-option-text"><span class="alg-option-title">{d}</span></span>
+              <span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            </button>
+          ))}
+        </div>
+        <button type="button" class="alg-btn alg-btn-primary" data-next disabled id="algAvailNext">
+          <span>Continue</span>
+          <span class="alg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
+
+      <!-- STEP 4 · experience -->
+      <section class="alg-screen" data-step="experience" hidden>
+        <h2 class="alg-q" tabindex="-1">How much cleaning experience do you have?</h2>
+        <p class="alg-help">Preferred, not essential — training is paid either way.</p>
+        <div class="alg-options alg-options-compact" data-single="experience">
+          <button type="button" class="alg-option alg-option-compact" data-value="none"><span class="alg-option-text"><span class="alg-option-title">None — happy to learn</span></span><span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></button>
+          <button type="button" class="alg-option alg-option-compact" data-value="under-1"><span class="alg-option-text"><span class="alg-option-title">Less than 1 year</span></span><span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></button>
+          <button type="button" class="alg-option alg-option-compact" data-value="1-3"><span class="alg-option-text"><span class="alg-option-title">1–3 years</span></span><span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></button>
+          <button type="button" class="alg-option alg-option-compact" data-value="3-plus"><span class="alg-option-text"><span class="alg-option-title">3+ years</span></span><span class="alg-option-tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></button>
+        </div>
+      </section>
+
+      <!-- STEP 5 · contact -->
+      <section class="alg-screen" data-step="contact" hidden>
+        <h2 class="alg-q" tabindex="-1">How do we reach you?</h2>
+        <div class="alg-field">
+          <label class="alg-label" for="algName">Full name</label>
+          <input class="alg-input" type="text" name="full_name" id="algName" autocomplete="name" placeholder="Your name" />
+          <span class="alg-error" data-error-for="full_name"></span>
+        </div>
+        <div class="alg-field">
+          <label class="alg-label" for="algPhone">Mobile</label>
+          <input class="alg-input" type="tel" name="mobile" id="algPhone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" />
+          <span class="alg-error" data-error-for="mobile"></span>
+        </div>
+        <div class="alg-field">
+          <label class="alg-label" for="algEmail">Email</label>
+          <input class="alg-input" type="email" name="email" id="algEmail" autocomplete="email" placeholder="you@example.com" />
+          <span class="alg-error" data-error-for="email"></span>
+        </div>
+        <div class="alg-field">
+          <label class="alg-label" for="algSuburb">Suburb &amp; postcode</label>
+          <input class="alg-input" type="text" name="suburb_postcode" id="algSuburb" placeholder="e.g. Wauchope 2446" />
+          <span class="alg-error" data-error-for="suburb_postcode"></span>
+        </div>
+        <button type="button" class="alg-btn alg-btn-primary" data-next>
+          <span>Continue</span>
+          <span class="alg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </section>
+
+      <!-- STEP 6 · notes -->
+      <section class="alg-screen" data-step="notes" hidden>
+        <h2 class="alg-q" tabindex="-1">Anything else we should know?</h2>
+        <textarea class="alg-input alg-textarea" name="message" id="algNotes" rows="3" placeholder="When you can start · Police Check or NDIS Worker Screening status · anything about your availability"></textarea>
+        <p class="alg-error" id="algSendError" hidden></p>
+        <button type="button" class="alg-btn alg-btn-primary alg-btn-final" id="algSubmit">
+          <span>Send my application</span>
+          <span class="alg-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+        <button type="button" class="alg-skip" id="algSkip">Skip and send</button>
+      </section>
+
+      <!-- STEP 7 · done -->
+      <section class="alg-screen" data-step="done" hidden>
+        <div class="alg-done">
+          <span class="alg-done-check" aria-hidden="true">✅</span>
+          <h2 class="alg-heading">Application received.</h2>
+          <p class="alg-lede">
+            It's with your local coordinator now — expect a call within 48 hours.
+            If you don't hear from us, ring <a href={site.phoneHref}>{site.phone}</a>.
+          </p>
+          <button type="button" class="alg-btn alg-btn-primary" id="algDone"><span>Done</span></button>
+        </div>
+      </section>
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+  // One pop-up per page; every [data-apply-cta] on the page opens it.
+  (function () {
+    var overlay = document.getElementById('algOverlay');
+    if (!overlay) return;
+
+    var form = document.getElementById('algForm');
+    var chrome = document.getElementById('algChrome');
+    var label = document.getElementById('algProgressLabel');
+    var fill = document.getElementById('algProgressFill');
+    var lede = document.getElementById('algLede');
+    var sendError = document.getElementById('algSendError');
+    var screens = {};
+    var order = ['intro', 'hours', 'transport', 'availability', 'experience', 'contact', 'notes', 'done'];
+    var QUESTIONS = 6; // everything between intro and done
+    Array.prototype.forEach.call(form.querySelectorAll('.alg-screen'), function (s) {
+      screens[s.getAttribute('data-step')] = s;
+    });
+
+    var answers = {};
+    var ctx = { jobCity: '', formLocation: 'career-application' };
+    var at = 0;
+    var sending = false;
+    var lastFocus = null;
+
+    function show(i) {
+      at = i;
+      var step = order[i];
+      order.forEach(function (name) { screens[name].hidden = name !== step; });
+      var isQuestion = i > 0 && step !== 'done';
+      chrome.hidden = !isQuestion;
+      if (isQuestion) {
+        label.textContent = 'Question ' + i + ' of ' + QUESTIONS;
+        fill.style.width = Math.round((i / QUESTIONS) * 100) + '%';
+      }
+      var h = screens[step].querySelector('.alg-q, .alg-heading');
+      if (h && h.focus) h.focus();
+      screens[step].scrollTop = 0;
+    }
+
+    function next() { if (at < order.length - 1) show(at + 1); }
+
+    function open(trigger) {
+      lastFocus = document.activeElement;
+      ctx.jobCity = (trigger && trigger.getAttribute('data-job-city')) || '';
+      ctx.formLocation = (trigger && trigger.getAttribute('data-form-location')) || 'career-application';
+      if (lede) {
+        lede.innerHTML = ctx.jobCity
+          ? 'Let’s get your application in for ' + ctx.jobCity + ' — about 60 seconds, six quick questions.'
+          : 'Let’s get your application in — about 60 seconds, six quick questions.';
+      }
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      show(0);
+    }
+
+    function close() {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.addEventListener('click', function (ev) {
+      var t = ev.target.closest ? ev.target.closest('[data-apply-cta]') : null;
+      if (!t) return;
+      ev.preventDefault();
+      open(t);
+    });
+
+    document.getElementById('algClose').addEventListener('click', close);
+    document.getElementById('algDone').addEventListener('click', close);
+    overlay.addEventListener('click', function (ev) { if (ev.target === overlay) close(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !overlay.hidden) close();
+    });
+    document.getElementById('algBack').addEventListener('click', function () { if (at > 0) show(at - 1); });
+    document.getElementById('algStart').addEventListener('click', next);
+
+    // Single-choice tiles answer and advance; multi-choice tiles toggle and
+    // enable Continue. Same behaviour as the quote funnel.
+    form.addEventListener('click', function (ev) {
+      var opt = ev.target.closest ? ev.target.closest('.alg-option') : null;
+      if (opt) {
+        var group = opt.parentElement;
+        var single = group.getAttribute('data-single');
+        var multi = group.getAttribute('data-multi');
+        if (single) {
+          Array.prototype.forEach.call(group.children, function (b) { b.classList.remove('is-selected'); });
+          opt.classList.add('is-selected');
+          answers[single] = opt.getAttribute('data-value');
+          setTimeout(next, 180);
+        } else if (multi) {
+          opt.classList.toggle('is-selected');
+          var picked = [];
+          Array.prototype.forEach.call(group.querySelectorAll('.is-selected'), function (b) {
+            picked.push(b.getAttribute('data-value'));
+          });
+          answers[multi] = picked;
+          var cont = document.getElementById('algAvailNext');
+          if (cont) cont.disabled = picked.length === 0;
+        }
+        return;
+      }
+      var nextBtn = ev.target.closest ? ev.target.closest('[data-next]') : null;
+      if (nextBtn) {
+        if (order[at] === 'contact' && !validateContact()) return;
+        next();
+      }
+    });
+
+    function field(name) { return form.querySelector('[name="' + name + '"]'); }
+    function setError(name, msg) {
+      var el = form.querySelector('[data-error-for="' + name + '"]');
+      var input = field(name);
+      if (el) el.textContent = msg || '';
+      if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    }
+    function validateContact() {
+      var ok = true;
+      var name = field('full_name').value.trim();
+      var mobile = field('mobile').value.trim();
+      var email = field('email').value.trim();
+      var suburb = field('suburb_postcode').value.trim();
+      setError('full_name', name ? '' : 'Please tell us your name.');
+      setError('mobile', mobile.replace(/\D/g, '').length >= 8 ? '' : 'A mobile we can call you on.');
+      setError('email', /.+@.+\..+/.test(email) ? '' : 'A valid email address.');
+      setError('suburb_postcode', suburb ? '' : 'Which suburb do you live in?');
+      [name, mobile, email, suburb].forEach(function () {});
+      if (!name || mobile.replace(/\D/g, '').length < 8 || !/.+@.+\..+/.test(email) || !suburb) ok = false;
+      if (!ok) {
+        var firstBad = form.querySelector('.alg-screen:not([hidden]) [aria-invalid="true"]');
+        if (firstBad) firstBad.focus();
+      }
+      return ok;
+    }
+
+    function uuid() {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (Math.random() * 16) | 0;
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      });
+    }
+
+    function send() {
+      if (sending) return;
+      if (form.querySelector('[name="_gotcha"]').value) { show(order.length - 1); return; }
+      sending = true;
+      var btn = document.getElementById('algSubmit');
+      btn.disabled = true;
+      if (sendError) sendError.hidden = true;
+
+      var payload = {
+        name: field('full_name').value.trim(),
+        email: field('email').value.trim(),
+        phone: field('mobile').value.trim(),
+        message: field('message').value.trim(),
+        suburb_postcode: field('suburb_postcode').value.trim(),
+        hours: answers.hours || '',
+        experience: answers.experience || '',
+        transport: answers.transport || '',
+        availability: answers.availability || [],
+        // Unchanged: the Inbox filters applications on these two values.
+        service: 'Job application',
+        lead_type: 'job_application',
+        form_location: ctx.formLocation,
+        job_city: ctx.jobCity,
+        lead_id: uuid(),
+        page: window.location.pathname,
+      };
+
+      function failed() {
+        sending = false;
+        btn.disabled = false;
+        if (sendError) {
+          sendError.textContent = window.naturoLeads && window.naturoLeads.failureMessage
+            ? window.naturoLeads.failureMessage()
+            : 'That didn’t send. Please call 1300 876 472.';
+          sendError.hidden = false;
+        }
+      }
+
+      if (!window.naturoLeads || typeof window.naturoLeads.deliver !== 'function') { failed(); return; }
+
+      window.naturoLeads.deliver(payload).then(function (r) {
+        if (r && r.delivered) {
+          show(order.length - 1);
+          try {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.lead_id, lead_type: 'job_application' });
+            }
+          } catch (e) {}
+        } else { failed(); }
+      }).catch(failed);
+    }
+
+    document.getElementById('algSubmit').addEventListener('click', send);
+    document.getElementById('algSkip').addEventListener('click', function () {
+      field('message').value = '';
+      send();
+    });
+    form.addEventListener('submit', function (ev) { ev.preventDefault(); });
+  })();
+</script>
+<style>
+  /* ============================ Overlay + card ======================== */
+  .alg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(15, 23, 42, 0.55);
+    animation: alg-fade 200ms ease-out;
+    overflow-y: auto;
+  }
+  .alg-overlay[hidden] { display: none; }
+  @keyframes alg-fade { from { opacity: 0; } to { opacity: 1; } }
+
+  .alg-card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    margin: auto;
+    background: #ffffff;
+    border: 1px solid #ececf1;
+    border-radius: 22px;
+    padding: 30px 28px 28px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+    animation: alg-rise 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-overflow-scrolling: touch;
+  }
+  @keyframes alg-rise { from { opacity: 0; transform: translateY(16px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+  .alg-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    color: #94a3b8;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 150ms, color 150ms;
+  }
+  .alg-close:hover { background: rgba(15, 23, 42, 0.06); color: #0f172a; }
+
+  /* ============================ Chrome ================================ */
+  .alg-chrome { display: flex; align-items: center; gap: 14px; margin: 4px 40px 22px 0; }
+  .alg-back {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: transparent; border: 0; padding: 6px 8px 6px 4px; margin-left: -4px;
+    font-family: "Poppins", sans-serif; font-size: 13px; font-weight: 500; color: #64748b;
+    border-radius: 8px; cursor: pointer; flex: 0 0 auto;
+    transition: color 150ms, background-color 150ms;
+  }
+  .alg-back:hover { color: #0f172a; background: rgba(15, 23, 42, 0.05); }
+  .alg-progress { flex: 1; min-width: 0; }
+  .alg-progress-label { display: block; font-family: "Poppins", sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: 0.03em; color: #94a3b8; margin: 0 0 6px; }
+  .alg-progress-track { height: 5px; border-radius: 999px; background: #eceef3; overflow: hidden; }
+  .alg-progress-fill { height: 100%; width: 25%; border-radius: 999px; background: linear-gradient(90deg, #4a6bff, #2748f2); transition: width 350ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+  /* ============================ Stage / screens ====================== */
+  .alg-stage { position: relative; }
+  .alg-screen { display: flex; flex-direction: column; gap: 18px; }
+  .alg-screen[hidden] { display: none; }
+  .alg-in-right { animation: alg-slide-right 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .alg-in-left { animation: alg-slide-left 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes alg-slide-right { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes alg-slide-left { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .alg-overlay, .alg-card, .alg-in-right, .alg-in-left { animation: none; }
+    .alg-progress-fill { transition: none; }
+  }
+
+  /* ============================ Typography ============================ */
+  .alg-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 6vw, 28px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin: 0;
+  }
+  .alg-wave { display: inline-block; animation: alg-wave 1.6s ease-in-out 2; transform-origin: 70% 70%; }
+  @keyframes alg-wave { 0%,60%,100% { transform: rotate(0); } 15% { transform: rotate(16deg); } 30% { transform: rotate(-8deg); } 45% { transform: rotate(12deg); } }
+  .alg-lede { font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 300; line-height: 1.6; color: #475569; margin: 0; }
+  .alg-q {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 5vw, 23px);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #0f172a;
+    margin: 0;
+  }
+  /* Heading is focused programmatically (a11y) on touch — no stray outline. */
+  .alg-q:focus { outline: none; }
+  .alg-intro, .alg-done { display: flex; flex-direction: column; gap: 18px; text-align: center; align-items: center; padding: 12px 4px; }
+
+  /* ============================ Buttons ============================== */
+  .alg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 6px 22px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 200ms ease, opacity 150ms ease;
+  }
+  /* Match the site CTA layout: label on the left, circle icon pinned right. */
+  .alg-btn:has(.alg-btn-icon) { justify-content: space-between; padding: 6px 8px 6px 24px; }
+  .alg-btn-primary {
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 22px rgba(37, 72, 240, 0.34);
+  }
+  .alg-btn-primary:hover { box-shadow: 0 12px 30px rgba(37, 72, 240, 0.44); transform: translateY(-1px); }
+  .alg-btn-primary:active { transform: translateY(0) scale(0.985); }
+  .alg-btn-primary[disabled] { opacity: 0.45; box-shadow: none; cursor: not-allowed; transform: none; }
+  .alg-btn-icon {
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #ffffff; color: #1C244B; border: 1px solid #ffffff;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+  .alg-btn-icon svg { display: block; width: 14px; height: 14px; }
+  .alg-btn-primary:not([disabled]):hover .alg-btn-icon { background: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
+  .alg-btn-final { min-height: 46px; }
+  /* Keep the primary action on screen.
+     The card is the scroll container, and the button is the last child of each
+     step, so on a long question (rooms, extras) it fell below the fold and the
+     customer had to scroll to find "Continue" — the one thing they need. It now
+     sticks to the bottom of the card while the answers scroll behind it.
+
+     The white ring is doing real work: the button is a pill, so without it the
+     scrolling content shows through around its rounded ends. The ring is drawn
+     wider than the card's horizontal padding so it covers edge to edge, and the
+     existing blue glow is preserved as the second shadow. */
+  .alg-screen > .alg-btn-primary {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff, 0 8px 22px rgba(37, 72, 240, 0.34);
+  }
+  .alg-screen > .alg-btn-primary:hover {
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff, 0 12px 30px rgba(37, 72, 240, 0.44);
+  }
+  .alg-screen > .alg-btn-primary[disabled] {
+    box-shadow: 0 0 0 12px #ffffff, 0 -10px 16px 10px #ffffff;
+  }
+  /* Skip sits under the submit button on the notes step; keep the pair together
+     so the sticky button never covers it. */
+  .alg-screen > .alg-btn-final ~ .alg-skip {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: #ffffff;
+    box-shadow: 0 0 0 12px #ffffff;
+  }
+
+  .alg-skip {
+    align-self: center;
+    background: transparent; border: 0;
+    font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #94a3b8;
+    padding: 6px 16px; border-radius: 8px; cursor: pointer;
+    transition: color 150ms, background-color 150ms;
+  }
+  .alg-skip:hover { color: #475569; background: rgba(15, 23, 42, 0.04); }
+
+  /* ============================ Option cards ========================= */
+  .alg-options { display: flex; flex-direction: column; gap: 12px; }
+  .alg-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    text-align: left;
+    padding: 18px 18px;
+    background: #ffffff;
+    border: 1.5px solid #e6e6ec;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms, box-shadow 160ms, background-color 160ms;
+  }
+  .alg-option:hover { border-color: #b9c3ff; box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06); }
+  .alg-option:active { transform: scale(0.99); }
+  .alg-option-icon { flex: 0 0 auto; width: 34px; height: 34px; color: #3a5dff; display: inline-flex; align-items: center; justify-content: center; }
+  .alg-option-icon svg { display: block; }
+  .alg-option-text { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+  .alg-option-title { font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600; color: #0f172a; line-height: 1.25; }
+  .alg-option-desc { font-family: "Poppins", sans-serif; font-size: 13px; font-weight: 400; color: #64748b; line-height: 1.3; }
+  .alg-option-tick {
+    flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #4a6bff; color: #ffffff;
+    transform: scale(0); opacity: 0;
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 160ms;
+  }
+  .alg-option.is-selected {
+    border-color: #3a5dff;
+    background: rgba(58, 93, 255, 0.06);
+    box-shadow: 0 0 0 1px #3a5dff, 0 10px 24px rgba(37, 72, 240, 0.14);
+    transform: scale(1.02);
+  }
+  .alg-option.is-selected .alg-option-tick { transform: scale(1); opacity: 1; }
+
+  /* ============================ Fields =============================== */
+  .alg-field { display: flex; flex-direction: column; gap: 8px; }
+  .alg-label { font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 500; color: #0f172a; }
+  .alg-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f172a;
+    background: #ffffff;
+    border: 1.5px solid #d8dae1;
+    border-radius: 14px;
+    padding: 14px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+  .alg-input::placeholder { color: rgba(15, 23, 42, 0.34); }
+  .alg-input:focus { outline: none; border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16); }
+  .alg-input[aria-invalid="true"] { border-color: #f0913a; box-shadow: 0 0 0 3px rgba(240, 145, 58, 0.14); }
+  .alg-textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+
+  /* Consent rows. Deliberately plain and full-size: a checkbox somebody has to
+     hunt for is not a checkbox they meaningfully ticked. */
+  .alg-consent {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #475569;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  .alg-consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin: 1px 0 0;
+    accent-color: #3a5dff;
+    cursor: pointer;
+  }
+  .alg-consent input:focus-visible { outline: 2px solid #3a5dff; outline-offset: 2px; }
+
+  .alg-sub {
+    font-family: "Poppins", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #94a3b8;
+    margin: -4px 0 4px;
+  }
+  .alg-help { font-family: "Poppins", sans-serif; font-size: 12.5px; font-weight: 400; color: #94a3b8; }
+  .alg-error { font-family: "Poppins", sans-serif; font-size: 12.5px; font-weight: 500; color: #e2712a; }
+  .alg-error:empty { display: none; }
+  .alg-reassure { font-family: "Poppins", sans-serif; font-size: 12.5px; line-height: 1.55; color: #94a3b8; text-align: center; margin: 2px 0 0; }
+
+  /* ============================ Postcode combobox =================== */
+  .alg-pcsearch { position: relative; }
+  .alg-pcsearch-box {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 10px 0 14px;
+    background: #ffffff; border: 1.5px solid #d8dae1; border-radius: 14px;
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+  .alg-pcsearch-box:focus-within { border-color: #3a5dff; box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16); }
+  .alg-pcsearch-icon { flex: 0 0 auto; width: 20px; height: 20px; color: #94a3b8; }
+  .alg-pcsearch-input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-family: "Poppins", sans-serif; font-size: 16px; color: #0f172a; padding: 15px 0; }
+  .alg-pcsearch-input::placeholder { color: rgba(15, 23, 42, 0.34); }
+  .alg-pcsearch-clear { flex: 0 0 auto; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; background: transparent; color: #3a5dff; cursor: pointer; }
+  .alg-pcsearch-clear[hidden] { display: none; }
+  .alg-pcsearch-clear:hover { background: rgba(58, 93, 255, 0.1); }
+  .alg-pcsearch-list { list-style: none; margin: 8px 0 0; padding: 6px; border: 1px solid #ececf1; border-radius: 14px; background: #ffffff; box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12); max-height: 240px; overflow-y: auto; }
+  .alg-pcsearch-list[hidden] { display: none; }
+  .alg-postcode-status { font-family: "Poppins", sans-serif; font-size: 12.5px; color: #94a3b8; margin: 8px 0 0; }
+  .alg-postcode-status[hidden] { display: none; }
+  .alg-postcode-status.is-warn { color: #b45309; font-weight: 500; }
+  :global(.alg-pcsearch-item) { padding: 13px 14px; border-radius: 10px; cursor: pointer; font-family: "Poppins", sans-serif; line-height: 1.3; }
+  :global(.alg-pcsearch-item:hover), :global(.alg-pcsearch-item.is-active) { background: #eef1ff; }
+  :global(.alg-pcsearch-item-name) { font-size: 15px; font-weight: 700; color: #1e293b; }
+  :global(.alg-pcsearch-item-meta) { font-size: 14px; color: #64748b; }
+  :global(.alg-pcsearch-item:hover .alg-pcsearch-item-name), :global(.alg-pcsearch-item.is-active .alg-pcsearch-item-name) { color: #2748f2; }
+  :global(.alg-pcsearch-item:hover .alg-pcsearch-item-meta), :global(.alg-pcsearch-item.is-active .alg-pcsearch-item-meta) { color: #8189e6; }
+
+  /* ============================ Serviced states ===================== */
+  .alg-serviced {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "Poppins", sans-serif; font-size: 14.5px; color: #0f7a3d;
+    background: rgba(22, 163, 74, 0.09); border: 1px solid rgba(22, 163, 74, 0.22);
+    border-radius: 14px; padding: 14px 16px;
+    animation: alg-pop-in 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .alg-serviced[hidden], .alg-notserviced[hidden] { display: none; }
+  .alg-serviced strong { font-weight: 600; }
+  .alg-serviced-check { font-size: 18px; }
+  @keyframes alg-pop-in { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+  .alg-notserviced {
+    font-family: "Poppins", sans-serif; font-size: 14px; line-height: 1.5; color: #92510f;
+    background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.24);
+    border-radius: 14px; padding: 14px 16px;
+    animation: alg-pop-in 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .alg-notserviced p { margin: 0; }
+
+  /* ============================ Thank-you check ===================== */
+  .alg-done-check {
+    width: 72px; height: 72px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(22, 163, 74, 0.12); color: #16a34a;
+    animation: alg-check-pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes alg-check-pop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.12); opacity: 1; } 100% { transform: scale(1); } }
+
+  /* The confirmation stops reading as a success when nothing received the
+     lead — a green tick over "please call us" would undo the message. */
+  .is-undelivered .alg-done-check { background: rgba(217, 119, 6, 0.12); color: #d97706; }
+
+  /* ============================ Mobile ============================== */
+  @media (max-width: 480px) {
+    .alg-overlay { padding: 0; align-items: flex-end; }
+    /* Bottom sheet. The base rule sets `margin: auto`, and on a flex item that
+       absorbs the free space and overrides align-items:flex-end — which left
+       the sheet floating mid-screen with its squared bottom corners exposed,
+       reading as a missing corner. Pin it to the bottom so the flat edge sits
+       flush against the screen, and pad for the home indicator so the final
+       button isn't under it. */
+    .alg-card {
+      max-width: 100%;
+      max-height: 94dvh;
+      border-radius: 22px 22px 0 0;
+      margin: auto 0 0;
+      padding: 24px 20px 22px;
+      padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+      animation: alg-sheet 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes alg-sheet { from { transform: translateY(24px); opacity: 0.6; } to { transform: translateY(0); opacity: 1; } }
+    .alg-chrome { margin-right: 40px; }
+    .alg-option { padding: 16px; }
+    .alg-btn { min-height: 46px; font-size: 15px; }
+  }
+</style>
+
+<style>
+  /* Compact tiles for the one-line answers (weekdays, experience): the
+     icon-and-description tile is too tall when there is neither. */
+  .alg-options-compact { gap: 10px; }
+  .alg-option-compact { padding: 13px 16px; border-radius: 12px; }
+  .alg-option-compact .alg-option-title { font-size: 15px; font-weight: 500; }
+  .alg-help {
+    font-family: "Poppins", sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #64748b;
+    margin: -8px 0 4px;
+  }
+</style>

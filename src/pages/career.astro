@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ApplyForm from '../components/ApplyForm.astro';
+import ApplyLeadGate from '../components/ApplyLeadGate.astro';
 import { site, ctaPrimary, ctaPhone } from '../data/site';
 import { benefits, wellLook, niceToHave, steps, careerCities, payRange } from '../data/career';
 
@@ -173,7 +174,7 @@ const cleanerStories = [
         <h1 class="cr-hero-h1"><span class="cr-hero-h1-kicker">Careers</span>Cleaning, on better terms.<br />Join the team.</h1>
         <p class="cr-hero-tagline">Above-award pay, flexible hours and clients who know your name.</p>
         <div class="cr-hero-ctas">
-          <a href="#apply" class="cr-hero-btn-primary">
+          <a href="#apply" class="cr-hero-btn-primary" data-apply-cta data-form-location="career-hero">
             <span>Apply now</span>
             <span class="cr-hero-btn-icon" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -358,6 +359,8 @@ const cleanerStories = [
 
   <!-- 8. Application form — shared with every /cleaning-jobs-<city>/ page -->
   <ApplyForm />
+
+  <ApplyLeadGate />
 </Layout>
 
 <style>

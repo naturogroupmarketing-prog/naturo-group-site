@@ -299,12 +299,15 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   }
   .cr-apply-link:hover { text-decoration: underline; }
 
+  /* The pop-up's card, at page width: same radius, border and lift as the
+     Naturo funnel, so the long form and the one-question-at-a-time pop-up
+     read as the same object. */
   .cr-form {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border: 1px solid #ececf1;
+    border-radius: 22px;
     padding: clamp(28px, 4vw, 40px);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -325,7 +328,7 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   }
   .cr-field-label {
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #0f172a;
     letter-spacing: 0.01em;
@@ -336,21 +339,22 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   }
   .cr-input {
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     color: #0f172a;
     background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 12px 14px;
+    border: 1.5px solid #d8dae1;
+    border-radius: 14px;
+    padding: 14px 16px;
     line-height: 1.4;
     width: 100%;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
+  .cr-input::placeholder { color: rgba(15, 23, 42, 0.34); }
   .cr-input:focus {
     outline: none;
     border-color: #3a5dff;
-    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(58, 93, 255, 0.16);
   }
   .cr-textarea {
     resize: vertical;
@@ -383,21 +387,28 @@ const states = ['NSW', 'QLD', 'VIC', 'Other'];
   .cr-check {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 500;
     color: #0f172a;
-    background-color: #EFEEE9;
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    border-radius: 8px;
-    padding: 10px 14px;
+    background-color: #ffffff;
+    border: 1.5px solid #e6e6ec;
+    border-radius: 12px;
+    padding: 13px 16px;
     cursor: pointer;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    transition: border-color 160ms, background-color 160ms, box-shadow 160ms;
   }
   .cr-radio:hover,
   .cr-check:hover {
+    border-color: #b9c3ff;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  }
+  .cr-radio:has(input:checked),
+  .cr-check:has(input:checked) {
     border-color: #3a5dff;
+    background: rgba(58, 93, 255, 0.06);
+    box-shadow: 0 0 0 1px #3a5dff;
   }
   .cr-radio input,
   .cr-check input {

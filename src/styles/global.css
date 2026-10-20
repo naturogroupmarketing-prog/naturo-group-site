@@ -68,8 +68,9 @@ h4 { font-weight: 600; font-family: var(--font-sans); font-size: 1.375rem; }
    "Choose your clean" heading (Montserrat 600, ~38px). Hero titles are
    <h1> (excluded) and footer labels are <span> (excluded). Colour is
    deliberately NOT forced so headings on dark banners stay white. Popup
-   and badge titles are excluded so they keep their own size. */
-h2:not(.qlg-title):not(.exi-title):not(.lm-title):not(.ncc-title) {
+   and badge titles are excluded so they keep their own size, as are the
+   job-listing headings, which follow a job board's type scale. */
+h2:not(.qlg-title):not(.exi-title):not(.lm-title):not(.ncc-title):not(.ij-h2):not(.ij-result-title) {
   font-family: "Montserrat", "Poppins", sans-serif !important;
   font-weight: 600 !important;
   font-size: clamp(29px, 3.8vw, 38px) !important;

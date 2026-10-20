@@ -21,7 +21,6 @@
 import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
 import ApplyLeadGate from '../components/ApplyLeadGate.astro';
-import ApplyForm from '../components/ApplyForm.astro';
 import { site } from '../data/site';
 import { benefits, wellLook, niceToHave, steps, dailyWork, careerCities, payRange, payLine, jobTitle, type CareerCity } from '../data/career';
 
@@ -323,10 +322,7 @@ const icons: Record<string, string> = {
 
             <div class="ij-cta">
               <button type="button" class="ij-apply" data-apply-cta data-job-city={c.city} data-form-location={`cleaning-jobs-${c.slug}`}>Apply now</button>
-              <p class="ij-cta-note">
-                Six quick questions, about a minute — your local Team Leader calls within 48 hours.
-                Prefer one long form? <a href="#apply">Fill it in below</a>.
-              </p>
+              <p class="ij-cta-note">Six quick questions, about a minute — your local Team Leader calls within 48 hours.</p>
             </div>
           </div>
         </div>
@@ -334,11 +330,13 @@ const icons: Record<string, string> = {
     </div>
   </section>
 
+  <div class="ij-faq">
   <FAQ
     items={c.faqs}
     eyebrow={`Cleaning jobs ${c.city} — common questions`}
     subheading={`What cleaners ask before joining the ${c.city} team.`}
   />
+  </div>
 
   <section class="ij-foot">
     <div class="container-site">
@@ -350,12 +348,6 @@ const icons: Record<string, string> = {
       </p>
     </div>
   </section>
-
-  <ApplyForm
-    heading={`Apply for cleaning jobs in ${c.city}`}
-    formLocation={`cleaning-jobs-${c.slug}`}
-    jobCity={c.city}
-  />
 
   <ApplyLeadGate />
 </Layout>
@@ -586,7 +578,16 @@ const icons: Record<string, string> = {
   .ij-cta-note { font-size: 14px; line-height: 1.55; color: var(--ij-muted); margin: 12px 0 0; max-width: 520px; }
   .ij-cta-note a { font-family: var(--ij-font); color: var(--ij-link); text-decoration: underline; }
 
-  .ij-foot { background: #ffffff; padding: clamp(32px, 4vw, 48px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
+  /* The FAQ component ships a cream full-bleed band. On this page it is the
+     only thing not in the job board's palette, so it is overridden here
+     rather than changed for every other page that uses it. */
+  .ij-faq :global(.faq-section) {
+    background-color: #ffffff;
+    padding: clamp(56px, 7vw, 88px) 0;
+    margin-bottom: 0;
+  }
+
+  .ij-foot { background: #f3f2f1; padding: clamp(32px, 4vw, 48px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
   .ij-foot-note { font-family: 'Poppins', sans-serif; font-size: 15px; color: #595959; margin: 0 0 8px; }
   .ij-foot-links { margin: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .ij-foot-links a { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2557a7; text-decoration: none; }

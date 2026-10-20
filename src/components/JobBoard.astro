@@ -313,6 +313,12 @@ const icons: Record<string, string> = {
     padding-bottom: clamp(36px, 5vw, 56px);
     font-family: var(--ij-font);
   }
+  /* The site's cream top strip (social icons, above the logo) is the only
+     colour left that isn't the board's. A job board opens on its search, so
+     it is hidden here — and only here: this component's CSS ships solely on
+     the pages that render it, so every other page keeps the strip. */
+  :global(.topbar) { display: none; }
+
   .ij-sr {
     position: absolute; width: 1px; height: 1px; overflow: hidden;
     clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;

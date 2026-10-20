@@ -208,3 +208,19 @@ export const careerCities: CareerCity[] = [
     faqs: sharedFaqs('Geelong', 'Greater Geelong, the Bellarine and the Surf Coast'),
   },
 ];
+
+// ---------------------------------------------------------------------------
+// The index board at /career/ shows the same role without a city selected, so
+// it needs a location line and an intro covering every area at once. Both are
+// built from careerCities, which keeps them true as areas are added.
+// ---------------------------------------------------------------------------
+export const areasLine = careerCities.map((c) => `${c.city} ${c.state}`).join(' · ');
+
+const areasSentence = careerCities.map((c) => c.city).join(' and ');
+
+export const nationalIntro: string[] = [
+  `NATURO GROUP is hiring domestic cleaners in ${areasSentence} — permanent and casual employee roles, ${payLine}. Not ABN or contractor work. Your daily work is residential house cleaning, NDIS disability support cleaning and DVA client services, with deep and spring cleans and optional bond cleans on top.`,
+  'No nights and no weekends: shifts run Monday to Friday between 8am and 4pm, with school-hours shifts available. We roster locally, so you need to live within about 25 minutes of the town centre you are applying for and have a reliable car to drive between client homes.',
+  'We hire in small intakes so every new cleaner gets paid induction, hands-on training and regular support from a local Team Leader. There is a real path up — Cleaner to Team Leader to Management — and we supply every piece of equipment, uniform and product you need.',
+  `Open the listing for ${areasSentence} to see the suburbs it covers, or apply here and tell us where you are.`,
+];

@@ -2,27 +2,19 @@
 // Per-city hiring page: /cleaning-jobs-port-macquarie/, /cleaning-jobs-geelong/
 //
 // Exists because "cleaning jobs <city>" searches had nothing on the site to
-// land on — only the national /career/ page, whose single JobPosting spans
-// eight cities. Google for Jobs ranks one-job-one-place listings; that is how
-// Indeed and Seek show up for these searches. Each city here gets its own
-// posting with a single jobLocation.
+// land on — only /career/, whose single JobPosting spans eight cities. Google
+// for Jobs ranks one-job-one-place listings; that is how Indeed and Seek show
+// up for these searches. Each city here gets its own posting with a single
+// jobLocation.
 //
-// All pay, requirement and process copy comes from src/data/career.ts, the
-// same source the national page uses. Nothing here is city-specific except
-// the suburbs served and the kind of work — both taken from pages the site
-// already publishes.
-//
-// The layout is Indeed's: the results column on the left lists every city we
-// advertise in, with the current one selected, and the pane on the right is
-// the chosen job. Type scale and weights follow Indeed too — 16px body at
-// weight 400, bold section rules — because that is what a candidate coming
-// off a job search is reading against. Applying opens the pop-up; nothing
-// sends them to another page.
+// The page itself is JobBoard, the same component /career/ renders — this one
+// just passes the city, so the two can never drift. All copy comes from
+// src/data/career.ts, which tracks the live Indeed listing.
 import Layout from '../layouts/Layout.astro';
-import FAQ from '../components/FAQ.astro';
+import JobBoard from '../components/JobBoard.astro';
 import ApplyLeadGate from '../components/ApplyLeadGate.astro';
 import { site } from '../data/site';
-import { benefits, wellLook, niceToHave, steps, dailyWork, careerCities, payRange, payLine, jobTitle, type CareerCity } from '../data/career';
+import { careerCities, payRange, dailyWork, jobTitle, type CareerCity } from '../data/career';
 
 export function getStaticPaths() {
   return careerCities.map((c) => ({ params: { city: c.slug }, props: { c } }));
@@ -30,14 +22,9 @@ export function getStaticPaths() {
 
 const { c } = Astro.props as { c: CareerCity };
 const pageUrl = `${site.url}/cleaning-jobs-${c.slug}`;
-// Applying opens the conversational pop-up (ApplyLeadGate), the hiring twin
-// of the quote funnel. The href is the no-JS fallback only.
+// Applying opens the conversational pop-up (ApplyLeadGate). The href is the
+// no-JS fallback only.
 const applyHref = `mailto:${site.email}?subject=${encodeURIComponent(`Application — cleaning jobs ${c.city}`)}`;
-
-// Every city we advertise in, for the results column. The one being viewed is
-// marked active; the others are links, which is how a job board switches
-// between listings on a static site.
-const otherCities = careerCities;
 
 // Same posting window the national page uses.
 const today = new Date();
@@ -45,27 +32,7 @@ const validThrough = new Date(today);
 validThrough.setFullYear(validThrough.getFullYear() + 1);
 const isoToday = today.toISOString().split('T')[0];
 const isoValidThrough = validThrough.toISOString().split('T')[0];
-
 const listedOn = today.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
-
-// The summary rows a job board puts at the top of a listing, in the order
-// candidates scan them: pay, work type, where, when.
-const jobMeta = [
-  { icon: 'pay', text: `$${payRange.min.toFixed(2)} – $${payRange.max.toFixed(2)} per hour incl. super & vehicle allowance` },
-  { icon: 'type', text: 'Full time, Part time and Casual — employee roles, no ABN' },
-  { icon: 'place', text: `${c.city} ${c.state} ${c.postcode} · ${c.region}` },
-  { icon: 'clock', text: 'Monday to Friday, 8am–4pm. No nights, no weekends' },
-];
-
-const jobDetails = [
-  { label: 'Pay', value: `$${payRange.min.toFixed(2)} – $${payRange.max.toFixed(2)} per hour` },
-  { label: 'Work type', value: 'Permanent part time, full time or casual' },
-  { label: 'Classification', value: 'Cleaning Services (Trades & Services)' },
-  { label: 'Location', value: `${c.city} ${c.state} ${c.postcode}` },
-  { label: 'Hours', value: 'Mon–Fri, 8am–4pm. School-hours shifts available' },
-  { label: 'Checks', value: 'National Police Check + NDIS Worker Screening' },
-  { label: 'Start', value: 'Immediate start for the right candidates' },
-];
 
 const schema = [
   {
@@ -137,14 +104,6 @@ const schema = [
     })),
   },
 ];
-// Monochrome line icons for the summary rows, inlined so the listing header
-// costs no extra request.
-const icons: Record<string, string> = {
-  pay: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2a3 3 0 0 0-5 2.2c0 2.6 5 1.6 5 4.2a3 3 0 0 1-5 2.1"/><path d="M12 6.5v11"/></svg>',
-  type: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>',
-  place: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>',
-  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></svg>',
-};
 ---
 
 <Layout
@@ -152,445 +111,14 @@ const icons: Record<string, string> = {
   description={`Cleaner jobs in ${c.city} ${c.state}. Permanent & casual employee roles, $${payRange.min}/hr incl. super. No nights or weekends, paid training. Apply now.`}
   schema={schema}
 >
-  <!-- A job board, as close to Indeed's as our own content allows: search bar,
-       results column, detail pane. Everything in it is real — the search picks
-       between the areas we actually advertise in, and "Easily apply" is true
-       because the application is taken on this page. -->
-  <section class="ij">
-    <div class="ij-searchbar">
-      <div class="container-site ij-searchbar-inner">
-        <form class="ij-search" id="ijSearch">
-          <label class="ij-search-field">
-            <span class="ij-search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-            <span class="ij-sr">What</span>
-            <input class="ij-search-input" type="text" value="Cleaning" readonly aria-label="What" />
-          </label>
-          <span class="ij-search-divider" aria-hidden="true"></span>
-          <label class="ij-search-field">
-            <span class="ij-search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-            <span class="ij-sr">Where</span>
-            <select class="ij-search-input ij-search-select" id="ijWhere" aria-label="Where">
-              {otherCities.map((o) => (
-                <option value={`/cleaning-jobs-${o.slug}/`} selected={o.slug === c.slug}>
-                  {o.city} {o.state} {o.postcode}
-                </option>
-              ))}
-            </select>
-          </label>
-          <button type="submit" class="ij-search-btn">Find jobs</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="container-site ij-inner">
-      <nav class="ij-crumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a><span aria-hidden="true">/</span>
-        <a href="/career/">Cleaning jobs</a><span aria-hidden="true">/</span>
-        <span aria-current="page">{c.city}</span>
-      </nav>
-
-      <div class="ij-split">
-        <!-- LEFT · results -->
-        <div class="ij-results">
-          <p class="ij-results-head">
-            cleaning jobs in <strong>{c.city} {c.state}</strong>
-          </p>
-          <p class="ij-results-sub">{otherCities.length} job{otherCities.length === 1 ? '' : 's'} · listed {listedOn}</p>
-
-          {otherCities.map((o) => (
-            o.slug === c.slug ? (
-              <div class="ij-result is-active" aria-current="true">
-                <span class="ij-badge">Easily apply</span>
-                <h2 class="ij-result-title">{jobTitle}</h2>
-                <p class="ij-result-org">{site.name}</p>
-                <p class="ij-result-place">{o.city} {o.state} {o.postcode}</p>
-                <div class="ij-chips">
-                  <span class="ij-chip">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour</span>
-                  <span class="ij-chip">Permanent</span>
-                  <span class="ij-chip">Casual</span>
-                  <span class="ij-chip">No weekends</span>
-                </div>
-              </div>
-            ) : (
-              <a class="ij-result" href={`/cleaning-jobs-${o.slug}/`}>
-                <span class="ij-badge">Easily apply</span>
-                <h2 class="ij-result-title">{jobTitle}</h2>
-                <p class="ij-result-org">{site.name}</p>
-                <p class="ij-result-place">{o.city} {o.state} {o.postcode}</p>
-                <div class="ij-chips">
-                  <span class="ij-chip">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour</span>
-                  <span class="ij-chip">Permanent</span>
-                  <span class="ij-chip">Casual</span>
-                  <span class="ij-chip">No weekends</span>
-                </div>
-              </a>
-            )
-          ))}
-
-          <p class="ij-results-note">
-            Hiring in other areas soon. Can&rsquo;t see your town? <a href="/contact-us/">Tell us where you are</a>.
-          </p>
-        </div>
-
-        <!-- RIGHT · the selected job -->
-        <div class="ij-pane">
-          <div class="ij-pane-head">
-            <h1 class="ij-title">{jobTitle}</h1>
-            <p class="ij-org"><a href="/">{site.name}</a></p>
-            <p class="ij-place">{c.city} {c.state} {c.postcode}</p>
-            <p class="ij-headline">${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour · Part-time, Casual, Full-time</p>
-            <div class="ij-actions">
-              <button type="button" class="ij-apply" data-apply-cta data-job-city={c.city} data-form-location={`cleaning-jobs-${c.slug}`}>Apply now</button>
-              <button type="button" class="ij-iconbtn" id="ijShare" data-share-url={pageUrl} aria-label="Copy a link to this job">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
-              </button>
-              <span class="ij-share-said" id="ijShareSaid" role="status" aria-live="polite"></span>
-              <a class="ij-call" href={site.phoneHref}>Or call {site.phone}</a>
-            </div>
-            <p class="ij-fallback"><a href={applyHref}>Email your application instead</a></p>
-          </div>
-
-          <div class="ij-section">
-            <h2 class="ij-h2">Job details</h2>
-            <div class="ij-detail">
-              <span class="ij-detail-icon" aria-hidden="true" set:html={icons.pay} />
-              <span class="ij-detail-text">
-                <strong>${payRange.min.toFixed(2)} – ${payRange.max.toFixed(2)} an hour</strong>
-                <span>Includes superannuation and vehicle allowance. Paid training, paid travel between jobs, uniforms and products supplied, progression to Team Leader.</span>
-              </span>
-            </div>
-            <div class="ij-detail">
-              <span class="ij-detail-icon" aria-hidden="true" set:html={icons.type} />
-              <span class="ij-detail-text">
-                <strong>Part-time, Casual, Full-time</strong>
-                <span>Employee roles — no ABN or contractor work.</span>
-              </span>
-            </div>
-            <div class="ij-detail">
-              <span class="ij-detail-icon" aria-hidden="true" set:html={icons.clock} />
-              <span class="ij-detail-text">
-                <strong>Monday to Friday, 8am–4pm</strong>
-                <span>No nights, no weekends. School-hours shifts available.</span>
-              </span>
-            </div>
-            <div class="ij-detail">
-              <span class="ij-detail-icon" aria-hidden="true" set:html={icons.place} />
-              <span class="ij-detail-text">
-                <strong>{c.city} {c.state} {c.postcode}</strong>
-                <span>Rostered across {c.region}.</span>
-              </span>
-            </div>
-          </div>
-
-          <div class="ij-section">
-            <h2 class="ij-h2">Full job description</h2>
-
-            <p class="ij-p"><strong>{jobTitle}</strong></p>
-            <p class="ij-p"><strong>{site.name}</strong> · {c.city} {c.state} {c.postcode}</p>
-            <p class="ij-p"><strong>{payLine}</strong></p>
-            <p class="ij-p"><strong>Permanent employee roles — not ABN or contractor work</strong></p>
-
-            <h3 class="ij-h3">About the role</h3>
-            {c.intro.map((p) => <p class="ij-p">{p}</p>)}
-
-            <h3 class="ij-h3">Your daily work</h3>
-            <ul class="ij-ul">{dailyWork.map((w) => <li>{w}</li>)}</ul>
-
-            <h3 class="ij-h3">What you must have</h3>
-            <p class="ij-p">These are the hard requirements. Applications that don&rsquo;t meet them can&rsquo;t be considered.</p>
-            <ul class="ij-ul">{wellLook.map((t) => <li>{t}</li>)}</ul>
-
-            <h3 class="ij-h3">What we look for</h3>
-            <p class="ij-p">Preferred, not essential — we&rsquo;ll train the right person.</p>
-            <ul class="ij-ul">{niceToHave.map((t) => <li>{t}</li>)}</ul>
-
-            <h3 class="ij-h3">Benefits</h3>
-            <ul class="ij-ul">
-              {benefits.map((b) => <li><strong>{b.title}.</strong> {b.body}</li>)}
-            </ul>
-
-            <h3 class="ij-h3">How the application process works</h3>
-            <ol class="ij-ol">
-              {steps.map((s) => <li><strong>{s.title}.</strong> {s.body}</li>)}
-            </ol>
-
-            <h3 class="ij-h3">Where our {c.city} cleaners work</h3>
-            <p class="ij-p">We roster locally across {c.region}:</p>
-            <div class="ij-suburbs">
-              {c.suburbs.map((s) => <a href={`/${s.slug}/`}>{s.name}</a>)}
-            </div>
-
-            <div class="ij-cta">
-              <button type="button" class="ij-apply" data-apply-cta data-job-city={c.city} data-form-location={`cleaning-jobs-${c.slug}`}>Apply now</button>
-              <p class="ij-cta-note">Six quick questions, about a minute — your local Team Leader calls within 48 hours.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ij-faq">
-  <FAQ
-    items={c.faqs}
-    eyebrow={`Cleaning jobs ${c.city} — common questions`}
-    subheading={`What cleaners ask before joining the ${c.city} team.`}
+  <JobBoard
+    current={c}
+    listedOn={listedOn}
+    applyHref={applyHref}
+    faqs={c.faqs}
+    faqSubheading={`What cleaners ask before joining the ${c.city} team.`}
+    hub={{ href: c.hubHref, label: c.hubLabel }}
   />
-  </div>
-
-  <section class="ij-foot">
-    <div class="container-site">
-      <p class="ij-foot-note">Looking for a cleaner rather than a job?</p>
-      <p class="ij-foot-links">
-        <a href={c.hubHref}>{c.hubLabel} &rarr;</a>
-        <span aria-hidden="true">·</span>
-        <a href="/career/">All cleaning jobs &rarr;</a>
-      </p>
-    </div>
-  </section>
 
   <ApplyLeadGate />
 </Layout>
-
-<script is:inline>
-  // "Where" switches between the areas we advertise in; the share button
-  // copies the listing's URL, which is what a candidate actually wants to do
-  // with a job they're thinking about.
-  (function () {
-    var search = document.getElementById('ijSearch');
-    if (search) {
-      search.addEventListener('submit', function (ev) {
-        ev.preventDefault();
-        var where = document.getElementById('ijWhere');
-        if (where && where.value) window.location.href = where.value;
-      });
-    }
-    var share = document.getElementById('ijShare');
-    var said = document.getElementById('ijShareSaid');
-    if (share) {
-      share.addEventListener('click', function () {
-        var url = share.getAttribute('data-share-url');
-        if (navigator.share) { navigator.share({ url: url }).catch(function () {}); return; }
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(url).then(function () {
-            if (said) { said.textContent = 'Link copied'; setTimeout(function () { said.textContent = ''; }, 2500); }
-          });
-        }
-      });
-    }
-  })();
-</script>
-
-<style>
-  /* ---------------------------------------------------------------------
-     Indeed's job page, rebuilt with our content. Its own type stack (Indeed
-     runs Noto Sans over the system fonts), its own greys — #f3f2f1 page,
-     #d4d2d0 card borders, #2d2d2d text, #595959 secondary — its card radii
-     and its square blue Apply button. The one thing kept from the site is
-     the brand blue on the button: a candidate should still know whose
-     listing this is. Everything on the page is real; nothing is a mock
-     control that does nothing.
-     --------------------------------------------------------------------- */
-  .ij {
-    --ij-font: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    --ij-text: #2d2d2d;
-    --ij-muted: #595959;
-    --ij-line: #d4d2d0;
-    --ij-link: #2557a7;
-    --ij-blue: #3a5dff;
-    background: #f3f2f1;
-    /* global.css gives every <section> a top padding; here it showed as a
-       cream band between the site header and the search bar. A job board's
-       search sits directly under the header. */
-    padding-top: 0;
-    padding-bottom: clamp(36px, 5vw, 56px);
-    font-family: var(--ij-font);
-  }
-  .ij-sr {
-    position: absolute; width: 1px; height: 1px; overflow: hidden;
-    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
-  }
-
-  /* ---------- Search bar ---------- */
-  .ij-searchbar { background: #ffffff; border-bottom: 1px solid var(--ij-line); padding: 16px 0; }
-  .ij-searchbar-inner { max-width: 1240px; }
-  .ij-search {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    max-width: 860px;
-    background: #ffffff;
-    border: 1px solid var(--ij-text);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    padding: 6px;
-  }
-  .ij-search-field { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; padding: 0 10px; }
-  .ij-search-icon { flex: none; width: 18px; height: 18px; color: var(--ij-muted); }
-  .ij-search-icon svg { width: 18px; height: 18px; display: block; }
-  .ij-search-input {
-    flex: 1; min-width: 0;
-    border: 0; outline: none; background: transparent;
-    font-family: var(--ij-font); font-size: 15px; font-weight: 400; color: var(--ij-text);
-    padding: 10px 0;
-  }
-  .ij-search-select { cursor: pointer; appearance: none; }
-  .ij-search-divider { width: 1px; background: var(--ij-line); margin: 8px 0; flex: none; }
-  .ij-search-btn {
-    flex: none;
-    background: var(--ij-blue); color: #ffffff; border: 0; border-radius: 8px;
-    font-family: var(--ij-font); font-size: 15px; font-weight: 700;
-    padding: 0 22px; min-height: 44px; cursor: pointer;
-    transition: filter 0.15s ease;
-  }
-  .ij-search-btn:hover { filter: brightness(0.92); }
-  @media (max-width: 640px) {
-    .ij-search { flex-wrap: wrap; }
-    .ij-search-divider { display: none; }
-    .ij-search-field { flex-basis: 100%; border-bottom: 1px solid var(--ij-line); }
-    .ij-search-btn { flex-basis: 100%; margin-top: 6px; }
-  }
-
-  .ij-inner { max-width: 1240px; }
-  .ij-crumbs {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    font-size: 13px; color: var(--ij-muted); margin: 14px 0 10px;
-  }
-  .ij-crumbs a { font-family: var(--ij-font); color: var(--ij-muted); text-decoration: none; }
-  .ij-crumbs a:hover { color: var(--ij-link); text-decoration: underline; }
-
-  .ij-split { display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 16px; align-items: start; }
-  @media (max-width: 1000px) {
-    .ij-split { grid-template-columns: minmax(0, 1fr); }
-    .ij-results { order: 2; }
-    .ij-pane { order: 1; }
-  }
-
-  /* ---------- Results column ---------- */
-  .ij-results { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 16px; }
-  @media (max-width: 1000px) { .ij-results { position: static; } }
-  .ij-results-head { font-size: 15px; font-weight: 400; color: var(--ij-text); margin: 0; }
-  .ij-results-head strong { font-weight: 700; }
-  .ij-results-sub { font-size: 13px; color: var(--ij-muted); margin: -8px 0 2px; }
-
-  .ij-result {
-    display: block;
-    background: #ffffff;
-    border: 1px solid var(--ij-line);
-    border-radius: 8px;
-    padding: 16px;
-    text-decoration: none;
-    transition: box-shadow 0.15s ease, border-color 0.15s ease;
-  }
-  a.ij-result:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); border-color: #a1a09f; }
-  .ij-result.is-active { border: 2px solid var(--ij-blue); padding: 15px; box-shadow: 0 2px 10px rgba(58, 93, 255, 0.12); }
-  .ij-badge {
-    display: inline-block;
-    font-family: var(--ij-font); font-size: 12px; font-weight: 600;
-    color: #1f2a6b; background: #e4ecfd; border-radius: 4px;
-    padding: 3px 8px; margin-bottom: 8px;
-  }
-  .ij-result-title {
-    font-family: var(--ij-font);
-    font-size: 18px; font-weight: 600; line-height: 1.3;
-    color: var(--ij-link); margin: 0 0 6px; letter-spacing: 0;
-  }
-  .ij-result.is-active .ij-result-title { color: var(--ij-text); }
-  a.ij-result:hover .ij-result-title { text-decoration: underline; }
-  .ij-result-org, .ij-result-place {
-    font-size: 14px; font-weight: 400; line-height: 1.45; color: var(--ij-muted); margin: 0;
-  }
-  .ij-result-org { color: var(--ij-text); }
-  .ij-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-  .ij-chip {
-    font-size: 12px; font-weight: 400; color: var(--ij-text);
-    background: #f3f2f1; border-radius: 4px; padding: 5px 8px;
-  }
-  .ij-results-note { font-size: 13px; line-height: 1.5; color: var(--ij-muted); margin: 4px 0 0; padding: 0 2px; }
-  .ij-results-note a { font-family: var(--ij-font); color: var(--ij-link); text-decoration: underline; }
-
-  /* ---------- Detail pane ---------- */
-  .ij-pane { background: #ffffff; border: 1px solid var(--ij-line); border-radius: 8px; padding: clamp(20px, 2.2vw, 28px); }
-  .ij-pane-head { padding-bottom: 18px; }
-  .ij-title {
-    font-family: var(--ij-font);
-    font-size: clamp(22px, 2.2vw, 24px); font-weight: 700; line-height: 1.3;
-    color: var(--ij-text); margin: 0 0 8px; letter-spacing: 0;
-  }
-  .ij-org { margin: 0 0 2px; font-size: 16px; }
-  .ij-org a { font-family: var(--ij-font); color: var(--ij-link); text-decoration: underline; }
-  .ij-place { font-size: 16px; color: var(--ij-text); margin: 0 0 10px; }
-  .ij-headline { font-size: 15px; font-weight: 400; color: var(--ij-text); margin: 0 0 16px; }
-
-  .ij-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-  /* Indeed's apply button: a square-cornered solid block, bold label. The
-     fill is NATURO blue rather than Indeed's navy. */
-  .ij-apply {
-    background: var(--ij-blue); color: #ffffff; border: 0; border-radius: 8px;
-    font-family: var(--ij-font); font-size: 16px; font-weight: 700; line-height: 1;
-    padding: 0 26px; min-height: 48px; cursor: pointer;
-    transition: filter 0.15s ease;
-  }
-  .ij-apply:hover { filter: brightness(0.92); }
-  .ij-iconbtn {
-    width: 48px; height: 48px; flex: none;
-    display: inline-flex; align-items: center; justify-content: center;
-    background: #ffffff; color: var(--ij-text);
-    border: 1px solid var(--ij-line); border-radius: 8px; cursor: pointer;
-    transition: background-color 0.15s ease;
-  }
-  .ij-iconbtn:hover { background: #f3f2f1; }
-  .ij-iconbtn svg { width: 20px; height: 20px; display: block; }
-  .ij-share-said { font-size: 13px; color: var(--ij-muted); }
-  .ij-call { font-family: var(--ij-font); font-size: 15px; color: var(--ij-text); text-decoration: none; }
-  .ij-call:hover { color: var(--ij-link); text-decoration: underline; }
-  .ij-fallback { margin: 12px 0 0; font-size: 13px; }
-  .ij-fallback a { font-family: var(--ij-font); color: var(--ij-muted); text-decoration: underline; }
-
-  .ij-section { border-top: 1px solid #e4e2e0; padding: 20px 0 2px; }
-  .ij-h2 {
-    font-family: var(--ij-font);
-    font-size: 20px; font-weight: 700; line-height: 1.3;
-    color: var(--ij-text); margin: 0 0 16px; letter-spacing: 0;
-  }
-  .ij-h3 { font-family: var(--ij-font); font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--ij-text); margin: 24px 0 8px; }
-  .ij-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
-  .ij-detail-icon { flex: none; width: 20px; height: 20px; color: var(--ij-text); margin-top: 2px; }
-  .ij-detail-icon :global(svg) { width: 20px; height: 20px; display: block; }
-  .ij-detail-text { display: block; font-size: 15px; line-height: 1.5; color: var(--ij-text); }
-  .ij-detail-text strong { display: block; font-weight: 700; margin-bottom: 3px; }
-  .ij-detail-text span { display: block; font-weight: 400; color: var(--ij-muted); }
-
-  .ij-p { font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--ij-text); margin: 0 0 12px; }
-  .ij-p strong { font-weight: 700; }
-  .ij-ul, .ij-ol { font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--ij-text); margin: 0 0 14px; padding-left: 22px; }
-  .ij-ul li, .ij-ol li { margin-bottom: 7px; }
-  .ij-ul li strong, .ij-ol li strong { font-weight: 700; }
-
-  .ij-suburbs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-  .ij-suburbs a {
-    font-family: var(--ij-font); font-size: 14px; color: var(--ij-link); text-decoration: none;
-    border: 1px solid var(--ij-line); border-radius: 999px; padding: 6px 14px;
-  }
-  .ij-suburbs a:hover { border-color: var(--ij-link); text-decoration: underline; }
-
-  .ij-cta { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e4e2e0; }
-  .ij-cta-note { font-size: 14px; line-height: 1.55; color: var(--ij-muted); margin: 12px 0 0; max-width: 520px; }
-  .ij-cta-note a { font-family: var(--ij-font); color: var(--ij-link); text-decoration: underline; }
-
-  /* The FAQ component ships a cream full-bleed band. On this page it is the
-     only thing not in the job board's palette, so it is overridden here
-     rather than changed for every other page that uses it. */
-  .ij-faq :global(.faq-section) {
-    background-color: #ffffff;
-    padding: clamp(56px, 7vw, 88px) 0;
-    margin-bottom: 0;
-  }
-
-  .ij-foot { background: #f3f2f1; padding: clamp(32px, 4vw, 48px) 0; text-align: center; border-top: 1px solid rgba(15,23,42,0.06); }
-  .ij-foot-note { font-family: 'Poppins', sans-serif; font-size: 15px; color: #595959; margin: 0 0 8px; }
-  .ij-foot-links { margin: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .ij-foot-links a { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2557a7; text-decoration: none; }
-  .ij-foot-links a:hover { text-decoration: underline; }
-  .ij-foot-links span { color: #a1a09f; }
-</style>

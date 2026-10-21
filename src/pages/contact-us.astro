@@ -1019,6 +1019,9 @@ const methodCards = [
           transaction_id: eventId,
         });
         if (googleAdsId && googleAdsLabel) {
+          if (window.naturoAnalytics && window.naturoAnalytics.setAdsUserData) {
+            window.naturoAnalytics.setAdsUserData(email, phone);
+          }
           window.gtag('event', 'conversion', {
             send_to: googleAdsId + '/' + googleAdsLabel,
             transaction_id: eventId,

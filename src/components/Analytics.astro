@@ -331,6 +331,26 @@ const leadDelivery = {
     }
 
     /**
+     * Google Ads enhanced conversions. Call immediately before a
+     * `conversion` event. gtag hashes these (SHA-256) in the browser before
+     * sending, and gtag itself only exists once the visitor has consented, so
+     * nothing is sent for visitors who declined. Phone is normalised to E.164
+     * (+61…) because Google won't match local formats.
+     */
+    function setAdsUserData(email, phone) {
+      if (typeof window.gtag !== 'function' || !consentGranted()) return;
+      var data = {};
+      var e = (email || '').toString().trim().toLowerCase();
+      if (e && e.indexOf('@') > 0) data.email = e;
+      var digits = (phone || '').toString().replace(/[^\d+]/g, '');
+      if (digits.indexOf('+') === 0) digits = digits.slice(1);
+      else if (digits.indexOf('0') === 0) digits = '61' + digits.slice(1);
+      if (/^61\d{8,9}$/.test(digits)) data.phone_number = '+' + digits;
+      if (!data.email && !data.phone_number) return;
+      try { window.gtag('set', 'user_data', data); } catch (err) {}
+    }
+
+    /**
      * Single entry point for every analytics event.
      * Always merges page context, always scrubs PII, and mirrors to gtag so
      * events land in GA4 whether or not the GTM container has a matching tag.
@@ -356,6 +376,7 @@ const leadDelivery = {
       leadId: leadId,
       newLeadId: function () { return leadId(true); },
       consentGranted: consentGranted,
+      setAdsUserData: setAdsUserData,
     };
 
     // ---- Click tracking ----------------------------------------------------

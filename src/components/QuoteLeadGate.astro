@@ -687,6 +687,9 @@ const lc = {
       if (!config.googleAdsId || typeof window.gtag !== 'function') return;
       try {
         const sendTo = config.googleAdsLabel ? config.googleAdsId + '/' + config.googleAdsLabel : config.googleAdsId;
+        if (window.naturoAnalytics && window.naturoAnalytics.setAdsUserData) {
+          window.naturoAnalytics.setAdsUserData(payload.email, payload.phone);
+        }
         window.gtag('event', 'conversion', { send_to: sendTo, transaction_id: payload.event_id });
         window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.event_id });
       } catch (e) {}

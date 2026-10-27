@@ -3,7 +3,8 @@
 //
 // Stores the user's choice in localStorage under naturo:consent (so it
 // persists across sessions, unlike the lead-capture sessionStorage). The
-// QuoteLeadGate's destination installers (Meta Pixel / GA4 / GTM) wait
+// QuoteLeadGate loads the Google tags (GA4 + Ads) at once in Consent Mode
+// with storage denied; Meta Pixel, GTM and Clarity wait
 // for window.naturoConsent.granted === true OR for the
 // `naturo:consent-granted` window event to fire before injecting any
 // third-party tags. That keeps the site GDPR / OAIC-friendly and avoids

@@ -217,12 +217,15 @@ const lc = {
     function installGtag(id) {
       if (!id) return;
       window.dataLayer = window.dataLayer || [];
-      if (!window.gtag) {
+      // Keyed on the script, not on window.gtag: setGoogleConsent() defines
+      // the gtag stub first so the consent default is queued before 'js'.
+      if (!window.__gtagScriptLoaded) {
+        window.__gtagScriptLoaded = true;
         const s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
         document.head.appendChild(s);
-        window.gtag = function () { window.dataLayer.push(arguments); };
+        if (!window.gtag) window.gtag = function () { window.dataLayer.push(arguments); };
         window.gtag('js', new Date());
       }
       window.__gtagIds = window.__gtagIds || {};
@@ -265,10 +268,30 @@ const lc = {
         });
       } catch (e) { /* best-effort: a missing tag is not worth breaking the page */ }
     }
-    function installAdvertisingStack() {
-      installMetaPixel(config.metaPixelId);
+    // Google Consent Mode v2. The Google tags (GA4 + Ads) load on every page
+    // with all storage DENIED until the visitor accepts, so they set no
+    // cookies and send only Google's cookieless pings — which lets Google
+    // see the tag and model the conversions it can't observe. The consent
+    // default must be queued before gtag('js') / gtag('config'), so it is
+    // set here before installGtag runs. Meta, GTM and Clarity stay fully
+    // blocked until consent, exactly as before.
+    function setGoogleConsent(mode, granted) {
+      window.dataLayer = window.dataLayer || [];
+      if (!window.gtag) window.gtag = function () { window.dataLayer.push(arguments); };
+      const v = granted ? 'granted' : 'denied';
+      window.gtag('consent', mode, {
+        ad_storage: v,
+        analytics_storage: v,
+        ad_user_data: v,
+        ad_personalization: v,
+      });
+    }
+    function installGoogleTags() {
       (config.ga4Ids || []).forEach(function (gaId) { installGtag(gaId); });
       if (config.googleAdsId) installGtag(config.googleAdsId);
+    }
+    function installConsentedStack() {
+      installMetaPixel(config.metaPixelId);
       installGtm(config.gtmId);
       installClarity(config.clarityProjectId);
     }
@@ -281,10 +304,15 @@ const lc = {
       return false;
     }
     if (consentGranted()) {
-      installAdvertisingStack();
+      setGoogleConsent('default', true);
+      installGoogleTags();
+      installConsentedStack();
     } else {
+      setGoogleConsent('default', false);
+      installGoogleTags();
       window.addEventListener('naturo:consent-granted', function () {
-        installAdvertisingStack();
+        setGoogleConsent('update', true);
+        installConsentedStack();
       }, { once: true });
     }
 

@@ -1,0 +1,105 @@
+---
+// Supplier onboarding (Barwon Health via Eftsure, Oct 2026) asks for a copy of
+// this policy. The same text is kept as a Google Doc in Drive — change both.
+import LegalPage from '../components/LegalPage.astro';
+import { site } from '../data/site';
+---
+
+<LegalPage
+  title="Modern Slavery Policy"
+  description="How Naturo Group identifies, prevents and responds to modern slavery risks in its operations and supply chain."
+  updated="30 October 2026"
+>
+  <p>
+    {site.legalName} ("Naturo Group", "we") does not tolerate modern slavery in any form,
+    in our own business or in our supply chain. This policy sets out how we identify,
+    prevent and respond to modern slavery risks.
+  </p>
+
+  <h2>1. Purpose and scope</h2>
+  <p>
+    Modern slavery includes slavery, servitude, forced labour, debt bondage, deceptive
+    recruiting, human trafficking and the worst forms of child labour, as described in the
+    <em>Modern Slavery Act 2018</em> (Cth). Our annual revenue is below the Act's mandatory
+    reporting threshold; we adopt this policy voluntarily and to support customers that report
+    under the Act.
+  </p>
+  <p>
+    This policy applies to our directors, employees, contractors and subcontracted cleaners,
+    and to the suppliers we buy goods and services from.
+  </p>
+
+  <h2>2. Our operations and supply chain</h2>
+  <p>
+    Naturo Group provides residential, commercial, NDIS, aged care, DVA and insurance cleaning
+    services from bases in Port Macquarie (NSW) and Geelong (VIC). Our workforce is Australian
+    based. Our main purchases are cleaning chemicals, equipment and consumables (such as gloves,
+    cloths and bags), vehicles and fuel, uniforms, software and professional services.
+  </p>
+
+  <h2>3. Where the risks are</h2>
+  <p>We recognise the following areas carry a higher risk of modern slavery:</p>
+  <ul>
+    <li>
+      <strong>Cleaning labour.</strong> The cleaning industry is recognised as high risk for
+      underpayment, sham contracting and exploitation of vulnerable and visa-holding workers,
+      particularly through subcontracting and labour hire.
+    </li>
+    <li>
+      <strong>Disposable gloves.</strong> Rubber and nitrile glove manufacturing has a
+      documented history of forced labour and recruitment-fee debt bondage.
+    </li>
+    <li>
+      <strong>Textiles.</strong> Cotton and microfibre cloths, mops and uniforms can be sourced
+      from regions with known forced-labour concerns.
+    </li>
+    <li>
+      <strong>Cleaning products and equipment</strong> manufactured overseas with limited
+      visibility of the production chain.
+    </li>
+  </ul>
+
+  <h2>4. What we do</h2>
+  <h3>Our workforce</h3>
+  <ul>
+    <li>We pay at least the minimum rates under the Cleaning Services Award, keep accurate time and pay records, and pay superannuation.</li>
+    <li>We verify each worker's identity and right to work in Australia before they start.</li>
+    <li>We never charge recruitment fees and never hold workers' passports, identity documents or wages.</li>
+    <li>Workers are free to end their engagement with notice and are not bound by debts to us.</li>
+    <li>We hold the registrations required for our services, including Portable Long Service Leave registration for contract cleaning in Victoria.</li>
+  </ul>
+  <h3>Our suppliers</h3>
+  <ul>
+    <li>We prefer established Australian suppliers that publish their own modern slavery statements or policies.</li>
+    <li>We expect suppliers and subcontractors to comply with this policy and with Australian workplace law, and we will ask for information about their practices where a risk is identified.</li>
+    <li>We do not engage labour hire or subcontracted cleaners who are not appropriately licensed or registered.</li>
+  </ul>
+
+  <h2>5. Training and awareness</h2>
+  <p>
+    Managers responsible for hiring and purchasing are made aware of modern slavery risks and
+    the warning signs, and this policy is shared with all staff and contractors when they join.
+  </p>
+
+  <h2>6. Reporting concerns</h2>
+  <p>
+    Anyone can raise a concern, anonymously if they prefer, by emailing
+    <a href={site.emailHref}>{site.email}</a> or calling <a href={site.phoneHref}>{site.phone}</a>.
+    We will not penalise anyone for raising a concern in good faith. Concerns may also be reported
+    to the Australian Federal Police on 131 237, or to the Fair Work Ombudsman on 13 13 94.
+  </p>
+
+  <h2>7. How we respond</h2>
+  <p>
+    We will investigate every concern promptly. If we find modern slavery in our operations or
+    supply chain, we will put the safety of the people affected first, work to remedy the harm,
+    report to the authorities where appropriate, and end the relationship with any supplier that
+    will not address the issue.
+  </p>
+
+  <h2>8. Responsibility and review</h2>
+  <p>
+    The Director of {site.legalName} is responsible for this policy. We review it at least once a
+    year, and whenever our operations or supply chain change significantly.
+  </p>
+</LegalPage>

@@ -692,6 +692,7 @@ export const subFooterLinks = [
   { label: 'Terms of service', href: '/terms-of-service/' },
   { label: 'Cookies & Data Policy', href: '/cookies-data-policy/' },
   { label: 'Collection Notice Statement', href: '/collection-notice-statement/' },
+  { label: 'Modern Slavery Policy', href: '/modern-slavery-policy/' },
 ];
 
 // Kept for compatibility with existing pages that import it.

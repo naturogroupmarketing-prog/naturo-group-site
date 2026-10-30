@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
 import JobBoard from '../components/JobBoard.astro';
 import ApplyLeadGate from '../components/ApplyLeadGate.astro';
 import { site } from '../data/site';
-import { payRange } from '../data/career';
+import { payRange, payLine, jobTitle, careerCities } from '../data/career';
 
 const today = new Date();
 const validThrough = new Date(today);
@@ -22,6 +22,11 @@ validThrough.setMonth(validThrough.getMonth() + 12);
 const isoToday = today.toISOString().split('T')[0];
 const isoValidThrough = validThrough.toISOString().split('T')[0];
 const listedOn = today.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+
+// "Port Macquarie NSW and Geelong VIC" — prose, for the schema description.
+const areasProse = careerCities
+  .map((c) => `${c.city} ${c.state}`)
+  .reduce((acc, a, i, all) => (i === 0 ? a : i === all.length - 1 ? `${acc} and ${a}` : `${acc}, ${a}`), '');
 
 const applyHref = `mailto:${site.email}?subject=${encodeURIComponent('Cleaning job application')}`;
 
@@ -60,9 +65,9 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Residential & NDIS Cleaner',
+    title: jobTitle,
     description:
-      'Join NATURO GROUP — Australia\u2019s eco-friendly residential and NDIS cleaning team. We are hiring reliable, detail-focused cleaners across NSW, Queensland and Victoria. Above-award pay, flexible hours, all eco-friendly products and equipment supplied, paid training and a supportive area coordinator.',
+      `Join NATURO GROUP — Australia\u2019s eco-friendly residential and NDIS cleaning team. We are hiring reliable, detail-focused cleaners in ${areasProse}. ${payLine}, permanent and casual employee roles, no nights or weekends, all products and equipment supplied, paid training and a local Team Leader.`,
     datePosted: isoToday,
     validThrough: isoValidThrough,
     employmentType: ['FULL_TIME', 'PART_TIME'],
@@ -72,36 +77,28 @@ const schema = [
       sameAs: site.url,
       logo: `${site.url}/images/logo.png`,
     },
-    // The role is advertised across NSW, QLD and VIC, but jobLocation used to
-    // declare a single Place with addressRegion 'NSW' and nothing else, which
-    // both misrepresented the posting and triggered three Search Console
-    // warnings (missing addressLocality / postalCode / streetAddress).
+    // One Place per area we actually advertise in, read from careerCities —
+    // the same list the board renders, so the posting can never claim a city
+    // without a listing behind it. It used to name eight cities while the
+    // page showed two, which put the role in Google for Jobs results in
+    // towns we do not roster (narrowed 2026-10-30 on Hubert's call).
     //
-    // Google accepts an array of Places for genuinely multi-location roles, so
-    // each hiring hub is listed with a real locality, region and postcode.
     // streetAddress is deliberately omitted: cleaners work in clients' homes,
-    // there is no site address to give, and inventing one would be worse than
-    // the remaining advisory warning.
-    jobLocation: [
-      { city: 'Geelong', region: 'VIC', postcode: '3220' },
-      { city: 'Melbourne', region: 'VIC', postcode: '3000' },
-      { city: 'Sydney', region: 'NSW', postcode: '2000' },
-      { city: 'Port Macquarie', region: 'NSW', postcode: '2444' },
-      { city: 'Newcastle', region: 'NSW', postcode: '2300' },
-      { city: 'Brisbane', region: 'QLD', postcode: '4000' },
-      { city: 'Gold Coast', region: 'QLD', postcode: '4217' },
-      { city: 'Sunshine Coast', region: 'QLD', postcode: '4557' },
-    ].map((l) => ({
+    // there is no site address to give, and the Geelong base is a private
+    // residence that must never be published.
+    jobLocation: careerCities.map((l) => ({
       '@type': 'Place',
       address: {
         '@type': 'PostalAddress',
         addressLocality: l.city,
-        addressRegion: l.region,
+        addressRegion: l.state,
         postalCode: l.postcode,
         addressCountry: 'AU',
       },
     })),
     applicantLocationRequirements: { '@type': 'Country', name: 'Australia' },
+    // The pop-up takes the application on this page, same as the listings.
+    directApply: true,
     baseSalary: {
       '@type': 'MonetaryAmount',
       currency: 'AUD',

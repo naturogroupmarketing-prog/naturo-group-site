@@ -126,9 +126,9 @@ export const rows: Row[] = [
   },
   {
     label: 'Price before you book',
-    why: 'Where we are behind: our prices are quoted, not published.',
+    why: 'An estimate tells you the ballpark. Only a quote prices your actual home.',
     values: {
-      naturo: 'Free quote, same day in business hours. Prices are not published on the site.',
+      naturo: 'Published estimates — a regular 3-bedroom clean in Geelong runs $153–$220 a visit — with cost guides for both areas. Your own home is quoted free, same day in business hours.',
       jims: 'House cleaning “start[s] at just $149”, based on a 3-bedroom single-storey home.',
       absolute: 'From $82 for 2 hours, and “pricing does vary according to your suburb location”.',
       houseproud: 'Quote only — “clear, upfront quotes with no hidden fees”.',

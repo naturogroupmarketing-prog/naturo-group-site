@@ -3705,7 +3705,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Services Geelong | 1300 876 472',
-      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products supplied. Instant online price.',
+      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products supplied. Regular cleans from $153 a visit.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
     localFaqs: [

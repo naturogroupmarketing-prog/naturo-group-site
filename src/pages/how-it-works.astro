@@ -9,9 +9,9 @@ import { ctaPrimary, ctaPhone, site } from '../data/site';
 const steps = [
   {
     n: '01',
-    title: 'Get your instant price',
+    title: 'Get your free quote',
     body:
-      'Tell us a few details about your home and the type of clean you need. Our calculator gives you a transparent price in 60 seconds — no callbacks, no hidden fees.',
+      'Tell us a few details about your home and the type of clean you need. The form takes about 60 seconds, and we come back with a price for your home — no hidden fees.',
   },
   {
     n: '02',
@@ -64,7 +64,7 @@ const schema = [
     '@type': 'HowTo',
     '@id': `${site.url}/how-it-works#howto`,
     name: 'How to Book a Naturo Group Cleaning Service',
-    description: 'Book an eco-friendly cleaning service in 5 easy steps — instant price, pick a date, meet your cleaners, and enjoy a spotless home.',
+    description: 'Book an eco-friendly cleaning service in 5 easy steps — free quote, pick a date, meet your cleaners, and enjoy a spotless home.',
     totalTime: 'PT1M',
     step: steps.map((s, i) => ({
       '@type': 'HowToStep',

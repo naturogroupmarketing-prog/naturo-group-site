@@ -294,7 +294,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does cleaning in Wauchope cost and how do I book?',
-        a: 'Pricing depends on the size of your home, its condition and how often you would like us. You can get a free instant quote online in about 60 seconds with no phone call needed, and most first bookings in Wauchope happen within two to five business days. There are no lock-in contracts.',
+        a: 'Pricing depends on the size of your home, its condition and how often you would like us. You can get a free quote — the form takes about 60 seconds online with no phone call needed, and most first bookings in Wauchope happen within two to five business days. There are no lock-in contracts.',
       },
     ],
   },
@@ -373,7 +373,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will a clean in Lake Cathie cost?',
-        a: 'There is no set rate, because cost depends on the size and condition of the property and how often you book. Get a free instant quote online in about 60 seconds without speaking to anyone. Lake Cathie bookings usually start within two to five business days, with a satisfaction guarantee and no lock-in contract.',
+        a: 'There is no set rate, because cost depends on the size and condition of the property and how often you book. Get a free quote — the form takes about 60 seconds online without speaking to anyone. Lake Cathie bookings usually start within two to five business days, with a satisfaction guarantee and no lock-in contract.',
       },
     ],
   },
@@ -610,7 +610,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does cleaning in North Haven cost?',
-        a: 'It depends on the size and condition of the home and how frequently you book, so there is no single rate. You can get a free instant quote online in about 60 seconds with no phone call required. Every North Haven clean is covered by our satisfaction guarantee, with no lock-in contract.',
+        a: 'It depends on the size and condition of the home and how frequently you book, so there is no single rate. You can get a free quote — the form takes about 60 seconds online with no phone call required. Every North Haven clean is covered by our satisfaction guarantee, with no lock-in contract.',
       },
     ],
   },
@@ -689,7 +689,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I get a quote for a Dunbogan clean?',
-        a: 'Book online and you will get a free instant quote in about 60 seconds, with no phone call needed. The price reflects your home\'s size, its condition and how often you want us. Our satisfaction guarantee applies to every Dunbogan job, however small, and there is no lock-in contract.',
+        a: 'Book online and you will get a free quote — the form takes about 60 seconds, with no phone call needed. The price reflects your home\'s size, its condition and how often you want us. Our satisfaction guarantee applies to every Dunbogan job, however small, and there is no lock-in contract.',
       },
     ],
   },
@@ -768,7 +768,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does it cost and how quickly can you start?',
-        a: 'Cost depends on the size of the property, its condition and how often you book, so get a free instant quote online in about 60 seconds without a phone call. First bookings at Camden Head typically happen within two to five business days, backed by our satisfaction guarantee.',
+        a: 'Cost depends on the size of the property, its condition and how often you book, so get a free quote — the form takes about 60 seconds online without a phone call. First bookings at Camden Head typically happen within two to five business days, backed by our satisfaction guarantee.',
       },
     ],
   },
@@ -847,7 +847,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will it cost to have my Telegraph Point home cleaned?',
-        a: 'Pricing depends on the size and condition of the home and how often you book, so larger Telegraph Point rural properties are quoted on their own terms. Get a free instant quote online in about 60 seconds with no phone call needed, and expect a first booking within two to five business days.',
+        a: 'Pricing depends on the size and condition of the home and how often you book, so larger Telegraph Point rural properties are quoted on their own terms. Get a free quote — the form takes about 60 seconds online with no phone call needed, and expect a first booking within two to five business days.',
       },
     ],
   },
@@ -926,7 +926,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does a Sancrox clean cost?',
-        a: 'There is no fixed rate, since price depends on the size of the home, its condition and how often you book. A free instant quote takes about 60 seconds online with no phone call required. Every Sancrox clean carries our satisfaction guarantee and there is no lock-in contract.',
+        a: 'There is no fixed rate, since price depends on the size of the home, its condition and how often you book. A free quote takes about 60 seconds online with no phone call required. Every Sancrox clean carries our satisfaction guarantee and there is no lock-in contract.',
       },
     ],
   },
@@ -1005,7 +1005,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I get a price for cleaning in Kendall?',
-        a: 'Get a free instant quote online in about 60 seconds, with no phone call needed. The figure depends on the size and condition of your Kendall home and whether you want regular, deep or end-of-lease cleaning. First bookings usually land within two to five business days.',
+        a: 'Get a free quote — the form takes about 60 seconds online, with no phone call needed. The figure depends on the size and condition of your Kendall home and whether you want regular, deep or end-of-lease cleaning. First bookings usually land within two to five business days.',
       },
     ],
   },
@@ -1084,7 +1084,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does cleaning cost in Comboyne?',
-        a: 'There is no set rate. Price depends on the size and condition of the property and how often you book, which matters on larger plateau homes. A free instant quote takes about 60 seconds online with no phone call, and every Comboyne clean is covered by our satisfaction guarantee.',
+        a: 'There is no set rate. Price depends on the size and condition of the property and how often you book, which matters on larger plateau homes. A free quote takes about 60 seconds online with no phone call, and every Comboyne clean is covered by our satisfaction guarantee.',
       },
     ],
   },
@@ -1163,7 +1163,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much will it cost and how soon can you come?',
-        a: 'Cost depends on the size of the home, its condition and how often you book, so a large rural home is quoted differently to a compact one. Get a free instant quote online in about 60 seconds with no phone call. First Beechwood bookings are typically within two to five business days.',
+        a: 'Cost depends on the size of the home, its condition and how often you book, so a large rural home is quoted differently to a compact one. Get a free quote — the form takes about 60 seconds online with no phone call. First Beechwood bookings are typically within two to five business days.',
       },
     ],
   },
@@ -1313,7 +1313,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I find out what a clean at Rollands Plains will cost?',
-        a: 'Pricing depends on the size of the home, its current condition and how often you would like us. Rather than quoting over the phone, we give you a free instant quote online in about 60 seconds, with no phone call required. From there you can book straight away, and a first clean in Rollands Plains is typically within two to five business days.',
+        a: 'Pricing depends on the size of the home, its current condition and how often you would like us. Rather than quoting over the phone, we give you a free quote — the form takes about 60 seconds online, with no phone call required. From there you can book straight away, and a first clean in Rollands Plains is typically within two to five business days.',
       },
       {
         q: 'Which other hinterland towns do you cover from Rollands Plains?',
@@ -1550,7 +1550,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does a clean in Lakewood cost?',
-        a: 'It depends on how big the home is, what condition it is in and whether you want us regularly or as a one-off, so there is no flat rate. You can get a free instant quote online in about 60 seconds without speaking to anyone, then book if it suits. A first Lakewood booking is typically two to five business days out.',
+        a: 'It depends on how big the home is, what condition it is in and whether you want us regularly or as a one-off, so there is no flat rate. You can get a free quote — the form takes about 60 seconds online without speaking to anyone, then book if it suits. A first Lakewood booking is typically two to five business days out.',
       },
       {
         q: 'Do you clean the semi-rural blocks around Lakewood as well as the estates?',
@@ -1617,7 +1617,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: 'Do you charge differently for acreage homes with large floor areas?',
-        a: 'Every quote is built around the size of the home, its condition and how often you want us, so a larger King Creek residence is priced on what it actually takes rather than a fixed rate. The free instant quote online takes about 60 seconds and needs no phone call, and you will see the figure before you commit to anything.',
+        a: 'Every quote is built around the size of the home, its condition and how often you want us, so a larger King Creek residence is priced on what it actually takes rather than a fixed rate. The free quote form online takes about 60 seconds and needs no phone call, and you will see the figure before you commit to anything.',
       },
       {
         q: 'Are your products safe around chickens, orchards and rainwater tanks?',
@@ -1795,7 +1795,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you do end-of-lease cleans for Lighthouse Beach rentals?',
-        a: 'We do. Our end-of-lease clean is a thorough reset of the whole property with a receipt provided, and if the managing agent raises an issue with the clean we return and re-do it under our bond-back guarantee. Get a free instant quote online and we can usually attend a Lighthouse Beach vacate within two to five business days.',
+        a: 'We do. Our end-of-lease clean is a thorough reset of the whole property with a receipt provided, and if the managing agent raises an issue with the clean we return and re-do it under our bond-back guarantee. Get a free quote online and we can usually attend a Lighthouse Beach vacate within two to five business days.',
       },
     ],
   },
@@ -1949,7 +1949,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How quickly can you start on the Central Coast?',
-        a: 'Most first bookings happen within two to five business days. You can get a free instant quote online in about 60 seconds without a phone call, or reach the office on 1300 876 472 Monday to Friday between 8:30am and 5:00pm. There is no lock-in contract, and every Central Coast clean carries our satisfaction guarantee.',
+        a: 'Most first bookings happen within two to five business days. You can get a free quote — the form takes about 60 seconds online without a phone call, or reach the office on 1300 876 472 Monday to Friday between 8:30am and 5:00pm. There is no lock-in contract, and every Central Coast clean carries our satisfaction guarantee.',
       },
     ],
   },
@@ -2103,7 +2103,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you do rental turnovers and end-of-lease cleans in Newcastle?',
-        a: 'Yes, and they are a steady part of our Newcastle work given how much of the inner city is rented. An end-of-lease clean is a full reset of the property with a receipt provided, plus a bond-back re-clean guarantee if the agent raises an issue. Get a free instant quote online and book a date that suits your handover.',
+        a: 'Yes, and they are a steady part of our Newcastle work given how much of the inner city is rented. An end-of-lease clean is a full reset of the property with a receipt provided, plus a bond-back re-clean guarantee if the agent raises an issue. Get a free quote online and book a date that suits your handover.',
       },
       {
         q: 'Which suburbs beyond the city do you reach?',
@@ -2261,7 +2261,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How quickly can I get a first clean in Sydney, and what does it cost?',
-        a: 'Most first Sydney bookings happen within two to five business days. Pricing depends on the size of the home, its current condition and how often you want us, so the fairest way to find out is a free instant quote online. It takes about 60 seconds and no phone call is needed. There are no lock-in contracts.',
+        a: 'Most first Sydney bookings happen within two to five business days. Pricing depends on the size of the home, its current condition and how often you want us, so the fairest way to find out is a free quote online. It takes about 60 seconds and no phone call is needed. There are no lock-in contracts.',
       },
     ],
   },
@@ -2340,7 +2340,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I get a price for a clean in Tweed Heads?',
-        a: 'Book online for a free instant quote. It takes about 60 seconds and there is no phone call required. What you pay depends on how large the property is, what condition it is in and whether you want a one-off, a fortnightly clean or a holiday-let turnover, so the online form asks a few quick questions about your Tweed Heads home.',
+        a: 'Book online for a free quote. It takes about 60 seconds and there is no phone call required. What you pay depends on how large the property is, what condition it is in and whether you want a one-off, a fortnightly clean or a holiday-let turnover, so the online form asks a few quick questions about your Tweed Heads home.',
       },
     ],
   },
@@ -2494,7 +2494,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will a clean cost, and how soon can you start?',
-        a: 'Price depends on the size of the home, its condition and how often you would like us, so we give you a free instant quote online rather than a made-up figure. It takes about 60 seconds and no phone call is needed. Most first Wollongong bookings happen within two to five business days, with no lock-in contracts.',
+        a: 'Price depends on the size of the home, its condition and how often you would like us, so we give you a free quote online rather than a made-up figure. It takes about 60 seconds and no phone call is needed. Most first Wollongong bookings happen within two to five business days, with no lock-in contracts.',
       },
     ],
   },
@@ -2798,7 +2798,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I find out what it will cost?',
-        a: 'Get a free instant quote online. It takes about 60 seconds, no phone call is required, and there are no lock-in contracts. What you pay depends on the size of your Manly home, its current condition and whether you want a regular clean, a one-off deep clean or an end-of-lease clean. Office hours are Monday to Friday, 8:30am to 5:00pm.',
+        a: 'Get a free quote online. It takes about 60 seconds, no phone call is required, and there are no lock-in contracts. What you pay depends on the size of your Manly home, its current condition and whether you want a regular clean, a one-off deep clean or an end-of-lease clean. Office hours are Monday to Friday, 8:30am to 5:00pm.',
       },
     ],
   },
@@ -2952,7 +2952,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I get a price for a Hunters Hill home?',
-        a: 'Book online for a free instant quote in about 60 seconds, with no phone call required. Cost depends on the size of the Hunters Hill house, its condition and how frequently you want us, which is why we ask a few questions rather than quote blind. First bookings are typically within two to five business days, with no lock-in contract.',
+        a: 'Book online for a free quote — the form takes about 60 seconds, with no phone call required. Cost depends on the size of the Hunters Hill house, its condition and how frequently you want us, which is why we ask a few questions rather than quote blind. First bookings are typically within two to five business days, with no lock-in contract.',
       },
     ],
   },
@@ -3188,7 +3188,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does a house clean in Cairns cost?',
-        a: 'Pricing depends on the size of your home, its current condition and how often you would like us. A high-rise Cairns apartment and a large home in the foothills are very different jobs, so we do not publish a flat rate. You can get a free instant quote online in about 60 seconds, with no phone call required.',
+        a: 'Pricing depends on the size of your home, its current condition and how often you would like us. A high-rise Cairns apartment and a large home in the foothills are very different jobs, so we do not publish a flat rate. You can get a free quote — the form takes about 60 seconds online, with no phone call required.',
       },
     ],
   },
@@ -3267,7 +3267,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How quickly can you start, and do I have to sign up for anything?',
-        a: 'Most first bookings on the Gold Coast happen within two to five business days. You can book online in about 60 seconds and get a free instant quote without a phone call. There are no lock-in contracts, so you can move to weekly, drop to fortnightly, or book a single deep clean and leave it there.',
+        a: 'Most first bookings on the Gold Coast happen within two to five business days. You can book online in about 60 seconds and get a free quote without a phone call. There are no lock-in contracts, so you can move to weekly, drop to fortnightly, or book a single deep clean and leave it there.',
       },
     ],
   },
@@ -3425,7 +3425,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does a clean cost, and how soon can you come?',
-        a: 'Cost depends on the size and condition of the property and how often you book, so a Noosaville apartment and a large Buderim family home are quoted differently. You can get a free instant quote online in about 60 seconds with no phone call. First bookings on the Sunshine Coast are typically two to five business days out.',
+        a: 'Cost depends on the size and condition of the property and how often you book, so a Noosaville apartment and a large Buderim family home are quoted differently. You can get a free quote — the form takes about 60 seconds online with no phone call. First bookings on the Sunshine Coast are typically two to five business days out.',
       },
     ],
   },
@@ -3768,7 +3768,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What is included in a standard house clean in Geelong?',
-        a: 'A standard Geelong clean covers all living areas (dusting, vacuuming, mopping), kitchen (benchtops, stovetop, splashback, sink), bathrooms (toilet, basin, shower, bath), and bedrooms. We bring all products and equipment. Extras like inside-oven cleaning, inside-fridge, window washing and linen changes can be added when you get your instant price online.',
+        a: 'A standard Geelong clean covers all living areas (dusting, vacuuming, mopping), kitchen (benchtops, stovetop, splashback, sink), bathrooms (toilet, basin, shower, bath), and bedrooms. We bring all products and equipment. Extras like inside-oven cleaning, inside-fridge, window washing and linen changes can be added when you get your free quote online.',
       },
     ],
   },
@@ -4283,7 +4283,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does cleaning a Newtown home cost?',
-        a: 'There is no set rate, because a Newtown home can be anything from a compact Edwardian to a large restored Victorian with multiple living areas. Pricing depends on size, condition and how often you book. You can get a free instant quote online in about 60 seconds, with no phone call and no obligation to proceed.',
+        a: 'There is no set rate, because a Newtown home can be anything from a compact Edwardian to a large restored Victorian with multiple living areas. Pricing depends on size, condition and how often you book. You can get a free quote — the form takes about 60 seconds online, with no phone call and no obligation to proceed.',
       },
     ],
   },
@@ -4441,7 +4441,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much notice do you need for a first clean?',
-        a: 'Most first bookings in South Geelong happen within two to five business days, so it is worth booking as soon as you have a date, particularly for an end-of-lease clean tied to a handover. You can get a free instant quote and lock in a time online in about 60 seconds, with no phone call required.',
+        a: 'Most first bookings in South Geelong happen within two to five business days, so it is worth booking as soon as you have a date, particularly for an end-of-lease clean tied to a handover. You can get a free quote and lock in a time online in about 60 seconds, with no phone call required.',
       },
     ],
   },
@@ -4520,7 +4520,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will it cost for my Geelong West home?',
-        a: 'We do not publish rates, because a two-bedroom Geelong West cottage and a renovated Federation home with an extension are quite different jobs. Price reflects size, condition and frequency. Get a free instant quote online in about 60 seconds, with no phone call, and decide in your own time whether to go ahead.',
+        a: 'We do not publish rates, because a two-bedroom Geelong West cottage and a renovated Federation home with an extension are quite different jobs. Price reflects size, condition and frequency. Get a free quote — the form takes about 60 seconds online, with no phone call, and decide in your own time whether to go ahead.',
       },
     ],
   },
@@ -4895,7 +4895,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Will you clean a smaller unit or townhouse?',
-        a: 'Absolutely. Herne Hill has plenty of units and townhouses alongside its family homes, and small properties are welcome. A compact clean is quicker, which many of our clients use for a fortnightly tidy of kitchen, bathroom, floors and dusting. Price depends on the size, condition and how often you book, so use the free instant quote online to see yours.',
+        a: 'Absolutely. Herne Hill has plenty of units and townhouses alongside its family homes, and small properties are welcome. A compact clean is quicker, which many of our clients use for a fortnightly tidy of kitchen, bathroom, floors and dusting. Price depends on the size, condition and how often you book, so use the free quote online to see yours.',
       },
       {
         q: 'Do you work with retirees and Home Care Package recipients?',
@@ -5278,7 +5278,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How straightforward is it to book?',
-        a: 'Very. You book online in about 60 seconds, choose the service and time, and get a free instant quote without a phone call or a sales pitch. Most first bookings in North Shore happen within two to five business days. If you would rather speak to someone, the office is on 1300 876 472, Monday to Friday 8:30am to 5:00pm.',
+        a: 'Very. You book online in about 60 seconds, choose the service and time, and get a free quote without a phone call or a sales pitch. Most first bookings in North Shore happen within two to five business days. If you would rather speak to someone, the office is on 1300 876 472, Monday to Friday 8:30am to 5:00pm.',
       },
       {
         q: 'Do you clean units and smaller established homes?',
@@ -5436,7 +5436,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do dual-income families usually book?',
-        a: 'Most Lara families book a fortnightly clean and add a deep clean once or twice a year, which keeps the ongoing visits short. You can set it all up online in about 60 seconds and see a free instant quote with no phone call, which suits households where there is rarely a spare moment during business hours.',
+        a: 'Most Lara families book a fortnightly clean and add a deep clean once or twice a year, which keeps the ongoing visits short. You can set it all up online in about 60 seconds and see a free quote with no phone call, which suits households where there is rarely a spare moment during business hours.',
       },
       {
         q: 'Do you also clean older homes near the Lara Town Centre?',
@@ -5681,7 +5681,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does a clean cost in Grovedale?',
-        a: 'Pricing depends on the size of your Grovedale home, its current condition and how often you would like us. Rather than a flat rate that suits nobody, you can get a free instant quote online in about 60 seconds — no phone call required. There are no lock-in contracts, and a first booking is typically available within two to five business days.',
+        a: 'Pricing depends on the size of your Grovedale home, its current condition and how often you would like us. Rather than a flat rate that suits nobody, you can get a free quote — the form takes about 60 seconds online — no phone call required. There are no lock-in contracts, and a first booking is typically available within two to five business days.',
       },
     ],
   },
@@ -5760,7 +5760,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much will a clean in Waurn Ponds cost?',
-        a: 'It depends on the property size, the condition it is in and whether you want a one-off or a regular clean, so a bond clean on a vacated rental prices differently to a fortnightly tidy. You can get a free instant quote online for your Waurn Ponds address in about 60 seconds, with no phone call and no obligation.',
+        a: 'It depends on the property size, the condition it is in and whether you want a one-off or a regular clean, so a bond clean on a vacated rental prices differently to a fortnightly tidy. You can get a free quote online for your Waurn Ponds address in about 60 seconds, with no phone call and no obligation.',
       },
     ],
   },
@@ -5839,7 +5839,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does cleaning cost for a Mount Duneed home?',
-        a: 'There is no set rate, because a four-bedroom estate home, an acreage property and a post-build handover clean are three very different jobs. Pricing reflects the size of your Mount Duneed home, its condition and how often you want us. Get a free instant quote online in about 60 seconds, with no phone call and no lock-in contract.',
+        a: 'There is no set rate, because a four-bedroom estate home, an acreage property and a post-build handover clean are three very different jobs. Pricing reflects the size of your Mount Duneed home, its condition and how often you want us. Get a free quote — the form takes about 60 seconds online, with no phone call and no lock-in contract.',
       },
     ],
   },
@@ -5918,7 +5918,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does a clean in Ballarat cost?',
-        a: 'Pricing depends on the size and condition of your Ballarat home and how often you book, since a period home with high ceilings and detailed joinery takes different time to a newer estate house. You can get a free instant quote online in about 60 seconds with no phone call, and there are no lock-in contracts.',
+        a: 'Pricing depends on the size and condition of your Ballarat home and how often you book, since a period home with high ceilings and detailed joinery takes different time to a newer estate house. You can get a free quote — the form takes about 60 seconds online with no phone call, and there are no lock-in contracts.',
       },
     ],
   },
@@ -5997,7 +5997,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will a Dandenong clean cost me?',
-        a: 'It depends on how big your Dandenong home is, what condition it is in and whether you want us weekly, fortnightly or as a one-off deep clean. We do not publish a flat rate because it would be wrong for most homes. Get a free instant quote online in about 60 seconds, with no phone call and no obligation.',
+        a: 'It depends on how big your Dandenong home is, what condition it is in and whether you want us weekly, fortnightly or as a one-off deep clean. We do not publish a flat rate because it would be wrong for most homes. Get a free quote — the form takes about 60 seconds online, with no phone call and no obligation.',
       },
     ],
   },
@@ -6076,7 +6076,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How is a Mornington clean priced?',
-        a: 'Pricing reflects the size of the property, its condition and how often we visit, so a weekly maintenance clean on an occupied Mornington home costs differently to a full turnover on a holiday let. Get a free instant quote online in about 60 seconds — no phone call needed — and there are no lock-in contracts.',
+        a: 'Pricing reflects the size of the property, its condition and how often we visit, so a weekly maintenance clean on an occupied Mornington home costs differently to a full turnover on a holiday let. Get a free quote — the form takes about 60 seconds online — no phone call needed — and there are no lock-in contracts.',
       },
     ],
   },
@@ -6155,7 +6155,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does cleaning cost in Narre Warren?',
-        a: 'It depends on the size of your Narre Warren home, its condition and how often you would like us, and a vacated bond clean prices differently to an ongoing fortnightly service. You can get a free instant quote online in about 60 seconds without a phone call, and a first booking is typically available within two to five business days.',
+        a: 'It depends on the size of your Narre Warren home, its condition and how often you would like us, and a vacated bond clean prices differently to an ongoing fortnightly service. You can get a free quote — the form takes about 60 seconds online without a phone call, and a first booking is typically available within two to five business days.',
       },
     ],
   },
@@ -6234,7 +6234,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How is pricing worked out for a Toorak home?',
-        a: 'Pricing is based on the size and condition of the home and how often we attend, which matters in Toorak where a grand period residence and a compact apartment sit in the same postcode. Get a free instant quote online in about 60 seconds — no phone call required — and every clean is backed by our satisfaction guarantee.',
+        a: 'Pricing is based on the size and condition of the home and how often we attend, which matters in Toorak where a grand period residence and a compact apartment sit in the same postcode. Get a free quote — the form takes about 60 seconds online — no phone call required — and every clean is backed by our satisfaction guarantee.',
       },
     ],
   },
@@ -7610,7 +7610,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What does a clean in Portarlington cost?',
-        a: 'It depends on the size of your Portarlington home, its current condition and how often you book, so a single number would not be honest. The free instant quote online gives you the figure in about a minute with no phone call and no obligation. Booking itself takes around 60 seconds, and a first clean is usually 2 to 5 business days away.',
+        a: 'It depends on the size of your Portarlington home, its current condition and how often you book, so a single number would not be honest. The free quote form online gives you the figure in about a minute with no phone call and no obligation. Booking itself takes around 60 seconds, and a first clean is usually 2 to 5 business days away.',
       },
       {
         q: 'Which other Bellarine towns does the same team cover?',
@@ -7836,7 +7836,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How much does cleaning a Point Lonsdale home cost?',
-        a: 'It depends on the size of the home, how it is presenting when we arrive and how often you book, so we do not publish a set figure. The free instant quote online covers your Point Lonsdale property in about a minute with no phone call. Booking takes about 60 seconds and first cleans are usually 2 to 5 business days out.',
+        a: 'It depends on the size of the home, how it is presenting when we arrive and how often you book, so we do not publish a set figure. The free quote form online covers your Point Lonsdale property in about a minute with no phone call. Booking takes about 60 seconds and first cleans are usually 2 to 5 business days out.',
       },
       {
         q: 'Are you insured and police-checked?',
@@ -7918,7 +7918,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I get a price?',
-        a: 'Use the free instant quote online. It gives you a figure for your Queenscliff home in about a minute with no phone call and no obligation, because the cost depends on the size of the property, its condition and how often you book. Booking takes about 60 seconds, and a first clean is usually 2 to 5 business days away.',
+        a: 'Use the free quote online. It gives you a figure for your Queenscliff home in about a minute with no phone call and no obligation, because the cost depends on the size of the property, its condition and how often you book. Booking takes about 60 seconds, and a first clean is usually 2 to 5 business days away.',
       },
     ],
   },
@@ -7996,7 +7996,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'What will it cost for a larger home?',
-        a: 'Cost depends on the size of the home, its condition and how often you book, which is exactly why bigger Marcus Hill properties need their own quote rather than a published figure. The free instant quote online takes about a minute and needs no phone call. First bookings are usually 2 to 5 business days away.',
+        a: 'Cost depends on the size of the home, its condition and how often you book, which is exactly why bigger Marcus Hill properties need their own quote rather than a published figure. The free quote form online takes about a minute and needs no phone call. First bookings are usually 2 to 5 business days away.',
       },
     ],
   },

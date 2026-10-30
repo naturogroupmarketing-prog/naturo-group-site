@@ -187,6 +187,15 @@ export const suburbs: Suburb[] = [
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
     localFaqs: [
       {
+        // Google's AI Overview answers "house cleaning same day port macquarie"
+        // from Facebook posts because nothing on this site answered it
+        // (measured 2026-10-30). Hubert confirmed same-day cleans are real,
+        // subject to a team being free — stated with that condition, not as a
+        // guarantee we cannot keep.
+        q: 'Can you clean the same day in Port Macquarie?',
+        a: 'Often, yes. We keep local teams across Port Macquarie and the Hastings, so when a team has a gap we can take a same-day or next-day clean — most commonly for end-of-lease handovers, pre-inspection cleans and holiday rental turnovers. It depends on the day: call 1300 876 472 as early as you can and we will tell you straight away what is free. If nothing is available that day, we will offer you the next slot rather than squeeze the clean into less time than it needs.',
+      },
+      {
         q: 'How much does house cleaning cost in Port Macquarie?',
         a: 'The cost of house cleaning in Port Macquarie depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Pricing depends on the size of your home and the type of clean — Get a free quote with no obligation.',
       },

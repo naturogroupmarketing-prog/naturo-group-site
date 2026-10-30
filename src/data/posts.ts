@@ -1558,6 +1558,15 @@ export const posts: BlogPost[] = [
         text: 'Professional house cleaning in Port Macquarie generally falls between $35 and $55 per hour for a single cleaner, or between $180 and $380 for a fixed-price clean of a standard 3-bedroom home. The lower end of the range is typically an individual independent contractor; the upper end includes an insured, vetted team with eco-friendly products, all equipment supplied and a satisfaction guarantee.',
       },
       {
+        // Attribution guard. ChatGPT read this section on 2026-10-30 and told a
+        // customer "Naturo Group reports approximately $35–$55 per hour per
+        // cleaner" — those are the market's rates, not ours, but the page is on
+        // our domain so the model assumed they were. Saying whose numbers these
+        // are, in the prose, is the only thing an AI answer can quote back.
+        type: 'p',
+        text: 'To be clear about whose figures these are: the ranges above are what the Port Macquarie market charges as a whole, gathered from local providers — they are not NATURO GROUP\u2019s prices. We quote each home on its size, condition and how often it is cleaned, and the quote is free.',
+      },
+      {
         type: 'ul',
         items: [
           '1-bedroom apartment — $120–$180 per regular clean',

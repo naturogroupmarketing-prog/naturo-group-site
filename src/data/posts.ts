@@ -1125,9 +1125,9 @@ export const posts: BlogPost[] = [
       {
         type: 'cta',
         heading: 'Get a free quote for your Geelong home',
-        body: 'Answer 3 questions and see your price in 60 seconds. No phone call, no waiting. Police-checked, eco-friendly Geelong team.',
+        body: 'Answer 3 questions in about 60 seconds and we come back with a price for your home \u2014 no phone call needed. Police-checked, eco-friendly Geelong team.',
         href: '/house-cleaning-geelong/',
-        label: 'Get an instant Geelong price',
+        label: 'House cleaning in Geelong',
       },
       { type: 'h2', text: 'Frequently asked questions' },
       {

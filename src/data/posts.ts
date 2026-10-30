@@ -1015,6 +1015,288 @@ export const posts: BlogPost[] = [
 
   // 8. Geelong — pricing guide
   {
+    slug: 'ndis-cleaning-cost-geelong',
+    category: 'Pricing',
+    title: 'How Much Does NDIS Cleaning Cost in Geelong? [2026-27 Rates]',
+    excerpt:
+      'What NDIS cleaning costs in Geelong under the 2026-27 price limits \u2014 the hourly cap, what your plan pays for, and the 1 December 2026 increase.',
+    metaTitle: 'NDIS Cleaning Cost Geelong 2026-27 | Hourly Rates',
+    metaDescription:
+      'NDIS cleaning rates in Geelong. The national price limit is $60.10/hr, rising to $64.59 on 1 December 2026. What your plan covers and how it is claimed.',
+    keywords: [
+      'ndis cleaning cost geelong',
+      'ndis cleaning rates geelong',
+      'how much does ndis cleaning cost',
+      'ndis house cleaning price limit',
+      '01_020_0120_1_1',
+      'ndis cleaning hourly rate 2026',
+    ],
+    publishedDate: '2026-10-30',
+    readMinutes: 6,
+    heroImage: '/images/hero-kitchen.webp',
+    intro:
+      'NDIS cleaning is paid hourly against a national price limit, not quoted like a private clean. For 2026-27 that limit is $60.10 per hour, and it rises to $64.59 from 1 December 2026. This guide explains what that means for a Geelong participant, what the funding covers, and what you can and cannot claim.',
+    toc: [
+      { id: 'the-price-limit', label: 'The NDIS price limit' },
+      { id: 'what-you-pay', label: 'What you actually pay' },
+      { id: 'whats-covered', label: 'What cleaning is covered' },
+      { id: 'how-its-claimed', label: 'How it is claimed' },
+      { id: 'local', label: 'NDIS cleaning in Geelong' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      {
+        type: 'callout',
+        title: 'Where these figures come from',
+        body:
+          'Every rate below is the published NDIS price limit, taken from the NDIS\u2019s own pricing announcements and current at 30 October 2026. They are caps set by the NDIA, not NATURO GROUP\u2019s prices \u2014 and they are national, so they are identical in Geelong and everywhere else outside remote and very remote areas.',
+      },
+      { type: 'h2', text: 'The NDIS price limit for cleaning in 2026-27' },
+      {
+        type: 'p',
+        text: 'Household cleaning sits under Core Supports \u2014 Assistance with Daily Life, as line item 01_020_0120_1_1, House Cleaning and Other Household Activities. The NDIA caps what a provider may charge per hour:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'House Cleaning and Other Household Activities (01_020_0120_1_1) \u2014 $60.10 per hour now, $64.59 from 1 December 2026',
+          'House or Yard Maintenance (01_019_0120_1_1) \u2014 $59.01 per hour now, $63.42 from 1 December 2026',
+          'Assistance with Personal Domestic Activities (01_004_0107_1_1) \u2014 $61.16 per hour now, $65.73 from 1 December 2026',
+          'Remote and very remote areas carry higher limits; Geelong is neither, so the national rate applies',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The December increase follows the Fair Work Commission\u2019s decision on wages under Schedule E of the SCHADS award. It is an increase to the cap, not an automatic price rise \u2014 providers may charge up to the limit, not more.',
+      },
+      { type: 'h2', text: 'What you actually pay' },
+      {
+        type: 'p',
+        text: 'Nothing, if the support is in your plan and the hours are available. NDIS cleaning is drawn from your Core Supports budget rather than paid out of pocket, which is the main difference from a private clean. What matters is not the hourly figure but how many hours your plan funds.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'A two-hour fortnightly clean at $60.10 draws about $3,125 a year from Core Supports',
+          'A three-hour fortnightly clean draws about $4,690 a year',
+          'Weekly two-hour cleans draw about $6,250 a year',
+          'From 1 December 2026 each of those rises by roughly 7.5% at the new cap',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'Core Supports funding is flexible, so cleaning hours compete with your other daily-life supports. If the hours are not there, a plan review or a reallocation within Core Supports is the conversation to have with your support coordinator.',
+      },
+      { type: 'h2', text: 'What cleaning the funding covers' },
+      {
+        type: 'p',
+        text: 'Routine household cleaning you cannot do yourself because of your disability. In practice that is the same work as a regular clean: kitchen, bathrooms, floors, dusting, surfaces, bins and a change of linen.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Covered: regular household cleaning, laundry, changing bedding, tidying and basic kitchen work',
+          'Covered on assessment: one-off deep cleans where a home has become unmanageable',
+          'Not covered: cleaning for other members of the household who could do it themselves',
+          'Not covered: garden work, repairs and maintenance \u2014 those sit under a different line item',
+          'Not covered: end-of-lease and bond cleans, which the NDIS treats as a tenancy cost',
+        ],
+      },
+      { type: 'h2', text: 'How it is claimed, and who can use us' },
+      {
+        type: 'p',
+        text: 'NATURO GROUP is not a registered NDIS provider. That matters for how you are funded, so here it is plainly:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Plan-managed: we invoice your plan manager directly, with the line item and hours itemised. You pay nothing',
+          'Self-managed: we invoice you, you claim it back through the myplace portal, and we give you a compliant receipt',
+          'Agency-managed (NDIA-managed): cannot be used with us \u2014 that funding may only go to registered providers',
+        ],
+      },
+      { type: 'h2', text: 'NDIS cleaning in Geelong' },
+      {
+        type: 'p',
+        text: 'We support participants across Greater Geelong, the Bellarine Peninsula and the Surf Coast \u2014 Newtown, Highton, Belmont, Geelong West, Lara, Leopold, Ocean Grove, Torquay and Barwon Heads among them. Every cleaner holds a National Police Check and an NDIS Worker Screening Check, and we roster the same team to the same homes, because a familiar face matters more in this work than in any other kind of cleaning.',
+      },
+      {
+        type: 'cta',
+        heading: 'Ask about NDIS cleaning in Geelong',
+        body: 'Tell us your plan type and the hours you have, and we will tell you plainly what we can do within them. No obligation, and no pressure if the hours are not there.',
+        href: '/ndis-cleaning-geelong/',
+        label: 'NDIS cleaning in Geelong',
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'How much does NDIS cleaning cost per hour in Geelong?',
+            a: 'The national price limit is $60.10 per hour for House Cleaning and Other Household Activities (line item 01_020_0120_1_1), rising to $64.59 per hour from 1 December 2026. The limit is national, so it is the same in Geelong as anywhere outside remote areas. It is a cap rather than a set price \u2014 a provider may charge up to it.',
+          },
+          {
+            q: 'Do I pay anything out of pocket?',
+            a: 'No, where the support is funded in your plan. NDIS cleaning is drawn from your Core Supports budget. You would only pay privately if you wanted hours beyond what your plan funds.',
+          },
+          {
+            q: 'Can I use NDIS funding for an end-of-lease clean?',
+            a: 'No. The NDIS treats bond and end-of-lease cleaning as a tenancy cost rather than a disability support, so it is not claimable. We do these cleans privately, quoted the usual way.',
+          },
+          {
+            q: 'Is NATURO GROUP a registered NDIS provider?',
+            a: 'No, and we say so plainly. We work with plan-managed and self-managed participants, which covers most people. Agency-managed (NDIA-managed) funding can only be spent with registered providers, so it cannot be used with us.',
+          },
+          {
+            q: 'Why is the rate going up in December 2026?',
+            a: 'The NDIA is lifting four support-item limits following the Fair Work Commission\u2019s decision to increase wages under Schedule E of the SCHADS award. House cleaning moves from $60.10 to $64.59 per hour at the national rate from 1 December 2026.',
+          },
+        ],
+      },
+    ],
+    related: ['house-cleaning-cost-geelong', 'ndis-cleaning-geelong-guide'],
+  },
+  {
+    slug: 'ndis-cleaning-cost-port-macquarie',
+    category: 'Pricing',
+    title: 'How Much Does NDIS Cleaning Cost in Port Macquarie? [2026-27 Rates]',
+    excerpt:
+      'What NDIS cleaning costs in Port Macquarie under the 2026-27 price limits \u2014 the hourly cap, what your plan pays for, and the 1 December 2026 increase.',
+    metaTitle: 'NDIS Cleaning Cost Port Macquarie 2026-27 | Hourly Rates',
+    metaDescription:
+      'NDIS cleaning rates in Port Macquarie. The national price limit is $60.10/hr, rising to $64.59 on 1 December 2026. What your plan covers and how it is claimed.',
+    keywords: [
+      'ndis cleaning cost port macquarie',
+      'ndis cleaning rates port macquarie',
+      'how much does ndis cleaning cost',
+      'ndis house cleaning price limit',
+      '01_020_0120_1_1',
+      'ndis cleaning hourly rate 2026',
+    ],
+    publishedDate: '2026-10-30',
+    readMinutes: 6,
+    heroImage: '/images/hero-kitchen.webp',
+    intro:
+      'NDIS cleaning is paid hourly against a national price limit, not quoted like a private clean. For 2026-27 that limit is $60.10 per hour, and it rises to $64.59 from 1 December 2026. This guide explains what that means for a Port Macquarie participant, what the funding covers, and what you can and cannot claim.',
+    toc: [
+      { id: 'the-price-limit', label: 'The NDIS price limit' },
+      { id: 'what-you-pay', label: 'What you actually pay' },
+      { id: 'whats-covered', label: 'What cleaning is covered' },
+      { id: 'how-its-claimed', label: 'How it is claimed' },
+      { id: 'local', label: 'NDIS cleaning in Port Macquarie' },
+      { id: 'faq', label: 'FAQs' },
+    ],
+    sections: [
+      {
+        type: 'callout',
+        title: 'Where these figures come from',
+        body:
+          'Every rate below is the published NDIS price limit, taken from the NDIS\u2019s own pricing announcements and current at 30 October 2026. They are caps set by the NDIA, not NATURO GROUP\u2019s prices \u2014 and they are national, so they are identical in Port Macquarie and everywhere else outside remote and very remote areas.',
+      },
+      { type: 'h2', text: 'The NDIS price limit for cleaning in 2026-27' },
+      {
+        type: 'p',
+        text: 'Household cleaning sits under Core Supports \u2014 Assistance with Daily Life, as line item 01_020_0120_1_1, House Cleaning and Other Household Activities. The NDIA caps what a provider may charge per hour:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'House Cleaning and Other Household Activities (01_020_0120_1_1) \u2014 $60.10 per hour now, $64.59 from 1 December 2026',
+          'House or Yard Maintenance (01_019_0120_1_1) \u2014 $59.01 per hour now, $63.42 from 1 December 2026',
+          'Assistance with Personal Domestic Activities (01_004_0107_1_1) \u2014 $61.16 per hour now, $65.73 from 1 December 2026',
+          'Remote and very remote areas carry higher limits; Port Macquarie is neither, so the national rate applies',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The December increase follows the Fair Work Commission\u2019s decision on wages under Schedule E of the SCHADS award. It is an increase to the cap, not an automatic price rise \u2014 providers may charge up to the limit, not more.',
+      },
+      { type: 'h2', text: 'What you actually pay' },
+      {
+        type: 'p',
+        text: 'Nothing, if the support is in your plan and the hours are available. NDIS cleaning is drawn from your Core Supports budget rather than paid out of pocket, which is the main difference from a private clean. What matters is not the hourly figure but how many hours your plan funds.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'A two-hour fortnightly clean at $60.10 draws about $3,125 a year from Core Supports',
+          'A three-hour fortnightly clean draws about $4,690 a year',
+          'Weekly two-hour cleans draw about $6,250 a year',
+          'From 1 December 2026 each of those rises by roughly 7.5% at the new cap',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'Core Supports funding is flexible, so cleaning hours compete with your other daily-life supports. If the hours are not there, a plan review or a reallocation within Core Supports is the conversation to have with your support coordinator.',
+      },
+      { type: 'h2', text: 'What cleaning the funding covers' },
+      {
+        type: 'p',
+        text: 'Routine household cleaning you cannot do yourself because of your disability. In practice that is the same work as a regular clean: kitchen, bathrooms, floors, dusting, surfaces, bins and a change of linen.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Covered: regular household cleaning, laundry, changing bedding, tidying and basic kitchen work',
+          'Covered on assessment: one-off deep cleans where a home has become unmanageable',
+          'Not covered: cleaning for other members of the household who could do it themselves',
+          'Not covered: garden work, repairs and maintenance \u2014 those sit under a different line item',
+          'Not covered: end-of-lease and bond cleans, which the NDIS treats as a tenancy cost',
+        ],
+      },
+      { type: 'h2', text: 'How it is claimed, and who can use us' },
+      {
+        type: 'p',
+        text: 'NATURO GROUP is not a registered NDIS provider. That matters for how you are funded, so here it is plainly:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Plan-managed: we invoice your plan manager directly, with the line item and hours itemised. You pay nothing',
+          'Self-managed: we invoice you, you claim it back through the myplace portal, and we give you a compliant receipt',
+          'Agency-managed (NDIA-managed): cannot be used with us \u2014 that funding may only go to registered providers',
+        ],
+      },
+      { type: 'h2', text: 'NDIS cleaning in Port Macquarie' },
+      {
+        type: 'p',
+        text: 'We support participants across Port Macquarie and the Hastings \u2014 Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Lighthouse Beach and Settlement Point among them. Every cleaner holds a National Police Check and an NDIS Worker Screening Check, and we roster the same team to the same homes, because a familiar face matters more in this work than in any other kind of cleaning.',
+      },
+      {
+        type: 'cta',
+        heading: 'Ask about NDIS cleaning in Port Macquarie',
+        body: 'Tell us your plan type and the hours you have, and we will tell you plainly what we can do within them. No obligation, and no pressure if the hours are not there.',
+        href: '/ndis-cleaning-port-macquarie/',
+        label: 'NDIS cleaning in Port Macquarie',
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'How much does NDIS cleaning cost per hour in Port Macquarie?',
+            a: 'The national price limit is $60.10 per hour for House Cleaning and Other Household Activities (line item 01_020_0120_1_1), rising to $64.59 per hour from 1 December 2026. The limit is national, so it is the same in Port Macquarie as anywhere outside remote areas. It is a cap rather than a set price \u2014 a provider may charge up to it.',
+          },
+          {
+            q: 'Do I pay anything out of pocket?',
+            a: 'No, where the support is funded in your plan. NDIS cleaning is drawn from your Core Supports budget. You would only pay privately if you wanted hours beyond what your plan funds.',
+          },
+          {
+            q: 'Can I use NDIS funding for an end-of-lease clean?',
+            a: 'No. The NDIS treats bond and end-of-lease cleaning as a tenancy cost rather than a disability support, so it is not claimable. We do these cleans privately, quoted the usual way.',
+          },
+          {
+            q: 'Is NATURO GROUP a registered NDIS provider?',
+            a: 'No, and we say so plainly. We work with plan-managed and self-managed participants, which covers most people. Agency-managed (NDIA-managed) funding can only be spent with registered providers, so it cannot be used with us.',
+          },
+          {
+            q: 'Why is the rate going up in December 2026?',
+            a: 'The NDIA is lifting four support-item limits following the Fair Work Commission\u2019s decision to increase wages under Schedule E of the SCHADS award. House cleaning moves from $60.10 to $64.59 per hour at the national rate from 1 December 2026.',
+          },
+        ],
+      },
+    ],
+    related: ['house-cleaning-cost-port-macquarie', 'ndis-cleaning-port-macquarie-guide'],
+  },
+  {
     slug: 'house-cleaning-cost-geelong',
     category: 'Pricing',
     title: 'How Much Does House Cleaning Cost in Geelong? [2026 Pricing Guide]',

@@ -80,6 +80,21 @@ const schema = [
   <!-- 7. Social proof -->
   <Testimonials />
 
+  <!-- 7b. Comparison — someone on the services index is choosing, and the
+       question behind "which service" is often "which company". -->
+  <section class="svc-compare">
+    <div class="container-site svc-compare-inner">
+      <h2 class="svc-compare-h2">Weighing us up against someone else?</h2>
+      <p class="svc-compare-p">
+        We put NATURO beside Jim&rsquo;s Cleaning, Absolute Domestics, Houseproud, Maid2Match and
+        Airtasker &mdash; who employs the cleaner, which checks they hold, who supplies the products,
+        what you pay and who you pay it to. Every line is sourced from their own websites, including
+        the lines where we come off worse.
+      </p>
+      <a href="/compare-cleaning-services/" class="svc-compare-link">See the comparison &rarr;</a>
+    </div>
+  </section>
+
   <!-- 8. FAQ -->
   <FAQ />
 
@@ -89,3 +104,22 @@ const schema = [
   <!-- 10. Final CTA banner -->
   <FinalCTA />
 </Layout>
+
+<style>
+  .svc-compare { background: #ffffff; }
+  .svc-compare-inner { max-width: 760px; text-align: center; }
+  .svc-compare-h2 {
+    font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 34px);
+    font-weight: 300; line-height: 1.15; letter-spacing: -0.015em;
+    color: #0f172a; margin: 0 0 14px;
+  }
+  .svc-compare-p {
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300;
+    line-height: 1.7; color: rgb(71, 85, 105); margin: 0 0 18px;
+  }
+  .svc-compare-link {
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500;
+    color: #3a5dff; text-decoration: none;
+  }
+  .svc-compare-link:hover { text-decoration: underline; }
+</style>

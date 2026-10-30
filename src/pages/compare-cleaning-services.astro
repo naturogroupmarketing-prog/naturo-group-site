@@ -1,0 +1,320 @@
+---
+// Side-by-side comparison of NATURO and the five services that rank against
+// us in Geelong and Port Macquarie.
+//
+// Written for the question a person — or an AI assistant answering for them —
+// actually asks: "who should I book, and what's the difference?" Every cell
+// is sourced from the other company's own site on the date shown, and the
+// rows where we are behind are in the table too. A comparison that only
+// contains rows we win reads as marketing and gets treated as marketing.
+//
+// Data, sourcing rules and the re-verification note: src/data/comparison.ts.
+import Layout from '../layouts/Layout.astro';
+import FAQ from '../components/FAQ.astro';
+import { site, ctaPrimary } from '../data/site';
+import { columns, rows, verifiedOn } from '../data/comparison';
+
+const pageUrl = `${site.url}/compare-cleaning-services`;
+
+const faqs = [
+  {
+    q: 'Does NATURO GROUP employ its cleaners or use contractors?',
+    a: 'Employees. Every NATURO cleaner is employed — permanent part-time, full-time or casual — with superannuation, paid training and paid travel between jobs. We do not use ABN, contractor or gig arrangements. Absolute Domestics works with independent cleaners who set their own rates, Airtasker is a marketplace of independent Taskers, and Jim’s Cleaning and Houseproud are franchise networks where the franchisee or their staff clean your home.',
+  },
+  {
+    q: 'Which cleaning companies do NDIS Worker Screening Checks?',
+    a: 'NATURO GROUP completes a National Police Check and an NDIS Worker Screening Check for every cleaner, because the work includes NDIS and DVA clients. Of the five services compared here, none state that they carry out NDIS Worker Screening Checks: Jim’s Cleaning, Absolute Domestics, Maid2Match and Airtasker do not mention it, and Houseproud says only that staff have “verified the necessary credentials”. A police check and an NDIS Worker Screening Check are different checks.',
+  },
+  {
+    q: 'Can I use NDIS funding for cleaning with NATURO GROUP?',
+    a: 'Yes, if you are plan-managed or self-managed. We invoice your plan manager directly, or give you a receipt if you self-manage. We are not a registered NDIS provider, so NDIA-managed (agency-managed) funding cannot be used with us — Jim’s Cleaning is a registered provider and can take that funding.',
+  },
+  {
+    q: 'Who supplies the cleaning products?',
+    a: 'NATURO GROUP supplies all products and equipment on every visit, using eco-friendly, non-toxic products that are safe around children and pets. Maid2Match cleaners bring their own. Houseproud states professional-grade equipment and eco-friendly products. Jim’s states access to cleaning equipment and sells its own product range. Absolute Domestics does not state it. On Airtasker it is set job by job — some listings require you to supply everything.',
+  },
+  {
+    q: 'How much does house cleaning cost in Geelong or Port Macquarie?',
+    a: 'Published figures from the companies compared here: Jim’s Cleaning from $149 for a 3-bedroom single-storey home, Absolute Domestics from $82 for two hours with pricing varying by suburb, and Airtasker a $149–$260 range with a $200 median. Maid2Match gives an instant price online. NATURO GROUP and Houseproud quote rather than publish — call 1300 876 472 and we will price your home the same day in business hours.',
+  },
+  {
+    q: 'Who cleans in both Geelong and Port Macquarie?',
+    a: 'NATURO GROUP has local teams in both: Greater Geelong, the Bellarine and the Surf Coast, and Port Macquarie and the Hastings. The same team cleans for private households, NDIS and DVA participants, aged care clients and insurance work in each area.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Compare cleaning services', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Compare House Cleaning Services: NATURO GROUP vs Jim's, Absolute Domestics, Houseproud, Maid2Match & Airtasker"
+  description={`A factual comparison of six Australian house cleaning options — who cleans your home, police and NDIS Worker Screening, products, pricing, insurance and guarantees. Every cell sourced from each company's own website, verified ${verifiedOn}.`}
+  schema={schema}
+>
+  <section class="cmp-head">
+    <div class="container-site cmp-head-inner">
+      <p class="cmp-eyebrow">Compare</p>
+      <h1 class="cmp-h1">How NATURO compares with Jim&rsquo;s Cleaning, Absolute Domestics, Houseproud, Maid2Match and Airtasker</h1>
+      <p class="cmp-lede">
+        Book a clean in Geelong or Port Macquarie and these are the names you will meet: two
+        franchise networks, an agency, an online booking service, a gig marketplace, and us.
+        They are genuinely different arrangements &mdash; who employs the cleaner, who checks them,
+        who you pay &mdash; and the differences matter most when the clean is funded, or when
+        someone vulnerable is home. Every line below is taken from each company&rsquo;s own
+        website and linked, including the lines where we come off worse.
+      </p>
+      <p class="cmp-verified">Verified from each company&rsquo;s public website on {verifiedOn}.</p>
+    </div>
+  </section>
+
+  <section class="cmp-table-section">
+    <div class="container-site">
+      <div class="cmp-scroll" tabindex="0" role="region" aria-label="Comparison table, scroll sideways to see every service">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col" class="cmp-corner">&nbsp;</th>
+              {columns.map((c) => (
+                <th scope="col" class={c.key === 'naturo' ? 'cmp-col cmp-col-us' : 'cmp-col'}>
+                  <span class="cmp-col-name">{c.name}</span>
+                  <span class="cmp-col-model">{c.model}</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <th scope="row" class="cmp-rowhead">
+                  <span class="cmp-rowhead-label">{r.label}</span>
+                  {r.why && <span class="cmp-rowhead-why">{r.why}</span>}
+                </th>
+                {columns.map((c) => (
+                  <td class={c.key === 'naturo' ? 'cmp-cell cmp-cell-us' : 'cmp-cell'}>{r.values[c.key]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="cmp-sources">
+        Sources, read {verifiedOn}:
+        {columns.map((c, i) => (
+          <>
+            <a href={c.url} rel="nofollow noopener" target="_blank">{c.name}</a>{i < columns.length - 1 ? ', ' : '.'}
+          </>
+        ))}
+      </p>
+      <p class="cmp-note">
+        Where a company does not publish something, the table says &ldquo;not stated&rdquo; &mdash; not
+        &ldquo;no&rdquo;. A business can do more than its website says. If you work at one of these
+        companies and a line is out of date, email <a href={site.emailHref}>{site.email}</a> and we will
+        correct it.
+      </p>
+    </div>
+  </section>
+
+  <section class="cmp-bottom">
+    <div class="container-site cmp-bottom-inner">
+      <h2 class="cmp-h2">What this adds up to</h2>
+      <div class="cmp-points">
+        <div class="cmp-point">
+          <h3>Employed, not arranged</h3>
+          <p>
+            The cleaner in your home is on our payroll, trained by us and covered by our insurance.
+            There is no third party to chase if something goes wrong, and no cleaner being paid per
+            job to move faster than the work allows.
+          </p>
+        </div>
+        <div class="cmp-point">
+          <h3>Screened for funded work</h3>
+          <p>
+            Every cleaner holds a National Police Check <em>and</em> an NDIS Worker Screening Check.
+            That is the standard for working with NDIS participants and DVA clients, and we hold it
+            for every household, not only the funded ones.
+          </p>
+        </div>
+        <div class="cmp-point">
+          <h3>Local teams, both regions</h3>
+          <p>
+            Greater Geelong, the Bellarine and the Surf Coast; Port Macquarie and the Hastings.
+            Rostered locally, which is why you see the same faces rather than whoever was free.
+          </p>
+        </div>
+        <div class="cmp-point">
+          <h3>Where we are behind</h3>
+          <p>
+            We quote rather than publish prices, and we are not a registered NDIS provider, so
+            NDIA-managed funding cannot be used with us. If either matters to you, the table says
+            who does it differently.
+          </p>
+        </div>
+      </div>
+      <div class="cmp-cta">
+        <a href={ctaPrimary.href} class="cmp-btn" data-quote-cta>
+          <span>{ctaPrimary.text}</span>
+          <span class="cmp-btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href={site.phoneHref} class="cmp-call">Or call {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    items={faqs}
+    subheading="Questions people ask<br />when comparing cleaners"
+  />
+</Layout>
+
+<style>
+  .cmp-head { background: linear-gradient(150deg, #e8eeff 0%, #f0f4ff 60%, #edf2ff 100%); }
+  .cmp-head-inner { max-width: 900px; }
+  .cmp-eyebrow {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: #3a5dff; margin: 0 0 14px;
+  }
+  .cmp-h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 3.6vw, 42px); font-weight: 300; line-height: 1.15;
+    letter-spacing: -0.015em; color: #0f172a; margin: 0 0 18px;
+  }
+  .cmp-lede {
+    font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 300; line-height: 1.7; color: rgb(71, 85, 105); margin: 0 0 16px;
+  }
+  .cmp-verified {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400;
+    color: rgb(100, 116, 139); margin: 0;
+  }
+
+  .cmp-table-section { background: #ffffff; }
+  .cmp-scroll {
+    overflow-x: auto;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 18px rgba(15, 23, 42, 0.05);
+    -webkit-overflow-scrolling: touch;
+  }
+  .cmp-scroll:focus-visible { outline: 3px solid rgba(58, 93, 255, 0.4); outline-offset: 2px; }
+  .cmp-table { border-collapse: collapse; width: 100%; min-width: 1010px; background: #fff; table-layout: fixed; }
+
+  .cmp-table th, .cmp-table td { text-align: left; vertical-align: top; padding: 15px 16px; }
+  /* Six equal columns beside a fixed label column, so no single long cell
+     stretches one service wider than the rest. */
+  .cmp-col, .cmp-cell { width: calc((100% - 180px) / 6); }
+  .cmp-corner { width: 180px; background: #ffffff; position: sticky; left: 0; z-index: 3; }
+  .cmp-col {
+    background: #f8fafc; border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    position: sticky; top: 0; z-index: 2;
+  }
+  .cmp-col-name {
+    display: block; font-family: 'Poppins', sans-serif; font-size: 15px;
+    font-weight: 600; color: #0f172a; line-height: 1.3;
+  }
+  .cmp-col-model {
+    display: block; font-family: 'Poppins', sans-serif; font-size: 12px;
+    font-weight: 400; color: rgb(100, 116, 139); margin-top: 3px;
+  }
+  .cmp-col-us { background: rgba(58, 93, 255, 0.08); }
+  .cmp-col-us .cmp-col-name { color: #2748f2; }
+
+  .cmp-rowhead {
+    width: 180px; background: #ffffff; position: sticky; left: 0; z-index: 1;
+    border-right: 1px solid rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  }
+  .cmp-rowhead-label {
+    display: block; font-family: 'Poppins', sans-serif; font-size: 15px;
+    font-weight: 500; color: #0f172a; line-height: 1.35;
+  }
+  .cmp-rowhead-why {
+    display: block; font-family: 'Poppins', sans-serif; font-size: 12.5px;
+    font-weight: 300; line-height: 1.5; color: rgb(100, 116, 139); margin-top: 6px;
+  }
+  .cmp-cell {
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300;
+    line-height: 1.6; color: rgb(51, 65, 85);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  }
+  .cmp-cell-us { background: rgba(58, 93, 255, 0.05); color: #0f172a; font-weight: 400; }
+  .cmp-table tbody tr:last-child .cmp-cell,
+  .cmp-table tbody tr:last-child .cmp-rowhead { border-bottom: 0; }
+
+  .cmp-sources, .cmp-note {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300;
+    line-height: 1.65; color: rgb(100, 116, 139); margin: 18px 0 0; max-width: 760px;
+  }
+  .cmp-sources a, .cmp-note a { color: #3a5dff; text-decoration: underline; }
+
+  .cmp-bottom { background: #f8fafc; }
+  .cmp-bottom-inner { max-width: 1160px; }
+  .cmp-h2 {
+    font-family: 'Poppins', sans-serif; font-size: clamp(26px, 3.4vw, 40px);
+    font-weight: 300; line-height: 1.15; letter-spacing: -0.015em;
+    color: #0f172a; margin: 0 0 28px;
+  }
+  .cmp-points {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px; margin-bottom: 36px;
+  }
+  .cmp-point {
+    background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px; padding: 26px 24px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.05);
+  }
+  .cmp-point h3 {
+    font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 500;
+    line-height: 1.25; color: #0f172a; margin: 0 0 10px;
+  }
+  .cmp-point p {
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300;
+    line-height: 1.65; color: rgb(71, 85, 105); margin: 0;
+  }
+
+  .cmp-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+  .cmp-btn {
+    display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%);
+    color: #ffffff; border-radius: 999px; padding: 6px 6px 6px 22px;
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; line-height: 1;
+    min-height: 46px; text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 72, 240, 0.32);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .cmp-btn:hover { box-shadow: 0 8px 22px rgba(37, 72, 240, 0.45); transform: translateY(-1px); }
+  .cmp-btn-icon {
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #ffffff; border: 1px solid #ffffff; color: #1C244B;
+  }
+  .cmp-btn-icon svg { display: block; }
+  .cmp-call {
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400;
+    color: rgb(71, 85, 105); text-decoration: none;
+  }
+  .cmp-call:hover { color: #3a5dff; text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    .cmp-corner, .cmp-rowhead { width: 150px; }
+    .cmp-table th, .cmp-table td { padding: 13px 14px; }
+  }
+</style>

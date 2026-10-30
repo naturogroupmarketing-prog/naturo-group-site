@@ -78,6 +78,12 @@ const schema = [
           Browse the latest guides below. Each one walks through the exact products, tools and
           techniques our teams use &mdash; safe for kids, pets and the planet.
         </p>
+        <p class="rsc-intro-body">
+          Deciding who to book rather than how to clean? We put NATURO beside
+          <a href="/compare-cleaning-services/" class="rsc-intro-link">Jim&rsquo;s Cleaning, Absolute
+          Domestics, Houseproud, Maid2Match and Airtasker</a> &mdash; employment, screening, products,
+          pricing and insurance, every line sourced from their own websites.
+        </p>
         <div class="rsc-intro-stats">
           <div class="rsc-intro-stat">
             <span class="rsc-intro-stat-num">Plant-based</span>
@@ -180,6 +186,9 @@ const schema = [
     margin: 0 0 18px;
   }
   .rsc-intro-body:last-of-type { margin-bottom: 32px; }
+  .rsc-intro-link { color: #3a5dff; text-decoration: underline; font-weight: 400; }
+  .rsc-intro-link:hover { text-decoration: none; }
+
   .rsc-intro-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -188,7 +197,10 @@ const schema = [
     border-top: 1px solid rgba(15, 23, 42, 0.08);
   }
   @media (max-width: 540px) {
-    .rsc-intro-stats { grid-template-columns: 1fr; gap: 20px; }
+    .rsc-intro-link { color: #3a5dff; text-decoration: underline; font-weight: 400; }
+  .rsc-intro-link:hover { text-decoration: none; }
+
+  .rsc-intro-stats { grid-template-columns: 1fr; gap: 20px; }
   }
   .rsc-intro-stat { display: flex; flex-direction: column; gap: 4px; }
   .rsc-intro-stat-num {

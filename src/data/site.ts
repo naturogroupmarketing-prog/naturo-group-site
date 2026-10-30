@@ -672,6 +672,7 @@ export const footerInfoLinks = [
   { label: 'Reviews', href: '/reviews/' },
   { label: 'Become a Cleaner', href: '/career/' },
   { label: 'Resources', href: '/resource/' },
+  { label: 'Compare cleaners', href: '/compare-cleaning-services/' },
   { label: 'FAQS', href: '/faqs/' },
   { label: 'Contact us', href: '/contact-us/' },
 ];

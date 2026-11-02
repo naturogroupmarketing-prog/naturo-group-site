@@ -73,6 +73,9 @@ const isHome = Astro.url.pathname === '/';
 // sameAs lists only profiles verified to return 200. An unreachable sameAs is
 // worse than none: it invites the engine to distrust the whole block.
 // ---------------------------------------------------------------------------
+// Cards that actually carry a published price. Empty while prices are withheld.
+const pricedCards = pricingCards.filter((c) => c.priceFrom > 0);
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -91,12 +94,20 @@ const organizationSchema = {
     jobTitle: founder.role,
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
-  // Published so an assistant can quote a real figure instead of sourcing a
-  // competitor's rate. Every value comes from pricingCards, so the number in the
-  // markup and the number rendered on the card can never drift apart.
-  priceRange: `$${Math.min(...pricingCards.map((c) => c.priceFrom))}-$${Math.max(
-    ...pricingCards.map((c) => c.priceFrom),
-  )}`,
+  // Published ONLY while real prices are published. Every value comes from
+  // pricingCards, so the markup and the rendered card can never drift apart —
+  // but that coupling cuts both ways: when the cards stopped showing prices
+  // every priceFrom became 0, and this quietly emitted "$0-$0" on 176 pages,
+  // telling Google and every AI assistant that the business works for nothing.
+  // A missing priceRange is simply unknown; a zero one is a false claim, so
+  // the whole property drops out rather than degrading to a wrong number.
+  ...(pricedCards.length > 0
+    ? {
+        priceRange: `$${Math.min(...pricedCards.map((c) => c.priceFrom))}-$${Math.max(
+          ...pricedCards.map((c) => c.priceFrom),
+        )}`,
+      }
+    : {}),
   currenciesAccepted: 'AUD',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -106,12 +117,17 @@ const organizationSchema = {
       name: c.name,
       url: `${site.url}/services/${c.slug}/`,
       priceCurrency: 'AUD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        minPrice: c.priceFrom,
-        priceCurrency: 'AUD',
-        valueAddedTaxIncluded: true,
-      },
+      // Same reasoning as priceRange above: no price is honest, minPrice 0 is not.
+      ...(c.priceFrom > 0
+        ? {
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              minPrice: c.priceFrom,
+              priceCurrency: 'AUD',
+              valueAddedTaxIncluded: true,
+            },
+          }
+        : {}),
       itemOffered: { '@type': 'Service', name: c.name, description: c.bullets[0] },
     })),
   },

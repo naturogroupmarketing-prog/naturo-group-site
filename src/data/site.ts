@@ -64,6 +64,14 @@ export type VerifiedRating = { ratingValue: string; reviewCount: string };
 // Verified against the live Google Business Profiles on 13 August 2026.
 // Re-check quarterly — these numbers move, and a stale figure is the same
 // misrepresentation as an invented one.
+//
+// That date used to live only in this comment, where no reader could see it,
+// while the pages stated "Rated 4.7/5 from 48 Google reviews" in the present
+// tense — a dated snapshot presented as a live count. Exported so the figure
+// cannot be shown without the date it was true on. Same pattern as
+// `verifiedOn` in comparison.ts. Move it whenever you re-read the dashboard.
+export const ratingsVerifiedOn = '13 August 2026';
+
 export const verifiedRatings: Record<string, VerifiedRating | null> = {
   // NATURO GROUP Geelong — genuinely 5.0, but from a single review. Google
   // generally won't render a star rating off one review, and publishing
@@ -102,20 +110,25 @@ export function ratingKeyForRegion(region: string): keyof typeof verifiedRatings
   return null;
 }
 
-/** Returns an AggregateRating fragment to spread, or `{}` when unverified. */
-export function aggregateRatingSchema(key: keyof typeof verifiedRatings) {
-  const r = verifiedRatings[key];
-  if (!r) return {};
-  return {
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: r.ratingValue,
-      reviewCount: r.reviewCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
-  };
-}
+// There is deliberately NO aggregateRatingSchema() helper, and no page emits
+// AggregateRating. `verifiedRatings` is a figure read off the Google Business
+// Profile dashboard by hand on a given day — a snapshot, not a feed.
+//
+// schema.org's AggregateRating has no "as of" field. Emitting the snapshot as
+// structured data would therefore assert it as the current count, with no way
+// to say when it was true, and it would go stale the moment a review lands.
+// Refreshing the number by hand does not fix that; it only resets the clock.
+// The visible claim can carry `ratingsVerifiedOn` and does. The markup cannot,
+// so it is not published at all.
+//
+// This is also the safer side of Google's review-snippet policy: self-serving
+// AggregateRating on a business's own pages about itself is not eligible for
+// review rich results, and an unmaintained count is review spam enforced
+// against the whole domain rather than one page.
+//
+// A helper used to exist here and was never called by any page. It was removed
+// on 1 Nov 2026 so it cannot be wired up later by someone who assumes it is
+// safe because it is present.
 
 // ---------------------------------------------------------------------------
 // Lead capture / retargeting destinations

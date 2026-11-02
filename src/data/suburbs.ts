@@ -1,4 +1,4 @@
-import { verifiedRatings } from './site';
+import { ratingsVerifiedOn, verifiedRatings } from './site';
 // Single source of truth for every suburb / location landing page.
 // Each entry powers /src/pages/[suburb].astro via getStaticPaths().
 // Slugs MUST match those in src/data/site.ts → footerLocations so the footer
@@ -109,11 +109,6 @@ export interface Suburb {
   phone?: string;
   phoneHref?: string;
   /**
-   * Optional per-suburb aggregate rating to override the site-wide
-   * hardcoded values. Should reflect real GBP numbers for this location.
-   */
-  aggregateRating?: { ratingValue: string; reviewCount: string };
-  /**
    * ISO date (YYYY-MM-DD) this suburb's own copy was last genuinely
    * rewritten — NOT the last build. Drives the visible "Last updated" line
    * and schema dateModified.
@@ -145,7 +140,7 @@ export const suburbs: Suburb[] = [
     contentUpdated: '2026-08-27',
       // The one line an ad-clicker reads under the H1. The PMQ ads promise this
       // rating, so it must be on the page — and it must be the verified figure.
-      tagline: `Rated ${verifiedRatings.portMacquarie!.ratingValue}/5 from ${verifiedRatings.portMacquarie!.reviewCount} local reviews`,
+      tagline: `Rated ${verifiedRatings.portMacquarie!.ratingValue}/5 from ${verifiedRatings.portMacquarie!.reviewCount} Google reviews, as at ${ratingsVerifiedOn}`,
     },
     intro: {
       kicker: 'House cleaning in Port Macquarie',

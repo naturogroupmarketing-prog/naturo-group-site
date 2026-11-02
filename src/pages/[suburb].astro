@@ -120,6 +120,70 @@ const areaPhrase = regionEchoesName
   ? `${suburb.region}`
   : `${suburb.name} and surrounding ${suburb.region}`;
 
+// LocalBusiness, for the one hub page that has a real address behind it.
+//
+// The Service note below explains why 145 suburb pages must NOT carry
+// LocalBusiness: no premises, and Google requires `address`. Port Macquarie is
+// the exception — Hubert confirmed 206 Oxley Highway on 2026-10-30, it is the
+// address already published on the Bing listing and the Apple Business
+// organisation record, and it is a real NATURO address rather than a home.
+//
+// Geelong deliberately gets nothing: its base is Hubert's house and that
+// address is never published (see naturo_home_address_private). So this is
+// matched on the place, not applied to every hub.
+//
+// Matched on name + region rather than slug because the Port Macquarie slug is
+// mid-rename (cleaners- -> house-cleaners-), and this must survive that.
+//
+// NO aggregateRating here, deliberately — same reasoning as the note in
+// src/data/site.ts. The address makes LocalBusiness valid; it does not make
+// self-serving review markup safe.
+const verifiedPremises =
+  suburb.name === 'Port Macquarie' && suburb.region === 'Mid North Coast'
+    ? {
+        streetAddress: '206 Oxley Highway',
+        addressLocality: 'Port Macquarie',
+        addressRegion: 'NSW',
+        postalCode: '2444',
+      }
+    : null;
+
+const localBusinessSchema = verifiedPremises
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        '@id': `${pageUrl}#localbusiness`,
+        name: site.name,
+        description: `Eco-friendly house cleaning in ${suburb.name} and the ${suburb.region}. Police-checked, fully insured cleaners using plant-based, non-toxic products. NDIS, DVA, aged care and insurance work welcome.`,
+        url: pageUrl,
+        telephone: site.phone,
+        email: site.email,
+        image: `${site.url}${suburb.ogImage}`,
+        address: {
+          '@type': 'PostalAddress',
+          ...verifiedPremises,
+          addressCountry: 'AU',
+        },
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: `${suburb.name} and the ${suburb.region}, ${suburb.stateCode}`,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '08:30',
+            closes: '17:00',
+          },
+        ],
+        // Joins to the single Organization node declared in Layout.astro, so
+        // the premises and the brand read as one entity rather than two.
+        parentOrganization: { '@id': `${site.url}/#organization` },
+      },
+    ]
+  : [];
+
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -234,6 +298,7 @@ const schema = [
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   },
+  ...localBusinessSchema,
 ];
 ---
 

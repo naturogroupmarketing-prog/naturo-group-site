@@ -761,6 +761,42 @@
   to     = "/end-of-lease-cleaning-port-macquarie/"
   status = 301
 
+# Port Macquarie canonical migration, 1 Nov 2026 local-search audit.
+# /cleaners-port-macquarie/ -> /house-cleaners-port-macquarie/. The page itself
+# did not change; only its address did, so this is a rename and not a duplicate.
+#
+# The old URL carries the rankings and is what the Google Business Profile and
+# the Port Macquarie Google Ads campaign currently point at, so this 301 is the
+# only thing keeping that traffic and those signals attached. It must not be
+# removed, and the GBP website field should be repointed by hand — a redirect
+# preserves the equity but still costs a hop on every profile click.
+# Netlify carries the query string across a 301, so the GBP UTMs survive.
+#
+# The two /services/<service>/cleaners-port-macquarie literals below sit above
+# the /services/<service>/:suburb placeholders on purpose. Without them the
+# placeholder would send the old service URL to /cleaners-port-macquarie/ and
+# the rule above would redirect again — a 301 chain. First match wins in
+# Netlify, so a literal placed earlier collapses it to one hop.
+[[redirects]]
+  from   = "/cleaners-port-macquarie"
+  to     = "/house-cleaners-port-macquarie/"
+  status = 301
+
+[[redirects]]
+  from   = "/cleaners-port-macquarie/"
+  to     = "/house-cleaners-port-macquarie/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/house-cleaning/cleaners-port-macquarie"
+  to     = "/house-cleaners-port-macquarie/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/deep-clean/cleaners-port-macquarie"
+  to     = "/house-cleaners-port-macquarie/"
+  status = 301
+
 # Everything else in the matrix → the suburb's own landing page. Placeholder
 # rules rather than 369 literals: the suburb segment of these URLs is always a
 # slug from src/data/suburbs.ts, which is exactly what /<slug>/ serves.

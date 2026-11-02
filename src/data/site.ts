@@ -632,7 +632,7 @@ export const footerLocations = {
     { label: 'Central Coast', href: '/cleaners-central-coast/' },
     { label: 'Lismore', href: '/cleaners-lismore/' },
     { label: 'Newcastle', href: '/cleaners-newcastle/' },
-    { label: 'Port Macquarie', href: '/cleaners-port-macquarie/' },
+    { label: 'Port Macquarie', href: '/house-cleaners-port-macquarie/' },
     { label: 'Sutherland', href: '/house-cleaning-sutherland/' },
     { label: 'Sydney', href: '/cleaners-sydney/' },
     { label: 'Tweed Heads', href: '/house-cleaning-tweed-heads/' },

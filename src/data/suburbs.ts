@@ -132,7 +132,7 @@ export const suburbs: Suburb[] = [
   // NEW SOUTH WALES
   // ────────────────────────────────────────────────────────────────────────
   {
-    slug: 'cleaners-port-macquarie',
+    slug: 'house-cleaners-port-macquarie',
     name: 'Port Macquarie',
     state: 'New South Wales',
     stateCode: 'NSW',

@@ -159,10 +159,10 @@ export const careerCities: CareerCity[] = [
     region: 'Port Macquarie and the Hastings',
     state: 'NSW',
     postcode: '2444',
-    hubHref: '/cleaners-port-macquarie/',
+    hubHref: '/house-cleaners-port-macquarie/',
     hubLabel: 'House cleaning in Port Macquarie',
     suburbs: [
-      { name: 'Port Macquarie', slug: 'cleaners-port-macquarie' },
+      { name: 'Port Macquarie', slug: 'house-cleaners-port-macquarie' },
       { name: 'Wauchope', slug: 'house-cleaning-wauchope' },
       { name: 'Lake Cathie', slug: 'house-cleaning-lake-cathie' },
       { name: 'Bonny Hills', slug: 'house-cleaning-bonny-hills' },

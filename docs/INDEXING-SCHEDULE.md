@@ -132,7 +132,7 @@ Day 7 — Bellarine coastal
 - [ ] `/services/deep-clean/`
 - [ ] `/services/aged-care-cleaning/`
 - [ ] `/services/veterans-cleaning/`
-- [ ] `/cleaners-port-macquarie/`
+- [ ] `/house-cleaners-port-macquarie/`
 - [ ] `/end-of-lease-cleaning-port-macquarie/`
 - [ ] `/ndis-cleaning-port-macquarie/`
 

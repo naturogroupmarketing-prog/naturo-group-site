@@ -1927,7 +1927,7 @@ export const posts: BlogPost[] = [
         type: 'cta',
         heading: 'Book a house clean in Port Macquarie',
         body: 'Police-checked team, all products and equipment supplied, eco-conscious plant-based products. Get a free quote in 60 seconds.',
-        href: '/cleaners-port-macquarie/',
+        href: '/house-cleaners-port-macquarie/',
         label: 'Get a free quote',
       },
     ],

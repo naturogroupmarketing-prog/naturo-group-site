@@ -3709,7 +3709,7 @@ export const suburbs: Suburb[] = [
     },
     seo: {
       title: 'House Cleaning Services Geelong | 1300 876 472',
-      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products supplied. Regular cleans from $153 a visit.',
+      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products. Regular cleans from $153 a visit.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
     localFaqs: [
@@ -3723,7 +3723,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you offer NDIS and aged care cleaning in Geelong?',
-        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong/">NDIS Cleaning Geelong</a> page or call 1300 876 472 to discuss your needs.',
+        a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong/">NDIS Cleaning Geelong</a>, <a href="/support-at-home-cleaning-geelong/">Support at Home cleaning</a> and <a href="/chsp-cleaning-geelong/">CHSP cleaning</a> pages, or call 1300 876 472 to discuss your needs.',
       },
       {
         q: 'Can you clean end-of-lease properties in Geelong?',
@@ -4250,7 +4250,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Newtown families, heritage homeowners and Geelong professionals.',
     },
     seo: {
-      title: 'House Cleaning Newtown, Geelong | 1300 876 472',
+      title: 'House Cleaning Newtown Geelong | 1300 876 472',
       description: 'Need house cleaning in Newtown? Call NATURO GROUP on 1300 876 472. Eco-friendly, heritage-home specialists, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Manifold Heights', 'Geelong West', 'South Geelong', 'East Geelong', 'Highton', 'Belmont', 'Herne Hill'],
@@ -4566,7 +4566,7 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by hundreds of Belmont families, retirees and homeowners across Greater Geelong.',
     },
     seo: {
-      title: 'House Cleaning Belmont, Geelong | 1300 876 472',
+      title: 'House Cleaning Belmont Geelong | 1300 876 472',
       description: 'Need house cleaning in Belmont? Call NATURO GROUP on 1300 876 472. Eco-friendly, family-friendly, police-checked & insured.',
     },
     nearbySuburbs: ['Geelong', 'Highton', 'East Geelong', 'Wandana Heights', 'Grovedale', 'Waurn Ponds', 'South Geelong'],

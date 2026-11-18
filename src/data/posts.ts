@@ -1020,7 +1020,7 @@ export const posts: BlogPost[] = [
     title: 'How Much Does NDIS Cleaning Cost in Geelong? [2026-27 Rates]',
     excerpt:
       'What NDIS cleaning costs in Geelong under the 2026-27 price limits \u2014 the hourly cap, what your plan pays for, and the 1 December 2026 increase.',
-    metaTitle: 'NDIS Cleaning Cost Geelong 2026-27 | Hourly Rates',
+    metaTitle: 'NDIS Cleaning Cost Geelong 2026-27 | Rates',
     metaDescription:
       'NDIS cleaning rates in Geelong. The national price limit is $60.10/hr, rising to $64.59 on 1 December 2026. What your plan covers and how it is claimed.',
     keywords: [
@@ -1161,7 +1161,7 @@ export const posts: BlogPost[] = [
     title: 'How Much Does NDIS Cleaning Cost in Port Macquarie? [2026-27 Rates]',
     excerpt:
       'What NDIS cleaning costs in Port Macquarie under the 2026-27 price limits \u2014 the hourly cap, what your plan pays for, and the 1 December 2026 increase.',
-    metaTitle: 'NDIS Cleaning Cost Port Macquarie 2026-27 | Hourly Rates',
+    metaTitle: 'NDIS Cleaning Cost Port Macquarie 2026-27',
     metaDescription:
       'NDIS cleaning rates in Port Macquarie. The national price limit is $60.10/hr, rising to $64.59 on 1 December 2026. What your plan covers and how it is claimed.',
     keywords: [

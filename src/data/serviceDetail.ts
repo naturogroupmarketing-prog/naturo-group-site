@@ -242,6 +242,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       'ndis-cleaning-routine-supports-independence',
       'ndis-cleaning-geelong-guide',
       'ndis-cleaning-port-macquarie-guide',
+      'ndis-cleaning-cost-geelong',
+      'ndis-cleaning-cost-port-macquarie',
     ],
     hero: {
       eyebrow: 'NDIS-friendly cleaning',

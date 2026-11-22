@@ -14,6 +14,7 @@ import AppPromo from '../components/AppPromo.astro';
 import { site, ctaPrimary, ctaPhone, testimonials, ratingKeyForRegion } from '../data/site';
 import { suburbs, type Suburb } from '../data/suburbs';
 import LocalServiceLinks from '../components/LocalServiceLinks.astro';
+import { isNotYetServed, SERVED_AREAS } from '../data/service-areas';
 
 export async function getStaticPaths() {
   return suburbs.map((s) => ({
@@ -28,6 +29,25 @@ interface Props {
 
 const { suburb } = Astro.props;
 const pageUrl = `${site.url}/${suburb.slug}`;
+
+// No cleaners here yet (see data/service-areas.ts). The page keeps its address
+// and says so plainly, rather than describing a local team that does not exist.
+const notYet = isNotYetServed(suburb.slug);
+const servedList = SERVED_AREAS.map((a) => a.name).join(' and ');
+const notYetFaqs = [
+  {
+    q: `Does NATURO GROUP clean in ${suburb.name}?`,
+    a: `Not yet. We don't have cleaners in ${suburb.name} or the ${suburb.region} at the moment. We currently clean homes in ${servedList}. Register your interest and we'll let you know if we start in ${suburb.name}.`,
+  },
+  {
+    q: `Where does NATURO GROUP clean?`,
+    a: `Homes in ${servedList}, including regular cleans, deep cleans, end-of-lease cleans, and NDIS, DVA and aged care cleaning.`,
+  },
+  {
+    q: `What happens if I register my interest for ${suburb.name}?`,
+    a: `We keep a note of where people are asking for us. Nobody will book you in or charge you anything; we'll only contact you if we start cleaning in ${suburb.name}.`,
+  },
+];
 
 // Build a name → slug lookup so nearby suburb names that have a page render as links
 const suburbNameToSlug = new Map(suburbs.map(s => [s.name, s.slug]));
@@ -60,7 +80,7 @@ const fallbackLocalFaqs = [
   },
 ];
 
-const localFaqs = suburb.localFaqs && suburb.localFaqs.length ? suburb.localFaqs : fallbackLocalFaqs;
+const localFaqs = notYet ? notYetFaqs : suburb.localFaqs && suburb.localFaqs.length ? suburb.localFaqs : fallbackLocalFaqs;
 
 // ─────────────────────────────────────────────────────────────────────────
 // Per-suburb testimonials.
@@ -101,7 +121,8 @@ const mapEmbedSrc =
 // Human-readable "Last updated" label. Only rendered when the suburb
 // actually declares contentUpdated — see the field's note in suburbs.ts on
 // why we never fall back to the build date.
-const updatedISO = suburb.contentUpdated;
+// A not-yet page's wording changed when the notice went on, so it carries that date.
+const updatedISO = isNotYetServed(suburb.slug) ? '2026-11-22' : suburb.contentUpdated;
 const updatedLabel = updatedISO
   ? new Date(`${updatedISO}T00:00:00Z`).toLocaleDateString('en-AU', {
       day: 'numeric',
@@ -185,7 +206,7 @@ const localBusinessSchema = verifiedPremises
   : [];
 
 const schema = [
-  {
+  ...(notYet ? [] : [{
     '@context': 'https://schema.org',
     // Service, not LocalBusiness.
     //
@@ -253,7 +274,7 @@ const schema = [
     // Real testimonials still render on the page for visitors. Star ratings in
     // search results come from the Google Business Profile, which is where
     // review collection belongs.
-  },
+  }]),
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -304,7 +325,9 @@ const schema = [
 
 <Layout
   title={suburb.seo.title}
-  description={suburb.seo.description}
+  description={notYet
+    ? `NATURO GROUP doesn't have cleaners in ${suburb.name} yet. We clean homes in ${servedList}. Register your interest for ${suburb.name}.`
+    : suburb.seo.description}
   schema={schema}
 >
   <!-- Localised Hero — slide 1 is the suburb-specific landmark photo -->
@@ -333,23 +356,29 @@ const schema = [
       <!-- w-full so CTAs match the width of the matching CTAs in other
            banner sections — see Hero.astro for full rationale. -->
       <div class="w-full max-w-[800px]">
-        <h1 class="hero-h1">
-          <span class="hero-h1-kicker">{suburb.hero.h1Lines[0]}</span>{suburb.hero.h1Lines[1]}<br />{suburb.hero.h1Lines[2]}
-        </h1>
-        <p class="hero-tagline">{suburb.hero.tagline}</p>
+        {notYet ? (
+          <h1 class="hero-h1">
+            <span class="hero-h1-kicker">House cleaning in</span>{suburb.name}<br />not in your area yet
+          </h1>
+        ) : (
+          <h1 class="hero-h1">
+            <span class="hero-h1-kicker">{suburb.hero.h1Lines[0]}</span>{suburb.hero.h1Lines[1]}<br />{suburb.hero.h1Lines[2]}
+          </h1>
+        )}
+        <p class="hero-tagline">{notYet ? `We don't have cleaners in ${suburb.name} yet. Leave your details and we'll let you know if we start here.` : suburb.hero.tagline}</p>
         <div class="hero-cta-stack">
           <a href={ctaPrimary.href} data-quote-cta class="hero-btn-primary">
-            <span>{ctaPrimary.text}</span>
+            <span>{notYet ? 'Register your interest' : ctaPrimary.text}</span>
             <span class="hero-btn-icon" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
           </a>
-          <a href={ctaPhone.href} class="hero-btn-secondary">
+          {!notYet && <a href={ctaPhone.href} class="hero-btn-secondary">
             <span>{ctaPhone.text}</span>
             <span class="hero-btn-icon" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </span>
-          </a>
+          </a>}
         </div>
         <div class="hero-partners">
           <p class="hero-partners-label">Partners &amp; Providers</p>
@@ -379,10 +408,30 @@ const schema = [
     </div>
   </nav>
 
-  <PricingCards />
-  <ExperienceBanner />
-  <Features />
+  {notYet && (
+    <section class="notyet" aria-labelledby="notyet-heading">
+      <div class="container-site notyet-inner">
+        <h2 id="notyet-heading" class="notyet-h2">We're not in {suburb.name} yet</h2>
+        <p class="notyet-body">
+          NATURO GROUP doesn't have cleaners in {suburb.name} or the {suburb.region} at the moment, so we can't
+          book a clean here. We currently clean homes in
+          {SERVED_AREAS.map((a, i) => (
+            <>{i > 0 && (i === SERVED_AREAS.length - 1 ? ' and ' : ', ')}<a href={a.href}>{a.name}</a></>
+          ))}.
+        </p>
+        <p class="notyet-body">
+          If you'd like us in {suburb.name}, register your interest. We'll only contact you if we start here.
+        </p>
+        <a href={ctaPrimary.href} data-quote-cta class="notyet-btn">Register your interest</a>
+      </div>
+    </section>
+  )}
 
+  {!notYet && <PricingCards />}
+  {!notYet && <ExperienceBanner />}
+  {!notYet && <Features />}
+
+  {!notYet && (
   <!-- Localised IntroCopy -->
   <section class="intro-section">
     <div class="container-site intro-inner">
@@ -410,17 +459,19 @@ const schema = [
       </div>
     </div>
   </section>
+  )}
 
-  <IncludesChecklist />
-  <FounderBlock body={suburb.founderBody} />
-  <Providers location={suburb.name} />
+  {!notYet && <IncludesChecklist />}
+  {!notYet && <FounderBlock body={suburb.founderBody} />}
+  <Providers location={notYet ? undefined : suburb.name} />
   <FAQ
     items={localFaqs}
     eyebrow={`${suburb.name} FAQs`}
-    subheading={`Frequently asked questions about cleaning in ${suburb.name}`}
+    subheading={notYet ? `Cleaning in ${suburb.name}` : `Frequently asked questions about cleaning in ${suburb.name}`}
   />
-  <BookCTA location={suburb.name} />
+  {!notYet && <BookCTA location={suburb.name} />}
 
+  {!notYet && (
   <!-- Localised TrustedAcrossAU -->
   <section class="loc-section">
     <div class="container-site loc-top">
@@ -468,10 +519,11 @@ const schema = [
       </div>
     </div>
   </section>
+  )}
 
-  <SixtySecondsAway />
-  <Testimonials location={suburb.name} items={localTestimonials} ratingKey={ratingKeyForRegion(suburb.region)} />
-  <LocalServiceLinks suburbName={suburb.name} region={suburb.region} />
+  {!notYet && <SixtySecondsAway />}
+  <Testimonials location={notYet ? undefined : suburb.name} items={localTestimonials} ratingKey={ratingKeyForRegion(suburb.region)} />
+  {!notYet && <LocalServiceLinks suburbName={suburb.name} region={suburb.region} />}
   <AppPromo />
 
   <!-- Direct-answer block.
@@ -486,6 +538,7 @@ const schema = [
        placed before the thing it summarises is odd for someone who has just
        landed. Extractors key on it being self-contained and structured rather
        than on how high it sits, so the move costs little of what it is for. -->
+  {!notYet && (
   <section class="answer" aria-labelledby="answer-heading">
     <div class="container-site">
       <h2 id="answer-heading" class="answer-heading">
@@ -536,8 +589,10 @@ const schema = [
       </dl>
     </div>
   </section>
+  )}
 
   <!-- ───── Service Area Map (matches the original site's "Locations" block) ───── -->
+  {!notYet && (
   <section class="map-section">
     <div class="container-site">
       <div class="map-head">
@@ -580,7 +635,9 @@ const schema = [
       </div>
     </div>
   </section>
+  )}
 
+  {!notYet && (
   <!-- Localised FinalCTA -->
   <section class="finalcta-wrap">
     <div class="container-site">
@@ -604,9 +661,25 @@ const schema = [
       </div>
     </div>
   </section>
+  )}
 </Layout>
 
 <style>
+  /* ---------- Not in this area yet ---------- */
+  .notyet { background: #f4f6ff; padding: clamp(48px, 7vw, 88px) 0; }
+  .notyet-inner { max-width: 760px; }
+  .notyet-h2 {
+    font-family: "Poppins", sans-serif; font-weight: 300; color: #0f172a;
+    font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 18px;
+  }
+  .notyet-body { font-family: "Poppins", sans-serif; font-size: 17px; line-height: 1.6; color: #475569; margin: 0 0 14px; }
+  .notyet-body a { color: #2748f2; text-decoration: underline; text-underline-offset: 3px; }
+  .notyet-btn {
+    display: inline-flex; align-items: center; margin-top: 10px; padding: 14px 24px; border-radius: 999px;
+    background: linear-gradient(135deg, #4a6bff 0%, #2748f2 100%); color: #fff; text-decoration: none;
+    font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 500;
+  }
+  .notyet-btn:focus-visible { outline: 3px solid #93a5ff; outline-offset: 3px; }
   /* ---------- Localised Hero ---------- */
   .hero { padding-block: 0; }
   .hero-inner {

@@ -5,8 +5,12 @@
  * For most of them none does: a Toowoomba family asked for a fortnightly
  * clean in Rangeville because the page named Rangeville, and had to be turned
  * away (owner, 22 Nov 2026: "Say not in your area yet"). Pages listed here as
- * NOT served keep their address and their search ranking, but say plainly
- * that we are not there yet and invite people to register their interest.
+ * NOT served keep their address, say plainly that we are not there yet and
+ * invite people to register their interest. Since 22 Nov 2026 (later the
+ * same day) they are also noindex, out of the sitemap and out of the
+ * site-wide Locations links: they were half the site's Google impressions
+ * for searches we cannot serve, and the November 2026 core update marked the
+ * whole site down. Owner's decision, reversing "keep the ranking".
  *
  * To open an area, delete its slug from NOT_YET_SERVED. Nothing else changes.
  */

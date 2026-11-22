@@ -65,6 +65,20 @@ function dateMap() {
 
 const LASTMOD = dateMap();
 
+// City pages for areas we do not clean yet are noindex (see [suburb].astro),
+// so they stay out of the sitemap: listing a noindex URL sends Google two
+// contradictory signals. Parsed by regex for the same reason as above.
+function notYetServed() {
+  try {
+    const src = readFileSync('./src/data/service-areas.ts', 'utf8');
+    const list = src.split('new Set<string>([')[1].split(']);')[0];
+    return new Set([...list.matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]));
+  } catch {
+    return new Set();
+  }
+}
+const NOT_YET_SERVED = notYetServed();
+
 export default defineConfig({
   site: 'https://naturogroup.com.au',
   integrations: [
@@ -77,6 +91,9 @@ export default defineConfig({
         // route that generated them is gone (they 301 to the suburb page or
         // the regional end-of-lease hub — see netlify.toml), so there is
         // nothing left to exclude and the filter would be dead code.
+
+        const slug = new URL(page).pathname.replace(/\//g, '');
+        if (NOT_YET_SERVED.has(slug)) return false;
 
         return true;
       },

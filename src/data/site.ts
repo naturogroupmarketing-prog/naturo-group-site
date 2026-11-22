@@ -1,3 +1,4 @@
+import { isNotYetServed } from './service-areas';
 // Single source of truth for site copy & assets.
 // Copy is mirrored from the live naturogroup.com.au extraction (extracted/home-full.json).
 
@@ -639,7 +640,9 @@ export const appPromo = {
   googlePlay: 'https://play.google.com/store',
 };
 
-export const footerLocations = {
+// Every city page we have, by state. Not exported: the site links only to
+// places we clean (see footerLocations below).
+const allLocations = {
   'New South Wales': [
     { label: 'Byron Bay', href: '/cleaners-byron-bay/' },
     { label: 'Central Coast', href: '/cleaners-central-coast/' },
@@ -678,6 +681,18 @@ export const footerLocations = {
     { label: 'Toorak', href: '/cleaners-toorak/' },
   ],
 };
+
+// The Locations lists in the footer and on the home page. Areas we do not
+// clean yet are left out (22 Nov 2026): those links sat on every page, so 25
+// of each page's 65 links told Google our most important pages were for
+// places we cannot serve. The pages still exist for anyone who lands on one,
+// but they are noindex and out of the sitemap. Opening an area in
+// service-areas.ts brings its link back here on its own.
+export const footerLocations = Object.fromEntries(
+  Object.entries(allLocations)
+    .map(([state, links]) => [state, links.filter((l) => !isNotYetServed(l.href.replace(/\//g, '')))] as const)
+    .filter(([, links]) => links.length > 0),
+) as Record<string, { label: string; href: string }[]>;
 
 export const footerInfoLinks = [
   { label: 'How does it work', href: '/how-it-works/' },

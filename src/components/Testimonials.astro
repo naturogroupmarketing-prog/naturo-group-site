@@ -18,7 +18,13 @@ interface Props {
 
 const { location, items, ratingKey = 'siteWide' } = Astro.props;
 const rating = ratingKey ? verifiedRatings[ratingKey] : null;
-const ratingAudience = location ? `${location} households` : 'Australian households';
+// Whose reviews these are. The figure belongs to one Google Business Profile,
+// so the line names that profile. It used to say "by <suburb> households",
+// which put Port Macquarie's reviews in the mouths of people in Forster,
+// Wauchope or Kempsey: a factual error on every Mid North Coast page.
+// `location` is still accepted so callers need not change.
+void location;
+const ratingAudience = 'NATURO GROUP Port Macquarie';
 const source = items && items.length ? items : defaultTestimonials;
 ---
 
@@ -37,7 +43,7 @@ const source = items && items.length ? items : defaultTestimonials;
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0c30b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           ))}
         </div>
-        <span class="testi-rating-text">Rated <strong>{rating.ratingValue} / 5</strong> from {rating.reviewCount} Google reviews by {ratingAudience}, as at {ratingsVerifiedOn}</span>
+        <span class="testi-rating-text">Rated <strong>{rating.ratingValue} / 5</strong> from {rating.reviewCount} Google reviews of {ratingAudience}, as at {ratingsVerifiedOn}</span>
       </div>
     </div>
   </div>

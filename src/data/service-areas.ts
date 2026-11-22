@@ -21,7 +21,7 @@ export const NOT_YET_SERVED = new Set<string>([
   'house-cleaning-sutherland', 'house-cleaning-tweed-heads', 'house-cleaning-parramatta',
   'house-cleaning-in-northern-beaches', 'house-cleaning-in-eastern-beaches',
   // Queensland
-  'cleaners-brisbane', 'cleaners-gold-coast', 'cleaners-sunshine-coast', 'cleaners-toowoomba',
+  'cleaners-brisbane', 'cleaners-gold-coast', 'cleaners-toowoomba',
   'cleaners-townsville', 'house-cleaning-ipswich',
   // Victoria (Melbourne and the south-east)
   'cleaners-melbourne', 'cleaners-dandenong', 'cleaners-mornington', 'cleaners-narre-warren',

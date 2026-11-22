@@ -62,7 +62,8 @@ export const ctaPhone = { text: site.phone, href: site.phoneHref };
 // ---------------------------------------------------------------------------
 export type VerifiedRating = { ratingValue: string; reviewCount: string };
 
-// Verified against the live Google Business Profiles on 13 August 2026.
+// Verified against the live Google Business Profiles on 22 November 2026
+// (Port Macquarie 4.7 from 50; Geelong 4.0 from 4, left null below).
 // Re-check quarterly — these numbers move, and a stale figure is the same
 // misrepresentation as an invented one.
 //
@@ -71,21 +72,23 @@ export type VerifiedRating = { ratingValue: string; reviewCount: string };
 // tense — a dated snapshot presented as a live count. Exported so the figure
 // cannot be shown without the date it was true on. Same pattern as
 // `verifiedOn` in comparison.ts. Move it whenever you re-read the dashboard.
-export const ratingsVerifiedOn = '13 August 2026';
+export const ratingsVerifiedOn = '22 November 2026';
 
 export const verifiedRatings: Record<string, VerifiedRating | null> = {
-  // NATURO GROUP Geelong — genuinely 5.0, but from a single review. Google
-  // generally won't render a star rating off one review, and publishing
-  // "5.0" without context would oversell a one-review sample. Left null
-  // deliberately; populate once the review base is meaningful.
+  // NATURO GROUP Geelong — 4.0 from 4 reviews on 22 Nov 2026. Too few to
+  // state as a rating. Left null deliberately; populate once the review
+  // base is meaningful.
   geelong: null,
 
   // NATURO GROUP Port Macquarie — real and substantial. This is where the
   // site's long-standing "4.7" figure actually comes from.
-  portMacquarie: { ratingValue: '4.7', reviewCount: '48' },
+  portMacquarie: { ratingValue: '4.7', reviewCount: '50' },
 
-  // Across both verified profiles: (4.7 x 48 + 5.0 x 1) / 49 = 4.71 -> 4.7.
-  siteWide: { ratingValue: '4.7', reviewCount: '49' },
+  // Pages that are not about one area show the Port Macquarie profile's own
+  // figure, named as such. A blended "site-wide" average was dropped on
+  // 22 Nov 2026: it was worked out from rounded ratings, so it was an
+  // estimate presented as a Google figure.
+  siteWide: { ratingValue: '4.7', reviewCount: '50' },
 };
 
 // Which verified profile, if any, stands behind review claims on a page for

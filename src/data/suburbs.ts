@@ -178,7 +178,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaners Port Macquarie | 1300 876 472',
       description: 'Need house cleaners in Port Macquarie? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked team. NDIS, aged care, DVA & insurance welcome.',
     },
-    nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach'],
+    nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach', 'Thrumster', 'Kempsey', 'Crescent Head', 'South West Rocks', 'Forster'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
     localFaqs: [
       {
@@ -264,7 +264,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaners Wauchope NSW | 1300 876 472',
       description: 'Need house cleaning in Wauchope? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Regular, deep clean & end-of-lease services.',
     },
-    nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall'],
+    nearbySuburbs: ['Port Macquarie', 'Beechwood', 'Bago', 'Pembrooke', 'Sancrox', 'Telegraph Point', 'Rollands Plains', 'King Creek', 'Comboyne', 'Kendall', 'Thrumster'],
     contentUpdated: '2026-08-27',
     localFaqs: [
       {
@@ -1607,7 +1607,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaners King Creek NSW | 1300 876 472',
       description: 'Need house cleaning in King Creek? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured. Acreage and rural property cleaning specialists.',
     },
-    nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie'],
+    nearbySuburbs: ['Port Macquarie', 'Sancrox', 'Lakewood', 'Wauchope', 'Settlement Point', 'Beechwood', 'Lake Cathie', 'Thrumster'],
     contentUpdated: '2026-08-27',
     localFaqs: [
       {
@@ -3395,7 +3395,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaning Sunshine Coast | 1300 876 472',
       description: 'Need house cleaning on the Sunshine Coast? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
-    nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach'],
+    nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach', 'Baringa'],
     contentUpdated: '2026-08-27',
     localFaqs: [
       {
@@ -3711,7 +3711,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaning Services Geelong | 1300 876 472',
       description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products. Regular cleans from $153 a visit.',
     },
-    nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc'],
+    nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc', 'Bannockburn'],
     localFaqs: [
       {
         q: 'How much does house cleaning cost in Geelong?',
@@ -7048,7 +7048,7 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaning Batesford VIC | 1300 876 472',
       description: 'Need house cleaning in Batesford? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, insured cleaners for township and semi-rural homes.',
     },
-    nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong'],
+    nearbySuburbs: ['Fyansford', 'Ceres', 'Lovely Banks', 'Bell Post Hill', 'Hamlyn Heights', 'Highton', 'Geelong', 'Bannockburn'],
     contentUpdated: '2026-08-27',
     localFaqs: [
       {
@@ -9796,6 +9796,558 @@ export const suburbs: Suburb[] = [
       {
         q: 'What does house cleaning cost in Brunswick?',
         a: 'It depends on the size and condition of the home and how often we come. That range is wide in Brunswick, where former textile and manufacturing buildings converted to apartments sits alongside quite different stock in the same postcode, so a flat rate would be guesswork. You can get a free quote online in about 60 seconds without a phone call.',
+      },
+    ],
+  },
+
+  // ── Added 22 Nov 2026 from the booking record ───────────────────────────
+  // Each of these towns has current clients in aiBooking (Aug 2026 - Jan 2027).
+  // The copy states only what the bookings show (days, frequency, visit
+  // length) and local facts checked against each town's Wikipedia article.
+  // No customer counts are published for towns with one or two households.
+  {
+    slug: "house-cleaning-thrumster",
+    name: "Thrumster",
+    state: "New South Wales",
+    stateCode: "NSW",
+    region: "Mid North Coast",
+    heroImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in Thrumster NSW",
+    ogImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in Thrumster", "and Sovereign Hills"],
+      tagline: "Regular fortnightly cleans, nine kilometres from our Port Macquarie base",
+    },
+    intro: {
+      kicker: "House cleaning in Thrumster",
+      h2: "House cleaning in Thrumster and Sovereign Hills",
+      paragraphs: [
+        "Thrumster sits about nine kilometres west-south-west of Port Macquarie along the Oxley Highway, and most of its homes are new: the Sovereign Hills estate has been under construction since 2008. It is one of the busiest suburbs on our Port Macquarie roster. Most of our Thrumster clients have a two-hour clean every fortnight, and our team is in the suburb most Mondays and Wednesdays.",
+        "New homes need a different kind of care from older ones. Stone benchtops, matte tapware, engineered timber and large glass sliders all mark easily with the wrong product, and building dust keeps settling for months after handover. Our cleaners use pH-neutral, plant-based products on those surfaces and work to a checklist you can change at any time.",
+      ],
+    },
+    trust: {
+      h2: "A regular team on the Oxley Highway side of town",
+      paragraphs: [
+        "Because we already clean in Thrumster twice a week, new clients here can usually be fitted into an existing run instead of waiting for a new one to be set up. We clean weekdays only, between 8:30 am and 5 pm.",
+        "From Thrumster the same team continues to Lake Innes, King Creek, Sancrox and Wauchope, and back into Port Macquarie.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "Thrumster has grown quickly, and many of the families we clean for here moved into a brand-new home in the last few years.",
+      "Our Port Macquarie office is at 206 Oxley Highway, a few minutes down the same road, so this is one of the easiest suburbs for us to reach.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Thrumster?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Fortnightly and monthly cleans for Thrumster households, weekdays 8:30 am to 5 pm.",
+    },
+    seo: {
+      title: "House Cleaners Thrumster & Sovereign Hills NSW",
+      description: "House cleaning in Thrumster and Sovereign Hills from our Port Macquarie team. Regular fortnightly cleans, police-checked cleaners, plant-based products. Free quote.",
+    },
+    nearbySuburbs: ["Port Macquarie", "Lake Innes", "King Creek", "Sancrox", "Wauchope", "Fernbank Creek"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "Which days are you in Thrumster?",
+        a: "Most of our Thrumster cleans fall on Mondays and Wednesdays, with some on other weekdays. We do not clean on weekends. When you ask for a quote, tell us the days that suit and we will offer the closest slot on an existing run.",
+      },
+      {
+        q: "How long does a regular clean take in a Sovereign Hills home?",
+        a: "Most of our regular Thrumster visits are booked for two hours, usually fortnightly. A larger home, or a first clean after a long gap, takes longer, and we will say so in the quote before you book.",
+      },
+      {
+        q: "Our house is new. Do you clean differently in a new build?",
+        a: "Yes. New homes have surfaces that scratch or etch easily, such as stone benchtops, matte black tapware and engineered timber floors, so we use pH-neutral products and soft cloths on them. Fine building dust also keeps settling in tracks, vents and wardrobes for months after handover, and we work through those on a rotation.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-bannockburn",
+    name: "Bannockburn",
+    state: "Victoria",
+    stateCode: "VIC",
+    region: "Greater Geelong",
+    heroImage: "/images/suburbs/house-cleaning-geelong.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in Bannockburn VIC",
+    ogImage: "/images/suburbs/house-cleaning-geelong.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in Bannockburn", "Golden Plains"],
+      tagline: "Regular cleans from our Geelong team, 23 kilometres up the Midland Highway",
+    },
+    intro: {
+      kicker: "House cleaning in Bannockburn",
+      h2: "House cleaning in Bannockburn",
+      paragraphs: [
+        "Bannockburn is the main town of the Golden Plains Shire, 23 kilometres from Geelong, with about 6,500 residents at the 2021 census. Our Geelong team already makes the trip: we have a regular fortnightly client here, with visits booked for two hours.",
+        "Because Bannockburn is a drive from our usual Geelong suburbs, we plan it as a set run, not an ad-hoc visit. At the moment that run is on Wednesdays. If you would like a regular clean, the simplest fit is a slot on the same day.",
+      ],
+    },
+    trust: {
+      h2: "An existing run, not a one-off trip",
+      paragraphs: [
+        "Homes here tend to sit on larger blocks than in Geelong, with more floor area, more windows and often a shed or outdoor room. We quote on the home itself, and we will tell you plainly if a job needs longer than a standard visit.",
+        "The same team cleans in Batesford, Fyansford, Herne Hill and Hamlyn Heights on the way back into Geelong.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "We started cleaning in Bannockburn because a client asked us to, and we have kept the run going since.",
+      "We would rather add a second and third home to that run than send a different cleaner out on a different day.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Bannockburn?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Regular house cleaning in Bannockburn on our weekly Golden Plains run.",
+    },
+    seo: {
+      title: "House Cleaners Bannockburn VIC | 1300 876 472 | Naturo Group",
+      description: "House cleaning in Bannockburn from our Geelong team. Regular fortnightly cleans on a set weekly run, police-checked cleaners, plant-based products. Free quote.",
+    },
+    nearbySuburbs: ["Geelong", "Batesford", "Fyansford", "Herne Hill", "Hamlyn Heights"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "Which day do you clean in Bannockburn?",
+        a: "At the moment our Bannockburn visits are on Wednesdays. We do not clean on weekends. If Wednesday does not suit, ask anyway: a second regular client on another weekday is enough for us to open another run.",
+      },
+      {
+        q: "Do you charge extra to travel from Geelong?",
+        a: "We quote each home on its size, condition and how often you book, and the quote you receive is the price you pay. If travel affects it, that will be in the quote, not added afterwards.",
+      },
+      {
+        q: "Do you clean in Teesdale, Inverleigh or Lethbridge?",
+        a: "We do not have regular clients in those towns yet. Ask us: if the home can be reached on the same run as Bannockburn, we will say yes, and if it cannot, we will tell you so.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-kempsey",
+    name: "Kempsey",
+    state: "New South Wales",
+    stateCode: "NSW",
+    region: "Mid North Coast",
+    heroImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in Kempsey NSW",
+    ogImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in Kempsey", "and the Macleay"],
+      tagline: "Our Wednesday run from Port Macquarie, 50 kilometres south",
+    },
+    intro: {
+      kicker: "House cleaning in Kempsey",
+      h2: "House cleaning in Kempsey, West Kempsey and East Kempsey",
+      paragraphs: [
+        "Kempsey is the main town of the Macleay Valley, on a long loop of the Macleay River about 50 kilometres north-north-west of Port Macquarie. Our Port Macquarie team drives up every week: nearly all of our Kempsey cleans are on Wednesdays, for regular clients in West Kempsey and East Kempsey, most of them fortnightly.",
+        "A river town has its own housekeeping. Kempsey is well known for its floods, and even in a dry year the humidity on the river flats shows up as mould on bathroom ceilings, window tracks and the backs of wardrobes. Our cleaners treat it with plant-based products, without bleach, and will tell you when a patch needs more than a clean.",
+      ],
+    },
+    trust: {
+      h2: "One team for the Macleay Valley, every Wednesday",
+      paragraphs: [
+        "Because the whole run is on one day, the same cleaner comes back to the same homes. We clean between 8:30 am and 5 pm and do not work weekends.",
+        "The Wednesday run also covers Bellimbopinni and Willawarrin, with Crescent Head and South West Rocks on the coast.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "Kempsey is an hour from our Port Macquarie office, so we only take on work here that we can do properly, on a set day, with the same person.",
+      "That is why we would sooner tell you the next available Wednesday than promise a day we cannot keep.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Kempsey?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Fortnightly and monthly cleans across Kempsey on our Wednesday run.",
+    },
+    seo: {
+      title: "House Cleaners Kempsey NSW | 1300 876 472 | Naturo Group",
+      description: "House cleaning in Kempsey, West Kempsey and East Kempsey on our weekly Wednesday run from Port Macquarie. Police-checked cleaners, plant-based products. Free quote.",
+    },
+    nearbySuburbs: ["West Kempsey", "East Kempsey", "Bellimbopinni", "Willawarrin", "Crescent Head", "South West Rocks"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "Which day do you clean in Kempsey?",
+        a: "Wednesdays. Almost every Kempsey clean we do is on a Wednesday, because our team travels up from Port Macquarie and does the whole Macleay Valley in one run. We do not clean on weekends.",
+      },
+      {
+        q: "Can you deal with mould?",
+        a: "We clean surface mould on bathroom ceilings, grout, window tracks and inside cupboards using plant-based products, without bleach. Mould that keeps returning, or that has got into plasterboard after a flood or a leak, is a building problem, and we will tell you if that is what we are seeing.",
+      },
+      {
+        q: "Do you clean in Frederickton, Gladstone or Smithtown?",
+        a: "We do not have regular clients there yet. Ask us: if the home can be reached on the Wednesday run, we will say yes.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-crescent-head",
+    name: "Crescent Head",
+    state: "New South Wales",
+    stateCode: "NSW",
+    region: "Mid North Coast",
+    heroImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in Crescent Head NSW",
+    ogImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in", "Crescent Head"],
+      tagline: "Regular cleans for homes in the surf village, from our Port Macquarie team",
+    },
+    intro: {
+      kicker: "House cleaning in Crescent Head",
+      h2: "House cleaning in Crescent Head",
+      paragraphs: [
+        "Crescent Head is a village of just under a thousand people, 18 kilometres south-east of Kempsey, known for its long-board surf break and for Killick Beach. We have a regular fortnightly client here, cleaned by our Port Macquarie team, with visits booked for two hours.",
+        "Homes this close to the surf collect salt on glass and aluminium, and sand in door tracks and showers, faster than homes a few streets inland. We rinse and wipe tracks and frames on every visit so the salt does not get the chance to pit them.",
+      ],
+    },
+    trust: {
+      h2: "A small village we already travel to",
+      paragraphs: [
+        "We keep Crescent Head to set days so the same cleaner returns each time. We clean on weekdays between 8:30 am and 5 pm.",
+        "The same team cleans in Kempsey and East Kempsey, and in South West Rocks further up the coast.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "Crescent Head is a small place, and we only work here because we can do it on a regular run.",
+      "If you have a home here that you live in, or one you visit, we can clean it on a schedule that suits either.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Crescent Head?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Regular house cleaning in Crescent Head on weekdays.",
+    },
+    seo: {
+      title: "House Cleaners Crescent Head NSW | 1300 876 472",
+      description: "House cleaning in Crescent Head from our Port Macquarie team. Regular fortnightly cleans, police-checked cleaners, plant-based products. Free quote in 60 seconds.",
+    },
+    nearbySuburbs: ["Kempsey", "East Kempsey", "South West Rocks", "Port Macquarie"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "How often are you in Crescent Head?",
+        a: "We are here on a regular fortnightly booking, on weekdays. Tell us what you need when you ask for a quote and we will offer the closest slot to an existing visit.",
+      },
+      {
+        q: "Can you clean a holiday home while we are away?",
+        a: "Yes. We can clean with key or lockbox access while the home is empty, and send you a note when it is done. Please tell us if the home is let to guests, because changeover cleans run to a different timetable and we will confirm whether we can meet it before you rely on us.",
+      },
+      {
+        q: "What do you do about salt and sand?",
+        a: "Door and window tracks are vacuumed and wiped on every visit, and glass and aluminium frames are washed down so salt does not sit on them. Showers and laundry floors get extra attention, because that is where beach sand ends up.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-south-west-rocks",
+    name: "South West Rocks",
+    state: "New South Wales",
+    stateCode: "NSW",
+    region: "Mid North Coast",
+    heroImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in South West Rocks NSW",
+    ogImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in South West", "Rocks"],
+      tagline: "One-off and regular cleans on our Macleay Valley run",
+    },
+    intro: {
+      kicker: "House cleaning in South West Rocks",
+      h2: "House cleaning in South West Rocks",
+      paragraphs: [
+        "South West Rocks sits near the mouth of the Macleay River, 40 kilometres from Kempsey, and had about 5,400 residents at the 2021 census. Our Port Macquarie team cleans here as part of its Macleay Valley run, and most of our South West Rocks visits so far have been on Wednesdays.",
+        "The work here has been one-off cleans: a thorough two-hour visit when a home needs it. If you would like a regular fortnightly or monthly clean, we can book it onto the same run.",
+      ],
+    },
+    trust: {
+      h2: "On the same run as Kempsey",
+      paragraphs: [
+        "South West Rocks is the far end of our Mid North Coast area, so we plan visits around the Kempsey run instead of sending a cleaner up on a separate trip. We clean on weekdays between 8:30 am and 5 pm.",
+        "The same team cleans in Kempsey, Bellimbopinni and Crescent Head.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "South West Rocks is about an hour and a quarter from our Port Macquarie office, and we would rather be clear about that than promise a time we cannot keep.",
+      "Booking a few days ahead gives us the best chance of fitting your home onto a run that is already going past.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in South West Rocks?",
+      sub: "Tell us the size of your home and whether you want a one-off or a regular clean. The quote form takes about 60 seconds.",
+      trust: "One-off and regular house cleaning in South West Rocks on weekdays.",
+    },
+    seo: {
+      title: "House Cleaners South West Rocks NSW | 1300 876 472",
+      description: "House cleaning in South West Rocks on our Macleay Valley run from Port Macquarie. One-off and regular cleans, police-checked cleaners, plant-based products. Free quote.",
+    },
+    nearbySuburbs: ["Kempsey", "Bellimbopinni", "Crescent Head"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "Which days are you in South West Rocks?",
+        a: "Mostly Wednesdays, on the same run as Kempsey. We do not clean on weekends. If you need a particular day, tell us in the quote form and we will say whether we can do it.",
+      },
+      {
+        q: "Do you clean in Arakoon, Jerseyville or Oceanside?",
+        a: "Those areas are part of South West Rocks and on the same road in, so yes, on the days we are already here.",
+      },
+      {
+        q: "Can I book a one-off clean?",
+        a: "Yes. Most of the cleans we have done in South West Rocks have been one-off visits. There is no contract and no obligation to book again.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-forster",
+    name: "Forster",
+    state: "New South Wales",
+    stateCode: "NSW",
+    region: "Mid North Coast",
+    heroImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    heroImageAlt: "NATURO GROUP house cleaning in Forster NSW",
+    ogImage: "/images/suburbs/cleaners-port-macquarie.jpg",
+    hero: {
+      h1Lines: ["House Cleaners", "in", "Forster"],
+      tagline: "Regular monthly cleans from our Mid North Coast team",
+    },
+    intro: {
+      kicker: "House cleaning in Forster",
+      h2: "House cleaning in Forster",
+      paragraphs: [
+        "Forster sits on Wallis Lake, beside its twin town Tuncurry, and had about 14,000 residents at the 2021 census. It is the southern edge of where our Mid North Coast team works. We have a regular client here and clean in Forster on a set schedule.",
+        "Forster is a long way from our Port Macquarie office, so we are careful about what we take on. A regular clean that we can plan weeks ahead works well. A same-week request usually does not, and we will tell you that straight away.",
+      ],
+    },
+    trust: {
+      h2: "What to expect this far south",
+      paragraphs: [
+        "We clean on weekdays between 8:30 am and 5 pm. The fastest way to find out whether we can help is the quote form: tell us the suburb, the size of the home and how often, and we will reply with a yes or a no and the next day we are in town.",
+        "If you are in Tuncurry, ask us. It is across the bridge and we will tell you whether we can include it.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "We clean in Forster because a client here asked us to and we were able to make it work on a regular schedule.",
+      "We would like to add more homes to that visit, which makes the trip better for everyone.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Forster?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Regular house cleaning in Forster on a set schedule, weekdays only.",
+    },
+    seo: {
+      title: "House Cleaners Forster NSW | 1300 876 472 | Naturo Group",
+      description: "Regular house cleaning in Forster from NATURO GROUP. Police-checked cleaners, plant-based products, a set schedule planned ahead. Free quote in 60 seconds.",
+    },
+    nearbySuburbs: [],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "How often are you in Forster?",
+        a: "On a regular schedule for an existing client, on weekdays. We are not in Forster every week, so the best fit is a fortnightly or monthly clean that lines up with a day we are already there.",
+      },
+      {
+        q: "Can you do an urgent or one-off clean in Forster?",
+        a: "Usually not at short notice, because of the distance. Ask anyway through the quote form: if we are in town that week we will say so.",
+      },
+      {
+        q: "Do you clean in Tuncurry?",
+        a: "We do not have a regular client in Tuncurry yet. It is directly across the bridge, so ask us and we will tell you whether we can include your home on the same visit.",
+      },
+    ],
+  },
+  {
+    slug: "house-cleaning-baringa",
+    name: "Baringa",
+    state: "Queensland",
+    stateCode: "QLD",
+    region: "Sunshine Coast",
+    heroImage: "/images/suburbs/cleaners-sunshine-coast.png",
+    heroImageAlt: "NATURO GROUP house cleaning in Baringa QLD",
+    ogImage: "/images/suburbs/cleaners-sunshine-coast.png",
+    hero: {
+      h1Lines: ["House Cleaners", "in Baringa", "Sunshine Coast"],
+      tagline: "Regular cleans from our Sunshine Coast cleaners",
+    },
+    intro: {
+      kicker: "House cleaning in Baringa",
+      h2: "House cleaning in Baringa",
+      paragraphs: [
+        "Baringa is one of the newest suburbs on the Sunshine Coast: it was created in 2017, about seven kilometres west of Caloundra, as part of a master-planned community, and had about 4,600 residents at its first census in 2021. Our Sunshine Coast cleaners have regular clients here.",
+        "Every home in Baringa is less than ten years old. That means stone benchtops, large tiles, matte tapware and wide glass doors, all of which show marks easily and scratch with the wrong product. Our cleaners use pH-neutral, plant-based products and soft cloths on those surfaces.",
+      ],
+    },
+    trust: {
+      h2: "Cleaners who already work in Baringa",
+      paragraphs: [
+        "We clean on weekdays between 8:30 am and 5 pm, and regular bookings are rostered to the same cleaner where we can.",
+        "For other parts of the Sunshine Coast, see our Sunshine Coast page or ask us in the quote form.",
+      ],
+      points: [
+        {
+          icon: "shield",
+          title: "Police-checked and insured",
+          body: "Every cleaner holds a National Police Check and is covered by our public liability insurance.",
+        },
+        {
+          icon: "clock",
+          title: "The same cleaner where we can",
+          body: "Regular bookings are rostered to the same person, so you are not explaining your home again each visit.",
+        },
+        {
+          icon: "sparkle",
+          title: "Plant-based products",
+          body: "We bring our own products and equipment. They are plant-based and biodegradable, and safe around children and pets.",
+        },
+      ],
+    },
+    founderBody: [
+      "Baringa is a suburb of young families and new homes, and regular help makes the most difference when both are true.",
+      "We keep the same cleaner on a home wherever we can, because knowing the house is most of doing it well.",
+      "Every clean comes with our satisfaction guarantee: if something is not right, tell us and we will make it right.",
+    ],
+    finalCta: {
+      h2Pre: "Ready for a",
+      h2Highlight: "cleaner home",
+      h2Post: "in Baringa?",
+      sub: "Tell us the size of your home and how often you would like us. The quote form takes about 60 seconds.",
+      trust: "Regular house cleaning in Baringa on weekdays.",
+    },
+    seo: {
+      title: "House Cleaners Baringa QLD | 1300 876 472 | Naturo Group",
+      description: "House cleaning in Baringa from NATURO GROUP cleaners on the Sunshine Coast. Regular cleans, police-checked cleaners, plant-based products safe for new surfaces. Free quote.",
+    },
+    nearbySuburbs: ["Sunshine Coast"],
+    contentUpdated: "2026-11-22",
+    localFaqs: [
+      {
+        q: "Do you have cleaners in Baringa now?",
+        a: "Yes. We have cleaners on the Sunshine Coast with regular clients in Baringa. We clean on weekdays only.",
+      },
+      {
+        q: "Our home is new. What do you use on stone and matte tapware?",
+        a: "pH-neutral, plant-based products and soft microfibre cloths. Acidic or abrasive cleaners can etch engineered stone and strip the coating from matte black tapware, so we do not use them.",
+      },
+      {
+        q: "Do you clean in Nirimba, Caloundra West or Little Mountain?",
+        a: "Ask us in the quote form. Those suburbs are next to Baringa, and we will tell you whether we can fit your home in with our existing Baringa visits.",
       },
     ],
   },

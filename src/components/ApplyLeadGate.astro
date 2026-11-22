@@ -394,7 +394,9 @@ const weekdays = ['Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays'];
           show(order.length - 1);
           try {
             if (typeof window.gtag === 'function') {
-              window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.lead_id, lead_type: 'job_application' });
+              // A job application is not a sales lead. It used to be sent as
+              // generate_lead, which mixed applicants into the enquiry count.
+              window.gtag('event', 'job_application_submit', { transaction_id: payload.lead_id });
             }
           } catch (e) {}
         } else { failed(); }

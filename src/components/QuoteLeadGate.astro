@@ -719,7 +719,9 @@ const lc = {
           window.naturoAnalytics.setAdsUserData(payload.email, payload.phone);
         }
         window.gtag('event', 'conversion', { send_to: sendTo, transaction_id: payload.event_id });
-        window.gtag('event', 'generate_lead', { currency: 'AUD', value: 0, transaction_id: payload.event_id });
+        // generate_lead is NOT sent here. shipToDataLayer() already sends it for
+        // the same lead, so this second copy (under a different id, so GA4 could
+        // not de-duplicate it) counted every quote twice. Found 22 Nov 2026.
       } catch (e) {}
     }
     // The modal's internal service values map onto the shared analytics

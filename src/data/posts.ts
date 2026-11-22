@@ -372,7 +372,7 @@ export const posts: BlogPost[] = [
         items: [
           {
             q: 'Are non-toxic cleaners actually as effective?',
-            a: 'For 95% of household tasks, yes — and we use them in 10,000+ Australian homes to prove it. The exceptions are blood-borne pathogens (medical settings need proper disinfectants) and serious mould infestations behind walls (specialist remediation).',
+            a: 'For 95% of household tasks, yes — and they are what our cleaners use in clients' homes every working day. The exceptions are blood-borne pathogens (medical settings need proper disinfectants) and serious mould infestations behind walls (specialist remediation).',
           },
           {
             q: 'Is vinegar safe on kitchen benchtops?',

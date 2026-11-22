@@ -4548,7 +4548,7 @@ export const suburbs: Suburb[] = [
         'We service Belmont, Highton, East Geelong, Wandana Heights, Grovedale, Waurn Ponds and the southern Geelong corridor, giving the whole area one trusted cleaning team.',
       ],
       points: [
-        { icon: 'shield', title: 'Family-trusted cleaners', body: 'Police-checked, insured cleaners trusted by hundreds of Belmont families for regular home cleaning.' },
+        { icon: 'shield', title: 'Family-trusted cleaners', body: 'Police-checked, insured cleaners trusted by Belmont families for regular home cleaning.' },
         { icon: 'clock', title: 'Family-schedule friendly', body: 'Flexible fortnightly or weekly cleans scheduled around school drops, after-school activities and weekends.' },
         { icon: 'sparkle', title: 'Child-safe & pet-safe products', body: 'Non-toxic, plant-based formulas that are completely safe for kids, dogs and the whole family.' },
       ],
@@ -4563,7 +4563,7 @@ export const suburbs: Suburb[] = [
       h2Highlight: 'cleaner family home',
       h2Post: 'in Belmont?',
       sub: 'Eco-friendly products, police-checked cleaners and easy online booking — book your Belmont clean in under 60 seconds.',
-      trust: 'Trusted by hundreds of Belmont families, retirees and homeowners across Greater Geelong.',
+      trust: 'Trusted by Belmont families, retirees and homeowners across Greater Geelong.',
     },
     seo: {
       title: 'House Cleaning Belmont Geelong | 1300 876 472',
@@ -5397,7 +5397,7 @@ export const suburbs: Suburb[] = [
         'We service Lara, Corio, North Shore, Ocean Grove, Geelong and the Geelong-Melbourne freeway corridor, making us the ideal cleaning partner for the whole outer Greater Geelong region.',
       ],
       points: [
-        { icon: 'shield', title: 'Trusted by Lara families', body: 'Police-checked, insured cleaners trusted by hundreds of Lara households for regular home cleaning.' },
+        { icon: 'shield', title: 'Trusted by Lara families', body: 'Police-checked, insured cleaners trusted by Lara households for regular home cleaning.' },
         { icon: 'clock', title: 'Commuter-schedule friendly', body: 'Flexible fortnightly or weekly cleans scheduled around Melbourne commutes, school drops and Lara family life.' },
         { icon: 'sparkle', title: 'Child-safe & eco-friendly', body: 'Plant-based, non-toxic formulas safe for babies, toddlers, pets and new-build home finishes.' },
       ],

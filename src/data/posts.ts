@@ -287,7 +287,7 @@ export const posts: BlogPost[] = [
     readMinutes: 7,
     heroImage: '/images/resources/resource-1.webp',
     intro:
-      'Walk down the cleaning aisle of any Australian supermarket and you’ll see dozens of brightly coloured sprays, each promising to solve one specific problem. Most homes end up with a cupboard full of half-used bottles — and a daily intake of fragrances, surfactants and disinfectants the family doesn’t need. After cleaning thousands of homes across NSW, Queensland and Victoria, our team has settled on a five-product kit that does almost everything, more safely.',
+      'Walk down the cleaning aisle of any Australian supermarket and you’ll see dozens of brightly coloured sprays, each promising to solve one specific problem. Most homes end up with a cupboard full of half-used bottles — and a daily intake of fragrances, surfactants and disinfectants the family doesn’t need. After thousands of cleans across NSW, Queensland and Victoria, our team has settled on a five-product kit that does almost everything, more safely.',
     sections: [
       { type: 'h2', text: 'Why a smaller kit is a smarter kit' },
       {

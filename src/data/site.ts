@@ -8,7 +8,7 @@ export const site = {
   abn: 'ABN 59 132 954 348',
   tagline: 'Trusted, Trained and Thorough',
   description:
-    'Eco-friendly residential and commercial cleaning across Australia. Specialists in NDIS, aged care, veterans affairs and insurance cleaning.',
+    'Eco-friendly residential and commercial cleaning in Victoria, New South Wales and Queensland. Specialists in NDIS, aged care, veterans affairs and insurance cleaning.',
   url: 'https://naturogroup.com.au',
   phone: '1300 876 472',
   phoneHref: 'tel:1300876472',
@@ -539,7 +539,7 @@ export const founder = {
   imageAlt:
     'Eco-friendly cleaning service by NATURO GROUP showcasing natural products and police-checked cleaners.',
   body: [
-    'At NATURO GROUP, we deliver exceptional cleaning services across Australia, backed by a unique nursing background that drives our compassionate care.',
+    'At NATURO GROUP, we deliver exceptional cleaning services in Victoria, New South Wales and Queensland, backed by a unique nursing background that drives our compassionate care.',
     'We take pride in supporting NDIS participants, Veterans Affairs, Workers Compensation, Insurance, and Aged Care recipients with tailored services that prioritise comfort and independence.',
     'Our commitment to quality, reliability, and personalised care ensures every client feels valued in their own home. At NATURO GROUP, we don’t just clean—we create spaces where people feel truly cared for.',
   ],

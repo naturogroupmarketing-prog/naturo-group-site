@@ -259,6 +259,30 @@
   to   = "/resource/"
   status = 301
 
+# ── NDIS cost guides merged, 22 Nov 2026 ─────────────────────────────────────
+# The Geelong and Port Macquarie versions were 83% the same page: the NDIS
+# price limits are national, so only the place name differed. That is the
+# find-and-replace pattern Google's spam policy calls a doorway, and the
+# November 2026 core update hit the blog hardest (-68% impressions). One
+# national guide now says the figures once; these carry the old addresses
+# and whatever they earned to it.
+[[redirects]]
+  from   = "/resource/ndis-cleaning-cost-geelong"
+  to     = "/resource/ndis-cleaning-cost/"
+  status = 301
+[[redirects]]
+  from   = "/resource/ndis-cleaning-cost-geelong/"
+  to     = "/resource/ndis-cleaning-cost/"
+  status = 301
+[[redirects]]
+  from   = "/resource/ndis-cleaning-cost-port-macquarie"
+  to     = "/resource/ndis-cleaning-cost/"
+  status = 301
+[[redirects]]
+  from   = "/resource/ndis-cleaning-cost-port-macquarie/"
+  to     = "/resource/ndis-cleaning-cost/"
+  status = 301
+
 # ── /account — login link in TopBar; sends users to the booking app ──────────
 [[redirects]]
   from = "/account"

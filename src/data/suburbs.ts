@@ -3677,7 +3677,7 @@ export const suburbs: Suburb[] = [
     },
     intro: {
       kicker: 'House cleaning in Geelong',
-      h2: 'Best house cleaning in Geelong & the Bellarine',
+      h2: 'House cleaning across Geelong & the Bellarine',
       paragraphs: [
         'Geelong is Victoria\u2019s second-largest city \u2014 a coastal city of waterfront terraces, restored Edwardian homes and modern family suburbs through Armstrong Creek and the growth corridor. NATURO GROUP\u2019s Geelong cleaners use eco-friendly products that suit period detail and the bay catchment.',
         'From the Geelong CBD and Eastern Beach to Newtown, Highton, Belmont, Ocean Grove, Barwon Heads and Torquay, our local cleaning company\u2019s trained, police-checked team services family homes, holiday lets and end-of-lease properties \u2014 with the reliability locals expect.',
@@ -3722,23 +3722,23 @@ export const suburbs: Suburb[] = [
         a: 'We service all of Geelong and the surrounding region including Newtown, Highton, Belmont, Geelong West, South Geelong, East Geelong, Manifold Heights, Hamlyn Heights, Lara, Corio, Leopold, Ocean Grove, Barwon Heads, Torquay, Jan Juc and Drysdale. If you are unsure whether we cover your street, call 1300 876 472 and we will confirm straight away.',
       },
       {
-        q: 'Do you offer NDIS and aged care cleaning in Geelong?',
+        q: 'Do you offer NDIS and aged care cleaning?',
         a: 'Yes. NATURO GROUP provides NDIS cleaning for plan-managed and self-managed participants across Geelong and the Bellarine, working closely with Barwon Disability Services, local support coordinators and Home Care Package providers. We supply detailed invoicing, reports and consistent cleaners where possible. See our dedicated <a href="/ndis-cleaning-geelong/">NDIS Cleaning Geelong</a>, <a href="/support-at-home-cleaning-geelong/">Support at Home cleaning</a> and <a href="/chsp-cleaning-geelong/">CHSP cleaning</a> pages, or call 1300 876 472 to discuss your needs.',
       },
       {
-        q: 'Can you clean end-of-lease properties in Geelong?',
+        q: 'Can you clean end-of-lease properties?',
         a: 'Yes — end-of-lease bond cleans are one of our most popular services in Geelong, covering everything agents check at final inspection: oven, stovetop, bathrooms, windows, skirting boards and walls. Carpet steam cleaning is a separate specialist service we do not provide. We provide a receipt and a 72-hour bond-back re-clean guarantee. See our dedicated <a href="/end-of-lease-cleaning-geelong/">End of Lease Cleaning Geelong</a> page for full inclusions and pricing.',
       },
       {
-        q: 'Do you do deep cleaning in Geelong?',
+        q: 'Do you do deep cleaning?',
         a: 'Yes. A deep clean is a once-off reset for homes that have not had a professional clean in 30 or more days, after a renovation, or before an event or sale \u2014 inside the oven, cabinets and drawers, behind accessible appliances, grout, exhaust fans, skirting boards, vents and window tracks. We put two cleaners on most deep cleans. See our <a href="/deep-cleaning-geelong/">Deep Cleaning Geelong</a> page for what is included.',
       },
       {
-        q: 'Are your Geelong cleaners police-checked and insured?',
+        q: 'Are your cleaners police-checked and insured?',
         a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
       },
       {
-        q: 'What eco-friendly products do you use in Geelong homes?',
+        q: 'What eco-friendly products do you use?',
         a: 'We use plant-based, biodegradable, non-toxic products that are safe for children, pets, asthma sufferers and Corio Bay\'s catchment. Our products are tough on grease and grime but gentle on the period timber, natural stone and bay-area finishes common throughout Geelong and the Bellarine.',
       },
       {
@@ -3746,7 +3746,7 @@ export const suburbs: Suburb[] = [
         // never answered it, while the surrounding copy implied availability.
         // The business trades Monday to Friday only, so the answer now says so
         // plainly and redirects to what we can actually do about a deadline.
-        q: 'Do you clean on weekends in Geelong?',
+        q: 'Do you clean on weekends?',
         a: 'No — we work Monday to Friday, 8:30am to 5:00pm. We can usually book a first Geelong clean within 2–5 business days, and same-week availability is often possible for smaller jobs. If you are working to a weekend deadline, such as a rental handover or family arriving, tell us when you book and we will schedule it earlier in the week.',
       },
       {
@@ -3762,7 +3762,7 @@ export const suburbs: Suburb[] = [
         a: 'Contact us within 24 hours of the clean and we will return to address the issue at no additional cost where possible. We would far rather hear it from you than read about it later. This sits alongside your rights under the Australian Consumer Law — it does not replace them.',
       },
       {
-        q: 'What is included in a standard house clean in Geelong?',
+        q: 'What is included in a standard house clean?',
         a: 'A standard Geelong clean covers all living areas (dusting, vacuuming, mopping), kitchen (benchtops, stovetop, splashback, sink), bathrooms (toilet, basin, shower, bath), and bedrooms. We bring all products and equipment. Extras like inside-oven cleaning, inside-fridge, window washing and linen changes can be added when you get your free quote online.',
       },
     ],

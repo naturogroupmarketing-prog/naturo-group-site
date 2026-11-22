@@ -259,6 +259,166 @@
   to   = "/resource/"
   status = 301
 
+# ── Old addresses Google still shows, 22 Nov 2026 ────────────────────────────
+# 159 addresses with search impressions in the last 16 months returned 404.
+# Only those with a true equivalent are redirected: the old service pages, old
+# slugs for suburbs we still clean, and old Sunshine Coast suburb pages (inside
+# the ~50 km our cleaners there cover). Old pages for places we do not clean
+# are left as 404 on purpose: redirecting them to an unrelated page is what
+# Google treats as a soft 404.
+[[redirects]]
+  from   = "/service-insurance"
+  to     = "/services/insurance-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-insurance/"
+  to     = "/services/insurance-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-aged-care"
+  to     = "/services/aged-care-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-aged-care/"
+  to     = "/services/aged-care-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-house-cleaning"
+  to     = "/services/house-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-house-cleaning/"
+  to     = "/services/house-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-ndis-cleaning"
+  to     = "/services/ndis-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/service-ndis-cleaning/"
+  to     = "/services/ndis-cleaning/"
+  status = 301
+[[redirects]]
+  from   = "/book-online"
+  to     = "/contact-us/"
+  status = 301
+[[redirects]]
+  from   = "/book-online/"
+  to     = "/contact-us/"
+  status = 301
+[[redirects]]
+  from   = "/book-now-2"
+  to     = "/contact-us/"
+  status = 301
+[[redirects]]
+  from   = "/book-now-2/"
+  to     = "/contact-us/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-barwon-heads"
+  to     = "/house-cleaning-barwon-heads/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-barwon-heads/"
+  to     = "/house-cleaning-barwon-heads/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-rollands-plains"
+  to     = "/house-cleaning-rollands-plains/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-rollands-plains/"
+  to     = "/house-cleaning-rollands-plains/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-lake-cathie"
+  to     = "/house-cleaning-lake-cathie/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-lake-cathie/"
+  to     = "/house-cleaning-lake-cathie/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-bonny-hills"
+  to     = "/house-cleaning-bonny-hills/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-bonny-hills/"
+  to     = "/house-cleaning-bonny-hills/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-lara"
+  to     = "/house-cleaning-lara/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-lara/"
+  to     = "/house-cleaning-lara/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-king-creek"
+  to     = "/house-cleaning-king-creek/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-king-creek/"
+  to     = "/house-cleaning-king-creek/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-bli-bli"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-bli-bli/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-tewantin"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-tewantin/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-yandina"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-yandina/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-caloundra"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-caloundra/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-peregian-springs"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-peregian-springs/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-wurtulla"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-wurtulla/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-nambour"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+[[redirects]]
+  from   = "/cleaners-nambour/"
+  to     = "/cleaners-sunshine-coast/"
+  status = 301
+
 # ── NDIS cost guides merged, 22 Nov 2026 ─────────────────────────────────────
 # The Geelong and Port Macquarie versions were 83% the same page: the NDIS
 # price limits are national, so only the place name differed. That is the

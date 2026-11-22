@@ -3364,7 +3364,7 @@ export const suburbs: Suburb[] = [
       h2: 'Best house cleaning across the Sunshine Coast',
       paragraphs: [
         'The Sunshine Coast stretches from Caloundra to Noosa \u2014 a region of beach suburbs, hinterland villages and modern family estates. NATURO GROUP\u2019s Sunshine Coast cleaners use eco-friendly products that protect coastal finishes, the marine park and the people who love them both.',
-        'From Caloundra and Mooloolaba to Maroochydore, Buderim, Noosa Heads, Coolum and Peregian, our trained, police-checked team services beach houses, family homes and holiday lets \u2014 with the consistency busy turnover seasons demand.',
+        'Our Sunshine Coast cleaners travel up to about 50 kilometres, which takes in the coast from Caloundra to Noosa Heads and the hinterland behind it. If you are not sure whether your street is inside that, ask us and we will tell you. Our trained, police-checked team services beach houses, family homes and holiday lets \u2014 with the consistency busy turnover seasons demand.',
       ],
     },
     trust: {
@@ -3395,8 +3395,8 @@ export const suburbs: Suburb[] = [
       title: 'House Cleaning Sunshine Coast | 1300 876 472',
       description: 'Need house cleaning on the Sunshine Coast? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked, fully insured. Get a free quote.',
     },
-    nearbySuburbs: ['Maroochydore', 'Mooloolaba', 'Caloundra', 'Buderim', 'Noosa Heads', 'Noosaville', 'Tewantin', 'Sunshine Beach', 'Coolum Beach', 'Marcoola', 'Mudjimba', 'Twin Waters', 'Pacific Paradise', 'Bli Bli', 'Nambour', 'Yandina', 'Eumundi', 'Cooroy', 'Pomona', 'Kawana Waters', 'Currimundi', 'Wurtulla', 'Sippy Downs', 'Peregian Beach', 'Baringa'],
-    contentUpdated: '2026-08-27',
+    nearbySuburbs: ['Caloundra', 'Baringa', 'Kawana Waters', 'Mooloolaba', 'Maroochydore', 'Buderim', 'Nambour', 'Coolum Beach', 'Noosa Heads'],
+    contentUpdated: '2026-11-22',
     localFaqs: [
       {
         q: 'Do you service the hinterland as well as the beaches?',

@@ -59,7 +59,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       ],
       stats: [
         { num: '100%', label: 'Non-toxic products' },
-        { num: '10k+', label: 'Happy households' },
+        { num: 'Police-checked', label: 'Every cleaner' },
         { num: 'Mon–Fri', label: '5-day service' },
       ],
     },

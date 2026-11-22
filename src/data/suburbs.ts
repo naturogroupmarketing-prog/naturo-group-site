@@ -208,7 +208,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Port Macquarie cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner working in Port Macquarie is police-checked, fully insured for $20m public liability and trained to our nursing-grade cleaning standards. We supply all eco-friendly, non-toxic products and equipment — you do not need to provide anything.',
+        a: 'Every NATURO GROUP cleaner working in Port Macquarie is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly, non-toxic products and equipment — you do not need to provide anything.',
       },
     ],
   },
@@ -232,7 +232,7 @@ export const suburbs: Suburb[] = [
       kicker: 'House cleaning in Wauchope',
       h2: 'Professional house cleaning in Wauchope & the Hastings Valley',
       paragraphs: [
-        'Wauchope is the gateway to the Hastings Valley — a heritage timber town with a strong community spirit, known for Timbertown and its connection to the region\'s rich pioneering history. Homes here range from classic weatherboard cottages to modern family houses on quiet leafy streets. NATURO GROUP brings eco-friendly, nursing-grade cleaning to every Wauchope home.',
+        'Wauchope is the gateway to the Hastings Valley — a heritage timber town with a strong community spirit, known for Timbertown and its connection to the region\'s rich pioneering history. Homes here range from classic weatherboard cottages to modern family houses on quiet leafy streets. NATURO GROUP brings eco-friendly, careful cleaning to every Wauchope home.',
         'From central Wauchope to Beechwood, Pembrooke and the surrounding rural properties, our police-checked team provides regular, deep clean and end-of-lease services — reliable, insured and ready to work around your schedule.',
       ],
     },
@@ -243,7 +243,7 @@ export const suburbs: Suburb[] = [
         'We also service Beechwood, Bago, Pembrooke, Rollands Plains, Telegraph Point and the broader Hastings Valley, giving rural and semi-rural households access to the same premium cleaning standard as city clients.',
       ],
       points: [
-        { icon: 'shield', title: 'Local Wauchope cleaners', body: 'Police-checked, insured and trained to nursing-grade standards — ready for Wauchope homes, rural properties and heritage cottages.' },
+        { icon: 'shield', title: 'Local Wauchope cleaners', body: 'Police-checked, insured and trained to our own standard — ready for Wauchope homes, rural properties and heritage cottages.' },
         { icon: 'clock', title: 'Flexible rural scheduling', body: 'We work around farm schedules, school runs and country routines — morning, afternoon or weekend slots available.' },
         { icon: 'sparkle', title: 'Eco products safe for families', body: 'Plant-based, biodegradable products that are safe for kids, pets and sensitive airways — no harsh chemical fumes.' },
       ],
@@ -281,7 +281,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and Home Care Package clients in the Hastings Valley?',
-        a: 'We do. Across Wauchope and the wider Hastings Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. We are a nursing-led company, so our cleaners are trained to a nursing-grade standard for respectful in-home work.',
+        a: 'We do. Across Wauchope and the wider Hastings Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. We are a company founded by someone from a nursing background, so our cleaners are trained to our own standard for respectful in-home work.',
       },
       {
         q: 'What does an end-of-lease clean in Wauchope include?',
@@ -364,7 +364,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with retirees and NDIS participants in Lake Cathie?',
-        a: 'We do. Lake Cathie\'s mix of families, retirees and retirement units means a lot of our work here is ongoing in-home support. We assist NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, with a nursing-led team trained for careful, respectful work in someone\'s home.',
+        a: 'We do. Lake Cathie\'s mix of families, retirees and retirement units means a lot of our work here is ongoing in-home support. We assist NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, with a team trained for careful, respectful work in someone\'s home.',
       },
       {
         q: 'What will a clean in Lake Cathie cost?',
@@ -518,7 +518,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you help retirees and Home Care Package recipients in Laurieton?',
-        a: 'Yes. A large share of the Laurieton and Camden Haven community is retired, and we regularly work with Home Care Package recipients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. As a nursing-led company, our cleaners are trained to a nursing-grade standard for in-home care settings.',
+        a: 'Yes. A large share of the Laurieton and Camden Haven community is retired, and we regularly work with Home Care Package recipients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. As a company founded by someone from a nursing background, our cleaners are trained to our own standard for in-home care settings.',
       },
       {
         q: 'Can I book around boating, fishing and weekends away?',
@@ -597,7 +597,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Is your team safe to have in my home?',
-        a: 'Every cleaner is police-checked and fully insured with $20m public liability cover. We are a nursing-led company and train to a nursing-grade standard, which matters in a tight-knit community like North Haven where people rightly want to know exactly who is coming through the door.',
+        a: 'Every cleaner is police-checked and fully insured with $20m public liability cover. We are a company founded by someone from a nursing background and train every cleaner ourselves, which matters in a tight-knit community like North Haven where people rightly want to know exactly who is coming through the door.',
       },
       {
         q: 'Do you offer end-of-lease cleans for North Haven rentals?',
@@ -676,7 +676,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Who will be coming into my home?',
-        a: 'A police-checked cleaner insured for $20m public liability, trained to a nursing-grade standard by our nursing-led company. In a Dunbogan street where people know their neighbours, that matters. We bring all our own products and equipment, so you do not need to leave anything out for us.',
+        a: 'A police-checked cleaner insured for $20m public liability, trained to our own standard. In a Dunbogan street where people know their neighbours, that matters. We bring all our own products and equipment, so you do not need to leave anything out for us.',
       },
       {
         q: 'Can you clean while I am away from my Dunbogan property?',
@@ -755,7 +755,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'How do I know I can trust someone accessing my home when I am not there?',
-        a: 'Every cleaner is police-checked and covered by $20m public liability insurance, and we are a nursing-led company training to a nursing-grade standard. Camden Head residents place real trust in anyone accessing their homes, and we treat that seriously, whether you are present for the clean or interstate.',
+        a: 'Every cleaner is police-checked and covered by $20m public liability insurance, and we are a company founded by someone from a nursing background training every cleaner ourselves. Camden Head residents place real trust in anyone accessing their homes, and we treat that seriously, whether you are present for the clean or interstate.',
       },
       {
         q: 'Do you support NDIS and aged care clients at Camden Head?',
@@ -992,11 +992,11 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Which other Manning Valley and Hastings areas do you service?',
-        a: 'From Kendall we also clean in Comboyne, Wauchope, Telegraph Point, Rollands Plains, Beechwood, Laurieton and Port Macquarie. Manning Valley households get the same standard of service as clients on the coast, with police-checked cleaners insured for $20m public liability and trained to a nursing-grade standard by our nursing-led team.',
+        a: 'From Kendall we also clean in Comboyne, Wauchope, Telegraph Point, Rollands Plains, Beechwood, Laurieton and Port Macquarie. Manning Valley households get the same standard of service as clients on the coast, with police-checked cleaners insured for $20m public liability and trained to our own standard.',
       },
       {
         q: 'Do you support NDIS and aged care clients in Kendall?',
-        a: 'Yes. Across Kendall and the Manning Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, as well as insurance and workers compensation clients. Our nursing-led training shapes how we handle in-home work.',
+        a: 'Yes. Across Kendall and the Manning Valley we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients and DVA Gold and White card holders, as well as insurance and workers compensation clients. Our founder\'s nursing background shapes how we handle in-home work.',
       },
       {
         q: 'How do I get a price for cleaning in Kendall?',
@@ -1150,7 +1150,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do I get city-standard service out here in the Hastings Valley?',
-        a: 'You do. Beechwood sits between Wauchope and Port Macquarie, and our service bridges that same gap: professional standards delivered to a country doorstep. Every cleaner is police-checked, insured for $20m public liability and trained to a nursing-grade standard by our nursing-led company.',
+        a: 'You do. Beechwood sits between Wauchope and Port Macquarie, and our service bridges that same gap: professional standards delivered to a country doorstep. Every cleaner is police-checked, insured for $20m public liability and trained to our own standard.',
       },
       {
         q: 'Which other areas near Beechwood do you cover?',
@@ -1237,7 +1237,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and older residents living out at Bago?',
-        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. As a nursing-led company, our team is trained to a nursing-grade standard, which matters for rural Bago households where regular in-home support is harder to arrange.',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. As a company founded by someone from a nursing background, our team is trained to our own standard, which matters for rural Bago households where regular in-home support is harder to arrange.',
       },
     ],
   },
@@ -1316,7 +1316,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you help NDIS participants and aged care clients on rural properties?',
-        a: 'Yes. We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Being nursing-led shapes how our cleaners work in a home, and it means Rollands Plains families do not have to look to the city for that level of care.',
+        a: 'Yes. We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Being founded by someone from a nursing background shapes how our cleaners work in a home, and it means Rollands Plains families do not have to look to the city for that level of care.',
       },
     ],
   },
@@ -1395,7 +1395,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you take NDIS, aged care or DVA clients around Pembrooke?',
-        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP is nursing-led, so our cleaners are trained to a nursing-grade standard and understand how to work respectfully in a Pembrooke home where someone needs ongoing support.',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP was founded by someone from a nursing background, so our cleaners are trained to our own standard and understand how to work respectfully in a Pembrooke home where someone needs ongoing support.',
       },
     ],
   },
@@ -1632,7 +1632,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and aged care clients on semi-rural blocks?',
-        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. A larger King Creek home can be hard to maintain as circumstances change, and our nursing-led team is trained to work respectfully and thoroughly in that situation.',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. A larger King Creek home can be hard to maintain as circumstances change, and our team is trained to work respectfully and thoroughly in that situation.',
       },
     ],
   },
@@ -1707,11 +1707,11 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are you discreet when working in a riverside home?',
-        a: 'Yes. Many of our Settlement Point clients are retirees, holiday homeowners or families who value privacy. Our cleaners are police-checked, fully insured and trained to a nursing-grade standard, which includes being quiet, respectful and careful with personal belongings, whether you are home during the clean or away for the day.',
+        a: 'Yes. Many of our Settlement Point clients are retirees, holiday homeowners or families who value privacy. Our cleaners are police-checked, fully insured and trained to our own standard, which includes being quiet, respectful and careful with personal belongings, whether you are home during the clean or away for the day.',
       },
       {
         q: 'Do you support NDIS participants and Home Care Package recipients at Settlement Point?',
-        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP is nursing-led, and that background shapes how our cleaners work in a Settlement Point home where someone needs regular, dependable in-home support.',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance or workers compensation clients. NATURO GROUP was founded by someone from a nursing background, and that background shapes how our cleaners work in a Settlement Point home where someone needs regular, dependable in-home support.',
       },
     ],
   },
@@ -1865,7 +1865,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Byron Bay cleaners police-checked and insured?',
-        a: 'Yes — every NATURO GROUP cleaner in Byron Bay is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment. You do not need to leave anything out for us.',
+        a: 'Yes — every NATURO GROUP cleaner in Byron Bay is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products and equipment. You do not need to leave anything out for us.',
       },
     ],
   },
@@ -2023,7 +2023,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Is your team sensitive to what this community has been through?',
-        a: 'We try to be. NATURO GROUP is nursing-led, and that background shows in how our cleaners approach a Lismore home that is still being put back together. We work at the pace the household needs, we do not rush people through decisions about their own belongings, and there are no lock-in contracts if circumstances change.',
+        a: 'We try to be. NATURO GROUP was founded by someone from a nursing background, and that background shows in how our cleaners approach a Lismore home that is still being put back together. We work at the pace the household needs, we do not rush people through decisions about their own belongings, and there are no lock-in contracts if circumstances change.',
       },
     ],
   },
@@ -2177,7 +2177,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support DVA card holders and NDIS participants in the Shire?',
-        a: 'Yes. We work with DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, Home Care Package recipients and insurance or workers compensation clients. NATURO GROUP is nursing-led, so our Sutherland Shire cleaners are trained to a nursing-grade standard and understand how to work in a home where someone needs ongoing support.',
+        a: 'Yes. We work with DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, Home Care Package recipients and insurance or workers compensation clients. NATURO GROUP was founded by someone from a nursing background, so our Sutherland Shire cleaners are trained to our own standard and understand how to work in a home where someone needs ongoing support.',
       },
       {
         q: 'Which Shire suburbs do you cover?',
@@ -2252,7 +2252,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you help NDIS participants and Home Care Package recipients in Sydney?',
-        a: 'We do, in every postcode from Bondi to Penrith. NATURO GROUP is a nursing-led company, and we support NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Sydney bookings are tailored around comfort, independence and a consistent cleaner wherever possible.',
+        a: 'We do, in every postcode from Bondi to Penrith. NATURO GROUP is a company founded by someone from a nursing background, and we support NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Sydney bookings are tailored around comfort, independence and a consistent cleaner wherever possible.',
       },
       {
         q: 'How quickly can I get a first clean in Sydney, and what does it cost?',
@@ -2331,7 +2331,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you support older residents and NDIS participants in the Tweed?',
-        a: 'Yes. NATURO GROUP is nursing-led, and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Tweed Heads and the Northern Rivers. Many Tweed Heads apartments are retiree homes, so we focus on comfort, independence and a familiar face each visit.',
+        a: 'Yes. NATURO GROUP was founded by someone from a nursing background, and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Tweed Heads and the Northern Rivers. Many Tweed Heads apartments are retiree homes, so we focus on comfort, independence and a familiar face each visit.',
       },
       {
         q: 'How do I get a price for a clean in Tweed Heads?',
@@ -2410,7 +2410,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with NDIS participants and multigenerational households in Parramatta?',
-        a: 'We do. Parramatta\'s household mix spans students, professionals, multigenerational families and downsizers, and we tailor the clean accordingly. NATURO GROUP is nursing-led and supports NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Western Sydney, including Telopea, Dundas, Rydalmere and Carlingford.',
+        a: 'We do. Parramatta\'s household mix spans students, professionals, multigenerational families and downsizers, and we tailor the clean accordingly. NATURO GROUP was founded by someone from a nursing background and supports NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Western Sydney, including Telopea, Dundas, Rydalmere and Carlingford.',
       },
     ],
   },
@@ -2485,7 +2485,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support aged care and DVA clients in the Illawarra?',
-        a: 'We do. NATURO GROUP is a nursing-led company, and across Wollongong and the Illawarra we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are built around comfort and independence at home, in family houses at Figtree or apartments closer to the CBD.',
+        a: 'We do. NATURO GROUP is a company founded by someone from a nursing background, and across Wollongong and the Illawarra we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are built around comfort and independence at home, in family houses at Figtree or apartments closer to the CBD.',
       },
       {
         q: 'What will a clean cost, and how soon can you start?',
@@ -2564,7 +2564,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'I am a downsizer and want the same cleaner each visit. Is that possible?',
-        a: 'We aim for it. Many of our Northern Beaches clients are downsizers and long-term residents who would rather not explain their home twice, so we keep bookings with a familiar cleaner wherever scheduling allows. NATURO GROUP is nursing-led and also supports NDIS participants, Home Care Package recipients, DVA card holders and insurance clients across the peninsula.',
+        a: 'We aim for it. Many of our Northern Beaches clients are downsizers and long-term residents who would rather not explain their home twice, so we keep bookings with a familiar cleaner wherever scheduling allows. NATURO GROUP was founded by someone from a nursing background and also supports NDIS participants, Home Care Package recipients, DVA card holders and insurance clients across the peninsula.',
       },
     ],
   },
@@ -2627,7 +2627,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you clean small apartments as thoroughly as houses?',
-        a: 'Yes, and small-footprint apartments are most of what we do on the Eastern Beaches. Compact kitchens, single bathrooms and balconies that cop salt spray get the same trained, nursing-grade standard as a large home. Our cleaners work through Bondi, North Bondi, Bronte, Tamarama, Clovelly, Coogee and Maroubra, as well as terrace houses set back from the water.',
+        a: 'Yes, and small-footprint apartments are most of what we do on the Eastern Beaches. Compact kitchens, single bathrooms and balconies that cop salt spray get the same trained standard as a large home. Our cleaners work through Bondi, North Bondi, Bronte, Tamarama, Clovelly, Coogee and Maroubra, as well as terrace houses set back from the water.',
       },
       {
         q: 'Which suburbs beyond the beachfront do you service?',
@@ -2789,7 +2789,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and older residents in Manly?',
-        a: 'Yes. NATURO GROUP is a nursing-led company, and around Manly we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are arranged around comfort and independence at home, with the same cleaner each visit wherever the schedule allows.',
+        a: 'Yes. NATURO GROUP is a company founded by someone from a nursing background, and around Manly we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are arranged around comfort and independence at home, with the same cleaner each visit wherever the schedule allows.',
       },
       {
         q: 'How do I find out what it will cost?',
@@ -3022,7 +3022,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with aged care and DVA clients in Vaucluse?',
-        a: 'Yes. NATURO GROUP is nursing-led, and across Vaucluse and the Eastern Suburbs we support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. In a quiet, family-oriented suburb like this, the goal is keeping people comfortable and independent in a home they know well.',
+        a: 'Yes. NATURO GROUP was founded by someone from a nursing background, and across Vaucluse and the Eastern Suburbs we support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. In a quiet, family-oriented suburb like this, the goal is keeping people comfortable and independent in a home they know well.',
       },
     ],
   },
@@ -3104,7 +3104,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and Home Care Package recipients in Brisbane?',
-        a: 'Yes. NATURO GROUP is a nursing-led company, and across Greater Brisbane we work with NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are tailored around comfort and independence, in an inner-city apartment or a family home further out.',
+        a: 'Yes. NATURO GROUP is a company founded by someone from a nursing background, and across Greater Brisbane we work with NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Cleans are tailored around comfort and independence, in an inner-city apartment or a family home further out.',
       },
     ],
   },
@@ -3179,7 +3179,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and Veterans in Cairns?',
-        a: 'We do. NATURO GROUP is a nursing-led company and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Cairns and Far North Queensland. Every cleaner is police-checked and covered by $20m public liability insurance.',
+        a: 'We do. NATURO GROUP is a company founded by someone from a nursing background and we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Cairns and Far North Queensland. Every cleaner is police-checked and covered by $20m public liability insurance.',
       },
       {
         q: 'How much does a house clean in Cairns cost?',
@@ -3341,7 +3341,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you help with an NDIS or aged care cleaning plan in Ipswich?',
-        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Ipswich. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit where we can.',
+        a: 'Yes. We are a company founded by someone from a nursing background and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Ipswich. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit where we can.',
       },
     ],
   },
@@ -3495,7 +3495,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you clean for downsizers and older residents in Toowoomba?',
-        a: 'Yes. We work with downsizers, retirees and aged-care residences across Toowoomba, and as a nursing-led company we support Home Care Package recipients, DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
+        a: 'Yes. We work with downsizers, retirees and aged-care residences across Toowoomba, and as a company founded by someone from a nursing background we support Home Care Package recipients, DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
       },
       {
         q: 'Which Toowoomba suburbs do you cover?',
@@ -3578,7 +3578,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support DVA card holders and NDIS participants here?',
-        a: 'Yes. With a large veteran and defence community in Townsville, we regularly work with DVA Gold and White card holders, alongside NDIS participants who are plan-managed or self-managed, Home Care Package recipients, and insurance and workers compensation clients. We are a nursing-led company, and every cleaner is police-checked and insured for $20m public liability.',
+        a: 'Yes. With a large veteran and defence community in Townsville, we regularly work with DVA Gold and White card holders, alongside NDIS participants who are plan-managed or self-managed, Home Care Package recipients, and insurance and workers compensation clients. We are a company founded by someone from a nursing background, and every cleaner is police-checked and insured for $20m public liability.',
       },
     ],
   },
@@ -3656,7 +3656,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Melbourne cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner working in Melbourne is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly, non-toxic products and equipment \u2014 you do not need to provide anything for the clean.',
+        a: 'Every NATURO GROUP cleaner working in Melbourne is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly, non-toxic products and equipment \u2014 you do not need to provide anything for the clean.',
       },
     ],
   },
@@ -3735,7 +3735,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
+        a: 'Every NATURO GROUP cleaner in Geelong is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We bring all eco-friendly, non-toxic products and equipment to every job — you do not need to supply anything.',
       },
       {
         q: 'What eco-friendly products do you use?',
@@ -3838,7 +3838,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Torquay cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Torquay is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We bring all eco-friendly products and equipment — you do not need to supply anything.',
+        a: 'Every NATURO GROUP cleaner in Torquay is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We bring all eco-friendly products and equipment — you do not need to supply anything.',
       },
     ],
   },
@@ -3913,7 +3913,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Ocean Grove cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Ocean Grove is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+        a: 'Every NATURO GROUP cleaner in Ocean Grove is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products and equipment.',
       },
     ],
   },
@@ -3984,7 +3984,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Barwon Heads cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Barwon Heads is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products — nothing is required from you.',
+        a: 'Every NATURO GROUP cleaner in Barwon Heads is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products — nothing is required from you.',
       },
     ],
   },
@@ -4024,7 +4024,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'At NATURO GROUP, we deliver reliable, caring cleaning services to Drysdale and Bellarine homes — guided by nursing-grade standards and a genuine commitment to every client.',
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Drysdale and Bellarine homes — guided by high standards and a genuine commitment to every client.',
       'We support NDIS participants, aged care recipients and DVA cardholders across the Bellarine with tailored in-home cleaning.',
       'Every Drysdale client receives the same quality, reliability and care we would bring to our own home.',
     ],
@@ -4055,7 +4055,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Drysdale cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Drysdale is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+        a: 'Every NATURO GROUP cleaner in Drysdale is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products and equipment.',
       },
     ],
   },
@@ -4095,7 +4095,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'At NATURO GROUP, we deliver reliable, caring cleaning services to Leopold and Bellarine homes — guided by nursing-grade standards and a genuine commitment to every client.',
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Leopold and Bellarine homes — guided by high standards and a genuine commitment to every client.',
       'We support NDIS participants and aged care recipients across the Bellarine with consistent, compassionate in-home cleaning.',
       'Every Leopold client receives the same quality and care we would bring to our own home.',
     ],
@@ -4126,7 +4126,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Leopold cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Leopold is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+        a: 'Every NATURO GROUP cleaner in Leopold is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products and equipment.',
       },
     ],
   },
@@ -4166,7 +4166,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'At NATURO GROUP, we deliver reliable, caring cleaning services to Jan Juc and Surf Coast homes — guided by nursing-grade standards and a commitment to eco-friendly products.',
+      'At NATURO GROUP, we deliver reliable, caring cleaning services to Jan Juc and Surf Coast homes — guided by high standards and a commitment to eco-friendly products.',
       'We support NDIS participants and aged care clients across the Surf Coast with tailored in-home cleaning.',
       'Every Jan Juc client receives the same quality, care and reliability we would bring to our own home.',
     ],
@@ -4197,7 +4197,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are your Jan Juc cleaners police-checked and insured?',
-        a: 'Every NATURO GROUP cleaner in Jan Juc is police-checked, fully insured for $20m public liability and trained to our nursing-grade standards. We supply all eco-friendly products and equipment.',
+        a: 'Every NATURO GROUP cleaner in Jan Juc is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly products and equipment.',
       },
     ],
   },
@@ -4594,7 +4594,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you clean for an older parent or an NDIS participant in Belmont?',
-        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Belmont. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit wherever possible.',
+        a: 'Yes. We are a company founded by someone from a nursing background and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients across Belmont. Cleaners are police-checked and insured for $20m public liability, and we keep the same routine each visit wherever possible.',
       },
     ],
   },
@@ -4752,7 +4752,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and aged care clients in the area?',
-        a: 'We do. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Wandana Heights. Our founder has a nursing background and the team is trained to a nursing-grade standard, which suits households where health, hygiene and a calm routine matter.',
+        a: 'We do. We work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Wandana Heights. Our founder has a nursing background and the team is trained to our own standard, which suits households where health, hygiene and a calm routine matter.',
       },
     ],
   },
@@ -4894,7 +4894,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with retirees and Home Care Package recipients?',
-        a: 'We do. Herne Hill has many long-term residents and retirees, and we support Home Care Package clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Our company is nursing-led, so cleaners are trained to work respectfully and calmly in homes where someone is present throughout the visit.',
+        a: 'We do. Herne Hill has many long-term residents and retirees, and we support Home Care Package clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Our company was founded by someone from a nursing background, so cleaners are trained to work respectfully and calmly in homes where someone is present throughout the visit.',
       },
       {
         q: 'Which nearby suburbs share the same Herne Hill team?',
@@ -4981,7 +4981,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants in Hamlyn Heights?',
-        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, along with aged care and Home Care Package clients, DVA card holders, and insurance or workers compensation clients. Our founder has a nursing background and cleaners are trained to a nursing-grade standard, which matters in Hamlyn Heights homes where hygiene supports someone\'s health or recovery.',
+        a: 'Yes. We work with NDIS participants who are plan-managed or self-managed, along with aged care and Home Care Package clients, DVA card holders, and insurance or workers compensation clients. Our founder has a nursing background and cleaners are trained to our own standard, which matters in Hamlyn Heights homes where hygiene supports someone\'s health or recovery.',
       },
     ],
   },
@@ -5198,7 +5198,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and Home Care Package clients here?',
-        a: 'We do. In Norlane we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led and cleaners are trained to a nursing-grade standard, so support-related cleaning is handled with the care and discretion it deserves.',
+        a: 'We do. In Norlane we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company was founded by someone from a nursing background and cleaners are trained to our own standard, so support-related cleaning is handled with the care and discretion it deserves.',
       },
       {
         q: 'Will a renovated Norlane home be treated differently to an older one?',
@@ -5348,7 +5348,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with DVA card holders in Corio?',
-        a: 'We do. We support DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, and insurance or workers compensation clients across Corio. Our founder has a nursing background and the team is trained to a nursing-grade standard, so we are comfortable working in homes where health needs come first.',
+        a: 'We do. We support DVA Gold and White card holders, NDIS participants who are plan-managed or self-managed, aged care and Home Care Package recipients, and insurance or workers compensation clients across Corio. Our founder has a nursing background and the team is trained to our own standard, so we are comfortable working in homes where health needs come first.',
       },
       {
         q: 'Can I book a clean that suits my budget and schedule?',
@@ -5636,7 +5636,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP has been cleaning Grovedale homes to nursing-grade standards since our founding — thorough, consistent and always eco-friendly.',
+      'NATURO GROUP has been cleaning Grovedale homes to a consistent standard since our founding — thorough, consistent and always eco-friendly.',
       'We support NDIS participants, aged care recipients and busy Grovedale families with reliable, caring in-home cleaning.',
       'Our satisfaction guarantee covers every Grovedale clean — no shortcuts, no compromises.',
     ],
@@ -5672,7 +5672,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you help retirees, NDIS participants and aged care clients in Grovedale?',
-        a: 'Yes. We are a nursing-led company and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Grovedale. Cleaners are police-checked and fully insured for $20m public liability, and we can work to a plan or care coordinator\'s requirements.',
+        a: 'Yes. We are a company founded by someone from a nursing background and support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients across Grovedale. Cleaners are police-checked and fully insured for $20m public liability, and we can work to a plan or care coordinator\'s requirements.',
       },
       {
         q: 'What does a clean cost in Grovedale?',
@@ -5905,7 +5905,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS, aged care and DVA clients in Ballarat?',
-        a: 'We do. NATURO GROUP is a nursing-led company, and across Ballarat and the Central Highlands we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
+        a: 'We do. NATURO GROUP is a company founded by someone from a nursing background, and across Ballarat and the Central Highlands we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance and workers compensation clients. Every cleaner is police-checked and covered by $20m public liability insurance.',
       },
       {
         q: 'Can you schedule around a Melbourne commute or weekends away?',
@@ -6067,7 +6067,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you help retirees and aged care clients living in Mornington year-round?',
-        a: 'Yes. Alongside the weekender owners, Mornington has a strong community of long-term locals and retirees. We are a nursing-led company and support Home Care Package recipients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders and insurance clients, with a regular cleaner who becomes a familiar face.',
+        a: 'Yes. Alongside the weekender owners, Mornington has a strong community of long-term locals and retirees. We are a company founded by someone from a nursing background and support Home Care Package recipients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders and insurance clients, with a regular cleaner who becomes a familiar face.',
       },
       {
         q: 'How is a Mornington clean priced?',
@@ -6268,7 +6268,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that training shapes how our cleaners work in every Newcomb home.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background, and that training shapes how our cleaners work in every Newcomb home.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across Newcomb.',
       'Every Newcomb clean carries our satisfaction guarantee, and there are no lock-in contracts to sign before you try us.',
     ],
@@ -6304,7 +6304,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and aged care clients in Newcomb?',
-        a: 'We do. In Newcomb we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company we treat support-related cleaning with the discretion and consistency it deserves, usually with the same cleaner each visit.',
+        a: 'We do. In Newcomb we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a company founded by someone from a nursing background we treat support-related cleaning with the discretion and consistency it deserves, usually with the same cleaner each visit.',
       },
       {
         q: 'How soon can you start in Newcomb?',
@@ -6382,7 +6382,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you help NDIS participants and Home Care Package clients here?',
-        a: 'We do. In Whittington we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led, so cleaners are trained to work respectfully around people who are home during the visit.',
+        a: 'We do. In Whittington we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company was founded by someone from a nursing background, so cleaners are trained to work respectfully around people who are home during the visit.',
       },
     ],
   },
@@ -6420,7 +6420,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and that standard of care travels into every St Albans Park home.',
+      'NATURO GROUP was founded by someone from a nursing background, and that standard of care travels into every St Albans Park home.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across St Albans Park.',
       'Every St Albans Park clean comes with our satisfaction guarantee, and there is no lock-in contract at any stage.',
     ],
@@ -6456,7 +6456,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Can you help an older relative living in St Albans Park?',
-        a: 'Yes, and we are often booked by an adult child rather than the resident. In St Albans Park we work with Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Being nursing-led, our cleaners know how to work calmly around someone who is home throughout.',
+        a: 'Yes, and we are often booked by an adult child rather than the resident. In St Albans Park we work with Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, and DVA Gold and White card holders. Founded by someone from a nursing background, our cleaners know how to work calmly around someone who is home throughout.',
       },
       {
         q: 'How quickly can a first clean be arranged in St Albans Park?',
@@ -6498,7 +6498,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and our cleaners are trained to that standard before they set foot in a Thomson home.',
+      'NATURO GROUP was founded by someone from a nursing background, and our cleaners are trained to our own standard before they set foot in a Thomson home.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Thomson.',
       'Our satisfaction guarantee covers every Thomson clean, and we do not ask anyone to sign a lock-in contract.',
     ],
@@ -6534,7 +6534,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with NDIS and aged care clients in Thomson?',
-        a: 'We do. In Thomson we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Because we are nursing-led, cleaners are trained to be unobtrusive and consistent when someone is home for the whole visit.',
+        a: 'We do. In Thomson we support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Because we were founded by someone from a nursing background, cleaners are trained to be unobtrusive and consistent when someone is home for the whole visit.',
       },
     ],
   },
@@ -6572,7 +6572,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP was founded by someone from a nursing background, and that nursing-led approach sets the standard our cleaners work to in Moolap.',
+      'NATURO GROUP was founded by someone from a nursing background, and that approach sets the standard our cleaners work to in Moolap.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients across Moolap.',
       'Every Moolap clean carries our satisfaction guarantee, with no lock-in contract and no pressure to keep booking.',
     ],
@@ -6612,7 +6612,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants in Moolap?',
-        a: 'We do. In Moolap we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company is nursing-led, so support-related cleaning is handled with discretion and, wherever the roster allows, the same familiar cleaner each visit.',
+        a: 'We do. In Moolap we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Our company was founded by someone from a nursing background, so support-related cleaning is handled with discretion and, wherever the roster allows, the same familiar cleaner each visit.',
       },
     ],
   },
@@ -6650,7 +6650,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and our cleaners are trained to that standard before attending a Breakwater home.',
+      'NATURO GROUP was founded by someone from a nursing background, and our cleaners are trained to our own standard before attending a Breakwater home.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Breakwater.',
       'Every Breakwater clean is backed by our satisfaction guarantee, and there is no lock-in contract to sign.',
     ],
@@ -6690,7 +6690,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and DVA clients in Breakwater?',
-        a: 'We do. In Breakwater we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company, our cleaners are trained to work calmly and respectfully when someone is home throughout the visit.',
+        a: 'We do. In Breakwater we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a company founded by someone from a nursing background, our cleaners are trained to work calmly and respectfully when someone is home throughout the visit.',
       },
     ],
   },
@@ -6729,7 +6729,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, and our founder came to cleaning from a nursing background where thoroughness was never optional.',
+      'NATURO GROUP is a company founded by someone from a nursing background, and our founder came to cleaning from a nursing background where thoroughness was never optional.',
       'That training shows up in North Geelong homes as a consistent method, sensible products and cleaners who understand hygiene rather than just appearance.',
       'We support NDIS participants, Home Care Package recipients, DVA card holders and insurance clients throughout North Geelong, and every clean carries our satisfaction guarantee.',
     ],
@@ -6761,7 +6761,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and Home Care Package clients here?',
-        a: 'Yes. In North Geelong we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Because the company is nursing-led, support-related cleaning is handled with the care and discretion it should be.',
+        a: 'Yes. In North Geelong we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. Because the company was founded by someone from a nursing background, support-related cleaning is handled with the care and discretion it should be.',
       },
       {
         q: 'How soon can you start in North Geelong?',
@@ -6881,7 +6881,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, with a founder who came from nursing and brought that eye for detail into every home we clean.',
+      'NATURO GROUP was founded by someone from a nursing background and brought that eye for detail into every home we clean.',
       'In Fyansford that means a consistent, methodical clean whether the home is brand new or well over a century old.',
       'We work with NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Fyansford, and every clean is covered by our satisfaction guarantee.',
     ],
@@ -6955,7 +6955,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone whose nursing background set the standard we still clean to.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone whose nursing background set the standard we still clean to.',
       'For Ceres properties that means a methodical, complete clean in a single visit, because coming back out for a missed room helps nobody.',
       'We also support NDIS participants, Home Care Package recipients, DVA card holders and insurance clients in Ceres, with our satisfaction guarantee on every clean.',
     ],
@@ -7033,7 +7033,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, and our founder\'s nursing background is the reason the company measures a clean by hygiene rather than appearance.',
+      'NATURO GROUP was founded by someone from a nursing background, and that background is the reason the company measures a clean by hygiene rather than appearance.',
       'In Batesford that translates into a thorough, unhurried clean and cleaners who are comfortable working in homes on larger, semi-rural blocks.',
       'We support NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients in Batesford, and every clean carries our satisfaction guarantee.',
     ],
@@ -7107,7 +7107,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background who built the service around hygiene and consistency.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background who built the service around hygiene and consistency.',
       'In Lovely Banks that shows in a clean that is the same standard whether the home is a new estate build or an older place on acreage.',
       'We support NDIS participants, Home Care Package recipients, DVA Gold and White card holders and insurance clients here, and every clean carries our satisfaction guarantee.',
     ],
@@ -7143,7 +7143,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS participants and aged care clients in Lovely Banks?',
-        a: 'We do. In Lovely Banks we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. The company being nursing-led means support-related cleaning is handled with the care and discretion it deserves.',
+        a: 'We do. In Lovely Banks we work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients. The company was founded by someone from a nursing background, which means support-related cleaning is handled with the care and discretion it deserves.',
       },
       {
         q: 'What determines the cost of a clean out here?',
@@ -7186,7 +7186,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that training still shapes how our cleaners work in Marshall homes.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background, and that training still shapes how our cleaners work in Marshall homes.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Marshall.',
       'Every Marshall clean is covered by our satisfaction guarantee, with no lock-in contracts and no obligation to keep a regular slot you no longer need.',
     ],
@@ -7222,7 +7222,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and aged care clients in Marshall?',
-        a: 'We do. In Marshall we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a nursing-led company we handle support-related cleaning with care and discretion, and we are happy to work to a scope set out by a coordinator or family member.',
+        a: 'We do. In Marshall we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. As a company founded by someone from a nursing background we handle support-related cleaning with care and discretion, and we are happy to work to a scope set out by a coordinator or family member.',
       },
       {
         q: 'How soon can you start in Marshall?',
@@ -7264,7 +7264,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and that shows in how thoroughly a new Charlemont home is finished before a family moves in.',
+      'NATURO GROUP was founded by someone from a nursing background, and that shows in how thoroughly a new Charlemont home is finished before a family moves in.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Charlemont.',
       'Every Charlemont clean carries our satisfaction guarantee, with no lock-in contracts, so a regular slot can change as your household does.',
     ],
@@ -7338,7 +7338,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that thoroughness suits the larger homes we clean around Wallington.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background, and that thoroughness suits the larger homes we clean around Wallington.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients across Wallington.',
       'Every Wallington clean is covered by our satisfaction guarantee, with no lock-in contracts, so seasonal changes to your routine are simple to arrange.',
     ],
@@ -7378,7 +7378,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you support NDIS and aged care clients in Wallington?',
-        a: 'We do. Around Wallington we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Being nursing-led, we handle in-home support cleaning with discretion, and we can work to a scope set by a support coordinator or family member.',
+        a: 'We do. Around Wallington we work with NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders, and insurance or workers compensation clients. Founded by someone from a nursing background, we handle in-home support cleaning with discretion, and we can work to a scope set by a support coordinator or family member.',
       },
     ],
   },
@@ -7416,7 +7416,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and that standard travels to every Connewarre home we clean.',
+      'NATURO GROUP was founded by someone from a nursing background, and that standard travels to every Connewarre home we clean.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package recipients, DVA Gold and White card holders and insurance clients around Connewarre.',
       'Every Connewarre clean is covered by our satisfaction guarantee, and there are no lock-in contracts to sign before we start.',
     ],
@@ -7490,7 +7490,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, so in-home care work is familiar territory for our Clifton Springs team.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background, so in-home care work is familiar territory for our Clifton Springs team.',
       'We work with Home Care Package recipients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders and insurance clients across Clifton Springs.',
       'Every Clifton Springs clean carries our satisfaction guarantee, with no lock-in contracts and the same cleaner wherever we can manage it.',
     ],
@@ -7569,7 +7569,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company, founded by someone from a nursing background, and that shows in how carefully we work in a Portarlington home.',
+      'NATURO GROUP is a company founded by someone from a nursing background, founded by someone from a nursing background, and that shows in how carefully we work in a Portarlington home.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, and DVA Gold and White card holders across Portarlington.',
       'Every Portarlington clean is covered by our satisfaction guarantee, and there are no lock-in contracts to sign.',
     ],
@@ -7601,7 +7601,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Do you work with retirees and Home Care Package clients here?',
-        a: 'We do. Portarlington has a strong retiree community, and we support Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders, and insurance clients. Because the company is nursing-led, our cleaners are trained to work respectfully and discreetly in someone\'s own home.',
+        a: 'We do. Portarlington has a strong retiree community, and we support Home Care Package and aged care clients, NDIS participants who are plan-managed or self-managed, DVA Gold and White card holders, and insurance clients. Because the company was founded by someone from a nursing background, our cleaners are trained to work respectfully and discreetly in someone\'s own home.',
       },
       {
         q: 'What does a clean in Portarlington cost?',
@@ -7647,7 +7647,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, with a founder from a nursing background, and we bring that standard of care into every St Leonards home we attend.',
+      'NATURO GROUP was founded by someone from a nursing background, and we bring that standard of care into every St Leonards home we attend.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in St Leonards.',
       'All products and equipment are supplied, every clean carries our satisfaction guarantee, and there are no lock-in contracts.',
     ],
@@ -7721,7 +7721,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP was founded by someone from a nursing background, and that nursing-led standard travels with us to every Indented Head home.',
+      'NATURO GROUP was founded by someone from a nursing background, and that standard travels with us to every Indented Head home.',
       'We work with NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance clients across Indented Head.',
       'We supply all products and equipment, our satisfaction guarantee covers every visit, and there are no lock-in contracts.',
     ],
@@ -7795,7 +7795,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company with a founder from a nursing background, and that care shows in how we work inside a Point Lonsdale home.',
+      'NATURO GROUP is a company founded by someone from a nursing background with a founder from a nursing background, and that care shows in how we work inside a Point Lonsdale home.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients in Point Lonsdale.',
       'Every Point Lonsdale clean carries our satisfaction guarantee, all products and equipment are supplied, and there are no lock-in contracts.',
     ],
@@ -7835,7 +7835,7 @@ export const suburbs: Suburb[] = [
       },
       {
         q: 'Are you insured and police-checked?',
-        a: 'Yes. Every cleaner attending a Point Lonsdale home is police-checked, and we carry $20m public liability insurance. We are a nursing-led company, our cleaners are trained to that standard, and we bring all our own plant-based products and equipment so nothing needs to be supplied at the property.',
+        a: 'Yes. Every cleaner attending a Point Lonsdale home is police-checked, and we carry $20m public liability insurance. We are a company founded by someone from a nursing background, our cleaners are trained to our own standard, and we bring all our own plant-based products and equipment so nothing needs to be supplied at the property.',
       },
     ],
   },
@@ -7873,7 +7873,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is nursing-led, founded by someone from a nursing background, and we bring that attention to detail into every Queenscliff home.',
+      'NATURO GROUP was founded by someone from a nursing background, and we bring that attention to detail into every Queenscliff home.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance clients in Queenscliff.',
       'All products and equipment are supplied, every Queenscliff clean carries our satisfaction guarantee, and we ask for no lock-in contract.',
     ],
@@ -7951,7 +7951,7 @@ export const suburbs: Suburb[] = [
       ],
     },
     founderBody: [
-      'NATURO GROUP is a nursing-led company founded by someone from a nursing background, and that standard of care applies just as much on a rural block as in town.',
+      'NATURO GROUP was founded by someone from a nursing background, and that standard of care applies just as much on a rural block as in town.',
       'We support NDIS participants who are plan-managed or self-managed, Home Care Package and aged care clients, DVA Gold and White card holders, and insurance or workers compensation clients around Marcus Hill.',
       'Every Marcus Hill clean carries our satisfaction guarantee, and there are no lock-in contracts to sign.',
     ],

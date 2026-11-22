@@ -1942,7 +1942,7 @@ export const posts: BlogPost[] = [
           },
           {
             q: 'What makes Naturo Group different from other Port Macquarie cleaning providers?',
-            a: 'Our team is led by a registered nurse — which means our standard is clinical-grade thorough. All cleaners are police-checked, NDIS Worker Screening cleared and trained on our 50-point checklist. We use only eco-friendly, non-toxic products that are safe for participants with respiratory conditions, chemical sensitivities or allergies.',
+            a: 'Our company was founded by someone from a nursing background, and that shapes how carefully we work. All cleaners are police-checked, NDIS Worker Screening cleared and trained on our 50-point checklist. We use only eco-friendly, non-toxic products that are safe for participants with respiratory conditions, chemical sensitivities or allergies.',
           },
         ],
       },

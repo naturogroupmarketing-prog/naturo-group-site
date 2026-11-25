@@ -3671,9 +3671,9 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'NATURO Group eco-friendly house cleaning in Geelong VIC',
     ogImage: '/images/suburbs/house-cleaning-geelong.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaning in', 'Geelong'],
-    contentUpdated: '2026-10-08',
-      tagline: 'House cleaning in Geelong — trusted, trained and thorough across Geelong & the Bellarine',
+      h1Lines: ['Eco-Friendly', 'House Cleaning', 'Geelong'],
+    contentUpdated: '2026-11-25',
+      tagline: 'Trusted, trained and thorough across Geelong, the Bellarine and the Surf Coast',
     },
     intro: {
       kicker: 'House cleaning in Geelong',
@@ -3708,8 +3708,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Geelong families, students and Bellarine homeowners.',
     },
     seo: {
-      title: 'House Cleaning Services Geelong | 1300 876 472',
-      description: 'Need house cleaning in Geelong? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked cleaners. Non-toxic products. Regular cleans from $153 a visit.',
+      title: 'House Cleaning Geelong | 1300 876 472',
+      description: 'House cleaning in Geelong from NATURO GROUP. Eco-friendly, police-checked cleaners and non-toxic products. Regular cleans from $153 a visit. Call 1300 876 472.',
     },
     nearbySuburbs: ['Newtown', 'Geelong West', 'East Geelong', 'South Geelong', 'North Geelong', 'Rippleside', 'Herne Hill', 'Manifold Heights', 'Hamlyn Heights', 'Bell Park', 'Bell Post Hill', 'Norlane', 'North Shore', 'Corio', 'Lovely Banks', 'Lara', 'Fyansford', 'Ceres', 'Batesford', 'Belmont', 'Highton', 'Wandana Heights', 'Marshall', 'Grovedale', 'Waurn Ponds', 'Armstrong Creek', 'Charlemont', 'Mount Duneed', 'Newcomb', 'Whittington', 'St Albans Park', 'Thomson', 'Moolap', 'Breakwater', 'Leopold', 'Curlewis', 'Drysdale', 'Clifton Springs', 'Portarlington', 'St Leonards', 'Indented Head', 'Marcus Hill', 'Wallington', 'Ocean Grove', 'Barwon Heads', 'Point Lonsdale', 'Queenscliff', 'Connewarre', 'Torquay', 'Jan Juc', 'Bannockburn'],
     localFaqs: [

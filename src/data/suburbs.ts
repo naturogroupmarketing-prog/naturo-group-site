@@ -136,15 +136,15 @@ export const suburbs: Suburb[] = [
     heroImageAlt: 'Coastal sunset over Town Beach with Norfolk pines, Port Macquarie NSW',
     ogImage: '/images/suburbs/cleaners-port-macquarie.jpg',
     hero: {
-      h1Lines: ['Eco-Friendly', 'House Cleaners in', 'Port Macquarie'],
-    contentUpdated: '2026-08-27',
+      h1Lines: ['Eco-Friendly', 'House Cleaning', 'Port Macquarie'],
+    contentUpdated: '2026-11-25',
       // The one line an ad-clicker reads under the H1. The PMQ ads promise this
       // rating, so it must be on the page — and it must be the verified figure.
       tagline: `Rated ${verifiedRatings.portMacquarie!.ratingValue}/5 from ${verifiedRatings.portMacquarie!.reviewCount} Google reviews, as at ${ratingsVerifiedOn}`,
     },
     intro: {
       kicker: 'House cleaning in Port Macquarie',
-      h2: 'Best house cleaning in Port Macquarie & the Mid North Coast',
+      h2: 'House cleaning across Port Macquarie & the Hastings',
       paragraphs: [
         'Port Macquarie homes face a unique mix of salt air, sand, beach gear and busy holiday schedules. NATURO GROUP\u2019s local Port Macquarie cleaners take the work off your plate with eco-friendly, non-toxic products that are gentle on coastal timbers, tiles and natural-stone benchtops \u2014 and tough on grime.',
         'From Settlement Point to Lighthouse Beach, our trained, police-checked team services apartments, family homes, holiday rentals and aged-care residences across the Hastings region \u2014 with the same care we\u2019d give our own homes.',
@@ -175,8 +175,8 @@ export const suburbs: Suburb[] = [
       trust: 'Trusted by Port Macquarie families, retirees and holiday-let owners.',
     },
     seo: {
-      title: 'House Cleaners Port Macquarie | 1300 876 472',
-      description: 'Need house cleaners in Port Macquarie? Call NATURO GROUP on 1300 876 472. Eco-friendly, police-checked team. NDIS, aged care, DVA & insurance welcome.',
+      title: 'House Cleaning Port Macquarie | 1300 876 472',
+      description: 'House cleaning in Port Macquarie from NATURO GROUP. Eco-friendly, police-checked cleaners. NDIS, aged care, DVA and insurance welcome. Call 1300 876 472.',
     },
     nearbySuburbs: ['Wauchope', 'Lake Cathie', 'Bonny Hills', 'Laurieton', 'North Haven', 'Dunbogan', 'Camden Head', 'Telegraph Point', 'Sancrox', 'Kendall', 'Comboyne', 'Beechwood', 'Bago', 'Rollands Plains', 'Pembrooke', 'Kew', 'Lakewood', 'King Creek', 'Settlement Point', 'Lighthouse Beach', 'Thrumster', 'Kempsey', 'Crescent Head', 'South West Rocks', 'Forster'],
     mapEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.1628905664766!2d152.89266101302883!3d-31.43718227414483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9dff93e1b980a5%3A0xe69d72ece7939e02!2sNATURO%20GROUP!5e0!3m2!1sen!2sau!4v1760513116223!5m2!1sen!2sau',
@@ -195,11 +195,11 @@ export const suburbs: Suburb[] = [
         a: 'The cost of house cleaning in Port Macquarie depends on the size and condition of your home and how often you want it cleaned. We also handle end-of-lease bond cleans. Pricing depends on the size of your home and the type of clean — Get a free quote with no obligation.',
       },
       {
-        q: 'Do you clean holiday rentals and Airbnb properties in Port Macquarie?',
+        q: 'Do you clean holiday rentals and Airbnb properties?',
         a: 'Yes — we regularly clean short-stay and holiday rental properties across Port Macquarie, Lighthouse Beach, Town Beach, Settlement Point and the surrounding Hastings region. We can coordinate same-day turnovers between guests, supply fresh linen and provide condition reports to owners and property managers.',
       },
       {
-        q: 'Do you offer NDIS and aged care cleaning in Port Macquarie?',
+        q: 'Do you offer NDIS and aged care cleaning?',
         a: 'Yes. NATURO GROUP supports NDIS participants and aged care recipients across Port Macquarie and the Mid North Coast. We work with plan managers, support coordinators and Home Care Package providers to arrange regular in-home cleaning — with detailed invoicing and reports on request. Call 1300 876 472 to discuss your support needs.',
       },
       {
@@ -207,7 +207,7 @@ export const suburbs: Suburb[] = [
         a: 'We service all of Port Macquarie and the broader Hastings region, including Wauchope, Lake Cathie, Bonny Hills, Laurieton, North Haven, Dunbogan, Telegraph Point and Kendall. If you are unsure whether we cover your street, call 1300 876 472 and we will confirm in 60 seconds.',
       },
       {
-        q: 'Are your Port Macquarie cleaners police-checked and insured?',
+        q: 'Are your cleaners police-checked and insured?',
         a: 'Every NATURO GROUP cleaner working in Port Macquarie is police-checked, fully insured for $20m public liability and trained to our own cleaning standards. We supply all eco-friendly, non-toxic products and equipment — you do not need to provide anything.',
       },
     ],

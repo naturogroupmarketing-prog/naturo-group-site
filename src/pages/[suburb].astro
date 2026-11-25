@@ -186,6 +186,18 @@ const localBusinessSchema = verifiedPremises
           ...verifiedPremises,
           addressCountry: 'AU',
         },
+        // The pin on the NATURO GROUP Port Macquarie Business Profile, read
+        // from Google Maps on 25 Nov 2026 (not geocoded: OpenStreetMap only
+        // resolves the highway, not the building).
+        geo: { '@type': 'GeoCoordinates', latitude: -31.4371823, longitude: 152.8952413 },
+        // Profiles checked to return 200 on 25 Nov 2026, plus the Business
+        // Profile itself (Maps place id 0xe69d72ece7939e02).
+        sameAs: [
+          'https://maps.google.com/?cid=16617564561890057730',
+          site.social.facebook,
+          site.social.instagram,
+          site.social.youtube,
+        ],
         areaServed: {
           '@type': 'AdministrativeArea',
           name: `${suburb.name} and the ${suburb.region}, ${suburb.stateCode}`,

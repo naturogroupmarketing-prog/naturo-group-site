@@ -245,7 +245,7 @@ export const leadCapture = {
    * want.
    */
   turnstileSiteKey: '0x4AAAAAAEjnA_Ti9OM3LDdt',
-  metaPixelId: '',         // e.g. '1234567890'
+  metaPixelId: '2659342904536286', // "NATURO Website" pixel (ad account 564855494672931)
   googleAdsId: 'AW-17734678183',          // Google Ads conversion ID (NATURO GROUP)
   googleAdsLabel: 'kZ58CPzQ9cYcEKftxohC', // "Quote form submitted" conversion action label
   // GA4 measurement IDs. Every ID listed here gets its own gtag config call,
